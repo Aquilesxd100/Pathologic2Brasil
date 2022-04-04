@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@font-face {
+	font-family: frizquadrata;
+	src: url(../_fonts/friz-quadrata-tt.ttf);
+}
+@font-face {
+	font-family: batukapur;
+	src: url(../_fonts/batukapur-vmedy.otf);
+}
+/* Corpo de Todo o Site */	
+	body {
+		position: relative;
+        overflow-x: hidden;
+		margin: 0px;
+		cursor: url('../_recursos/cursor.png'), auto;
+		padding: 0px;
+}	
+/* Banner do Site */	
+	picture#banner {
+		position: relative;
+		margin: 0px;
+}
+	picture#banner img {	
+		display: block;
+		height: 100%;
+		width: 98.9vw;
+		margin: 0px;
+}
+source#bannermobile img {	
+	display: block;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}	
+/* Barra de Navegação */	
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	a:hover {
+		cursor: url('../_recursos/cursor.png'), auto;
+	}
+	nav#menu {
+		position: relative;
+		display: block;
+		margin: 0px;
+		height: 2.7vw;
+		width: 98.9vw;
+}
+	nav#menu img#espinhos {
+		margin: 0px;
+		position: relative;
+		z-index: +2;
+		width: 98.9vw;
+		height: 8.8vw;	
+		top: -7.45vw;
+		float: left;
+}
+	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
+		margin: 0px;
+		position: relative;
+		z-index: +1;
+		right: 0.1vw;
+		height: 4vw;
+		top: -0.7vw;
+		float: left;
+}
+	nav#menu img#barra1 {
+		width: 21.36vw;
+}		
+	nav#menu img#barra2 {
+		width: 24.7vw;
+}	
+	nav#menu img#barra3 {
+		width: 24.9vw;
+}
+	nav#menu img#barra4 {
+		width: 27.9vw;
+}
+/* Opções da Barra de Navegação */	
+	nav#menu ul{
+		margin: 0px;
+		top: -12.5vw;
+		list-style: none;
+		position: relative;
+		z-index: +3;
+		padding: 0px;
+}
+	nav#menu li{
+		color: white;
+		font-family: batukapur;
+		font-size: 1.85vw;
+		text-shadow: 2px 2px 11px rgba(0, 0, 0, 0.9), 2px 2px 11px rgba(0, 0, 0, 0.9);
+		margin: 0px;
+		float: left;
+}
+	nav#menu li#home {
+		margin-left: 8.2vw;
+}
+	nav#menu li#trocas {
+		margin-left: 16vw;
+}
+	nav#menu li#diversos {
+		margin-left: 16.7vw;
+}
+	nav#menu li#mais {
+		margin-left: 14vw;
+}
+	span#simbolomais {
+		position: absolute;
+		right: 21.3vw;
+		top: -0.2vw;
+		font-size: 2.5vw !important;
+	}
+/* Corpo da Pagina */
+	div#corpo {
+		background-image: url('../_imagens/fundo.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100%;
+		position: relative;
+		margin-top: -1.4vw;
+		width: 98.9vw;
+		height: 56vw;
+}	
+	div#fundobranco {
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.85);
+		width: 97.8%;
+		height: 94%;
+		top: 2.75vw;
+		margin: 0vw 0.9vw 0.75vw 0.9vw;
+}
+	div#conteudo {
+		position: absolute;
+		top: 0px;
+		left: 0.7vw;
+		padding: 1.48vw;
+		font-size: 1.4vw;
+		font-family: frizquadrata;
+}
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Pathologic 2 Brasil</title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+</head>
+<body>	
+	<header>
+		<figure id="banner">
+			<img src="_imagens/bannerp.jpg" alt="banner"/>
+		</figure>
+	<div id="fundo">		
+		<div id="interface">
+			<nav id="menu">
+				<img src="_imagens/barra.png" id="barra"/>
+				<ul>
+					<li id="home">Home</li> 
+					<li id="trocas">Trocas</li> 					
+					<li id="inimigos">Inimigos</li> 
+					<li id="mais">+Tutoriais/Guias</li> 
+				</ul>
+			</nav>
+	</header>
+	</div>
+		<div id="corpo">
+			<img src="_imagens/corpo_branco.png" id="fundobranco"/>
+			<div id="conteudo">
+				<p>You will not be able to save everyone. Time will never be on your side and choices will haunt your every step. You’ll want to get closer to your goal, but sometimes it’ll all come down to whatever means of survival that you have. In a time of both fear and uncertainty, would you share medicine with important figures who will unveil the Town’s numerous secrets in return, or would you rather keep the medicine in case you get sick? Pathologic is a bleak and harsh survival adventure that’ll make sure of it.</p>	
+				<p class="teste teste2"> TESTEEEE </p>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
