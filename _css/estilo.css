@@ -50,6 +50,13 @@ source#bannermobile img {
 		float: left;
 		pointer-events: none;
 }
+	img#barrapesquisa {
+		position: absolute;
+		top: 0.3vw;
+		left: 93vw;
+		float: right;
+		z-index: +3;
+	}
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
 		margin: 0px;
 		position: relative;
@@ -123,6 +130,9 @@ source#bannermobile img {
 		top: 2.75vw;
 		margin: 0vw 0.9vw 0.75vw 0.9vw;
 }
+	form {
+		text-align: center;
+	}
 	div#conteudo {
 		position: absolute;
 		top: 0px;
