@@ -13,11 +13,9 @@ function maisTutoriais_GuiasLink () {
     window.location.href="https://www.google.com/";
 }
 /* Hover */
-    document.getElementById("barra1").addEventListener('mouseenter', () => homeHoverX());
-    document.getElementById("barra1").addEventListener('mouseleave', () => homeHoverN());
-    function homeHoverX() {  
-        document.getElementById("home").style.color = "#FFFFFF";
+    function menuHoverIn(barra) {  
+        document.getElementById(barra).style.color = "#FFFFFF";
     } 
-    function homeHoverN() {
-        document.getElementById("home").style.color = "#DDDDDD";
+    function menuHoverOut(barra) {
+        document.getElementById(barra).style.color = "#EEEEEE";
     }
