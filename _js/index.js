@@ -14,17 +14,20 @@ function maisTutoriais_GuiasLink () {
 }
 /* Barra de Pesquisa */
 let barraPesquisaAbertura = 0;
-    function barraPesquisa() {
-        if (barraPesquisaAbertura === 0) {
-            document.getElementById("barrapesquisa").src="_imagens/barra_pesquisa.png";
-            document.getElementById("barrapesquisa").style.left="77.2vw";
-            barraPesquisaAbertura = 1;
+    function botaoPesquisa(tipo) {
+        if (tipo === "hide_show") {
+            if (barraPesquisaAbertura === 0) {
+                document.getElementById("botaohidepesquisa").style.left="77.8vw";
+                document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
+                barraPesquisaAbertura = 1;
+            }
+            else {
+                document.getElementById("botaohidepesquisa").style.left="92.8vw";
+                document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
+                barraPesquisaAbertura = 0;  
+            } 
         }
-        else {
-            document.getElementById("barrapesquisa").src="_imagens/icone_pesquisa.png";
-            document.getElementById("barrapesquisa").style.left="93vw";
-            barraPesquisaAbertura = 0;  
-        }
+        
     }
 /* Hover */
     function menuHoverIn(barra) {  
