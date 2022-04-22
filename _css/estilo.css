@@ -78,10 +78,13 @@ source#bannermobile img {
 		transition: clip-path 0s;
 		clip-path: inset(0vw 0vw 0vw 15.5vw);
 	}
+	img#botaohidepesquisa:hover {
+		filter: brightness(80%);
+	}
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
 		margin: 0px;
 		position: relative;
-		z-index: +1;
+		z-index: +2;
 		right: 0.1vw;
 		height: 4vw;
 		top: -0.7vw;
@@ -148,6 +151,49 @@ source#bannermobile img {
 		transform: none;
 		transition: transform 0s;
 }
+/* Sub Menus */
+	div#submenu {
+		display: none;
+		position: absolute;
+		z-index: +1;
+	}
+	img#submenubarra1, img#submenubarra2, img#submenubarra3, img#submenubarra4 {
+		position: absolute;
+		float: right;
+		height: 4.2vw;
+		width: 25.6vw;
+		left: 71.9vw;
+	}
+	img#submenubarra1, li#combate {
+		top: 0vw;
+	}
+	img#submenubarra2, li#economia {
+		top: 3.85vw;
+	}
+	img#submenubarra3, li#receitas {
+		top: 7.7vw;
+	}
+	img#submenubarra4, li#mapautil {
+		top: 11.5vw;
+	}
+	img#submenubarra1:hover, img#submenubarra2:hover, img#submenubarra3:hover, img#submenubarra4:hover {
+		filter: brightness(125%);
+	}
+	div#submenu li {
+		position: absolute;
+		color:#DDDDDD;
+		font-family: batukapur;
+		font-size: 1.75vw;
+		left: 79.9vw;
+		width: 10vw;
+		transform: translateY(1vw);
+		text-shadow: 2px 2px 11px rgba(0, 0, 0, 0.9), 2px 2px 11px rgba(0, 0, 0, 0.6);
+		margin: 0px;
+		float: right;
+		pointer-events: none;
+		list-style: none;
+		text-align: center;
+	}
 /* Corpo da Pagina */
 	div#corpo {
 		background-image: url('../_imagens/fundo.jpg');
@@ -167,9 +213,6 @@ source#bannermobile img {
 		top: 2.75vw;
 		margin: 0vw 0.9vw 0.75vw 0.9vw;
 }
-	form {
-		text-align: center;
-	}
 	div#conteudo {
 		position: absolute;
 		top: 0px;

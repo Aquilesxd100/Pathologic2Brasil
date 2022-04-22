@@ -1,3 +1,4 @@
+/* Função RESET */
 let resetType = ["", ""];
 function reset() {
     if (resetType === "PesquisaAbertura") {
@@ -25,8 +26,30 @@ function reset() {
     }
     resetType = ["", ""];
 }
+/* Barra de Pesquisa */
+let barraPesquisaAbertura = "fechada";
+  function botaoPesquisa(tipo) {
+    if (tipo === "hide_show") {
+         if (barraPesquisaAbertura === "fechada") {
+            document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
+            document.getElementById("botaohidepesquisa").style.transform="translateX(-15vw)";
+            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
+            document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
+            barraPesquisaAbertura = "aberta";
+         }
+         else {
+            document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
+            document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
+            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
+            document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
+            barraPesquisaAbertura = "fechada";  
+         }
+         resetType = "PesquisaAbertura";
+         setTimeout(reset, 500); 
+    }          
+  }
 /* Barra de Navegação */
-/* Links */
+/* Botões Menu */
 function homeBotao() {
     document.getElementById("barra1").style.transition="transform 0.08s";
     document.getElementById("barra1").style.transform="translateY(0.15vw)";
@@ -63,33 +86,28 @@ function maisTutoriais_GuiasBotao() {
     setTimeout(reset, 200);
     window.location.href="https://www.google.com";
 }
-/* Barra de Pesquisa */
-let barraPesquisaAbertura = "fechada";
-    function botaoPesquisa(tipo) {
-        if (tipo === "hide_show") {
-            if (barraPesquisaAbertura === "fechada") {
-                document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
-                document.getElementById("botaohidepesquisa").style.transform="translateX(-15vw)";
-                document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
-                document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
-                barraPesquisaAbertura = "aberta";
-            }
-            else {
-                document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
-                document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
-                document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
-                document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
-                barraPesquisaAbertura = "fechada";  
-            }
-            resetType = "PesquisaAbertura";
-            setTimeout(reset, 500); 
-        }
-        
-    }
-/* Hover */
+/* Hover Botões Menu */
     function menuHoverIn(barra) {  
         document.getElementById(barra).style.color = "#FFFFFF";
+        if (barra === "mais") {
+            menuSubMenu("on");
+        }
     } 
     function menuHoverOut(barra) {
         document.getElementById(barra).style.color = "#EEEEEE";
+        if (barra === "mais") {
+            menuSubMenu("off");
+        }
     }
+/* Sub Menus */
+let mostrar = "";
+function menuSubMenu(mostrar) {
+  if (mostrar === "on") {
+    document.getElementById("submenu").style.display="block";
+    document.getElementById("barra4").style.filter="brightness(125%)";
+  }
+  if (mostrar === "off") {
+     document.getElementById("submenu").style.display="none";
+     document.getElementById("barra4").style.filter="brightness(100%)";
+  }
+}
