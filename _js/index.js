@@ -6,6 +6,12 @@ function reset() {
         document.getElementById("barrapesquisa").style.transition="clip-path 0s";
         resetType = ["", ""];
     }
+    else if (resetType === "BotaoPesquisa") {
+        document.getElementById("botaopesquisa").style.transition="none";
+        document.getElementById("botaopesquisa").style.top="0.3vw";
+        document.getElementById("botaopesquisa").style.width="4.85vw";
+        document.getElementById("botaopesquisa").style.height="4.1vw";
+    }
     else if (resetType === "BotaoMenu") {
         if (resetType === "BotaoMenu", "Botao1") {
             document.getElementById("barra1").style.transform="translateY(0vw)";
@@ -27,7 +33,19 @@ function reset() {
     resetType = ["", ""];
 }
 /* Barra de Pesquisa */
+let resultadoPesquisa = "";
 let barraPesquisaAbertura = "fechada";
+  function inputPesquisa(tipo) {
+    if (tipo === "click") {
+        document.getElementById("pesquisar").style.transition="opacity 0s";
+        document.getElementById("pesquisar").style.opacity="0";
+    }
+    else {
+      document.getElementById("input").style.display="block";
+      document.getElementById("pesquisar").style.transition="opacity 0.3s";
+      document.getElementById("pesquisar").style.opacity="1";
+    }
+  }
   function botaoPesquisa(tipo) {
     if (tipo === "hide_show") {
          if (barraPesquisaAbertura === "fechada") {
@@ -35,6 +53,7 @@ let barraPesquisaAbertura = "fechada";
             document.getElementById("botaohidepesquisa").style.transform="translateX(-15vw)";
             document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
             document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
+            setTimeout(inputPesquisa, 270);
             barraPesquisaAbertura = "aberta";
          }
          else {
@@ -42,11 +61,32 @@ let barraPesquisaAbertura = "fechada";
             document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
             document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
             document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
-            barraPesquisaAbertura = "fechada";  
+            document.getElementById("input").style.display="none";
+            document.getElementById("pesquisar").style.opacity="0";
+            document.getElementById("pesquisar").style.transition="opacity 0s";
+            document.getElementById("input").value="";
+            barraPesquisaAbertura = "fechada"; 
          }
          resetType = "PesquisaAbertura";
          setTimeout(reset, 500); 
-    }          
+    }
+    else if (barraPesquisaAbertura === "aberta") {
+        if (tipo === "pesquisar") {
+            document.getElementById("botaopesquisa").style.transition="top 0.08s, width 0.08s, height 0.08s";
+            document.getElementById("botaopesquisa").style.top="0.4vw";
+            document.getElementById("botaopesquisa").style.width="4.48vw";
+            document.getElementById("botaopesquisa").style.height="3.9vw";
+            resetType = "BotaoPesquisa";
+            resultadoPesquisa = document.getElementById("input").value; 
+            setTimeout(reset, 200);
+        }
+        if (tipo === "hoverON") {
+            document.getElementById("botaopesquisa").style.filter="brightness(82%)";
+        }
+        if (tipo === "hoverOFF") {
+            document.getElementById("botaopesquisa").style.filter="brightness(100%)";
+        }
+    }        
   }
 /* Barra de Navegação */
 /* Botões Menu */
@@ -57,7 +97,7 @@ function homeBotao() {
     document.getElementById("home").style.transform="translateY(0.15vw)";
     resetType = "BotaoMenu", "Botao1";
     setTimeout(reset, 200);
-    window.location.href="index.html";
+    window.location.href="index.html"; 
 }
 function trocasBotao() {
     document.getElementById("barra2").style.transition="transform 0.08s";
@@ -111,3 +151,10 @@ function menuSubMenu(mostrar) {
      document.getElementById("barra4").style.filter="brightness(100%)";
   }
 }
+function hoverSubMenu(submenu) {
+    document.getElementById(submenu).style.color="#FFFFFF";
+}
+function hoverSubMenuOff(submenu) {
+    document.getElementById(submenu).style.color="#DDDDDD";
+}
+

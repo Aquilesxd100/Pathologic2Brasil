@@ -11,9 +11,13 @@
 			<source id="bannermobile" media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
 			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
 		</picture>	
-		<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisa" alt="barra de pesquisa" onclick="barraPesquisa()">
-		<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-		<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="botaoPesquisa('hide_show')">	
+		<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisa" alt="barra de pesquisa">
+		<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa('pesquisar')" onmousemove="botaoPesquisa('hoverON')" onmouseout="botaoPesquisa('hoverOFF')">
+		<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="botaoPesquisa('hide_show')">
+		<h2 id="pesquisar">Pesquisar...</h2>
+		<form>
+			<input type="text" autocomplete="off" id="input" maxlength="12" value="" onclick="inputPesquisa('click')">
+		</form>
 			<nav id="menu">
 				<img src="_imagens/barra_1.png" id="barra1" onclick="homeBotao()" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
 				<img src="_imagens/barra_2.png" id="barra2" onclick="trocasBotao()" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
@@ -28,14 +32,14 @@
 				</ul>
 			</nav>
 		<div id="submenu">
-			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on')" onmouseout="menuSubMenu('off')">
-			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on')" onmouseout="menuSubMenu('off')">
-			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="" onmousemove="menuSubMenu('on')" onmouseout="menuSubMenu('off')">
-			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="" onmousemove="menuSubMenu('on')" onmouseout="menuSubMenu('off')">
+			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
+			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('economia')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('economia')">
+			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
 			<ul>
 				<li id="combate">Combate</li> 
 				<li id="economia">Economia</li> 					
-				<li id="receitas">Receitas</li> 
+				<li id="comida">Comida</li> 
 				<li id="mapautil">Mapa Util</li> 
 			</ul>
 		</div>
@@ -43,7 +47,8 @@
 		<div id="corpo">
 			<div id="fundobranco">
 				<div id="conteudo">
-					<p>You will not be able to save everyone. Time will never be on your side and choices will haunt your every step. You’ll want to get closer to your goal, but sometimes it’ll all come down to whatever means of survival that you have. In a time of both fear and uncertainty, would you share medicine with important figures who will unveil the Town’s numerous secrets in return, or would you rather keep the medicine in case you get sick? Pathologic is a bleak and harsh survival adventure that’ll make sure of it.</p>	
+					<h1>Bem Vindo ao Pathologic 2 Brasil !</h1>
+					<p id="introducao">Aqui você irá encontrar tudo que precisa para ser um honrado menku, um mestre cirurgião ou um renomado ator! É só clicar na categoria que lhe interessa aqui em cima, selecionar um dos nossos ultimos guias abaixo, ou caso procure algo em especifico, pesquise no canto de cima a direita.</p>	
 				</div>
 			</div>
 	</div>	
