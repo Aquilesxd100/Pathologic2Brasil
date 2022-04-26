@@ -234,7 +234,7 @@ source#bannermobile img {
 	}	
 	div#fundobranco {
 		position: relative;
-		background-color: rgba(255, 255, 255, 0.85);
+		background-color: rgba(255, 255, 255, 0.75);
 		width: 97.8%;
 		height: 94%;
 		top: 2.75vw;
@@ -281,6 +281,7 @@ source#bannermobile img {
 		border-right: 0.6vw groove black;
 		background-image: url("../_imagens/fundo_bem_vindo.jpg");
 		background-repeat: no-repeat;
+		background-size: cover;
 	}
 	div#introducao h2 {
 		position: relative;
@@ -308,6 +309,7 @@ source#bannermobile img {
 		border-right: 0.6vw groove black;
 		background-image: url("../_imagens/fundo_bem_vindo2.jpg");
 		background-repeat: no-repeat;
+		background-size: cover;
 		top: -7.6vw;
 		margin-left: 1%;
 		margin-right: 1%;
@@ -345,14 +347,15 @@ source#bannermobile img {
 		margin: 1% 1% 0% 1%;
 	}
 	div#ultimosguias {
-		height: 7.5vw;
+		height: 20vw;
 		position: relative;
 		margin-left: 1%;
 		margin-right: 1%;
 		top: -13.8vw;
 		border: 0.6vw groove black;
-		background-image: url("../_imagens/fundo_bem_vindo.jpg");
+		background-image: url("../_imagens/fundo_ultimos_posts.jpg");
 		background-repeat: no-repeat;
+		background-size: cover;
 	}
 	
 
