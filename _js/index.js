@@ -1,5 +1,6 @@
 /* Função RESET */
-let resetType = ["", ""];
+var resetType = ["", "", ""];
+var resetT = "";
 function reset() {
     if (resetType === "PesquisaAbertura") {
         document.getElementById("botaohidepesquisa").style.transition="transform 0s";
@@ -7,30 +8,28 @@ function reset() {
         resetType = ["", ""];
     }
     else if (resetType === "BotaoPesquisa") {
-        document.getElementById("botaopesquisa").style.transition="none";
         document.getElementById("botaopesquisa").style.top="0.3vw";
         document.getElementById("botaopesquisa").style.width="4.85vw";
         document.getElementById("botaopesquisa").style.height="4.1vw";
+        resetT = "botaopesquisa";
+        setTimeout(resetTransition, 200);
     }
-    else if (resetType === "BotaoMenu") {
-        if (resetType === "BotaoMenu", "Botao1") {
-            document.getElementById("barra1").style.transform="translateY(0vw)";
-            document.getElementById("home").style.transform="translateY(0vw)";
-        }
-        if (resetType === "BotaoMenu", "Botao2") {
-            document.getElementById("barra2").style.transform="translateY(0vw)";
-            document.getElementById("trocas").style.transform="translateY(0vw)";
-        }
-        if (resetType === "BotaoMenu", "Botao3") {
-            document.getElementById("barra3").style.transform="translateY(0vw)";
-            document.getElementById("diversos").style.transform="translateY(0vw)";
-        }
-        if (resetType === "BotaoMenu", "Botao4") {
-            document.getElementById("barra4").style.transform="translateY(0vw)";
-            document.getElementById("mais").style.transform="translateY(0vw)";
-        }
+    else if (resetType[0] === "BotaoMenu") {
+        document.getElementById(resetType[1]).style.transform="translateY(0vw)";
+        document.getElementById(resetType[2]).style.transform="translateY(0vw)";
+    }
+    else if (resetType[0] === "BotaoUltimosGuias") {
+        document.getElementById(resetType[1]).style.top="5.8vw";
+        document.getElementById(resetType[1]).style.height="32%";
+        document.getElementById(resetType[1]).style.width="8%";
+        document.getElementById(resetType[1]).style.right=resetType[2];
+        resetT = resetType[1];
+        setTimeout(resetTransition, 200);
     }
     resetType = ["", ""];
+}
+function resetTransition() {
+    document.getElementById(resetT).style.transition="none";
 }
 /* Barra de Pesquisa */
 let resultadoPesquisa = "";
@@ -95,16 +94,16 @@ function homeBotao() {
     document.getElementById("barra1").style.transform="translateY(0.15vw)";
     document.getElementById("home").style.transition="transform 0.08s";
     document.getElementById("home").style.transform="translateY(0.15vw)";
-    resetType = "BotaoMenu", "Botao1";
+    resetType = ["BotaoMenu", "barra1", "home"];
     setTimeout(reset, 200);
-    window.location.href="index.html"; 
+    window.location.href="index.html";
 }
 function trocasBotao() {
     document.getElementById("barra2").style.transition="transform 0.08s";
     document.getElementById("barra2").style.transform="translateY(0.15vw)";
     document.getElementById("trocas").style.transition="transform 0.08s";
     document.getElementById("trocas").style.transform="translateY(0.15vw)";
-    resetType = "BotaoMenu", "Botao2";
+    resetType = ["BotaoMenu", "barra2", "trocas"];
     setTimeout(reset, 200);
     window.location.href="https://www.google.com";
 }
@@ -113,7 +112,7 @@ function diversosBotao() {
     document.getElementById("barra3").style.transform="translateY(0.15vw)";
     document.getElementById("diversos").style.transition="transform 0.08s";
     document.getElementById("diversos").style.transform="translateY(0.15vw)";
-    resetType = "BotaoMenu", "Botao3";
+    resetType = ["BotaoMenu", "barra3", "diversos"];
     setTimeout(reset, 200);
     window.location.href="https://www.google.com";
 }
@@ -122,7 +121,7 @@ function maisTutoriais_GuiasBotao() {
     document.getElementById("barra4").style.transform="translateY(0.15vw)";
     document.getElementById("mais").style.transition="transform 0.08s";
     document.getElementById("mais").style.transform="translateY(0.15vw)";
-    resetType = "BotaoMenu", "Botao4";
+    resetType = ["BotaoMenu", "barra4", "mais"];
     setTimeout(reset, 200);
     window.location.href="https://www.google.com";
 }
@@ -157,4 +156,17 @@ function hoverSubMenu(submenu) {
 function hoverSubMenuOff(submenu) {
     document.getElementById(submenu).style.color="#DDDDDD";
 }
+
+
+/* Ultimos Guias - Botoes */
+function botaoUltimosGuias(botao, direcao, direcao2) {
+    document.getElementById(botao).style.transition="top 0.08s, height 0.08s, width 0.08s,  right 0.08s";
+    document.getElementById(botao).style.top="6.2vw";
+    document.getElementById(botao).style.height="29%";
+    document.getElementById(botao).style.width="7%";
+    document.getElementById(botao).style.right=direcao;
+    resetType = ["BotaoUltimosGuias", botao, direcao2];
+    setTimeout(reset, 200);
+}
+
 

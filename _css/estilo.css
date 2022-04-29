@@ -269,6 +269,7 @@ source#bannermobile img {
 		top: 0.7vw;
 		margin: 1% 1% 0% 1%;
 		border-bottom: 0.5vw groove black;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
 	div#introducao {
 		height: 7.5vw;
@@ -282,6 +283,7 @@ source#bannermobile img {
 		background-image: url("../_imagens/fundo_bem_vindo.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
 	div#introducao h2 {
 		position: relative;
@@ -313,6 +315,7 @@ source#bannermobile img {
 		top: -7.6vw;
 		margin-left: 1%;
 		margin-right: 1%;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
 	div#introducao2 p { 
 		font-size: 1.6vw;
@@ -345,6 +348,7 @@ source#bannermobile img {
 		width: 98%;
 		top: -6.5vw;
 		margin: 1% 1% 0% 1%;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
 	div#ultimosguias {
 		height: 20vw;
@@ -356,6 +360,37 @@ source#bannermobile img {
 		background-image: url("../_imagens/fundo_ultimos_posts.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
+	}
+	/* Ultimos Guias - Guias */
+	div#ultimosguias img {
+		height: 95%;
+		width: 32%;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		margin-left: 0.8%;
+	}
+	div#ultimosguias img:hover {
+		filter: brightness(120%);	
+	}
+	/* Ultimos Guias - Botões Anterior/Proximo */
+	div#ultimosguias img.botoes-ultimos-guias {
+		position: absolute;
+		
+		height: 32%;
+		width: 8%;
+		top: 5.8vw;
+		filter: brightness(90%);
+		z-index: +1;
+	}
+	div#ultimosguias img#botao-direita {
+		right: -2.2vw; 
+	}
+	div#ultimosguias img#botao-esquerda {
+		right: 88.2vw;
+	}
+	div#ultimosguias img.botoes-ultimos-guias:hover {
+		filter: brightness(110%);
 	}
 	
 
