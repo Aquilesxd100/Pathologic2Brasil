@@ -166,7 +166,33 @@ function botaoUltimosGuias(botao, direcao, direcao2) {
     document.getElementById(botao).style.width="7%";
     document.getElementById(botao).style.right=direcao;
     resetType = ["BotaoUltimosGuias", botao, direcao2];
+    if (botao === "botao-direita") {
+        if (posicaoShowcase < 2) { /* <--- Novo Guia? Adicione AQUI */
+            posicaoShowcase = posicaoShowcase + 1;
+            showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+            clearInterval(loopShowCase);
+            loopShowCase = setInterval(showCase, 4000);
+        } 
+    }
+    else if (botao === "botao-esquerda") {
+        if (posicaoShowcase !== 0) {
+            posicaoShowcase = posicaoShowcase - 1;
+            showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+            clearInterval(loopShowCase);
+            loopShowCase = setInterval(showCase, 4000);
+        } 
+    }
     setTimeout(reset, 200);
 }
-
-
+/* Ultimos Guias - Showcase */
+const showcaseElemento = document.getElementById("showcase");
+const guias = document.querySelectorAll("#showcase img");
+var posicaoShowcase = 0;
+function showCase() {
+    posicaoShowcase++;
+    if (posicaoShowcase > guias.length - 3) { /* <--- Novo Guia? Adicione AQUI */
+        posicaoShowcase = 0;        
+    }
+    showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
+}
+var loopShowCase = setInterval(showCase, 4000);

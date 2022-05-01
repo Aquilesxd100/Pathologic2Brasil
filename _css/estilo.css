@@ -351,6 +351,8 @@ source#bannermobile img {
 		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
 	div#ultimosguias {
+		display: flex;
+		box-sizing: border-box;
 		height: 20vw;
 		position: relative;
 		margin-left: 1%;
@@ -362,13 +364,25 @@ source#bannermobile img {
 		background-size: cover;
 		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
+	div#subshowcase {
+		overflow: hidden;
+		object-fit: cover;
+		height: 98%;
+		width: 100.5%;
+	}
+	div#showcase {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+		transform: translateX(0%);
+	}
 	/* Ultimos Guias - Guias */
 	div#ultimosguias img {
 		height: 95%;
 		width: 32%;
 		margin-top: 1%;
 		margin-bottom: 1%;
-		margin-left: 0.8%;
+		margin-left: 0.7%;
+		margin-right: 0.7%;
 	}
 	div#ultimosguias img:hover {
 		filter: brightness(120%);	
@@ -376,7 +390,6 @@ source#bannermobile img {
 	/* Ultimos Guias - Botões Anterior/Proximo */
 	div#ultimosguias img.botoes-ultimos-guias {
 		position: absolute;
-		
 		height: 32%;
 		width: 8%;
 		top: 5.8vw;
