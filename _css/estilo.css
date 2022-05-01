@@ -230,13 +230,13 @@ source#bannermobile img {
 		position: relative;
 		margin-top: -1.4vw;
 		width: 98.9vw;
-		height: 56vw;
+		height: 83vw;
 	}	
 	div#fundobranco {
 		position: relative;
 		background-color: rgba(255, 255, 255, 0.75);
 		width: 97.8%;
-		height: 94%;
+		height: 96%;
 		top: 2.75vw;
 		margin: 0vw 0.9vw 0.75vw 0.9vw;
 	}
@@ -326,7 +326,7 @@ source#bannermobile img {
 	}
 	div#introducao2 p span.foco{
 		font-weight: bold;
-		border-bottom:2px solid #FFFFFF;
+		border-bottom: 0.2vw solid #FFFFFF;
 	}
 	/* Ultimos Guias */
 	div#ultimosguiastitulo h1 {
@@ -405,7 +405,49 @@ source#bannermobile img {
 	div#ultimosguias img.botoes-ultimos-guias:hover {
 		filter: brightness(110%);
 	}
-	
+	/* Acesso Rapido */
+	div#acessorapidotitulo h1 {
+		position: relative;
+		font-size: 2.6vw;
+		font-family: batukapur;
+		color: #00D900;
+		letter-spacing: 0.05vw;
+		font-weight: lighter;
+		top: -19.2vw;
+		text-shadow: 0.25vw 0 0 rgb(0, 0, 0), -0.25vw 0 0 rgb(0, 0, 0), 0 0.25vw 0 rgb(0, 0, 0), 0 -0.25vw 0 rgb(0, 0, 0), 0.15vw 0.15vw rgb(0, 0, 0), -0.15vw -0.15vw 0 rgb(0, 0, 0), 0.15vw -0.15vw 0 rgb(0, 0, 0), -0.15vw 0.15vw 0 rgb(0, 0, 0);
+		text-align: center;
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+	img#banneracessorapido {
+		position: relative;
+		height: 6vw;
+		width: 98%;
+		top: -12.8vw;
+		margin: 1% 1% 0% 1%;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
+	}
+	div#acessorapido {
+		height: 19.5vw;
+		position: relative;
+		margin-left: 1%;
+		margin-right: 1%;
+		top: -19.9vw;
+		border-top: 0.6vw groove black;
+		border-bottom: 0.6vw groove black;
+		border-left: 0.6vw groove black;
+		border-right: 0.6vw groove black;
+		background-image: url("../_imagens/fundo_acesso_rapido.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
+	}
+	div#acessorapidoinfo {
+		width: 100.5%;
+		height: 25%;
+		margin: 0% -0.2% 0% -0.2%;
+		border-bottom: 0.6vw groove black;
+	}
 
 
 
