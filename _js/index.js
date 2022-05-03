@@ -32,8 +32,8 @@ function resetTransition() {
     document.getElementById(resetT).style.transition="none";
 }
 /* Barra de Pesquisa */
-let resultadoPesquisa = "";
-let barraPesquisaAbertura = "fechada";
+var resultadoPesquisa = "";
+var barraPesquisaAbertura = "fechada";
   function inputPesquisa(tipo) {
     if (tipo === "click") {
         document.getElementById("pesquisar").style.transition="opacity 0s";
@@ -139,7 +139,7 @@ function maisTutoriais_GuiasBotao() {
         }
     }
 /* Sub Menus */
-let mostrar = "";
+var mostrar = "";
 function menuSubMenu(mostrar) {
   if (mostrar === "on") {
     document.getElementById("submenu").style.display="block";
@@ -196,3 +196,31 @@ function showCase() {
     showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
 }
 var loopShowCase = setInterval(showCase, 4000);
+/* Acesso Rapido */
+function acessoRapidoHover(tipo, elemento) {
+    if (tipo === "on") {
+        document.getElementById("displayinfo").style.color="#00DD00";
+        if (elemento === "dinheiro") {
+            document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja até mesmo aos kain!";
+        }
+        if (elemento === "podinzin") {
+            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinhos escondidos e salve vidas!";
+        }
+        if (elemento === "mapa") {
+            document.getElementById("displayinfo").innerHTML = "Descubra todos os segredos da Estepe!";
+        }
+        if (elemento === "comida") {
+            document.getElementById("displayinfo").innerHTML = "Nunca mais passe fome!";
+        }
+        if (elemento === "pocoes") {
+            document.getElementById("displayinfo").innerHTML = "Aprenda TUDO sobre a criação de Infusões e 'Poções'!";
+        }
+        if (elemento === "combate") {
+            document.getElementById("displayinfo").innerHTML = "Deixe de ser a caça e vire o caçador!";
+        }
+    }
+    else {
+        document.getElementById("displayinfo").innerHTML = "";
+        document.getElementById("displayinfo").style.color="#FFFFFF";
+    }
+}
