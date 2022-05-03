@@ -159,22 +159,22 @@ source#bannermobile img {
 		pointer-events: none;
 }
 	nav#menu li#home {
-		margin-left: 8.2vw;
+		margin-left: 8vw;
 		transform: none;
 		transition: transform 0s;
 }
 	nav#menu li#trocas {
-		margin-left: 16vw;
+		margin-left: 16.4vw;
 		transform: none;
 		transition: transform 0s;
 }
-	nav#menu li#diversos {
-		margin-left: 16.7vw;
+	nav#menu li#videos {
+		margin-left: 18vw;
 		transform: none;
 		transition: transform 0s;
 }
 	nav#menu li#mais {
-		margin-left: 14vw;
+		margin-left: 14.5vw;
 		transform: none;
 		transition: transform 0s;
 }
@@ -271,7 +271,7 @@ source#bannermobile img {
 		width: 98%;
 		top: 0.7vw;
 		margin: 1% 1% 0% 1%;
-		border-bottom: 0.5vw groove black;
+		border-bottom: 0.5vw groove #000000;
 		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
 	}
 	div#introducao {
@@ -280,9 +280,9 @@ source#bannermobile img {
 		margin-left: 1%;
 		margin-right: 1%;
 		top: -6vw;
-		border-bottom: 0.6vw groove black;
-		border-left: 0.6vw groove black;
-		border-right: 0.6vw groove black;
+		border-bottom: 0.6vw groove #000000;
+		border-left: 0.6vw groove #000000;
+		border-right: 0.6vw groove #000000;
 		background-image: url("../_imagens/fundo_bem_vindo.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -309,9 +309,9 @@ source#bannermobile img {
 	div#introducao2 {
 		position: relative;
 		height: 5vw;
-		border-bottom: 0.6vw groove black;
-		border-left: 0.6vw groove black;
-		border-right: 0.6vw groove black;
+		border-bottom: 0.6vw groove #000000;
+		border-left: 0.6vw groove #000000;
+		border-right: 0.6vw groove #000000;
 		background-image: url("../_imagens/fundo_bem_vindo2.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -361,7 +361,7 @@ source#bannermobile img {
 		margin-left: 1%;
 		margin-right: 1%;
 		top: -13.8vw;
-		border: 0.6vw groove black;
+		border: 0.6vw groove #000000;
 		background-image: url("../_imagens/fundo_ultimos_posts.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -436,10 +436,10 @@ source#bannermobile img {
 		margin-left: 1%;
 		margin-right: 1%;
 		top: -19.9vw;
-		border-top: 0.6vw groove black;
-		border-bottom: 0.6vw groove black;
-		border-left: 0.6vw groove black;
-		border-right: 0.6vw groove black;
+		border-top: 0.6vw groove #000000;
+		border-bottom: 0.6vw groove #000000;
+		border-left: 0.6vw groove #000000;
+		border-right: 0.6vw groove #000000;
 		background-image: url("../_imagens/fundo_acesso_rapido.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -450,7 +450,7 @@ source#bannermobile img {
 		width: 100.5%;
 		height: 20%;
 		margin: -0.5% -0.2% 0% -0.2%;
-		border-bottom: 0.6vw groove black;
+		border-bottom: 0.6vw groove #000000;
 	}
 	div#acessorapidodisplay {
 		position: relative; 

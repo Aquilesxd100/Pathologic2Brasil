@@ -107,14 +107,14 @@ function trocasBotao() {
     setTimeout(reset, 200);
     window.location.href="https://www.google.com";
 }
-function diversosBotao() {
+function videosBotao() {
     document.getElementById("barra3").style.transition="transform 0.08s";
     document.getElementById("barra3").style.transform="translateY(0.15vw)";
-    document.getElementById("diversos").style.transition="transform 0.08s";
-    document.getElementById("diversos").style.transform="translateY(0.15vw)";
-    resetType = ["BotaoMenu", "barra3", "diversos"];
+    document.getElementById("videos").style.transition="transform 0.08s";
+    document.getElementById("videos").style.transform="translateY(0.15vw)";
+    resetType = ["BotaoMenu", "barra3", "videos"];
     setTimeout(reset, 200);
-    window.location.href="https://www.google.com";
+    window.open("https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g", '_blank').focus();
 }
 function maisTutoriais_GuiasBotao() {
     document.getElementById("barra4").style.transition="transform 0.08s";
