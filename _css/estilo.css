@@ -194,13 +194,13 @@ source#bannermobile img {
 	img#submenubarra1, li#combate {
 		top: 0vw;
 	}
-	img#submenubarra2, li#economia {
+	img#submenubarra2, li#comida {
 		top: 3.85vw;
 	}
-	img#submenubarra3, li#comida {
+	img#submenubarra3, li#mapautil {
 		top: 7.7vw;
 	}
-	img#submenubarra4, li#mapautil {
+	img#submenubarra4, li#tudo {
 		top: 11.5vw;
 	}
 	img#submenubarra1:hover, img#submenubarra2:hover, img#submenubarra3:hover, img#submenubarra4:hover {
@@ -211,8 +211,8 @@ source#bannermobile img {
 		color: #DDDDDD;
 		font-family: batukapur;
 		font-size: 1.7vw;
-		left: 79.9vw;
-		width: 10vw;
+		left: 77.8vw;
+		width: 14vw;
 		transform: translateY(1.2vw);
 		text-shadow: 0.2vw 0.2vw 1.1vw rgba(0, 0, 0, 0.9), 0.2vw 0.2vw 1.1vw rgba(0, 0, 0, 0.6);
 		margin: 0px;
@@ -220,6 +220,9 @@ source#bannermobile img {
 		pointer-events: none;
 		list-style: none;
 		text-align: center;
+	}
+	li#tudo {
+		font-size: 1.8vw !important;	
 	}
 /* Corpo da Pagina */
 	div#corpo {
@@ -230,7 +233,7 @@ source#bannermobile img {
 		position: relative;
 		margin-top: -1.4vw;
 		width: 98.9vw;
-		height: 83vw;
+		height: 82.5vw;
 	}	
 	div#fundobranco {
 		position: relative;
