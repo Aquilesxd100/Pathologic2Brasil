@@ -201,7 +201,7 @@ function acessoRapidoHover(tipo, elemento) {
     if (tipo === "on") {
         document.getElementById("displayinfo").style.color="#00DD00";
         if (elemento === "dinheiro") {
-            document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja até mesmo aos kain!";
+            document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja até mesmo nos Kain!";
         }
         if (elemento === "podinzin") {
             document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinhos escondidos e salve vidas!";
