@@ -204,7 +204,7 @@ function acessoRapidoHover(tipo, elemento) {
             document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja até mesmo nos Kain!";
         }
         if (elemento === "podinzin") {
-            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinhos escondidos e salve vidas!";
+            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinzin escondidos e salve vidas!";
         }
         if (elemento === "mapa") {
             document.getElementById("displayinfo").innerHTML = "Descubra todos os segredos da Estepe!";

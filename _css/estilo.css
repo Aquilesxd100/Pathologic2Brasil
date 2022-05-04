@@ -10,42 +10,50 @@
 /* Corpo de Todo o Site */	
 	body {
 		position: relative;
-        overflow-x: hidden;
-		margin: 0px;
+       	overflow-x: hidden;
+		margin: 0vw;
 		cursor: url('../_recursos/cursor.png'), auto;
-		padding: 0px;
+		padding: 0vw;
+		width: 98.78vw;
+		max-width: 100%;
+		display: block;
 }	
 /* Banner do Site */	
 	picture#banner {
 		position: relative;
-		margin: 0px;
+		width: 98.78vw;
+		margin: 0vw;
+		max-width: 100%;
 }
 	picture#banner img {	
 		display: block;
 		height: 100%;
-		width: 98.9vw;
-		margin: 0px;
+		width: 98.78vw;
+		margin: 0vw;
+		max-width: 100%;
 }
 source#bannermobile img {	
 	display: block;
 	height: 100%;
-	width: 100%;
-	margin: 0px;
+	width: 98.78vw;
+	margin: 0vw;
 }	
 /* Barra de Navegação */	
 	nav#menu {
 		position: relative;
 		display: block;
-		margin: 0px;
+		margin: 0vw;
 		height: 2.7vw;
-		width: 98.9vw;
+		width: 98.78vw;
+		max-width: 100%;
 }
 	nav#menu img#espinhos {
-		margin: 0px;
+		margin: 0vw;
 		position: relative;
 		z-index: +2;
-		width: 98.9vw;
+		width: 98.78vw;
 		height: 8.8vw;	
+		max-width: 100%;
 		top: -7.45vw;
 		float: left;
 		pointer-events: none;
@@ -54,7 +62,7 @@ source#bannermobile img {
 		position: absolute;
 		top: 0.3vw;
 		float: right;
-		left: 94vw;
+		left: 95%;
 		width: 4.85vw; 
 		height: 4.1vw;
 		transition: none;
@@ -64,7 +72,7 @@ source#bannermobile img {
 		position: absolute;
 		top: 0.3vw;
 		float: right;
-		left: 92.8vw;
+		left: 93.9%;
 		transform: translateX(0vw);
 		transition: transform 0s;
 		width: 1.75vw;
@@ -73,12 +81,12 @@ source#bannermobile img {
 	img#barrapesquisa {
 		position: absolute;
 		top: 0.3vw;
-		left: 79vw; 
+		left: 80%; 
 		float: right;
 		width: 16.6vw;
 		height: 4.2vw; 
 		transition: clip-path 0s;
-		clip-path: inset(0vw 0vw 0vw 15.5vw);
+	    clip-path: inset(0vw 0vw 0vw 15.5vw);
 	}
 	img#botaohidepesquisa:hover {
 		filter: brightness(80%);
@@ -109,54 +117,56 @@ source#bannermobile img {
 		opacity: 0;
 	}
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
-		margin: 0px;
+		margin: 0vw;
 		position: relative;
 		z-index: +2;
-		right: 0.1vw;
 		height: 4vw;
 		top: -0.7vw;
 		float: left;
+		max-width: 100%;
 }
 	nav#menu img#barra1 {
-		width: 21.36vw;
+		width: 22%;
 		transform: none;
 		transition: transform 0s;
 }		
 	nav#menu img#barra2 {
-		width: 24.7vw;
+		width: 24.6%;
 		transform: none;
 		transition: transform 0s;
 }	
 	nav#menu img#barra3 {
-		width: 24.9vw;
+		width: 25.5%;
 		transform: none;
 		transition: transform 0s;
 }
 	nav#menu img#barra4 {
-		width: 27.9vw;
+		width: 27.9%;
 		transform: none;
 		transition: transform 0s;
 }
 	#barra1:hover, #barra2:hover, #barra3:hover, #barra4:hover {
 		filter: brightness(125%);
 	}
-/* Opções da Barra de Navegação */	
+/* Opções da Barra de Navegação */
 	nav#menu ul {
-		margin: 0px;
+		margin: 0vw;
 		top: -12.5vw;
 		list-style: none;
 		position: relative;
 		z-index: +3;
-		padding: 0px;
+		padding: 0vw;
+		max-width: 100%;
 }
 	nav#menu li {
 		color:#DDDDDD;
 		font-family: batukapur;
 		font-size: 1.85vw;
 		text-shadow: 0.2vw 0.2vw 1.1vw rgba(0, 0, 0, 0.9), 0.2vw 0.2vw 1.1vw rgba(0, 0, 0, 0.9);
-		margin: 0px;
+		margin: 0vw;
 		float: left;
 		pointer-events: none;
+		max-width: 100%;
 }
 	nav#menu li#home {
 		margin-left: 8vw;
@@ -215,7 +225,7 @@ source#bannermobile img {
 		width: 14vw;
 		transform: translateY(1.2vw);
 		text-shadow: 0.2vw 0.2vw 1.1vw rgba(0, 0, 0, 0.9), 0.2vw 0.2vw 1.1vw rgba(0, 0, 0, 0.6);
-		margin: 0px;
+		margin: 0vw;
 		float: right;
 		pointer-events: none;
 		list-style: none;
@@ -229,11 +239,12 @@ source#bannermobile img {
 		background-image: url('../_imagens/fundo.jpg');
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-		background-size: 100%;
+		background-size: 98.78vw 100%;
 		position: relative;
 		margin-top: -1.4vw;
-		width: 98.9vw;
+		width: 98.7vw;
 		height: 83vw;
+		max-width: 100%;
 	}	
 	div#fundobranco {
 		position: relative;
@@ -242,6 +253,7 @@ source#bannermobile img {
 		height: 95.8%;
 		top: 2.75vw;
 		margin: 0vw 0.9vw 0.75vw 0.9vw;
+		max-width: 100%;
 	}
 	div#conteudo {
 		position: relative;
@@ -250,6 +262,7 @@ source#bannermobile img {
 		font-size: 2vw;
 		font-family: frizquadrata;
 		top: -14.3vw;
+		max-width: 100%;
 	}
 	/* Boas Vindas */
 	div#introducaotitulo h1 {
@@ -500,17 +513,29 @@ source#bannermobile img {
 		top: -20.7vw;
 		overflow: hidden;
 	}
+	footer ul {
+		padding: 0%;
+	}
 	footer li {
 		list-style: none;
 		display: inline-block;
 	}
 	footer li#contato {
 		float: right;
+		font-weight: bold;
+	}
+	footer li#contato span {
+		font-weight: bolder;
 	}
 	footer li#copyright {
-		margin-left: -2.9vw;
+		float: left;
 	}
 
+/*	* {
+		background: #000 !important;
+		color: #0f0 !important;
+		outline: solid #f00 1px !important;
+	  } */
 
 
 
