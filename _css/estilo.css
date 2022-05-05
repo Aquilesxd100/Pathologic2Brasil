@@ -85,8 +85,9 @@ source#bannermobile img {
 		float: right;
 		width: 16.6vw;
 		height: 4.2vw; 
-		transition: clip-path 0s;
+		transition: clip-path 0s, -webkit-clip-path 0s;
 	    clip-path: inset(0vw 0vw 0vw 15.5vw);
+		-webkit-clip-path: inset(0vw 0vw 0vw 15.5vw); 
 	}
 	img#botaohidepesquisa:hover {
 		filter: brightness(80%);
@@ -492,11 +493,12 @@ source#bannermobile img {
 		width: 13.5vw;
 		box-shadow: 0.25vw 0.25vw 0.1vw rgba(0, 0, 0, 0.9);
 		filter: brightness(85%);
-		transition: transform 0.05s;
+		transition: transform 0.05s, -webkit-transform 0.05s;
 	}
 	div#acessorapidoopcoes img:hover{
 		filter: brightness(120%);
-		transform: scale(108%)
+		transform: scale(108%);
+		-webkit-transform: scale(108%);
 	}
 	/* Footer */
 	footer {

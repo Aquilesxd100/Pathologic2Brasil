@@ -4,7 +4,7 @@ var resetT = "";
 function reset() {
     if (resetType === "PesquisaAbertura") {
         document.getElementById("botaohidepesquisa").style.transition="transform 0s";
-        document.getElementById("barrapesquisa").style.transition="clip-path 0s";
+        document.getElementById("barrapesquisa").style.transition="clip-path 0s, -webkit-clip-path 0s";
         resetType = ["", ""];
     }
     else if (resetType === "BotaoPesquisa") {
@@ -50,16 +50,18 @@ var barraPesquisaAbertura = "fechada";
          if (barraPesquisaAbertura === "fechada") {
             document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
             document.getElementById("botaohidepesquisa").style.transform="translateX(-15vw)";
-            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
+            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s, -webkit-clip-path 0.5s";
             document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
+            document.getElementById("barrapesquisa").style.webkitClipPath="inset(0vw 0vw 0vw 0vw)";
             setTimeout(inputPesquisa, 270);
             barraPesquisaAbertura = "aberta";
          }
          else {
             document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
             document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
-            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s";
+            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s, -webkit-clip-path 0.5s";
             document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
+            document.getElementById("barrapesquisa").style.webkitClipPath="inset(0vw 0vw 0vw 15.5vw)";
             document.getElementById("input").style.display="none";
             document.getElementById("pesquisar").style.opacity="0";
             document.getElementById("pesquisar").style.transition="opacity 0s";
@@ -204,7 +206,7 @@ function acessoRapidoHover(tipo, elemento) {
             document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja até mesmo nos Kain!";
         }
         if (elemento === "podinzin") {
-            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinzin escondidos e salve vidas!";
+            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinzins escondidos e salve vidas!";
         }
         if (elemento === "mapa") {
             document.getElementById("displayinfo").innerHTML = "Descubra todos os segredos da Estepe!";
