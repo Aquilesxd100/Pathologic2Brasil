@@ -14,6 +14,23 @@ function reset() {
         resetT = "botaopesquisa";
         setTimeout(resetTransition, 200);
     }
+    else if (resetType === "BotaoPesquisaMobile") {
+        document.getElementById("botaopesquisamobile").style.top="3vw";
+        document.getElementById("botaopesquisamobile").style.width="12vw";
+        document.getElementById("botaopesquisamobile").style.height="11vw";
+        document.getElementById("botaopesquisamobile").style.filter="brightness(100%)";
+        resetT = "botaopesquisamobile";
+        setTimeout(resetTransition, 200);
+    }
+    else if (resetType === "BotaoMenuMobile") {
+        document.getElementById("botao-menu-mobile").style.top="0%";
+        document.getElementById("botao-menu-mobile").style.width="17vw";
+        document.getElementById("botao-menu-mobile").style.height="10.5vw";
+        document.getElementById("botao-menu-mobile").style.transform="translateX(0%)";
+        document.getElementById("botao-menu-mobile").style.filter="brightness(100%)";
+        resetT = "botao-menu-mobile";
+        setTimeout(resetTransition, 200);
+    }
     else if (resetType[0] === "BotaoMenu") {
         document.getElementById(resetType[1]).style.transform="translateY(0vw)";
         document.getElementById(resetType[2]).style.transform="translateY(0vw)";
@@ -39,6 +56,9 @@ var barraPesquisaAbertura = "fechada";
         document.getElementById("pesquisar").style.transition="opacity 0s";
         document.getElementById("pesquisar").style.opacity="0";
     }
+    else if (tipo === "clickmobile") {
+        document.getElementById("pesquisar-mobile").style.opacity="0";
+    }
     else {
       document.getElementById("input").style.display="block";
       document.getElementById("pesquisar").style.transition="opacity 0.3s";
@@ -48,9 +68,9 @@ var barraPesquisaAbertura = "fechada";
   function botaoPesquisa(tipo) {
     if (tipo === "hide_show") {
          if (barraPesquisaAbertura === "fechada") {
-            document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
-            document.getElementById("botaohidepesquisa").style.transform="translateX(-15vw)";
+            document.getElementById("botaohidepesquisa").style.transition="transform 0.52s";
             document.getElementById("barrapesquisa").style.transition="clip-path 0.5s, -webkit-clip-path 0.5s";
+            document.getElementById("botaohidepesquisa").style.transform="translateX(-14.7vw)";
             document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
             document.getElementById("barrapesquisa").style.webkitClipPath="inset(0vw 0vw 0vw 0vw)";
             setTimeout(inputPesquisa, 270);
@@ -58,8 +78,8 @@ var barraPesquisaAbertura = "fechada";
          }
          else {
             document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
-            document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
             document.getElementById("barrapesquisa").style.transition="clip-path 0.5s, -webkit-clip-path 0.5s";
+            document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
             document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
             document.getElementById("barrapesquisa").style.webkitClipPath="inset(0vw 0vw 0vw 15.5vw)";
             document.getElementById("input").style.display="none";
@@ -89,6 +109,26 @@ var barraPesquisaAbertura = "fechada";
         }
     }        
   }
+  function botaoPesquisaMobile() {
+    document.getElementById("botaopesquisamobile").style.transition="top 0.08s, width 0.08s, height 0.08s, filter 0.08s";
+    document.getElementById("botaopesquisamobile").style.top="3.3vw";
+    document.getElementById("botaopesquisamobile").style.width="11vw";
+    document.getElementById("botaopesquisamobile").style.height="10.1vw";
+    document.getElementById("botaopesquisamobile").style.filter="brightness(70%)";
+    resetType = "BotaoPesquisaMobile";
+    resultadoPesquisa = document.getElementById("input").value; 
+    setTimeout(reset, 200);
+  }
+/* Pesquisa Mobile - maxlength */
+document.getElementById("input-mobile").addEventListener("input", checkMaxlenght);
+function checkMaxlenght() {
+    let caracteres = document.getElementById("input-mobile").value;
+    let caracteresPesquisa = caracteres.length;
+    if (caracteresPesquisa > 11) {
+        caracteres = caracteres.substring(0, 11);
+        document.getElementById("input-mobile").value=caracteres;
+    }
+}
 /* Barra de Navegação */
 /* Botões Menu */
 function homeBotao() {
@@ -158,7 +198,36 @@ function hoverSubMenu(submenu) {
 function hoverSubMenuOff(submenu) {
     document.getElementById(submenu).style.color="#DDDDDD";
 }
-
+/* Botão Menu Mobile */
+function botaoMenuMobile() {
+    document.getElementById("botao-menu-mobile").style.transition="top 0.08s, width 0.08s, height 0.08s, filter 0.08s, transform 0.08s";
+    document.getElementById("botao-menu-mobile").style.top="2%";
+    document.getElementById("botao-menu-mobile").style.transform="translateX(3%)";
+    document.getElementById("botao-menu-mobile").style.width="15.6vw";
+    document.getElementById("botao-menu-mobile").style.height="9.6vw";
+    document.getElementById("botao-menu-mobile").style.filter="brightness(70%)";
+    resetType = "BotaoMenuMobile";
+    setTimeout(reset, 200);
+  }
+/* Menu Mobile */
+var navbar = document.getElementById("funcao-pesquisa-mobile-mais-menu");
+var sticky = navbar.offsetTop;
+window.onscroll = function() {checkRolagemMenu()};
+function checkRolagemMenu() {
+let resolucaoLargura = window.innerWidth;
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("barra-fixa");
+      if (resolucaoLargura <= 800) {
+        document.getElementById("corpo").style.paddingTop="17%";
+      }
+    } 
+    else {
+      navbar.classList.remove("barra-fixa");
+      if (resolucaoLargura <= 800) {
+        document.getElementById("corpo").style.paddingTop="0%";
+      }
+    }
+  }
 
 /* Ultimos Guias - Botoes */
 function botaoUltimosGuias(botao, direcao, direcao2) {

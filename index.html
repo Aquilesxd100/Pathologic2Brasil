@@ -10,27 +10,38 @@
 		<picture id="banner">
 			<source id="bannermobile" media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
 			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
-		</picture>	
-		<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisa" alt="barra de pesquisa">
-		<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa('pesquisar')" onmousemove="botaoPesquisa('hoverON')" onmouseout="botaoPesquisa('hoverOFF')">
-		<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="botaoPesquisa('hide_show')">
-		<h2 id="pesquisar">Pesquisar...</h2>
-		<form>
-			<input type="text" autocomplete="off" id="input" maxlength="12" value="" onclick="inputPesquisa('click')">
-		</form>
-			<nav id="menu">
-				<img src="_imagens/barra_1.png" id="barra1" onclick="homeBotao()" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
-				<img src="_imagens/barra_2.png" id="barra2" onclick="trocasBotao()" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
-				<img src="_imagens/barra_3.png" id="barra3" onclick="videosBotao()" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
-				<img src="_imagens/barra_4.png" id="barra4" onclick="maisTutoriais_GuiasBotao()" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
-				<img src="_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
-				<ul>
-					<li id="home">Home</li> 
-					<li id="trocas">Trocas</li> 					
-					<li id="videos">Videos</li> 
-					<li id="mais">+Tutoriais/Guias</li> 
-				</ul>
-			</nav>
+		</picture>
+		<div id="funcao-pesquisa">
+			<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+			<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa('pesquisar')" onmousemove="botaoPesquisa('hoverON')" onmouseout="botaoPesquisa('hoverOFF')">
+			<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="botaoPesquisa('hide_show')">
+			<h2 id="pesquisar">Pesquisar...</h2>
+			<form>
+				<input type="text" autocomplete="off" id="input" maxlength="12" value="" style="text-transform:lowercase" onclick="inputPesquisa('click')">
+			</form>	
+		</div>
+		<div id="funcao-pesquisa-mobile-mais-menu">
+			<img src="_imagens/botao_pesquisa.png" id="botaopesquisamobile" onclick="botaoPesquisaMobile()">
+			<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
+			<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile()">
+			<h2 id="pesquisar-mobile">Pesquisar...</h2>
+			<form>
+				<input type="text" autocomplete="off" id="input-mobile" maxlength="12" value="" style="text-transform:lowercase" onclick="inputPesquisa('clickmobile')">
+			</form>	
+		</div>
+		<nav id="menu">
+			<img src="_imagens/barra_1.png" id="barra1" onclick="homeBotao()" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
+			<img src="_imagens/barra_2.png" id="barra2" onclick="trocasBotao()" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
+			<img src="_imagens/barra_3.png" id="barra3" onclick="videosBotao()" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			<img src="_imagens/barra_4.png" id="barra4" onclick="" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
+			<img src="_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
+			<ul>
+				<li id="home">Home</li> 
+				<li id="trocas">Trocas</li> 					
+				<li id="videos">Videos</li> 
+				<li id="mais">+Tutoriais/Guias</li> 
+			</ul>
+		</nav>
 		<div id="submenu">
 			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
 			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">

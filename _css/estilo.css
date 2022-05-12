@@ -10,7 +10,7 @@
 /* Corpo de Todo o Site */	
 	body {
 		position: relative;
-       	overflow-x: hidden;
+       	/* overflow-x: hidden; */
 		margin: 0vw;
 		cursor: url('../_recursos/cursor.png'), auto;
 		padding: 0vw;
@@ -32,12 +32,6 @@
 		margin: 0vw;
 		max-width: 100%;
 }
-source#bannermobile img {	
-	display: block;
-	height: 100%;
-	width: 98.78vw;
-	margin: 0vw;
-}	
 /* Barra de Navegação */	
 	nav#menu {
 		position: relative;
@@ -58,6 +52,7 @@ source#bannermobile img {
 		float: left;
 		pointer-events: none;
 }
+/* Função Pesquisa Desktop*/
 	img#botaopesquisa {
 		position: absolute;
 		top: 0.3vw;
@@ -92,7 +87,7 @@ source#bannermobile img {
 	img#botaohidepesquisa:hover {
 		filter: brightness(80%);
 	}
-	input {
+	input#input {
 		display: none;
 		position: absolute;
 		left: 80vw; 
@@ -117,6 +112,83 @@ source#bannermobile img {
 		transition: opacity 0.3s;
 		opacity: 0;
 	}
+	@media screen and (max-width: 800px) {
+		div#funcao-pesquisa {
+		  display: none;
+		}
+	  }
+/* Função Pesquisa Mobile + Menu de Navegação Mobile*/
+	div#funcao-pesquisa-mobile-mais-menu {
+		position: relative;
+		background-image: url("../_imagens/barra_mobile.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		width: 99.5vw;
+		height: 17vw;
+		top: -0.5vw;
+		right: 0.5%;
+		z-index: +1;
+		display: block;
+	}
+	img#botaopesquisamobile {
+		position: absolute;
+		top: 3vw;
+		left: 86%;
+		width: 12vw;
+		height: 11vw;
+		z-index: +1;
+	}
+	img#barrapesquisamobile {
+		position: relative;
+		top: 3vw;
+		left: 43.5%;
+		width: 45vw;
+		height: 11vw;
+	}
+	h2#pesquisar-mobile {
+		position: absolute;
+		top: 0%;
+		margin-top: 4.3%;
+		margin-left: 48%;
+		color:#999999;
+		font-family: frizquadrata;
+		pointer-events: none;
+		opacity: 1;
+		font-weight: bold;
+		font-size: 5vw;
+		letter-spacing: 0.07vw;
+	}
+	input#input-mobile {
+		position: absolute;
+		top: 0%;
+		width: 38%;
+		margin-top: 4.5%;
+		margin-left: 46%;
+		outline: none;
+		border: none;
+		background: none;
+		z-index: +1;
+		font-family: frizquadrata;
+		font-weight: bold;
+		font-size: 5vw;
+	}
+	img#botao-menu-mobile {
+		position: absolute;
+		left: 3.5%;
+		height: 10.5vw;
+		width: 17vw;
+		margin-top: 3%;
+	}
+	.barra-fixa {
+		position: fixed !important;
+		right: -1.3% !important;
+	}
+	  @media screen and (min-width: 800px) {
+		div#funcao-pesquisa-mobile-mais-menu {
+		  display: none;
+		}
+	  }
+	/* Menu de Navegação */
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
 		margin: 0vw;
 		position: relative;
@@ -126,6 +198,9 @@ source#bannermobile img {
 		float: left;
 		max-width: 100%;
 }
+	nav#menu img#barra1:hover, nav#menu img#barra2:hover, nav#menu img#barra3:hover {
+		cursor: url('../_recursos/cursor_link.png'), auto;
+	}
 	nav#menu img#barra1 {
 		width: 22%;
 		transform: none;
@@ -189,6 +264,11 @@ source#bannermobile img {
 		transform: none;
 		transition: transform 0s;
 }
+@media screen and (max-width: 800px) {
+	nav#menu {
+	  display: none;
+	}
+}
 /* Sub Menus */
 	div#submenu {
 		display: none;
@@ -216,6 +296,7 @@ source#bannermobile img {
 	}
 	img#submenubarra1:hover, img#submenubarra2:hover, img#submenubarra3:hover, img#submenubarra4:hover {
 		filter: brightness(125%);
+		cursor: url('../_recursos/cursor_link.png'), auto;
 	}
 	div#submenu li {
 		position: absolute;
@@ -264,6 +345,25 @@ source#bannermobile img {
 		font-family: frizquadrata;
 		top: -14.3vw;
 		max-width: 100%;
+	}
+	/* Corpo da Pagina - Mobile */
+
+	@media screen and (max-width: 800px) {
+		div#conteudo {
+			top: 0vw;
+		}
+		div#corpo {
+			background-image: url('../_imagens/fundo_mobile.jpg');
+			top: -4vw;
+			height: 150vw;
+			background-size: 120% 100%;
+		}
+		div#fundobranco {
+			top: 4.5vw;
+		}
+		picture#banner {
+			z-index: +1;
+		}
 	}
 	/* Boas Vindas */
 	div#introducaotitulo h1 {
@@ -399,7 +499,8 @@ source#bannermobile img {
 		margin-right: 0.7%;
 	}
 	div#ultimosguias img:hover {
-		filter: brightness(120%);	
+		filter: brightness(120%);
+		cursor: url('../_recursos/cursor_link.png'), auto;	
 	}
 	/* Ultimos Guias - Botões Anterior/Proximo */
 	div#ultimosguias img.botoes-ultimos-guias {
@@ -499,6 +600,7 @@ source#bannermobile img {
 		filter: brightness(120%);
 		transform: scale(108%);
 		-webkit-transform: scale(108%);
+		cursor: url('../_recursos/cursor_link.png'), auto;
 	}
 	/* Footer */
 	footer {
@@ -529,14 +631,6 @@ source#bannermobile img {
 	footer li#copyright {
 		float: left;
 	}
-
-/*	* {
-		background: #000 !important;
-		color: #0f0 !important;
-		outline: solid #f00 1px !important;
-	  } */
-
-
 
 
 
