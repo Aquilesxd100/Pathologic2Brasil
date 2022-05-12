@@ -218,7 +218,7 @@ let resolucaoLargura = window.innerWidth;
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("barra-fixa");
       if (resolucaoLargura <= 800) {
-        document.getElementById("corpo").style.paddingTop="17%";
+        document.getElementById("corpo").style.paddingTop="16.5%";
       }
     } 
     else {
