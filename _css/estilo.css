@@ -367,6 +367,9 @@
 		picture#banner {
 			z-index: +1;
 		}
+		::-webkit-scrollbar {
+			display: none;
+		}
 	}
 	/* Boas Vindas */
 	div#introducaotitulo h1 {
