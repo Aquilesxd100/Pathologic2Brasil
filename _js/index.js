@@ -2,12 +2,7 @@
 var resetType = ["", "", ""];
 var resetT = "";
 function reset() {
-    if (resetType === "PesquisaAbertura") {
-        document.getElementById("botaohidepesquisa").style.transition="transform 0s";
-        document.getElementById("barrapesquisa").style.transition="clip-path 0s, -webkit-clip-path 0s";
-        resetType = ["", ""];
-    }
-    else if (resetType === "BotaoPesquisa") {
+    if (resetType === "BotaoPesquisa") {
         document.getElementById("botaopesquisa").style.top="0.3vw";
         document.getElementById("botaopesquisa").style.width="4.85vw";
         document.getElementById("botaopesquisa").style.height="4.1vw";
@@ -50,7 +45,6 @@ function resetTransition() {
 }
 /* Barra de Pesquisa */
 var resultadoPesquisa = "";
-var barraPesquisaAbertura = "fechada";
   function inputPesquisa(tipo) {
     if (tipo === "click") {
         document.getElementById("pesquisar").style.transition="opacity 0s";
@@ -66,49 +60,14 @@ var barraPesquisaAbertura = "fechada";
     }
   }
   function botaoPesquisa(tipo) {
-    if (tipo === "hide_show") {
-         if (barraPesquisaAbertura === "fechada") {
-            document.getElementById("botaohidepesquisa").style.transition="transform 0.52s";
-            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s, -webkit-clip-path 0.5s";
-            document.getElementById("botaohidepesquisa").style.transform="translateX(-14.7vw)";
-            document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 0vw)";
-            document.getElementById("barrapesquisa").style.webkitClipPath="inset(0vw 0vw 0vw 0vw)";
-            setTimeout(inputPesquisa, 270);
-            barraPesquisaAbertura = "aberta";
-         }
-         else {
-            document.getElementById("botaohidepesquisa").style.transition="transform 0.5s";
-            document.getElementById("barrapesquisa").style.transition="clip-path 0.5s, -webkit-clip-path 0.5s";
-            document.getElementById("botaohidepesquisa").style.transform="translateX(0vw)";
-            document.getElementById("barrapesquisa").style.clipPath="inset(0vw 0vw 0vw 15.5vw)";
-            document.getElementById("barrapesquisa").style.webkitClipPath="inset(0vw 0vw 0vw 15.5vw)";
-            document.getElementById("input").style.display="none";
-            document.getElementById("pesquisar").style.opacity="0";
-            document.getElementById("pesquisar").style.transition="opacity 0s";
-            document.getElementById("input").value="";
-            barraPesquisaAbertura = "fechada"; 
-         }
-         resetType = "PesquisaAbertura";
-         setTimeout(reset, 500); 
-    }
-    else if (barraPesquisaAbertura === "aberta") {
-        if (tipo === "pesquisar") {
             document.getElementById("botaopesquisa").style.transition="top 0.08s, width 0.08s, height 0.08s";
             document.getElementById("botaopesquisa").style.top="0.4vw";
             document.getElementById("botaopesquisa").style.width="4.48vw";
             document.getElementById("botaopesquisa").style.height="3.9vw";
             resetType = "BotaoPesquisa";
             resultadoPesquisa = document.getElementById("input").value; 
-            setTimeout(reset, 200);
-        }
-        if (tipo === "hoverON") {
-            document.getElementById("botaopesquisa").style.filter="brightness(82%)";
-        }
-        if (tipo === "hoverOFF") {
-            document.getElementById("botaopesquisa").style.filter="brightness(100%)";
-        }
+            setTimeout(reset, 160);
     }        
-  }
   function botaoPesquisaMobile() {
     document.getElementById("botaopesquisamobile").style.transition="top 0.08s, width 0.08s, height 0.08s, filter 0.08s";
     document.getElementById("botaopesquisamobile").style.top="3.3vw";
