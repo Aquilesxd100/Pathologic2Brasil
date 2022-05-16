@@ -180,6 +180,75 @@
 		  display: none;
 		}
 	  }
+		/* Menu Lateral (Mobile) */
+		.menu-lateral-classe {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: +4;
+			top: 0;
+			left: 0;
+			background-image: url("../_imagens/menu_lateral_fundo.png");
+			background-repeat: no-repeat;
+			background-size: 323px 100%;
+			overflow-x: hidden;
+			padding-top: 60px;
+			transition: 0.5s;
+		}
+		.menu-lateral-classe li {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #DDDDDD;
+			display: block;
+			transition: 0.3s;
+			font-family: batukapur;
+		}
+		#lateral-divisao {
+			position: absolute;
+			width: 253px;
+			z-index: +1;
+			pointer-events: none;
+		}
+		#lateral-borda {
+			position: absolute;
+			height: 100%;
+			top: 0vw;
+			left: 189px;
+			z-index: +1;
+			pointer-events: none;
+		}
+		#lateral1, #lateral2, #lateral3, #lateral4 {
+			width: 250px;
+			height: 70px;
+			position: absolute;
+		}
+		#lateral1 {
+			top: 94px;
+		}
+		#lateral2 {
+			top: 157px;
+		}
+		#lateral3 {
+			top: 221px;
+		}
+		#lateral4 {
+			top: 287px;
+		}
+		#lateral1:hover, #lateral2:hover, #lateral3:hover, #lateral4:hover {
+			filter: brightness(125%);
+		}
+		.menu-lateral-classe .fechar-menu-lateral {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+		@media screen and (max-height: 450px) {
+			.menu-lateral-classe {padding-top: 15px;}
+			.menu-lateral-classe li {font-size: 18px;}
+		}
 	/* Menu de Navegação */
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
 		margin: 0vw;

@@ -167,27 +167,31 @@ function botaoMenuMobile() {
     document.getElementById("botao-menu-mobile").style.filter="brightness(70%)";
     resetType = "BotaoMenuMobile";
     setTimeout(reset, 200);
+    document.getElementById("menu-lateral").style.width = "323px";
   }
+function fecharMenuLateral() {
+    document.getElementById("menu-lateral").style.width = "0";
+}
 /* Menu Mobile */
-var navbar = document.getElementById("funcao-pesquisa-mobile-mais-menu");
-var sticky = navbar.offsetTop;
+/* Fixagem Menu Topo */
+var barraMobile = document.getElementById("funcao-pesquisa-mobile-mais-menu");
+var pontoFixo = barraMobile.offsetTop;
 window.onscroll = function() {checkRolagemMenu()};
 function checkRolagemMenu() {
 let resolucaoLargura = window.innerWidth;
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("barra-fixa");
+    if (window.pageYOffset >= pontoFixo) {
+      barraMobile.classList.add("barra-fixa");
       if (resolucaoLargura <= 800) {
         document.getElementById("corpo").style.paddingTop="16.5%";
       }
     } 
     else {
-      navbar.classList.remove("barra-fixa");
+      barraMobile.classList.remove("barra-fixa");
       if (resolucaoLargura <= 800) {
         document.getElementById("corpo").style.paddingTop="0%";
       }
     }
   }
-
 /* Ultimos Guias - Botoes */
 function botaoUltimosGuias(botao, direcao, direcao2) {
     document.getElementById(botao).style.transition="top 0.08s, height 0.08s, width 0.08s,  right 0.08s";
