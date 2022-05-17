@@ -117,9 +117,11 @@
 		background-image: url("../_imagens/barra_mobile.png");
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
+		-webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
 		width: 100vw;
 		height: 17vw;
-		top: -0.5vw;
+		top: -0.9vw;
 		z-index: +1;
 		display: block;
 	}
@@ -190,60 +192,81 @@
 			left: 0;
 			background-image: url("../_imagens/menu_lateral_fundo.png");
 			background-repeat: no-repeat;
-			background-size: 323px 100%;
+			background-size: 65vw 100%;
 			overflow-x: hidden;
-			padding-top: 60px;
+			padding-top: 10vw;
 			transition: 0.5s;
+			overflow-y: hidden;
+		}
+		#menu-lateral-fundo-titulo {
+			position: absolute;
+			top: 0vw;
+			width: 51vw;
+			height: 16vw;
 		}
 		.menu-lateral-classe li {
-			padding: 8px 8px 8px 32px;
 			text-decoration: none;
-			font-size: 25px;
-			color: #DDDDDD;
+			font-size: 4vw;
+			color: #FFFFFF;
 			display: block;
 			transition: 0.3s;
 			font-family: batukapur;
 		}
+		#titulo-menu-lateral {
+			position: absolute;
+			font-family: batukapur;
+			top: -1vw;
+			font-size: 7.5vw;
+			font-weight: normal;
+			color: #DDDDDD;
+			left: 15vw;
+			text-shadow: 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9), 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9), 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9);
+		}
+		#botao-lateral-fechar {
+			position: absolute;
+			width: 11vw;
+			height: 11.5vw;
+			margin-left: 50.5vw;
+			top: 2.5vw;
+			transition: transform 0.5s;
+			transform: translateX(-45vw);
+		}
 		#lateral-divisao {
 			position: absolute;
-			width: 253px;
 			z-index: +1;
+			height: 14vw;
+			width: 51.5vw;
 			pointer-events: none;
 		}
 		#lateral-borda {
 			position: absolute;
 			height: 100%;
+			width: 21vw;
+			max-height: 100%;
+			margin-left: 40.5vw;
 			top: 0vw;
-			left: 189px;
 			z-index: +1;
 			pointer-events: none;
 		}
 		#lateral1, #lateral2, #lateral3, #lateral4 {
-			width: 250px;
-			height: 70px;
+			width: 50.5vw;
+			height: 14vw;
 			position: absolute;
 		}
 		#lateral1 {
-			top: 94px;
+			top: 15.9vw;
 		}
 		#lateral2 {
-			top: 157px;
+			top: 29vw;
 		}
 		#lateral3 {
-			top: 221px;
+			top: 41.9vw;
 		}
 		#lateral4 {
-			top: 287px;
+			top: 54.9vw;
 		}
 		#lateral1:hover, #lateral2:hover, #lateral3:hover, #lateral4:hover {
 			filter: brightness(125%);
-		}
-		.menu-lateral-classe .fechar-menu-lateral {
-			position: absolute;
-			top: 0;
-			right: 25px;
-			font-size: 36px;
-			margin-left: 50px;
 		}
 		@media screen and (max-height: 450px) {
 			.menu-lateral-classe {padding-top: 15px;}

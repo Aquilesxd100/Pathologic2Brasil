@@ -159,6 +159,7 @@ function hoverSubMenuOff(submenu) {
 }
 /* Botão Menu Mobile */
 function botaoMenuMobile() {
+    document.getElementById("botao-lateral-fechar").style.transform = "translateX(0vw)";
     document.getElementById("botao-menu-mobile").style.transition="top 0.08s, width 0.08s, height 0.08s, filter 0.08s, transform 0.08s";
     document.getElementById("botao-menu-mobile").style.top="2%";
     document.getElementById("botao-menu-mobile").style.transform="translateX(3%)";
@@ -167,10 +168,23 @@ function botaoMenuMobile() {
     document.getElementById("botao-menu-mobile").style.filter="brightness(70%)";
     resetType = "BotaoMenuMobile";
     setTimeout(reset, 200);
-    document.getElementById("menu-lateral").style.width = "323px";
+    document.getElementById("menu-lateral").style.width = "65vw";
+    document.getElementById("corpo").style.filter = "brightness(45%)";
+    document.getElementById("corpo").style.pointerEvents = "none";
+    document.getElementById("banner").style.filter = "brightness(45%)";
+    document.getElementById("banner").style.pointerEvents = "none";
+    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.filter = "brightness(45%)";
+    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.pointerEvents = "none";
   }
 function fecharMenuLateral() {
+    document.getElementById("botao-lateral-fechar").style.transform = "translateX(-45vw)";
     document.getElementById("menu-lateral").style.width = "0";
+    document.getElementById("corpo").style.filter = "brightness(100%)";
+    document.getElementById("corpo").style.pointerEvents = "";
+    document.getElementById("banner").style.filter = "brightness(100%)";
+    document.getElementById("banner").style.pointerEvents = "";
+    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.filter = "brightness(100%)";
+    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.pointerEvents = "";
 }
 /* Menu Mobile */
 /* Fixagem Menu Topo */
@@ -182,7 +196,7 @@ let resolucaoLargura = window.innerWidth;
     if (window.pageYOffset >= pontoFixo) {
       barraMobile.classList.add("barra-fixa");
       if (resolucaoLargura <= 800) {
-        document.getElementById("corpo").style.paddingTop="16.5%";
+        document.getElementById("corpo").style.paddingTop="17%";
       }
     } 
     else {
