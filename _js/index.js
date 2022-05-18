@@ -43,6 +43,14 @@ function reset() {
 function resetTransition() {
     document.getElementById(resetT).style.transition="none";
 }
+/* FIX Mudança de Resolução */
+var resolucaoL = window.innerWidth;
+setInterval(checkResolucao, 3000);
+function checkResolucao () {
+    if (resolucaoL !== window.innerWidth) {
+        location.reload();
+    }
+}
 /* Barra de Pesquisa */
 var resultadoPesquisa = "";
   function inputPesquisa(tipo) {
