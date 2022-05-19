@@ -181,9 +181,13 @@
 		div#funcao-pesquisa-mobile-mais-menu {
 		  display: none;
 		}
+		#corpo {
+			padding-top: 0 !important;
+		}
 	  }
 		/* Menu Lateral (Mobile) */
 		.menu-lateral-classe {
+			position: relative;
 			height: 100%;
 			width: 0;
 			position: fixed;
@@ -198,31 +202,6 @@
 			transition: 0.5s;
 			overflow-y: hidden;
 		}
-		#menu-lateral-fundo-titulo {
-			position: absolute;
-			top: 0vw;
-			width: 51vw;
-			height: 16vw;
-		}
-		div#menu-lateral ul {
-			position: relative;
-			top: 4.5vw;
-			width: 44vw;
-			height: 51vw;
-			text-align: center;
-		}
-		.menu-lateral-classe li {
-			position: relative;
-			text-decoration: none;
-			font-size: 6.5vw;
-			color: #FFFFFF;
-			display: block;
-			text-shadow: 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9), 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9);
-			transition: 0.3s;
-			font-family: batukapur;
-			z-index: +2;
-			margin: 0;
-		}
 		#titulo-menu-lateral {
 			position: absolute;
 			font-family: batukapur;
@@ -232,6 +211,58 @@
 			color: #DDDDDD;
 			left: 15vw;
 			text-shadow: 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9), 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9), 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9);
+		}
+		#menu-lateral-fundo-titulo {
+			position: absolute;
+			top: 0vw;
+			width: 51vw;
+			height: 16vw;
+		}
+		div#menu-lateral ul {
+			position: absolute;
+			top: 19.8vw;
+			width: 50vw;
+			height: 47vw;
+			pointer-events: none;
+			text-align: center;
+			padding: 0;
+			margin: 0;
+		}
+		.menu-lateral-classe li {
+			position: relative;
+			text-decoration: none;
+			font-size: 6.5vw;
+			color: #CCCCCC;
+			display: block;
+			text-shadow: 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9), 0.4vw 0.4vw 3vw rgba(0, 0, 0, 0.9);
+			transition: 0.3s;
+			font-family: batukapur;
+			z-index: +2;
+		}
+		.menu-lateral-classe li#home {
+			margin-bottom: 5vw;
+		}
+		.menu-lateral-classe li#trocas {
+			margin-bottom: 6.7vw;
+		}
+		.menu-lateral-classe li#videos {
+			margin-bottom: 5.8vw;
+		}
+		.menu-lateral-classe li#mais {
+			right: 0.5vw;
+		}
+		#indicador-direita, #indicador-esquerda  {
+			position: absolute;
+			height: 6.5vw;
+			width: 6.5vw;
+			top: 59vw;
+			pointer-events: none;
+		}
+		#indicador-direita {
+			left: 38vw;
+		}
+		#indicador-esquerda {
+			left: 5.5vw;
 		}
 		#botao-lateral-fechar {
 			position: absolute;
@@ -276,7 +307,7 @@
 		#lateral4 {
 			top: 54.9vw;
 		}
-		#lateral1:hover, #lateral2:hover, #lateral3:hover, #lateral4:hover {
+		#lateral4:hover {
 			filter: brightness(125%);
 		}
 		@media screen and (max-height: 450px) {
@@ -734,7 +765,54 @@
 	footer li#copyright {
 		float: left;
 	}
-
+	/* Animações */
+	/* Animações Botões */
+	@keyframes botao1 {
+		0% {transform:translateY(0vw)}
+		50% {transform:translateY(0.3vw)}
+		100% {transform:translateY(0vw)}
+	}
+	.botao1 {
+		animation-name: botao1;
+		animation-duration: 0.22s;
+		animation-fill-mode: none;
+	}
+	@keyframes rotacao90direita {
+		from {transform:rotate(0deg) translate(0vw, 0vw)}
+		to {transform:rotate(-90deg) translate(-0.6vw, 0.5vw)}
+	}
+	@keyframes rotacao90direitavolta {
+		from {transform:rotate(-90deg) translate(-0.6vw, 0.5vw)}
+		to {transform:rotate(0deg) translate(0vw, 0vw)}
+	}
+	.rotacao90direita {
+		animation-name: rotacao90direita;
+		animation-duration: 0.22s;
+		animation-fill-mode: forwards;
+	}
+	.rotacao90direitavolta {
+		animation-name: rotacao90direitavolta;
+		animation-duration: 0.22s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes rotacao90esquerda {
+		from {transform:rotate(0deg) translate(0vw, 0vw)}
+		to {transform:rotate(90deg) translate(0.6vw, 0.5vw)}
+	}
+	@keyframes rotacao90esquerdavolta {
+		from {transform:rotate(90deg) translate(0.6vw, 0.5vw)}
+		to {transform:rotate(0deg) translate(0vw, 0vw)}
+	}
+	.rotacao90esquerda {
+		animation-name: rotacao90esquerda;
+		animation-duration: 0.22s;
+		animation-fill-mode: forwards;
+	}
+	.rotacao90esquerdavolta {
+		animation-name: rotacao90esquerdavolta;
+		animation-duration: 0.22s;
+		animation-fill-mode: forwards;
+	}
 
 
 

@@ -45,11 +45,15 @@ function resetTransition() {
 }
 /* FIX Mudança de Resolução */
 var resolucaoL = window.innerWidth;
-setInterval(checkResolucao, 3000);
+checkResolucao();
 function checkResolucao () {
     if (resolucaoL !== window.innerWidth) {
-        location.reload();
+        resolucaoL = window.innerWidth;
+        if (resolucaoL <= 800) {
+            location.reload();
+        }
     }
+    setTimeout(checkResolucao, 300)
 }
 /* Barra de Pesquisa */
 var resultadoPesquisa = "";
@@ -196,11 +200,11 @@ function fecharMenuLateral() {
 }
 /* Menu Mobile */
 /* Fixagem Menu Topo */
-var barraMobile = document.getElementById("funcao-pesquisa-mobile-mais-menu");
+const barraMobile = document.getElementById("funcao-pesquisa-mobile-mais-menu");
 var pontoFixo = barraMobile.offsetTop;
 window.onscroll = function() {checkRolagemMenu()};
 function checkRolagemMenu() {
-let resolucaoLargura = window.innerWidth;
+    let resolucaoLargura = window.innerWidth;
     if (window.pageYOffset >= pontoFixo) {
       barraMobile.classList.add("barra-fixa");
       if (resolucaoLargura <= 800) {
@@ -213,7 +217,7 @@ let resolucaoLargura = window.innerWidth;
         document.getElementById("corpo").style.paddingTop="0%";
       }
     }
-  }
+}
 /* Ultimos Guias - Botoes */
 function botaoUltimosGuias(botao, direcao, direcao2) {
     document.getElementById(botao).style.transition="top 0.08s, height 0.08s, width 0.08s,  right 0.08s";
@@ -278,5 +282,43 @@ function acessoRapidoHover(tipo, elemento) {
     else {
         document.getElementById("displayinfo").innerHTML = "";
         document.getElementById("displayinfo").style.color="#FFFFFF";
+    }
+}
+function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
+    function botaoTipo1Off() {
+        document.getElementById(elemento).classList.remove("botao1");
+        document.getElementById(elemento2).classList.remove("botao1");
+        if (elemento3 !== undefined) {
+            document.getElementById(elemento3).classList.remove("botao1");
+            if (elemento4 !== undefined) {
+                document.getElementById(elemento4).classList.remove("botao1");
+            }
+        }
+    }
+    document.getElementById(elemento).classList.add("botao1");
+    document.getElementById(elemento2).classList.add("botao1");
+    if (elemento3 !== undefined) {
+        document.getElementById(elemento3).classList.add("botao1");
+        if (elemento4 !== undefined) {
+            document.getElementById(elemento4).classList.add("botao1");
+        }
+    }
+    setTimeout(botaoTipo1Off, 220);
+}
+var rotacaoDireita = 0;
+function rotacao90(elemento, elemento2) {
+    if (rotacaoDireita === 0) {
+        document.getElementById(elemento).classList.add("rotacao90direita");
+        document.getElementById(elemento2).classList.add("rotacao90esquerda");
+        document.getElementById(elemento).classList.remove("rotacao90direitavolta");
+        document.getElementById(elemento2).classList.remove("rotacao90esquerdavolta");
+        rotacaoDireita = 1;
+    }
+    else if (rotacaoDireita === 1) {
+        document.getElementById(elemento).classList.add("rotacao90direitavolta");
+        document.getElementById(elemento2).classList.add("rotacao90esquerdavolta");
+        document.getElementById(elemento).classList.remove("rotacao90direita");
+        document.getElementById(elemento2).classList.remove("rotacao90esquerda");
+        rotacaoDireita = 0;
     }
 }

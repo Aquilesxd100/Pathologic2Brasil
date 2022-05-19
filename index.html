@@ -32,10 +32,10 @@
 		<div id="menu-lateral" class="menu-lateral-classe">
 			<img src="_imagens/menu_lateral_divisao.png" id="lateral-divisao">
 			<img src="_imagens/menu_lateral_borda.png" id="lateral-borda">
-			<img src="_imagens/menu_lateral_botao4.png" id="lateral4">
-			<img src="_imagens/menu_lateral_botao3.png" id="lateral3">
-			<img src="_imagens/menu_lateral_botao2.png" id="lateral2">
-			<img src="_imagens/menu_lateral_botao1.png" id="lateral1">
+			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
+			<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1('lateral3', 'videos')">
+			<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1('lateral2', 'trocas')">
+			<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1('lateral1', 'home')">
 			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
 			<img src="_imagens/menu_lateral_titulo_fundo.png" id="menu-lateral-fundo-titulo">
 			<h1 id="titulo-menu-lateral">Menu</h1>
@@ -43,8 +43,10 @@
 				<li id="home">Home</li> 
 				<li id="trocas">Trocas</li> 					
 				<li id="videos">Videos</li> 
-				<li id="mais">+Tutoriais/Guias</li> 
+				<li id="mais">+Guias</li> 
 			</ul>
+			<img src="_imagens/indicador_esquerda.png" id="indicador-esquerda">
+			<img src="_imagens/indicador_direita.png" id="indicador-direita">
 		</div>
 		<nav id="menu">
 			<img src="_imagens/barra_1.png" id="barra1" onclick="homeBotao()" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
