@@ -305,20 +305,22 @@ function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
     }
     setTimeout(botaoTipo1Off, 220);
 }
-var rotacaoDireita = 0;
+var rotacao = 0;
 function rotacao90(elemento, elemento2) {
-    if (rotacaoDireita === 0) {
+    if (rotacao === 0) {
         document.getElementById(elemento).classList.add("rotacao90direita");
         document.getElementById(elemento2).classList.add("rotacao90esquerda");
         document.getElementById(elemento).classList.remove("rotacao90direitavolta");
         document.getElementById(elemento2).classList.remove("rotacao90esquerdavolta");
-        rotacaoDireita = 1;
+        document.getElementById("sub-menu-lateral").style.top="67.5vw";
+        rotacao = 1;
     }
-    else if (rotacaoDireita === 1) {
+    else if (rotacao === 1) {
         document.getElementById(elemento).classList.add("rotacao90direitavolta");
         document.getElementById(elemento2).classList.add("rotacao90esquerdavolta");
         document.getElementById(elemento).classList.remove("rotacao90direita");
         document.getElementById(elemento2).classList.remove("rotacao90esquerda");
-        rotacaoDireita = 0;
+        document.getElementById("sub-menu-lateral").style.top="16vw";
+        rotacao = 0;
     }
 }

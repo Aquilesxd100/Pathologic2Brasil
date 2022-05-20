@@ -257,6 +257,7 @@
 			width: 6.5vw;
 			top: 59vw;
 			pointer-events: none;
+			z-index: +2;
 		}
 		#indicador-direita {
 			left: 38vw;
@@ -275,7 +276,7 @@
 		}
 		#lateral-divisao {
 			position: absolute;
-			z-index: +1;
+			z-index: +3;
 			height: 14vw;
 			width: 51.5vw;
 			pointer-events: none;
@@ -287,13 +288,14 @@
 			max-height: 100%;
 			margin-left: 40.5vw;
 			top: 0vw;
-			z-index: +1;
+			z-index: +3;
 			pointer-events: none;
 		}
 		#lateral1, #lateral2, #lateral3, #lateral4 {
 			width: 50.5vw;
 			height: 14vw;
 			position: absolute;
+			z-index: +2;
 		}
 		#lateral1 {
 			top: 15.9vw;
@@ -310,9 +312,56 @@
 		#lateral4:hover {
 			filter: brightness(125%);
 		}
-		@media screen and (max-height: 450px) {
-			.menu-lateral-classe {padding-top: 15px;}
-			.menu-lateral-classe li {font-size: 18px;}
+		/* Menu Lateral - Sub Menu (Mobile) */
+		div#sub-menu-lateral-cover {
+			position: absolute;
+			background-color: #0D0D0D;
+			top: 16vw;
+			height: 44vw;
+			z-index: +2;
+			width: 50.7vw;
+		}
+		div#sub-menu-lateral {
+			position: absolute;
+			top: 16vw;
+			width: 50.5vw;
+			transition: top 0.25s;
+			z-index: +1;
+		}
+		div#sub-menu-lateral img{
+			width: 49vw;
+			height: 11vw;
+			margin-left: 0.35vw;
+			position: relative;
+		}
+		#sub-menu-mobile2 {
+			margin-top: -1.8vw;
+		}
+		#sub-menu-mobile3 {
+			margin-top: -1.7vw;
+			z-index: +1;
+		}
+		#sub-menu-mobile4 {
+			margin-top: -2vw;
+		}
+		div#sub-menu-lateral li {
+			position: relative;
+			top: -17.5vw;
+			font-size: 5.5vw;
+			font-weight: normal;
+			pointer-events: none;
+		}
+		#combate-mobile {
+			margin-bottom: 4vw;
+		}
+		#comida-mobile {
+			margin-bottom: 4.3vw;
+		}
+		#mapautil-mobile {
+			margin-bottom: 4.3vw;
+		}
+		#tudo-mobile {
+			font-size: 5.1vw !important;
 		}
 	/* Menu de Navegação */
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {
@@ -473,7 +522,6 @@
 		max-width: 100%;
 	}
 	/* Corpo da Pagina - Mobile */
-
 	@media screen and (max-width: 800px) {
 		body, picture#banner, picture#banner img, div#corpo {
 			width: 100vw !important;
