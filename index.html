@@ -125,13 +125,16 @@
 						</div>
 					</div>
 					<div id="acessorapidotitulo">
-						<img src="_imagens/acesso_rapido.jpg" id="banneracessorapido">
+						<picture id="banner-acesso-rapido-mobile">
+							<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
+							<img src="_imagens/acesso_rapido.jpg" id="banneracessorapido">
+						</picture>
 						<h1>Acesso Rapido</h1>
 					</div>
 					<div id="acessorapido">
 						<div id="acessorapidoinfo">
 							<div id="acessorapidodisplay">
-								<h2 id="displayinfo">Passe o mouse por cima de uma das opções para saber mais!</h2>
+								<h2 id="displayinfo"><span class="modo-desktop">Passe o mouse por cima de uma das opções para saber mais!</span><span class="modo-mobile">Toque em cima de uma das opções<br> para saber mais!</span></h2>
 						    </div>
 						</div>
 						<div id="acessorapidoopcoes">
@@ -142,6 +145,7 @@
 							<img src="_imagens/acessorapido_pocoes.jpg" onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')">
 							<img src="_imagens/acessorapido_combate.jpg" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')">
 						</div>
+						<img src="_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); flechaAcessoRapido()">
 					</div>
 					<footer>
 						<ul>

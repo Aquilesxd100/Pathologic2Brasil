@@ -122,7 +122,7 @@
 		width: 100vw;
 		height: 17vw;
 		top: -0.9vw;
-		z-index: +1;
+		z-index: +2;
 		display: block;
 	}
 	img#botaopesquisamobile {
@@ -749,10 +749,10 @@
 		z-index: +1;
 	}
 	div#ultimosguias img#botao-direita {
-		right: -2.2vw; 
+		right: -2.8%; 
 	}
 	div#ultimosguias img#botao-esquerda {
-		right: 88.2vw;
+		right: 93.5%;
 	}
 	div#ultimosguias img.botoes-ultimos-guias:hover {
 		filter: brightness(110%);
@@ -787,9 +787,6 @@
 		div#showcase {
 			height: 100%;
 			width: 100%;
-			display: flex;
-			transition: transform 0.5s ease-in-out;
-			transform: translateX(0%);
 		}	
 		/* Ultimos Guias - Guias (Mobile) */
 		div#ultimosguias img {
@@ -800,8 +797,7 @@
 			margin-right: 5%;
 		}
 		div#ultimosguias img:hover {
-			filter: brightness(120%);
-			cursor: url('../_recursos/cursor_link.png'), auto;	
+			filter: brightness(120%);	
 		}
 		/* Ultimos Guias - Botões Anterior/Proximo (Mobile) */
 		div#ultimosguias img.botoes-ultimos-guias {
@@ -810,10 +806,10 @@
 			top: 13.5vw;
 		}
 		div#ultimosguias img#botao-direita {
-			right: -6.5vw; 
+			right: -8.5%; 
 		}
 		div#ultimosguias img#botao-esquerda {
-			right: 74vw;
+			right: 77%;
 		}
 		div#ultimosguias img.botoes-ultimos-guias:hover {
 			filter: brightness(100%);
@@ -874,8 +870,8 @@
 	}
 	div#acessorapidoinfo h2 {
 		position: relative;
-		top: 10%;
 		color: #FFFFFF;
+		top: 8%;
 		font-size: 1.7vw;
 		font-weight: lighter;
 		text-align: center;
@@ -900,6 +896,77 @@
 		transform: scale(108%);
 		-webkit-transform: scale(108%);
 		cursor: url('../_recursos/cursor_link.png'), auto;
+	}
+	/* Acesso Rapido (Mobile) */
+	@media screen and (max-width: 800px) {
+		div#acessorapidotitulo h1 {
+			font-size: 6vw;
+			letter-spacing: 0.3vw;
+			top: -48.7vw;
+			text-shadow: 0.52vw 0 0 rgb(0, 0, 0), -0.52vw 0 0 rgb(0, 0, 0), 0 0.52vw 0 rgb(0, 0, 0), 0 -0.52vw 0 rgb(0, 0, 0), 0.30vw 0.30vw rgb(0, 0, 0), -0.30vw -0.30vw 0 rgb(0, 0, 0), 0.30vw -0.30vw 0 rgb(0, 0, 0), -0.30vw 0.30vw 0 rgb(0, 0, 0);
+			margin-left: 2vw;
+			margin-right: 2vw;
+		}
+		img#banneracessorapido {
+			height: 12vw;
+			width: 98%;
+			top: -35.2vw;
+			margin: 1% 1% 0% 1%;
+			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
+		}
+		div#acessorapido {
+			height: 86vw;
+			margin-left: 1%;
+			margin-right: 1%;
+			top: -50.5vw;
+			border-top: 1.2vw groove #000000;
+			border-bottom: 1.2vw groove #000000;
+			border-left: 1.2vw groove #000000;
+			border-right: 1.2vw groove #000000;
+			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
+		}
+		div#acessorapidoinfo {
+			width: 100.5%;
+			height: 16%;
+			border-bottom: 1.2vw groove #000000;
+			margin: 0;
+		}
+		div#acessorapidodisplay {
+			height: 90%;
+			width: 97%;
+			margin-top: -2%;
+			margin-right: 1.2%;
+			margin-left: 1.2%;
+			background-image: url("../_imagens/acesso_rapido_barrainfo_mobile.jpg");
+		}
+		div#acessorapidoinfo h2 {
+			font-size: 4vw; 
+		}
+		/* Acesso Rapido - Opções (Mobile) */
+		div#acessorapidoopcoes {
+			display: block;
+			height: 81%;
+			width: 100%;
+		}
+		div#acessorapidoopcoes img {
+			margin: 1.7%;
+			height: 32.5%;
+			width: 29.5%;
+			box-shadow: 0.25vw 0.25vw 0.1vw rgba(0, 0, 0, 0.9);
+			filter: brightness(85%);
+		}
+		div#acessorapidoopcoes img:hover{
+			filter: brightness(120%);
+			transform: scale(108%);
+			-webkit-transform: scale(108%);
+		}
+		#acesso-rapido-flecha {
+			position: relative;
+			top: -20vw;		
+			width: 57%;
+			height: 18%;
+			margin: 3.5% 0% 0% 20%;
+		}
 	}
 	/* Footer */
 	footer {
@@ -965,6 +1032,28 @@
 		animation-duration: 0.20s;
 		animation-fill-mode: none;
 	}
+		/* Botão 2 (Sem Brilho) */
+	@keyframes botao2 {
+		0% {transform:scale(1)}
+		50% {transform:scale(0.9)}
+		100% {transform:scale(1)}
+	}
+	.botao2 {
+		animation-name: botao2;
+		animation-duration: 0.20s;
+		animation-fill-mode: none;
+	}
+	/* Botão 2 (Com Brilho) */
+	@keyframes botao2-com-brilho {
+		0% {transform:scale(1); filter:brightness(100%)}
+		50% {transform:scale(0.9); filter:brightness(145%)}
+		100% {transform:scale(1); filter:brightness(100%)}
+	}
+	.botao2-com-brilho {
+		animation-name: botao2-com-brilho;
+		animation-duration: 0.20s;
+		animation-fill-mode: none;
+	}	
 	/* Flecha Rotação Mobile (Direita) */
 	@keyframes rotacao90direita {
 		from {transform:rotate(0deg) translate(0vw, 0vw)}

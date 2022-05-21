@@ -281,22 +281,32 @@ var loopShowCase = setInterval(showCase, 4000);
 function acessoRapidoHover(tipo, elemento) {
     if (tipo === "on") {
         document.getElementById("displayinfo").style.color="#00DD00";
+        document.getElementById("displayinfo").style.top="8%"
         if (elemento === "dinheiro") {
-            document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja até mesmo nos Kain!";
+            document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja<br class='modo-mobile'> até mesmo nos Kain!";
         }
         if (elemento === "podinzin") {
-            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinzins escondidos e salve vidas!";
+            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinzins<br class='modo-mobile'> escondidos e salve vidas!";
         }
         if (elemento === "mapa") {
+            if (resolucaoL <= 800) {
+                document.getElementById("displayinfo").style.top="28%";
+            }
             document.getElementById("displayinfo").innerHTML = "Descubra todos os segredos da Estepe!";
         }
         if (elemento === "comida") {
+            if (resolucaoL <= 800) {
+                document.getElementById("displayinfo").style.top="28%";
+            }
             document.getElementById("displayinfo").innerHTML = "Nunca mais passe fome!";
         }
         if (elemento === "pocoes") {
-            document.getElementById("displayinfo").innerHTML = "Aprenda TUDO sobre a criação de Infusões e 'Poções'!";
+            document.getElementById("displayinfo").innerHTML = "Aprenda TUDO sobre a criação<br class='modo-mobile'> de Infusões e 'Poções'!";
         }
         if (elemento === "combate") {
+            if (resolucaoL <= 800) {
+                document.getElementById("displayinfo").style.top="28%";
+            }
             document.getElementById("displayinfo").innerHTML = "Deixe de ser a caça e vire o caçador!";
         }
     }
@@ -304,6 +314,9 @@ function acessoRapidoHover(tipo, elemento) {
         document.getElementById("displayinfo").innerHTML = "";
         document.getElementById("displayinfo").style.color="#FFFFFF";
     }
+}
+function flechaAcessoRapido() {
+
 }
 function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
     function botaoTipo1Off() {
@@ -359,6 +372,19 @@ function botaoTipo2(elemento, elemento2) {
         document.getElementById(elemento2).classList.add("botao2");
     }
     setTimeout(botaoTipo2Off, 220);
+}
+function botaoTipo2ComBrilho(elemento, elemento2) {
+    function botaoTipo2ComBrilhoOff() {
+        document.getElementById(elemento).classList.remove("botao2-com-brilho");
+        if (elemento2 !== undefined) {
+            document.getElementById(elemento2).classList.remove("botao2-com-brilho");
+        }
+    }
+    document.getElementById(elemento).classList.add("botao2-com-brilho");
+    if (elemento2 !== undefined) {
+        document.getElementById(elemento2).classList.add("botao2-com-brilho");
+    }
+    setTimeout(botaoTipo2ComBrilhoOff, 220);
 }
 var rotacao = 0;
 function rotacao90(elemento, elemento2) {
