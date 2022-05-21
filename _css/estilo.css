@@ -535,7 +535,7 @@
 		div#corpo {
 			background-image: url('../_imagens/fundo_mobile.jpg');
 			top: -4vw;
-			height: 150vw;
+			height: 250vw;
 			background-size: 120% 100%;
 		}
 		div#fundobranco {
@@ -630,17 +630,18 @@
 		font-weight: bold;
 		border-bottom: 0.2vw solid #FFFFFF;
 	}
+	/* Boas Vindas (Mobile) */
 	@media screen and (max-width: 800px) {
 		div#introducaotitulo h1 {
 			font-size: 6vw;
-			top: -21vw;
-			text-shadow: 0.65vw 0 0 rgb(0, 0, 0), -0.65vw 0 0 rgb(0, 0, 0), 0 0.65vw 0 rgb(0, 0, 0), 0 -0.65vw 0 rgb(0, 0, 0), 0.39vw 0.39vw rgb(0, 0, 0), -0.39vw -0.39vw 0 rgb(0, 0, 0), 0.39vw -0.39vw 0 rgb(0, 0, 0), -0.39vw 0.39vw 0 rgb(0, 0, 0);	
+			top: -20.5vw;
+			text-shadow: 0.52vw 0 0 rgb(0, 0, 0), -0.52vw 0 0 rgb(0, 0, 0), 0 0.52vw 0 rgb(0, 0, 0), 0 -0.52vw 0 rgb(0, 0, 0), 0.30vw 0.30vw rgb(0, 0, 0), -0.30vw -0.30vw 0 rgb(0, 0, 0), 0.30vw -0.30vw 0 rgb(0, 0, 0), -0.30vw 0.30vw 0 rgb(0, 0, 0);		
 			left: 1vw;
 		}
 		picture#banner-bem-vindo-mobile img {
 			height: 20vw;
 			width: 98%;
-			top: 0.7vw;
+			top: 1vw;
 			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
 		}
 		div#introducao {
@@ -756,6 +757,68 @@
 	div#ultimosguias img.botoes-ultimos-guias:hover {
 		filter: brightness(110%);
 	}
+	/* Ultimos Guias (Mobile) */
+	@media screen and (max-width: 800px) {
+		div#ultimosguiastitulo h1 {
+			font-size: 6vw;
+			letter-spacing: 0.4vw;
+			top: -34.5vw;
+			text-shadow: 0.52vw 0 0 rgb(0, 0, 0), -0.52vw 0 0 rgb(0, 0, 0), 0 0.52vw 0 rgb(0, 0, 0), 0 -0.52vw 0 rgb(0, 0, 0), 0.30vw 0.30vw rgb(0, 0, 0), -0.30vw -0.30vw 0 rgb(0, 0, 0), 0.30vw -0.30vw 0 rgb(0, 0, 0), -0.30vw 0.30vw 0 rgb(0, 0, 0);	
+		}
+		img#bannerultimosguias {
+			height: 12vw;
+			top: -21vw;
+			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
+		}
+		div#ultimosguias {
+			height: 55vw;
+			margin-left: 1%;
+			margin-right: 1%;
+			top: -37vw;
+			border: 1.2vw groove #000000;
+			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
+		}
+		div#subshowcase {
+			overflow: hidden;
+			object-fit: cover;
+			height: 98%;
+			width: 100.5%;
+		}
+		div#showcase {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			transition: transform 0.5s ease-in-out;
+			transform: translateX(0%);
+		}	
+		/* Ultimos Guias - Guias (Mobile) */
+		div#ultimosguias img {
+			height: 95%;
+			width: 90%;
+			margin-top: 3%;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+		div#ultimosguias img:hover {
+			filter: brightness(120%);
+			cursor: url('../_recursos/cursor_link.png'), auto;	
+		}
+		/* Ultimos Guias - Botões Anterior/Proximo (Mobile) */
+		div#ultimosguias img.botoes-ultimos-guias {
+			height: 40%;
+			width: 21.6%;
+			top: 13.5vw;
+		}
+		div#ultimosguias img#botao-direita {
+			right: -6.5vw; 
+		}
+		div#ultimosguias img#botao-esquerda {
+			right: 74vw;
+		}
+		div#ultimosguias img.botoes-ultimos-guias:hover {
+			filter: brightness(100%);
+		}
+	}
 	/* Acesso Rapido */
 	div#acessorapidotitulo h1 {
 		position: relative;
@@ -869,6 +932,7 @@
 	}
 	/* Animações */
 	/* Animações Botões */
+	/* Botão 1 (Sem Brilho) */
 	@keyframes botao1 {
 		0% {transform:translateY(0vw)}
 		50% {transform:translateY(0.3vw)}
@@ -879,6 +943,29 @@
 		animation-duration: 0.22s;
 		animation-fill-mode: none;
 	}
+	/* Botão 1 (Com Brilho) */
+	@keyframes botao1-com-brilho {
+		0% {transform:translateY(0vw); filter:brightness(100%)}
+		50% {transform:translateY(0.3vw); filter:brightness(120%)}
+		100% {transform:translateY(0vw); filter:brightness(100%)}
+	}
+	.botao1-com-brilho {
+		animation-name: botao1-com-brilho;
+		animation-duration: 0.22s;
+		animation-fill-mode: none;
+	}
+	/* Botão 2 (Sem Brilho) */
+	@keyframes botao2 {
+		0% {transform:scale(1)}
+		50% {transform:scale(0.9)}
+		100% {transform:scale(1)}
+	}
+	.botao2 {
+		animation-name: botao2;
+		animation-duration: 0.20s;
+		animation-fill-mode: none;
+	}
+	/* Flecha Rotação Mobile (Direita) */
 	@keyframes rotacao90direita {
 		from {transform:rotate(0deg) translate(0vw, 0vw)}
 		to {transform:rotate(-90deg) translate(-0.6vw, 0.5vw)}
@@ -897,6 +984,7 @@
 		animation-duration: 0.22s;
 		animation-fill-mode: forwards;
 	}
+	/* Flecha Rotação Mobile (Esquerda) */
 	@keyframes rotacao90esquerda {
 		from {transform:rotate(0deg) translate(0vw, 0vw)}
 		to {transform:rotate(90deg) translate(0.6vw, 0.5vw)}

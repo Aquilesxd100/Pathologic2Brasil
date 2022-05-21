@@ -41,15 +41,15 @@
 					<li id="mapautil-mobile">Mapa Util</li> 
 					<li id="tudo-mobile">Mostrar Tudo</li> 
 				</ul>
-				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1('sub-menu-mobile1', 'combate-mobile')">
-				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1('sub-menu-mobile2', 'comida-mobile')">
-				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1('sub-menu-mobile3', 'mapautil-mobile')">
-				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1('sub-menu-mobile4', 'tudo-mobile')">
+				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile')">
+				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile')">
+				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile')">
+				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile')">
 			</div>
 			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
-			<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1('lateral3', 'videos')">
-			<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1('lateral2', 'trocas')">
-			<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1('lateral1', 'home')">
+			<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos')">
+			<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas')">
+			<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home')">
 			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
 			<img src="_imagens/menu_lateral_titulo_fundo.png" id="menu-lateral-fundo-titulo">
 			<h1 id="titulo-menu-lateral">Menu</h1>
@@ -105,12 +105,15 @@
 						<p>É só clicar na categoria que lhe interessa <span class="foco">aqui em cima,</span> <br class="modo-mobile">selecionar um dos nossos ultimos guias <span class="foco">abaixo,</span><br class="modo-desktop"> ou caso procure algo em especifico, pesquise no <span class="foco">canto de cima a direita.</span></p> 	
 					</div>
 					<div id="ultimosguiastitulo">
-						<img src="_imagens/ultimos_guias.jpg" id="bannerultimosguias">
-						<h1>Ultimos Guias</h1>
+						<picture>
+							<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
+							<img src="_imagens/ultimos_guias.jpg" id="bannerultimosguias">
+						</picture>
+							<h1>Ultimos Guias</h1>
 					</div>
 					<div id="ultimosguias">
-						<img src="_imagens/botao_ultimosguias_esquerda.png" id="botao-esquerda" class="botoes-ultimos-guias" onclick="botaoUltimosGuias('botao-esquerda', '88.7vw', '88.2vw')">
-						<img src="_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoUltimosGuias('botao-direita', '-1.7vw', '-2.2vw')">
+						<img src="_imagens/botao_ultimosguias_esquerda.png" id="botao-esquerda" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-esquerda'); botaoUltimosGuias('botao-esquerda')">
+						<img src="_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-direita'); botaoUltimosGuias('botao-direita')">
 						<div id="subshowcase">
 							<div id="showcase">
 								<img src="_imagens/ultimos_guias_dinheiro.png">

@@ -219,30 +219,43 @@ function checkRolagemMenu() {
     }
 }
 /* Ultimos Guias - Botoes */
-function botaoUltimosGuias(botao, direcao, direcao2) {
-    document.getElementById(botao).style.transition="top 0.08s, height 0.08s, width 0.08s,  right 0.08s";
-    document.getElementById(botao).style.top="6.2vw";
-    document.getElementById(botao).style.height="29%";
-    document.getElementById(botao).style.width="7%";
-    document.getElementById(botao).style.right=direcao;
-    resetType = ["BotaoUltimosGuias", botao, direcao2];
-    if (botao === "botao-direita") {
-        if (posicaoShowcase < 2) { /* <--- Novo Guia? Adicione AQUI */
-            posicaoShowcase = posicaoShowcase + 1;
-            showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-            clearInterval(loopShowCase);
-            loopShowCase = setInterval(showCase, 4000);
-        } 
+function botaoUltimosGuias(botao) {
+    if (resolucaoL > 800) {
+        if (botao === "botao-direita") {
+            if (posicaoShowcase < 2) { /* <--- Novo Guia? Adicione AQUI */
+                posicaoShowcase = posicaoShowcase + 1;
+                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+                clearInterval(loopShowCase);
+                loopShowCase = setInterval(showCase, 4000);
+            } 
+        }
+        else if (botao === "botao-esquerda") {
+            if (posicaoShowcase !== 0) {
+                posicaoShowcase = posicaoShowcase - 1;
+                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+                clearInterval(loopShowCase);
+                loopShowCase = setInterval(showCase, 4000);
+            } 
+        }
     }
-    else if (botao === "botao-esquerda") {
-        if (posicaoShowcase !== 0) {
-            posicaoShowcase = posicaoShowcase - 1;
-            showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-            clearInterval(loopShowCase);
-            loopShowCase = setInterval(showCase, 4000);
-        } 
+    else if (resolucaoL <= 800) {
+        if (botao === "botao-direita") {
+            if (posicaoShowcase < 4) { /* <--- Novo Guia? Adicione AQUI */
+                posicaoShowcase = posicaoShowcase + 1;
+                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
+                clearInterval(loopShowCase);
+                loopShowCase = setInterval(showCase, 4000);
+            } 
+        }
+        else if (botao === "botao-esquerda") {
+            if (posicaoShowcase !== 0) {
+                posicaoShowcase = posicaoShowcase - 1;
+                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
+                clearInterval(loopShowCase);
+                loopShowCase = setInterval(showCase, 4000);
+            } 
+        }
     }
-    setTimeout(reset, 200);
 }
 /* Ultimos Guias - Showcase */
 const showcaseElemento = document.getElementById("showcase");
@@ -250,10 +263,18 @@ const guias = document.querySelectorAll("#showcase img");
 var posicaoShowcase = 0;
 function showCase() {
     posicaoShowcase++;
-    if (posicaoShowcase > guias.length - 3) { /* <--- Novo Guia? Adicione AQUI */
-        posicaoShowcase = 0;        
+    if (resolucaoL > 800) {
+        if (posicaoShowcase > guias.length - 3) {
+            posicaoShowcase = 0;        
+        }
+        showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
     }
-    showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
+    else if (resolucaoL <= 800) {
+        if (posicaoShowcase > guias.length - 1) {
+            posicaoShowcase = 0;        
+        }
+        showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
+    }
 }
 var loopShowCase = setInterval(showCase, 4000);
 /* Acesso Rapido */
@@ -304,6 +325,40 @@ function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
         }
     }
     setTimeout(botaoTipo1Off, 220);
+}
+function botaoTipo1ComBrilho(elemento, elemento2, elemento3, elemento4) {
+    function botaoTipo1ComBrilhoOff() {
+        document.getElementById(elemento).classList.remove("botao1-com-brilho");
+        document.getElementById(elemento2).classList.remove("botao1-com-brilho");
+        if (elemento3 !== undefined) {
+            document.getElementById(elemento3).classList.remove("botao1-com-brilho");
+            if (elemento4 !== undefined) {
+                document.getElementById(elemento4).classList.remove("botao1-com-brilho");
+            }
+        }
+    }
+    document.getElementById(elemento).classList.add("botao1-com-brilho");
+    document.getElementById(elemento2).classList.add("botao1-com-brilho");
+    if (elemento3 !== undefined) {
+        document.getElementById(elemento3).classList.add("botao1-com-brilho");
+        if (elemento4 !== undefined) {
+            document.getElementById(elemento4).classList.add("botao1-com-brilho");
+        }
+    }
+    setTimeout(botaoTipo1ComBrilhoOff, 220);
+}
+function botaoTipo2(elemento, elemento2) {
+    function botaoTipo2Off() {
+        document.getElementById(elemento).classList.remove("botao2");
+        if (elemento2 !== undefined) {
+            document.getElementById(elemento2).classList.remove("botao2");
+        }
+    }
+    document.getElementById(elemento).classList.add("botao2");
+    if (elemento2 !== undefined) {
+        document.getElementById(elemento2).classList.add("botao2");
+    }
+    setTimeout(botaoTipo2Off, 220);
 }
 var rotacao = 0;
 function rotacao90(elemento, elemento2) {
