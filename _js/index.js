@@ -43,18 +43,6 @@ function reset() {
 function resetTransition() {
     document.getElementById(resetT).style.transition="none";
 }
-/* FIX Mudança de Resolução */
-var resolucaoL = window.innerWidth;
-checkResolucao();
-function checkResolucao () {
-    if (resolucaoL !== window.innerWidth) {
-        resolucaoL = window.innerWidth;
-        if (resolucaoL <= 800) {
-            location.reload();
-        }
-    }
-    setTimeout(checkResolucao, 300)
-}
 /* Barra de Pesquisa */
 var resultadoPesquisa = "";
   function inputPesquisa(tipo) {
@@ -219,6 +207,7 @@ function checkRolagemMenu() {
     }
 }
 /* Ultimos Guias - Botoes */
+var resolucaoL = window.innerWidth;
 function botaoUltimosGuias(botao) {
     if (resolucaoL > 800) {
         if (botao === "botao-direita") {
@@ -311,12 +300,30 @@ function acessoRapidoHover(tipo, elemento) {
         }
     }
     else {
+        if (resolucaoL >= 800) {
         document.getElementById("displayinfo").innerHTML = "";
         document.getElementById("displayinfo").style.color="#FFFFFF";
+        }
     }
 }
-function flechaAcessoRapido() {
-
+var acessoRapidoReset = ["", ""];
+function acessoRapidoMobile(elemento, link) {
+    if (elemento !== "link") {
+        if (elemento === acessoRapidoReset[0]) {
+            return;
+        }
+        document.getElementById(elemento).style.transform="scale(108%)";
+        document.getElementById(elemento).style.filter="brightness(120%)";
+        if (acessoRapidoReset[0] !== "") {
+            document.getElementById(acessoRapidoReset[0]).style.transform="scale(100%)";
+            document.getElementById(acessoRapidoReset[0]).style.filter="brightness(70%)";
+        }
+        acessoRapidoReset[0] = elemento;
+        acessoRapidoReset[1] = link;
+    }
+    else {
+        /* link */
+    }
 }
 function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
     function botaoTipo1Off() {
