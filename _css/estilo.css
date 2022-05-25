@@ -24,6 +24,7 @@
 		width: 98.78vw;
 		margin: 0vw;
 		max-width: 100%;
+		pointer-events: none;
 }
 	picture#banner img {	
 		display: block;
@@ -540,14 +541,16 @@
 		}
 		div#corpo {
 			background-image: url('../_imagens/fundo_mobile.jpg');
-			top: -4vw;
-			height: 250vw;
+			margin-top: -5.4vw;
+			height: 253.5vw;
 			background-size: 120% 100%;
+			overflow: hidden;
 		}
 		div#fundobranco {
 			top: 4.5vw;
 			width: 97.6vw !important;
 			margin: 0vw 0vw 0.75vw 1.6vw !important;
+			height: 97%;
 		}
 		picture#banner {
 			z-index: +1;
@@ -580,6 +583,7 @@
 		top: 0.7vw;
 		margin: 1% 1% 0% 1%;
 		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
+		pointer-events: none;
 	}
 	div#introducao {
 		height: 7.5vw;
@@ -706,6 +710,7 @@
 		top: -6.5vw;
 		margin: 1% 1% 0% 1%;
 		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
+		pointer-events: none;
 	}
 	div#ultimosguias {
 		display: flex;
@@ -740,6 +745,7 @@
 		margin-bottom: 1%;
 		margin-left: 0.7%;
 		margin-right: 0.7%;
+		filter: brightness(90%);
 	}
 	div#ultimosguias img:hover {
 		filter: brightness(120%);
@@ -842,6 +848,7 @@
 		top: -12.8vw;
 		margin: 1% 1% 0% 1%;
 		box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.7);
+		pointer-events: none;
 	}
 	div#acessorapido {
 		height: 19.5vw;
@@ -992,6 +999,27 @@
 	footer li#copyright {
 		float: left;
 	}
+	/* Footer (Mobile) */
+	@media screen and (max-width: 800px) {
+		footer {
+			font-size: 4vw;
+			margin-left: 1%;
+			margin-right: 1%;
+			top: -53.7vw;
+			text-align: center;
+		}
+		footer li#contato {
+			float: none;
+		}
+		footer li#copyright {
+			float: none;
+		}
+		footer ul {
+			padding: 0;
+			margin-top: 4.5%;
+			margin-bottom: 0;
+		}
+	}
 	/* Animações */
 	/* Animações Botões */
 	/* Botão 1 (Sem Brilho) */
@@ -1087,7 +1115,3 @@
 		animation-duration: 0.22s;
 		animation-fill-mode: forwards;
 	}
-
-
-
-

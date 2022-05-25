@@ -196,7 +196,7 @@ function checkRolagemMenu() {
     if (window.pageYOffset >= pontoFixo) {
       barraMobile.classList.add("barra-fixa");
       if (resolucaoLargura <= 800) {
-        document.getElementById("corpo").style.paddingTop="17%";
+        document.getElementById("corpo").style.paddingTop="16%";
       }
     } 
     else {
@@ -308,21 +308,26 @@ function acessoRapidoHover(tipo, elemento) {
 }
 var acessoRapidoReset = ["", ""];
 function acessoRapidoMobile(elemento, link) {
-    if (elemento !== "link") {
-        if (elemento === acessoRapidoReset[0]) {
-            return;
+    if (resolucaoL <= 800) {
+        if (elemento !== "link") {
+            if (elemento === acessoRapidoReset[0]) {
+                return;
+            }
+            document.getElementById(elemento).style.transform="scale(108%)";
+            document.getElementById(elemento).style.filter="brightness(120%)";
+            if (acessoRapidoReset[0] !== "") {
+                document.getElementById(acessoRapidoReset[0]).style.transform="scale(100%)";
+                document.getElementById(acessoRapidoReset[0]).style.filter="brightness(70%)";
+            }
+            acessoRapidoReset[0] = elemento;
+            acessoRapidoReset[1] = link;
+        }   
+        else {
+            /* link */
         }
-        document.getElementById(elemento).style.transform="scale(108%)";
-        document.getElementById(elemento).style.filter="brightness(120%)";
-        if (acessoRapidoReset[0] !== "") {
-            document.getElementById(acessoRapidoReset[0]).style.transform="scale(100%)";
-            document.getElementById(acessoRapidoReset[0]).style.filter="brightness(70%)";
-        }
-        acessoRapidoReset[0] = elemento;
-        acessoRapidoReset[1] = link;
     }
     else {
-        /* link */
+         /* link */
     }
 }
 function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
