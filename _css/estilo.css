@@ -249,16 +249,16 @@
 			font-family: batukapur;
 			z-index: +2;
 		}
-		.menu-lateral-classe li#home {
+		.menu-lateral-classe li#home2 {
 			margin-bottom: 5vw;
 		}
-		.menu-lateral-classe li#trocas {
+		.menu-lateral-classe li#trocas2 {
 			margin-bottom: 6.7vw;
 		}
-		.menu-lateral-classe li#videos {
+		.menu-lateral-classe li#videos2 {
 			margin-bottom: 5.8vw;
 		}
-		.menu-lateral-classe li#mais {
+		.menu-lateral-classe li#mais2 {
 			right: 0.5vw;
 		}
 		#indicador-direita, #indicador-esquerda  {
@@ -1040,6 +1040,18 @@
 	.botao1-com-brilho {
 		animation-name: botao1-com-brilho;
 		animation-duration: 0.22s;
+		animation-fill-mode: none;
+	}
+	/* Botão 1 (Sem Brilho + Lento) */
+	@keyframes botao1lento {
+		0% {transform:translateY(0vw)}
+		30% {transform:translateY(0.16vw)}
+		70% {transform:translateY(0.16vw)}
+		100% {transform:translateY(0vw)}
+	}
+	.botao1lento {
+		animation-name: botao1lento;
+		animation-duration: 0.26s;
 		animation-fill-mode: none;
 	}
 	/* Botão 2 (Sem Brilho) */

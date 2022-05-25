@@ -1,3 +1,10 @@
+/* Abertura de Link */
+function abrirLink(link) {
+   window.location.href=link;
+}
+function abrirLinkFora(link) {
+    window.open(link, '_blank').focus();
+ }
 /* Função RESET */
 var resetType = ["", "", ""];
 var resetT = "";
@@ -89,43 +96,6 @@ function checkMaxlenght() {
     }
 }
 /* Barra de Navegação */
-/* Botões Menu */
-function homeBotao() {
-    document.getElementById("barra1").style.transition="transform 0.08s";
-    document.getElementById("barra1").style.transform="translateY(0.15vw)";
-    document.getElementById("home").style.transition="transform 0.08s";
-    document.getElementById("home").style.transform="translateY(0.15vw)";
-    resetType = ["BotaoMenu", "barra1", "home"];
-    setTimeout(reset, 200);
-    window.location.href="index.html";
-}
-function trocasBotao() {
-    document.getElementById("barra2").style.transition="transform 0.08s";
-    document.getElementById("barra2").style.transform="translateY(0.15vw)";
-    document.getElementById("trocas").style.transition="transform 0.08s";
-    document.getElementById("trocas").style.transform="translateY(0.15vw)";
-    resetType = ["BotaoMenu", "barra2", "trocas"];
-    setTimeout(reset, 200);
-    window.location.href="https://www.google.com";
-}
-function videosBotao() {
-    document.getElementById("barra3").style.transition="transform 0.08s";
-    document.getElementById("barra3").style.transform="translateY(0.15vw)";
-    document.getElementById("videos").style.transition="transform 0.08s";
-    document.getElementById("videos").style.transform="translateY(0.15vw)";
-    resetType = ["BotaoMenu", "barra3", "videos"];
-    setTimeout(reset, 200);
-    window.open("https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g", '_blank').focus();
-}
-function maisTutoriais_GuiasBotao() {
-    document.getElementById("barra4").style.transition="transform 0.08s";
-    document.getElementById("barra4").style.transform="translateY(0.15vw)";
-    document.getElementById("mais").style.transition="transform 0.08s";
-    document.getElementById("mais").style.transform="translateY(0.15vw)";
-    resetType = ["BotaoMenu", "barra4", "mais"];
-    setTimeout(reset, 200);
-    window.location.href="https://www.google.com";
-}
 /* Hover Botões Menu */
     function menuHoverIn(barra) {  
         document.getElementById(barra).style.color = "#FFFFFF";
@@ -371,6 +341,15 @@ function botaoTipo1ComBrilho(elemento, elemento2, elemento3, elemento4) {
         }
     }
     setTimeout(botaoTipo1ComBrilhoOff, 220);
+}
+function botaoTipo1Lento(elemento, elemento2) {
+    function botaoTipo1LentoOff() {
+        document.getElementById(elemento).classList.remove("botao1lento");
+        document.getElementById(elemento2).classList.remove("botao1lento");
+    }
+    document.getElementById(elemento).classList.add("botao1lento");
+    document.getElementById(elemento2).classList.add("botao1lento");
+    setTimeout(botaoTipo1LentoOff, 420);
 }
 function botaoTipo2(elemento, elemento2) {
     function botaoTipo2Off() {
