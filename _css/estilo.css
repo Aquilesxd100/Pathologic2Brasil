@@ -318,9 +318,7 @@
 		}
 		#lateral4 {
 			top: 54.9vw;
-		}
-		#lateral4:hover {
-			filter: brightness(125%);
+			transition: filter 0.22s;
 		}
 		/* Menu Lateral - Sub Menu (Mobile) */
 		div#sub-menu-lateral-cover {

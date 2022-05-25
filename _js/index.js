@@ -406,6 +406,7 @@ function rotacao90(elemento, elemento2) {
         document.getElementById(elemento).classList.remove("rotacao90direitavolta");
         document.getElementById(elemento2).classList.remove("rotacao90esquerdavolta");
         document.getElementById("sub-menu-lateral").style.top="67.5vw";
+        document.getElementById("lateral4").style.filter="brightness(125%)";
         rotacao = 1;
     }
     else if (rotacao === 1) {
@@ -414,6 +415,7 @@ function rotacao90(elemento, elemento2) {
         document.getElementById(elemento).classList.remove("rotacao90direita");
         document.getElementById(elemento2).classList.remove("rotacao90esquerda");
         document.getElementById("sub-menu-lateral").style.top="16vw";
+        document.getElementById("lateral4").style.filter="brightness(100%)";
         rotacao = 0;
     }
 }
