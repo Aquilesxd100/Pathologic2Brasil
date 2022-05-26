@@ -1,26 +1,29 @@
 /* Abertura de Link */
-function abrirLink(link) {
-   window.location.href=link;
-}
-function abrirLinkFora(link) {
-    window.open(link, '_blank').focus();
- }
+    function abrirLink(link) {
+    window.location.href=link;
+    }
+    function abrirLinkFora(link) {
+        window.open(link, '_blank').focus();
+    }
+ /* Adaptador Prefixos CSS */
+    function adaptadorPrefixos(elemento, transformacao) {
+            document.getElementById(elemento).style.MozTransform=transformacao;
+            document.getElementById(elemento).style.msTransform=transformacao;
+    }
 /* Barra de Pesquisa */
-var resultadoPesquisa = "";
-  function inputPesquisa(tipo) {
-    if (tipo === "click") {
-        document.getElementById("pesquisar").style.transition="opacity 0s";
-        document.getElementById("pesquisar").style.opacity="0";
+    var resultadoPesquisa = "";
+    function inputPesquisa(tipo) {
+        if (tipo === "click") {
+            document.getElementById("pesquisar").style.opacity="0";
+        }
+        else if (tipo === "clickmobile") {
+            document.getElementById("pesquisar-mobile").style.opacity="0";
+        }
+        else {
+        document.getElementById("input").style.display="block";
+        document.getElementById("pesquisar").style.opacity="1";
+        }
     }
-    else if (tipo === "clickmobile") {
-        document.getElementById("pesquisar-mobile").style.opacity="0";
-    }
-    else {
-      document.getElementById("input").style.display="block";
-      document.getElementById("pesquisar").style.transition="opacity 0.3s";
-      document.getElementById("pesquisar").style.opacity="1";
-    }
-  }
     function botaoPesquisa() {
         function botaoPesquisaOff() {
             document.getElementById("botaopesquisa").classList.remove("botao2-pesquisa");
@@ -29,14 +32,14 @@ var resultadoPesquisa = "";
         setTimeout(botaoPesquisaOff, 300);
             resultadoPesquisa = document.getElementById("input").value; 
     }        
-  function botaoPesquisaMobile() {
-    function botaoPesquisaMobileOff() {
-        document.getElementById("botaopesquisamobile").classList.remove("botao2-pesquisa-mobile");
+    function botaoPesquisaMobile() {
+        function botaoPesquisaMobileOff() {
+            document.getElementById("botaopesquisamobile").classList.remove("botao2-pesquisa-mobile");
+        }
+        document.getElementById("botaopesquisamobile").classList.add("botao2-pesquisa-mobile");
+        setTimeout(botaoPesquisaMobileOff, 380);
+        resultadoPesquisa = document.getElementById("input").value; 
     }
-    document.getElementById("botaopesquisamobile").classList.add("botao2-pesquisa-mobile");
-    setTimeout(botaoPesquisaMobileOff, 380);
-    resultadoPesquisa = document.getElementById("input").value; 
-  }
 /* Pesquisa Mobile - maxlength */
 document.getElementById("input-mobile").addEventListener("input", checkMaxlenght);
 function checkMaxlenght() {
@@ -82,6 +85,7 @@ function hoverSubMenuOff(submenu) {
 /* Botão Menu Mobile */
 function botaoMenuMobile() {
     document.getElementById("botao-lateral-fechar").style.transform = "translateX(0vw)";
+    adaptadorPrefixos("botao-lateral-fechar", "translateX(0vw)");
     document.getElementById("menu-lateral").style.width = "65vw";
     document.getElementById("corpo").style.filter = "brightness(45%)";
     document.getElementById("corpo").style.pointerEvents = "none";
@@ -92,6 +96,7 @@ function botaoMenuMobile() {
   }
 function fecharMenuLateral() {
     document.getElementById("botao-lateral-fechar").style.transform = "translateX(-45vw)";
+    adaptadorPrefixos("botao-lateral-fechar", "translateX(-45vw)");
     document.getElementById("menu-lateral").style.width = "0";
     document.getElementById("corpo").style.filter = "brightness(100%)";
     document.getElementById("corpo").style.pointerEvents = "";
@@ -127,6 +132,8 @@ function botaoUltimosGuias(botao) {
             if (posicaoShowcase < 2) { /* <--- Novo Guia? Adicione AQUI */
                 posicaoShowcase = posicaoShowcase + 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
                 clearInterval(loopShowCase);
                 loopShowCase = setInterval(showCase, 4000);
             } 
@@ -135,6 +142,8 @@ function botaoUltimosGuias(botao) {
             if (posicaoShowcase !== 0) {
                 posicaoShowcase = posicaoShowcase - 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
+                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
                 clearInterval(loopShowCase);
                 loopShowCase = setInterval(showCase, 4000);
             } 
@@ -145,6 +154,8 @@ function botaoUltimosGuias(botao) {
             if (posicaoShowcase < 4) { /* <--- Novo Guia? Adicione AQUI */
                 posicaoShowcase = posicaoShowcase + 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
+                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
+                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
                 clearInterval(loopShowCase);
                 loopShowCase = setInterval(showCase, 4000);
             } 
@@ -153,6 +164,8 @@ function botaoUltimosGuias(botao) {
             if (posicaoShowcase !== 0) {
                 posicaoShowcase = posicaoShowcase - 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
+                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
+                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
                 clearInterval(loopShowCase);
                 loopShowCase = setInterval(showCase, 4000);
             } 
@@ -170,12 +183,16 @@ function showCase() {
             posicaoShowcase = 0;        
         }
         showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
+        showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
+        showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
     }
     else if (resolucaoL <= 800) {
         if (posicaoShowcase > guias.length - 1) {
             posicaoShowcase = 0;        
         }
         showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
+        showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
+        showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
     }
 }
 var loopShowCase = setInterval(showCase, 4000);
@@ -227,9 +244,11 @@ function acessoRapidoMobile(elemento, link) {
                 return;
             }
             document.getElementById(elemento).style.transform="scale(108%)";
+            adaptadorPrefixos(elemento, "scale(108%)");
             document.getElementById(elemento).style.filter="brightness(120%)";
             if (acessoRapidoReset[0] !== "") {
                 document.getElementById(acessoRapidoReset[0]).style.transform="scale(100%)";
+                adaptadorPrefixos(acessoRapidoReset[0], "scale(100%)");
                 document.getElementById(acessoRapidoReset[0]).style.filter="brightness(70%)";
             }
             acessoRapidoReset[0] = elemento;
