@@ -5,51 +5,6 @@ function abrirLink(link) {
 function abrirLinkFora(link) {
     window.open(link, '_blank').focus();
  }
-/* Função RESET */
-var resetType = ["", "", ""];
-var resetT = "";
-function reset() {
-    if (resetType === "BotaoPesquisa") {
-        document.getElementById("botaopesquisa").style.top="0.3vw";
-        document.getElementById("botaopesquisa").style.width="4.85vw";
-        document.getElementById("botaopesquisa").style.height="4.1vw";
-        resetT = "botaopesquisa";
-        setTimeout(resetTransition, 200);
-    }
-    else if (resetType === "BotaoPesquisaMobile") {
-        document.getElementById("botaopesquisamobile").style.top="3vw";
-        document.getElementById("botaopesquisamobile").style.width="12vw";
-        document.getElementById("botaopesquisamobile").style.height="11vw";
-        document.getElementById("botaopesquisamobile").style.filter="brightness(100%)";
-        resetT = "botaopesquisamobile";
-        setTimeout(resetTransition, 200);
-    }
-    else if (resetType === "BotaoMenuMobile") {
-        document.getElementById("botao-menu-mobile").style.top="0%";
-        document.getElementById("botao-menu-mobile").style.width="17vw";
-        document.getElementById("botao-menu-mobile").style.height="10.5vw";
-        document.getElementById("botao-menu-mobile").style.transform="translateX(0%)";
-        document.getElementById("botao-menu-mobile").style.filter="brightness(100%)";
-        resetT = "botao-menu-mobile";
-        setTimeout(resetTransition, 200);
-    }
-    else if (resetType[0] === "BotaoMenu") {
-        document.getElementById(resetType[1]).style.transform="translateY(0vw)";
-        document.getElementById(resetType[2]).style.transform="translateY(0vw)";
-    }
-    else if (resetType[0] === "BotaoUltimosGuias") {
-        document.getElementById(resetType[1]).style.top="5.8vw";
-        document.getElementById(resetType[1]).style.height="32%";
-        document.getElementById(resetType[1]).style.width="8%";
-        document.getElementById(resetType[1]).style.right=resetType[2];
-        resetT = resetType[1];
-        setTimeout(resetTransition, 200);
-    }
-    resetType = ["", ""];
-}
-function resetTransition() {
-    document.getElementById(resetT).style.transition="none";
-}
 /* Barra de Pesquisa */
 var resultadoPesquisa = "";
   function inputPesquisa(tipo) {
@@ -66,24 +21,21 @@ var resultadoPesquisa = "";
       document.getElementById("pesquisar").style.opacity="1";
     }
   }
-  function botaoPesquisa(tipo) {
-            document.getElementById("botaopesquisa").style.transition="top 0.08s, width 0.08s, height 0.08s";
-            document.getElementById("botaopesquisa").style.top="0.4vw";
-            document.getElementById("botaopesquisa").style.width="4.48vw";
-            document.getElementById("botaopesquisa").style.height="3.9vw";
-            resetType = "BotaoPesquisa";
+    function botaoPesquisa() {
+        function botaoPesquisaOff() {
+            document.getElementById("botaopesquisa").classList.remove("botao2-pesquisa");
+        }
+        document.getElementById("botaopesquisa").classList.add("botao2-pesquisa");
+        setTimeout(botaoPesquisaOff, 300);
             resultadoPesquisa = document.getElementById("input").value; 
-            setTimeout(reset, 160);
     }        
   function botaoPesquisaMobile() {
-    document.getElementById("botaopesquisamobile").style.transition="top 0.08s, width 0.08s, height 0.08s, filter 0.08s";
-    document.getElementById("botaopesquisamobile").style.top="3.3vw";
-    document.getElementById("botaopesquisamobile").style.width="11vw";
-    document.getElementById("botaopesquisamobile").style.height="10.1vw";
-    document.getElementById("botaopesquisamobile").style.filter="brightness(70%)";
-    resetType = "BotaoPesquisaMobile";
+    function botaoPesquisaMobileOff() {
+        document.getElementById("botaopesquisamobile").classList.remove("botao2-pesquisa-mobile");
+    }
+    document.getElementById("botaopesquisamobile").classList.add("botao2-pesquisa-mobile");
+    setTimeout(botaoPesquisaMobileOff, 380);
     resultadoPesquisa = document.getElementById("input").value; 
-    setTimeout(reset, 200);
   }
 /* Pesquisa Mobile - maxlength */
 document.getElementById("input-mobile").addEventListener("input", checkMaxlenght);
@@ -130,14 +82,6 @@ function hoverSubMenuOff(submenu) {
 /* Botão Menu Mobile */
 function botaoMenuMobile() {
     document.getElementById("botao-lateral-fechar").style.transform = "translateX(0vw)";
-    document.getElementById("botao-menu-mobile").style.transition="top 0.08s, width 0.08s, height 0.08s, filter 0.08s, transform 0.08s";
-    document.getElementById("botao-menu-mobile").style.top="2%";
-    document.getElementById("botao-menu-mobile").style.transform="translateX(3%)";
-    document.getElementById("botao-menu-mobile").style.width="15.6vw";
-    document.getElementById("botao-menu-mobile").style.height="9.6vw";
-    document.getElementById("botao-menu-mobile").style.filter="brightness(70%)";
-    resetType = "BotaoMenuMobile";
-    setTimeout(reset, 200);
     document.getElementById("menu-lateral").style.width = "65vw";
     document.getElementById("corpo").style.filter = "brightness(45%)";
     document.getElementById("corpo").style.pointerEvents = "none";
@@ -156,8 +100,7 @@ function fecharMenuLateral() {
     document.getElementById("funcao-pesquisa-mobile-mais-menu").style.filter = "brightness(100%)";
     document.getElementById("funcao-pesquisa-mobile-mais-menu").style.pointerEvents = "";
 }
-/* Menu Mobile */
-/* Fixagem Menu Topo */
+/* Fixagem Menu Mobile*/
 const barraMobile = document.getElementById("funcao-pesquisa-mobile-mais-menu");
 var pontoFixo = barraMobile.offsetTop;
 window.onscroll = function() {checkRolagemMenu()};
@@ -300,6 +243,7 @@ function acessoRapidoMobile(elemento, link) {
          /* link */
     }
 }
+/* Botões */
 function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
     function botaoTipo1Off() {
         document.getElementById(elemento).classList.remove("botao1");
@@ -376,6 +320,19 @@ function botaoTipo2ComBrilho(elemento, elemento2) {
         document.getElementById(elemento2).classList.add("botao2-com-brilho");
     }
     setTimeout(botaoTipo2ComBrilhoOff, 220);
+}
+function botaoTipo2MenosBrilho(elemento, elemento2) {
+    function botaoTipo2MenosBrilhoOff() {
+        document.getElementById(elemento).classList.remove("botao2-menos-brilho");
+        if (elemento2 !== undefined) {
+            document.getElementById(elemento2).classList.remove("botao2-menos-brilho");
+        }
+    }
+    document.getElementById(elemento).classList.add("botao2-menos-brilho");
+    if (elemento2 !== undefined) {
+        document.getElementById(elemento2).classList.add("botao2-menos-brilho");
+    }
+    setTimeout(botaoTipo2MenosBrilhoOff, 220);
 }
 var rotacao = 0;
 function rotacao90(elemento, elemento2) {

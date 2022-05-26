@@ -13,7 +13,7 @@
 		</picture>
 		<div id="funcao-pesquisa">
 			<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
-			<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa('pesquisar')">
+			<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
 			<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa">
 			<h2 id="pesquisar">Pesquisar...</h2>
 			<form>
@@ -23,7 +23,7 @@
 		<div id="funcao-pesquisa-mobile-mais-menu">
 			<img src="_imagens/botao_pesquisa.png" id="botaopesquisamobile" onclick="botaoPesquisaMobile()">
 			<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
-			<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile()">
+			<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
 			<h2 id="pesquisar-mobile">Pesquisar...</h2>
 			<form>
 				<input type="text" autocomplete="off" id="input-mobile" maxlength="12" value="" style="text-transform:lowercase" onclick="inputPesquisa('clickmobile')">
