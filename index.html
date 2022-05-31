@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title>Pathologic 2 Brasil</title>
 	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
 </head>
-<body>	
+<body id="body">	
 	<header>
 		<picture id="banner">
 			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
 			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
 		</picture>
 		<div id="funcao-pesquisa">
-			<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+			<div id="funcao-pesquisa-barra">
+				<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+				<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+			</div>
 			<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-			<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa">
 			<h2 id="pesquisar">Pesquisar...</h2>
 			<form>
 				<input type="text" autocomplete="off" id="input" maxlength="12" value="" style="text-transform:lowercase" onclick="inputPesquisa('click')">
@@ -96,7 +99,7 @@
 						<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
 						<img src="_imagens/bem_vindo.jpg" id="bannerbemvindo">
 						</picture>
-						<h1>Bem Vindo ao<br class="modo-mobile"> Pathologic 2 Brasil !</h1>
+						<h1>Bem Vindo(a) ao<br class="modo-mobile"> Pathologic 2 Brasil !</h1>
 					</div>
 					<div id="introducao">
 					    <h2>Aqui você irá encontrar tudo que precisa para ser um <span id="menku">honrado menkhu,</span><br> um <span id="cirurgiao">mestre cirurgião</span> ou um <br class="modo-mobile"><span id="ator">renomado ator!</span></h2>
@@ -117,7 +120,7 @@
 						<div id="subshowcase">
 							<div id="showcase">
 								<img src="_imagens/ultimos_guias_dinheiro.png">
-								<img src="_imagens/ultimos_guias_comida.png">				
+								<img src="_imagens/ultimos_guias_comida.png">			
 								<img src="_imagens/ultimos_guias_economia.png">
 								<img src="_imagens/ultimos_guias_receitas.png">
 								<img src="_imagens/ultimos_guias_combate.png">
