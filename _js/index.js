@@ -178,6 +178,11 @@ var pontoFixo = barraMobile.offsetTop;
 window.onscroll = function() {checkRolagemMenu()};
 function checkRolagemMenu() {
     let resolucaoLargura = window.innerWidth;
+    if (resolucaoLargura !== resolucaoL) {
+        resolucaoL = window.innerWidth;
+        barraMobile.classList.remove("barra-fixa");
+        pontoFixo = barraMobile.offsetTop;
+    }
     if (window.pageYOffset >= pontoFixo) {
       barraMobile.classList.add("barra-fixa");
       if (resolucaoLargura <= 800) {
