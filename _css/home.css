@@ -47,7 +47,7 @@
 			background-image: url('../_imagens/fundo_mobile.jpg');
 			background-color:#000000;
 			margin-top: -5.4vw;
-			height: 250vw;
+			height: 252vw;
 			background-size: 120% 100%;
 			overflow: hidden;
 		}
@@ -55,7 +55,7 @@
 			top: 4.5vw;
 			width: 97.6vw !important;
 			margin: 0vw 0vw 0.75vw 1.6vw !important;
-			height: 97.7%;
+			height: 97.6%;
 		}
 	}
 /* Conteudo da Pagina */
@@ -96,6 +96,8 @@
 	div#introducao h2 {
 		position: relative;
 		text-align: center;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
 		top: -0.5vw;
 		color: #ffffff;
 		font-size: 2vw;
@@ -141,14 +143,14 @@
 	@media screen and (max-width: 800px) {
 		div#introducaotitulo h1 {
 			font-size: 6vw;
-			top: -16.8vw;
+			top: -15.8vw;
 			text-shadow: 0.52vw 0 0 rgb(0, 0, 0), -0.52vw 0 0 rgb(0, 0, 0), 0 0.52vw 0 rgb(0, 0, 0), 0 -0.52vw 0 rgb(0, 0, 0), 0.30vw 0.30vw rgb(0, 0, 0), -0.30vw -0.30vw 0 rgb(0, 0, 0), 0.30vw -0.30vw 0 rgb(0, 0, 0), -0.30vw 0.30vw 0 rgb(0, 0, 0);		
 			left: 1vw;
 		}
 		picture#banner-bem-vindo-mobile img {
 			height: 20vw;
 			width: 98%;
-			top: 1vw;
+			top: 2vw;
 			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
 		}
 		div#introducao {
@@ -292,12 +294,12 @@
 		div#ultimosguiastitulo h1 {
 			font-size: 6vw;
 			letter-spacing: 0.4vw;
-			top: -22.8vw;
+			top: -21.8vw;
 			text-shadow: 0.52vw 0 0 rgb(0, 0, 0), -0.52vw 0 0 rgb(0, 0, 0), 0 0.52vw 0 rgb(0, 0, 0), 0 -0.52vw 0 rgb(0, 0, 0), 0.30vw 0.30vw rgb(0, 0, 0), -0.30vw -0.30vw 0 rgb(0, 0, 0), 0.30vw -0.30vw 0 rgb(0, 0, 0), -0.30vw 0.30vw 0 rgb(0, 0, 0);	
 		}
 		img#bannerultimosguias {
 			height: 12vw;
-			top: -13.2vw;
+			top: -12.2vw;
 			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
 		}
 		div#ultimosguias {
@@ -447,7 +449,7 @@
 		div#acessorapidotitulo h1 {
 			font-size: 6vw;
 			letter-spacing: 0.3vw;
-			top: -29.4vw;
+			top: -28.4vw;
 			text-shadow: 0.52vw 0 0 rgb(0, 0, 0), -0.52vw 0 0 rgb(0, 0, 0), 0 0.52vw 0 rgb(0, 0, 0), 0 -0.52vw 0 rgb(0, 0, 0), 0.30vw 0.30vw rgb(0, 0, 0), -0.30vw -0.30vw 0 rgb(0, 0, 0), 0.30vw -0.30vw 0 rgb(0, 0, 0), -0.30vw 0.30vw 0 rgb(0, 0, 0);
 			margin-left: 2vw;
 			margin-right: 2vw;
@@ -455,7 +457,7 @@
 		img#banneracessorapido {
 			height: 12vw;
 			width: 98%;
-			top: -20vw;
+			top: -19vw;
 			margin: 1% 1% 0% 1%;
 			box-shadow: 0.4vw 0.4vw 0.4vw rgba(0, 0, 0, 0.7);
 		}

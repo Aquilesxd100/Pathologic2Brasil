@@ -197,6 +197,14 @@ function checkRolagemMenu() {
       }
     }
 }
+/* Fixagem Menu Mobile Depois do Carregamento*/
+var checkBarraFixa = setInterval(() => {
+    if (document.readyState === 'complete') {
+        barraMobile.classList.remove("barra-fixa");
+        pontoFixo = barraMobile.offsetTop; 
+        clearInterval(checkBarraFixa);
+    }
+}, 100);
 /* Botões */
 function botaoTipo1(elemento, elemento2, elemento3, elemento4) {
     function botaoTipo1Off() {

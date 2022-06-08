@@ -388,6 +388,11 @@
 			font-weight: normal;
 			pointer-events: none;
 		}
+		#combate-mobile, #comida-mobile, #mapautil-mobile, #tudo-mobile {
+			position: absolute !important;
+			margin:0 !important;
+			padding:0 !important;
+		}
 		#combate-mobile {
 			top: -17.5vw;
 			left: 11.3vw;
@@ -404,6 +409,12 @@
 			top: 13.5vw;
 			left: 5.7vw;
 			font-size: 5.1vw !important;
+		}
+		div#sub-menu-lateral ul {
+			position: absolute;
+			top: 19.5vw;
+			padding: 0;
+			margin: 0;
 		}
 	/* Menu de Navegação */
 	nav#menu img#barra1, nav#menu img#barra2, nav#menu img#barra3, nav#menu img#barra4 {

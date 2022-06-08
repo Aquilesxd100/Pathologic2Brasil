@@ -6,3 +6,16 @@ https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
 
 
 36%
+
+W=Anda para frente | S=Anda para tras | D=Anda para direita | A=Anda para esquerda | W+Shift=Corre para frente | C(segurando)=Modo furtivo | Barra de Espaço=Pula<br></p>
+1=Levantar/Abaixar Punhos | 3=Levantar/Abaixar Faca | Mouse Esquerdo=Ataque Rapido | Mouse Esquerdo(segurando)=Ataque Potente | Mouse Direito=Bloqueio<br></p>
+2=Levanta/Abaixa Arma | Mouse Esquerdo=Atira | Mouse Direito(segurando)=Mira</p><hr>
+
+
+
+
+ns534.umbler.com
+ns148.umbler.in
+ns283.umbler.com.br
+ns840.umbler.co.uk
+DNS (Antigo) : 187.84.225.50
