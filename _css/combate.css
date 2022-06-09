@@ -81,8 +81,8 @@ h1 {
 	border: 8px solid #000000;
 	margin: 0 1% 0% 1%;
 	background-image: url(../_imagens/fundo_ultimos_posts.jpg);
-	background-size: cover;
-	font-size: 25px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	font-weight: bolder;
 	color: #FFFFFF;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
@@ -107,29 +107,84 @@ hr {
 .amarelo {
 	color: yellow;
 }
-#combate-introducao p {
-	margin: 15px 15px 15px 15px;
+#p-introducao, #aviso-introducao {
+	margin: 12px auto 15px auto;
+	max-width: 1200px;
+	min-width: 200px;
 }
 #p-introducao {
-	text-indent: 50px;
 	text-align: center;
+	font-size: 25px;
+}
+#combate-img {
+	display: grid;
+	place-items: center;
+}
+#combate-img img {
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	width: 70%;
+	min-width: 300px;
+}
+#odongs-div {
+	border-top: 7px solid #000000;
+	border-bottom: 8px solid #000000;
+	margin: 12px 0 0px 0;
+	display: flex;
+	min-width: 100%;
+	align-items: center;
 }
 #odongs {
-	text-align: left;
 	color: #DDDDDD;
-	font-size: 26px;
+	font-size: 23px;
 	font-weight: normal;
+	text-align: left;
+	margin-top: 5px !important;
+	margin-bottom: 10px !important;
+}
+#odongs-img {
+	max-width: 80px;
+	float: left;
+	border: 5px solid #000000;
+	margin: 1%;
 }
 #introducao-sub, #introducao-sub1, #introducao-sub2 {
 	font-weight: bolder;
 }
 p#aviso-introducao {
 	font-weight: normal;
+	text-align: justify;
+	font-size: 22px;
 }
 .hr-fino {
 	height: 5px;
 	background: #000000;
-	border:none;
+	border: none;
+}
+/* Introducao Combate (Mobile) */
+@media screen and (max-width: 800px) {
+	#combate-introducao {
+	text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+	}
+
+	#p-introducao {
+		font-size: 18px;
+	}
+	#odongs {
+		font-size: 3vh;	
+	}
+	p#aviso-introducao {
+		font-size: 15px;
+	}
+	#combate-introducao {
+	background-image: url(../_imagens/fundo_post_mobile.jpg);
+	}
+}
+/* Introducao Combate (Margem Adaptativa) */
+@media screen and (max-width: 1240px) {
+	#combate-introducao p {
+		margin: 10px 10px 10px 10px;
+	}
 }
 /* Footer */
 	footer {
