@@ -19,7 +19,7 @@
 		position: relative;
 		top: 0vw;
 		width: 99vw;
-		height: 120vw;
+		height: 180vw;
 		max-width: 100%;
 		overflow: hidden;
 	}	
@@ -47,7 +47,7 @@
 			background-image: url('../_imagens/fundo_mobile.jpg');
 			background-color:#000000;
 			margin-top: -5.4vw;
-			height: 250vw;
+			height: 450vw;
 			background-size: 120% 100%;
 			overflow: hidden;
 		}
@@ -89,11 +89,7 @@ h1 {
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
 }
-hr {
-	height: 7px;
-	background: #000000;
-	border:none;
- }
+
 .link {
 	color: #00D900;
 }
@@ -158,15 +154,14 @@ p#aviso-introducao {
 	text-align: justify;
 	font-size: 22px;
 }
-.hr-fino {
-	height: 5px;
-	background: #000000;
-	border: none;
-}
 /* Introducao Combate (Mobile) */
 @media screen and (max-width: 800px) {
+	#banner-combate img {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
 	#combate-introducao {
 	text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+	box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	#p-introducao {
 		font-size: 18px;
@@ -218,7 +213,6 @@ h2#corpo-a-corpo-titulo {
 	color: #FFFFFF;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
-	
 }
 #corpo-a-corpo-introducao {
 	display: inline-block;
@@ -230,28 +224,94 @@ h2#corpo-a-corpo-titulo {
 	margin: 1% 1% 0% 1%;
 	border: 5px solid #000000;
 }
-.sub-titulo-sublinhado {
-	font-size: 27px;
-	border-bottom: 2px solid #ffffff;
-	font-weight: bolder;
-}
 #corpo-a-corpo-introducao p {
 	font-size: 25px;
 	font-weight: normal;
-	text-align: left;
+	text-align: justify;
 	margin: 1% 1% 1% 1%;
 	text-indent: 70px;
+}
+#corpo-a-corpo-inferior {
+	min-width: 100%;	
+	border-bottom: 7px solid #000000;
+}
+div#corpo-a-corpo-introducao h3 {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	margin: 1% 5% 1% 5%;
+	color: #EEEEEE;
+}
+#passo-1 h2 {
+	font-size: 31px;
+	font-weight: normal;
+	text-align: center;
+	margin: 1% 2% 1% 2%;
+	font-family: batukapur;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.2vw;
+}
+#passo-1-video {
+	border-top: 7px solid #000000;
+	display: block;
+}
+.video {
+	float: right;
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	width: 853px;
+	height: 480px;
+	min-width: 300px;
+	margin: 2% 2% 2% 2%;
+}
+#passo-1-video p {
+	text-align: left;
+	text-indent: 0;
+	margin: 2%;
 }
 /* Corpo-a-corpo (Mobile) */
 @media screen and (max-width: 800px) {
 	#banner-corpo-a-corpo img {
 		top:-125px;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	h2#corpo-a-corpo-titulo {
-		top: -227px;
+		top: -229px;
+		font-size: 36px;
+	}
+	#corpo-a-corpo {
+		background-image: url("../_imagens/fundo_post_mobile.jpg");
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	#corpo-a-corpo-img {
+		float: none;
+		min-width: 300px;
+		border: 6px solid #000000;
+		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+		max-width: none;
+		max-height: none;
+		width: 70%;
+		margin: 2% 0 1% 0;
+	}
+	#corpo-a-corpo-introducao {
+		display: grid;
+		place-items: center;
+	}
+	#corpo-a-corpo-introducao p {
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		width: 80vw;
+		min-width: 285px;
+		margin: 1% 2% 2% 2%;
+		text-indent: 40px;
+	}
+	div#corpo-a-corpo-introducao h3 {
+		font-size: 23px;
+	}
+	#passo-1 h2 {
+		font-size: 27px;
 	}
 }
-
 /* Footer */
 	footer {
 		display: none;
