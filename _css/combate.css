@@ -19,7 +19,7 @@
 		position: relative;
 		top: 0vw;
 		width: 99vw;
-		height: 180vw;
+		height: 600vw;
 		max-width: 100%;
 		overflow: hidden;
 	}	
@@ -47,7 +47,7 @@
 			background-image: url('../_imagens/fundo_mobile.jpg');
 			background-color:#000000;
 			margin-top: -5.4vw;
-			height: 450vw;
+			height: 1000vw;
 			background-size: 120% 100%;
 			overflow: hidden;
 		}
@@ -137,8 +137,6 @@ h1 {
 	font-size: 23px;
 	font-weight: normal;
 	text-align: left;
-	margin-top: 5px !important;
-	margin-bottom: 10px !important;
 }
 #odongs-img {
 	max-width: 80px;
@@ -217,6 +215,9 @@ h2#corpo-a-corpo-titulo {
 #corpo-a-corpo-introducao {
 	display: inline-block;
 }
+#corpo-a-corpo-introducao2 {
+	display: inline-block;
+}
 #corpo-a-corpo-img {
 	float: left;
 	max-width: 330px;
@@ -233,41 +234,166 @@ h2#corpo-a-corpo-titulo {
 }
 #corpo-a-corpo-inferior {
 	min-width: 100%;	
-	border-bottom: 7px solid #000000;
 }
 div#corpo-a-corpo-introducao h3 {
 	font-size: 28px;
 	font-weight: bold;
 	text-align: center;
 	margin: 1% 5% 1% 5%;
-	color: #EEEEEE;
+	color: #BFEDEF;
+	letter-spacing: 0.08vw;
+}
+/* Corpo-a-Corpo - Passo #1 */
+div .titulo-dica {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	min-width: 100%;
+	width: 100%;
 }
 #passo-1 h2 {
 	font-size: 31px;
 	font-weight: normal;
 	text-align: center;
+	color: #FCC200;
 	margin: 1% 2% 1% 2%;
-	font-family: batukapur;
+	font-family: frizquadrata;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
-	letter-spacing: 0.2vw;
+	letter-spacing: 0.1vw;
+}
+#passo-1 h2 span {
+	font-family: impact;
+	font-weight: normal;
 }
 #passo-1-video {
-	border-top: 7px solid #000000;
-	display: block;
+	display: flex;
+	align-items: center;
 }
 .video {
-	float: right;
 	border: 6px solid #000000;
 	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-	width: 853px;
-	height: 480px;
-	min-width: 300px;
+	min-width: 52vw; 
+	min-height: 29vw;
 	margin: 2% 2% 2% 2%;
 }
 #passo-1-video p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: left;
 	text-indent: 0;
-	margin: 2%;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+#passo-1-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Corpo-a-Corpo - Passo #2 */
+div .titulo-dica2 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-2 h2 {
+	font-size: 27px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.5% 2% 1% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-2 h2 span {
+	font-family: impact;
+	font-weight: normal;
+}
+#passo-2-video {
+	display: flex;
+	align-items: center;
+}
+#passo-2-video p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	text-indent: 0;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+#passo-2-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Corpo-a-Corpo - Passo #3 */
+div .titulo-dica3 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-3 h2 {
+	font-size: 27px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.5% 2% 1% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-3 h2 span {
+	font-family: impact;
+	font-weight: normal;
+}
+#passo-3-video {
+	display: flex;
+	align-items: center;
+}
+#passo-3-video p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	text-indent: 0;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+#passo-3-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
 }
 /* Corpo-a-corpo (Mobile) */
 @media screen and (max-width: 800px) {
@@ -276,7 +402,7 @@ div#corpo-a-corpo-introducao h3 {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	h2#corpo-a-corpo-titulo {
-		top: -229px;
+		top: -231px;
 		font-size: 36px;
 	}
 	#corpo-a-corpo {
@@ -293,8 +419,9 @@ div#corpo-a-corpo-introducao h3 {
 		width: 70%;
 		margin: 2% 0 1% 0;
 	}
-	#corpo-a-corpo-introducao {
-		display: grid;
+	#corpo-a-corpo-introducao2 {
+		display: flex;
+		flex-direction: column;
 		place-items: center;
 	}
 	#corpo-a-corpo-introducao p {
@@ -307,9 +434,100 @@ div#corpo-a-corpo-introducao h3 {
 	}
 	div#corpo-a-corpo-introducao h3 {
 		font-size: 23px;
+		margin-bottom: 2%;
 	}
+	/* Corpo-a-Corpo - Passo #1 (Mobile) */
 	#passo-1 h2 {
 		font-size: 27px;
+	}
+	.video {
+		width: 86vw;
+		height: 48.5vw;
+		min-width: 300px;
+		min-height: 170px;
+	}
+	#passo-1-video p {
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 0 2.5% 0%;
+		padding: 7px 14px 13px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-1-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 0.8vw;
+	}
+	#passo-1-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-1-dicas {
+		order: 2;
+	}
+	/* Corpo-a-Corpo - Passo #2 (Mobile)*/
+	#passo-2 h2 {
+		font-size: 23px;
+	}
+	#passo-2-video p {
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 0 2.5% 0%;
+		padding: 7px 14px 13px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-2-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 0.8vw;
+	}
+	#passo-2-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-2-dicas {
+		order: 2;
+	}
+	/* Corpo-a-Corpo - Passo #3 (Mobile)*/
+	#passo-3 h2 {
+		font-size: 23px;
+	}
+	#passo-3-video p {
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 0 2.5% 0%;
+		padding: 7px 14px 13px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-3-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 0.8vw;
+	}
+	#passo-3-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-3-dicas {
+		order: 2;
 	}
 }
 /* Footer */

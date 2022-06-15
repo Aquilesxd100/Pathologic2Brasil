@@ -45,7 +45,7 @@
 					<li id="mapautil-mobile">Mapa Util</li> 
 					<li id="tudo-mobile">Mostrar Tudo</li> 
 				</ul>
-				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile')">
+				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
 				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile')">
 				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile')">
 				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile')">
@@ -53,7 +53,7 @@
 			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
 			<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2')">
 			<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2')">
-			<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2')">
+			<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
 			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
 			<img src="_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
 			<h1 id="titulo-menu-lateral">Menu</h1>
@@ -83,7 +83,7 @@
 			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
 			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
 			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
-			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
+			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
 			<ul>
 				<li id="combate">Combate</li> 
 				<li id="comida">Comida</li> 					
@@ -119,18 +119,49 @@
 					<h2 id="corpo-a-corpo-titulo">Corpo-a-Corpo</h2>
 					<div id="corpo-a-corpo">
 						<div id="corpo-a-corpo-introducao">
-							<img src="_imagens/_guias/corpo-a-corpo.jpg" id="corpo-a-corpo-img">
-							<p>Um dos seus maiores aliados no combate corpo a corpo é o ataque potente, apesar dele utilizar muita energia o dano que ele causa combinado com o atordoamento temporário ao inimigo, o torna extremamente útil para causar dano, sem receber de volta. Apesar de parecer simples, esse estilo de combate requer uma boa noção de timing ja que o ataque potente demora um tempo para ser executado.</p>
-							<div id="corpo-a-corpo-inferior">
-								<h3>- Abaixo listei em 5 passos uma ótima estrategia de luta que faz uso desse ataque e eu mesmo utilizo em jogo!</h3>
+							<div id="corpo-a-corpo-introducao2">
+								<img src="_imagens/_guias/corpo-a-corpo.jpg" id="corpo-a-corpo-img">
+								<p>Um dos seus maiores aliados no combate corpo a corpo é o ataque potente, apesar dele utilizar muita energia o dano que ele causa combinado com o atordoamento temporário ao inimigo, o torna extremamente útil para causar dano, sem receber de volta. Apesar de parecer simples, esse estilo de combate requer uma boa noção de timing ja que o ataque potente demora um tempo para ser executado.</p>
+								<div id="corpo-a-corpo-inferior">
+									<h3>- Abaixo listei em 5 passos uma ótima estrategia de luta que faz uso desse ataque e eu mesmo utilizo em jogo!</h3>
+								</div>
 							</div>
 							<div id="passo-1">
-								<h2> 1 - Mantenha uma certa distancia do inimigo!</h2>
+								<div class="titulo-dica">
+									<h2><span>#1</span> - Mantenha uma certa distancia do inimigo!</h2>
+								</div>
 								<div id="passo-1-video">
+									<div id="passo-1-dicas">
+										<p><img src="_imagens/_icones/flecha_texto.png">Somente o suficiente para o ataques do mesmo não o alcançarem.</p>
+										<p><img src="_imagens/_icones/flecha_texto.png">Se mova para trás sempre que necessario evitando virar de costas.</p>
+										<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se que você tem espaço para se afastar e uma rota de fuga.</p>
+									</div>
 									<iframe class="video" src="https://www.youtube.com/embed/7YCQQoXqLQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<p> - Somente o suficiente para o ataques do mesmo não o alcançarem.</p>
-									<p>- Se mova para trás sempre que necessario evitando virar de costas.</p>
-									<p> - Certifique-se que você tem espaço para se afastar e uma rota de fuga.</p>
+								</div>
+							</div>
+							<div id="passo-2">
+								<div class="titulo-dica2">
+									<h2><span>#2</span> - Conforme o inimigo se aproxima comece a carregar o ataque potente, ande em sua direção perto do final da animação para garantir que ele esteja dentro do alcance.</h2>
+								</div>
+								<div id="passo-2-video">
+									<div id="passo-2-dicas">
+										<p><img src="_imagens/_icones/flecha_texto.png">Sempre espere o inimigo se aproximar primeiro.</p>
+										<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se que você tem energia suficiente para o ataque.</p>
+									</div>
+									<iframe class="video" src="https://www.youtube.com/embed/ofzjFesclFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+							</div>
+							<div id="passo-3">
+								<div class="titulo-dica3">
+									<h2><span>#3</span> - Após acertar o golpe se afaste do inimigo ate sair do alcance de seus ataques, e entao segure o bloqueio mirando um pouco acima do adversário a fim de ainda poder ve-lo embaixo do seus braços enquanto recupera energia.</h2>
+								</div>
+								<div id="passo-3-video">
+									<div id="passo-3-dicas">
+										<p><img src="_imagens/_icones/flecha_texto.png">Se mova para trás enquanto bloqueia para ganhar tempo e energia.</p>
+										<p><img src="_imagens/_icones/flecha_texto.png">Fique atento aos movimentos do inimigo!</p>
+										<p><img src="_imagens/_icones/flecha_texto.png">Caso o inimigo desvie do ataque, se afaste e repita todo o processo.</p>
+									</div>
+									<iframe class="video" src="https://www.youtube.com/embed/GwZFi6tVIBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>

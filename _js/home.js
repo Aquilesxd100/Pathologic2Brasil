@@ -146,10 +146,17 @@ function acessoRapidoMobile(elemento, link) {
             acessoRapidoReset[1] = link;
         }   
         else {
-            /* link */
+            if (acessoRapidoReset[1] !== "") {
+                window.open(acessoRapidoReset[1], '_self');
+            }
+            if (acessoRapidoReset[1] === "") {
+                document.getElementById("displayinfo").style.top="28%";
+                document.getElementById("displayinfo").style.color="#FF0000"; 
+                document.getElementById("displayinfo").innerHTML = "Escolha uma das opções primeiro!";
+            }
         }
     }
     else {
-         /* link */
+         window.open(link, '_self');
     }
 }

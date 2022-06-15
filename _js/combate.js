@@ -1,2 +1,2 @@
-/* var test = window.innerWidth;
+ /* var test = window.innerWidth;
 alert(test); */
