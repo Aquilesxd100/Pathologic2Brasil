@@ -47,7 +47,7 @@
 			background-image: url('../_imagens/fundo_mobile.jpg');
 			background-color:#000000;
 			margin-top: -5.4vw;
-			height: 1000vw;
+			height: 1500vw;
 			background-size: 120% 100%;
 			overflow: hidden;
 		}
@@ -451,7 +451,8 @@ div .titulo-dica4 {
 }
 #passo-4-video #p-maior {
 	font-size: 1.65vw;
-	padding: 36px 20px 48px 20px;
+	padding: 18px 20px 30px 20px;
+	background-image: url("../_imagens/placa_retangular_mais_longa_alta.png");
 }
 #passo-4-video #pouco-maior {
 	padding: 23px 20px 34px 20px;
@@ -462,6 +463,38 @@ div .titulo-dica4 {
 	height: 2.5vw;
 	margin: 0 0.3vw 0 0;
 	top: 0.6vw;
+}
+/* Corpo-a-Corpo - Multiplos Inimigos */
+#corpo-a-corpo-multiplos-inimigos {
+	border-top: 7px solid #000000;
+	min-width: 100%;
+	width: 100%;
+	padding:0;
+	margin:0;
+	display: flex;
+	align-items: center;
+}
+#corpo-a-corpo-multiplos-inimigos span {
+	border-bottom: 2px solid #FCC200;
+	font-weight: bolder;
+	color: #FCC200;
+	font-size: 2vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+}
+#corpo-a-corpo-multiplos-inimigos p {
+	font-size: 1.8vw;
+	font-weight: normal;
+	text-align: justify;
+	color: #FFFF99; 
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	margin: 1% 2% 1% 2%;
+}
+#corpo-a-corpo-multiplos-inimigos-video {
+	border: 6px solid #000000;
+	margin: 1% 2% 1% 0%;
+	min-width: 45%;
+	height: 23.5vw;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
 }
 /* Corpo-a-corpo (Mobile) */
 @media screen and (max-width: 800px) {
@@ -526,7 +559,7 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 7px 14px 13px 13px;
+		padding: 11px 14px 17px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-1-video p img {
@@ -537,7 +570,7 @@ div .titulo-dica4 {
 		min-height: 25px;
 		margin: 0 0.3vw 0 0;
 		left: 0vw;
-		top: 0.8vw;
+		top: 6px;
 	}
 	#passo-1-video {
 		display: flex;
@@ -574,7 +607,7 @@ div .titulo-dica4 {
 		min-height: 25px;
 		margin: 0 0.3vw 0 0;
 		left: 0vw;
-		top: 0.8vw;
+		top: 6px;
 	}
 	#passo-2-video {
 		display: flex;
@@ -597,7 +630,7 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 7px 14px 13px 13px;
+		padding: 12px 14px 18px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-3-video p img {
@@ -608,7 +641,7 @@ div .titulo-dica4 {
 		min-height: 25px;
 		margin: 0 0.3vw 0 0;
 		left: 0vw;
-		top: 0.8vw;
+		top: 6px;
 	}
 	#passo-3-video {
 		display: flex;
@@ -631,15 +664,15 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 9px 14px 15px 13px;
+		padding: 15px 14px 20px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-4-video #p-maior {
 		font-size: 19px;
-		padding: 18px 20px 28px 20px;
+		padding: 24px 14px 29px 13px;
 	}
 	#passo-4-video #pouco-maior {
-		padding: 11px 20px 21px 20px;
+		padding: 15px 14px 22px 13px;
 	}
 	#passo-4-video p img {
 		position:relative;
@@ -649,7 +682,7 @@ div .titulo-dica4 {
 		min-height: 25px;
 		margin: 0 0.3vw 0 0;
 		left: 0vw;
-		top: 0.8vw;
+		top: 6px;
 	}
 	#passo-4-video {
 		display: flex;
@@ -658,6 +691,158 @@ div .titulo-dica4 {
 	}
 	#passo-4-dicas {
 		order: 2;
+	}
+	/* Corpo-a-Corpo - Multiplos Inimigos (Mobile) */
+	#corpo-a-corpo-multiplos-inimigos {
+		flex-direction: column;
+	}
+	#corpo-a-corpo-multiplos-inimigos span {
+		font-size: 22px;
+		text-shadow: 2.1px 0 0 rgb(0, 0, 0), -2.1px 0 0 rgb(0, 0, 0), 0 2.1px 0 rgb(0, 0, 0), 0 -2.1px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+	}
+	#corpo-a-corpo-multiplos-inimigos p {
+		font-size: 19px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1% 4% 1% 4%;
+	}
+	#corpo-a-corpo-multiplos-inimigos-video {
+		margin: 1% 0% 2% 0%;
+		width: 86vw;
+		height: 48.5vw;
+		min-width: 300px;
+		min-height: 170px;
+		box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+	}
+}
+/* Armas de Fogo */
+#banner-armas-de-fogo img {
+	position: relative;
+	top:-250px;
+	width: 98%;
+	height: 100px;
+	margin: 1% 1% 0% 1%;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+h2#armas-de-fogo-titulo {
+	position: relative;
+	top: -358px;
+	text-align: center;
+	font-family: batukapur;
+	font-weight: normal;
+	font-size: 38px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+}
+#armas-de-fogo {
+	position: relative;
+	top: -365px;
+	border: 8px solid #000000;
+	margin: 0 1% 0% 1%;
+	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-repeat: repeat;
+	font-weight: bolder;
+	color: #FFFFFF;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+#armas-de-fogo-introducao {
+	display: inline-block;
+}
+#armas-de-fogo-img {
+	float: left;
+	max-width: 330px;
+	max-height: 170px;
+	margin: 1% 1% 0% 1%;
+	border: 5px solid #000000;
+}
+#armas-de-fogo-introducao p {
+	font-size: 25px;
+	font-weight: normal;
+	text-align: justify;
+	margin: 1% 1% 1% 1%;
+	text-indent: 70px;
+}
+div#armas-de-fogo-inferior {
+	display: inline-block;
+	min-width: 100%;
+}
+div#armas-de-fogo-inferior h3 {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0% 5% 1% 5%;
+	color: #BFEDEF;
+	letter-spacing: 0.08vw;
+}
+div#armas-de-fogo-aviso p {
+	margin: 12px auto 15px auto;
+	max-width: 1200px;
+	min-width: 200px;
+	font-weight: normal;
+	text-align: justify;
+	text-indent:0;
+}
+/* Armas de Fogo - Passo 1*/
+div .titulo-dica-2-1 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-2-1 h2 {
+	font-size: 35px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 1.2% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-2-1 h2 span {
+	font-size: 33px;
+	font-family: impact;
+	font-weight: normal;
+	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-size: 100% 100%;
+	padding: 2px 15px 2px 15px;
+}
+#passo-2-1-video {
+	display: flex;
+	align-items: center;
+}
+#passo-2-1-video p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	font-weight: normal;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	text-indent: 0;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+#passo-2-1-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Armas de Fogo (Mobile) */
+@media screen and (max-width: 800px) {
+	#banner-armas-de-fogo img {
+		top:-242px;
+	}
+	h2#armas-de-fogo-titulo {
+		top: -345px;
 	}
 }
 /* Footer */
