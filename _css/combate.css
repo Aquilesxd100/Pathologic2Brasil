@@ -19,7 +19,7 @@
 		position: relative;
 		top: 0vw;
 		width: 99vw;
-		height: 600vw;
+		height: 1150vw;
 		max-width: 100%;
 		overflow: hidden;
 	}	
@@ -47,7 +47,7 @@
 			background-image: url('../_imagens/fundo_mobile.jpg');
 			background-color:#000000;
 			margin-top: -5.4vw;
-			height: 1500vw;
+			height: 4000vw;
 			background-size: 120% 100%;
 			overflow: hidden;
 		}
@@ -88,13 +88,13 @@ h1 {
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
 }
-
 .link {
 	color: #00D900;
 }
 .sublinhado {
 	border-bottom: 2px solid #ffffff;
 	font-weight: bolder;
+	white-space: nowrap;
 }
 .sub-titulo {
 	font-weight: bolder;
@@ -102,9 +102,9 @@ h1 {
 	margin-top: 3px;
 }
 .amarelo {
-	color: yellow;
+	color: #FFFF00;
 }
-#p-introducao, #aviso-introducao {
+#p-introducao, #p-introducao-inferior, #aviso-introducao  {
 	margin: 12px auto 15px auto;
 	max-width: 1200px;
 	min-width: 200px;
@@ -112,6 +112,13 @@ h1 {
 #p-introducao {
 	text-align: center;
 	font-size: 25px;
+}
+#p-introducao-inferior {
+	text-align: center;
+	font-weight: normal;
+	color:#BFEDEF;
+	font-size: 25px;
+	max-width: 1100px;
 }
 #combate-img {
 	display: grid;
@@ -163,6 +170,9 @@ p#aviso-introducao {
 	}
 	#p-introducao {
 		font-size: 18px;
+	}
+	#p-introducao-inferior {
+		font-size: 17px;
 	}
 	#odongs {
 		font-size: 3vh;	
@@ -281,7 +291,6 @@ div .titulo-dica {
 	font-size: 2.1vw;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: left;
-	text-indent: 0;
 	max-width: 870px;
 	margin: 5% 0% 5% 5%;
 	text-indent: 2.1vw;
@@ -334,7 +343,6 @@ div .titulo-dica2 {
 	font-size: 2.1vw;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: left;
-	text-indent: 0;
 	max-width: 870px;
 	margin: 5% 0% 5% 5%;
 	text-indent: 2.1vw;
@@ -387,7 +395,6 @@ div .titulo-dica3 {
 	font-size: 2.1vw;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: left;
-	text-indent: 0;
 	max-width: 870px;
 	margin: 5% 0% 5% 5%;
 	text-indent: 2.1vw;
@@ -440,7 +447,6 @@ div .titulo-dica4 {
 	font-size: 1.85vw;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: left;
-	text-indent: 0;
 	max-width: 870px;
 	margin: 5% 0% 5% 5%;
 	text-indent: 2.1vw;
@@ -450,7 +456,6 @@ div .titulo-dica4 {
 	padding: 18px 20px 28px 20px;
 }
 #passo-4-video #p-maior {
-	font-size: 1.65vw;
 	padding: 18px 20px 30px 20px;
 	background-image: url("../_imagens/placa_retangular_mais_longa_alta.png");
 }
@@ -539,15 +544,12 @@ div .titulo-dica4 {
 	}
 	/* Corpo-a-Corpo - Passo #1 (Mobile) */
 	#passo-1 h2 {
-		font-size: 23px;
+		font-size: 27px;
 		margin: 1% 2% 1.2% 2%;
 	}
 	#passo-1 h2 span {
 		font-size: 29px;
 		padding: 2px 13px 2px 13px;
-	}
-	#passo-1 h2 {
-		font-size: 27px;
 	}
 	.video {
 		width: 86vw;
@@ -559,7 +561,7 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 11px 14px 17px 13px;
+		padding: 11px 14px 19px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-1-video p img {
@@ -596,7 +598,7 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 7px 14px 13px 13px;
+		padding: 7px 14px 15px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-2-video p img {
@@ -630,7 +632,7 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 12px 14px 18px 13px;
+		padding: 12px 14px 20px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-3-video p img {
@@ -664,15 +666,15 @@ div .titulo-dica4 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 0 2.5% 0%;
-		padding: 15px 14px 20px 13px;
+		padding: 15px 14px 22px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-4-video #p-maior {
 		font-size: 19px;
-		padding: 24px 14px 29px 13px;
+		padding: 14px 14px 21px 13px;
 	}
 	#passo-4-video #pouco-maior {
-		padding: 15px 14px 22px 13px;
+		padding: 15px 14px 24px 13px;
 	}
 	#passo-4-video p img {
 		position:relative;
@@ -775,12 +777,18 @@ div#armas-de-fogo-inferior h3 {
 	letter-spacing: 0.08vw;
 }
 div#armas-de-fogo-aviso p {
-	margin: 12px auto 15px auto;
+	margin: 16px auto 19px auto;
 	max-width: 1200px;
 	min-width: 200px;
 	font-weight: normal;
 	text-align: justify;
 	text-indent:0;
+}
+/* Introducao Armas de Fogo (Margem Adaptativa) */
+@media screen and (max-width: 1240px) {
+	div#armas-de-fogo-aviso p {
+		margin: 14px 10px 14px 10px;
+	}
 }
 /* Armas de Fogo - Passo 1*/
 div .titulo-dica-2-1 {
@@ -797,13 +805,13 @@ div .titulo-dica-2-1 {
 	font-weight: normal;
 	text-align: center;
 	color: #FCC200;
-	margin: 0.6% 2% 1.2% 2%;
+	margin: 0.6% 2% 1% 2%;
 	font-family: frizquadrata;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	letter-spacing: 0.1vw;
 }
 #passo-2-1 h2 span {
-	font-size: 33px;
+	font-size: 36px;
 	font-family: impact;
 	font-weight: normal;
 	background-image: url("../_imagens/_icones/fundo_numeros.png");
@@ -820,7 +828,6 @@ div .titulo-dica-2-1 {
 	font-weight: normal;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: left;
-	text-indent: 0;
 	max-width: 870px;
 	margin: 5% 0% 5% 5%;
 	text-indent: 2.1vw;
@@ -836,6 +843,152 @@ div .titulo-dica-2-1 {
 	margin: 0 0.3vw 0 0;
 	top: 0.5vw;
 }
+/* Armas de Fogo - Passo 2*/
+div .titulo-dica-2-2 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-2-2 h2 {
+	font-size: 28px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 1.2% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-2-2 h2 span {
+	font-size: 33px;
+	font-family: impact;
+	font-weight: normal;
+	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-size: 100% 100%;
+	padding: 2px 15px 2px 15px;
+}
+#passo-2-2-video {
+	display: flex;
+	align-items: center;
+}
+#passo-2-2-video p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	font-weight: normal;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+#passo-2-2-video p#pouco-maior2 {
+	font-size: 1.95vw;
+	padding: 25px 20px 35px 20px;
+}
+#passo-2-2-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Armas de Fogo - Passo 3*/
+div .titulo-dica-2-3 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-2-3 h2 {
+	font-size: 32px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 1.2% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-2-3 h2 span {
+	font-size: 35px;
+	font-family: impact;
+	font-weight: normal;
+	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-size: 100% 100%;
+	padding: 2px 13px 2px 13px;
+}
+#passo-2-3-video {
+	display: flex;
+	align-items: center;
+}
+#passo-2-3-video p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	font-weight: normal;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 16px 20px 29px 20px;
+}
+#passo-2-3-video p#pouco-maior3 {
+	font-size: 2.05vw;
+	padding: 29px 20px 39px 20px;
+}
+#passo-2-3-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Armas-de-Fogo - Multiplos Inimigos */
+#armas-de-fogo-multiplos-inimigos {
+	border-top: 7px solid #000000;
+	min-width: 100%;
+	width: 100%;
+	padding:0;
+	margin:0;
+	display: flex;
+	align-items: center;
+}
+#armas-de-fogo-multiplos-inimigos span {
+	border-bottom: 2px solid #FCC200;
+	font-weight: bolder;
+	color: #FCC200;
+	font-size: 2vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+}
+#armas-de-fogo-multiplos-inimigos p {
+	font-size: 2vw;
+	font-weight: normal;
+	text-align: justify;
+	color: #FFFF99; 
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	margin: 1% 2% 1% 2%;
+}
+#armas-de-fogo-multiplos-inimigos-video {
+	border: 6px solid #000000;
+	margin: 1% 2% 1% 0%;
+	min-width: 45%;
+	height: 23.5vw;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+}
 /* Armas de Fogo (Mobile) */
 @media screen and (max-width: 800px) {
 	#banner-armas-de-fogo img {
@@ -843,6 +996,912 @@ div .titulo-dica-2-1 {
 	}
 	h2#armas-de-fogo-titulo {
 		top: -345px;
+	}
+	#armas-de-fogo-introducao p {
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		width: 80vw;
+		min-width: 285px;
+		margin: 1% 2% 2% 2%;
+		text-indent: 40px;
+	}
+	#armas-de-fogo-introducao {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#armas-de-fogo-img {
+		float: none;
+		min-width: 300px;
+		border: 6px solid #000000;
+		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+		max-width: none;
+		max-height: none;
+		width: 70%;
+		margin: 2% 0 1% 0;
+	}
+	div#armas-de-fogo-inferior h3 {
+		font-size: 23px;
+		margin-bottom: 2%;
+		letter-spacing: 0.08vw;
+	}
+	/* Armas de Fogo - Passo #1 (Mobile) */
+	#passo-2-1 h2 {
+		font-size: 32px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#passo-2-1 h2 span {
+		font-size: 34px;
+		padding: 2px 13px 2px 13px;
+	}
+	#passo-2-1-video p {
+		font-size: 21px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 2% 2.5% 2%;
+		padding: 11px 14px 17px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-2-1-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 6px;
+	}
+	#passo-2-1-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-2-1-dicas {
+		order: 2;
+	}
+	/* Armas de Fogo - Passo #2 (Mobile) */
+	#passo-2-2 h2 {
+		font-size: 27px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#passo-2-2 h2 span {
+		font-size: 29px;
+		padding: 2px 13px 2px 13px;
+	}
+	#passo-2-2-video p {
+		font-size: 21px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 2% 2.5% 2%;
+		padding: 13px 12px 19px 11px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-2-2-video p#pouco-maior2 {
+		font-size: 20px;
+		padding: 22px 16px 31px 15px;
+	}
+	#passo-2-2-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 6px;
+	}
+	#passo-2-2-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-2-2-dicas {
+		order: 2;
+	}
+	/* Armas de Fogo - Passo #3 (Mobile) */
+	#passo-2-3 h2 {
+		font-size: 28px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+		margin: 1.5% 2% 1.2% 2%;
+	}
+	#passo-2-3 h2 span {
+		font-size: 30px;
+		padding: 2px 13px 2px 13px;
+	}
+	#passo-2-3-video p {
+		font-size: 21px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 2% 2.5% 2%;
+		padding: 13px 12px 19px 11px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-2-3-video p#pouco-maior3 {
+		padding: 18px 16px 27px 15px;
+		font-size: 21px;
+	}
+	#passo-2-3-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 6px;
+	}
+	#passo-2-3-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-2-3-dicas {
+		order: 2;
+	}
+	/* Armas-de-Fogo - Multiplos Inimigos (Mobile) */
+	#armas-de-fogo-multiplos-inimigos {
+		flex-direction: column;
+	}
+	#armas-de-fogo-multiplos-inimigos span {
+		font-size: 22px;
+		text-shadow: 2.1px 0 0 rgb(0, 0, 0), -2.1px 0 0 rgb(0, 0, 0), 0 2.1px 0 rgb(0, 0, 0), 0 -2.1px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+	}
+	#armas-de-fogo-multiplos-inimigos p {
+		font-size: 19px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1% 4% 1% 4%;
+	}
+	#armas-de-fogo-multiplos-inimigos-video {
+		margin: 1% 0% 2% 0%;
+		width: 86vw;
+		height: 48.5vw;
+		min-width: 300px;
+		min-height: 170px;
+		box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+	}
+}
+/* Furtividade */
+#banner-furtividade img {
+	position: relative;
+	top:-363px;
+	width: 98%;
+	height: 100px;
+	margin: 1% 1% 0% 1%;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+h2#furtividade-titulo {
+	position: relative;
+	top: -473px;
+	text-align: center;
+	font-family: batukapur;
+	font-weight: normal;
+	font-size: 40px;
+	letter-spacing: 1.2px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+}
+#furtividade {
+	position: relative;
+	top: -483px;
+	border: 8px solid #000000;
+	margin: 0 1% 0% 1%;
+	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-repeat: repeat;
+	font-weight: bolder;
+	color: #FFFFFF;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+#furtividade-introducao {
+	display: inline-block;
+}
+#furtividade-img {
+	float: left;
+	max-width: 330px;
+	max-height: 170px;
+	margin: 1% 1% 0% 1%;
+	border: 5px solid #000000;
+}
+#furtividade-introducao p {
+	font-size: 25px;
+	font-weight: normal;
+	text-align: justify;
+	margin: 1% 1% 1% 1%;
+	text-indent: 70px;
+}
+div#furtividade-inferior {
+	display: inline-block;
+	min-width: 100%;
+}
+div#furtividade-inferior h3 {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0% 5% 1% 5%;
+	color: #BFEDEF;
+	letter-spacing: 0.08vw;
+}
+div#furtividade-introducao div#furtividade-aviso p {
+	margin: 3vw auto 19px auto;
+	max-width: 1200px;
+	min-width: 200px;
+	font-weight: normal;
+	text-align: justify;
+	text-indent:0;
+	font-size: 25px;
+}
+/* Furtividade - Passo #1 */
+div .titulo-dica-3-1 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-3-1 h2 {
+	font-size: 29px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 1% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-3-1 h2 span {
+	font-size: 31px;
+	font-family: impact;
+	font-weight: normal;
+	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-size: 100% 100%;
+	padding: 2px 15px 2px 15px;
+}
+#passo-3-1-video {
+	display: flex;
+	align-items: center;
+}
+#passo-3-1-video p {
+	color: #FFFF99;
+	font-size: 2vw;
+	font-weight: normal;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+#passo-3-1-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Furtividade - Passo #2 */
+div .titulo-dica-3-2 {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#passo-3-2 h2 {
+	font-size: 29px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 1% 2%;
+	font-family: frizquadrata;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#passo-3-2 h2 span {
+	font-size: 31px;
+	font-family: impact;
+	font-weight: normal;
+	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-size: 100% 100%;
+	padding: 2px 15px 2px 15px;
+}
+#passo-3-2-video {
+	display: flex;
+	align-items: center;
+}
+#passo-3-2-video p {
+	color: #FFFF99;
+	font-size: 2vw;
+	font-weight: normal;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	max-width: 870px;
+	margin: 4% 0% 4% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 24px 20px 36px 20px;
+}
+#passo-3-2-video p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+/* Furtividade - Multiplos Inimigos */
+#furtividade-multiplos-inimigos {
+	border-top: 7px solid #000000;
+	min-width: 100%;
+	width: 100%;
+	padding:0;
+	margin:0;
+	display: flex;
+	align-items: center;
+}
+#furtividade-multiplos-inimigos span {
+	border-bottom: 2px solid #FCC200;
+	font-weight: bolder;
+	color: #FCC200;
+	font-size: 2vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+}
+#furtividade-multiplos-inimigos p {
+	font-size: 2vw;
+	font-weight: normal;
+	text-align: justify;
+	color: #FFFF99; 
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	margin: 1% 2% 1% 2%;
+}
+/* Introducao Furtividade (Margem Adaptativa) */
+@media screen and (max-width: 1240px) {
+	div#furtividade-introducao div#furtividade-aviso p {
+		margin: 14px 10px 14px 10px;
+	}
+}
+/* Furtividade (Mobile) */
+@media screen and (max-width: 800px) {
+	#banner-furtividade img {
+		top: -358px;
+	}
+	h2#furtividade-titulo {
+		top: -467px;
+		letter-spacing: 0.5px;
+		font-size: 42px;
+	}
+	#furtividade-introducao p {
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		width: 80vw;
+		min-width: 285px;
+		margin: 1% 2% 2% 2%;
+		text-indent: 40px;
+	}
+	div#furtividade-introducao div#furtividade-aviso p {
+		font-size: 18px;
+	}
+	#furtividade-introducao {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#furtividade-img {
+		float: none;
+		min-width: 300px;
+		border: 6px solid #000000;
+		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+		max-width: none;
+		max-height: none;
+		width: 70%;
+		margin: 2% 0 1% 0;
+	}
+	div#furtividade-inferior h3 {
+		font-size: 23px;
+		margin-bottom: 2%;
+		letter-spacing: 0.08vw;
+	}
+	/* Furtividade - Passo #1 (Mobile) */
+	#passo-3-1 h2 {
+		font-size: 28px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#passo-3-1 h2 span {
+		font-size: 31px;
+		padding: 2px 14px 2px 14px;
+	}
+	#passo-3-1-video p {
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 2% 2.5% 2%;
+		padding: 7px 14px 16px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-3-1-video p.pouco-maior-x {
+		padding: 12px 14px 20px 13px;
+	}
+	#passo-3-1-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 6px;
+	}
+	#passo-3-1-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-3-1-dicas {
+		order: 2;
+	}
+	/* Furtividade - Passo #2 (Mobile) */
+	#passo-3-2 h2 {
+		font-size: 27px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#passo-3-2 h2 span {
+		font-size: 30px;
+		padding: 2px 13px 2px 13px;
+	}
+	#passo-3-2-video p {
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		text-indent: 0;
+		margin: 1% 2% 2.5% 2%;
+		padding: 15px 14px 23px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	#passo-3-2-video p img {
+		position:relative;
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 6px;
+	}
+	#passo-3-2-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#passo-3-2-dicas {
+		order: 2;
+	}
+	/* Furtividade - Multiplos Inimigos (Mobile) */
+	#furtividade-multiplos-inimigos {
+		flex-direction: column;
+	}
+	#furtividade-multiplos-inimigos span {
+		font-size: 22px;
+		text-shadow: 2.1px 0 0 rgb(0, 0, 0), -2.1px 0 0 rgb(0, 0, 0), 0 2.1px 0 rgb(0, 0, 0), 0 -2.1px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+	}
+	#furtividade-multiplos-inimigos p {
+		font-size: 19px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1% 4% 1% 4%;
+	}
+}
+/* Mecânicas */
+#banner-mecanicas img {
+	position: relative;
+	top:-480px;
+	width: 98%;
+	height: 100px;
+	margin: 1% 1% 0% 1%;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+h2#mecanicas-titulo {
+	position: relative;
+	top: -595px;
+	text-align: center;
+	font-family: batukapur;
+	font-weight: normal;
+	font-size: 44px;
+	letter-spacing: 1.2px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+}
+#mecanicas {
+	position: relative;
+	top: -614px;
+	border: 8px solid #000000;
+	margin: 0 1% 0% 1%;
+	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-repeat: repeat;
+	font-weight: bolder;
+	color: #FFFFFF;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+#mecanicas-introducao {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#mecanicas-introducao p {
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	margin: 1% 1% 1% 1%;
+	text-indent: 70px;
+}
+#mecanicas-img {
+	display: grid;
+	place-items: center;
+}
+#mecanicas-introducao img {
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	width: 66vw;
+	min-width: 300px;
+	margin: 1% 2% 2% 2%;
+}
+/* Mecanicas - Energia Infinita */
+div .titulo-energia-infinita {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#energia-infinita h2 {
+	font-size: 38px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 0.6% 2%;
+	font-family: batukapur;
+	color: #44BD2F;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#energia-infinita-video {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#energia-infinita-video p {
+	color: #FFFF99;
+	font-size: 2vw;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 2% 0.5% 2%;
+	max-width: 1200px;
+	text-indent: 2.1vw;
+	background-size: 100% 100%;
+}
+div#energia-infinita-aviso p {
+	margin: 0 auto 19px auto;
+	color: #FFFFFF;
+	max-width: 1200px;
+	min-width: 200px;
+	font-weight: normal;
+	text-align: justify;
+	text-indent:0;
+	font-size: 1.9vw;
+}
+.video-mecanicas {
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	min-width: 62.5vw; 
+	min-height: 35.09vw;
+	margin: 1% 2% 1% 2%;
+}
+/* Energia Infinita - Margem Adaptativa */
+@media screen and (max-width: 1240px) {
+	div#energia-infinita-aviso p {
+		margin: 3px 20px 10px 20px;
+	}
+}
+/* Mecanicas - Get Back Here */
+div .titulo-get-back-here {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#get-back-here h2 {
+	font-size: 38px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 0.6% 2%;
+	font-family: batukapur;
+	color: #44BD2F;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#get-back-here-video {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#get-back-here-video p {
+	color: #FFFF99;
+	font-size: 2vw;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 2% 0.5% 2%;
+	max-width: 1200px;
+	text-indent: 2.1vw;
+	background-size: 100% 100%;
+}
+div#get-back-here-inferior p {
+	margin: 0% 2% 1% 2%;
+	color: #FFFFFF;
+	max-width: 1200px;
+	min-width: 200px;
+	font-weight: normal;
+	text-align: justify;
+	text-indent: 2.1vw;
+	font-size: 2vw;
+}
+/* Mecanicas - Como Fugir */
+div .titulo-como-fugir {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#como-fugir h2 {
+	font-size: 42px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 0.6% 2%;
+	font-family: batukapur;
+	color: #44BD2F;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#como-fugir-video {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#como-fugir-video p {
+	color: #FFFF99;
+	font-size: 2vw;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 2% 0.5% 2%;
+	max-width: 1200px;
+	text-indent: 2.1vw;
+	background-size: 100% 100%;
+}
+div#como-fugir-inferior p {
+	margin: 0% 2% 1% 2%;
+	color: #FFFFFF;
+	max-width: 1200px;
+	min-width: 200px;
+	font-weight: normal;
+	text-align: justify;
+	text-indent: 2.1vw;
+	font-size: 2vw;
+}
+/* Mecanicas - O Temido Chute */
+div .titulo-temido-chute {
+	border-top: 7px solid #000000;
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo-sub-titulo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+#temido-chute h2 {
+	font-size: 38px;
+	font-weight: normal;
+	text-align: center;
+	color: #FCC200;
+	margin: 0.6% 2% 0.6% 2%;
+	font-family: batukapur;
+	color: #44BD2F;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.1vw;
+}
+#temido-chute-video {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#temido-chute-video p {
+	color: #FFFF99;
+	font-size: 2vw;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 2% 0.5% 2%;
+	max-width: 1200px;
+	text-indent: 2.1vw;
+	background-size: 100% 100%;
+}
+div#temido-chute-inferior p {
+	margin: 0% 2% 1% 2%;
+	color: #FFFFFF;
+	max-width: 1200px;
+	min-width: 200px;
+	font-weight: normal;
+	text-align: justify;
+	text-indent: 2.1vw;
+	font-size: 2vw;
+}
+/* Mecânicas (Mobile) */
+@media screen and (max-width: 800px) {
+	#banner-mecanicas img {
+		top: -476px;
+	}
+	h2#mecanicas-titulo {
+		top: -588px;
+		letter-spacing: 0.5px;
+		font-size: 42px;
+	}
+	#mecanicas {
+		top: -605px;
+	}
+	#mecanicas-introducao p {
+		font-size: 25px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		width: 80vw;
+		min-width: 285px;
+		margin: 1% 2% 2% 2%;
+		text-indent: 0px;
+	}
+	#mecanicas-introducao img {
+		margin: 1% 2% 3% 2%;
+	}
+	#furtividade-introducao {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	/* Mecanicas - Energia Infinita (Mobile) */
+	#energia-infinita h2 {
+		font-size: 28px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#energia-infinita-video p {
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+		text-align: justify;
+		text-indent: 35px;
+		margin: 2% 0% 2% 0%;
+		width: 82vw;
+		min-width: 285px;
+	}
+	div#energia-infinita-aviso p {
+		font-size: 19px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1.5% 0% 2% 0%;
+	}
+	#energia-infinita-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.video-mecanicas {
+		width: 86vw;
+		height: 48.5vw;
+		min-width: 300px;
+		min-height: 170px;
+	}
+	/* Mecanicas - Get back Here (Mobile) */
+	#get-back-here h2 {
+		font-size: 28px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#get-back-here-video p {
+		font-size: 18px;
+		text-indent: 35px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 2% 0% 2% 0%;
+		width: 82vw;
+		min-width: 285px;
+	}
+	div#get-back-here-inferior p {
+		font-size: 18px;
+		text-indent: 35px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1.5% 0% 1.5% 0%;
+	}
+	#get-back-here-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	/* Mecanicas - Como Fugir (Mobile) */
+	#como-fugir h2 {
+		font-size: 28px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#como-fugir-video p {
+		font-size: 18px;
+		text-indent: 35px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 2% 0% 2% 0%;
+		width: 82vw;
+		min-width: 285px;
+	}
+	div#como-fugir-inferior p {
+		font-size: 18px;
+		text-indent: 35px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1.5% 0% 1.5% 0%;
+	}
+	#como-fugir-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	/* Mecanicas - O Temido Chute (Mobile) */
+	#temido-chute h2 {
+		font-size: 28px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+		margin: 1% 2% 1.2% 2%;
+	}
+	#temido-chute-video p {
+		font-size: 18px;
+		text-indent: 35px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 2% 0% 2% 0%;
+		width: 82vw;
+		min-width: 285px;
+	}
+	div#temido-chute-inferior p {
+		font-size: 18px;
+		text-indent: 35px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1.5% 0% 1.5% 0%;
+	}
+	#temido-chute-video {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 /* Footer */
