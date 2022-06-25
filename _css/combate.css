@@ -91,6 +91,18 @@ h1 {
 .link {
 	color: #00D900;
 }
+hr {
+	width: 100%;
+	margin: 0;
+	padding-top: 6px;
+	border: none;
+	background-color: #000000;
+}
+@media screen and (max-width: 800px) {
+	hr {
+		padding-top: 5px;	
+	}
+}
 .sublinhado {
 	border-bottom: 2px solid #ffffff;
 	font-weight: bolder;
@@ -1593,10 +1605,31 @@ div .titulo-energia-infinita {
 	color: #FFFFFF;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: justify;
-	margin: 1% 2% 0.5% 2%;
 	max-width: 1200px;
-	text-indent: 2.1vw;
-	background-size: 100% 100%;
+}
+#energia-infinita-video p#central {
+	text-align: center;
+	font-size: 2.1vw;
+	margin: 1% 2% 1.5% 2%;
+}
+#energia-infinita-video p#energia-infinita-dica {
+	text-align: justify;
+	font-size: 2vw;
+	width: 80vw;
+	max-width: 1000px;
+	margin: 1% 2% 1% 2%;
+	color: #BFEDEF;
+}
+#energia-infinita-video p#energia-infinita-dica span {
+	font-weight: bold;
+	color: #96E2E5;
+	border-bottom: solid #96E2E5 2px;
+}
+#energia-infinita-dicas {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 div#energia-infinita-aviso p {
 	margin: 0 auto 19px auto;
@@ -1808,6 +1841,17 @@ div#temido-chute-inferior p {
 		margin: 2% 0% 2% 0%;
 		width: 82vw;
 		min-width: 285px;
+	}
+	#energia-infinita-video p#central {
+		text-align: center;
+		font-size: 20px;
+		margin: 1.5% 2% 2.5% 2%;
+	}
+	#energia-infinita-video p#energia-infinita-dica {
+		font-size: 19px;
+		max-width: 1000px;
+		text-indent:0;
+		margin: 1% 2% 1% 2%;
 	}
 	div#energia-infinita-aviso p {
 		font-size: 19px;
