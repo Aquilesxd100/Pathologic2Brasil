@@ -19,7 +19,7 @@
 		position: relative;
 		top: 0vw;
 		width: 99vw;
-		height: 1150vw;
+		height: 1300vw;
 		max-width: 100%;
 		overflow: hidden;
 	}	
@@ -1555,11 +1555,11 @@ h2#mecanicas-titulo {
 	align-items: center;
 }
 #mecanicas-introducao p {
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: bold;
 	text-align: center;
 	margin: 1% 1% 1% 1%;
-	text-indent: 70px;
+	text-indent: 0px;
 }
 #mecanicas-img {
 	display: grid;
@@ -1598,6 +1598,10 @@ div .titulo-energia-infinita {
 	flex-direction: column;
 	align-items: center;
 }
+#energia-infinita-introducao {
+	width: 100%;
+	border-bottom: solid #000000 6px;
+}
 #energia-infinita-video p {
 	color: #FFFF99;
 	font-size: 2vw;
@@ -1614,9 +1618,8 @@ div .titulo-energia-infinita {
 }
 #energia-infinita-video p#energia-infinita-dica {
 	text-align: justify;
-	font-size: 2vw;
+	font-size: 2.1vw;
 	width: 80vw;
-	max-width: 1000px;
 	margin: 1% 2% 1% 2%;
 	color: #BFEDEF;
 }
@@ -1628,11 +1631,10 @@ div .titulo-energia-infinita {
 #energia-infinita-dicas {
 	width: 100%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 }
 div#energia-infinita-aviso p {
-	margin: 0 auto 19px auto;
+	margin: 15px auto 15px auto;
 	color: #FFFFFF;
 	max-width: 1200px;
 	min-width: 200px;
@@ -1640,6 +1642,11 @@ div#energia-infinita-aviso p {
 	text-align: justify;
 	text-indent:0;
 	font-size: 1.9vw;
+}
+#energia-infinita-aviso {
+	width: 100%;
+	border-top: solid #000000 6px;
+	margin: 0px auto 0px auto;
 }
 .video-mecanicas {
 	border: 6px solid #000000;
@@ -1651,7 +1658,7 @@ div#energia-infinita-aviso p {
 /* Energia Infinita - Margem Adaptativa */
 @media screen and (max-width: 1240px) {
 	div#energia-infinita-aviso p {
-		margin: 3px 20px 10px 20px;
+		margin: 15px 20px 15px 20px;
 	}
 }
 /* Mecanicas - Get Back Here */
@@ -1686,21 +1693,33 @@ div .titulo-get-back-here {
 	font-weight: normal;
 	color: #FFFFFF;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
-	text-align: justify;
-	margin: 1% 2% 0.5% 2%;
-	max-width: 1200px;
-	text-indent: 2.1vw;
+	text-align: center;
+	margin: 1% 2% 1% 2%;
+	max-width: 1100px;
+	text-indent: 0;
 	background-size: 100% 100%;
+}
+#get-back-here-dicas {
+	align-items: center;
+	flex-direction: column;
+	display: flex;
+	width: 100%;
+	border-bottom: solid #000000 6px;
 }
 div#get-back-here-inferior p {
 	margin: 0% 2% 1% 2%;
-	color: #FFFFFF;
+	color: #BFEDEF;
 	max-width: 1200px;
 	min-width: 200px;
 	font-weight: normal;
 	text-align: justify;
 	text-indent: 2.1vw;
 	font-size: 2vw;
+}
+div#get-back-here-inferior p span.dica {
+	font-weight: bold;
+	color: #96E2E5;
+	border-bottom: solid #96E2E5 2px;
 }
 /* Mecanicas - Como Fugir */
 div .titulo-como-fugir {
@@ -1738,17 +1757,57 @@ div .titulo-como-fugir {
 	margin: 1% 2% 0.5% 2%;
 	max-width: 1200px;
 	text-indent: 2.1vw;
-	background-size: 100% 100%;
 }
-div#como-fugir-inferior p {
-	margin: 0% 2% 1% 2%;
-	color: #FFFFFF;
-	max-width: 1200px;
+div#como-fugir-introducao p {
+	margin: 1.5% 0% 1.5% 0%;
+	text-align: center;
+	text-indent: 0;
+}
+div#como-fugir-video div#como-fugir-dicas p {
+	color: #BFEDEF;
+	margin: 1% 0% 1% 1%;
+}
+div#como-fugir-dicas p span, div#como-fugir-inferior p span, div#como-fugir-inferior2 p span {
+	font-weight: bold;
+	color: #96E2E5;
+	border-bottom: solid #96E2E5 2px;
+}
+div#como-fugir-inferior-0 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-bottom: solid #000000 6px;
+}
+div#como-fugir-inferior-0 p {
+	color: #BFEDEF;
+	max-width: 1125px;
+	text-align: justify;
+	text-indent: 0;
+	margin: 0% 3% 1% 3%;
+}
+div#como-fugir-inferior p, #como-fugir-inferior2 p {
+	margin: 1% 2% 1% 2%;
+	color: #BFEDEF;
+	max-width: 1300px;
 	min-width: 200px;
 	font-weight: normal;
 	text-align: justify;
-	text-indent: 2.1vw;
+	text-indent: 0;
 	font-size: 2vw;
+}
+div#como-fugir-dicas {
+	border-top: solid #000000 6px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+#como-fugir-inferior2 {
+	border-top: solid #000000 6px;
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 /* Mecanicas - O Temido Chute */
 div .titulo-temido-chute {
@@ -1776,27 +1835,35 @@ div .titulo-temido-chute {
 	flex-direction: column;
 	align-items: center;
 }
-#temido-chute-video p {
+#temido-chute-dicas {
+	border-bottom: solid #000000 6px;
+	width: 100%;
+}
+#temido-chute-dicas p {
 	color: #FFFF99;
 	font-size: 2vw;
 	font-weight: normal;
 	color: #FFFFFF;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
-	text-align: justify;
-	margin: 1% 2% 0.5% 2%;
+	text-align: center;
+	margin: 1% 2% 1% 2%;
 	max-width: 1200px;
-	text-indent: 2.1vw;
-	background-size: 100% 100%;
+	text-indent: 0;
 }
 div#temido-chute-inferior p {
 	margin: 0% 2% 1% 2%;
-	color: #FFFFFF;
+	color: #BFEDEF;
 	max-width: 1200px;
 	min-width: 200px;
 	font-weight: normal;
 	text-align: justify;
 	text-indent: 2.1vw;
 	font-size: 2vw;
+}
+div#temido-chute-inferior p span {
+	font-weight: bold;
+	color: #96E2E5;
+	border-bottom: solid #96E2E5 2px;
 }
 /* Mecânicas (Mobile) */
 @media screen and (max-width: 800px) {
@@ -1833,6 +1900,10 @@ div#temido-chute-inferior p {
 		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
 		margin: 1% 2% 1.2% 2%;
 	}
+	#energia-infinita-dicas {
+		align-items: center;
+		flex-direction: column;
+	}
 	#energia-infinita-video p {
 		font-size: 18px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
@@ -1856,7 +1927,7 @@ div#temido-chute-inferior p {
 	div#energia-infinita-aviso p {
 		font-size: 19px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-		margin: 1.5% 0% 2% 0%;
+		margin: 7px 20px 7px 20px;
 	}
 	#energia-infinita-video {
 		display: flex;
@@ -1869,6 +1940,12 @@ div#temido-chute-inferior p {
 		min-width: 300px;
 		min-height: 170px;
 	}
+	#energia-infinita-aviso {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 	/* Mecanicas - Get back Here (Mobile) */
 	#get-back-here h2 {
 		font-size: 28px;
@@ -1879,7 +1956,7 @@ div#temido-chute-inferior p {
 		font-size: 18px;
 		text-indent: 35px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
-		text-align: justify;
+		text-align: center;
 		margin: 2% 0% 2% 0%;
 		width: 82vw;
 		min-width: 285px;
@@ -1901,6 +1978,9 @@ div#temido-chute-inferior p {
 		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
 		margin: 1% 2% 1.2% 2%;
 	}
+	div#como-fugir-dicas {
+		flex-direction: column;
+	}
 	#como-fugir-video p {
 		font-size: 18px;
 		text-indent: 35px;
@@ -1910,11 +1990,19 @@ div#temido-chute-inferior p {
 		width: 82vw;
 		min-width: 285px;
 	}
-	div#como-fugir-inferior p {
+	div#como-fugir-inferior-0 {
+		flex-direction: row;
+	}
+	div#como-fugir-inferior-0 p {
+		width: 1100px;
+		text-align: justify;
+		margin: 1% 4% 1% 4%;
+	}
+	div#como-fugir-inferior p, div#como-fugir-inferior2 p {
 		font-size: 18px;
 		text-indent: 35px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-		margin: 1.5% 0% 1.5% 0%;
+		margin: 1.3% 0% 1.3% 0%;
 	}
 	#como-fugir-video {
 		display: flex;
@@ -1931,10 +2019,14 @@ div#temido-chute-inferior p {
 		font-size: 18px;
 		text-indent: 35px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
-		text-align: justify;
 		margin: 2% 0% 2% 0%;
 		width: 82vw;
 		min-width: 285px;
+	}
+	#temido-chute-dicas {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	div#temido-chute-inferior p {
 		font-size: 18px;
@@ -1942,7 +2034,7 @@ div#temido-chute-inferior p {
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 		margin: 1.5% 0% 1.5% 0%;
 	}
-	#temido-chute-video {
+	div#temido-chute-video {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
