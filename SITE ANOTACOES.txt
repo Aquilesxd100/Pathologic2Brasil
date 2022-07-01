@@ -12,3 +12,8 @@ MOSTRA AREA DE TODOS OS ELEMENTOS
   color: #0f0 !important;
   outline: solid #f00 1px !important;
 }
+
+
+height: 2439vh
+-115px = -8.45vw 
+-11.5px = -0.845vw
