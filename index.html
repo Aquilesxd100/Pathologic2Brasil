@@ -47,7 +47,7 @@
 				</ul>
 				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
 				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile')">
-				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile')">
+				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('mapa.html')">
 				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile')">
 			</div>
 			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
@@ -81,7 +81,7 @@
 		</nav>
 		<div id="submenu">
 			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('mapa.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
 			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
 			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
 			<ul>
@@ -122,7 +122,7 @@
 							<div id="showcase">
 								<img src="_imagens/ultimos_guias_dinheiro.png">
 								<img src="_imagens/ultimos_guias_comida.png">			
-								<img src="_imagens/ultimos_guias_economia.png">
+								<img src="_imagens/ultimos_guias_economia.png" onclick="abrirLink('mapa.html')">
 								<img src="_imagens/ultimos_guias_receitas.png">
 								<img src="_imagens/ultimos_guias_combate.png" onclick="abrirLink('combate.html')">
 							</div>
@@ -144,7 +144,7 @@
 						<div id="acessorapidoopcoes">
 							<img src="_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'link-dinheiro')">
 							<img src="_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'link-podinzin')">
-							<img src="_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'link-mapa')">
+							<img src="_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'mapa.html')">
 							<img src="_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'link-comida')">
 							<img src="_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'link-pocoes')">
 							<img src="_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combate.html')">

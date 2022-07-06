@@ -113,18 +113,24 @@ div.mapa-infos {
 }
 div.mapa-infos div.info-item {
 	display: flex;
-	padding: 15px 5px 15px 5px;
-	background-image: url("../_imagens/placa_retangular_mais_item.png");
+	padding: 15px 5px 20px 5px;
+	background-image: url("../_imagens/placa_retangular.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	color: #FFFFB0;
 	font-size: 35px;
 	text-shadow: 2.4px 0 0 rgb(0, 0, 0), -2.4px 0 0 rgb(0, 0, 0), 0 2.4px 0 rgb(0, 0, 0), 0 -2.4px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
-	margin: 0 10px 15px 10px;
+	margin: 0 8px 15px 8px;
 	filter: brightness(85%);
+	height: 90px;
 }
 div.mapa-infos div.info-item:hover {
 	filter: brightness(110%);
+}
+div.mapa-infos div.info-item img.marcacao-placa {
+	width: 16px;
+	height: 89px;
+	margin: 3px 11px 2.7px 0;
 }
 div.info-item div {
 	display: flex;
@@ -133,20 +139,18 @@ div.info-item div {
 div.mapa-infos div img {
 	width: 70px;
 	height: 70px;
-	margin: 0px 5px 0px 5px;
-	padding-right: 15px;
+	margin: 0px 11px 0px 11px;
 }
 div.mapa-infos div p {
-	margin: 2px 11px 2px 11px;
-}
-div.mapa-infos div p.raizes-sangrentas {
-	padding: 0 0 5px 17px;
+	margin: 2px 25px 2px 0px;
 }
 div.mapa-infos div p.zonas-criancas {
-	padding: 0 0 4px 0;
+	margin: 2px 20px 2px 0px;
 }
-div.mapa-infos div img.zonas-criancas-img {
-	margin: 0px 5px 0px 20px;
+@media screen and (max-width: 1187px) and (min-width: 1104px) {
+	div.mapa-infos div.info-item {
+		margin: 0 25px 15px 25px;
+	}
 }
 /* Informações Marcador */
 .marcador-titulo-div {
@@ -185,7 +189,6 @@ div.info-marcador {
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
 	background-image: url("../_imagens/fundo_infinito.jpg");
 	background-repeat: repeat;
-	min-height: 5px;
 }
 /* Footer */
 	footer {
