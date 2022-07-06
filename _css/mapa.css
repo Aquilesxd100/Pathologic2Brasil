@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/* Corpo de Todo o Site */	
+	body {
+		position: relative;
+       	overflow-x: hidden;
+		margin: 0vw;
+		cursor: url('../_recursos/cursor.cur'), auto;
+		padding: 0vw;
+		width: 98.78vw;
+		max-width: 100%;
+		display: block;
+		min-height: 100vh;
+	}	
+/* Corpo da Pagina */
+	div#corpo {
+		background-image: url('../_imagens/fundo.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 98.78vw 100%;
+		position: relative;
+		top: 0;
+		width: 99vw;
+		max-width: 100%;
+		overflow: hidden;
+		color: #ffffff;
+	}	
+	div#fundobranco {
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.75);
+		width: 97.8%;
+		height: 99.53%;
+		top: 3.8vw;
+		margin: 0vw 0.9vw 5vw 0.9vw;
+		max-width: 100%;
+	}
+	div#conteudo {
+		width: 100%;
+		height: 100%;
+		font-size: 2vw;
+		font-family: frizquadrata;
+		top: 0vw;
+		max-width: 100%;
+	}
+/* Corpo da Pagina - Mobile */
+	@media screen and (max-width: 800px) {
+		div#corpo {
+			background-image: url('../_imagens/fundo_mobile.jpg');
+			background-color:#000000;
+			margin-top: -5.4vw;
+			height: 100%;
+			background-size: 120% 100%;
+			overflow: hidden;
+		}
+		div#fundobranco {
+			top: 4.5vw;
+			width: 97.6vw !important;
+			margin: 0vw 0vw 7vw 1.6vw !important;
+			height: 99.65%;
+		}
+	}
+/* Conteudo da Pagina */
+/* Introducao + Mapa */
+.banner-principal img {
+	width: 98%;
+	height: 100px;
+	margin: 1% 1% 0% 1%;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+h1.introducao {
+	position: relative;
+	margin-top: -80px;
+	text-align: center;
+	font-family: batukapur;
+	font-weight: normal;
+	font-size: 48px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+	letter-spacing: 1px;
+}
+div.principal {
+	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-repeat: repeat;
+	margin: -15px 1% 0% 1%;
+	border: 8px solid #000000;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+div.principal div.texto {
+	min-width: 100%;
+	border-bottom: solid #000000 7px;
+}
+div.principal div.texto p {
+	font-size: 28px;
+	text-align: center;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	font-weight: bold;
+	margin: 1.5% 2% 1.5% 2%;
+}
+div.principal img.mapa-imagem {
+	border: solid #000000 6px;
+	width: 80vw;
+	max-width: 1250px;
+	margin: 2% 0 2% 0;
+	box-shadow: 3px 3px 2.5px rgba(0, 0, 0, 0.7);
+}
+div.mapa-infos {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+div.mapa-infos div.info-item {
+	display: flex;
+	padding: 15px 5px 15px 5px;
+	background-image: url("../_imagens/placa_retangular_mais_item.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color: #FFFFB0;
+	font-size: 35px;
+	text-shadow: 2.4px 0 0 rgb(0, 0, 0), -2.4px 0 0 rgb(0, 0, 0), 0 2.4px 0 rgb(0, 0, 0), 0 -2.4px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	margin: 0 10px 15px 10px;
+	filter: brightness(85%);
+}
+div.mapa-infos div.info-item:hover {
+	filter: brightness(110%);
+}
+div.info-item div {
+	display: flex;
+	align-items: center;
+}
+div.mapa-infos div img {
+	width: 70px;
+	height: 70px;
+	margin: 0px 5px 0px 5px;
+	padding-right: 15px;
+}
+div.mapa-infos div p {
+	margin: 2px 11px 2px 11px;
+}
+div.mapa-infos div p.raizes-sangrentas {
+	padding: 0 0 5px 17px;
+}
+div.mapa-infos div p.zonas-criancas {
+	padding: 0 0 4px 0;
+}
+div.mapa-infos div img.zonas-criancas-img {
+	margin: 0px 5px 0px 20px;
+}
+/* Informações Marcador */
+.marcador-titulo-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 98%;
+	margin: -8px 1% 0% 1%;
+	padding: 20px 0 35px 0;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+	background-image: url("../_imagens/bem_vindo.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+h1.marcador-titulo {
+	position: relative;
+	margin: 0 4vw 0 4vw;
+	text-align: center;
+	font-family: frizquadrata;
+	font-weight: bold;
+	font-size: 35px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+}
+h1.marcador-titulo img {
+	position: relative;
+	top: 12px;
+	width: 33px;
+	height: 50px;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+div.info-marcador {
+	margin: -5px 1% 0 1%;
+	border: solid #000000 8px;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-repeat: repeat;
+	min-height: 5px;
+}
+/* Footer */
+	footer {
+		position: relative;
+		font-size: 1.45vw;
+		font-weight: bold;
+		font-family: frizquadrata;
+		color:#504f4f;
+		margin: 1% 1% 0 1%;
+		overflow: hidden;
+	}
+	footer ul {
+		padding: 0 0 2.5% 0;
+		margin:0;
+	}
+	footer li {
+		list-style: none;
+		display: inline-block;
+	}
+	footer li#contato {
+		float: right;
+		font-weight: bold;
+	}
+	footer li#contato span {
+		font-weight: bolder;
+	}
+	footer li#copyright {
+		float: left;
+	}
+/* Footer (Mobile) */
+	@media screen and (max-width: 800px) {
+		footer {
+			font-size: 4vw;
+			text-align: center;
+			margin: 3% 1% 0 1%;
+		}
+		footer li#contato {
+			float: none;
+		}
+		footer li#copyright {
+			float: none;
+		}
+	}
