@@ -7,7 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="_css/mapa.css"/>
 	<link rel="stylesheet" type="text/css" href="_css/estilos.css"/>
 </head>
-<body id="body">	
+<body id="body">
+	<div id="mapa-zoom">
+		<img src="_imagens/mapa_completo_zoom.jpg" id="mapa-mobile">
+	</div>	
+	<img src="_imagens/botao_tela_cheia_fechar.png" id="mapa-botao-fechar" onclick="mapaZoom()">
+	<img src="_imagens/botao_tela_cheia_fechar.png" id="mapa-botao-fechar2" onclick="mapaZoom()">
 	<header>
 		<picture id="banner">
 			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
@@ -102,46 +107,47 @@
 					<h1 class="introducao">Mapa Util</h1>
 					<div class="principal">
 						<div class="texto">
-							<p>Bem-vindo ao nosso Mapa Útil! Nele você descobrirá a localização do mercador noturno em cada uma das noites, onde encontrar depósitos de itens escondidos pelo mapa, locais cheios de ervas, pontos de encontro das crianças e muito mais!</p>
+							<p>Bem-vindo ao nosso Mapa Útil!<br> Nele você descobrirá a localização do mercador noturno em cada uma das noites, onde encontrar depósitos de itens escondidos pelo mapa, locais cheios de ervas, pontos de encontro das crianças e muito mais!</p>
 						</div>
-						<img src="_imagens/mapa_completo.jpg" class="mapa-imagem">
+						<img src="_imagens/mapa_completo.jpg" class="mapa-imagem" onclick="mapaZoom('abrir')">
+						<h5 class="info-mobile">- Toque no mapa para coloca-lo em tela cheia.</h5>
 						<div class="mapa-infos">
-							<div class="info-item">
+							<div id="mercador" class="info-item" onclick="botaoTipo2Discreto('mercador')">
 								<div>
 									<img src="_imagens/_icones/noite_mercador.png">
 								</div>
 								<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
 								<p>Mercador<br> Noturno</p>
 							</div>
-							<div class="info-item">
+							<div id="baus-secretos" class="info-item" onclick="botaoTipo2Discreto('baus-secretos')">
 								<div>
 									<img src="_imagens/_icones/stash_secreto.png">
 								</div>
 								<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
 								<p>Depósitos<br> Secretos</p>
 							</div>
-							<div class="info-item">
+							<div id="baus-criancas" class="info-item" onclick="botaoTipo2Discreto('baus-criancas')">
 								<div>
 									<img src="_imagens/_icones/marcador_bau_criancas.png">
 								</div>
 								<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
 								<p>Baús<br> Escondidos</p>
 							</div>
-							<div class="info-item">
+							<div id="ervas" class="info-item" onclick="botaoTipo2Discreto('ervas')">
 								<div>
 									<img src="_imagens/_icones/ervas.png">
 								</div>
 								<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
 								<p>Raízes<br> Sangrentas</p>
 							</div>
-							<div class="info-item">
+							<div id="zonas-ervas" class="info-item" onclick="botaoTipo2Discreto('zonas-ervas')">
 								<div>
 									<img src="_imagens/_icones/ervas_zona.png">
 								</div>
 								<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
 								<p>Zonas<br> Com Ervas</p>
 							</div>
-							<div class="info-item">
+							<div id="zonas-criancas" class="info-item" onclick="botaoTipo2Discreto('zonas-criancas')">
 								<div>
 									<img src="_imagens/_icones/criancas_zona.png">
 								</div>
@@ -154,7 +160,27 @@
 						<h1 class="marcador-titulo"><img src="_imagens/_icones/flecha_texto_verde.png">Clique em uma das opções acima para mais informações sobre!</h1>
 					</div>
 					<div class="info-marcador">
-						
+						<div class="raizes-sangrentas">
+							<picture>
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/ervas_sangrentas_mobile.jpg"> 
+								<img src="_imagens/_guias/ervas_sangrentas.jpg">
+							</picture>
+							<p>Esses marcadores de folhinha indicam onde você pode encontrar "raizes sangrentas" para alimentar e obter ervas!</p>
+							<div class="info-introducao">
+								<p>Para facilitar gravei um vídeo mostrando em jogo tudo que foi falado acima.</p>
+							</div>
+							<div class="info-video-ervas">
+								<p>1 - Ao se aproximar do local fique parado próximo aos sons estranhos que a terra faz.</p>
+								<p>2 - Espere as raízes se erguerem e então as alimente com sangue engarrafado (infectado ou normal).</p>
+								<p>3 - Pouco tempo após alimentar as raízes, 2 ou 3 ervas aleatórias irão aparecer próximas ao local.</p>
+							</div>
+							<div class="ervas-dica1">
+								<p>- Cada Raiz Sangrenta só pode ser alimentada 1 vez ao dia.</p>
+							</div>
+							<div class="ervas-dica2">
+								<p>- Recomendo alimentar as raízes somente com sangue infectado, pois ele é mais fácil de se conseguir que o normal.</p>
+							</div>
+						</div>
 					</div>
 					<footer>
 						<ul>

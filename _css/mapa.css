@@ -59,6 +59,65 @@
 		}
 	}
 /* Conteudo da Pagina */
+/* Zoom Mapa (Mobile) */
+#mapa-zoom {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: +4;
+	height: 100vh;
+	width: 100%;
+	opacity: 0;
+	transition: opacity 0.4s;
+	pointer-events: none;
+}
+.travamento-scroll {
+	overflow: hidden;
+}
+#mapa-zoom img#mapa-mobile {
+	max-width: 100%;
+	height: 100%;
+}
+img#mapa-botao-fechar {
+	position: fixed;
+	z-index: +4;
+	height: 11vh;
+	width: 10vh;
+	transition: top 0.25s ease-out;
+	top: -11.5vh;
+	right: 45%;
+}
+img#mapa-botao-fechar2 {
+	display: none;
+}
+@media only screen and (orientation:landscape) {
+	img#mapa-botao-fechar2, #mapa-zoom img#mapa-mobile {
+		transform: rotate(90deg) scaleX(0.765);
+	}
+	#mapa-zoom img#mapa-mobile {
+		height: 100vw;
+		width: 130vh;
+		max-width: none;
+		max-height: none;	
+	}
+	img#mapa-botao-fechar2 {
+		position: fixed;
+		display: block;
+		z-index: +4;
+		height: 10vw;
+		width: 11vw;
+		top: 0;
+		right: -24vh;
+		margin-top: 35vh;
+		transition: right 0.25s ease-out;
+	}
+	img#mapa-botao-fechar {
+		display: none;
+	}
+}
 /* Introducao + Mapa */
 .banner-principal img {
 	width: 98%;
@@ -100,10 +159,13 @@ div.principal div.texto p {
 }
 div.principal img.mapa-imagem {
 	border: solid #000000 6px;
-	width: 80vw;
-	max-width: 1250px;
+	width: 85vw;
+	max-width: 1085px;
 	margin: 2% 0 2% 0;
 	box-shadow: 3px 3px 2.5px rgba(0, 0, 0, 0.7);
+}
+div.principal h5.info-mobile {
+	display: none;
 }
 div.mapa-infos {
 	display: flex;
@@ -126,11 +188,13 @@ div.mapa-infos div.info-item {
 }
 div.mapa-infos div.info-item:hover {
 	filter: brightness(110%);
+	transform: scale(1.03);
 }
 div.mapa-infos div.info-item img.marcacao-placa {
 	width: 16px;
 	height: 89px;
 	margin: 3px 11px 2.7px 0;
+	pointer-events: none;
 }
 div.info-item div {
 	display: flex;
@@ -140,19 +204,81 @@ div.mapa-infos div img {
 	width: 70px;
 	height: 70px;
 	margin: 0px 11px 0px 11px;
+	pointer-events: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 div.mapa-infos div p {
 	margin: 2px 25px 2px 0px;
+	pointer-events: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none; 
 }
 div.mapa-infos div p.zonas-criancas {
 	margin: 2px 20px 2px 0px;
 }
+/* Fix Posicionamento Infos */
 @media screen and (max-width: 1187px) and (min-width: 1104px) {
 	div.mapa-infos div.info-item {
 		margin: 0 25px 15px 25px;
 	}
 }
-/* Informações Marcador */
+/* Introducao + Mapa (Mobile) */
+@media screen and (max-width: 800px) {
+	div.principal div.texto p {
+		font-size: 20px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+	}
+	div.principal img.mapa-imagem {
+		width: 86vw;
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+		margin: 2% 0 1% 0;
+	}
+	div.principal h5.info-mobile {
+		display: block;
+		font-size: 16px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		color: #BFEDEF;
+		text-align: center;
+		margin: 0 7px 10px 7px;
+	}
+	div.mapa-infos div.info-item {
+		padding: 2.7vw 0 3.5vw 0;
+		font-size: 4.5vw;
+		text-shadow: 0.3vw 0 0 rgb(0, 0, 0), -0.3vw 0 0 rgb(0, 0, 0), 0 0.3vw 0 rgb(0, 0, 0), 0 -0.3vw 0 rgb(0, 0, 0), 0.15vw 0.15vw rgb(0, 0, 0), -0.15vw -0.15vw 0 rgb(0, 0, 0), 0.15vw -0.15vw 0 rgb(0, 0, 0), -0.15vw 0.15vw 0 rgb(0, 0, 0);
+		margin: 0 1vw 1vw 1vw;
+		height: 11vw;
+		width: 43vw;
+	}
+	div.mapa-infos div.info-item img.marcacao-placa {
+		width: 1.8vw;
+		height: 12.4vw;
+		margin: -0.41vw 2vw 0vw 0;
+	}
+	div.info-item div {
+		flex-direction: column;
+		justify-content: center;
+	}
+	div.mapa-infos div img {
+		width: 8vw;
+		height: 8vw;
+		margin: 0px 0.4vw 0 1vw;
+	}
+	div.mapa-infos div p {
+		margin: 0;
+	}
+	div.mapa-infos div p.zonas-criancas {
+		margin: 0.6vw 0 0 0;
+		font-size: 4.1vw;
+	}
+}
+/* Informações Marcador -  Base */
 .marcador-titulo-div {
 	display: flex;
 	flex-direction: column;
@@ -189,6 +315,15 @@ div.info-marcador {
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
 	background-image: url("../_imagens/fundo_infinito.jpg");
 	background-repeat: repeat;
+}
+/* Informações Raizes Sangrentas*/
+div.info-marcador div.raizes-sangrentas {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+div.info-marcador picture img {
+
 }
 /* Footer */
 	footer {

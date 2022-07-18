@@ -296,6 +296,19 @@ function botaoTipo2MenosBrilho(elemento, elemento2) {
     }
     setTimeout(botaoTipo2MenosBrilhoOff, 220);
 }
+function botaoTipo2Discreto(elemento, elemento2) {
+    function botaoTipo2DiscretoOff() {
+        document.getElementById(elemento).classList.remove("botao2-discreto");
+        if (elemento2 !== undefined) {
+            document.getElementById(elemento2).classList.remove("botao2-discreto");
+        }
+    }
+    document.getElementById(elemento).classList.add("botao2-discreto");
+    if (elemento2 !== undefined) {
+        document.getElementById(elemento2).classList.add("botao2-discreto");
+    }
+    setTimeout(botaoTipo2DiscretoOff, 220);
+}
 var rotacao = 0;
 function rotacao90(elemento, elemento2) {
     if (rotacao === 0) {

@@ -877,6 +877,49 @@ nav img:hover {
 		-o-animation-fill-mode: none;
 		animation-fill-mode: none;
 	}
+	/* Botão 2 (Discreto + Sem Brilho) */
+	@-moz-keyframes botao2-discreto {
+		0% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+		50% { -webkit-transform:scale(0.95); -moz-transform:scale(0.95); -ms-transform:scale(0.95); -o-transform:scale(0.95); transform:scale(0.95); }
+		100% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+	}
+	@-ms-keyframes botao2-discreto {
+		0% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+		50% { -webkit-transform:scale(0.95); -moz-transform:scale(0.95); -ms-transform:scale(0.95); -o-transform:scale(0.95); transform:scale(0.95); }
+		100% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+	}
+	@-o-keyframes botao2-discreto {
+		0% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+		50% { -webkit-transform:scale(0.95); -moz-transform:scale(0.95); -ms-transform:scale(0.95); -o-transform:scale(0.95); transform:scale(0.95); }
+		100% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+	}
+	@-webkit-keyframes botao2-discreto {
+		0% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+		50% { -webkit-transform:scale(0.95); -moz-transform:scale(0.95); -ms-transform:scale(0.95); -o-transform:scale(0.95); transform:scale(0.95); }
+		100% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+	}
+	@keyframes botao2-discreto {
+		0% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+		50% { -webkit-transform:scale(0.95); -moz-transform:scale(0.95); -ms-transform:scale(0.95); -o-transform:scale(0.95); transform:scale(0.95); }
+		100% { -webkit-transform:scale(1); -moz-transform:scale(1); -ms-transform:scale(1); -o-transform:scale(1); transform:scale(1); }
+	}
+	.botao2-discreto {
+		-webkit-animation-name: botao2-discreto;
+		-moz-animation-name: botao2-discreto;
+		-ms-animation-name: botao2-discreto;
+		-o-animation-name: botao2-discreto;
+		animation-name: botao2-discreto;
+		-moz-animation-duration: 0.2s;
+		-ms-animation-duration: 0.2s;
+		-o-animation-duration: 0.2s;
+		-webkit-animation-duration: 0.2s;
+		animation-duration: 0.2s;
+		-moz-animation-fill-mode: none;
+		-ms-animation-fill-mode: none;
+		-webkit-animation-fill-mode: none;
+		-o-animation-fill-mode: none;
+		animation-fill-mode: none;
+	}
 	/* Botão 2 (Versão Pesquisa) */
 	@-webkit-keyframes botao2-pesquisa {
 		0% { -webkit-transform:scale(1) translate(0%, 0%); -moz-transform:scale(1) translate(0%, 0%); -ms-transform:scale(1) translate(0%, 0%); -o-transform:scale(1) translate(0%, 0%); transform:scale(1) translate(0%, 0%); }
