@@ -40,7 +40,7 @@ function secaoInfos(secao, titulo) {
     document.getElementById("marcador-titulo-div").style.padding="20px 0 24px 0";
     document.getElementById("marcador-titulo").style.letterSpacing="0.05vw";
     if (telaLargura <= 800) {
-        document.getElementById("marcador-titulo").style.fontSize="34px";
+        document.getElementById("marcador-titulo").style.fontSize="27px";
     }
     else {
         document.getElementById("marcador-titulo").style.fontSize="40px";
