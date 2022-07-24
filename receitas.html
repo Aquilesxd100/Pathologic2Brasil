@@ -4,10 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title>Pathologic 2 Brasil</title>
-	<link rel="stylesheet" type="text/css" href="_css/home.css"/>
+	<link rel="stylesheet" type="text/css" href="_css/receitas.css"/>
 	<link rel="stylesheet" type="text/css" href="_css/estilos.css"/>
 </head>
-<body id="body">	
+<body id="body">
 	<header>
 		<picture id="banner">
 			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
@@ -47,7 +47,7 @@
 				</ul>
 				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
 				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile')">
-				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('mapa.html')">
+				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile')">
 				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile')">
 			</div>
 			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
@@ -81,7 +81,7 @@
 		</nav>
 		<div id="submenu">
 			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('mapa.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
 			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
 			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
 			<ul>
@@ -95,61 +95,18 @@
 		<div id="corpo">
 			<div id="fundobranco">
 				<div id="conteudo">
-					<div id="introducaotitulo">
-						<picture id="banner-bem-vindo-mobile">
+					<picture class="banner-principal">
 						<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
-						<img src="_imagens/bem_vindo.jpg" id="bannerbemvindo">
+						<img src="_imagens/bem_vindo.jpg">
+					</picture>
+					<h1 class="introducao-titulo">Receitas</h1>
+					<div class="secao-principal">
+						<p class="introducao">Bem-vindo ao nosso guia de receitas!<br> Aqui falaremos sobre os vários tipos de "poções" que temos no jogo e como cria-las. Começando das mais simples, as infusões, depois antibióticos caseiros, e os misteriosos analgésicos! (Que são tudo menos remédio para dor!)</p>
+						<picture class="introducao-img">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/receitas_mobile.jpg">
+							<img src="_imagens/_guias/receitas.jpg">
 						</picture>
-						<h1>Bem Vindo(a) ao<br class="modo-mobile"> Pathologic 2 Brasil !</h1>
-					</div>
-					<div id="introducao">
-					    <h2>Aqui você irá encontrar tudo que precisa para ser um <span id="menku">honrado menkhu,</span><br> um <span id="cirurgiao">mestre cirurgião</span> ou um <br class="modo-mobile"><span id="ator">renomado ator!</span></h2>
-				    </div>
-					<div id="introducao2">
-						<p>É só clicar na categoria que lhe interessa <span class="foco">aqui em cima,</span> <br class="modo-mobile">selecionar um dos nossos ultimos guias <span class="foco">abaixo,</span><br class="modo-desktop"> ou caso procure algo em especifico, pesquise no <span class="foco">canto de cima a direita.</span></p> 	
-					</div>
-					<div id="ultimosguiastitulo">
-						<picture>
-							<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
-							<img src="_imagens/ultimos_guias.jpg" id="bannerultimosguias">
-						</picture>
-							<h1>Ultimos Guias</h1>
-					</div>
-					<div id="ultimosguias">
-						<img src="_imagens/botao_ultimosguias_esquerda.png" id="botao-esquerda" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-esquerda'); botaoUltimosGuias('botao-esquerda')">
-						<img src="_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-direita'); botaoUltimosGuias('botao-direita')">
-						<div id="subshowcase">
-							<div id="showcase">
-								<img src="_imagens/ultimos_guias_dinheiro.png" onclick="abrirLink('dinheiro.html')">
-								<img src="_imagens/ultimos_guias_comida.png" onclick="abrirLink('comida.html')">			
-								<img src="_imagens/ultimos_guias_mapa_util.png" onclick="abrirLink('mapa.html')">
-								<img src="_imagens/ultimos_guias_receitas.png" onclick="abrirLink('receitas.html')">
-								<img src="_imagens/ultimos_guias_combate.png" onclick="abrirLink('combate.html')">
-							</div>
-						</div>
-					</div>
-					<div id="acessorapidotitulo">
-						<picture id="banner-acesso-rapido-mobile">
-							<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
-							<img src="_imagens/acesso_rapido.jpg" id="banneracessorapido">
-						</picture>
-						<h1>Acesso Rapido</h1>
-					</div>
-					<div id="acessorapido">
-						<div id="acessorapidoinfo">
-							<div id="acessorapidodisplay">
-								<h2 id="displayinfo"><span class="modo-desktop">Passe o mouse por cima de uma das opções para saber mais!</span><span class="modo-mobile">Toque em cima de uma das opções<br> para saber mais!</span></h2>
-						    </div>
-						</div>
-						<div id="acessorapidoopcoes">
-							<img src="_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'link-dinheiro')">
-							<img src="_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'link-podinzin')">
-							<img src="_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'mapa.html')">
-							<img src="_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'link-comida')">
-							<img src="_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'link-pocoes')">
-							<img src="_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combate.html')">
-						</div>
-						<img src="_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); acessoRapidoMobile('link')">
+						
 					</div>
 					<footer>
 						<ul>
@@ -161,6 +118,6 @@
 			</div>
 	    </div>	
 <script src="_js/index.js"></script>
-<script src="_js/home.js"></script>
+<script src="_js/receitas.js"></script>
 </body>
 </html>
