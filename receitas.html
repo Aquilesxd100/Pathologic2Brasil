@@ -46,13 +46,13 @@
 					<li id="tudo-mobile">Mostrar Tudo</li> 
 				</ul>
 				<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
-				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile')">
-				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile')">
-				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile')">
+				<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('comida.html')">
+				<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('mapa.html')">
+				<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('tudo.html')">
 			</div>
 			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
-			<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2')">
-			<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2')">
+			<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
+			<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trocas.html')">
 			<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
 			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
 			<img src="_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
@@ -80,9 +80,9 @@
 			</ul>
 		</nav>
 		<div id="submenu">
-			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
-			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
+			<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('tudo.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
+			<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('mapa.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('comida.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
 			<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
 			<ul>
 				<li id="combate">Combate</li> 
@@ -101,12 +101,25 @@
 					</picture>
 					<h1 class="introducao-titulo">Receitas</h1>
 					<div class="secao-principal">
-						<p class="introducao">Bem-vindo ao nosso guia de receitas!<br> Aqui falaremos sobre os vários tipos de "poções" que temos no jogo e como cria-las. Começando das mais simples, as infusões, depois antibióticos caseiros, e os misteriosos analgésicos! (Que são tudo menos remédio para dor!)</p>
+						<p class="introducao">Bem-vindo ao nosso guia de receitas!<br> Aqui falaremos sobre os vários tipos de "poções" que temos no jogo e como cria-las. Começando das mais simples, as infusões, depois antibióticos caseiros, e os misteriosos analgésicos!</p>
 						<picture class="introducao-img">
 							<source media="(max-width: 800px)" srcset="_imagens/_guias/receitas_mobile.jpg">
 							<img src="_imagens/_guias/receitas.jpg">
-						</picture>
-						
+						</picture>	
+						<div class="dica-padrao">
+							<p><span class="dica">DICA:</span> Caso tenha dúvidas de onde conseguir ervas para produzir as poções, de uma olhada no nosso "mapa útil" clicando <a href="mapa.html" target="_blank"><span class="link-mapa">aqui.</span></a></p>
+						</div>
+						<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Para produzir Infusões você irá precisar do "<span class="sublinhado">Alambique Menor</span>", essa maquina pode ser consertada utilizando 1x Mola e 1x Sucata Metálica dentro do seu covil, a partir do dia 2.<br> Já os Antibióticos e Analgésicos são feitos no "<span class="sublinhado">Alambique Maior</span>" que fica ao lado do menor, ele também pode ser consertado a partir do dia 2 utilizando 1x Sucata Metálica e 1x Caixa de Ferramentas, porem no dia 4, Palitinho irá lhe ajudar a conseguir esses itens.</p>
+						<div class="alambiques">
+							<picture class="alambique-menor">
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/alambique_menor_mobile.jpg">
+								<img src="_imagens/_guias/alambique_menor.jpg">
+							</picture>
+							<picture class="alambique-maior">
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/alambique_maior_mobile.jpg">
+								<img src="_imagens/_guias/alambique_maior.jpg">
+							</picture>
+						</div>
 					</div>
 					<footer>
 						<ul>
