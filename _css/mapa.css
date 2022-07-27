@@ -255,6 +255,12 @@ div.mapa-infos div p.zonas-criancas {
 }
 /* Introducao + Mapa (Mobile) */
 @media screen and (max-width: 800px) {
+	.banner-principal img {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	div.principal {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
 	div.principal div.texto p {
 		font-size: 20px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
@@ -350,12 +356,12 @@ div.info-marcador {
 div.info-marcador span {
 	font-weight: bold;
 	color: #96E2E5;
-	border-bottom: solid #96E2E5 0.2vw;
+	border-bottom: solid #96E2E5 2px;
 }
 p span.sublinhado {
 	font-weight: bold;
 	color: #FFFFFF;
-	border-bottom: solid #FFFFFF 0.2vw;
+	border-bottom: solid #FFFFFF 2px;
 }
 p span.fonte-bugada {
 	font-weight: normal;
@@ -413,9 +419,13 @@ div.info-marcador p.info-secao-inferior {
 }
 /* Informações Marcador - Base (Mobile) */
 @media screen and (max-width: 800px) {
+	div.info-marcador {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
 	#marcador-titulo-div {
 		background-image: url("../_imagens/bem_vindo_mobile.jpg");
 		padding: 6px 0 23px 0;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	h1#marcador-titulo img {
 		width: 25.6px;
