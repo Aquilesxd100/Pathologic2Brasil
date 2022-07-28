@@ -124,21 +124,52 @@ div.sub-titulo h2 {
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	letter-spacing: 0.1vw;
 }
+div.sub-titulo-2 {
+	border-bottom: 7px solid #000000;
+	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-repeat: repeat;
+	background-size: cover;
+	min-width: 100%;
+	width: 100%;
+}
+div.sub-titulo h3 , div.sub-titulo-2 h3 {
+	font-size: 38px;
+	text-align: center;
+	font-weight: bolder;
+	margin: 0.6% 2% 0.6% 2%;
+	color: #44BD2F;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	letter-spacing: 0.2vw;
+}
 div.receitas-criacao table {
 	font-size: 30px;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	text-align: justify;
 	border-collapse: collapse;
 	margin: 0.5% 1% 1% 1%;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	background-image: url("../_imagens/fundo_tabela.jpg");
+	background-repeat: repeat;
+}
+div.receitas-criacao table.tabela-combinacao {
+	margin: 0.5% 1% 0% 1%;
 }
 div.receitas-criacao table th.numero {
-	font-size: 40px;
+	font-size: 50px;
+}
+div.receitas-criacao table th.sinal {
+	font-size: 60px;
+	font-family: Arial;
 }
 div.receitas-criacao table th {
 	border:#000000 solid 6px;
-	padding: 0 5vw 0 5vw;	                                                                    
+	padding: 0.5vw 2vw 0.5vw 2vw;
+	font-weight: normal;	                                                                    
 }
 div.receitas-criacao table th img {
-	width: 80px;	                                                                   
+	width: 80px;	
+	display: block;  
+	border:#000000 solid 5px;                                                              
 }
 div.receitas-criacao {
 	display: flex;
@@ -154,6 +185,40 @@ div.receitas-criacao h2 {
 	color: #FFFFFF;
 	text-align: center;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+}
+div.receitas-criacao p {
+	font-size: 25px;
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
+	margin: 0.5% 1% 1% 1%;
+	color: #BFEDEF;
+}
+div.info-ingredientes {
+	width: 100%;
+	border-top: solid #000000 7px;
+	display: flex;
+	flex-wrap: wrap;
+}
+div.info-ingredientes div {
+	display: block;
+	border: 6px #000000 solid;
+	margin: 1%;
+	background-image: url("../_imagens/fundo_info.jpg");
+	background-size: 100% 100%;
+}
+div.info-ingredientes div img {
+	float: left;
+	display: block;
+	border-right: 7px #000000 solid;
+	width: 80px;	
+}
+div.info-ingredientes div h2 {
+	font-size: 28px;
+	font-weight: normal;
+	margin: 3px;
+
+}
+div#pre-carregamento {
+	display: none;
 }
 /* Padrões (Mobile) */
 @media screen and (max-width: 800px) {
