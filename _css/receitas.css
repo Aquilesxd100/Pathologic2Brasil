@@ -141,6 +141,22 @@ div.sub-titulo h3 , div.sub-titulo-2 h3 {
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	letter-spacing: 0.2vw;
 }
+div.criacao-introducao {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+div.criacao-introducao p {
+	font-size: 28px;
+	text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+	text-align: center;
+	margin: 1% 2% 1.5% 2%;
+	text-indent: 70px; 
+}
+div.criacao-introducao {
+	display: flex;
+	align-items: center;
+}
 div.receitas-criacao table {
 	font-size: 30px;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
@@ -197,12 +213,13 @@ div.info-ingredientes {
 	border-top: solid #000000 7px;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 div.info-ingredientes div {
 	display: block;
 	border: 6px #000000 solid;
-	margin: 1%;
-	background-image: url("../_imagens/fundo_info.jpg");
+	margin: 0.8%;
+	background-image: url("../_imagens/fundo_info2.jpg");
 	background-size: 100% 100%;
 }
 div.info-ingredientes div img {
@@ -213,9 +230,10 @@ div.info-ingredientes div img {
 }
 div.info-ingredientes div h2 {
 	font-size: 28px;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	font-weight: normal;
+	min-width: 250px;
 	margin: 3px;
-
 }
 div#pre-carregamento {
 	display: none;
