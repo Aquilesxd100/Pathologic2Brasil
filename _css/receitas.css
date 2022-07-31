@@ -104,6 +104,7 @@ div.sub-titulo p.info-secao-inferior {
 	color: #7ACE48;
 	text-align: center;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+	text-indent: 0;
 }
 div.sub-titulo {
 	border-top: 7px solid #000000;
@@ -222,6 +223,11 @@ div.info-ingredientes div {
 	background-image: url("../_imagens/fundo_info2.jpg");
 	background-size: 100% 100%;
 }
+@media screen and (max-width: 1000px) and (min-width: 801px) {
+	div.info-ingredientes-spc div {
+		margin: 0.8% 3% 0.8% 3%;
+	}
+}
 div.info-ingredientes div img {
 	float: left;
 	display: block;
@@ -234,6 +240,9 @@ div.info-ingredientes div h2 {
 	font-weight: normal;
 	min-width: 250px;
 	margin: 3px;
+}
+div.info-ingredientes div h2.ingrediente-centralizado {
+	margin: 20px 3px 3px 3px;
 }
 div#pre-carregamento {
 	display: none;
@@ -253,6 +262,10 @@ div#pre-carregamento {
 	}
 	span.sublinhado {
 		border-bottom: solid #FFFFFF 1px;
+	}
+	div.sub-titulo p.info-secao-inferior {
+		font-size: 26px;
+		text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
 	}
 }
 /* Conteudo da Pagina */
@@ -435,6 +448,38 @@ div.infusoes div.dica-padrao {
 		margin: 2% 1% 0% 1%;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
+	div.infusoes {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	div.infusoes div.infusoes-introducao {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	div.infusoes div.infusoes-introducao img {
+		float: none;
+		max-width: none;
+		max-height: none;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		width: 70vw;
+		min-width: 350px;
+		margin: 2% 0% 2% 0%;
+	}
+	div.infusoes-introducao p {
+		font-size: 23px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 0% 2.5% 1.5% 2.5%;
+		text-indent: 70px;
+	}
+
+	div.infusoes-introducao p.introducao-auxiliar {
+		text-align: center;
+		font-size: 25px;
+		margin: 1.5% 2% 2% 2%;
+		text-indent: 0;
+	}
+
 	div.infusoes-diferencas p img {
 		position: relative;
 		width: 1.72vw;

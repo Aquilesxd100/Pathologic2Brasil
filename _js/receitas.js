@@ -2,6 +2,7 @@ var telaLargura = window.innerWidth;
 var contador2 = 0;
 var contador3 = [0, 0, 0, 0];
 var contador6 = 0;
+const ervasComunsClasse = document.getElementsByClassName("ervas-comuns1");
 function rotacaoItens() {
     let ervasComuns = ["blacktwyre", "bloodtwyre", "twyre"];
     let ervasRaras = ["ashenswish", "whitewhip", "swevery"];
@@ -36,10 +37,13 @@ function rotacaoItens() {
         document.getElementById("ervas-todas").innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[2]] + ".jpg'>";
         contador3[2] = contador3[2] + 1;
     }  
-    var ervasComunsClasse = document.getElementsByClassName("ervas-comuns1");
-    for (let c=0; c=2; c++) {
+    for (let c = 0; c < 3; c++) {
         if (ervasComunsClasse[c].getBoundingClientRect().top < telaAltura && ervasComunsClasse[c].getBoundingClientRect().bottom > 0) {
-            ervasComunsClasse[c].innerHTML="<img src='_imagens/_icones/" + ervasComuns[c] + ".jpg'>";
+            ervasComunsClasse[0].innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[3]] + ".jpg'>";
+            ervasComunsClasse[1].innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[3]] + ".jpg'>";
+            ervasComunsClasse[2].innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[3]] + ".jpg'>";
+            contador3[3] = contador3[3] + 1;
+            c = 3;
         } 
     }
     setTimeout(rotacaoItens, 1100);
