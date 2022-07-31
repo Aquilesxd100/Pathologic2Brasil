@@ -36,19 +36,12 @@ function rotacaoItens() {
         document.getElementById("ervas-todas").innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[2]] + ".jpg'>";
         contador3[2] = contador3[2] + 1;
     }  
-    function checkErvasComuns1(elemento) {
-        if (elemento.getBoundingClientRect().top < telaAltura && elemento.getBoundingClientRect().bottom > 0) {
-            elemento.innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[3]] + ".jpg'>";
-            contador3[3] = contador3[3] + 1;
+    var ervasComunsClasse = document.getElementsByClassName("ervas-comuns1");
+    for (let c=0; c=2; c++) {
+        if (ervasComunsClasse[c].getBoundingClientRect().top < telaAltura && ervasComunsClasse[c].getBoundingClientRect().bottom > 0) {
+            ervasComunsClasse[c].innerHTML="<img src='_imagens/_icones/" + ervasComuns[c] + ".jpg'>";
         } 
     }
-    /*
-    document.getElementsByClassName("ervas-comuns1").forEach(checkErvasComuns1);
-    if (document.getElementsByClassName("ervas-comuns1").getBoundingClientRect().top < telaAltura && document.getElementsByClassName("ervas-comuns1").getBoundingClientRect().bottom > 0) {
-        document.getElementsByClassName("ervas-comuns1").innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[3]] + ".jpg'>";
-        contador3[3] = contador3[3] + 1;
-    } 
-    */
     setTimeout(rotacaoItens, 1100);
     }
 
