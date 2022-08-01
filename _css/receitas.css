@@ -278,6 +278,7 @@ div#pre-carregamento {
 		margin: 0.6% 2% 1.5% 2%;
 		text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
 	}
+
 	div.receitas-criacao h2 {
 		font-size: 24px;
 		margin: 1% 5% 1% 5%;
@@ -286,19 +287,46 @@ div#pre-carregamento {
 	div.receitas-criacao table {
 		font-size: 22px;
 		text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
-		text-align: left;
-		margin: 1% 2.5% 2% 2.5%;
+		text-align: center;
+		margin: 1% 0% 2% 0%;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		max-width: 87vw;
 	}
 	div.receitas-criacao table th.numero {
 		font-size: 38px;
 		text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
 	}
 	div.receitas-criacao table th {
-		padding: 1vw 2vw 1vw 2vw;	                                                                    
+		padding: 1vw 1vw 1vw 1vw;	
+		margin:0;                                                                  
 	}
-	div.receitas-criacao table th img {
-		width: 70px;	                                                          
+	div.receitas-criacao table th img {	
+		max-width: 100px;	
+		width: 18vw;                                                          
+	}
+	div.receitas-criacao table.tabela-combinacao {
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+		margin: 1.5% 0% 1.5% 0%;
+		box-shadow: none;
+	}
+	div.receitas-criacao table.tabela-combinacao th img {
+		width: 14vw; 
+		max-width: 90px; 
+		margin:0;                                                      
+	}
+	div.receitas-criacao table.tabela-combinacao th {
+		border:#000000 solid 4px;
+		padding: 0.6vw 0.7vw 0.6vw 0.7vw;
+		font-weight: normal;	                                                                    
+	}
+	div.receitas-criacao table.tabela-combinacao th.sinal {
+		font-size: 43px;
+		font-family: Arial;
+	}
+	div.receitas-criacao p {
+		font-size: 25px;
+		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
+		margin: 0.5% 0% 1% 0%;
 	}
 }
 /* Conteudo da Pagina */
