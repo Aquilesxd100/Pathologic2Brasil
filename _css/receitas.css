@@ -306,7 +306,7 @@ div#pre-carregamento {
 	}
 	div.receitas-criacao table.tabela-combinacao {
 		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
-		margin: 1.5% 0% 1.5% 0%;
+		margin: 1.5% 0% 0.5% 0%;
 		box-shadow: none;
 	}
 	div.receitas-criacao table.tabela-combinacao th img {
@@ -324,9 +324,41 @@ div#pre-carregamento {
 		font-family: Arial;
 	}
 	div.receitas-criacao p {
-		font-size: 25px;
-		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
-		margin: 0.5% 0% 1% 0%;
+		font-size: 21px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.95px 0.95px rgb(0, 0, 0), -0.95px -0.95px 0 rgb(0, 0, 0), 0.95px -0.95px 0 rgb(0, 0, 0), -0.95px 0.95px 	0 rgb(0, 0, 0);
+		margin: 0% 0% 1.5% 0%;
+		text-align: center;
+	}
+	/* */
+	div.info-ingredientes {
+		border-top: solid #000000 7px;
+	}
+	div.info-ingredientes div {
+		border: 4px #000000 solid;
+		margin: 1%;
+		width: 40vw;
+		max-width: 250px;
+		background-size: 105% 105%;
+	}
+	div.info-ingredientes div img {
+		border-right: 7px #000000 solid;
+		min-width: 47px;
+		width: 11vw;	
+		margin: 0 5px 0 0;
+	}
+	div.info-ingredientes div h2 {
+		font-size: calc(11px + 1.5vw);
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.95px 0.95px rgb(0, 0, 0), -0.95px -0.95px 0 rgb(0, 0, 0), 0.95px -0.95px 0 rgb(0, 0, 0), -0.95px 0.95px 	0 rgb(0, 0, 0);
+		min-width: 0;
+		margin: 0 5px 0 5px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+	div.info-ingredientes div h2.ingrediente-centralizado {
+		margin: 0;
 	}
 }
 /* Conteudo da Pagina */
