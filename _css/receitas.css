@@ -145,6 +145,7 @@ div.sub-titulo h3 , div.sub-titulo-2 h3 {
 div.criacao-introducao {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	width: 100%;
 }
 div.criacao-introducao p {
@@ -260,7 +261,7 @@ div#pre-carregamento {
 		text-align: justify;
 		font-size: 18px;
 		text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
-	}
+	}	
 	span.sublinhado {
 		border-bottom: solid #FFFFFF 1px;
 	}
@@ -269,16 +270,23 @@ div#pre-carregamento {
 		text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
 	}
 	div.sub-titulo h2 {
-		font-size: 32px;
+		font-size: 30px;
 		margin: 0.6% 2% 0.6% 2%;
 	}
 	div.sub-titulo h3 , div.sub-titulo-2 h3 {
-		font-size: 32px;
+		font-size: 30px;
 		font-weight: bolder;
 		margin: 0.6% 2% 1.5% 2%;
 		text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
 	}
-
+	div.criacao-introducao p {
+		font-size: 24px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 1% 2% 1.5% 2%;
+		text-indent: 70px; 
+		max-width: 85vw;
+	}
 	div.receitas-criacao h2 {
 		font-size: 24px;
 		margin: 1% 5% 1% 5%;
@@ -329,7 +337,6 @@ div#pre-carregamento {
 		margin: 0% 0% 1.5% 0%;
 		text-align: center;
 	}
-	/* */
 	div.info-ingredientes {
 		border-top: solid #000000 7px;
 	}
@@ -356,6 +363,17 @@ div#pre-carregamento {
 		align-items: center;
 		justify-content: center;
 		height: 100%;
+	}
+	div.receitas-criacao div.info-ingredientes div {
+		margin: 1% 0.6% 1% 0.6%;
+		width: 41.5vw;
+	}
+	div.receitas-criacao div.info-ingredientes div h2 {
+		font-size: calc(7.5px + 1.5vw);
+		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
+	}
+	div.receitas-criacao div.info-ingredientes div img {
+		min-height: 100%;
 	}
 	div.info-ingredientes div h2.ingrediente-centralizado {
 		margin: 0;
@@ -499,6 +517,12 @@ div.infusoes-introducao p {
 	margin: 1% 2% 1.5% 2%;
 	text-indent: 70px;
 }
+div.infusoes-introducao p.introducao-auxiliar {
+	color: #BFEDEF;
+}
+div.infusoes-introducao p.introducao-auxiliar span.sublinhado {
+	border-bottom: solid #BFEDEF 2px;
+}
 div.infusoes-diferencas {
 	display: flex;
 	align-items: center;
@@ -561,7 +585,7 @@ div.infusoes div.dica-padrao {
 		margin: 2% 0% 2% 0%;
 	}
 	div.infusoes-introducao p {
-		font-size: 23px;
+		font-size: 20px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 		text-align: justify;
 		margin: 0% 2.5% 1.5% 2.5%;
@@ -569,7 +593,7 @@ div.infusoes div.dica-padrao {
 	}
 	div.infusoes-introducao p.introducao-auxiliar {
 		text-align: center;
-		font-size: 25px;
+		font-size: 23px;
 		margin: 1.5% 2% 2% 2%;
 		text-indent: 0;
 	}
@@ -598,6 +622,9 @@ div.infusoes div.dica-padrao {
 		text-align: justify;
 		margin: 1% 5% 2% 5%;
 	}
+	div.infusoes-introducao p.introducao-auxiliar span.sublinhado {
+		border-bottom: solid #BFEDEF 1px;
+	}
 	div.infusoes-diferencas p img {
 		min-width: 19px;
 		min-height: 28px;
@@ -605,6 +632,12 @@ div.infusoes div.dica-padrao {
 	}
 	div.infusoes-diferencas-p {
 		margin: 0;
+	}
+	div.receitas-criacao div.dica-padrao p {
+		margin: 1.3% 5% 1.3% 5%;
+		text-align: justify;
+		font-size: 18px;
+		text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
 	}
 }
 /* Footer */
