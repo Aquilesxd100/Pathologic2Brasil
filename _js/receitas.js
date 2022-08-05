@@ -1,8 +1,6 @@
 var telaLargura = window.innerWidth;
-var contador2 = 0;
-var contador3 = [0, 0, 0, 0, 0];
-var contador5 = [0, 0];
-var contador6 = 0;
+var contador3 = [0, 0, 0, 0, 0, 0];
+var contador5 = [0, 0, 0];
 const ervasComunsClasse = document.getElementsByClassName("ervas-comuns1");
 const orgaosSangueClasse = document.getElementsByClassName("orgão-sangue-infectado-combinacao");
 function rotacaoItens() {
@@ -10,32 +8,21 @@ function rotacaoItens() {
     let ervasRaras = ["ashenswish", "whitewhip", "swevery"];
     let infusoesNormais = ["medrel", "zurkh", "yas"];
     let orgaosSangueInfectado = ["rim_infectado", "figado_infectado", "coracao_infectado", "cerebro_infectado", "sangue_infectado"];
+    let orgaosSangueSaudavel = ["rim", "figado", "coracao", "cerebro", "sangue"];
+    let checkContadores = [contador3[0], contador3[1], contador3[2], contador3[3], contador3[4], contador3[5], contador5[0], contador5[1], contador5[2]];
     let telaAltura = window.innerHeight;
-    if (contador3[0] === 3) {
-        contador3[0] = 0;
+    for (let c = 0; c < Object.keys(checkContadores).length; c++) {
+            if (c => 7) {
+                if (checkContadores[c] === 5) {
+                    contador5[c - 6] = 0;
+                }
+            }
+            if (c <= 6) {
+                if (checkContadores[c] === 3) {
+                    contador3[c] = 0;
+                }
+            }
     }
-    if (contador3[1] === 3) {
-        contador3[1] = 0;
-    }
-    if (contador3[2] === 3) {
-        contador3[2] = 0;
-    }
-    if (contador3[3] === 3) {
-        contador3[3] = 0;
-    }
-    if (contador3[4] === 3) {
-        contador3[4] = 0;
-    }
-    if (contador5[0] === 5) {
-        contador5[0] = 0;
-    }
-    if (contador5[1] === 5) {
-        contador5[1] = 0;
-    }
-    if (contador6 === 6) {
-        contador6 = 0;
-    }
-    
     if (document.getElementById("ervas-comuns").getBoundingClientRect().top < telaAltura && document.getElementById("ervas-comuns").getBoundingClientRect().bottom > 0) {
         document.getElementById("ervas-comuns").innerHTML="<img src='_imagens/_icones/" + ervasComuns[contador3[0]] + ".jpg'>";
         contador3[0] = contador3[0] + 1;
@@ -74,6 +61,14 @@ function rotacaoItens() {
             c = 5;
         } 
     }
+    if (document.getElementById("infusoes-normais2").getBoundingClientRect().top < telaAltura && document.getElementById("infusoes-normais2").getBoundingClientRect().bottom > 0) {
+        document.getElementById("infusoes-normais2").innerHTML="<img src='_imagens/_icones/" + infusoesNormais[contador3[5]] + ".jpg'>";
+        contador3[5] = contador3[5] + 1;
+    }  
+    if (document.getElementById("orgão-sangue-saudavel").getBoundingClientRect().top < telaAltura && document.getElementById("orgão-sangue-saudavel").getBoundingClientRect().bottom > 0) {
+        document.getElementById("orgão-sangue-saudavel").innerHTML="<img src='_imagens/_icones/" + orgaosSangueSaudavel[contador5[2]] + ".jpg'>";
+        contador5[2] = contador5[2] + 1;
+    }  
     setTimeout(rotacaoItens, 1100);
     }
-rotacaoItens(); 
+setTimeout(rotacaoItens, 1100);

@@ -848,6 +848,212 @@ div.antibioticos table.tabela-combinacao {
 		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
 	}
 }
+/* Analgesicos */
+.banner-analgesicos img {
+	width: 98%;
+	height: 100px;
+	margin: 1% 1% 0% 1%;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+h1.analgesicos-titulo {
+	position: relative;
+	margin-top: -80px;
+	text-align: center;
+	font-family: batukapur;
+	font-weight: normal;
+	font-size: 48px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+	letter-spacing: 1px;
+}
+div.analgesicos {
+	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-repeat: repeat;
+	margin: -1.5vw 1% 0% 1%;
+	border: 8px solid #000000;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+div.analgesicos div.analgesicos-introducao {
+	display: inline-block;
+}
+div.analgesicos div.analgesicos-introducao img {
+	float: left;
+	max-width: 330px;
+	max-height: 170px;
+	margin: 1% 1% 0% 1%;
+	border: 5px solid #000000;
+}
+div.analgesicos-introducao p {
+	font-size: 25px;
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 2% 1.5% 2%;
+	text-indent: 70px;
+}
+div.analgesicos div.sub-titulo-2 {
+	border-top: 7px solid #000000;
+}
+div.analgesicos-infos {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: justify;
+	font-size: 24px;
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+	border-top: 7px solid #000000;
+}
+div.analgesicos-infos h2 {
+	font-size: 31px;
+	font-weight: bold;
+	margin: 1% 5% 1% 5%;
+	letter-spacing: 0.05vw;
+	color: #44BD2F;
+	text-align: center;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+}
+div.analgesicos-infos-p {
+	display: flex;
+	flex-direction: column;
+	margin: 0 20px 0 20px;
+	align-items: center;
+}
+div.analgesicos-infos img {
+	max-width: 200px;
+	width: 20vw;
+	margin: 1% 1% 1% 1%;
+	border: 5px solid #000000;
+	box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+}
+div.analgesicos-mobile-img {
+	display: none;
+}
+div.analgesicos-infos p {
+	font-size:calc(6px + 1.5vw);
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 1% 2% 1%;
+}
+div.analgesicos-infos p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+	border: none;
+	box-shadow: none;
+}
+div.analgesicos div.s-bordas {
+	border-top: none;
+	border-bottom: none;
+}
+div.analgesicos span.sublinhado {
+	border-bottom: solid #BFEDEF 2px;
+}
+div.analgesicos div.receitas-criacao table {
+	text-align: center;
+}
+div.analgesicos table.tabela-combinacao {
+	margin: 0.5% 1% 1.5% 1%;
+}
+div.analgesicos table.tabela-combinacao th h2 {
+	margin:0;
+	font-weight: normal;
+}
+@media screen and (min-width: 800px) {
+	div.analgesicos div.criacao-introducao p {
+		text-indent: 0px; 
+	}
+}
+@media screen and (max-width: 1320px) and (min-width: 1200px) {
+	div.analgesicos div.info-ingredientes div {
+		margin: 0.8% 1.52vw 0.8% 1.52vw
+	}
+}
+/* Analgesicos (Mobile) */
+@media screen and (max-width:800px) {
+	.banner-analgesicos img {
+		margin: 2% 1% 0% 1%;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	h1.analgesicos-titulo {
+		font-size: calc(32px + 1.8vw);
+		margin-top: -75px;
+	}
+	div.analgesicos div.analgesicos-introducao img {
+		float: none;
+		max-width: none;
+		max-height: none;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		width: 73vw;
+		margin: 2% 0% 2% 0%;
+	}
+	div.analgesicos div.analgesicos-introducao {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	div.analgesicos-introducao p {
+		font-size: 20px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 0% 2.5% 1.5% 2.5%;
+		text-indent: 70px;
+	}
+	div.analgesicos-infos h2 {
+		font-size: 27px;
+		text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+	}
+	div.analgesicos-infos {
+		flex-direction: column;
+		justify-content: center;
+	}
+	div.analgesicos-mobile-img {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	div.analgesicos-mobile-img img {
+		max-width: none;
+		width: 35vw;
+		margin: 2% 3% 2% 3%;
+		border: 5px solid #000000;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	div.analgesicos-infos p {
+		font-size: 24px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 1% 5% 2% 5%;
+	}
+	div.analgesicos-infos p img {
+		min-width: 19px;
+		min-height: 28px;
+		top: 5px;
+	}
+	div.analgesicos-infos-p {
+		margin: 0;
+	}
+	div.analgesicos span.sublinhado {
+		border-bottom: solid #BFEDEF 1px;
+	}
+	div.analgesicos div.receitas-criacao table.tabela-combinacao th img {	
+		width: 14vw; 
+		max-width: 90px; 
+		margin:0;                                                                                           
+	}
+	div.analgesicos div.receitas-criacao table.tabela-combinacao th.analgesicos-efeito h2 {
+		font-size: calc(11px + 1.7vw);
+		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
+	}
+	div.analgesicos div.receitas-criacao div.info-ingredientes div h2 {
+		font-size: calc(10px + 1.5vw);
+		text-shadow: 1.7px 0 0 rgb(0, 0, 0), -1.7px 0 0 rgb(0, 0, 0), 0 1.7px 0 rgb(0, 0, 0), 0 -1.7px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+	}
+}
 /* Footer */
 	footer {
 		position: relative;
