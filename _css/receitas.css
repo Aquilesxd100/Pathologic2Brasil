@@ -963,6 +963,9 @@ div.analgesicos table.tabela-combinacao th h2 {
 	margin:0;
 	font-weight: normal;
 }
+div.info-ingredientes {
+	border-bottom: 7px solid #000000;
+}
 @media screen and (min-width: 800px) {
 	div.analgesicos div.criacao-introducao p {
 		text-indent: 0px; 
