@@ -953,15 +953,32 @@ div.analgesicos div.s-bordas {
 div.analgesicos span.sublinhado {
 	border-bottom: solid #BFEDEF 2px;
 }
+div.analgesicos img#botao-tabela-pause, div.analgesicos img#botao-tabela-play {
+	width: 23vw;
+	max-width: 140px;
+	margin: 0.5% 1% 0 1%;
+}
+div.analgesicos img#botao-tabela-play {
+	display: none;
+}
 div.analgesicos div.receitas-criacao table {
 	text-align: center;
+}
+div.analgesicos div.receitas-criacao table th.analgesicos-efeito {
+	max-width: 25vw;
+	min-width: 25vw;
+	padding: 0px;
 }
 div.analgesicos table.tabela-combinacao {
 	margin: 0.5% 1% 1.5% 1%;
 }
 div.analgesicos table.tabela-combinacao th h2 {
-	margin:0;
+	margin: 3px;
 	font-weight: normal;
+}
+div.analgesicos table.tabela-combinacao th h2 span {
+	font-size: 20px;
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
 }
 div.info-ingredientes {
 	border-bottom: 7px solid #000000;
@@ -977,7 +994,7 @@ div.info-ingredientes {
 	}
 }
 /* Analgesicos (Mobile) */
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
 	.banner-analgesicos img {
 		margin: 2% 1% 0% 1%;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);

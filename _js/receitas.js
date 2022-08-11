@@ -1,20 +1,19 @@
 var telaLargura = window.innerWidth;
 var contador3 = [0, 0, 0, 0, 0, 0];
 var contador5 = [0, 0, 0, 0];
+var analgesicosRotacao = setInterval(rotacaoItens2, 2000);
 const ervasComunsClasse = document.getElementsByClassName("ervas-comuns1");
 const orgaosSangueClasse = document.getElementsByClassName("orgao-sangue-infectado-combinacao");
 const orgaosSangueClasse2 = document.getElementsByClassName("orgao-sangue-combinacao");
 const analgesicosCoresInfusoes = document.getElementsByClassName("analgesicos-infusao-cor");
 const analgesicosCoresAnalgesicos = document.getElementsByClassName("analgesicos-analgesico-cor");
+const analgesicosEfeitos = document.getElementsByClassName("analgesicos-efeito");
 function rotacaoItens() {
     let ervasComuns = ["blacktwyre", "bloodtwyre", "twyre"];
     let ervasRaras = ["ashenswish", "whitewhip", "swevery"];
     let infusoesNormais = ["medrel", "zurkh", "yas"];
     let orgaosSangueInfectado = ["rim_infectado", "figado_infectado", "coracao_infectado", "cerebro_infectado", "sangue_infectado"];
     let orgaosSangueSaudavel = ["rim", "figado", "coracao", "cerebro", "sangue"];
-    let corAntibioticosCombinacaoMelhor = ["yas", "medrel", "yas", "medrel", "zurkh"];
-    let corAntibioticosCombinacaoMedio = ["medrel", "zurkh", "zurkh", "zurkh", "yas"];
-    let corAntibioticosCombinacaoPior = ["zurkh", "yas", "medrel", "yas", "medrel"];
     let checkContadores = [contador3[0], contador3[1], contador3[2], contador3[3], contador3[4], contador3[5], contador5[0], contador5[1], contador5[2], contador5[3]];
     let telaAltura = window.innerHeight;
     for (let c = 0; c < Object.keys(checkContadores).length; c++) {
@@ -75,21 +74,49 @@ function rotacaoItens() {
         document.getElementById("orgao-sangue-saudavel").innerHTML="<img src='_imagens/_icones/" + orgaosSangueSaudavel[contador5[2]] + ".jpg'>";
         contador5[2] = contador5[2] + 1;
     }  
+    setTimeout(rotacaoItens, 1100);
+}
+function rotacaoItens2() {
+    let corAnalgesicoCombinacaoMelhor = ["yas", "medrel", "yas", "medrel", "zurkh"];
+    let corAnalgesicoCombinacaoMedio = ["medrel", "zurkh", "zurkh", "zurkh", "yas"];
+    let corAnalgesicoCombinacaoPior = ["zurkh", "yas", "medrel", "yas", "medrel"];
+    let efeitoAnalgesicoCombinacaoMelhor = ["+10% Imunidade", "<span>+45% Regeneração de Exaustão<br>(ao dormir)</span>", "-15% Fome", "-15% Exaustão", "-20% de Sede"];
+    let efeitoAnalgesicoCombinacaoMedio = ["+7.5% Imunidade", "<span>+30% Regeneração de Exaustão<br>(ao dormir)</span>", "-10% Fome", "-10% Exaustão", "-15% de Sede"];
+    let efeitoAnalgesicoCombinacaoPior = ["+5% Imunidade", "<span>+15% Regeneração de Exaustão<br>(ao dormir)</span>", "-5% Fome", "-5% Exaustão", "-10% de Sede"];
+    let orgaosSangueSaudavel = ["rim", "figado", "coracao", "cerebro", "sangue"];
+    let telaAltura = window.innerHeight;
+    if (contador5[3] === 5) {
+        contador5[3] = 0;
+    }
     for (let c = 0; c < 3; c++) {
         if (orgaosSangueClasse2[c].getBoundingClientRect().top < telaAltura && orgaosSangueClasse2[c].getBoundingClientRect().bottom > 0) {
             for (let c2 = 0; c2 < 3; c2++) {
                 orgaosSangueClasse2[c2].innerHTML="<img src='_imagens/_icones/" + orgaosSangueSaudavel[contador5[3]] + ".jpg'>";
             }
-            analgesicosCoresInfusoes[0].innerHTML="<img src='_imagens/_icones/" + corAntibioticosCombinacaoMelhor[contador5[3]] + ".jpg'>";
-            analgesicosCoresAnalgesicos[0].innerHTML="<img src='_imagens/_icones/analgesico_" + corAntibioticosCombinacaoMelhor[contador5[3]] + ".jpg'>";
-            analgesicosCoresInfusoes[1].innerHTML="<img src='_imagens/_icones/" + corAntibioticosCombinacaoMedio[contador5[3]] + ".jpg'>";
-            analgesicosCoresAnalgesicos[1].innerHTML="<img src='_imagens/_icones/analgesico_" + corAntibioticosCombinacaoMedio[contador5[3]] + ".jpg'>";
-            analgesicosCoresInfusoes[2].innerHTML="<img src='_imagens/_icones/" + corAntibioticosCombinacaoPior[contador5[3]] + ".jpg'>";
-            analgesicosCoresAnalgesicos[2].innerHTML="<img src='_imagens/_icones/analgesico_" + corAntibioticosCombinacaoPior[contador5[3]] + ".jpg'>";
+            analgesicosCoresInfusoes[0].innerHTML="<img src='_imagens/_icones/" + corAnalgesicoCombinacaoMelhor[contador5[3]] + ".jpg'>";
+            analgesicosCoresAnalgesicos[0].innerHTML="<img src='_imagens/_icones/analgesico_" + corAnalgesicoCombinacaoMelhor[contador5[3]] + ".jpg'>";
+            analgesicosEfeitos[0].innerHTML="<h2>" + efeitoAnalgesicoCombinacaoMelhor[contador5[3]] + "</h2>";   
+            analgesicosCoresInfusoes[1].innerHTML="<img src='_imagens/_icones/" + corAnalgesicoCombinacaoMedio[contador5[3]] + ".jpg'>";
+            analgesicosCoresAnalgesicos[1].innerHTML="<img src='_imagens/_icones/analgesico_" + corAnalgesicoCombinacaoMedio[contador5[3]] + ".jpg'>";
+            analgesicosEfeitos[1].innerHTML="<h2>" + efeitoAnalgesicoCombinacaoMedio[contador5[3]] + "</h2>";
+            analgesicosCoresInfusoes[2].innerHTML="<img src='_imagens/_icones/" + corAnalgesicoCombinacaoPior[contador5[3]] + ".jpg'>";
+            analgesicosCoresAnalgesicos[2].innerHTML="<img src='_imagens/_icones/analgesico_" + corAnalgesicoCombinacaoPior[contador5[3]] + ".jpg'>";
+            analgesicosEfeitos[2].innerHTML="<h2>" + efeitoAnalgesicoCombinacaoPior[contador5[3]] + "</h2>";
             contador5[3] = contador5[3] + 1;
             c = 5;
-        } 
+        }
     }
-    setTimeout(rotacaoItens, 1100);
+}
+function analgesicosRotacaoBotao(tipo) {
+    if (tipo === "ON") {
+        analgesicosRotacao = setInterval(rotacaoItens2, 2000);
+        document.getElementById("botao-tabela-pause").style.display="block";
+        document.getElementById("botao-tabela-play").style.display="none";
     }
+    else if (tipo === "OFF") {
+        clearInterval(analgesicosRotacao);
+        document.getElementById("botao-tabela-play").style.display="block";
+        document.getElementById("botao-tabela-pause").style.display="none";
+    }
+}
 setTimeout(rotacaoItens, 1100);
