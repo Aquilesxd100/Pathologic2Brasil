@@ -229,7 +229,7 @@
 								</div>
 							</div>					
 						</div>
-						<div class="sub-titulo">
+						<div class="sub-titulo ">
 							<h2>Criando Infusoes Potentes</h2>
 						</div>
 						<div class="criacao-introducao">
@@ -511,8 +511,8 @@
 								<h3>Combinações</h3>
 							</div>
 							<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
-							<img id="botao-tabela-pause" src="_imagens/botao_pause.png" onclick="analgesicosRotacaoBotao('OFF')">
-							<img id="botao-tabela-play" src="_imagens/botao_play.png" onclick="analgesicosRotacaoBotao('ON')">
+							<img id="botao-tabela-pause" src="_imagens/botao_pause.png" onclick="analgesicosRotacaoBotao('OFF'); botaoTipo2Discreto('botao-tabela-play');">
+							<img id="botao-tabela-play" src="_imagens/botao_play.png" onclick="analgesicosRotacaoBotao('ON'); botaoTipo2Discreto('botao-tabela-pause')">
 							<table class="tabela-combinacao">
 								<tr>
 									<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/zurkh.jpg"></th>
@@ -537,6 +537,7 @@
 								</tr>
 								</tr>
 							</table>
+							<p>*Use o botão acima para dar pause/play na transição.</p>
 							<div class="info-ingredientes">
 								<div>
 									<img src="_imagens/_icones/analgesico_yas.jpg">

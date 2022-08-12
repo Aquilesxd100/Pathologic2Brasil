@@ -80,9 +80,9 @@ function rotacaoItens2() {
     let corAnalgesicoCombinacaoMelhor = ["yas", "medrel", "yas", "medrel", "zurkh"];
     let corAnalgesicoCombinacaoMedio = ["medrel", "zurkh", "zurkh", "zurkh", "yas"];
     let corAnalgesicoCombinacaoPior = ["zurkh", "yas", "medrel", "yas", "medrel"];
-    let efeitoAnalgesicoCombinacaoMelhor = ["+10% Imunidade", "<span>+45% Regeneração de Exaustão<br>(ao dormir)</span>", "-15% Fome", "-15% Exaustão", "-20% de Sede"];
-    let efeitoAnalgesicoCombinacaoMedio = ["+7.5% Imunidade", "<span>+30% Regeneração de Exaustão<br>(ao dormir)</span>", "-10% Fome", "-10% Exaustão", "-15% de Sede"];
-    let efeitoAnalgesicoCombinacaoPior = ["+5% Imunidade", "<span>+15% Regeneração de Exaustão<br>(ao dormir)</span>", "-5% Fome", "-5% Exaustão", "-10% de Sede"];
+    let efeitoAnalgesicoCombinacaoMelhor = ["+10% Imunidade", "<span>+45% Regeneração de Exaustão <span class='sem-quebra'>(ao dormir)</span></span>", "-15% Fome", "-15% Exaustão", "-20% de Sede"];
+    let efeitoAnalgesicoCombinacaoMedio = ["+7.5% Imunidade", "<span>+30% Regeneração de Exaustão <span class='sem-quebra'>(ao dormir)</span></span>", "-10% Fome", "-10% Exaustão", "-15% de Sede"];
+    let efeitoAnalgesicoCombinacaoPior = ["+5% Imunidade", "<span>+15% Regeneração de Exaustão <span class='sem-quebra'>(ao dormir)</span></span>", "-5% Fome", "-5% Exaustão", "-10% de Sede"];
     let orgaosSangueSaudavel = ["rim", "figado", "coracao", "cerebro", "sangue"];
     let telaAltura = window.innerHeight;
     if (contador5[3] === 5) {

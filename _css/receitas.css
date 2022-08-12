@@ -169,7 +169,7 @@ div.criacao-introducao {
 }
 div.receitas-criacao table {
 	font-size: 30px;
-	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
 	text-align: justify;
 	border-collapse: collapse;
 	margin: 0.5% 1% 1% 1%;
@@ -182,7 +182,7 @@ div.receitas-criacao table.tabela-combinacao {
 }
 div.receitas-criacao table th.numero {
 	font-size: 50px;
-	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.44px 1.44px rgb(0, 0, 0), -1.44px -1.44px 0 rgb(0, 0, 0), 1.44px -1.44px 0 rgb(0, 0, 0), -1.44px 1.44px 0 rgb(0, 0, 0);
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
 }
 div.receitas-criacao table th.sinal {
 	font-size: 60px;
@@ -205,13 +205,13 @@ div.receitas-criacao {
 	width: 100%;
 }
 div.receitas-criacao h2 {
-	font-size: 28px;
+	font-size: calc(15px + 1.1vw);
 	font-weight: bold;
 	margin: 1% 5% 1% 5%;
 	letter-spacing: 0.05vw;
 	color: #FFFFFF;
 	text-align: center;
-	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
 }
 div.receitas-criacao p {
 	font-size: 25px;
@@ -246,7 +246,7 @@ div.info-ingredientes div img {
 }
 div.info-ingredientes div h2 {
 	font-size: 28px;
-	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
 	font-weight: normal;
 	min-width: 250px;
 	margin: 3px;
@@ -514,6 +514,9 @@ div.infusoes {
 	flex-direction: column;
 	align-items: center;
 }
+div.infusoes div.info-ingredientes {
+	border-bottom: none;
+}
 div.infusoes div.infusoes-introducao {
 	display: inline-block;
 }
@@ -766,6 +769,9 @@ div.antibioticos span.sublinhado {
 div.antibioticos table.tabela-combinacao {
 	margin: 0.5% 1% 1.5% 1%;
 }
+div.antibioticos div.info-ingredientes {
+	border-bottom: none;
+}
 @media screen and (min-width: 800px) {
 	div.antibioticos table.tabela-combinacao th {
 		padding: 0.5vw 3vw 0.5vw 3vw;	                                                                    
@@ -780,6 +786,9 @@ div.antibioticos table.tabela-combinacao {
 @media screen and (max-width: 800px) {
 	.banner-antibioticos img {
 		margin: 2% 1% 0% 1%;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	div.antibioticos {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	div.antibioticos div.antibioticos-introducao img {
@@ -958,6 +967,9 @@ div.analgesicos img#botao-tabela-pause, div.analgesicos img#botao-tabela-play {
 	max-width: 140px;
 	margin: 0.5% 1% 0 1%;
 }
+div.analgesicos img#botao-tabela-pause:hover, div.analgesicos img#botao-tabela-play:hover {
+	filter: brightness(130%);
+}
 div.analgesicos img#botao-tabela-play {
 	display: none;
 }
@@ -970,15 +982,18 @@ div.analgesicos div.receitas-criacao table th.analgesicos-efeito {
 	padding: 0px;
 }
 div.analgesicos table.tabela-combinacao {
-	margin: 0.5% 1% 1.5% 1%;
+	margin: 0.5% 1% 0% 1%;
 }
 div.analgesicos table.tabela-combinacao th h2 {
 	margin: 3px;
 	font-weight: normal;
 }
 div.analgesicos table.tabela-combinacao th h2 span {
-	font-size: 20px;
-	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
+	font-size: calc(5px + 1.5vw);
+	text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+}
+div.analgesicos table.tabela-combinacao th h2 span span.sem-quebra {
+	white-space: nowrap;
 }
 div.info-ingredientes {
 	border-bottom: 7px solid #000000;
@@ -997,6 +1012,9 @@ div.info-ingredientes {
 @media screen and (max-width: 800px) {
 	.banner-analgesicos img {
 		margin: 2% 1% 0% 1%;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	div.analgesicos {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	h1.analgesicos-titulo {
@@ -1060,13 +1078,19 @@ div.info-ingredientes {
 	div.analgesicos span.sublinhado {
 		border-bottom: solid #BFEDEF 1px;
 	}
+	div.analgesicos img#botao-tabela-pause:hover, div.analgesicos img#botao-tabela-play:hover {
+		filter: none;
+	}
+	div.analgesicos table.tabela-combinacao {
+		margin: 0.5% 1% 0.5% 1%;
+	}
 	div.analgesicos div.receitas-criacao table.tabela-combinacao th img {	
 		width: 14vw; 
 		max-width: 90px; 
 		margin:0;                                                                                           
 	}
 	div.analgesicos div.receitas-criacao table.tabela-combinacao th.analgesicos-efeito h2 {
-		font-size: calc(11px + 1.7vw);
+		font-size: calc(8px + 1.7vw);
 		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
 	}
 	div.analgesicos div.receitas-criacao div.info-ingredientes div h2 {
