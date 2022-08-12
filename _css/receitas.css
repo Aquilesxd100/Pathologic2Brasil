@@ -281,7 +281,7 @@ div#pre-carregamento {
 		text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
 	}
 	div.sub-titulo h2 {
-		font-size: 30px;
+		font-size: calc(20px + 2vw);
 		margin: 0.6% 2% 0.6% 2%;
 	}
 	div.sub-titulo h3 , div.sub-titulo-2 h3 {
@@ -332,7 +332,7 @@ div#pre-carregamento {
 		box-shadow: none;
 	}
 	div.receitas-criacao table.tabela-combinacao th img {
-		width: 14vw; 
+		width: 13.5vw; 
 		max-width: 90px; 
 		margin:0;                                                      
 	}
@@ -343,6 +343,7 @@ div#pre-carregamento {
 	}
 	div.receitas-criacao table.tabela-combinacao th.sinal {
 		font-size: 43px;
+		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
 		font-family: Arial;
 	}
 	div.receitas-criacao p {
@@ -468,7 +469,7 @@ p a:hover {
 	}
 	div.secao-principal picture.introducao-img img {
 		width: 80vw;
-		min-width: none;
+		min-width: 0;
 		margin: 0% 0% 2% 0%;
 	}
 	div.secao-principal div.alambiques {
@@ -477,7 +478,7 @@ p a:hover {
 	}
 	div.alambiques picture.alambique-menor img, div.alambiques picture.alambique-maior img {
 		width: 80vw;
-		min-width: none;
+		min-width: 0;
 		margin: 2% 0 2% 0;
 	}
 	div.secao-principal p.introducao {
@@ -788,6 +789,11 @@ div.antibioticos div.info-ingredientes {
 		margin: 2% 1% 0% 1%;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
+	h1.antibioticos-titulo {
+		font-size: calc(30px + 2vw);
+		text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+		margin-top: -74px;
+	}
 	div.antibioticos {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
@@ -797,7 +803,7 @@ div.antibioticos div.info-ingredientes {
 		max-height: none;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 		width: 73vw;
-		margin: 2% 0% 2% 0%;
+		margin: 20px 0% 2% 0%;
 	}
 	div.antibioticos div.antibioticos-introducao {
 		display: flex;
@@ -853,7 +859,7 @@ div.antibioticos div.info-ingredientes {
 		width: 18vw;                                                          
 	}
 	div.antibioticos div.receitas-criacao div.info-ingredientes div h2 {
-		font-size: calc(10px + 1.5vw);
+		font-size: calc(9px + 1.5vw);
 		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
 	}
 }
@@ -1027,7 +1033,7 @@ div.info-ingredientes {
 		max-height: none;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 		width: 73vw;
-		margin: 2% 0% 2% 0%;
+		margin: 12px 0% 2% 0%;
 	}
 	div.analgesicos div.analgesicos-introducao {
 		display: flex;
@@ -1085,17 +1091,24 @@ div.info-ingredientes {
 		margin: 0.5% 1% 0.5% 1%;
 	}
 	div.analgesicos div.receitas-criacao table.tabela-combinacao th img {	
-		width: 14vw; 
+		width: 12vw; 
 		max-width: 90px; 
-		margin:0;                                                                                           
+		margin: 9px 0 9px 0;
+	}
+	div.analgesicos div.receitas-criacao table.tabela-combinacao th.sinal {
+		font-size: calc(20px + 4vw);
+		font-family: Arial;
 	}
 	div.analgesicos div.receitas-criacao table.tabela-combinacao th.analgesicos-efeito h2 {
 		font-size: calc(8px + 1.7vw);
 		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
 	}
 	div.analgesicos div.receitas-criacao div.info-ingredientes div h2 {
-		font-size: calc(10px + 1.5vw);
-		text-shadow: 1.7px 0 0 rgb(0, 0, 0), -1.7px 0 0 rgb(0, 0, 0), 0 1.7px 0 rgb(0, 0, 0), 0 -1.7px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
+		font-size: calc(9px + 1.5vw);
+		text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
+	}
+	div.analgesicos table.tabela-combinacao th h2 span {
+		text-shadow: 1.3px 0 0 rgb(0, 0, 0), -1.3px 0 0 rgb(0, 0, 0), 0 1.3px 0 rgb(0, 0, 0), 0 -1.3px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
 	}
 }
 /* Footer */

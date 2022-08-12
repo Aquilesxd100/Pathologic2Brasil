@@ -266,7 +266,7 @@ div.mapa-infos div p.zonas-criancas {
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 	}
 	div.principal img.mapa-imagem {
-		width: 86vw;
+		width: 85vw;
 		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
 		margin: 2% 0 1% 0;
 	}
@@ -524,8 +524,10 @@ div.raizes-sangrentas-dicas p {
 		flex-direction: column-reverse;
 	}
 	.video {
-		min-width: 86.79vw; 
-		min-height: 48.40vw;
+		min-width: 0px; 
+		width: 85vw;
+		height: 47.5vw;
+		min-height: 0px;
 		margin: 2% 0 2% 0;
 		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
 	}
