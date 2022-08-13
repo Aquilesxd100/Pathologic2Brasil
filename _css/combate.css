@@ -22,7 +22,7 @@
 		width: 99vw;
 		max-width: 100%;
 		overflow: hidden;
-		
+		color: #ffffff;	
 	}	
 	div#fundobranco {
 		position: relative;
@@ -140,7 +140,6 @@ hr {
 	border: 6px solid #000000;
 	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
 	width: 70%;
-	min-width: 300px;
 }
 #odongs-div {
 	border-top: 7px solid #000000;
@@ -179,6 +178,12 @@ p#aviso-introducao {
 	text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 	box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	background-image: url(../_imagens/fundo_infinito.jpg);
+	}
+	#combate-img img {
+		border: 6px solid #000000;
+		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+		width: 90%;
+		max-width: 515px;
 	}
 	#p-introducao {
 		font-size: 18px;
@@ -521,32 +526,36 @@ div .titulo-dica4 {
 	}
 	h2#corpo-a-corpo-titulo {
 		top: -231px;
-		font-size: 36px;
+		font-size: 33px;
 	}
 	#corpo-a-corpo {
 		background-image: url("../_imagens/fundo_infinito.jpg");
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	#corpo-a-corpo-img {
 		float: none;
-		min-width: 300px;
+		max-height: none;
 		border: 6px solid #000000;
 		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-		max-width: none;
-		max-height: none;
-		width: 70%;
+		width: 85%;
+		max-width: 515px;
 		margin: 2% 0 1% 0;
+	}
+	#corpo-a-corpo-introducao {
+		width: 100%;
 	}
 	#corpo-a-corpo-introducao2 {
 		display: flex;
 		flex-direction: column;
 		place-items: center;
+		width: 100%;
 	}
 	#corpo-a-corpo-introducao p {
 		font-size: 18px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-		width: 80vw;
-		min-width: 285px;
 		margin: 1% 2% 2% 2%;
 		text-indent: 40px;
 	}
@@ -564,15 +573,13 @@ div .titulo-dica4 {
 		padding: 2px 13px 2px 13px;
 	}
 	.video {
-		width: 86vw;
-		height: 48.5vw;
-		min-width: 300px;
-		min-height: 170px;
+		width: 83.34vw;
+		height: 46.92vw;
 	}
 	#passo-1-video p {
 		text-align: justify;
 		text-indent: 0;
-		margin: 1% 0 2.5% 0%;
+		margin: 1% 2% 2.5% 2%;
 		padding: 11px 14px 19px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
@@ -609,7 +616,7 @@ div .titulo-dica4 {
 	#passo-2-video p {
 		text-align: justify;
 		text-indent: 0;
-		margin: 1% 0 2.5% 0%;
+		margin: 1% 2% 2.5% 2%;
 		padding: 7px 14px 15px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
@@ -643,7 +650,7 @@ div .titulo-dica4 {
 	#passo-3-video p {
 		text-align: justify;
 		text-indent: 0;
-		margin: 1% 0 2.5% 0%;
+		margin: 1% 2% 2.5% 2%;
 		padding: 12px 14px 20px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
@@ -677,7 +684,7 @@ div .titulo-dica4 {
 	#passo-4-video p {
 		text-align: justify;
 		text-indent: 0;
-		margin: 1% 0 2.5% 0%;
+		margin: 1% 2% 2.5% 2%;
 		padding: 15px 14px 22px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
@@ -705,6 +712,9 @@ div .titulo-dica4 {
 	}
 	#passo-4-dicas {
 		order: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	/* Corpo-a-Corpo - Multiplos Inimigos (Mobile) */
 	#corpo-a-corpo-multiplos-inimigos {
