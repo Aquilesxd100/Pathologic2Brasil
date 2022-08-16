@@ -974,6 +974,10 @@ div.analgesicos img#botao-tabela-pause, div.analgesicos img#botao-tabela-play {
 	margin: 0.5% 1% 0 1%;
 }
 div.analgesicos img#botao-tabela-pause:hover, div.analgesicos img#botao-tabela-play:hover {
+	-moz-filter: brightness(130%);
+	-o-filter: brightness(130%);
+	-ms-filter: brightness(130%);
+	-webkit-filter: brightness(130%);
 	filter: brightness(130%);
 }
 div.analgesicos img#botao-tabela-play {
@@ -1085,7 +1089,11 @@ div.info-ingredientes {
 		border-bottom: solid #BFEDEF 1px;
 	}
 	div.analgesicos img#botao-tabela-pause:hover, div.analgesicos img#botao-tabela-play:hover {
-		filter: none;
+		-moz-filter: none;
+		-ms-filter: none;
+		-o-filter: none;
+		-webkit-filter: none;
+		filter: none;	
 	}
 	div.analgesicos table.tabela-combinacao {
 		margin: 0.5% 1% 0.5% 1%;
