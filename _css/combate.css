@@ -192,7 +192,7 @@ p#aviso-introducao {
 		font-size: 17px;
 	}
 	#odongs {
-		font-size: 19px;	
+		font-size: 19px;
 	}
 	p#aviso-introducao {
 		font-size: 15px;
@@ -730,12 +730,12 @@ div .titulo-dica4 {
 		margin: 1% 4% 1% 4%;
 	}
 	#corpo-a-corpo-multiplos-inimigos-video {
-		margin: 1% 0% 2% 0%;
-		width: 86vw;
-		height: 48.5vw;
-		min-width: 300px;
-		min-height: 170px;
+		width: 83.34vw;
+		height: 46.92vw;
 		box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+		min-width: 52vw; 
+		min-height: 29vw;
+		margin: 2% 2% 2% 2%;
 	}
 }
 /* Armas de Fogo */
@@ -1018,12 +1018,13 @@ div .titulo-dica-2-3 {
 	}
 	h2#armas-de-fogo-titulo {
 		top: -345px;
+		font-size: 34px;
 	}
 	#armas-de-fogo-introducao p {
 		font-size: 18px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-		width: 80vw;
-		min-width: 285px;
+		width: none;
+		min-width: 0;
 		margin: 1% 2% 2% 2%;
 		text-indent: 40px;
 	}
@@ -1034,12 +1035,13 @@ div .titulo-dica-2-3 {
 	}
 	#armas-de-fogo-img {
 		float: none;
-		min-width: 300px;
+		min-width: none;
 		border: 6px solid #000000;
 		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-		max-width: none;
+		margin: 2% 0 1% 0;
 		max-height: none;
-		width: 70%;
+		width: 85%;
+		max-width: 515px;
 		margin: 2% 0 1% 0;
 	}
 	div#armas-de-fogo-inferior h3 {
@@ -1063,7 +1065,7 @@ div .titulo-dica-2-3 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 2% 2.5% 2%;
-		padding: 11px 14px 17px 13px;
+		padding: 17px 14px 23px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-2-1-video p img {
@@ -1100,12 +1102,13 @@ div .titulo-dica-2-3 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 2% 2.5% 2%;
-		padding: 13px 12px 19px 11px;
+		padding: 15px 12px 22px 11px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-2-2-video p#pouco-maior2 {
 		font-size: 20px;
-		padding: 22px 16px 31px 15px;
+		padding: 15px 16px 23px 15px;
+		background-image: url("../_imagens/placa_retangular_mais_longa_alta.png");
 	}
 	#passo-2-2-video p img {
 		position:relative;
@@ -1141,11 +1144,11 @@ div .titulo-dica-2-3 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 2% 2.5% 2%;
-		padding: 13px 12px 19px 11px;
+		padding: 16px 12px 22px 11px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-2-3-video p#pouco-maior3 {
-		padding: 18px 16px 27px 15px;
+		padding: 23px 16px 32px 15px;
 		font-size: 21px;
 	}
 	#passo-2-3-video p img {
@@ -1180,12 +1183,12 @@ div .titulo-dica-2-3 {
 		margin: 1% 4% 1% 4%;
 	}
 	#armas-de-fogo-multiplos-inimigos-video {
-		margin: 1% 0% 2% 0%;
-		width: 86vw;
-		height: 48.5vw;
-		min-width: 300px;
-		min-height: 170px;
+		width: 83.34vw;
+		height: 46.92vw;
 		box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+		min-width: 52vw; 
+		min-height: 29vw;
+		margin: 2% 2% 2% 2%;
 	}
 }
 /* Furtividade */
@@ -1403,13 +1406,13 @@ div .titulo-dica-3-2 {
 	h2#furtividade-titulo {
 		top: -467px;
 		letter-spacing: 0.5px;
-		font-size: 42px;
+		font-size: 41px;
 	}
 	#furtividade-introducao p {
 		font-size: 18px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-		width: 80vw;
-		min-width: 285px;
+		width: none;
+		min-width: 0;
 		margin: 1% 2% 2% 2%;
 		text-indent: 40px;
 	}
@@ -1423,12 +1426,13 @@ div .titulo-dica-3-2 {
 	}
 	#furtividade-img {
 		float: none;
-		min-width: 300px;
+		min-width: none;
 		border: 6px solid #000000;
 		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-		max-width: none;
+		margin: 2% 0 1% 0;
 		max-height: none;
-		width: 70%;
+		width: 85%;
+		max-width: 515px;
 		margin: 2% 0 1% 0;
 	}
 	div#furtividade-inferior h3 {
@@ -1492,17 +1496,17 @@ div .titulo-dica-3-2 {
 		text-align: justify;
 		text-indent: 0;
 		margin: 1% 2% 2.5% 2%;
-		padding: 15px 14px 23px 13px;
+		padding: 22px 14px 30px 13px;
 		background-image: url("../_imagens/placa_retangular_mais_longa.png");
 	}
 	#passo-3-2-video p img {
-		position:relative;
+		position: relative;
 		width: 1.72vw;
 		min-width: 17px;
 		height: 2.5vw;
 		min-height: 25px;
 		margin: 0 0.3vw 0 0;
-		left: 0vw;
+		left: -1px;
 		top: 6px;
 	}
 	#passo-3-2-video {
@@ -1568,7 +1572,7 @@ h2#mecanicas-titulo {
 	font-weight: bold;
 	text-align: center;
 	margin: 1% 1% 1% 1%;
-	text-indent: 0px;
+	text-indent: 40px;
 }
 #mecanicas-img {
 	display: grid;
@@ -1897,6 +1901,10 @@ div#temido-chute-inferior p span {
 	}
 	#mecanicas-introducao img {
 		margin: 1% 2% 3% 2%;
+		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+		width: 90%;
+		max-width: 650px;
+		min-width: 0;
 	}
 	#furtividade-introducao {
 		display: flex;
@@ -1919,8 +1927,8 @@ div#temido-chute-inferior p span {
 		text-align: justify;
 		text-indent: 35px;
 		margin: 2% 0% 2% 0%;
-		width: 82vw;
-		min-width: 285px;
+		width: none;
+		min-width: none;
 	}
 	#energia-infinita-video p#central {
 		text-align: center;
@@ -1929,9 +1937,9 @@ div#temido-chute-inferior p span {
 	}
 	#energia-infinita-video p#energia-infinita-dica {
 		font-size: 19px;
-		max-width: 1000px;
 		text-indent:0;
 		margin: 1% 2% 1% 2%;
+		width: none;
 	}
 	div#energia-infinita-aviso p {
 		font-size: 19px;
@@ -1944,10 +1952,10 @@ div#temido-chute-inferior p span {
 		align-items: center;
 	}
 	.video-mecanicas {
-		width: 86vw;
-		height: 48.5vw;
-		min-width: 300px;
-		min-height: 170px;
+		min-width: 0;
+		min-height: 0;
+		width: 83.34vw;
+		height: 46.92vw;
 	}
 	#energia-infinita-aviso {
 		margin: 0;
@@ -1990,14 +1998,19 @@ div#temido-chute-inferior p span {
 	div#como-fugir-dicas {
 		flex-direction: column;
 	}
+	div#como-fugir-video div#como-fugir-dicas p {
+		color: #BFEDEF;
+		margin: 1% 5% 1% 5%;
+	}
 	#como-fugir-video p {
 		font-size: 18px;
 		text-indent: 35px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
 		text-align: justify;
-		margin: 2% 0% 2% 0%;
-		width: 82vw;
-		min-width: 285px;
+		margin: 2% 2% 2% 2%;
+		max-width: none;
+		min-width: none;
+		width: none;
 	}
 	div#como-fugir-inferior-0 {
 		flex-direction: row;
