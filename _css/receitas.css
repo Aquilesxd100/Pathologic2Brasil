@@ -62,8 +62,9 @@
 .mobile {
 	display: none;
 }
-a {
+span#link {
 	color: #00D900;
+	border-bottom: solid #00D900 2px;
 }
 span.amarelo {
 	color: #FFFF00;
@@ -254,9 +255,6 @@ div.info-ingredientes div h2 {
 div.info-ingredientes div h2.ingrediente-centralizado {
 	margin: 20px 3px 3px 3px;
 }
-div#pre-carregamento {
-	display: none;
-}
 /* Padrões (Mobile) */
 @media screen and (max-width: 800px) {
 	.mobile {
@@ -275,6 +273,9 @@ div#pre-carregamento {
 	}	
 	span.sublinhado {
 		border-bottom: solid #FFFFFF 1px;
+	}
+	span#link {
+		border-bottom: solid #00D900 1px;
 	}
 	div.sub-titulo p.info-secao-inferior {
 		font-size: 26px;
@@ -456,7 +457,7 @@ div.alambiques picture.alambique-menor img {
 div.alambiques picture.alambique-maior img {
 	margin: 0 0 2% 5vw;
 }
-p a:hover {
+p span#link:hover {
 	cursor: url('../_recursos/cursor_link.cur'), auto;
 }
 /* Introdução Receitas (Mobile) */
