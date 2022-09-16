@@ -8,6 +8,10 @@
 	font-family: batukapur;
 	src: url(../_fonts/batukapur-vmedy.woff);
 }
+/* HTML */
+html {
+	overflow-x: hidden;
+}
 /* Banner do Site */	
 	picture#banner {
 		position: relative;
