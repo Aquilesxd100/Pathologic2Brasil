@@ -22,7 +22,7 @@
 		width: 99vw;
 		max-width: 100%;
 		overflow: hidden;
-		
+		color: #FFFFFF;
 	}	
 	div#fundobranco {
 		position: relative;
@@ -58,6 +58,86 @@
 			height: 99.65%;
 		}
 	}
+/* Padrões */
+.banner img {
+	width: 98%;
+	height: 100px;
+	margin: 1% 1% 0% 1%;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+}
+h1.titulo, h1.titulo-maior {
+	position: relative;
+	margin-top: -81.5px;
+	text-align: center;
+	font-family: batukapur;
+	font-weight: normal !important;
+	font-size: 48px;
+	color: #00D900;
+	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+	letter-spacing: 1px;
+}
+/* Padrões (Mobile)*/
+@media screen and (max-width: 800px) {
+	.banner img {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		margin: 2% 1% 0% 1%;
+	}
+	h1.titulo {
+		font-size: 44px;
+		margin-top: -75px;
+	}
+	h1.titulo-maior {
+		font-size: 30px;
+		margin-top: -85px;
+	}
+	div#conteudo h1.uma-linha {
+		font-size: 33px;
+		margin-top: -71px;
+	}
+}
+/* Introducao */
+section.introducao {
+	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-repeat: repeat;
+	margin: -15px 1% 0% 1%;
+	border: 8px solid #000000;
+	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+section.introducao p {
+	font-size: 28px;
+	text-align: center;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	font-weight: normal;
+	margin: 1.5% 2% 1.5% 2%;
+}
+section.introducao picture.introducao-img img {
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	width: 65vw;
+	min-width: 290px;
+	min-height: 190px;
+	margin: 0% 0% 2% 0%;
+}
+
+/* Introducao - Mobile */
+@media screen and (max-width: 800px) {
+	section.introducao {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	section.introducao p {
+		font-size: 20px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+	}
+	section.introducao picture.introducao-img img {
+		width: 80vw;
+		min-width: 0;
+		margin: 2% 0 2% 0;
+	}
+}
+
 /* Conteudo da Pagina */
     div.teste {
         height: 100vh;
