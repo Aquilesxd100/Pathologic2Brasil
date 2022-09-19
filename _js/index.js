@@ -1,4 +1,5 @@
  var resolucaoL = window.innerWidth;
+ var resolucaoA = window.innerHeight;
  /* Abertura de Link */
     function abrirLink(link) {
     window.location.href=link;

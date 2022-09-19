@@ -1,5 +1,6 @@
 /* Ultimos Guias - Botoes */
 var resolucaoL2 = window.innerWidth;
+var resolucaoA = window.innerHeight;
 function botaoUltimosGuias(botao) {
     if (resolucaoL2 > 800) {
         if (botao === "botao-direita") {
