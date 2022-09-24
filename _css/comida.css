@@ -172,6 +172,7 @@ div.troca-resumida table.tabela-primaria {
 	border-collapse: collapse;
 	margin: 2%;
 	min-width: 70vw;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
 }
 table.tabela-primaria tr.tabela-titulo {
 	background-image: url("../_imagens/fundo_tabela.jpg");
@@ -311,11 +312,12 @@ div.troca-resumida table.tabela-secundaria th.item-valor h3 {
 	/* Tabelas - Mobile */
 	div.troca-resumida table.tabela-primaria {
 		margin: 1.5%;
-		min-width: 90vw;
+		min-width: 83vw;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	table.tabela-primaria tr.tabela-titulo h2 {
-		font-size: calc(5px + 1.8vw);
-		text-shadow: 2.4px 0 0 rgb(0, 0, 0), -2.4px 0 0 rgb(0, 0, 0), 0 2.4px 0 rgb(0, 0, 0), 0 -2.4px 0 rgb(0, 0, 0), 1.3px 1.3px rgb(0, 0, 0), -1.3px -1.3px 0 rgb(0, 0, 0), 1.3px -1.3px 0 rgb(0, 0, 0), -1.3px 1.3px 	0 rgb(0, 0, 0);
+		font-size: calc(8px + 1.8vw);
+		text-shadow: 2.1px 0 0 rgb(0, 0, 0), -2.1px 0 0 rgb(0, 0, 0), 0 2.1px 0 rgb(0, 0, 0), 0 -2.1px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
 	}
 	div.troca-resumida table.tabela-primaria h3 {
 		margin: 0.4vw 0.5vw;
@@ -325,35 +327,32 @@ div.troca-resumida table.tabela-secundaria th.item-valor h3 {
 		padding: 5px 10px;
 	}
 	div.troca-resumida table th.retrato {
-		min-width: 15vw;
-		width: 15vw;
-		min-height: calc(12vw + 4px);
-		height: calc(12vw + 4px);
+		min-width: calc(24vw + 4px);
+		width: calc(24vw + 4px);
+		min-height: calc(19.2vw + 4px);
+		height: calc(19.2vw + 4px);
 		padding: 0;
 	}
 	div.troca-resumida table th.retrato img {
-		min-width: 100%;
 		width: 100%;
-		min-height: 100%;
 		height: 100%;
 	}
 	div.troca-resumida table th.interesse {
-		width: 50vw;
-		min-width: 0;	
 		padding: 0;
 		min-height: 12vw;
 		height: 12vw;
+		min-width: 0;
 	}
 	div.troca-resumida table th.pode-ter {
 		padding: 0;
 	}
 	table.tabela-secundaria {
 		min-width: 100%;
-		height: 11.25vw;
+		height: 19.2vw;
 	}
 	table.tabela-secundaria th.item-img {
-		height: 5.625vw;
-		width: 5.625vw;
+		height: 9.6vw;
+		width: 9.6vw;
 	}
 	table.tabela-secundaria tr.tabela-divisoria-linhas {
 		border-bottom: #000000 solid 4px; 
@@ -362,31 +361,31 @@ div.troca-resumida table.tabela-secundaria th.item-valor h3 {
 		border-right: #000000 solid 4px; 
 	}
 	table.tabela-primaria th table.tabela-secundaria th h3 {
-		font-size: calc(11px + 0.5vw);
-		text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.05px 1.05px rgb(0, 0, 0), -1.05px -1.05px 0 rgb(0, 0, 0), 1.05px -1.05px 0 rgb(0, 0, 0), -1.1px 1.05px 	0 rgb(0, 0, 0);
+		font-size: calc(6px + 1.8vw);
+		text-shadow: 1.7px 0 0 rgb(0, 0, 0), -1.7px 0 0 rgb(0, 0, 0), 0 1.7px 0 rgb(0, 0, 0), 0 -1.7px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 	0 rgb(0, 0, 0);
 		margin: 0px 5px;
 	}
 	table.tabela-primaria th table.tabela-secundaria th h2 {
-		font-size: calc(15px + 0.7vw);
-		text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+		font-size: calc(10px + 2.3vw);
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
 		margin: 0px 5px;
 	}
 	div.troca-resumida table.tabela-secundaria th {
 		border: none;
 		padding: 0;
-		min-height: 6vw;
-		height: 6vw;
+		min-height: 9vw;
+		height: 9vw;
 	}
 	div.troca-resumida table.tabela-secundaria th img {
-		height: 5.625vw;
+		height: 9.6vw;
 		border-right: #000000 solid 3px; 
 	}
 	div.troca-resumida table.tabela-secundaria th.item-valor {
 		border-left: #000000 solid 3px; 
 	}
 	div.troca-resumida table.tabela-secundaria th.item-valor h3 {
-		font-size: calc(18px + 0.7vw);
-		text-shadow: 2.35px 0 0 rgb(0, 0, 0), -2.35px 0 0 rgb(0, 0, 0), 0 2.35px 0 rgb(0, 0, 0), 0 -2.35px 0 rgb(0, 0, 0), 1.15px 1.15px rgb(0, 0, 0), -1.15px -1.15px 0 rgb(0, 0, 0), 1.15px -1.15px 0 rgb(0, 0, 0), -1.15px 1.15px 	0 rgb(0, 0, 0);
+		font-size: calc(17px + 1.5vw);
+		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
 	}
 }
 /* Introducao */
