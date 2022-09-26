@@ -173,7 +173,6 @@ div.troca-resumida table.tabela-primaria {
 	border-collapse: collapse;
 	margin: 2%;
 	min-width: 70vw;
-	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
 }
 table.tabela-primaria tr.tabela-titulo {
 	background-image: url("../_imagens/fundo_tabela.jpg");
@@ -271,8 +270,9 @@ div.troca-resumida table tr.tabela-separador {
 	max-height: 1vw;
 	height: 1vw;
 	min-height: 1vw;
-	background-image: url("../_imagens/fundo_tabela.jpg");
-	background-repeat: repeat;
+ }
+ div.troca-resumida table tr.tabela-separador th {
+	border: none;
  }
 /* Padrões (Mobile)*/
 @media screen and (max-width: 800px) {
@@ -324,7 +324,6 @@ div.troca-resumida table tr.tabela-separador {
 	div.troca-resumida table.tabela-primaria {
 		margin: 1.5%;
 		min-width: 83vw;
-		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
 	table.tabela-primaria tr.tabela-titulo h2 {
 		font-size: calc(8px + 1.8vw);
