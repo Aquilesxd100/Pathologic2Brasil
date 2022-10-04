@@ -86,6 +86,14 @@ p.atencao-padrao {
 p.atencao-padrao span {
 	color: #FFFF00;
 }
+p.info-secao-inferior {
+	font-size: 28px;
+	font-weight: bold;
+	margin: 0.5% 5% 1% 5%;
+	letter-spacing: 0.05vw;
+	color: #BFEDEF;
+	text-align: center;
+}
 .banner img {
 	width: 98%;
 	height: 100px;
@@ -249,7 +257,7 @@ table.tabela-primaria th table.tabela-secundaria th h3 {
 	margin: 5px 10px;
 }
 table.tabela-primaria th table.tabela-secundaria th h2 {
-	font-size: calc(5px + 1.8vw);
+	font-size: calc(4px + 1.8vw);
 	text-shadow: 2.4px 0 0 rgb(0, 0, 0), -2.4px 0 0 rgb(0, 0, 0), 0 2.4px 0 rgb(0, 0, 0), 0 -2.4px 0 rgb(0, 0, 0), 1.3px 1.3px rgb(0, 0, 0), -1.3px -1.3px 0 rgb(0, 0, 0), 1.3px -1.3px 0 rgb(0, 0, 0), -1.3px 1.3px 	0 rgb(0, 0, 0);
 	font-weight: normal;
 	letter-spacing: 0;
@@ -270,6 +278,12 @@ div.troca-resumida table.tabela-secundaria th.item-valor {
 div.troca-resumida table.tabela-secundaria th.item-valor h3 {
 	font-size: calc(4px + 1.60vw);
 	text-shadow: 2.35px 0 0 rgb(0, 0, 0), -2.35px 0 0 rgb(0, 0, 0), 0 2.35px 0 rgb(0, 0, 0), 0 -2.35px 0 rgb(0, 0, 0), 1.15px 1.15px rgb(0, 0, 0), -1.15px -1.15px 0 rgb(0, 0, 0), 1.15px -1.15px 0 rgb(0, 0, 0), -1.15px 1.15px 	0 rgb(0, 0, 0);
+	white-space: nowrap;
+}
+div.troca-resumida table.tabela-secundaria th.item-valor h3.duplo {
+	font-size: calc(2px + 1.60vw);
+	text-shadow: 2.35px 0 0 rgb(0, 0, 0), -2.35px 0 0 rgb(0, 0, 0), 0 2.35px 0 rgb(0, 0, 0), 0 -2.35px 0 rgb(0, 0, 0), 1.15px 1.15px rgb(0, 0, 0), -1.15px -1.15px 0 rgb(0, 0, 0), 1.15px -1.15px 0 rgb(0, 0, 0), -1.15px 1.15px 	0 rgb(0, 0, 0);
+	white-space: nowrap;
 }
 div.troca-resumida table tr.tabela-separador {
 	max-height: 1vw;
@@ -285,6 +299,11 @@ div.troca-resumida table tr.tabela-separador {
 		font-size: 18px;
 		margin: 5px 20px 11px 20px;
 		text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
+	}
+	p.info-secao-inferior {
+		font-size: 23px;
+		margin: 2% 5% 2% 5%;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 	}
 	.banner img {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
@@ -382,7 +401,7 @@ div.troca-resumida table tr.tabela-separador {
 		margin: 0px 5px;
 	}
 	table.tabela-primaria th table.tabela-secundaria th h2 {
-		font-size: calc(10px + 2.3vw);
+		font-size: calc(8px + 2.3vw);
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 	0 rgb(0, 0, 0);
 		margin: 0px 5px;
 	}
@@ -400,10 +419,15 @@ div.troca-resumida table tr.tabela-separador {
 		border-left: #000000 solid 3px; 
 	}
 	div.troca-resumida table.tabela-secundaria th.item-valor h3 {
-		font-size: calc(17px + 1.5vw);
+		font-size: calc(13px + 1.5vw);
+		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
+	}
+	div.troca-resumida table.tabela-secundaria th.item-valor h3.duplo {
+		font-size: calc(8px + 1.5vw);
 		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
 	}
 }
+/* Conteudo da Pagina */
 /* Introducao */
 .introducao {
 	display: flex;
@@ -443,11 +467,13 @@ div.troca-resumida table tr.tabela-separador {
 		margin: 2% 0 2% 0;
 	}
 }
-/* Conteudo da Pagina */
-    div.teste {
-        height: 100vh;
-        width: 100%;
-    }
+/* Trocas - Guardas */
+article.guardas div.troca-resumida {
+	border-top: none;
+}
+article.guardas div.troca-resumida table.tabela-primaria {
+	margin: 2% 2% 0.5% 2%;
+}
 /* Footer */
 	footer {
 		position: relative;
