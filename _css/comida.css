@@ -81,6 +81,10 @@ p.atencao-padrao {
 	text-align: justify;
 	font-size: 24px;
 	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+	text-indent: 0;
+}
+p.atencao-padrao span {
+	color: #FFFF00;
 }
 .banner img {
 	width: 98%;
@@ -111,7 +115,7 @@ article picture.imagem img {
 	border: solid #000000 6px;
 	width: 70vw;
 	max-width: 1085px;
-	margin: 2% 0 1.2% 0;
+	margin: 2% 0 0.5% 0;
 	box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.7);
 }
 article {
@@ -186,6 +190,7 @@ table.tabela-primaria tr.tabela-titulo h2 {
 }
 div.troca-resumida table.tabela-primaria h3 {
 	font-size: calc(2px + 1.8vw);
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
 	font-weight: normal;
 	margin: 0.4vw 0.5vw;
 }
@@ -209,7 +214,7 @@ div.troca-resumida table th.retrato img {
 }
 div.troca-resumida table th.interesse {
 	width: 34vw;
-	min-width: 400px;	
+	max-width: 46vw;
 	padding: 0;
 	background-image: url("../_imagens/fundo_tabela_quer.jpg");
 	background-repeat: repeat;
@@ -352,6 +357,7 @@ div.troca-resumida table tr.tabela-separador {
 		min-height: 12vw;
 		height: 12vw;
 		min-width: 0;
+		max-width: 100vw;
 	}
 	div.troca-resumida table th.pode-ter {
 		padding: 0;
@@ -399,12 +405,12 @@ div.troca-resumida table tr.tabela-separador {
 	}
 }
 /* Introducao */
-section.introducao {
+.introducao {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-section.introducao p {
+.introducao p {
 	font-size: 28px;
 	text-align: center;
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
@@ -412,7 +418,7 @@ section.introducao p {
 	font-weight: normal;
 	margin: 1% 2% 1.5% 2%;
 }
-section.introducao picture.introducao-img img {
+.introducao picture.introducao-img img {
 	border: 6px solid #000000;
 	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
 	width: 65vw;
@@ -422,16 +428,16 @@ section.introducao picture.introducao-img img {
 }
 /* Introducao - Mobile */
 @media screen and (max-width: 800px) {
-	section.introducao {
+	.introducao {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 	}
-	section.introducao p {
+	.introducao p {
 		font-size: 20px;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 		text-indent: 0;
 		margin: 2% 3% 0% 3%;
 	}
-	section.introducao picture.introducao-img img {
+	.introducao picture.introducao-img img {
 		width: 80vw;
 		min-width: 0;
 		margin: 2% 0 2% 0;
