@@ -89,7 +89,9 @@ h1 {
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
 }
 .link {
-	color: #00D900;
+	color: #00FF00;
+	cursor: url('../_recursos/cursor_link.cur'), auto;
+	text-decoration: underline;
 }
 hr {
 	width: 100%;
