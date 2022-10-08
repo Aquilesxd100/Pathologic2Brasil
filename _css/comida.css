@@ -248,6 +248,19 @@ div.secao-com-2-imgs p img {
 	border: none;
 	box-shadow: none;
 }
+ul.lista-simples {
+	width: 100%;
+	list-style: none;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-align: justify;
+	font-size: 26px;
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+}
+ul.lista-simples li {
+	margin: 1% 2% 1% 2%;
+	background-color: red;
+}
 /* Tabelas */
 div.troca-resumida {
 	width: 100%;
