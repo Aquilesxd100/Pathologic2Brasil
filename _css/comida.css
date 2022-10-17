@@ -292,11 +292,11 @@ ul.lista-simples li img {
 	margin: 0 0.3vw 0 0;
 	top: 0.5vw;
 }
-body article picture.imagem-mapa img {
+body article picture.mini-mapa img {
 	border: solid #000000 6px;
-	width: 55vw;
+	width: 60vw;
 	max-width: 760px;
-	margin: 0.5% 0 1% 0;
+	margin: 1.5% 0 1.5% 0;
 	box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.7);
 }
 /* Tabelas */
@@ -598,10 +598,11 @@ div.troca-resumida table tr.tabela-separador {
 	ul.lista-simples li {
 		margin: 1% 5% 2% 5%;
 	}
-	body article picture.imagem-mapa img {
-		width: 85vw;
+	body article picture.mini-mapa img {
+		width: 65vw;
+		min-width: 260px;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
-		margin: 0.5% 0 2% 0;
+		margin: 2% 0 2% 0;
 	}
 	/* Tabelas - Mobile */
 	div.troca-resumida table.tabela-primaria {
@@ -804,7 +805,7 @@ article.guardas div.texto-com-imagem p.principal {
 	font-size: calc(9px + 1.39vw);
 	margin: 1% 2% 1.5% 2%;
 }
-article.guardas div.texto-com-imagem div.atencao-padrao p {
+article.guardas div.texto-com-imagem div.atencao-padrao p, article.lara-bondosa div.atencao-padrao p {
 	margin: 15px 20px 15px 20px;
 }
 /* Trocas - Guardas - Bandidos (Mobile) */
@@ -815,7 +816,7 @@ article.guardas div.texto-com-imagem div.atencao-padrao p {
 		text-align: justify;
 		margin: 0% 2.5% 1.5% 2.5%;
 	}
-	article.guardas div.texto-com-imagem div.atencao-padrao p {
+	article.guardas div.texto-com-imagem div.atencao-padrao p, article.lara-bondosa div.atencao-padrao p {
 		margin: 8px 20px 8px 20px;
 	}
 }
@@ -830,6 +831,52 @@ section.eventos-especiais article.atuacao-fome div.texto-com-imagem p {
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 		text-align: justify;
 		margin: 0% 2.5% 1.5% 2.5%;
+	}
+}
+/* Conclusao */
+section.conclusao div.texto-com-imagem { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section.conclusao div.texto-com-imagem p { 
+	font-size: calc(9px + 1.5vw);
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+	text-align: justify;
+	margin: 1% 1% 1.5% 1%;
+	text-indent: 0px;
+}
+section.conclusao div.texto-com-imagem p img {
+	position: relative;
+	width: 1.978vw;
+	height: 2.875vw;
+	margin: 0 0.3vw 0 0;
+	top: 0vw;
+	border: none;
+	box-shadow: none;
+}
+/* Conclusao (Mobile) */
+@media screen and (max-width: 800px) {
+	section.conclusao div.texto-com-imagem { 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	section.conclusao div.texto-com-imagem img { 
+		margin-bottom: 1%;
+	}
+	section.conclusao div.texto-com-imagem p { 
+		font-size: 20px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 0% 2.5% 1.5% 2.5%;
+		text-indent: 20px;
+	}
+	section.conclusao div.texto-com-imagem p img {
+		min-width: 19px;
+		min-height: 28px;
+		top: 5px;
+		margin: 0 0.3vw 0 0;
 	}
 }
 /* Footer */
