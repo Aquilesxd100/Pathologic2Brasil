@@ -820,6 +820,89 @@ article.guardas div.texto-com-imagem div.atencao-padrao p, article.lara-bondosa 
 		margin: 8px 20px 8px 20px;
 	}
 }
+/* Fundo Emergencial */
+section.fundo article p.secundario {
+	margin: 0.5% 1% 1% 1%;
+} 
+section.fundo article div.atencao-padrao p {
+	margin-bottom: 0.5%;
+}
+section.fundo div.texto-com-imagem { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section.fundo article div.texto-com-imagem p {
+	font-size: calc(5px + 1.39vw);
+	text-indent: 0;
+	margin: 1% 4% 1.5% 2%;
+}
+section.fundo article div.texto-com-imagem img {
+	max-width: 330px;
+	max-height: 170px;
+	margin: 1% 2% 1% 1%;
+}
+section.fundo article div.barra-fundo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section.fundo article ul.lista-simples li {
+	margin: 1.5% 5% 1.5% 5%;
+	text-align: left;
+}
+section.fundo article ul.lista-simples {
+	margin-bottom: 0.5%;
+}
+body section.fundo article div.barra-fundo img.pessoa-doente {
+	width: 25vw;
+	max-width: 220px;
+	margin: 1% 4% 1% 1%;
+	border: 5px solid #000000;
+	box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+}
+/* Fundo Emergencial (Mobile)*/
+@media screen and (max-width: 800px) {
+	section.fundo article p.secundario {
+		margin: 0% 1% 2% 1%;
+	}
+	section.fundo div.barra-fundo { 
+		flex-direction: column;
+	}
+	section.fundo div.texto-com-imagem { 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	section.fundo article div.texto-com-imagem p.principal {
+		font-size: 20px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-align: justify;
+		margin: 0% 2.5% 1.5% 2.5%;
+	}
+	section.fundo article div.texto-com-imagem img {
+		max-width: none;
+		max-height: none;
+		width: 68vw;
+		min-width: 255px;
+		margin: 2% 0% 2% 0%;
+	}
+	body section.fundo article div.barra-fundo img.pessoa-doente {
+		max-width: none;
+		max-height: none;
+		width: 50vw;
+		min-width: 230px;
+		margin: 0% 0% 2% 0%;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	body section.fundo article div.barra-fundo ul.lista-simples {
+		font-size: 21px;
+	}
+	body section.fundo article div.barra-fundo ul.lista-simples li {
+		margin: 1.5% 5% 2.5% 5%;
+		text-align: center;
+	}
+}
 /* Eventos Especiais */
 section.eventos-especiais article.atuacao-fome div.texto-com-imagem p {
 	font-size: calc(5px + 1.39vw);
