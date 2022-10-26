@@ -196,12 +196,15 @@ ul.lista-simples li img {
 	margin: 0 0.3vw 0 0;
 	top: 0.5vw;
 }
-body article picture.mini-mapa img {
+body article picture.mini-mapa img, body article picture.mini-mapa-maior img {
 	border: solid #000000 6px;
 	width: 60vw;
 	max-width: 760px;
 	margin: 1.5% 0 1.5% 0;
 	box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.7);
+}
+body article picture.mini-mapa-maior img {
+	min-width: 650px;
 }
 /* --------------------------------------------------------------------------------------------------- */
 /* --------------------------------------> Banner Seção Padrão  <------------------------------------- */
@@ -224,6 +227,27 @@ h1.titulo, h1.titulo-maior {
 }
 /* --------------------------------------------------------------------------------------------------- */
 /* ------------------------------------> Seções e seus Conteúdos  <----------------------------------- */
+.introducao {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.introducao p {
+	font-size: 28px;
+	text-align: center;
+	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
+	text-indent: 40px;
+	font-weight: normal;
+	margin: 1% 2% 1.5% 2%;
+}
+.introducao picture.introducao-img img {
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	width: 65vw;
+	min-width: 290px;
+	min-height: 190px;
+	margin: 0% 0% 2% 0%;
+}
 section {
 	margin: -15px 1% 0% 1%;
 	border: 8px solid #000000;
@@ -519,6 +543,12 @@ div.troca-resumida table tr.tabela-separador {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 		margin: 2% 0 2% 0;
 	}
+	body article picture.mini-mapa-maior img {
+		width: 84vw;
+		min-width: 0;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		margin: 2% 0 2% 0;
+	}
 	/* --------------------------------------------------------------------------------------------------- */
 	/* ----------------------------------> Banner Seção Padrão (Mobile)  <--------------------------------- */
 	.banner img {
@@ -551,6 +581,20 @@ div.troca-resumida table tr.tabela-separador {
 	}
 	/* --------------------------------------------------------------------------------------------------- */
 	/* --------------------------------> Seções e seus Conteúdos (Mobile)  <------------------------------- */
+	.introducao {
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+	}
+	.introducao p {
+		font-size: 20px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		text-indent: 0;
+		margin: 2% 3% 0% 3%;
+	}
+	.introducao picture.introducao-img img {
+		width: 80vw;
+		min-width: 0;
+		margin: 2% 0 2% 0;
+	}
 	section {
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
@@ -656,4 +700,110 @@ div.troca-resumida table tr.tabela-separador {
 		text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
 	}
 	/* --------------------------------------------------------------------------------------------------- */
+}
+/* -------------------------------------------> Padrão Pagina  <------------------------------------------ */
+/* ----------------------------------------> Corpo de Todo o Site  <--------------------------------------- */
+body {
+	position: relative;
+	   overflow-x: hidden;
+	margin: 0vw;
+	cursor: url('../_recursos/cursor.cur'), auto;
+	padding: 0vw;
+	width: 98.78vw;
+	max-width: 100%;
+	display: block;
+	min-height: 100vh;
+}	
+/* --------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------> Corpo da Página  <--------------------------------------- */
+div#corpo {
+	background-image: url('../_imagens/fundo.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 98.78vw 100%;
+	position: relative;
+	top: 0;
+	width: 99vw;
+	max-width: 100%;
+	overflow: hidden;
+	color: #FFFFFF;
+}	
+div#fundobranco {
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.75);
+	width: 97.8%;
+	height: 99.53%;
+	top: 3.8vw;
+	margin: 0vw 0.9vw 5vw 0.9vw;
+	max-width: 100%;
+}
+div#conteudo {
+	width: 100%;
+	height: 100%;
+	font-size: 2vw;
+	font-family: frizquadrata;
+	top: 0vw;
+	max-width: 100%;
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* ------------------------------------> Corpo da Página (Mobile)  <----------------------------------- */
+@media screen and (max-width: 800px) {
+	div#corpo {
+		background-image: url('../_imagens/fundo_mobile.jpg');
+		background-color:#000000;
+		margin-top: -5.4vw;
+		height: 100%;
+		background-size: 120% 100%;
+		overflow: hidden;
+	}
+	div#fundobranco {
+		top: 4.5vw;
+		width: 97.6vw !important;
+		margin: 0vw 0vw 7vw 1.6vw !important;
+		height: 99.65%;
+	}
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------> Footer  <------------------------------------------- */
+footer {
+	position: relative;
+	font-size: 1.45vw;
+	font-weight: bold;
+	font-family: frizquadrata;
+	color:#504f4f;
+	margin: 1% 1% 0 1%;
+	overflow: hidden;
+}
+footer ul {
+	padding: 0 0 2.5% 0;
+	margin:0;
+}
+footer li {
+	list-style: none;
+	display: inline-block;
+}
+footer li#contato {
+	float: right;
+	font-weight: bold;
+}
+footer li#contato span {
+	font-weight: bolder;
+}
+footer li#copyright {
+	float: left;
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------> Footer (Mobile)  <--------------------------------------- */
+@media screen and (max-width: 800px) {
+	footer {
+		font-size: 4vw;
+		text-align: center;
+		margin: 3% 1% 0 1%;
+	}
+	footer li#contato {
+		float: none;
+	}
+	footer li#copyright {
+		float: none;
+	}
 }
