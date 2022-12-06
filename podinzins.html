@@ -12,6 +12,9 @@
 			p.info-secao-inferior {
 				margin-top: 1.5%;
 			}
+			article.eventos-especiais p.info-secao-inferior {
+				margin-top: 0.5%;
+			}
 		}
 		@media screen and (max-width: 800px) {
 			body div.troca-resumida table th.tabela-estendida img {
@@ -19,6 +22,10 @@
 			}
 			p.info-secao-inferior {
 				margin: 1.5% 1.5% 0.5% 1.5%;
+			}
+			article.eventos-especiais p.info-secao-inferior {
+				margin-top: 0.5%;
+				margin-bottom: 2%;
 			}
 		}
 	</style>
@@ -85,7 +92,9 @@
 		<nav id="menu">
 			<img src="_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
 			<img src="_imagens/barra_2.png" id="barra2" onclick="abrirLink('trocas.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
-			<img src="_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			</a>
 			<img src="_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
 			<img src="_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
 			<ul>
@@ -499,7 +508,7 @@
 								<source media="(max-width: 800px)" srcset="_imagens/_guias/mercador_noturno_mobile.jpg">
 								<img src="_imagens/_guias/mercador_noturno.jpg">
 							</picture>
-							<div class="troca-resumida">
+							<div class="troca-resumida borda-baixo">
 								<table class="tabela-primaria">
 									<tr class="tabela-titulo">
 										<th><h2>Personagem</h2></th>
@@ -632,6 +641,26 @@
 														<h3 class="duplo">1-5</h3>
 													</th>
 												</tr>
+												<tr class="tabela-divisoria-linhas-cima">
+													<th class="item-img">
+														<img src="_imagens/_icones/itens_catalogados/unha.jpg">
+													</th>
+													<th>
+														<h2>Unha</h2>
+													</th>
+													<th class="item-valor  tabela-divisoria-colunas"> 
+														<h3>3</h3>
+													</th>
+													<th class="item-img">
+														<img src="_imagens/_icones/itens_catalogados/anzois.jpg">
+													</th>
+													<th>
+														<h2>Anzois</h2>
+													</th>
+													<th class="item-valor"> 
+														<h3>2</h3>
+													</th>
+												</tr>
 											</table>
 										</th>
 										<th class="pode-ter">
@@ -683,6 +712,17 @@
 												<tr class="tabela-divisoria-linhas-cima modo-desktop">
 													<th class="item-img">
 														<img src="_imagens/_icones/itens_catalogados/pao.jpg" class="invisivel">
+													</th>
+													<th>
+														<h2></h2>
+													</th>
+													<th class="item-valor"> 
+														<h3></h3>
+													</th>
+												</tr>
+												<tr class="tabela-divisoria-linhas-cima modo-desktop">
+													<th class="item-img">
+														<img src="_imagens/_icones/itens_catalogados/carne.jpg" class="invisivel">
 													</th>
 													<th>
 														<h2></h2>
@@ -831,11 +871,116 @@
 														<h3 class="duplo">1-5</h3>
 													</th>
 												</tr>
+												<tr class="tabela-divisoria-linhas-cima">
+													<th class="item-img">
+														<img src="_imagens/_icones/itens_catalogados/unha.jpg">
+													</th>
+													<th>
+														<h2>Unha</h2>
+													</th>
+													<th class="item-valor  tabela-divisoria-colunas"> 
+														<h3>3</h3>
+													</th>
+													<th class="item-img">
+														<img src="_imagens/_icones/itens_catalogados/anzois.jpg">
+													</th>
+													<th>
+														<h2>Anzois</h2>
+													</th>
+													<th class="item-valor"> 
+														<h3>2</h3>
+													</th>
+												</tr>
 											</table>
 										</th>
 									</tr>									
 								</table>
 							</div>
+							<p class="info-secao-inferior">- Abaixo marquei no mapa onde esse mercador aparece em cada uma das noites.</p>
+							<picture class="mini-mapa-maior">
+								<img src="_imagens/_guias/locais/mapa_mercador_noite.jpg">
+							</picture>
+							<div class="dica-padrao">
+								<p><span class="sublinhado">DICA #1:</span> Esse mercador aparece no mapa somente as 00:00 de cada noite e desaparece as 07:30 da manhã, sua localização varia dependendo do número do dia.</p>
+							</div>
+							<div class="dica-padrao">
+								<p><span class="sublinhado">DICA #2:</span> Procure guardar um estoque de itens que ele tem interesse e visite-o todas as noites, acredite, vale a pena!</p>
+							</div>
+						</article>
+					</section>
+					<picture class="banner">
+						<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
+						<img src="_imagens/tutoriais_rapidos.jpg">
+					</picture>
+					<h1 class="titulo-maior">Baus <br class="modo-mobile-especial">Secretos</h1>
+					<section>
+						<article>
+							<p>Esses baús pertencem às crianças do grupo dos Alma-e-Meia e estão escondidos por toda a cidade, ao abri-los você encontrará alguns itens diversos, dentre esses itens existe uma baixa chance de um ser um podinzin. Todos as dias as 07:30 da manhã novos itens podem ser encontrados nesses baús.</p>
+							<picture class="imagem">
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/podinzins/baus_mobile.jpg">
+								<img src="_imagens/_guias/podinzins/baus.jpg">
+							</picture>
+							<div class="divisoria-separada borda-cima"> 
+								<p class="info-secao-inferior">- Veja abaixo todos os locais que esses baús estão escondidos.</p>
+								<picture class="mini-mapa-maior">
+									<img src="_imagens/_guias/locais/mapa_baus_criancas.jpg">
+								</picture>	
+							</div>
+							<div class="dica-padrao">
+								<p><span class="sublinhado">DICA #1:</span> Caso você beba uma Twyrine (aquelas bebidas com garrafa de cor verde) será marcado no seu mapa algum evento relevante OU um baú das crianças com uma chance um pouco maior de conter um podinzin (cerca de 20%) além de outros itens úteis.</p>
+							</div>
+							<div class="dica-padrao">
+								<p><span class="sublinhado">DICA #2:</span> Como a chance de encontrar um podinzin dessa forma é extremamente baixa, não recomendo dedicar tempo para fazer somente isso, porem, caso exista algum baú no caminho do lugar que você precise ir, um pequeno desvio não fará mal a ninguém.</p>
+							</div>
+						</article>
+					</section>
+					<picture class="banner">
+						<source media="(max-width: 800px)" srcset="_imagens/banner_adicional_mobile.jpg">
+						<img src="_imagens/banner_adicional.jpg">
+					</picture>
+					<h1 class="titulo-maior">Eventos <br class="modo-mobile-especial">Especiais</h1>
+					<section>
+						<article class="eventos-especiais">
+							<p>Outra forma de conseguir podinzins é através de certos eventos, eles só estão disponíveis em dias específicos e exigem que você os complete de uma determinada forma para garantir suas recompensas.</p>
+							<picture class="imagem">
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/podinzins/eventos_especiais_mobile.jpg">
+								<img src="_imagens/_guias/podinzins/eventos_especiais.jpg">
+							</picture>
+							<p class="info-secao-inferior">- Veja abaixo quais são esses eventos e em que dias acontecem.</p>
+						</article>
+						<article>
+							<div class="sub-titulo-info">
+									<h2 class="info">Dia <br class="modo-mobile">1 e 4</h2>
+									<h2 class="titulo">Coleira dos <br class="modo-mobile">Almas-e-Meia</h2>
+							</div>
+							<div class="texto-com-imagem">
+								<img src="_imagens/_guias/podinzins/coleira.jpg">
+								<p class="principal">Esse evento é separado em duas partes, a primeira acontece no dia 1, logo após começar o jogo siga para a casa de Rubin e converse com o homem que estiver lá, depois vá para a fortaleza dos alma-e-meia e fale com Notkin (líder do grupo), demonstre querer ajudar no julgamento, assim que o dialogo acabar fale com ele mais uma vez e diga que você irá conversar com Lajka pessoalmente, Notkin então lhe dará uma coleira, depois disso, finalizar essa parte do evento é opcional, o importante é ter a coleira consigo no final e guardá-la até o dia 4. A segunda parte do evento fica disponível a partir do dia 4 as 07:30 da manhã, tudo que você precisa fazer é levar a coleira até uma casa chamada de "Casca de Noz", lá converse com uma garota fantasiada de cachorro e faça a troca pelo podinzin!</p>
+							</div>
+							<picture class="mini-mapa">
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/podinzins/mapa_casca_de_noz_casa_rubin_mobile.jpg">
+								<img src="_imagens/_guias/podinzins/mapa_casca_de_noz_casa_rubin.jpg">
+							</picture>
+						</article>
+						<article>
+							<div class="sub-titulo-info">
+							    <h2 class="info-menor">Dia 2</h2>
+								<h2 class="titulo">Pega-Pega</h2>
+							</div>
+							<div class="texto-com-imagem">
+								<img src="_imagens/_guias/podinzins/pega_pega.jpg">
+								<p class="principal">Já esse evento acontece durante a manhã/tarde do dia 2 em um parquinho perto do teatro, tudo que você precisa para completá-lo é 3x Nozes de qualquer tipo (não precisam ser iguais), ao chegar nesse lugar procure por 1 menina sentada em um balanço cercada por outros 2 meninos, fale com ela e demonstre interesse no "Pozinzin" que ela menciona, depois aceite brincar de esconde-esconde com eles, após o fim do diálogo se dirija até uma parede próxima ao local e olhe fixamente para ela durante 5 segundos, se tudo der certo as 3 crianças irão se esconder e você deve encontrá-las, todas elas podem ser encontradas nas redondezas do parquinho, atrás de lixeiras, nos cantos das casas e até em meio a vegetação, sempre que você achar uma criança será possível fazer uma troca com ela, todas as 3 terão Nozes para negociar com o valor de 1, e trocarão por outras Nozes pelas quais pagam 2, já a menina além das Nozes também terá um Pondinzin pelo valor de 6.</p>
+							</div>
+							<picture class="mini-mapa">
+								<source media="(max-width: 800px)" srcset="_imagens/_guias/podinzins/parquinho_area_mobile.jpg">
+								<img src="_imagens/_guias/podinzins/parquinho_area.jpg">
+							</picture>
+							<div class="atencao-padrao">
+								<p><span>ATENÇÃO:</span> Sempre que encontrar uma criança faça logo a troca com ela, se deixar para depois pode ser que ela desapareça!</p>
+							</div>
+							<div class="dica-padrao">
+								<p><span class="sublinhado">DICA:</span> Tire proveito desse evento trocando 1 Noz por 2, deixando todas as crianças com somente 1 Noz em seu inventário.</p>
+							</div>	
 						</article>
 					</section>
 					<footer>
