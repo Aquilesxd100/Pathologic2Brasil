@@ -24,6 +24,9 @@ p span.sublinhado {
 .invisivel {
 	opacity: 0;
 }
+a {
+	cursor: url('../_recursos/cursor_link.cur'), auto;
+}
 /* ----------------------------------------------------------------------------------------- */
 /* ----------------------------------> Mini-Seções Padrão <--------------------------------- */
 div.dica-padrao p span.sublinhado {

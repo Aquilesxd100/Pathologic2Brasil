@@ -15,7 +15,7 @@ html {
 /* Banner do Site */	
 	picture#banner {
 		position: relative;
-		width: 98.78vw;
+		width: 100%;
 		margin: 0vw;
 		max-width: 100%;
 		pointer-events: none;
@@ -24,7 +24,7 @@ html {
 		position:relative;
 		display: block;
 		height: 100%;
-		width: 98.78vw;
+		width: 100%;
 		margin: 0vw;
 		max-width: 100%;
 }
@@ -34,14 +34,14 @@ html {
 		display: block;
 		margin: 0vw 0vw 0vw 0vw;
 		height: 2.7vw;
-		width: 98.78vw;
+		width: 100%;
 		max-width: 100%;
 }
 	nav#menu img#espinhos {
 		margin: 0vw;
 		position: relative;
 		z-index: +2;
-		width: 98.78vw;
+		width: 100%;
 		height: 8.8vw;	
 		max-width: 100%;
 		top: -7.45vw;
@@ -196,9 +196,6 @@ html {
 	  @media screen and (min-width: 800px) {
 		div#funcao-pesquisa-mobile-mais-menu {
 		  display: none;
-		}
-		#corpo {
-			padding-top: 0 !important;
 		}
 		.modo-mobile {
 			display: none;
@@ -555,7 +552,7 @@ nav img:hover {
 	/* Corpo da Pagina - Mobile */
 	@media screen and (max-width: 800px) {
 		body, picture#banner, picture#banner img, div#corpo {
-			width: 100vw !important;
+			width: 100%;
 		}
 		html {
 			scrollbar-width: none;
