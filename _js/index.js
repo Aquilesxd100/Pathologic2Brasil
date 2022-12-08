@@ -184,6 +184,7 @@ function checkRolagemMenu() {
         resolucaoL = window.innerWidth;
         barraMobile.classList.remove("barra-fixa");
         pontoFixo = barraMobile.offsetTop;
+        document.getElementById("corpo").removeAttribute("style");
     }
     if (window.pageYOffset >= pontoFixo) {
       barraMobile.classList.add("barra-fixa");
@@ -194,7 +195,7 @@ function checkRolagemMenu() {
     else {
       barraMobile.classList.remove("barra-fixa");
       if (resolucaoLargura <= 800) {
-        document.getElementById("corpo").style.paddingTop="0%";
+        document.getElementById("corpo").removeAttribute("style");
       }
     }
 }

@@ -60,7 +60,7 @@
 		}
 		div#fundobranco {
 			padding-top: 0;
-			width: 97.6vw !important;
+			width: 97.6%;
 			margin: 4.5vw 0vw 0.75vw 1.6vw !important;
 			height: 97.6%;
 		}
@@ -591,4 +591,4 @@
 			-moz-filter: brightness(120%);
 			filter: brightness(120%);
 		}
-	  }
+	}

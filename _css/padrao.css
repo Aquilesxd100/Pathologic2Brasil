@@ -436,7 +436,7 @@ div.troca-resumida table tr.tabela-separador {
 		text-decoration: none;
 		border-bottom: 2px solid #00FF00;
 	}
-	/* ------------------------------------------------------------------------------------------ */
+	/* ----------------------------------------------------------------------------------- */
 	/* --------------------------> Mini-Seções Padrão (Mobile) <-------------------------- */
 	body div.atencao-padrao p {
 		font-size: 18px;
@@ -725,29 +725,30 @@ div.troca-resumida table tr.tabela-separador {
 	}
 	/* ----------------------------------------------------------------------------------- */
 }
-/* ----------------------------------> Padrão Pagina  <---------------------------------- */
+/* ------------------------------------> Estrutura  <------------------------------------ */
 /* --------------------------------> Corpo de Todo o Site  <------------------------------ */
 body {
 	position: relative;
-	   overflow-x: hidden;
+	overflow-x: hidden;
 	margin: 0vw;
 	cursor: url('../_recursos/cursor.cur'), auto;
 	padding: 0vw;
-	width: 98.78vw;
+	width: 100%;
 	max-width: 100%;
 	display: block;
 	min-height: 100vh;
+	background-image: url('../_imagens/fundo.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }	
 /* ----------------------------------------------------------------------------------- */
 /* --------------------------------> Corpo da Página  <------------------------------- */
 div#corpo {
-	background-image: url('../_imagens/fundo.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 98.78vw 100%;
 	position: relative;
 	top: 0;
-	width: 99vw;
+	width: 100%;
+	padding-top: 3.8vw;
 	max-width: 100%;
 	overflow: hidden;
 	color: #FFFFFF;
@@ -755,10 +756,10 @@ div#corpo {
 div#fundobranco {
 	position: relative;
 	background-color: rgba(255, 255, 255, 0.75);
-	width: 97.8%;
-	height: 99.53%;
-	top: 3.8vw;
-	margin: 0vw 0.9vw 5vw 0.9vw;
+	width: 98.2%;
+	height: 94%;
+	top: 0;
+	margin: 0vw 0.9vw 0.75vw 0.9vw;
 	max-width: 100%;
 }
 div#conteudo {
@@ -772,19 +773,23 @@ div#conteudo {
 /* --------------------------------------------------------------------------------------- */
 /* ------------------------------> Corpo da Página (Mobile)  <----------------------------- */
 @media screen and (max-width: 800px) {
-	div#corpo {
+	body {
 		background-image: url('../_imagens/fundo_mobile.jpg');
 		background-color:#000000;
+	}
+	div#corpo {
+		padding-top: 0;
+		padding-bottom: 3px;
 		margin-top: -5.4vw;
-		height: 100%;
+		height: auto;
 		background-size: 120% 100%;
 		overflow: hidden;
 	}
 	div#fundobranco {
-		top: 4.5vw;
-		width: 97.6vw !important;
-		margin: 0vw 0vw 7vw 1.6vw !important;
-		height: 99.65%;
+		padding-top: 0;
+		width: 97.6%;
+		margin: 4.5vw 0vw 0.75vw 1.6vw !important;
+		height: 97.6%;
 	}
 }
 /* --------------------------------------------------------------------------------------- */
@@ -795,11 +800,13 @@ footer {
 	font-weight: bold;
 	font-family: frizquadrata;
 	color:#504f4f;
-	margin: 1% 1% 0 1%;
+	margin-left: 1%;
+	margin-right: 1%;
+	padding: 0.7vw 0;
 	overflow: hidden;
 }
 footer ul {
-	padding: 0 0 2.5% 0;
+	padding: 0;
 	margin:0;
 }
 footer li {
@@ -821,8 +828,10 @@ footer li#copyright {
 @media screen and (max-width: 800px) {
 	footer {
 		font-size: 4vw;
+		margin-left: 1%;
+		margin-right: 1%;
 		text-align: center;
-		margin: 3% 1% 0 1%;
+		padding: 7px 0;
 	}
 	footer li#contato {
 		float: none;
