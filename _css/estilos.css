@@ -2,11 +2,15 @@
 /* Fontes */
 @font-face {
 	font-family: frizquadrata;
-	src: url(../_fonts/friz-quadrata-tt.woff) format('truetype');
+	src: url("../_fonts/friz-quadrata-tt.woff") format('truetype');
 }
 @font-face {
 	font-family: batukapur;
-	src: url(../_fonts/batukapur-vmedy.woff);
+	src: url("../_fonts/batukapur-vmedy.woff");
+}
+/* Recursos */
+a {
+    cursor: url("../_recursos/cursor_link.cur"), auto;
 }
 /* HTML */
 html {
@@ -98,8 +102,13 @@ html {
 	input#input {
 		display: none;
 		position: absolute;
-		left: 80vw; 
-		top: 0.4vw;
+		right: 0vw;
+		-moz-transform: translateX(-1vw); 
+		-ms-transform: translateX(-1vw); 
+		-o-transform: translateX(-1vw); 
+		-webkit-transform: translateX(-1vw); 
+		transform: translateX(-1vw); 
+		top: 0.16vw;
 		height: 3vw;
 		width: 13.2vw;
 		outline: none;
@@ -108,17 +117,18 @@ html {
 		font-size: 1.8vw;
 		font-family: frizquadrata;
 		font-weight: bold;
-	}
-	#pesquisar {
+		text-transform: lowercase;
+		-moz-transition: opacity 0.35s linear 0.25s;
+		-ms-transition: opacity 0.35s linear 0.25s;
+		-o-transition: opacity 0.35s linear 0.25s;
+		-webkit-transition: opacity 0.35s linear 0.25s;
+		transition: opacity 0.35s linear 0.25s;
 		opacity: 0;
-		font-size: 1.8vw;
-		top: -0.6vw;
-		position: absolute;
-		left: 80.5vw;
+	}
+	input::placeholder {
+		text-transform: none;
 		color:#999999;
-		font-family: frizquadrata;
-		pointer-events: none;
-}
+	}
 	@media screen and (max-width: 800px) {
 		div#funcao-pesquisa {
 		  display: none;
@@ -156,19 +166,6 @@ html {
 		width: 45vw;
 		height: 11vw;
 	}
-	h2#pesquisar-mobile {
-		position: absolute;
-		top: 0%;
-		margin-top: 4.3%;
-		margin-left: 48%;
-		color:#999999;
-		font-family: frizquadrata;
-		pointer-events: none;
-		opacity: 1;
-		font-weight: bold;
-		font-size: 5vw;
-		letter-spacing: 0.07vw;
-	}
 	input#input-mobile {
 		position: absolute;
 		top: 0%;
@@ -182,6 +179,7 @@ html {
 		font-family: frizquadrata;
 		font-weight: bold;
 		font-size: 5vw;
+		text-transform: lowercase;
 	}
 	img#botao-menu-mobile {
 		position: absolute;
@@ -193,7 +191,7 @@ html {
 	.barra-fixa {
 		position: fixed !important;
 	}
-	  @media screen and (min-width: 800px) {
+	  @media screen and (min-width: 800.1px) {
 		div#funcao-pesquisa-mobile-mais-menu {
 		  display: none;
 		}
@@ -366,7 +364,15 @@ html {
 			-ms-transition: top 0.25s;
 			-o-transition: top 0.25s;
 			transition: top 0.25s;
-}
+		}
+		div.fundo-lateral {
+			position: fixed;
+			top: 0;
+			height: 100vh;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			display: none;
+		}
 		div#sub-menu-lateral img{
 			width: 49vw;
 			height: 11vw;
@@ -1157,46 +1163,10 @@ nav img:hover {
 		-moz-animation-fill-mode: forwards;
 		animation-fill-mode: forwards;
 	}
-	/* Animação Pesquisar... */
-	@-o-keyframes pesquisaup {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	@-moz-keyframes pesquisaup {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	@-ms-keyframes pesquisaup {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	@-webkit-keyframes pesquisaup {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	@keyframes pesquisaup {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	.pesquisa-up {
-		-moz-animation-name: pesquisaup;
-		-ms-animation-name: pesquisaup;
-		-o-animation-name: pesquisaup;
-		-webkit-animation-name: pesquisaup;
-		animation-name: pesquisaup;
-		-webkit-animation-duration: 0.35s;
-		-o-animation-duration: 0.35s;
-		-ms-animation-duration: 0.35s;
-		-moz-animation-duration: 0.35s;
-		animation-duration: 0.35s;
-		-webkit-animation-fill-mode: forwards;
-		-o-animation-fill-mode: forwards;
-		-ms-animation-fill-mode: forwards;
-		-moz-animation-fill-mode: forwards;
-		animation-fill-mode: forwards;
-		-o-animation-delay: 0.25s;
-		-ms-animation-delay: 0.25s;
-		-webkit-animation-delay: 0.25s;
-		-moz-animation-delay: 0.25s;
-		animation-delay: 0.25s;
+	/* Animação Pré-Carregamento */
+	@keyframes carregamento {
+		0% { -webkit-transform:rotate(0deg); -o-transform:rotate(0deg); -ms-transform:rotate(0deg); -moz-transform:rotate(0deg); transform:rotate(0deg); }
+		50% { -webkit-transform:rotate(260deg); -o-transform:rotate(260deg); -ms-transform:rotate(260deg); -moz-transform:rotate(260deg); transform:rotate(260deg); }
+		75% { -webkit-transform:rotate(330deg); -o-transform:rotate(330deg); -ms-transform:rotate(330deg); -moz-transform:rotate(330deg); transform:rotate(330deg); }
+		100% { -webkit-transform:rotate(360deg); -o-transform:rotate(360deg); -ms-transform:rotate(360deg); -moz-transform:rotate(360deg); transform:rotate(360deg); }
 	}

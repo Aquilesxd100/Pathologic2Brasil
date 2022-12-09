@@ -1,0 +1,80 @@
+HTML
+<body id="body">
+	<div class="pre-carregamento">
+		<div>
+			<img src="_imagens/logo.png" class="logo">
+			<img src="_imagens/carregamento.png" class="carregamento">
+		</div>
+	</div>	
+...
+----------------------------------------------------------------------------------------------------
+CSS
+/* Pré - Carregamento */
+div.pre-carregamento {
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 15;
+	background-image: url("../_imagens/fundo.jpg");
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+div.pre-carregamento div {
+	backdrop-filter: blur(1px);
+	background-color: rgba(255, 255, 255, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+div.pre-carregamento img.logo {
+	width: 40vw;
+	min-width: 550px;
+}
+div.pre-carregamento img.carregamento {
+	width: 12vw;
+	min-width: 170px;
+	margin: 3vh 0;
+	-ms-animation: carregamento 1.05s linear infinite;
+	-moz-animation: carregamento 1.05s linear infinite;
+	-o-animation: carregamento 1.05s linear infinite;
+	-webkit-animation: carregamento 1.05s linear infinite;
+	animation: carregamento 1.05s linear infinite;
+}
+@media screen and (max-width: 800px) {
+	div.pre-carregamento {
+		background-size: cover;
+	}
+	div.pre-carregamento div {
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+	div.pre-carregamento img.logo {
+		width: 85vw;
+		margin: 0 0;
+		min-width: 0;
+	}
+	div.pre-carregamento img.carregamento {
+		width: 30vw;
+		margin: 4vh 0;
+		min-width: 0;
+	}
+}
+----------------------------------------------------------------------------------------------------
+JS
+/* Tela de Carregamento */
+    document.querySelector("html").classList.add("rolagem-off");
+    setTimeout(carregamentoPagina, 50);   
+    function carregamentoPagina () {
+        if (document.readyState === 'complete') {
+            barraMobile.classList.remove("barra-fixa");
+            pontoFixo = barraMobile.offsetTop;
+            document.querySelector("html").classList.remove("rolagem-off");
+            document.querySelector("div.pre-carregamento").style.display="none"; 
+        }
+        else {
+            setTimeout(carregamentoPagina, 100);
+        }
+    }

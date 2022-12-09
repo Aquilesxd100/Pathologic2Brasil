@@ -28,6 +28,18 @@
       document.getElementById(elemento).style.OClipPath=clipinset;
     }
   }
+  /* Mudança Resolução */
+    window.addEventListener('resize', () => {
+        barraMobile.classList.remove("barra-fixa");
+        pontoFixo = barraMobile.offsetTop;
+        resolucaoL = window.innerWidth;
+        resolucaoA = window.innerHeight;
+        checkRolagemMenu();
+        if (resolucaoL >= 800.1) {
+            rotacao90("indicador-direita", "indicador-esquerda");
+            fecharMenuLateral();
+        }
+    });
 /* Barra de Pesquisa */
     var aberturaPesquisa = 0;
     function aberturaPesquisaDesktop() {
@@ -35,52 +47,40 @@
             document.getElementById("funcao-pesquisa-barra").style.right="3.8vw";
             document.getElementById("funcao-pesquisa-barra").style.clipPath="inset(0vw 0vw 0vw 0vw)";
             adaptadorPrefixos("funcao-pesquisa-barra", "", "", "inset(0vw 0vw 0vw 0vw)");
-            document.getElementById("pesquisar").style.display="block";
             document.getElementById("input").style.display="block";
-            document.getElementById("pesquisar").classList.add("pesquisa-up");        
+            setTimeout(() => {
+                document.getElementById("input").style.opacity="1";
+            }, 30)        
             aberturaPesquisa = 1;
         }
         else if (aberturaPesquisa === 1) {
             document.getElementById("input").value="";
+            document.getElementById("input").setAttribute("placeholder", "Pesquisar...");
             document.getElementById("funcao-pesquisa-barra").style.right="-11.38vw";
             document.getElementById("funcao-pesquisa-barra").style.clipPath="inset(0vw 15.65vw 0vw 0vw)";
             adaptadorPrefixos("funcao-pesquisa-barra", "", "", "inset(0vw 15.65vw 0vw 0vw)");
-            document.getElementById("pesquisar").style.display="none";
+            document.getElementById("input").style.opacity="0";
             document.getElementById("input").style.display="none"; 
-            document.getElementById("pesquisar").classList.remove("pesquisa-up"); 
             aberturaPesquisa = 0;
         }
     }
     var resultadoPesquisa = "";
     function inputPesquisa(tipo) {
         if (tipo === "click") {
-            document.getElementById("pesquisar").classList.remove("pesquisa-up"); 
-            document.getElementById("pesquisar").style.opacity="0";
+            document.querySelector("input#input").setAttribute("placeholder", "");
         }
         else if (tipo === "clickmobile") {
-            document.getElementById("pesquisar-mobile").style.opacity="0";
-        }
-        else {
-        document.getElementById("input").style.display="block";
-        document.getElementById("pesquisar").style.opacity="1";
+            document.querySelector("input#input-mobile").setAttribute("placeholder", "");
         }
     }
-    document.getElementById("botaopesquisa").addEventListener("mouseover", botaoPesquisaHover);
-    document.getElementById("botaopesquisa").addEventListener("mouseout", botaoPesquisaHoverOff);
-    function botaoPesquisaHover() {
-        if (aberturaPesquisa === 1) {
-            document.getElementById("botaopesquisa").style.filter="brightness(75%)";
-            adaptadorPrefixos("botaopesquisa", "", "brightness(75%)", "");
-            document.getElementById("botaopesquisa").style.cursor="url('../_recursos/cursor_link.cur'), auto";
-        }
-    }
-    function botaoPesquisaHoverOff() {
-        if (aberturaPesquisa === 1) {
-            document.getElementById("botaopesquisa").style.filter="brightness(100%)";
-            adaptadorPrefixos("botaopesquisa", "", "brightness(100%)", "");
-            document.getElementById("botaopesquisa").style.cursor="url('../_recursos/cursor.cur'), auto"; 
-        }
-    }
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        input.addEventListener("blur", () => {
+            if (input.value === "") {
+                input.setAttribute("placeholder", "Pesquisar...");
+            }
+        })
+    });
     function botaoPesquisa() {
         if (aberturaPesquisa === 1) {
             function botaoPesquisaOff() {
@@ -148,62 +148,41 @@ function botaoMenuMobile() {
     document.getElementById("botao-lateral-fechar").style.transform = "translateX(0vw)";
     adaptadorPrefixos("botao-lateral-fechar", "translateX(0vw)", "", "");
     document.getElementById("menu-lateral").style.width = "65vw";
-    document.getElementById("corpo").style.filter = "brightness(45%)";
-    adaptadorPrefixos("corpo", "", "brightness(45%)", "");
-    document.getElementById("corpo").style.pointerEvents = "none";
-    document.getElementById("banner").style.filter = "brightness(45%)";
-    adaptadorPrefixos("banner", "", "brightness(45%)", "");
-    document.getElementById("banner").style.pointerEvents = "none";
-    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.filter = "brightness(45%)";
-    adaptadorPrefixos("funcao-pesquisa-mobile-mais-menu", "", "brightness(45%)", "");
-    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.pointerEvents = "none";
-    document.getElementById("body").classList.add("rolagem-off");
-  }
+    document.querySelector("div.fundo-lateral").style.display="block";
+    document.querySelector("html").classList.add("rolagem-off");
+}
 function fecharMenuLateral() {
     document.getElementById("botao-lateral-fechar").style.transform = "translateX(-45vw)";
     adaptadorPrefixos("botao-lateral-fechar", "translateX(-45vw)", "", "");
     document.getElementById("menu-lateral").style.width = "0";
-    document.getElementById("corpo").style.filter = "brightness(100%)";
-    adaptadorPrefixos("corpo", "", "brightness(100%)", "");
-    document.getElementById("corpo").style.pointerEvents = "visible";
-    document.getElementById("banner").style.filter = "brightness(100%)";
-    adaptadorPrefixos("banner", "", "brightness(100%)", "");
-    document.getElementById("banner").style.pointerEvents = "visible";
-    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.filter = "brightness(100%)";
-    adaptadorPrefixos("funcao-pesquisa-mobile-mais-menu", "", "brightness(100%)", "");
-    document.getElementById("funcao-pesquisa-mobile-mais-menu").style.pointerEvents = "visible";
-    document.getElementById("body").classList.remove("rolagem-off");
+    document.querySelector("div.fundo-lateral").style.display="none";
+    document.querySelector("html").classList.remove("rolagem-off");
 }
 /* Fixagem Menu Mobile*/
 const barraMobile = document.getElementById("funcao-pesquisa-mobile-mais-menu");
 var pontoFixo = barraMobile.offsetTop;
 window.onscroll = function() {checkRolagemMenu()};
 function checkRolagemMenu() {
-    let resolucaoLargura = window.innerWidth;
-    if (resolucaoLargura !== resolucaoL) {
-        resolucaoL = window.innerWidth;
-        barraMobile.classList.remove("barra-fixa");
-        pontoFixo = barraMobile.offsetTop;
-        document.getElementById("corpo").removeAttribute("style");
+    if (resolucaoL <= 800) {
+        if (window.pageYOffset >= pontoFixo) {
+            barraMobile.classList.add("barra-fixa");
+            document.getElementById("corpo").style.paddingTop="16%";
+          } 
+          else {
+            barraMobile.classList.remove("barra-fixa");
+            document.getElementById("corpo").removeAttribute("style");
+          }
     }
-    if (window.pageYOffset >= pontoFixo) {
-      barraMobile.classList.add("barra-fixa");
-      if (resolucaoLargura <= 800) {
-        document.getElementById("corpo").style.paddingTop="16%";
-      }
-    } 
     else {
-      barraMobile.classList.remove("barra-fixa");
-      if (resolucaoLargura <= 800) {
-        document.getElementById("corpo").removeAttribute("style");
-      }
+        document.getElementById("corpo").removeAttribute("style");  
     }
 }
 /* Fixagem Menu Mobile Depois do Carregamento*/
 var checkBarraFixa = setInterval(() => {
     if (document.readyState === 'complete') {
         barraMobile.classList.remove("barra-fixa");
-        pontoFixo = barraMobile.offsetTop; 
+        pontoFixo = barraMobile.offsetTop;
+        checkRolagemMenu();
         clearInterval(checkBarraFixa);
     }
 }, 100);

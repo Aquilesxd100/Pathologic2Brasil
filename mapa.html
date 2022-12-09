@@ -7,6 +7,7 @@
 	<link rel="icon" type="image/x-icon" href="_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="_css/mapa.css"/>
 	<link rel="stylesheet" type="text/css" href="_css/estilos.css"/>
+	<link rel="stylesheet" type="text/css" href="_css/estrutura.css"/>
 </head>
 <body id="body">
 	<div id="mapa-zoom">
@@ -23,23 +24,22 @@
 			<div id="funcao-pesquisa-barra">
 				<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
 				<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+				<form>
+					<input type="text" autocomplete="off" id="input" maxlength="8" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
+				</form>	
 			</div>
 			<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-			<h2 id="pesquisar">Pesquisar...</h2>
-			<form>
-				<input type="text" autocomplete="off" id="input" maxlength="12" value="" style="text-transform:lowercase" onclick="inputPesquisa('click')">
-			</form>	
 		</div>
 		<div id="funcao-pesquisa-mobile-mais-menu">
 			<img src="_imagens/botao_pesquisa.png" id="botaopesquisamobile" onclick="botaoPesquisaMobile()">
 			<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
 			<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-			<h2 id="pesquisar-mobile">Pesquisar...</h2>
 			<form>
-				<input type="text" autocomplete="off" id="input-mobile" maxlength="12" value="" style="text-transform:lowercase" onclick="inputPesquisa('clickmobile')">
+				<input type="text" autocomplete="off" id="input-mobile" maxlength="8" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
 			</form>	
 		</div>
 		<div id="menu-lateral" class="menu-lateral-classe">
+			<div class="fundo-lateral"></div>
 			<img src="_imagens/menu_lateral_divisao.png" id="lateral-divisao">
 			<img src="_imagens/menu_lateral_borda.png" id="lateral-borda">
 			<div id="sub-menu-lateral-cover">				
