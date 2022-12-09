@@ -1,22 +1,28 @@
 var telaLargura = window.innerWidth;
+const html = document.querySelector("html");
+const mapa_Zoom = document.getElementById("mapa-zoom");
+const botaoFechar = document.getElementById("mapa-botao-fechar");
+const botaoFechar2 = document.getElementById("mapa-botao-fechar2");
+const infoMarcador = document.getElementById("info-marcador");
+const marcadorTitulo = document.getElementById("marcador-titulo");
+const marcadorDivTitulo = document.getElementById("marcador-titulo-div");
 function mapaZoom(tipo) {
-    let telaOrientacao = window.orientation;
     telaLargura = window.innerWidth;
     if (telaLargura <= 800) {
         if (tipo === "abrir") {
-            document.getElementById("body").classList.add("travamento-scroll");
-            document.getElementById("mapa-zoom").style.opacity="1";
-            document.getElementById("mapa-zoom").style.pointerEvents="fill";
-            document.getElementById("mapa-botao-fechar").style.top="0vh";
-            document.getElementById("mapa-botao-fechar2").style.right="-1vh";
+            html.classList.add("travamento-scroll");
+            mapa_Zoom.style.opacity="1";
+            mapa_Zoom.style.pointerEvents="fill";
+            botaoFechar.style.top="0vh";
+            botaoFechar2.style.right="-1vh";
         }
     }
     if (tipo !== "abrir") {
-        document.getElementById("body").classList.remove("travamento-scroll");
-        document.getElementById("mapa-zoom").style.opacity="0";
-        document.getElementById("mapa-zoom").style.pointerEvents="none";
-        document.getElementById("mapa-botao-fechar").style.top="-11.5vh";
-        document.getElementById("mapa-botao-fechar2").style.right="-24vh";
+        html.classList.remove("travamento-scroll");
+        mapa_Zoom.style.opacity="0";
+        mapa_Zoom.style.pointerEvents="none";
+        botaoFechar.style.top="-11.5vh";
+        botaoFechar2.style.right="-24vh";
     }
 }
 var ultimaSecaoInfo = "";
@@ -31,19 +37,19 @@ function secaoInfos(secao, titulo) {
     }
     document.getElementById(secao).style.display="flex";
     if (secao === "depositos-secretos" && telaLargura <= 800) {
-        document.getElementById("info-marcador").style.maxHeight="7500px";
+        infoMarcador.style.maxHeight="7500px";
     }
     else {
-        document.getElementById("info-marcador").style.maxHeight="4000px";
+        infoMarcador.style.maxHeight="4000px";
     }
-    document.getElementById("marcador-titulo").innerHTML=titulo;
-    document.getElementById("marcador-titulo-div").style.padding="20px 0 24px 0";
-    document.getElementById("marcador-titulo").style.letterSpacing="0.05vw";
+    marcadorTitulo.innerHTML=titulo;
+    marcadorDivTitulo.style.padding="20px 0 24px 0";
+    marcadorTitulo.style.letterSpacing="0.05vw";
     if (telaLargura <= 800) {
-        document.getElementById("marcador-titulo").style.fontSize="27px";
+        marcadorTitulo.style.fontSize="27px";
     }
     else {
-        document.getElementById("marcador-titulo").style.fontSize="40px";
+        marcadorTitulo.style.fontSize="40px";
     }
     setTimeout(opacidadeConteudo, 300);
     ultimaSecaoInfo = secao;
