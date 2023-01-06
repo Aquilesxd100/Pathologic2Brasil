@@ -252,6 +252,130 @@ body article picture.mini-mapa img, body article picture.mini-mapa-maior img {
 body article picture.mini-mapa-maior img {
 	min-width: 650px;
 }
+article.passo-com-iframe .sub-titulo h2 {
+	font-size: 31px;
+	font-weight: normal;
+	color: #FCC200;
+	margin: 1% 2% 1.2% 2%;
+	font-family: frizquadrata;
+	letter-spacing: 0.1vw;
+}
+article.passo-com-iframe .sub-titulo h2 span {
+	font-size: 33px;
+	font-family: impact;
+	font-weight: normal;
+	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-size: 100% 100%;
+	padding: 2px 15px 2px 15px;
+}
+article div.dicas-video {
+	display: flex;
+	align-items: center;
+}
+.video {
+	border: 6px solid #000000;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	min-width: 52vw; 
+	min-height: 29vw;
+	margin: 2% 2% 2% 2%;
+}
+.dicas-video div.dicas p {
+	color: #FFFF99;
+	font-size: 2.1vw;
+	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
+	text-align: left;
+	max-width: 870px;
+	margin: 5% 0% 5% 5%;
+	text-indent: 2.1vw;
+	background-image: url("../_imagens/placa_retangular.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 18px 20px 28px 20px;
+}
+.dicas-video div.dicas p.medio {
+	padding: 22px 20px 32px 20px;
+}
+.dicas-video div.dicas p.grande {
+	padding: 18px 20px 30px 20px;
+	background-image: url("../_imagens/placa_retangular_mais_longa_alta.png");
+}
+.dicas-video div.dicas p.gigante {
+	padding: 25px 20px 37px 20px;
+	background-image: url("../_imagens/placa_retangular_mais_longa_alta.png");
+}
+.dicas-video div.dicas p img {
+	position: relative;
+	width: 1.72vw;
+	height: 2.5vw;
+	margin: 0 0.3vw 0 0;
+	top: 0.5vw;
+}
+div.itens-necessarios, div.itens-necessarios-grande {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+div.itens-necessarios p.observacao, div.itens-necessarios-grande p.observacao {
+	font-size: 25px;
+	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 	0 rgb(0, 0, 0);
+	margin: 0% 1% 1% 1%;
+	color: #BFEDEF;
+}
+div.itens-necessarios div, div.itens-necessarios-grande div {
+	width: 100%;
+	border-bottom: 6px solid #000000;
+}
+div.itens-necessarios div p, div.itens-necessarios-grande div p {
+	font-size: 28px;
+	text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+	text-align: center;
+	margin: 1% 2% 1.5% 2%;
+}
+body div.itens-necessarios-grande {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+div.itens-necessarios table, div.itens-necessarios-grande table {
+	font-size: 30px;
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+	text-align: justify;
+	border-collapse: collapse;
+	margin: 1% 1% 1% 1%;
+	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
+	background-image: url("../_imagens/fundo_tabela.jpg");
+	background-repeat: repeat;
+}
+body div.itens-necessarios-grande table {
+	text-align: center;
+}
+div.itens-necessarios table th, div.itens-necessarios-grande table th {
+	border:#000000 solid 6px;
+	padding: 0.5vw 2vw 0.5vw 2vw;
+	font-weight: normal;	                                                                    
+}
+body div.itens-necessarios-grande table th {
+	padding: 0.5vw 1vw 0.5vw 1vw;
+}
+div.itens-necessarios-grande table th.menor {
+	font-size: 23px;
+}
+div.itens-necessarios table th img, div.itens-necessarios-grande table th img {
+	width: 80px;	
+	display: block;  
+	border:#000000 solid 5px;                                                              
+}
+body div.itens-necessarios-grande table th img {
+	width: 70px;
+}
+div.itens-necessarios table th.numero, div.itens-necessarios-grande table th.numero {
+	font-size: 50px;
+	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+}
+body div.itens-necessarios-grande table th.numero {
+	font-size: 35px;
+}
 /* ---------------------------------------------------------------------------------------- */
 /* --------------------------------> Banner Seção Padrão  <------------------------------- */
 .banner img {
@@ -328,6 +452,7 @@ article p {
 	text-indent: 30px;
 	margin: 1% 2% 0% 2%;
 }
+
 /* ------------------------------------------------------------------------------------------ */
 /* ---------------------------------> Seção com Tabelas  <-------------------------------- */
 div.troca-resumida {
@@ -618,6 +743,94 @@ div.troca-resumida table tr.tabela-separador {
 		min-width: 0;
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 		margin: 2% 0 2% 0;
+	}
+	article.passo-com-iframe .sub-titulo h2 {
+		font-size: 27px;
+		margin: 1% 2% 1.2% 2%;
+	}
+	article.passo-com-iframe .sub-titulo h2 span {
+		font-size: 29px;
+		padding: 2px 13px 2px 13px;
+	}
+	article div.dicas-video {
+		flex-direction: column;
+	}
+	.dicas-video div.dicas {
+		order: 2;
+	}
+	.dicas-video div.dicas p {
+		text-align: justify;
+		font-size: 18px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		margin: 1% 2% 2% 2%;
+		text-indent: 0;
+		margin: 1% 2% 2.5% 2%;
+		padding: 14px 14px 22px 13px;
+		background-image: url("../_imagens/placa_retangular_mais_longa.png");
+	}
+	.dicas-video div.dicas p.medio {
+		padding: 21px 14px 28px 13px;
+	}
+	.dicas-video div.dicas p.grande {
+		font-size: 19px;
+		padding: 15px 14px 22px 13px;
+	}
+	.dicas-video div.dicas p.gigante {
+		font-size: 18px;
+		padding: 21px 14px 28px 13px;
+	}
+	.dicas-video div.dicas p img {
+		width: 1.72vw;
+		min-width: 17px;
+		height: 2.5vw;
+		min-height: 25px;
+		margin: 0 0.3vw 0 0;
+		left: 0vw;
+		top: 6px;
+	}
+	.video {
+		width: 83.34vw;
+		height: 46.92vw;
+	}
+	div.itens-necessarios p.observacao, div.itens-necessarios-grande p.observacao {
+		font-size: 21px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.95px 0.95px rgb(0, 0, 0), -0.95px -0.95px 0 rgb(0, 0, 0), 0.95px -0.95px 0 rgb(0, 0, 0), -0.95px 0.95px 	0 rgb(0, 0, 0);
+		margin: 0% 0% 1.5% 0%;
+		text-align: center;
+	}
+	div.itens-necessarios div p, div.itens-necessarios-grande div p {
+		font-size: 24px;
+		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+		max-width: 85vw;
+	}
+	div.itens-necessarios table, div.itens-necessarios-grande table {
+		font-size: 26px;
+		text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 	0 rgb(0, 0, 0);
+		text-align: center;
+		margin: 1% 1% 2% 1%;
+		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
+		max-width: 87vw;
+	}
+	body div.itens-necessarios table th, body div.itens-necessarios-grande table th {
+		padding: 1vw 4vw;	
+		margin: 0;                                                                 
+	}
+	div.itens-necessarios-grande table th.menor {
+		font-size: 21px;
+	}
+	div.itens-necessarios table th img, div.itens-necessarios-grande table th img {
+		max-width: 100px;	
+		width: 18vw;                                                        
+	}
+	body div.itens-necessarios-grande table th img {
+		width: 14vw;  
+	}
+	div.itens-necessarios table th.numero, div.itens-necessarios-grande table th.numero {
+		font-size: 38px;
+		text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 	0 rgb(0, 0, 0);
+	}
+	body div.itens-necessarios-grande table th.numero {
+		font-size: 38px;
 	}
 	/* ----------------------------------------------------------------------------------- */
 	/* --------------------------> Banner Seção Padrão (Mobile)  <------------------------- */

@@ -105,10 +105,6 @@ div.criacao-introducao p {
 	margin: 1% 2% 1.5% 2%;
 	text-indent: 70px; 
 }
-div.criacao-introducao {
-	display: flex;
-	align-items: center;
-}
 div.receitas-criacao table {
 	font-size: 30px;
 	text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
