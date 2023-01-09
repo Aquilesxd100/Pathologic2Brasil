@@ -45,7 +45,7 @@
     const checkPesquisa = document.querySelector(".resultado-pesquisa");
     var aberturaPesquisa = checkPesquisa ? 1 : 0;
     window.addEventListener("submit",  (evento) => {
-        if (aberturaPesquisa === 0 || input.value === "") {
+        if ((aberturaPesquisa === 0 && resolucaoL >= 800.1) || input.value === "") {
             evento.preventDefault();
         }
     })
