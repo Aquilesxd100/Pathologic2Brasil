@@ -397,6 +397,7 @@ h1.titulo, h1.titulo-maior {
 }
 /* --------------------------------------------------------------------------------------- */
 /* ------------------------------> Seções e seus Conteúdos  <----------------------------- */
+
 .introducao {
 	display: flex;
 	flex-direction: column;
@@ -452,7 +453,50 @@ article p {
 	text-indent: 30px;
 	margin: 1% 2% 0% 2%;
 }
-
+article.guias-cards {
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	align-items: none;
+	justify-content: space-evenly;
+}
+article.guias-cards a {
+	margin: 1% 0.5%;
+	width: 30%;
+	min-width: 300px;
+}
+body article.resultado-pesquisa a {
+	width: 45%;
+	min-width: 300px;
+}
+article.guias-cards a img {
+	width: 100%;
+	-webkit-filter: brightness(90%);
+	-o-filter: brightness(90%);
+	-moz-filter: brightness(90%);
+	-ms-filter: brightness(90%);
+	filter: brightness(90%);
+}
+article.guias-cards img.card:hover {
+	-webkit-filter: brightness(120%);
+	-o-filter: brightness(120%);
+	-ms-filter: brightness(120%);
+	-moz-filter: brightness(120%);
+	filter: brightness(120%);
+}
+body article.resultado-pesquisa {
+	padding-top: 2%;
+	min-height: 300px;
+}
+body article.resultado-pesquisa h2 {
+	font-weight: normal;
+	font-size: 27px;
+	text-align: center;
+	margin: 25px 20px;
+}
+article.guias-cards img.nada-encontrado {
+	width: 50%;
+}
 /* ------------------------------------------------------------------------------------------ */
 /* ---------------------------------> Seção com Tabelas  <-------------------------------- */
 div.troca-resumida {
@@ -896,6 +940,25 @@ div.troca-resumida table tr.tabela-separador {
 		text-indent: 30px;
 		margin: 1.5% 2% 0% 2%;
 		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+	}
+	article.guias-cards {
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+	body article.guias-cards a {
+		width: 90%;
+		max-width: 400px;
+		margin: 3% 5%;
+		min-width: 0;
+	}
+	body article.resultado-pesquisa {
+		min-height: 250px;
+	}
+	body article.resultado-pesquisa h2 {
+		font-size: 24px;
+		margin: 15px 7px;
 	}
 	/* ----------------------------------------------------------------------------------- */
 	/* ---------------------------> Seção com Tabelas (Mobile)  <-------------------------- */

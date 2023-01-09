@@ -169,13 +169,20 @@ html {
 		pointer-events: none;
 }
 /* Função Pesquisa Desktop*/
-	img#botaopesquisa {
+
+	button {
+		border: none;
+		background-color: transparent;
+	}
+	button#botaopesquisa {
 		position: absolute;
 		top: 0.3vw;
 		float: right;
 		left: 95%;
 		width: 4.85vw;
-		height: 4.1vw;
+		height: 4.1vw;	
+		background-image: url("../_imagens/botao_pesquisa.png");
+		background-size: contain;	
 	}
 	#funcao-pesquisa-barra {
 		position: absolute;
@@ -219,11 +226,11 @@ html {
 		display: none;
 		position: absolute;
 		right: 0vw;
-		-moz-transform: translateX(-1vw); 
-		-ms-transform: translateX(-1vw); 
-		-o-transform: translateX(-1vw); 
-		-webkit-transform: translateX(-1vw); 
-		transform: translateX(-1vw); 
+		-moz-transform: translateX(-1.5vw); 
+		-ms-transform: translateX(-1.5vw); 
+		-o-transform: translateX(-1.5vw); 
+		-webkit-transform: translateX(-1.5vw); 
+		transform: translateX(-1.5vw); 
 		top: 0.16vw;
 		height: 3vw;
 		width: 13.2vw;
@@ -266,14 +273,21 @@ html {
 		-ms-transform:translate3d(0,0,0);
 		-o-transform:translate3d(0,0,0);
 		transform:translate3d(0,0,0);
-}
-	img#botaopesquisamobile {
+	}
+	#divbotaopesquisamobile {
 		position: absolute;
 		top: 3vw;
 		left: 86%;
 		width: 12vw;
 		height: 11vw;
 		z-index: +1;
+	}
+	button#botaopesquisamobile {
+		width: 100%;
+		height: 100%;
+		background-image: url("../_imagens/botao_pesquisa.png");
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 	img#barrapesquisamobile {
 		position: relative;
@@ -286,8 +300,8 @@ html {
 		position: absolute;
 		top: 0%;
 		width: 38%;
-		margin-top: 4.5%;
-		margin-left: 46%;
+		margin-top: 4.1%;
+		margin-left: 1%;
 		outline: none;
 		border: none;
 		background: none;

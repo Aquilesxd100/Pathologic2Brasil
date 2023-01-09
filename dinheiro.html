@@ -25,22 +25,24 @@
 			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
 		</picture>
 		<div id="funcao-pesquisa">
-			<div id="funcao-pesquisa-barra">
-				<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
-				<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
-				<form>
-					<input type="text" autocomplete="off" id="input" maxlength="8" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
-				</form>	
-			</div>
-			<img src="_imagens/botao_pesquisa.png" id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
+			<form method="get" action="pesquisa.html">
+				<div id="funcao-pesquisa-barra">
+					<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+					<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+					<input type="text" name="resultados" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
+				</div>
+				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
+			</form>	
 		</div>
 		<div id="funcao-pesquisa-mobile-mais-menu">
-			<img src="_imagens/botao_pesquisa.png" id="botaopesquisamobile" onclick="botaoPesquisaMobile()">
-			<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
-			<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-			<form>
-				<input type="text" autocomplete="off" id="input-mobile" maxlength="8" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
-			</form>	
+			<form method="get" action="pesquisa.html">
+				<div id="divbotaopesquisamobile">
+					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="_imagens/botao_pesquisa.png">
+				</div>
+				<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
+				<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
+				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
+			</form>
 		</div>
 		<div id="menu-lateral" class="menu-lateral-classe">
 			<div class="fundo-lateral"></div>

@@ -41,7 +41,15 @@
         }
     });
 /* Barra de Pesquisa */
-    var aberturaPesquisa = 0;
+    const input = document.getElementById("input");
+    const checkPesquisa = document.querySelector(".resultado-pesquisa");
+    var aberturaPesquisa = checkPesquisa ? 1 : 0;
+    window.addEventListener("submit",  (evento) => {
+        if (aberturaPesquisa === 0 || input.value === "") {
+            evento.preventDefault();
+        }
+    })
+    input.placeholder = input.value === "" ? "Pesquisar..." : "";
     function aberturaPesquisaDesktop() {
         if (aberturaPesquisa === 0) {
             document.getElementById("funcao-pesquisa-barra").style.right="3.8vw";
@@ -64,7 +72,6 @@
             aberturaPesquisa = 0;
         }
     }
-    var resultadoPesquisa = "";
     function inputPesquisa(tipo) {
         if (tipo === "click") {
             document.querySelector("input#input").setAttribute("placeholder", "");
@@ -88,7 +95,6 @@
             }
             document.getElementById("botaopesquisa").classList.add("botao2-pesquisa");
             setTimeout(botaoPesquisaOff, 300);
-                resultadoPesquisa = document.getElementById("input").value; 
             }        
         }    
     function botaoPesquisaMobile() {
@@ -97,18 +103,7 @@
         }
         document.getElementById("botaopesquisamobile").classList.add("botao2-pesquisa-mobile");
         setTimeout(botaoPesquisaMobileOff, 380);
-        resultadoPesquisa = document.getElementById("input").value; 
     }
-/* Pesquisa Mobile - maxlength */
-document.getElementById("input-mobile").addEventListener("input", checkMaxlenght);
-function checkMaxlenght() {
-    let caracteres = document.getElementById("input-mobile").value;
-    let caracteresPesquisa = caracteres.length;
-    if (caracteresPesquisa > 11) {
-        caracteres = caracteres.substring(0, 11);
-        document.getElementById("input-mobile").value=caracteres;
-    }
-}
 /* Barra de Navegação */
 /* Hover Botões Menu */
     function menuHoverIn(barra) {  
