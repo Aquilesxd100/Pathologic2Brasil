@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Pathologic 2 Brasil</title>
+	<link rel="icon" type="image/x-icon" href="_recursos/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="_css/padrao.css"/>
+	<link rel="stylesheet" type="text/css" href="_css/estrutura.css"/>
+	<link rel="stylesheet" type="text/css" href="./_css/apptrocas.css">
+	<style>
+	</style>
+</head>
+<body id="body">
+	<header>
+		<picture id="banner">
+			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
+			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+		</picture>
+		<div id="funcao-pesquisa">
+			<form method="get" action="pesquisa.html">
+				<div id="funcao-pesquisa-barra">
+					<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+					<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+					<input type="text" name="resultados" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
+				</div>
+				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
+			</form>	
+		</div>
+		<div id="funcao-pesquisa-mobile-mais-menu">
+			<form method="get" action="pesquisa.html">
+				<div id="divbotaopesquisamobile">
+					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="_imagens/botao_pesquisa.png">
+				</div>
+				<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
+				<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
+				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
+			</form>
+		</div>
+		<div id="menu-lateral" class="menu-lateral-classe">
+			<div class="fundo-lateral"></div>
+			<img src="_imagens/menu_lateral_divisao.png" id="lateral-divisao">
+			<img src="_imagens/menu_lateral_borda.png" id="lateral-borda">
+			<div id="sub-menu-lateral-cover">				
+			</div>
+			<div id="sub-menu-lateral">
+				<ul>
+					<li id="combate-mobile">Combate</li> 
+					<li id="comida-mobile">Comida</li> 					
+					<li id="mapautil-mobile">Mapa Util</li> 
+					<li id="tudo-mobile">Mostrar Tudo</li> 
+				</ul>
+				<a href="combate.html" target="_self">
+					<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
+				</a>
+				<a href="comida.html" target="_self">
+					<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('comida.html')">
+				</a>
+				<a href="mapa.html" target="_self">
+					<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('mapa.html')">
+				</a>
+				<a href="tudo.html" target="_self">
+					<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('tudo.html')">
+				</a>
+			</div>
+			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
+			</a>
+			<a href="trocas.html" target="_self">
+				<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trocas.html')">
+			</a>
+			<a href="index.html" target="_self">
+				<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
+			</a>
+			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
+			<img src="_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
+			<h1 id="titulo-menu-lateral">Menu</h1>
+			<ul>
+				<li id="home2">Home</li> 
+				<li id="trocas2">Trocas</li> 					
+				<li id="videos2">Videos</li> 
+				<li id="mais2">+Guias</li> 
+			</ul>
+			<img src="_imagens/indicador_esquerda.png" id="indicador-esquerda">
+			<img src="_imagens/indicador_direita.png" id="indicador-direita">
+		</div>
+		<nav id="menu">
+			<a href="index.html" target="_self">
+				<img src="_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
+			</a>
+			<a href="trocas.html" target="_self">
+				<img src="_imagens/barra_2.png" id="barra2" onclick="abrirLink('trocas.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
+			</a>
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			</a>
+			<img src="_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
+			<img src="_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
+			<ul>
+				<li id="home">Home</li> 
+				<li id="trocas">Trocas</li> 					
+				<li id="videos">Videos</li> 
+				<li id="mais">+Tutoriais/Guias</li> 
+			</ul>
+		</nav>
+		<div id="submenu">
+			<a href="tudo.html" target="_self">
+				<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('tudo.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
+			</a>
+			<a href="mapa.html" target="_self">
+				<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('mapa.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			</a>
+			<a href="comida.html" target="_self">
+				<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('comida.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
+			</a>
+			<a href="combate.html" target="_self">
+				<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
+			</a>
+			<ul>
+				<li id="combate">Combate</li> 
+				<li id="comida">Comida</li> 					
+				<li id="mapautil">Mapa Util</li> 
+				<li id="tudo">Mostrar Tudo</li> 
+			</ul>
+		</div>
+	</header>
+		<div id="corpo">
+			<div id="fundobranco">
+				<div id="conteudo">
+					<picture class="banner">
+						<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
+						<img src="_imagens/bem_vindo.jpg">
+					</picture>
+					<h1 class="titulo">Trocas</h1>
+					<section>
+						<article>
+							<div class="app-trocas">
+								<div class="titulo-grande">
+									<h1>Com quem deseja trocar?</h1>
+								</div>
+								<div class="cards-container">
+									<div class="tipo-npc" onclick="menuSecundario(this, 'criancas')">
+										<img src="./_imagens/app_trocas/cards/criancas.jpg">
+										<h3>Criancas</h3>
+									</div>
+									<div class="tipo-npc" onclick="menuSecundario(this, 'adultos')">
+										<img src="./_imagens/app_trocas/cards/adultos.jpg">
+										<h3>Adultos</h3>
+									</div>
+									<div class="tipo-npc" onclick="menuSecundario(this, 'criancas')">
+										<img src="./_imagens/app_trocas/cards/infectados.jpg">
+										<h3>Infectados</h3>
+									</div>
+								</div>
+							</div>
+						</article>
+					</section>
+					<footer>
+						<ul>
+							<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
+							<li id="contato">Contato: pathologic2brasil@gmail.com</li>
+						</ul>
+					</footer>
+				</div>
+			</div>
+	    </div>	
+	<script src="_js/index.js"></script>
+	<script src="_js/trocas.js"></script>
+</body>
+</html>
