@@ -150,4 +150,53 @@ body .cards-container img.subtipo-npc:hover {
     font-size: 35px;
     margin: 0;
 }
+.pode-ter, .interesse {
+    position: absolute;
+    width: 32%;
+    background-color: #191818;
+    border: 6px solid #000000;
+    border-radius: 15px;
+}
+.display-itens-pode-ter, .display-itens-interesse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.pode-ter {
+    left: -10px;
+    top: -10px;
+    padding: 5px 0 5px 4px;
+}
+.interesse {
+    right: -10px;
+    top: -10px;
+    padding: 5px 4px 5px 0;
+}
+.interesse img, .pode-ter img {
+    width: calc(30% - 6px);
+    max-width: 12.7vh;
+    margin: 1.5%;
+    border: 2px solid #292929;
+}
+.interesse img:hover, .pode-ter img:hover {
+    border: 2px solid #DDDDDD;
+    filter: brightness(1.1);
+}
+.titulo-medio {
+    text-align: center;
+    background-image: url("../_imagens/app_trocas/fundo_menu_app.jpg");
+    background-size: cover;
+    background-repeat:  repeat-x;
+    border-bottom: 6px solid #000000;
+    padding: 12px 8px 8px 8px;
+}
+.titulo-medio h2 {
+    font-family: batukapur;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 1.4px;
+    margin: 0;
+}
 /* ---------------------------------------------------------- */
