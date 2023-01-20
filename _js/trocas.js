@@ -2,7 +2,9 @@ const mainDiv = document.querySelector('div.app-trocas');
 const cardsDiv = document.querySelector('div.cards-container');
 const cardsTipoNPC = document.querySelectorAll('.tipo-npc');
 const tituloPadrao = document.querySelector('div.titulo-grande');
+const tela3Div = document.querySelector('div.tela-3');
 let telaAnterior = () => {};
+// ------------------------------ 1º Tela ---------------------------------- //
 function telaPrincipal() {
     mudancaTela("tela-1");
     cardsDiv.innerHTML = `
@@ -21,6 +23,7 @@ function telaPrincipal() {
     `;
     tituloPadrao.innerHTML = '<h1>Com quem deseja trocar?</h1>';
 }
+// ------------------------------ 2º Tela ---------------------------------- //
 function menuSecundario(elemento, tipo) {
 /*     cardsTipoNPC.forEach((item) => {
         
@@ -31,6 +34,7 @@ function menuSecundario(elemento, tipo) {
     mudancaTela("tela-2");
     switch (tipo) {
         case 'criancas' :
+            telaAnterior = () => { menuSecundario(undefined, "criancas") };
             mostrarCriancas();
         break;
         case 'adultos' :
@@ -44,23 +48,24 @@ function menuSecundario(elemento, tipo) {
 
 function mostrarCriancas() {
     const listaCriancas = ['garota_podinzin', 'junior', 'suspensorios', 'popular', 'chiquinha', 'menina_estepe'];
-    telaAnterior = mostrarCriancas;
     mudancaTela("tela-2");
     listaCriancas.forEach((crianca) => cardsDiv.innerHTML += `
         <img src='./_imagens/app_trocas/criancas/${crianca}.jpg' class='subtipo-npc subtipo-criancas' onclick="mostrarPessoa(this, '${crianca}')" />
     `);
     tituloPadrao.innerHTML = '<h1>Criancas</h1><button class="botao-voltar" onclick="telaPrincipal()"></button>';
 };
+// ------------------------------ 3º Tela ---------------------------------- //
 function mostrarPessoa(elemento, tipoNPC) {
+    mudancaTela("tela-3");
     mainDiv.style.backgroundImage=`url('_imagens/app_trocas/criancas/fundos/${tipoNPC}_fundo.jpg')`;
     mainDiv.classList.add("fundo-npc");
-    mainDiv.innerHTML = `
+    tela3Div.innerHTML += `
         <div class="contador">
             <h2>0</h2>
         </div>
         <button class="botao-voltar" onclick="telaAnterior()"></button>
         <button class="botao-reset" onclick="resetContador()"></button>
-    `;
+`;
 }
 // --------------------------- Funções de Suporte --------------------------- //
 function mudancaTela(tipoTela) {
@@ -69,10 +74,18 @@ function mudancaTela(tipoTela) {
             tituloPadrao.classList.remove("titulo-com-botao");
         break;
         case "tela-2":
+            tela3Div.style.display="none";
+            cardsDiv.style.display="flex"; 
+            tituloPadrao.style.display="block";
             mainDiv.classList.remove("fundo-npc");
             tituloPadrao.classList.add("titulo-com-botao");
-            cardsDiv.innerHTML = '';
+            cardsDiv.innerHTML = ``;
             mainDiv.style.backgroundImage = `url('_imagens/app_trocas/fundo_aplicativo.jpg')`;
+        break;
+        case "tela-3":
+            cardsDiv.style.display="none"; 
+            tituloPadrao.style.display="none";
+            tela3Div.style.display="block";
         break;
     }
 }
