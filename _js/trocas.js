@@ -10,6 +10,7 @@ const displayItensPodeTer = document.querySelector('div.display-itens-pode-ter')
 const displayItensInteresse = document.querySelector('div.display-itens-interesse');
 const contadorMarcador = document.querySelector('div.contador h2');
 let contadorValor = 0;
+let acumuladorItens = [];
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
 // ---------------------------- Banco de Dados --------------------------------- //
@@ -84,23 +85,35 @@ function mostrarPessoa(elemento, tipoNPC) {
             pessoa.interesse.item.forEach((itemNome, indice) => {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensInteresse.innerHTML += `
-                    <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' class="item-interesse" onclick="contador('${pessoa.interesse.valor[indice]}')" />
+                    <div class="item-interesse" onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}')">
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' />
+                        <h4 id='${itemNomeFiltrado}'></h4>
+                    </div>
                 `;
+                acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
             });
             pessoa.podeter.item.forEach((itemNome, indice) => {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensPodeTer.innerHTML += `
-                    <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' class="item-interesse" onclick="contador('-${pessoa.podeter.valor[indice]}')" />
+                    <div class="item-interesse" onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}')">
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' />
+                        <h4 id='${itemNomeFiltrado}'></h4>
+                    </div>
                 `;
+                acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
             });
         }
     });
 }
 // ------------------------------ Contador ---------------------------------- //
-function contador(numero) {
-    contadorValor = contadorValor + Number(numero);
-    contadorValor = (contadorValor >= 99) ? 99 : contadorValor; 
-    contadorValor = (contadorValor <= (0 - 99)) ? (0 - 99) : contadorValor; 
+function contador(numero, id) {
+    let contadorTemporario = contadorValor + Number(numero);
+    if (contadorTemporario <= 99 && contadorTemporario > (0 - 99)) {
+        contadorValor = contadorValor + Number(numero);
+        if (acumuladorItens.length && id) {
+            acumuladorQnt(id);
+        }
+    } 
     contadorMarcador.innerText = contadorValor;
     if (contadorValor >= 1) {
         contadorMarcador.style.color="#00FF00"
@@ -114,8 +127,24 @@ function contador(numero) {
     }
 }
 function resetContador() {
+    acumuladorItens = acumuladorItens.map((item) => {
+        const elementoH1 = document.getElementById(item.id);
+        elementoH1.innerText = "";
+        return item = {
+            id: item.id,
+            valor: 0
+        };
+    });
     contadorValor = 0;  
     contador(0);
+}
+// --------------------------- Acumulador --------------------------- //
+function acumuladorQnt(idItem) {
+    const elementoH1 = document.getElementById(idItem);
+    const posicaoIndex = acumuladorItens.findIndex((item) => item.id === idItem);
+    const valorResul = acumuladorItens[posicaoIndex].valor + 1;
+    acumuladorItens[posicaoIndex].valor = valorResul;
+    elementoH1.innerText = valorResul;
 }
 // --------------------------- Funções de Suporte --------------------------- //
 function mudancaTela(tipoTela) {
@@ -124,6 +153,7 @@ function mudancaTela(tipoTela) {
             tituloPadrao.classList.remove("titulo-com-botao");
         break;
         case "tela-2":
+            acumuladorItens = [];
             resetContador();
             tela3Div.style.display="none";
             cardsDiv.style.display="flex"; 

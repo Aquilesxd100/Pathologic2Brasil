@@ -175,13 +175,23 @@ body .cards-container img.subtipo-npc:hover {
     top: -10px;
     padding: 5px 4px 5px 0;
 }
-.interesse img, .pode-ter img {
+.display-itens-interesse div, .display-itens-pode-ter div {
+    position: relative;
     width: calc(30% - 6px);
     max-width: 12.7vh;
     margin: 1.5%;
     border: 2px solid #292929;
 }
-.interesse img:hover, .pode-ter img:hover {
+.display-itens-interesse div h4, .display-itens-pode-ter div h4 {
+    position: absolute;
+    bottom: calc(-20% - 10px);
+    right: 4%;
+}
+.interesse img, .pode-ter img {
+    width: 100%;
+    display: block;
+}
+.display-itens-interesse div:hover, .display-itens-pode-ter div:hover {
     border: 2px solid #DDDDDD;
     filter: brightness(1.1);
 }
