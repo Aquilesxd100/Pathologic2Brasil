@@ -8,6 +8,8 @@ const podeTerDiv = document.querySelector('div.pode-ter');
 const interesseDiv = document.querySelector('div.interesse');
 const displayItensPodeTer = document.querySelector('div.display-itens-pode-ter');
 const displayItensInteresse = document.querySelector('div.display-itens-interesse');
+const contadorMarcador = document.querySelector('div.contador h2');
+let contadorValor = 0;
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
 // ---------------------------- Banco de Dados --------------------------------- //
@@ -79,21 +81,41 @@ function mostrarPessoa(elemento, tipoNPC) {
     mainDiv.classList.add("fundo-npc");
     bancoDadosTrocas.forEach((pessoa) => {
         if (pessoa.nome === tipoNPC) {
-            pessoa.interesse.item.forEach((itemNome) => {
+            pessoa.interesse.item.forEach((itemNome, indice) => {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensInteresse.innerHTML += `
-                    <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' class="item-interesse" />
+                    <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' class="item-interesse" onclick="contador('${pessoa.interesse.valor[indice]}')" />
                 `;
             });
-            pessoa.podeter.item.forEach((itemNome) => {
+            pessoa.podeter.item.forEach((itemNome, indice) => {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
-                console.log(itemNomeFiltrado)
                 displayItensPodeTer.innerHTML += `
-                    <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' class="item-interesse" />
+                    <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' class="item-interesse" onclick="contador('-${pessoa.podeter.valor[indice]}')" />
                 `;
             });
         }
     });
+}
+// ------------------------------ Contador ---------------------------------- //
+function contador(numero) {
+    contadorValor = contadorValor + Number(numero);
+    contadorValor = (contadorValor >= 99) ? 99 : contadorValor; 
+    contadorValor = (contadorValor <= (0 - 99)) ? (0 - 99) : contadorValor; 
+    contadorMarcador.innerText = contadorValor;
+    if (contadorValor >= 1) {
+        contadorMarcador.style.color="#00FF00"
+        contadorMarcador.innerText = "+" + contadorValor;
+    }
+    else if (contadorValor < 0) {
+        contadorMarcador.style.color="#FF0000"
+    }
+    else {
+        contadorMarcador.style.color="#FFFFFF"
+    }
+}
+function resetContador() {
+    contadorValor = 0;  
+    contador(0);
 }
 // --------------------------- Funções de Suporte --------------------------- //
 function mudancaTela(tipoTela) {
@@ -102,6 +124,7 @@ function mudancaTela(tipoTela) {
             tituloPadrao.classList.remove("titulo-com-botao");
         break;
         case "tela-2":
+            resetContador();
             tela3Div.style.display="none";
             cardsDiv.style.display="flex"; 
             tituloPadrao.style.display="block";

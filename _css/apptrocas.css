@@ -148,6 +148,7 @@ body .cards-container img.subtipo-npc:hover {
 }
 .contador h2 {
     font-size: 35px;
+    letter-spacing: 2px;
     margin: 0;
 }
 .pode-ter, .interesse {
