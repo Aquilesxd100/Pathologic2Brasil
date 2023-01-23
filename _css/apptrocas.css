@@ -184,12 +184,15 @@ body .cards-container img.subtipo-npc:hover {
 }
 .display-itens-interesse div h4, .display-itens-pode-ter div h4 {
     position: absolute;
-    bottom: calc(-20% - 10px);
+    bottom: calc(-18% - 10px);
     right: 4%;
+    pointer-events: none;
+    user-select: none;
 }
 .interesse img, .pode-ter img {
     width: 100%;
     display: block;
+    user-select: none;
 }
 .display-itens-interesse div:hover, .display-itens-pode-ter div:hover {
     border: 2px solid #DDDDDD;
@@ -209,5 +212,21 @@ body .cards-container img.subtipo-npc:hover {
     font-weight: normal;
     letter-spacing: 1.4px;
     margin: 0;
+}
+
+div.tela-3 img.botao-diminuir {
+    position: absolute;
+    display: none;
+    top: -2px;
+    right: -2px;
+    width: 24%;
+    border: 1.5px solid #292929;
+    background-color: #292929;
+    user-select: none;
+    filter: grayscale(1);
+}
+div.tela-3 img.botao-diminuir:hover {
+    filter: brightness(1.2);
+    filter: grayscale(0);
 }
 /* ---------------------------------------------------------- */

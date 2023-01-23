@@ -85,9 +85,10 @@ function mostrarPessoa(elemento, tipoNPC) {
             pessoa.interesse.item.forEach((itemNome, indice) => {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensInteresse.innerHTML += `
-                    <div class="item-interesse" onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}')">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' />
+                    <div class="item-interesse">
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}')" />
                         <h4 id='${itemNomeFiltrado}'></h4>
+                        <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
                     </div>
                 `;
                 acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
@@ -95,9 +96,10 @@ function mostrarPessoa(elemento, tipoNPC) {
             pessoa.podeter.item.forEach((itemNome, indice) => {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensPodeTer.innerHTML += `
-                    <div class="item-interesse" onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}')">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' />
+                    <div class="item-interesse">
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}')" />
                         <h4 id='${itemNomeFiltrado}'></h4>
+                        <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
                     </div>
                 `;
                 acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
@@ -108,7 +110,7 @@ function mostrarPessoa(elemento, tipoNPC) {
 // ------------------------------ Contador ---------------------------------- //
 function contador(numero, id) {
     let contadorTemporario = contadorValor + Number(numero);
-    if (contadorTemporario <= 99 && contadorTemporario > (0 - 99)) {
+    if (contadorTemporario <= 99 && contadorTemporario >= (0 - 99)) {
         contadorValor = contadorValor + Number(numero);
         if (acumuladorItens.length && id) {
             acumuladorQnt(id);
@@ -127,6 +129,10 @@ function contador(numero, id) {
     }
 }
 function resetContador() {
+    const botoesDiminuir = document.getElementsByClassName("botao-diminuir") || [];
+    for (elemento of botoesDiminuir) {
+        elemento.style.display="none";
+    }
     acumuladorItens = acumuladorItens.map((item) => {
         const elementoH1 = document.getElementById(item.id);
         elementoH1.innerText = "";
@@ -139,12 +145,23 @@ function resetContador() {
     contador(0);
 }
 // --------------------------- Acumulador --------------------------- //
-function acumuladorQnt(idItem) {
+function acumuladorQnt(idItem, dimAcumul) {
+    const botaoDiminuirID = "botao-diminuir-" + idItem || undefined;
     const elementoH1 = document.getElementById(idItem);
+    const diminuirContador = document.getElementById(botaoDiminuirID);
     const posicaoIndex = acumuladorItens.findIndex((item) => item.id === idItem);
-    const valorResul = acumuladorItens[posicaoIndex].valor + 1;
+    let contadorTemp = contadorValor + Number(dimAcumul) || 0;
+    let valorResul = acumuladorItens[posicaoIndex].valor;
+    if (contadorTemp <= 99 && contadorTemp > (0 - 99) && dimAcumul) {
+        contador(dimAcumul);
+        valorResul = valorResul - 1;
+    }
+    else if (!dimAcumul) {
+        valorResul = valorResul + 1;
+    }
     acumuladorItens[posicaoIndex].valor = valorResul;
-    elementoH1.innerText = valorResul;
+    diminuirContador.style.display = (valorResul !== 0) ? "block" : "none";
+    elementoH1.innerText = (valorResul !== 0) ? valorResul : "";
 }
 // --------------------------- Funções de Suporte --------------------------- //
 function mudancaTela(tipoTela) {
