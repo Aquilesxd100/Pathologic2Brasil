@@ -1,5 +1,6 @@
 // ------------------------------ Elementos ---------------------------------- //
 const mainDiv = document.querySelector('div.app-trocas');
+const conteudoDiv = document.querySelector('div.app-trocas div');
 const cardsDiv = document.querySelector('div.cards-container');
 const cardsTipoNPC = document.querySelectorAll('.tipo-npc');
 const tituloPadrao = document.querySelector('div.titulo-grande');
@@ -10,12 +11,17 @@ const displayItensPodeTer = document.querySelector('div.display-itens-pode-ter')
 const displayItensInteresse = document.querySelector('div.display-itens-interesse');
 const contadorMarcador = document.querySelector('div.contador h2');
 const balaoInfosAdicionais = document.querySelector('div.info-item');
+const balaoInfosAdicionaisSubDiv = document.querySelector('div.info-item div');
 const balaoInfosTitulo = document.querySelector('h3.titulo-item');
 const balaoInfosValor = document.querySelector('h3.valor-item');
 let contadorValor = 0;
 let acumuladorItens = [];
+let showInfoID = "";
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
+window.addEventListener("resize", () => {
+    balaoInfosAdicionais.style.opacity="0";
+})
 // ---------------------------- Banco de Dados --------------------------------- //
 const bancoDadosTrocas = [
     {
@@ -89,7 +95,7 @@ function mostrarPessoa(elemento, tipoNPC) {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensInteresse.innerHTML += `
                     <div class="item-interesse">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" />
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
                         <h4 id='${itemNomeFiltrado}'></h4>
                         <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
                     </div>
@@ -100,7 +106,7 @@ function mostrarPessoa(elemento, tipoNPC) {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensPodeTer.innerHTML += `
                     <div class="item-interesse">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" />
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
                         <h4 id='${itemNomeFiltrado}'></h4>
                         <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
                     </div>
@@ -203,26 +209,69 @@ function filtrarNomeItem(nome) {
 }
 // ------------------------ Informações Extra Desktop ------------------------ //
 function informacoesExtra(nomeItem, valorItem, elemento) {
-    const containerRect = mainDiv.getBoundingClientRect();
-    const elementoRect =  elemento.getBoundingClientRect();
-    const balaoRect = balaoInfosAdicionais.getBoundingClientRect();
-    const posicaoLeft = (elementoRect.left - containerRect.left) + "px";
-    const posicaoTop = (elementoRect.top - containerRect.top) + "px";
-    let personalizacaoFonte = "";
-    if (nomeItem.length > 9 && nomeItem.search(" ") !== -1) {
-        personalizacaoFonte = "calc(1.1vw + 8px)";
+    if (resolucaoL < 801) {
+        return;
     }
-    else if (nomeItem.length > 9) {
-        personalizacaoFonte = "calc(1vw + 5px)";
+    showInfoID = nomeItem + Math.random();
+    setTimeout(informacoesExtraOn, 1200, nomeItem, valorItem, elemento, showInfoID);
+}
+const informacoesExtraOn = function(nomeItem, valorItem, elemento, id) {
+    if (showInfoID === id) {
+        balaoInfosTitulo.innerHTML = `${nomeItem}`;
+        balaoInfosValor.innerHTML = `${valorItem}`;
+        ajustarTamanhoFonte(nomeItem);
+        ajustarPosicaoJanela(elemento);
+        balaoInfosAdicionais.style.opacity="1";
+        showInfoID = "";
+    }
+}
+function informacoesExtraOff() {
+    showInfoID = "";
+    balaoInfosAdicionais.style.opacity="0";
+}
+function ajustarTamanhoFonte(itemNome) {
+    if (itemNome.length > 9 && itemNome.search(" ") === -1) {
+        balaoInfosTitulo.style.fontSize = "calc(1.1vw + 4px)";
+    }
+    else if (itemNome.search(" ") >= 12) {
+        balaoInfosTitulo.style.fontSize = "calc(0.6vw + 9px)";
+    }
+    else if (itemNome.length > 9) {
+        balaoInfosTitulo.style.fontSize = "calc(1.15vw + 6px)";
     }
     else {
-        personalizacaoFonte = "calc(1.3vw + 10px)";
+        balaoInfosTitulo.style.fontSize = "calc(1.25vw + 10px)";
     }
-    balaoInfosTitulo.style.fontSize = personalizacaoFonte;
-/*     balaoInfosTitulo.style.fontSize = (nomeItem.length > 9) ? "calc(1.1vw + 8px)" : "calc(1.3vw + 10px)"; */
-    balaoInfosAdicionais.style.filter="opacity(1)";
-    balaoInfosTitulo.innerHTML = `${nomeItem}`;
-    balaoInfosValor.innerHTML = `${valorItem}`;
-    balaoInfosAdicionais.style.top=`calc(${posicaoTop} - ${(balaoRect.height * 0.8) + "px"})`;
-    balaoInfosAdicionais.style.left=`calc(${posicaoLeft} - (25.8% + 21px))`;
+}
+function ajustarPosicaoJanela(elementoItem) {
+    const containerRect = mainDiv.getBoundingClientRect();
+    const elementoRect =  elementoItem.getBoundingClientRect();
+    const balaoRect = balaoInfosAdicionais.getBoundingClientRect();
+    const posicaoLeft = elementoRect.left - containerRect.left;
+    const posicaoTop = elementoRect.top - containerRect.top;
+    if (posicaoTop <= containerRect.height * 0.25 && posicaoLeft >= containerRect.width * 0.5) {
+        balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} + ${(balaoRect.height * 0.2) + "px"})`;
+        balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} - (25.8% + 21px))`;
+        balaoInfosAdicionais.style.transform="scaleY(-1)";
+        balaoInfosAdicionaisSubDiv.style.transform="scaleY(-1)";
+    }
+    else if (posicaoLeft >= containerRect.width * 0.5) {
+        balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} - ${(balaoRect.height * 0.8) + "px"})`;
+        balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} - (25.8% + 21px))`;
+        balaoInfosAdicionais.style.transform="scaleY(1)";
+        balaoInfosAdicionaisSubDiv.style.transform="scaleY(1)";
+    }
+    else if (posicaoTop <= containerRect.height * 0.25) {
+        console.log("passei");
+        balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} + ${(balaoRect.height * 0.2) + "px"})`;
+        balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} + ${elementoItem.width + "px"}`;
+        balaoInfosAdicionais.style.transform="scale(-1)";
+        balaoInfosAdicionaisSubDiv.style.transform="scale(-1)";
+    }
+    else {
+        balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} - ${(balaoRect.height * 0.8) + "px"})`;
+        balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} + ${elementoItem.width + "px"}`;
+        balaoInfosAdicionais.style.transform="scale(-1, 1)";
+        balaoInfosAdicionaisSubDiv.style.transform="scale(-1, 1)";
+    }
 }

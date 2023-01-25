@@ -231,7 +231,7 @@ div.tela-3 img.botao-diminuir:hover {
 }
 div.info-item {
     position: absolute;
-    filter: opacity(0);
+    opacity: 0;
     background-image: url("../_imagens/app_trocas/balao-infos.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -241,6 +241,7 @@ div.info-item {
     padding: 15px 20px 50px 20px;
     pointer-events: none;
     text-align: left;
+    transition: opacity 0.5s;
 }
 div.info-item div {
     width: 100%;
