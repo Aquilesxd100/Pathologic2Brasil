@@ -9,6 +9,9 @@ const interesseDiv = document.querySelector('div.interesse');
 const displayItensPodeTer = document.querySelector('div.display-itens-pode-ter');
 const displayItensInteresse = document.querySelector('div.display-itens-interesse');
 const contadorMarcador = document.querySelector('div.contador h2');
+const balaoInfosAdicionais = document.querySelector('div.info-item');
+const balaoInfosTitulo = document.querySelector('h3.titulo-item');
+const balaoInfosValor = document.querySelector('h3.valor-item');
 let contadorValor = 0;
 let acumuladorItens = [];
 // --------------------------- Função de Auxilio ------------------------------- //
@@ -86,7 +89,7 @@ function mostrarPessoa(elemento, tipoNPC) {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensInteresse.innerHTML += `
                     <div class="item-interesse">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}')" />
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" />
                         <h4 id='${itemNomeFiltrado}'></h4>
                         <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
                     </div>
@@ -97,7 +100,7 @@ function mostrarPessoa(elemento, tipoNPC) {
                 const itemNomeFiltrado = filtrarNomeItem(itemNome);
                 displayItensPodeTer.innerHTML += `
                     <div class="item-interesse">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}')" />
+                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" />
                         <h4 id='${itemNomeFiltrado}'></h4>
                         <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
                     </div>
@@ -197,4 +200,29 @@ function filtrarNomeItem(nome) {
     nome = nome.replace(/ç/g, "c");
     nome = nome.replace(/ã/g, "a");
     return nome
+}
+// ------------------------ Informações Extra Desktop ------------------------ //
+function informacoesExtra(nomeItem, valorItem, elemento) {
+    const containerRect = mainDiv.getBoundingClientRect();
+    const elementoRect =  elemento.getBoundingClientRect();
+    const balaoRect = balaoInfosAdicionais.getBoundingClientRect();
+    const posicaoLeft = (elementoRect.left - containerRect.left) + "px";
+    const posicaoTop = (elementoRect.top - containerRect.top) + "px";
+    let personalizacaoFonte = "";
+    if (nomeItem.length > 9 && nomeItem.search(" ") !== -1) {
+        personalizacaoFonte = "calc(1.1vw + 8px)";
+    }
+    else if (nomeItem.length > 9) {
+        personalizacaoFonte = "calc(1vw + 5px)";
+    }
+    else {
+        personalizacaoFonte = "calc(1.3vw + 10px)";
+    }
+    balaoInfosTitulo.style.fontSize = personalizacaoFonte;
+/*     balaoInfosTitulo.style.fontSize = (nomeItem.length > 9) ? "calc(1.1vw + 8px)" : "calc(1.3vw + 10px)"; */
+    balaoInfosAdicionais.style.filter="opacity(1)";
+    balaoInfosTitulo.innerHTML = `${nomeItem}`;
+    balaoInfosValor.innerHTML = `${valorItem}`;
+    balaoInfosAdicionais.style.top=`calc(${posicaoTop} - ${(balaoRect.height * 0.8) + "px"})`;
+    balaoInfosAdicionais.style.left=`calc(${posicaoLeft} - (25.8% + 21px))`;
 }
