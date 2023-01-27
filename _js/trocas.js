@@ -19,21 +19,44 @@ let acumuladorItens = [];
 let showInfoID = "";
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
+let delayAnimacao = () => {};
+let delayAnimacaoAuxiliar = () => {};
+let delayAnimacaoAuxiliar2 = () => {};
 window.addEventListener("resize", () => {
     balaoInfosAdicionais.style.opacity="0";
-})
+});
 // ---------------------------- Banco de Dados --------------------------------- //
 const bancoDadosTrocas = [
     {
         nome: "popular",
-        interesse: {  },
-        podeter: {  }
+        interesse: {item:["Anzóis de Pesca", "Tesoura", "Navalha", "Agulha", "Palito de Fósforo", "Talismã", "Relógio de Bolso"], valor:[3, 4, 5, 2, 1, 6, 7]},
+        podeter: {item:["Reforço de Imunidade", "Unha", "Peixe Defumado", "Munição Rifle"], valor:[8, 6, 7, 8]},
     },
     {
         nome: "suspensorios",
         interesse: {item:["Sino", "Sucata Metálica", "Alfinete", "Giz", "Bolas de Gude", "Três Nozes", "Talismã", "Nome em Rascunho", "Nozes Amarelas", "Avelãs", "Castanhas", "Passas", "Botão", "Besouro"], valor:[4, 4, 2, 2, 2, 2, 5, 4, 2, 5, 3, 4, 4, 3]},
         podeter: {item:["Ferromycinium mais", "Munição Revolver", "Unha", "Ovo", "Monomycinium", "Neomycinium"], valor:[9, 4, 6, 5, 8, 8]}
     },
+    {
+        nome: "garota_podinzin",
+        interesse: {item:["Fuso de Fiar", "Sino", "Três Nozes", "Castanhas", "Nozes Amarelas", "Avelãs", "Anel", "Besouro", "Passas", "Botão", "Bolas de Gude", "Giz", "Alfinete"], valor:[5, 6, 5, 4, 2, 2, 7, 2, 3, 4, 3, 3, 3]},
+        podeter: {item:["Ferromycinium", "Ovo", "Unha", "Morfina", "Reforço de Imunidade", "Podinzin"], valor:[8, 5, 6, 6, 6, 35]},
+    },
+    {
+        nome: "menina_estepe",
+        interesse: {item:["Dedal", "Fios", "Agulha", "Vela", "Tesoura", "Bolas de Gude", "Anzóis de Pesca", "Talismã", "Besouro"], valor:[3, 3, 1, 4, 4, 4, 2, 6, 5]},
+        podeter: {item:["Neomycinium", "Embrulho", "Unha", "Pinça", "Qurut", "Munição Escopeta"], valor:[8, 8, 6, 2, 6, 6]},
+    },
+    {
+        nome: "junior",
+        interesse: {item:["Mola", "Sucata Metálica", "Tesoura", "Dedal", "Alfinete", "Bolas de Gude", "Três Nozes", "Nozes Amarelas", "Avelãs", "Castanhas", "Passas", "Besouro"], valor:[3, 1, 3, 4, 2, 3, 2, 4, 3, 2, 5, 3]},
+        podeter: {item:["Ovo", "Agulha", "Reforço de Imunidade", "Sabão", "Morfina", "Unha", "Maça"], valor:[5, 3, 6, 2, 6, 6, 6]},
+    },
+    {
+        nome: "chiquinha",
+        interesse: {item:["Vela", "Palito de Fósforo", "Fios", "Dedal", "Tesoura", "Agulha", "Alfinete", "Botão", "Anel", "Talismã", "Bracelete", "Fuso de Fiar"], valor:[4, 1, 2, 3, 3, 3, 4, 4, 6, 6, 6, 4]},
+        podeter: {item:["Neomycinium mais", "Morfina", "Unha", "Peixe Defumado", "Ferromycinium"], valor:[9, 10, 6, 7, 8]},
+    }
 ]
 // ------------------------------ 1º Tela ---------------------------------- //
 function telaPrincipal() {
@@ -56,25 +79,37 @@ function telaPrincipal() {
 }
 // ------------------------------ 2º Tela ---------------------------------- //
 function menuSecundario(elemento, tipo) {
-/*     cardsTipoNPC.forEach((item) => {
-        
+    cardsTipoNPC.forEach((item) => { 
+        item.classList.add('ponteiro-off');      
         if (item !== elemento) {
-            item.style.display='none';
+            item.classList.add('cards-principais');
         }
-    }); */  
-    mudancaTela("tela-2");
-    switch (tipo) {
-        case 'criancas' :
-            telaAnterior = () => { menuSecundario(undefined, "criancas") };
-            mostrarCriancas();
-        break;
-        case 'adultos' :
-
-        break;
-        case 'infectados' :
-
-        break;
+        else {
+            item.classList.add('cards-principais-selecao');
+        }
+    });
+    delayAnimacaoAuxiliar = (elemento) => {
+        elemento.classList.add('opacidade-off-medio');
+        tituloPadrao.classList.add('opacidade-off-medio');
     }
+    setTimeout(delayAnimacaoAuxiliar, 500, elemento);
+    delayAnimacao = (tipo) => {
+        mudancaTela("tela-2");
+        tituloPadrao.innerHTML = '<h1>Criancas</h1><button id="botao-voltar" class="botao-voltar" onclick="telaPrincipal(); botaoTipo2(`botao-voltar`)"></button>';
+        switch (tipo) {
+            case 'criancas' :
+                telaAnterior = () => { menuSecundario(undefined, "criancas") };
+                mostrarCriancas();
+            break;
+            case 'adultos' :
+
+            break;
+            case 'infectados' :
+
+            break;
+        }
+    }
+    setTimeout(delayAnimacao, 1000, tipo);
 };
 
 function mostrarCriancas() {
@@ -82,39 +117,74 @@ function mostrarCriancas() {
     listaCriancas.forEach((crianca) => cardsDiv.innerHTML += `
         <img src='./_imagens/app_trocas/criancas/${crianca}.jpg' class='subtipo-npc subtipo-criancas' onclick="mostrarPessoa(this, '${crianca}')" />
     `);
-    tituloPadrao.innerHTML = '<h1>Criancas</h1><button class="botao-voltar" onclick="telaPrincipal()"></button>';
+    delayAnimacao = () => {
+        const listaElementos = cardsDiv.querySelectorAll('img');
+        listaElementos.forEach((crianca, indice) => {
+            crianca.style.transition=`opacity ${indice * 0.14 + 0.2}s`;
+            crianca.style.opacity="1";
+        })
+    }
+    setTimeout(delayAnimacao, 10);
 };
 // ------------------------------ 3º Tela ---------------------------------- //
 function mostrarPessoa(elemento, tipoNPC) {
-    mudancaTela("tela-3");
-    mainDiv.style.backgroundImage=`url('_imagens/app_trocas/criancas/fundos/${tipoNPC}_fundo.jpg')`;
-    mainDiv.classList.add("fundo-npc");
-    bancoDadosTrocas.forEach((pessoa) => {
-        if (pessoa.nome === tipoNPC) {
-            pessoa.interesse.item.forEach((itemNome, indice) => {
-                const itemNomeFiltrado = filtrarNomeItem(itemNome);
-                displayItensInteresse.innerHTML += `
-                    <div class="item-interesse">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
-                        <h4 id='${itemNomeFiltrado}'></h4>
-                        <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
-                    </div>
-                `;
-                acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
-            });
-            pessoa.podeter.item.forEach((itemNome, indice) => {
-                const itemNomeFiltrado = filtrarNomeItem(itemNome);
-                displayItensPodeTer.innerHTML += `
-                    <div class="item-interesse">
-                        <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
-                        <h4 id='${itemNomeFiltrado}'></h4>
-                        <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
-                    </div>
-                `;
-                acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
-            });
+    const cardsPessoasIMG = document.querySelectorAll('div.cards-container img');
+    tituloPadrao.classList.add('opacidade-off-medio');
+    cardsPessoasIMG.forEach((item) => { 
+        item.classList.add('ponteiro-off');       
+        if (item !== elemento) {
+            item.removeAttribute("style");
+            item.classList.add('opacidade-off-medio');
+        }
+        else {
+            item.style.transform='scale(1.04)';
+            item.style.transition='transform 0.5s';
+            item.style.filter='grayscale(0)';
+            item.style.transform='scale(1.1)';
         }
     });
+    delayAnimacao = () => {
+        elemento.style.transition='opacity 0.5s';
+        elemento.style.opacity='0';
+        mainDiv.classList.add("fundo-npc");
+        mainDiv.style.backgroundImage=`url('_imagens/app_trocas/criancas/fundos/${tipoNPC}_fundo.jpg')`;
+    };
+    setTimeout(delayAnimacao, 450, elemento)
+    delayAnimacaoAuxiliar = (tipoNPC) => {
+        bancoDadosTrocas.forEach((pessoa) => {
+            if (pessoa.nome === tipoNPC) {
+                pessoa.interesse.item.forEach((itemNome, indice) => {
+                    const itemNomeFiltrado = filtrarNomeItem(itemNome);
+                    displayItensInteresse.innerHTML += `
+                        <div class="item-interesse">
+                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
+                            <h4 id='${itemNomeFiltrado}'></h4>
+                            <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
+                        </div>
+                    `;
+                    acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
+                });
+                pessoa.podeter.item.forEach((itemNome, indice) => {
+                    const itemNomeFiltrado = filtrarNomeItem(itemNome);
+                    displayItensPodeTer.innerHTML += `
+                        <div class="item-interesse">
+                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
+                            <h4 id='${itemNomeFiltrado}'></h4>
+                            <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
+                        </div>
+                    `;
+                    acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
+                });
+            }
+        });  
+        mudancaTela("tela-3");  
+    };
+    setTimeout(delayAnimacaoAuxiliar, 950, tipoNPC);
+    delayAnimacaoAuxiliar2 = () => {
+        tela3Div.style.transition="opacity 0.3s";
+        tela3Div.style.opacity="1";
+    };
+    setTimeout(delayAnimacaoAuxiliar2, 980);
 }
 // ------------------------------ Contador ---------------------------------- //
 function contador(numero, id) {
@@ -179,6 +249,7 @@ function mudancaTela(tipoTela) {
             tituloPadrao.classList.remove("titulo-com-botao");
         break;
         case "tela-2":
+            resetClassesAnimacao();
             acumuladorItens = [];
             resetContador();
             tela3Div.style.display="none";
@@ -198,6 +269,18 @@ function mudancaTela(tipoTela) {
         break;
     };
 };
+function resetClassesAnimacao() {
+    const cardsPrincipaisSelecao = document.querySelectorAll('.cards-principais-selecao');
+    const ponteiroOff = document.querySelectorAll('.ponteiro-off');
+    const opacidadeOffMedio = document.querySelectorAll('.opacidade-off-medio');
+    const cardsPrincipais = document.querySelector('.cards-principais');
+    const elementosClassMult = [{elementos: cardsPrincipaisSelecao, classe: "cards-principais-selecao"}, {elementos: ponteiroOff, classe: "ponteiro-off"}, {elementos: opacidadeOffMedio, classe: "opacidade-off-medio"}, {elemento: cardsPrincipais, classe: "cards-principais"}];
+    elementosClassMult.forEach((objeto) => {
+        if (objeto.elementos !== undefined) {
+            objeto.elementos.forEach((elemento) => elemento.classList.remove(objeto.classe));
+        }
+    });
+}
 function filtrarNomeItem(nome) {
     nome = nome.toLowerCase();
     nome = nome.replace(/ /g, "_");
@@ -205,6 +288,7 @@ function filtrarNomeItem(nome) {
     nome = nome.replace(/ê/g, "e");
     nome = nome.replace(/ç/g, "c");
     nome = nome.replace(/ã/g, "a");
+    nome = nome.replace(/ó/g, "o");
     return nome
 }
 // ------------------------ Informações Extra Desktop ------------------------ //
@@ -212,6 +296,7 @@ function informacoesExtra(nomeItem, valorItem, elemento) {
     if (resolucaoL < 801) {
         return;
     }
+    nomeItem = (nomeItem.search("mais") !== -1) ? nomeItem.substring(0, nomeItem.search("mais")) + "(+)" : nomeItem;
     showInfoID = nomeItem + Math.random();
     setTimeout(informacoesExtraOn, 1200, nomeItem, valorItem, elemento, showInfoID);
 }

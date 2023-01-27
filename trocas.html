@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/x-icon" href="_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="_css/padrao.css"/>
 	<link rel="stylesheet" type="text/css" href="_css/estrutura.css"/>
-	<link rel="stylesheet" type="text/css" href="./_css/apptrocas.css">
+	<link rel="stylesheet" type="text/css" href="_css/apptrocas.css">
 	<style>
 	</style>
 </head>
@@ -136,8 +136,8 @@
 					<section>
 						<article>
 							<div class="app-trocas">
-<!-- 							<div class="pre-carregamento">
-									<img>
+<!-- 								<div class="pre-carregamento">
+									<img src="./_imagens/app_trocas/criancas/garota_podinzin.jpg">
 								</div> -->
 								<div class="info-item">
 									<div>
@@ -185,7 +185,7 @@
 										<div class="titulo-medio"><h2>Interesse:</h2></div>
 										<div class="display-itens-interesse"></div>
 									</div>
-									<button class="botao-voltar" onclick="telaAnterior()"></button>
+									<button id="botao-voltar" class="botao-voltar" onclick="telaAnterior(); botaoTipo2(`botao-voltar`)"></button>
 									<button class="botao-reset" onclick="resetContador()"></button>
 									<div class="contador">
 										<h2>0</h2>
