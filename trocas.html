@@ -136,9 +136,16 @@
 					<section>
 						<article>
 							<div class="app-trocas">
-<!-- 								<div class="pre-carregamento">
+								<audio src="_audio/"></audio>
+								<div class="fundo-efeito"></div>
+								<div class="pre-carregamento" style="display: none;">
 									<img src="./_imagens/app_trocas/criancas/garota_podinzin.jpg">
-								</div> -->
+									<img src="./_imagens/app_trocas/criancas/junior.jpg">
+									<img src="./_imagens/app_trocas/criancas/popular.jpg">
+									<img src="./_imagens/app_trocas/criancas/suspensorios.jpg">
+									<img src="./_imagens/app_trocas/criancas/chiquinha.jpg">
+									<img src="./_imagens/app_trocas/criancas/menina_estepe.jpg">
+								</div>
 								<div class="info-item">
 									<div>
 										<table>
@@ -185,8 +192,8 @@
 										<div class="titulo-medio"><h2>Interesse:</h2></div>
 										<div class="display-itens-interesse"></div>
 									</div>
-									<button id="botao-voltar" class="botao-voltar" onclick="telaAnterior(); botaoTipo2(`botao-voltar`)"></button>
-									<button class="botao-reset" onclick="resetContador()"></button>
+									<button id="botao-voltar" class="botao-voltar" onclick="telaAnterior(); botaoTipo2Lento(this)"></button>
+									<button id="botao-reset" class="botao-reset" onclick="resetContador(); botaoTipo2Lento(this); somEfeito('lixeira')"></button>
 									<div class="contador">
 										<h2>0</h2>
 									</div>

@@ -30,6 +30,16 @@ body article div.app-trocas .opacidade-off-medio {
     opacity: 0;
     transition: opacity 0.5s;
 }
+body article div.app-trocas .opacidade-on {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+body article div.app-trocas .opacidade-off {
+    opacity: 0;
+}
+body article div.app-trocas .fundo-pessoa-off {
+    backdrop-filter: blur(6px) grayscale(1);
+}
 /* ---------------------------------------------------------- */
 /* --------------------> Pré Carregamento  <----------------- */
 .pre-carregamento {
@@ -42,7 +52,6 @@ body article div.app-trocas .opacidade-off-medio {
 }
 /* ---------------------------------------------------------- */
 /* -----------------------> Main Div  <---------------------- */
-
 .app-trocas {
     position: relative;
     display: flex;
@@ -56,6 +65,13 @@ body article div.app-trocas .opacidade-off-medio {
     background-repeat: no-repeat;
     background-color: #000000;
     overflow: hidden;
+}
+div.fundo-efeito {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: backdrop-filter 0.4s;
 }
 .titulo-grande {
     position: relative;
@@ -82,6 +98,7 @@ body article div.app-trocas .opacidade-off-medio {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    opacity: 1;
 }
 /* -----------------------> Tela #2  <---------------------- */
 button.botao-voltar, button.botao-reset {
@@ -111,7 +128,6 @@ button.botao-voltar:hover, button.botao-reset:hover {
     border: 6px solid #000000;
     border-radius: 5px;
     width: calc(30% - 6px);
-    max-width: 250px;
     filter: grayscale(1);
     top:0;
     opacity: 1;

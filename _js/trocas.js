@@ -1,8 +1,8 @@
 // ------------------------------ Elementos ---------------------------------- //
 const mainDiv = document.querySelector('div.app-trocas');
+const divFundoEfeito = document.querySelector('div.fundo-efeito');
 const conteudoDiv = document.querySelector('div.app-trocas div');
 const cardsDiv = document.querySelector('div.cards-container');
-const cardsTipoNPC = document.querySelectorAll('.tipo-npc');
 const tituloPadrao = document.querySelector('div.titulo-grande');
 const tela3Div = document.querySelector('div.tela-3');
 const podeTerDiv = document.querySelector('div.pode-ter');
@@ -14,6 +14,7 @@ const balaoInfosAdicionais = document.querySelector('div.info-item');
 const balaoInfosAdicionaisSubDiv = document.querySelector('div.info-item div');
 const balaoInfosTitulo = document.querySelector('h3.titulo-item');
 const balaoInfosValor = document.querySelector('h3.valor-item');
+const audioPlayer = document.querySelector('audio');
 let contadorValor = 0;
 let acumuladorItens = [];
 let showInfoID = "";
@@ -60,42 +61,70 @@ const bancoDadosTrocas = [
 ]
 // ------------------------------ 1º Tela ---------------------------------- //
 function telaPrincipal() {
-    mudancaTela("tela-1");
-    cardsDiv.innerHTML = `
-        <div class="tipo-npc" onclick="menuSecundario(this, 'criancas')">
-            <img src="./_imagens/app_trocas/cards/criancas.jpg">
-            <h3>Criancas</h3>
-        </div>
-        <div class="tipo-npc" onclick="menuSecundario(this, 'adultos')">
-            <img src="./_imagens/app_trocas/cards/adultos.jpg">
-            <h3>Adultos</h3>
-        </div>
-        <div class="tipo-npc" onclick="menuSecundario(this, 'criancas')">
-            <img src="./_imagens/app_trocas/cards/infectados.jpg">
-            <h3>Infectados</h3>
-        </div>
-    `;
-    tituloPadrao.innerHTML = '<h1>Com quem deseja trocar?</h1>';
+    const listaElementos = cardsDiv.querySelectorAll('img');
+    for (c = listaElementos.length - 1, c2 = 0; c >= 0; c--, c2++) {
+        listaElementos[c].style.transition=`opacity ${c2 * 0.14 + 0.2}s`;
+        listaElementos[c].style.opacity="0";
+    }
+    tituloPadrao.classList.remove('opacidade-on');
+    tituloPadrao.classList.add('opacidade-off-medio');
+    delayAnimacao = () => {
+        mudancaTela("tela-1");
+        cardsDiv.classList.add('opacidade-off');
+        cardsDiv.innerHTML = `
+            <div class="tipo-npc" onclick="menuSecundario(this, 'criancas')">
+                <img src="./_imagens/app_trocas/cards/criancas.jpg">
+                <h3>Criancas</h3>
+            </div>
+            <div class="tipo-npc" onclick="menuSecundario(this, 'adultos')">
+                <img src="./_imagens/app_trocas/cards/adultos.jpg">
+                <h3>Adultos</h3>
+            </div>
+            <div class="tipo-npc" onclick="menuSecundario(this, 'criancas')">
+                <img src="./_imagens/app_trocas/cards/infectados.jpg">
+                <h3>Infectados</h3>
+            </div>
+        `;
+        tituloPadrao.innerHTML = '<h1>Com quem deseja trocar?</h1>';
+        cardsDiv.classList.add('opacidade-on');
+        cardsDiv.classList.remove('opacidade-off');
+        tituloPadrao.classList.add('opacidade-on');
+        tituloPadrao.classList.remove('opacidade-off-medio');
+        setTimeout(delayAnimacaoAuxiliar, 500);
+    };
+    setTimeout(delayAnimacao, 550);
+    delayAnimacaoAuxiliar = () => {
+        tituloPadrao.classList.remove('opacidade-on');
+        cardsDiv.classList.remove('opacidade-on');
+    };
 }
 // ------------------------------ 2º Tela ---------------------------------- //
 function menuSecundario(elemento, tipo) {
-    cardsTipoNPC.forEach((item) => { 
-        item.classList.add('ponteiro-off');      
-        if (item !== elemento) {
-            item.classList.add('cards-principais');
-        }
-        else {
-            item.classList.add('cards-principais-selecao');
-        }
-    });
+    const cardsTipoNPC = document.querySelectorAll('.tipo-npc');
+    if (elemento !== undefined) {
+        cardsTipoNPC.forEach((item) => { 
+            item.classList.add('ponteiro-off');      
+            if (item !== elemento) {
+                item.classList.add('cards-principais');
+            }
+            else {
+                item.classList.add('cards-principais-selecao');
+            }
+        });
+    }
+    else {      
+        divFundoEfeito.classList.add('fundo-pessoa-off');
+        tela3Div.style.transition="opacity 0.4s";
+        tela3Div.style.opacity="0";
+    }
     delayAnimacaoAuxiliar = (elemento) => {
-        elemento.classList.add('opacidade-off-medio');
+        elemento && elemento.classList.add('opacidade-off-medio');
         tituloPadrao.classList.add('opacidade-off-medio');
     }
     setTimeout(delayAnimacaoAuxiliar, 500, elemento);
     delayAnimacao = (tipo) => {
         mudancaTela("tela-2");
-        tituloPadrao.innerHTML = '<h1>Criancas</h1><button id="botao-voltar" class="botao-voltar" onclick="telaPrincipal(); botaoTipo2(`botao-voltar`)"></button>';
+        tituloPadrao.innerHTML = '<h1>Criancas</h1><button id="botao-voltar" class="botao-voltar" onclick="telaPrincipal(); botaoTipo2Lento(this)"></button>';
         switch (tipo) {
             case 'criancas' :
                 telaAnterior = () => { menuSecundario(undefined, "criancas") };
@@ -109,16 +138,19 @@ function menuSecundario(elemento, tipo) {
             break;
         }
     }
-    setTimeout(delayAnimacao, 1000, tipo);
+    (elemento !== undefined) ? setTimeout(delayAnimacao, 1000, tipo) : setTimeout(delayAnimacao, 400, tipo);
 };
 
 function mostrarCriancas() {
     const listaCriancas = ['garota_podinzin', 'junior', 'suspensorios', 'popular', 'chiquinha', 'menina_estepe'];
+    tituloPadrao.classList.add('opacidade-off');
     listaCriancas.forEach((crianca) => cardsDiv.innerHTML += `
         <img src='./_imagens/app_trocas/criancas/${crianca}.jpg' class='subtipo-npc subtipo-criancas' onclick="mostrarPessoa(this, '${crianca}')" />
     `);
     delayAnimacao = () => {
         const listaElementos = cardsDiv.querySelectorAll('img');
+        tituloPadrao.classList.remove('opacidade-off');
+        tituloPadrao.classList.add('opacidade-on');
         listaElementos.forEach((crianca, indice) => {
             crianca.style.transition=`opacity ${indice * 0.14 + 0.2}s`;
             crianca.style.opacity="1";
@@ -129,6 +161,7 @@ function mostrarCriancas() {
 // ------------------------------ 3º Tela ---------------------------------- //
 function mostrarPessoa(elemento, tipoNPC) {
     const cardsPessoasIMG = document.querySelectorAll('div.cards-container img');
+    tituloPadrao.classList.remove('opacidade-on');
     tituloPadrao.classList.add('opacidade-off-medio');
     cardsPessoasIMG.forEach((item) => { 
         item.classList.add('ponteiro-off');       
@@ -157,9 +190,9 @@ function mostrarPessoa(elemento, tipoNPC) {
                     const itemNomeFiltrado = filtrarNomeItem(itemNome);
                     displayItensInteresse.innerHTML += `
                         <div class="item-interesse">
-                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
+                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this); somEfeito('add-item')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
                             <h4 id='${itemNomeFiltrado}'></h4>
-                            <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
+                            <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}'); somEfeito('rem-item')"/>
                         </div>
                     `;
                     acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
@@ -168,9 +201,9 @@ function mostrarPessoa(elemento, tipoNPC) {
                     const itemNomeFiltrado = filtrarNomeItem(itemNome);
                     displayItensPodeTer.innerHTML += `
                         <div class="item-interesse">
-                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
+                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this); somEfeito('add-item')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
                             <h4 id='${itemNomeFiltrado}'></h4>
-                            <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
+                            <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}'); somEfeito('rem-item')"/>
                         </div>
                     `;
                     acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
@@ -256,6 +289,7 @@ function mudancaTela(tipoTela) {
             cardsDiv.style.display="flex"; 
             tituloPadrao.style.display="block";
             mainDiv.classList.remove("fundo-npc");
+            divFundoEfeito.classList.remove('fundo-pessoa-off');
             tituloPadrao.classList.add("titulo-com-botao");
             cardsDiv.innerHTML = ``;
             displayItensInteresse.innerHTML =``;
@@ -290,6 +324,21 @@ function filtrarNomeItem(nome) {
     nome = nome.replace(/ã/g, "a");
     nome = nome.replace(/ó/g, "o");
     return nome
+}
+function somEfeito(tipo) {
+    if (tipo === "lixeira") {
+        audioPlayer.src = "_audio/lixeira.mp3";
+        audioPlayer.play();
+    }
+    else if (tipo === "add-item") {
+        audioPlayer.src = `_audio/colocando_item${(Math.random() * 4 + 1).toFixed(0)}.mp3`;
+        audioPlayer.play();
+        console.log((Math.random() * 4 + 1).toFixed(0));
+    }
+    else if (tipo === "rem-item") {
+        audioPlayer.src = `_audio/tirando_item${(Math.random() * 2 + 1).toFixed(0)}.mp3`;
+        audioPlayer.play();
+    }
 }
 // ------------------------ Informações Extra Desktop ------------------------ //
 function informacoesExtra(nomeItem, valorItem, elemento) {

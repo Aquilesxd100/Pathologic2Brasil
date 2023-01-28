@@ -285,6 +285,18 @@ function botaoTipo2Discreto(elemento, elemento2) {
     }
     setTimeout(botaoTipo2DiscretoOff, 220);
 }
+function botaoTipo2Lento(elemento, elemento2, elemento3) {
+    elemento2 = document.querySelector(elemento2);
+    elemento3 = document.querySelector(elemento3);
+    elemento.classList.add('botao2-lento');
+    elemento2 && elemento2.classList.add('botao2-lento');
+    elemento3 && elemento3.classList.add('botao2-lento');
+    setTimeout(() => {
+        elemento.classList.remove('botao2-lento'); 
+        elemento2 && elemento2.classList.remove('botao2-lento'); 
+        elemento3 && elemento2.classList.remove('botao2-lento'); 
+    }, 300)
+}
 var rotacao = 0;
 function rotacao90(elemento, elemento2) {
     if (rotacao === 0) {
