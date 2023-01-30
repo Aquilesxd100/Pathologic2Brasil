@@ -40,6 +40,9 @@ body article div.app-trocas .opacidade-off {
 body article div.app-trocas .fundo-pessoa-off {
     backdrop-filter: blur(6px) grayscale(1);
 }
+body article div.app-trocas .flex-central {
+    justify-content: center;
+}
 /* ---------------------------------------------------------- */
 /* --------------------> Pré Carregamento  <----------------- */
 .pre-carregamento {
@@ -145,13 +148,21 @@ body .cards-container img.subtipo-npc {
     border: 7px solid #000000;
     border-radius: 5px;
     filter: grayscale(1);
+    background-color: #000000;
+    opacity: 0;
+    transition: opacity 1s;
 }
 body .cards-container img.subtipo-criancas {
     width: 30%;
     margin: 10px 0;
-    background-color: #000000;
-    opacity: 0;
-    transition: opacity 1s;
+}
+body .cards-container img.subtipo-adultos {
+    width: 19.5%;
+    margin: 5px 0.8%;
+}
+body .cards-container img.subtipo-infectados {
+    width: 21%;
+    margin: 1%;
 }
 body .cards-container img.subtipo-npc:hover {
     filter: grayscale(0);
