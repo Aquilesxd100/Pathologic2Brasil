@@ -15,6 +15,9 @@ const balaoInfosAdicionaisSubDiv = document.querySelector('div.info-item div');
 const balaoInfosTitulo = document.querySelector('h3.titulo-item');
 const balaoInfosValor = document.querySelector('h3.valor-item');
 const audioPlayer = document.querySelector('audio.player');
+const divPreCarregamento = document.querySelector("div.pre-carregamento");
+const divPreLoadDesktop = document.querySelector('div.pre-desktop');
+const divPreLoadMobile = document.querySelector('div.pre-mobile');
 let contadorValor = 0;
 let acumuladorItens = [];
 let showInfoID = "";
@@ -25,8 +28,16 @@ let delayAnimacaoAuxiliar = () => {};
 let delayAnimacaoAuxiliar2 = () => {};
 window.addEventListener("resize", () => {
     balaoInfosAdicionais.style.opacity="0";
+    preCarregamentoAPP();
 });
 // ---------------------------- Banco de Dados --------------------------------- //
+const listaCriancas = ['garota_podinzin', 'junior', 'suspensorios', 'popular', 'chiquinha', 'menina_estepe'];
+
+const listaAdultos = ['bebado', 'guarda', 'homem_estepe', 'mulher_estepe', 'dancarina_das_ervas', 'mulher_humilde', 'homem_padrao', 'mulher_estilosa', 'homem_estiloso', 'mulher_classe'];
+
+const listaInfectados = ['bebado_infectado', 'homem_estepe_infectado', 'mulher_estepe_infectado', 'mulher_humilde_infectado', 'homem_padrao_infectado', 'mulher_estilosa_infectado', 'homem_estiloso_infectado', 'mulher_classe_infectado'];
+
+const listaItens = ["agulha", "alfinete", "analgesico_caseiro", "anel", "antibiotico", "antibiotico_caseiro", "anzois_de_pesca", "avelas", "antibiotico_mais", "ayran", "bandagem", "besouro", "bolas_de_gude", "botao", "bracelete", "cafe", "carne_defumada", "castanhas", "dedal", "embrulho", "faca", "ferromycinium", "ferromycinium_mais", "fios", "formao", "fuso_de_fiar", "garrafa_de_agua", "garrote", "gazua", "giz", "infusao", "infusao_mais", "infusao_qualquer", "limao", "maca", "mola", "monomycinium", "morfina", "municao_escopeta", "municao_revolver", "municao_rifle", "navalha", "neomycinium", "neomycinium_mais", "nome_em_rascunho", "nozes_amarelas", "ovo", "palito_de_fosforo", "passas", "pedra_de_amolar", "peixe", "peixe_defumado", "pemmican", "pinca", "podinzin", "qurut", "reforco_de_imunidade", "relogio_de_bolso", "sabao", "sino", "sucata_metalica", "talisma", "tesoura", "torrada", "tres_nozes", "unha", "vela"];
 const bancoDadosTrocas = [
     {
         tipoPessoa: "criancas",
@@ -237,14 +248,12 @@ function menuSecundario(elemento, tipo) {
         switch (tipo) {
             case 'criancas' :
                 telaAnterior = () => { menuSecundario(undefined, "Criancas") };
-                const listaCriancas = ['garota_podinzin', 'junior', 'suspensorios', 'popular', 'chiquinha', 'menina_estepe'];
                 listaCriancas.forEach((crianca) => cardsDiv.innerHTML += `
                     <img src='./_imagens/app_trocas/criancas/${crianca}.jpg' class='subtipo-npc subtipo-criancas' onclick="mostrarPessoa(this, '${crianca}', '${tipo}')" />
                 `);
             break;
             case 'adultos' :
                 telaAnterior = () => { menuSecundario(undefined, "Adultos") };
-                const listaAdultos = ['bebado', 'guarda', 'homem_estepe', 'mulher_estepe', 'dancarina_das_ervas', 'mulher_humilde', 'homem_padrao', 'mulher_estilosa', 'homem_estiloso', 'mulher_classe', ];
                 listaAdultos.forEach((adulto) => cardsDiv.innerHTML += `
                     <img src='./_imagens/app_trocas/adultos/${adulto}.jpg' class='subtipo-npc subtipo-adultos' onclick="mostrarPessoa(this, '${adulto}', '${tipo}')" />
                 `);
@@ -252,7 +261,6 @@ function menuSecundario(elemento, tipo) {
             break;
             case 'infectados' :
                 telaAnterior = () => { menuSecundario(undefined, "Infectados") };
-                const listaInfectados = ['bebado_infectado', 'homem_estepe_infectado', 'mulher_estepe_infectado', 'mulher_humilde_infectado', 'homem_padrao_infectado', 'mulher_estilosa_infectado', 'homem_estiloso_infectado', 'mulher_classe_infectado', ];
                 listaInfectados.forEach((infectado) => cardsDiv.innerHTML += `
                     <img src='./_imagens/app_trocas/infectados/${infectado}.jpg' class='subtipo-npc subtipo-infectados' onclick="mostrarPessoa(this, '${infectado}', '${tipo}')" />
                 `);
@@ -305,7 +313,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
                     const itemNomeFiltrado = filtrarNomeItem(itemNome);
                     displayItensInteresse.innerHTML += `
                         <div class="item-interesse">
-                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
+                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this, '${nomePessoa}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this, '${nomePessoa}')" onmouseout="informacoesExtraOff()" />
                             <h4 id='${itemNomeFiltrado}'></h4>
                             <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
                         </div>
@@ -316,7 +324,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
                     const itemNomeFiltrado = filtrarNomeItem(itemNome);
                     displayItensPodeTer.innerHTML += `
                         <div class="item-interesse">
-                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this)" onmouseout="informacoesExtraOff()" />
+                            <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this, '${nomePessoa}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this, '${nomePessoa}')" onmouseout="informacoesExtraOff()" />
                             <h4 id='${itemNomeFiltrado}'></h4>
                             <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
                         </div>
@@ -451,26 +459,102 @@ function somEfeito(tipo) {
     else if (tipo === "add-item") {
         audioPlayer.src = `_audio/colocando_item${(Math.random() * 4 + 1).toFixed(0)}.mp3`;
         audioPlayer.play();
-        console.log((Math.random() * 4 + 1).toFixed(0));
     }
     else if (tipo === "rem-item") {
         audioPlayer.src = `_audio/tirando_item${(Math.random() * 2 + 1).toFixed(0)}.mp3`;
         audioPlayer.play();
     }
 }
+function checkValorDinamico(nomeNPC, nomeItem, valorItem) {
+    const trocasDinamicas = [
+        {nomePessoa: "guarda",
+        itens: [
+            {item: "gazua", valor: "1-12"},
+            {item: "faca", valor: "1-24"}
+        ]},
+
+        {nomePessoa: "mulher_humilde_infectado",
+        itens: [
+            {item: "analgesico_caseiro", valor: "3-8"},
+            {item: "antibiotico_caseiro", valor: "5-9"}
+        ]},
+
+        {nomePessoa: "mulher_estepe_infectado",
+        itens: [
+            {item: "analgesico_caseiro", valor: "5-10"},
+            {item: "antibiotico_caseiro", valor: "7-11"}
+        ]},
+
+        {nomePessoa: "homem_estepe_infectado",
+        itens: [
+            {item: "analgesico_caseiro", valor: "3-7"},
+            {item: "antibiotico_caseiro", valor: "6-10"}
+        ]},
+
+        {nomePessoa: "mulher_estilosa_infectado",
+        itens: [
+            {item: "analgesico_caseiro", valor: "3-8"},
+            {item: "antibiotico_caseiro", valor: "5-9"}
+        ]},
+
+        {nomePessoa: "homem_padrao_infectado",
+        itens: [
+            {item: "analgesico_caseiro", valor: "3-8"},
+            {item: "antibiotico_caseiro", valor: "5-9"}
+        ]},
+
+        {nomePessoa: "bebado_infectado",
+        itens: [
+            {item: "analgesico_caseiro", valor: "3-8"},
+            {item: "antibiotico_caseiro", valor: "5-9"}
+        ]},
+        ];
+        const pesqValorDinamico = (trocasDinamicas.filter((obj) => obj.nomePessoa === nomeNPC && obj.itens.some((objeto) => objeto.item === nomeItem)).map((elemento) => elemento.itens[elemento.itens.findIndex((objeto) => objeto.item === nomeItem)].valor));
+        return (pesqValorDinamico.length) ? pesqValorDinamico : valorItem;
+};
+function preCarregamentoAPP() {
+    const elementosPreLoadMobile = divPreLoadMobile.querySelectorAll('img');
+    const elementosPreLoadDesktop = divPreLoadDesktop.querySelectorAll('img');
+    if (!elementosPreLoadDesktop.length && resolucaoL > 800) {
+        listaInfectados.forEach((infectado) => divPreLoadDesktop.innerHTML += `
+            <img src='./_imagens/app_trocas/infectados/${infectado}.jpg' />
+            <img src='./_imagens/app_trocas/infectados/fundos/${infectado}_fundo.jpg' />
+        `);
+        listaCriancas.forEach((crianca) => divPreLoadDesktop.innerHTML += `
+            <img src='./_imagens/app_trocas/criancas/${crianca}.jpg' />
+            <img src='./_imagens/app_trocas/criancas/fundos/${crianca}_fundo.jpg' />
+        `);
+        listaAdultos.forEach((adulto) => divPreLoadDesktop.innerHTML += `
+            <img src='./_imagens/app_trocas/adultos/${adulto}.jpg' />
+            <img src='./_imagens/app_trocas/adultos/fundos/${adulto}_fundo.jpg' />
+        `);
+        listaItens.forEach((item) => divPreLoadDesktop.innerHTML += `
+            <img src='./_imagens/app_trocas/itens/${item}.jpg' />
+        `);
+    }
+    if (document.readyState === 'complete') {
+        divPreCarregamento.style.display="none"; 
+    }
+    else {
+        divPreCarregamento.style.display="flex"; 
+        setTimeout(preCarregamentoAPP, 100);
+    }
+}
+preCarregamentoAPP();
 // ------------------------ Informações Extra Desktop ------------------------ //
-function informacoesExtra(nomeItem, valorItem, elemento) {
+function informacoesExtra(nomeItem, valorItem, elemento, nomeNPC) {
     if (resolucaoL < 801) {
         return;
     }
     nomeItem = (nomeItem.search("mais") !== -1) ? nomeItem.substring(0, nomeItem.search("mais")) + "(+)" : nomeItem;
     showInfoID = nomeItem + Math.random();
-    setTimeout(informacoesExtraOn, 1200, nomeItem, valorItem, elemento, showInfoID);
+    setTimeout(informacoesExtraOn, 1200, nomeItem, valorItem, elemento, showInfoID, nomeNPC);
 }
-const informacoesExtraOn = function(nomeItem, valorItem, elemento, id) {
+const informacoesExtraOn = function(nomeItem, valorItem, elemento, id, nomeNPC) {
     if (showInfoID === id) {
+        valorItem = checkValorDinamico(nomeNPC, filtrarNomeItem(nomeItem), valorItem);
         balaoInfosTitulo.innerHTML = `${nomeItem}`;
-        balaoInfosValor.innerHTML = (valorItem === "12" || valorItem === "24") ? `1-${valorItem}` : `${valorItem}`;
+        balaoInfosValor.innerHTML = `${valorItem}`;
         ajustarTamanhoFonte(nomeItem);
         ajustarPosicaoJanela(elemento);
         balaoInfosAdicionais.style.opacity="1";
@@ -514,7 +598,6 @@ function ajustarPosicaoJanela(elementoItem) {
         balaoInfosAdicionaisSubDiv.style.transform="scaleY(1)";
     }
     else if (posicaoTop <= containerRect.height * 0.25) {
-        console.log("passei");
         balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} + ${(balaoRect.height * 0.2) + "px"})`;
         balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} + ${elementoItem.width + "px"}`;
         balaoInfosAdicionais.style.transform="scale(-1)";

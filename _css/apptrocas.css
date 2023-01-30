@@ -47,11 +47,34 @@ body article div.app-trocas .flex-central {
 /* --------------------> Pré Carregamento  <----------------- */
 .pre-carregamento {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     left: 0;
-    background-color: #191818;
+    background-color: #0c0c0c;
     z-index: 1;
+}
+.pre-carregamento .loading img {
+    width: 21vw;
+	min-width: 200px;
+	margin: 3vh 0;
+	-ms-animation: carregamento 1.05s linear infinite;
+	-moz-animation: carregamento 1.05s linear infinite;
+	-o-animation: carregamento 1.05s linear infinite;
+	-webkit-animation: carregamento 1.05s linear infinite;
+	animation: carregamento 1.05s linear infinite;
+}
+.pre-mobile, .pre-desktop {
+    display: none;
+}
+.pre-mobile img, .pre-desktop img {
+    width: 5px;
+    height: 5px;
+}
+audio {
+    display: none;
 }
 /* ---------------------------------------------------------- */
 /* -----------------------> Main Div  <---------------------- */
@@ -332,3 +355,7 @@ div.info-item div hr {
     width: 100%;
 }
 /* ---------------------------------------------------------- */
+/* -----------------------> Animação  <---------------------- */
+@keyframes carregamento {
+    100% { transform: rotate(360deg); }
+}
