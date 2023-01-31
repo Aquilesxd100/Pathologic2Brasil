@@ -84,8 +84,9 @@ audio {
     flex-direction: column;
     justify-content: center;
     width: calc(100% - 40px);
-    min-height: 85vh;
-    padding: 20px;
+    height: 65vw;
+    max-height: 85vh;
+    padding: 35px 20px 20px 20px;
     background-image: url("../_imagens/app_trocas/fundo_aplicativo.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -109,7 +110,7 @@ div.fundo-efeito {
     width: calc(100% - 12px);
     border-radius: 5px;
     padding: 10px 0;
-    margin-bottom: 30px;
+    margin-bottom: clamp(5px, 5vh, 10px);
 }
 .titulo-grande h1 {
     font-family: batukapur;
@@ -122,9 +123,10 @@ div.fundo-efeito {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     opacity: 1;
+    margin-bottom: 2vw;
 }
 /* -----------------------> Tela #2  <---------------------- */
 button.botao-voltar, button.botao-reset {
@@ -144,7 +146,6 @@ button.botao-reset {
 .titulo-grande button.botao-voltar {
     right: -37px;
     top: -22px;
-    /* transform: scale(0.94); */
 }
 button.botao-voltar:hover, button.botao-reset:hover {
     filter: brightness(1.35);
@@ -153,7 +154,6 @@ button.botao-voltar:hover, button.botao-reset:hover {
     position: relative;
     border: 6px solid #000000;
     border-radius: 5px;
-    width: calc(30% - 6px);
     filter: grayscale(1);
     top:0;
     opacity: 1;
@@ -163,7 +163,8 @@ button.botao-voltar:hover, button.botao-reset:hover {
     transform: scale(1.02);
 }
 .cards-container div.tipo-npc img {
-    width: 100%;
+    width: 26vw;
+    max-width: 44vh;
     display: block;
 }
 body .cards-container img.subtipo-npc {
@@ -176,15 +177,18 @@ body .cards-container img.subtipo-npc {
     transition: opacity 1s;
 }
 body .cards-container img.subtipo-criancas {
-    width: 30%;
-    margin: 10px 0;
+    width: 25%;
+    max-width: 42vh;
+    margin: 5px 0.8%;
 }
 body .cards-container img.subtipo-adultos {
     width: 19.5%;
+    max-width: 27vh;
     margin: 5px 0.8%;
 }
 body .cards-container img.subtipo-infectados {
     width: 21%;
+    max-width: 29.4vh;
     margin: 1%;
 }
 body .cards-container img.subtipo-npc:hover {
@@ -193,9 +197,9 @@ body .cards-container img.subtipo-npc:hover {
 }
 .cards-container div.tipo-npc h3 {
     position: absolute;
-    bottom: -23px;
+    bottom: -4vh;
     font-family: batukapur;
-    font-size: calc(18px + 1.3vw);
+    font-size: clamp(5px, 3.2vw,  6vh);
     font-weight: normal;
     letter-spacing: 1.3px;
     text-align: center;

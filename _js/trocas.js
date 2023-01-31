@@ -243,6 +243,7 @@ function menuSecundario(elemento, tipo) {
     setTimeout(delayAnimacaoAuxiliar, 500, elemento);
     delayAnimacao = (tipo) => {
         mudancaTela("tela-2");
+        cardsDiv.classList.add('flex-central');
         tituloPadrao.innerHTML = `<h1>${tipo}</h1><button id="botao-voltar" class="botao-voltar" onclick="telaPrincipal(); botaoTipo2Lento(this)"></button>`;
         tipo = tipo.toLowerCase();
         switch (tipo) {
@@ -257,7 +258,6 @@ function menuSecundario(elemento, tipo) {
                 listaAdultos.forEach((adulto) => cardsDiv.innerHTML += `
                     <img src='./_imagens/app_trocas/adultos/${adulto}.jpg' class='subtipo-npc subtipo-adultos' onclick="mostrarPessoa(this, '${adulto}', '${tipo}')" />
                 `);
-                cardsDiv.classList.add('flex-central');
             break;
             case 'infectados' :
                 telaAnterior = () => { menuSecundario(undefined, "Infectados") };
