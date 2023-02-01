@@ -96,6 +96,7 @@ audio {
 div.fundo-efeito {
     position: absolute;
     left: 0;
+    top:0;
     width: 100%;
     height: 100%;
     transition: backdrop-filter 0.4s;
@@ -110,7 +111,7 @@ div.fundo-efeito {
     width: calc(100% - 12px);
     border-radius: 5px;
     padding: 10px 0;
-    margin-bottom: clamp(5px, 5vh, 10px);
+    margin-bottom: clamp(20px, 5vh, 30px);
 }
 .titulo-grande h1 {
     font-family: batukapur;
@@ -127,6 +128,33 @@ div.fundo-efeito {
     width: 100%;
     opacity: 1;
     margin-bottom: 2vw;
+}
+.cards-container div.tipo-npc {
+    position: relative;
+    border: 6px solid #000000;
+    border-radius: 5px;
+    filter: grayscale(1);
+    top:0;
+    opacity: 1;
+}
+.cards-container div.tipo-npc img {
+    width: 26vw;
+    max-width: 44vh;
+    display: block;
+}
+.cards-container div.tipo-npc:hover {
+    filter: grayscale(0);
+    transform: scale(1.02);
+}
+.cards-container div.tipo-npc h3 {
+    position: absolute;
+    bottom: clamp(-20px, -4vh, -15px);
+    font-family: batukapur;
+    font-size: clamp(5px, 3.2vw,  6vh);
+    font-weight: normal;
+    letter-spacing: 1.3px;
+    text-align: center;
+    width: 100%;
 }
 /* -----------------------> Tela #2  <---------------------- */
 button.botao-voltar, button.botao-reset {
@@ -149,23 +177,6 @@ button.botao-reset {
 }
 button.botao-voltar:hover, button.botao-reset:hover {
     filter: brightness(1.35);
-}
-.cards-container div.tipo-npc {
-    position: relative;
-    border: 6px solid #000000;
-    border-radius: 5px;
-    filter: grayscale(1);
-    top:0;
-    opacity: 1;
-}
-.cards-container div.tipo-npc:hover {
-    filter: grayscale(0);
-    transform: scale(1.02);
-}
-.cards-container div.tipo-npc img {
-    width: 26vw;
-    max-width: 44vh;
-    display: block;
 }
 body .cards-container img.subtipo-npc {
     display: block;
@@ -195,16 +206,6 @@ body .cards-container img.subtipo-npc:hover {
     filter: grayscale(0);
     transform: scale(1.04);
 }
-.cards-container div.tipo-npc h3 {
-    position: absolute;
-    bottom: -4vh;
-    font-family: batukapur;
-    font-size: clamp(5px, 3.2vw,  6vh);
-    font-weight: normal;
-    letter-spacing: 1.3px;
-    text-align: center;
-    width: 100%;
-}
 /* ---------------------------------------------------------- */
 /* -----------------------> Tela #3  <---------------------- */
 .tela-3 {
@@ -217,7 +218,7 @@ body .cards-container img.subtipo-npc:hover {
 }
 .contador {
     position: absolute;
-    bottom: -20px;
+    bottom: clamp(-13px, -2vh, -10px);
     left: calc(50% - 50px);
     text-align: center;
     border-radius: 15px;
@@ -247,12 +248,12 @@ body .cards-container img.subtipo-npc:hover {
 }
 .pode-ter {
     left: -10px;
-    top: -10px;
+    top: -23px;
     padding: 5px 0 5px 4px;
 }
 .interesse {
     right: -10px;
-    top: -10px;
+    top: -23px;
     padding: 5px 4px 5px 0;
 }
 .display-itens-interesse div, .display-itens-pode-ter div {
@@ -264,7 +265,7 @@ body .cards-container img.subtipo-npc:hover {
 }
 .display-itens-interesse div h4, .display-itens-pode-ter div h4 {
     position: absolute;
-    bottom: calc(-18% - 10px);
+    bottom: clamp(-40px, -3.5vh, -20px);
     right: 4%;
     pointer-events: none;
     user-select: none;
@@ -357,6 +358,84 @@ div.info-item img {
 }
 div.info-item div hr {
     width: 100%;
+}
+
+/* --------------------------------------------------------------------- */
+/* --------------------------> VERSÃO MOBILE  <------------------------- */
+/* --------------------------------------------------------------------- */
+/* -----------------------> Main Div (Mobile)  <---------------------- */
+@media screen and (max-width: 800px) {
+    .app-trocas {
+        justify-content: center;
+        width: calc(100% - 40px);
+        height: auto;
+        max-height: none;
+        padding: 35px 20px 20px 20px;
+        background-image: url("../_imagens/app_trocas/fundo_aplicativo.jpg");
+        background-size: 100% 100%;
+    }
+    div.fundo-efeito {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: backdrop-filter 0.4s;
+    }
+    .titulo-grande {
+        position: relative;
+        text-align: center;
+        background-size: auto 100%;
+        background-repeat:  repeat-x;
+        border: 6px solid #000000;
+        width: calc(100% - 12px);
+        border-radius: 5px;
+        padding: 10px 0;
+        margin-bottom: clamp(20px, 5vh, 30px);
+    }
+    .titulo-grande h1 {
+        font-family: batukapur;
+        font-size: 33px;
+        font-weight: normal;
+        letter-spacing: 1.4px;
+        margin: 0;
+    }
+    .cards-container {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: none;
+        align-items: center;
+        width: 100%;
+        opacity: 1;
+        margin-bottom: 2vw;
+    }
+    .cards-container div.tipo-npc {
+        position: relative;
+        border: none;
+        filter: brightness(1);
+        opacity: 1;
+        width: 70%;
+    }
+    .cards-container div.tipo-npc img {
+        width: 100%;
+        max-width: none;
+    }
+    .cards-container div.tipo-npc:hover {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+    .cards-container div.tipo-npc h3 {
+        bottom: 5px;
+        font-size: 35px;
+        letter-spacing: 1.3px;
+        text-align: center;
+        width: 100%;
+    }
+    /* ---------------------------------------------------------------------- */
+
+
 }
 /* ---------------------------------------------------------- */
 /* -----------------------> Animação  <---------------------- */

@@ -36,16 +36,21 @@
         resolucaoA = window.innerHeight;
         checkRolagemMenu();
         if (resolucaoL >= 800.1) {
+            input2.value = "";
             rotacao90("indicador-direita", "indicador-esquerda");
             fecharMenuLateral();
+        }
+        else {
+            input.value = "";
         }
     });
 /* Barra de Pesquisa */
     const input = document.getElementById("input");
+    const input2 = document.getElementById("input-mobile");
     const checkPesquisa = document.querySelector(".resultado-pesquisa");
     var aberturaPesquisa = checkPesquisa ? 1 : 0;
     window.addEventListener("submit",  (evento) => {
-        if ((aberturaPesquisa === 0 && resolucaoL >= 800.1) || input.value === "") {
+        if ((aberturaPesquisa === 0 && resolucaoL >= 800.1) || (input.value === "" && input2.value === "")) {
             evento.preventDefault();
         }
     })

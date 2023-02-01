@@ -49,8 +49,10 @@ if (articlePesquisa) {
     // -------------------------------------------------------------------- //
     const resulParams = new URLSearchParams(window.location.search);
     const resultadoPesquisa = resulParams.get(`resultados`);
-    const inputPesquisa = document.querySelector(`input`);
+    const inputPesquisa = document.querySelector(`#input`);
+    const inputPesquisaMobile = document.querySelector(`#input-mobile`);
     inputPesquisa.value = resultadoPesquisa;
+    inputPesquisaMobile.value = resultadoPesquisa;
     let resultadoGuias = [];
     for (guiasBanco of bancoDados) {
         const checkTags = guiasBanco.tags.some((tag) => resultadoPesquisa.search(tag) !== -1);
