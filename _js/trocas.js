@@ -22,6 +22,7 @@ const imgNPCMobile = document.querySelector('img.imagem-npc-mobile');
 let contadorValor = 0;
 let acumuladorItens = [];
 let showInfoID = "";
+let telaAtual = "tela1";
 let mobile = (resolucaoL > 800) ? false : true;
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
@@ -29,10 +30,11 @@ let delayAnimacao = () => {};
 let delayAnimacaoAuxiliar = () => {};
 let delayAnimacaoAuxiliar2 = () => {};
 window.addEventListener("resize", () => {
+    const checkMudanca = mobile;
     mobile = (resolucaoL > 800) ? false : true;
+    (mobile !== checkMudanca) && adaptatividadeAPP();
     balaoInfosAdicionais.style.opacity="0";
     preCarregamentoAPP();
-    resetAPP();
 });
 // ---------------------------- Banco de Dados --------------------------------- //
 const listaCriancas = ['garota_podinzin', 'junior', 'suspensorios', 'popular', 'chiquinha', 'menina_estepe'];
@@ -315,7 +317,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
         cardsDiv.classList.remove('flex-central');
         cardsDiv.classList.remove('flex-around');
         if (!mobile) {
-            mainDiv.classList.add("fundo-npc")
+            mainDiv.classList.add("fundo-npc");
             mainDiv.style.backgroundImage=`url('_imagens/app_trocas/${(tipoNPC)}/fundos/${nomeNPC}_fundo.jpg')`;
         }
     };
@@ -345,6 +347,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
                     `;
                     acumuladorItens.push({ id: itemNomeFiltrado, valor: 0 });
                 });
+                telaAtual = [`${nomePessoa}`, `${tipoPessoa.tipoPessoa}`];
             }
         }));  
         mudancaTela("tela-3");  
@@ -418,10 +421,12 @@ function acumuladorQnt(idItem, dimAcumul) {
 function mudancaTela(tipoTela) {
     switch(tipoTela) {
         case "tela-1":
+            telaAtual = "tela1";
             cardsDiv.classList.remove('flex-row');
             tituloPadrao.classList.remove("titulo-com-botao");
         break;
         case "tela-2":
+            telaAtual = "tela2";
             resetClassesAnimacao();
             acumuladorItens = [];
             resetContador();
@@ -576,9 +581,29 @@ function preCarregamentoAPP() {
     }
 }
 preCarregamentoAPP();
-function resetAPP() {
-    tituloPadrao.classList.add('opacidade-on');
-    telaPrincipal();
+function adaptatividadeAPP() {
+    switch(telaAtual) {
+        case "tela1":
+            mobile && mainDiv.removeAttribute('style');
+        break;
+        case "tela2":
+            mobile && mainDiv.removeAttribute('style');
+        break;
+        default:
+            if (!mobile) {
+                imgNPCMobile.style.display="none";
+                tela3Div.style.display=('block');
+                mainDiv.classList.add("fundo-npc");
+                mainDiv.style.backgroundImage=`url('_imagens/app_trocas/${(telaAtual[1])}/fundos/${telaAtual[0]}_fundo.jpg')`;
+            }
+            else {
+                imgNPCMobile.style.display="block";
+                mainDiv.removeAttribute('style');
+                mainDiv.classList.remove('fundo-npc');
+                tela3Div.style.display=('flex');
+            }
+        break;
+    }
 }
 // ------------------------ Informações Extra Desktop ------------------------ //
 function informacoesExtra(nomeItem, valorItem, elemento, nomeNPC) {

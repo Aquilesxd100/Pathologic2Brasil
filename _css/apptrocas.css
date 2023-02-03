@@ -151,7 +151,7 @@ div.fundo-efeito {
 }
 .cards-container div.tipo-npc h3 {
     position: absolute;
-    bottom: clamp(-20px, -4vh, -15px);
+    bottom: -6%;
     font-family: batukapur;
     font-size: clamp(5px, 3.2vw,  6vh);
     font-weight: normal;
@@ -270,8 +270,8 @@ body .cards-container img.subtipo-npc:hover {
 }
 .display-itens-interesse div h4, .display-itens-pode-ter div h4 {
     position: absolute;
-    bottom: clamp(-40px, -3.5vh, -20px);
-    right: 4%;
+    bottom: clamp(-40px, -29%, -19px);
+    right: 4.5%;
     pointer-events: none;
     user-select: none;
 }
