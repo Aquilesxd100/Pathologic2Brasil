@@ -18,17 +18,21 @@ const audioPlayer = document.querySelector('audio.player');
 const divPreCarregamento = document.querySelector("div.pre-carregamento");
 const divPreLoadDesktop = document.querySelector('div.pre-desktop');
 const divPreLoadMobile = document.querySelector('div.pre-mobile');
+const imgNPCMobile = document.querySelector('img.imagem-npc-mobile');
 let contadorValor = 0;
 let acumuladorItens = [];
 let showInfoID = "";
+let mobile = (resolucaoL > 800) ? false : true;
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
 let delayAnimacao = () => {};
 let delayAnimacaoAuxiliar = () => {};
 let delayAnimacaoAuxiliar2 = () => {};
 window.addEventListener("resize", () => {
+    mobile = (resolucaoL > 800) ? false : true;
     balaoInfosAdicionais.style.opacity="0";
     preCarregamentoAPP();
+    resetAPP();
 });
 // ---------------------------- Banco de Dados --------------------------------- //
 const listaCriancas = ['garota_podinzin', 'junior', 'suspensorios', 'popular', 'chiquinha', 'menina_estepe'];
@@ -186,6 +190,7 @@ function telaPrincipal() {
     tituloPadrao.classList.add('opacidade-off-medio');
     delayAnimacao = () => {
         cardsDiv.classList.remove('flex-central');
+        cardsDiv.classList.remove('flex-around');
         mudancaTela("tela-1");
         cardsDiv.classList.add('opacidade-off');
         cardsDiv.innerHTML = `
@@ -224,27 +229,30 @@ function menuSecundario(elemento, tipo) {
         cardsTipoNPC.forEach((item) => { 
             item.classList.add('ponteiro-off');      
             if (item !== elemento) {
-                item.classList.add('cards-principais');
+                (!mobile) && item.classList.add('cards-principais');
             }
             else {
-                item.classList.add('cards-principais-selecao');
+                (!mobile) ? item.classList.add('cards-principais-selecao') : botaoTipo2Lento(item);
             }
         });
     }
-    else {      
-        divFundoEfeito.classList.add('fundo-pessoa-off');
+    else { 
+        !mobile && divFundoEfeito.classList.add('fundo-pessoa-off');     
+        imgNPCMobile.style.opacity="0";
         tela3Div.style.transition="opacity 0.4s";
         tela3Div.style.opacity="0";
     }
     delayAnimacaoAuxiliar = (elemento) => {
-        elemento && elemento.classList.add('opacidade-off-medio');
+        (elemento && !mobile) && elemento.classList.add('opacidade-off-medio');
+        (elemento && mobile) && cardsTipoNPC.forEach((div) => div.classList.add('opacidade-off-medio'));
         tituloPadrao.classList.add('opacidade-off-medio');
     }
-    setTimeout(delayAnimacaoAuxiliar, 500, elemento);
+    (!mobile) ? setTimeout(delayAnimacaoAuxiliar, 500, elemento) : setTimeout(delayAnimacaoAuxiliar, 300, elemento);
     delayAnimacao = (tipo) => {
         mudancaTela("tela-2");
         cardsDiv.classList.add('flex-central');
-        tituloPadrao.innerHTML = `<h1>${tipo}</h1><button id="botao-voltar" class="botao-voltar" onclick="telaPrincipal(); botaoTipo2Lento(this)"></button>`;
+        cardsDiv.classList.add('flex-around');
+        tituloPadrao.innerHTML = `<h1>${tipo}</h1><button class="botao-voltar" onclick="telaPrincipal(); botaoTipo2Lento(this)"></button>`;
         tipo = tipo.toLowerCase();
         switch (tipo) {
             case 'criancas' :
@@ -285,6 +293,8 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
     const cardsPessoasIMG = document.querySelectorAll('div.cards-container img');
     tituloPadrao.classList.remove('opacidade-on');
     tituloPadrao.classList.add('opacidade-off-medio');
+    imgNPCMobile.src=`./_imagens/app_trocas/${tipoNPC}/${nomeNPC}.jpg`;
+    imgNPCMobile.style.display="block";
     cardsPessoasIMG.forEach((item) => { 
         item.classList.add('ponteiro-off');       
         if (item !== elemento) {
@@ -299,11 +309,15 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
         }
     });
     delayAnimacao = () => {
+        imgNPCMobile.style.opacity="1";
         elemento.style.transition='opacity 0.5s';
         elemento.style.opacity='0';
         cardsDiv.classList.remove('flex-central');
-        mainDiv.classList.add("fundo-npc");
-        mainDiv.style.backgroundImage=`url('_imagens/app_trocas/${(tipoNPC)}/fundos/${nomeNPC}_fundo.jpg')`;
+        cardsDiv.classList.remove('flex-around');
+        if (!mobile) {
+            mainDiv.classList.add("fundo-npc")
+            mainDiv.style.backgroundImage=`url('_imagens/app_trocas/${(tipoNPC)}/fundos/${nomeNPC}_fundo.jpg')`;
+        }
     };
     setTimeout(delayAnimacao, 450, elemento)
     delayAnimacaoAuxiliar = (nomePessoa) => {
@@ -404,27 +418,34 @@ function acumuladorQnt(idItem, dimAcumul) {
 function mudancaTela(tipoTela) {
     switch(tipoTela) {
         case "tela-1":
+            cardsDiv.classList.remove('flex-row');
             tituloPadrao.classList.remove("titulo-com-botao");
         break;
         case "tela-2":
             resetClassesAnimacao();
             acumuladorItens = [];
             resetContador();
+            imgNPCMobile.style.display="none";
             tela3Div.style.display="none";
             cardsDiv.style.display="flex"; 
+            cardsDiv.classList.add('flex-row');
             tituloPadrao.style.display="block";
+            mainDiv.classList.remove('tela-3-mobile');
             mainDiv.classList.remove("fundo-npc");
             divFundoEfeito.classList.remove('fundo-pessoa-off');
             tituloPadrao.classList.add("titulo-com-botao");
             cardsDiv.innerHTML = ``;
             displayItensInteresse.innerHTML =``;
             displayItensPodeTer.innerHTML =``;
-            mainDiv.style.backgroundImage = `url('_imagens/app_trocas/fundo_aplicativo.jpg')`;
+            if (!mobile) {
+                mainDiv.style.backgroundImage = `url('_imagens/app_trocas/fundo_aplicativo.jpg')`;
+            }
         break;
         case "tela-3":
+            mainDiv.classList.add('tela-3-mobile');
             cardsDiv.style.display="none"; 
             tituloPadrao.style.display="none";
-            tela3Div.style.display="block";
+            (!mobile) ? tela3Div.style.display="block" : tela3Div.style.display="flex";
         break;
     };
 };
@@ -532,6 +553,20 @@ function preCarregamentoAPP() {
             <img src='./_imagens/app_trocas/itens/${item}.jpg' />
         `);
     }
+    else if (!elementosPreLoadMobile.length && resolucaoL <= 800) {
+        listaInfectados.forEach((infectado) => divPreLoadMobile.innerHTML += `
+            <img src='./_imagens/app_trocas/infectados/${infectado}.jpg' />
+        `);
+        listaCriancas.forEach((crianca) => divPreLoadMobile.innerHTML += `
+            <img src='./_imagens/app_trocas/criancas/${crianca}.jpg' />
+        `);
+        listaAdultos.forEach((adulto) => divPreLoadDesktop.innerHTML += `
+            <img src='./_imagens/app_trocas/adultos/${adulto}.jpg' />
+        `);
+        listaItens.forEach((item) => divPreLoadDesktop.innerHTML += `
+            <img src='./_imagens/app_trocas/itens/${item}.jpg' />
+        `);
+    }
     if (document.readyState === 'complete') {
         divPreCarregamento.style.display="none"; 
     }
@@ -541,6 +576,10 @@ function preCarregamentoAPP() {
     }
 }
 preCarregamentoAPP();
+function resetAPP() {
+    tituloPadrao.classList.add('opacidade-on');
+    telaPrincipal();
+}
 // ------------------------ Informações Extra Desktop ------------------------ //
 function informacoesExtra(nomeItem, valorItem, elemento, nomeNPC) {
     if (resolucaoL < 801) {
