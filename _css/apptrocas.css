@@ -410,7 +410,7 @@ img.imagem-npc-mobile {
     }
     .titulo-grande {
         background-size: auto 100%;
-        background-image: url("../_imagens/app_trocas/fundo_titulo.png");
+        background-image: url("../_imagens/app_trocas/fundo_titulo.jpg");
         width: calc(90% - 12px);
         border-radius: 8px;
         padding: 10px 5px;
@@ -439,7 +439,7 @@ img.imagem-npc-mobile {
         padding: 10px;
         border: 6px solid #000000;
         border-radius: 10px;
-        background-image: url("../_imagens/app_trocas/fundo_botoes.png");
+        background-image: url("../_imagens/app_trocas/fundo_botoes.jpg");
         background-repeat: repeat-x;
         background-size: auto 100%;
         margin: 8px 5px;
