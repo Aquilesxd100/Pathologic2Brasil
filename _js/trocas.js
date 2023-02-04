@@ -186,6 +186,7 @@ function telaPrincipal() {
     const listaElementos = cardsDiv.querySelectorAll('img');
     for (c = listaElementos.length - 1, c2 = 0; c >= 0; c--, c2++) {
         listaElementos[c].style.transition=`opacity ${c2 * 0.14 + 0.2}s`;
+        adaptadorPrefixos2(listaElementos[c], `opacity ${c2 * 0.14 + 0.2}s`)
         listaElementos[c].style.opacity="0";
     }
     tituloPadrao.classList.remove('opacidade-on');
@@ -242,6 +243,7 @@ function menuSecundario(elemento, tipo) {
         !mobile && divFundoEfeito.classList.add('fundo-pessoa-off');     
         imgNPCMobile.style.opacity="0";
         tela3Div.style.transition="opacity 0.4s";
+        adaptadorPrefixos2(tela3Div, "opacity 0.4s");
         tela3Div.style.opacity="0";
     }
     delayAnimacaoAuxiliar = (elemento) => {
@@ -283,6 +285,7 @@ function menuSecundario(elemento, tipo) {
             tituloPadrao.classList.add('opacidade-on');
             listaElementos.forEach((pessoa, indice) => {
                 pessoa.style.transition=`opacity ${indice * 0.14 + 0.2}s`;
+                adaptadorPrefixos2(pessoa, `opacity ${indice * 0.14 + 0.2}s`);
                 pessoa.style.opacity="1";
             })
         }
@@ -308,11 +311,13 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
             item.style.transition='transform 0.5s';
             item.style.filter='grayscale(0)';
             item.style.transform='scale(1.1)';
+            adaptadorPrefixos2(item, 'transform 0.5s', 'scale(1.1)', 'grayscale(0)');
         }
     });
     delayAnimacao = () => {
         imgNPCMobile.style.opacity="1";
         elemento.style.transition='opacity 0.5s';
+        adaptadorPrefixos2(elemento, 'opacity 0.5s');
         elemento.style.opacity='0';
         cardsDiv.classList.remove('flex-central');
         cardsDiv.classList.remove('flex-around');
@@ -355,6 +360,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
     setTimeout(delayAnimacaoAuxiliar, 950, nomeNPC);
     delayAnimacaoAuxiliar2 = () => {
         tela3Div.style.transition="opacity 0.3s";
+        adaptadorPrefixos2(tela3Div, "opacity 0.3s");
         tela3Div.style.opacity="1";
     };
     setTimeout(delayAnimacaoAuxiliar2, 980);
@@ -605,6 +611,26 @@ function adaptatividadeAPP() {
         break;
     }
 }
+function adaptadorPrefixos2(elemento, transition, transformacao, filtro) {
+    if (transformacao && transformacao !== "") {
+      elemento.style.MozTransform=transformacao;
+      elemento.style.webkitTransform=transformacao;
+      elemento.style.msTransform=transformacao;
+      elemento.style.OTransform=transformacao;
+    }
+    if (filtro && filtro !== "") {
+      elemento.style.MozFilter=filtro;
+      elemento.style.webkitFilter=filtro;
+      elemento.style.msFilter=filtro;
+      elemento.style.OFilter=filtro;
+    }
+    if (transition && transition !== "") {
+      elemento.style.MozTransition=transition;
+      elemento.style.webkitTransition=transition;
+      elemento.style.msTransition=transition;
+      elemento.style.OTransition=transition;
+    }
+  }
 // ------------------------ Informações Extra Desktop ------------------------ //
 function informacoesExtra(nomeItem, valorItem, elemento, nomeNPC) {
     if (resolucaoL < 801) {
@@ -653,24 +679,32 @@ function ajustarPosicaoJanela(elementoItem) {
         balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} + ${(balaoRect.height * 0.2) + "px"})`;
         balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} - (25.8% + 21px))`;
         balaoInfosAdicionais.style.transform="scaleY(-1)";
+        adaptadorPrefixos2(balaoInfosAdicionais, '', "scaleY(-1)");
         balaoInfosAdicionaisSubDiv.style.transform="scaleY(-1)";
+        adaptadorPrefixos2(balaoInfosAdicionaisSubDiv, '', "scaleY(-1)");
     }
     else if (posicaoLeft >= containerRect.width * 0.5) {
         balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} - ${(balaoRect.height * 0.8) + "px"})`;
         balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} - (25.8% + 21px))`;
         balaoInfosAdicionais.style.transform="scaleY(1)";
+        adaptadorPrefixos2(balaoInfosAdicionais, '', "scaleY(1)");
         balaoInfosAdicionaisSubDiv.style.transform="scaleY(1)";
+        adaptadorPrefixos2(balaoInfosAdicionaisSubDiv, '', "scaleY(1)");
     }
     else if (posicaoTop <= containerRect.height * 0.25) {
         balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} + ${(balaoRect.height * 0.2) + "px"})`;
         balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} + ${elementoItem.width + "px"}`;
         balaoInfosAdicionais.style.transform="scale(-1)";
+        adaptadorPrefixos2(balaoInfosAdicionais, '', "scale(-1)");
         balaoInfosAdicionaisSubDiv.style.transform="scale(-1)";
+        adaptadorPrefixos2(balaoInfosAdicionaisSubDiv, '', "scale(-1)");
     }
     else {
         balaoInfosAdicionais.style.top=`calc(${posicaoTop + "px"} - ${(balaoRect.height * 0.8) + "px"})`;
         balaoInfosAdicionais.style.left=`calc(${posicaoLeft + "px"} + ${elementoItem.width + "px"}`;
         balaoInfosAdicionais.style.transform="scale(-1, 1)";
+        adaptadorPrefixos2(balaoInfosAdicionais, '', "scale(-1, 1)");
         balaoInfosAdicionaisSubDiv.style.transform="scale(-1, 1)";
+        adaptadorPrefixos2(balaoInfosAdicionaisSubDiv, '', "scale(-1, 1)");
     }
 }
