@@ -228,6 +228,7 @@ function telaPrincipal() {
 // ------------------------------ 2º Tela ---------------------------------- //
 function menuSecundario(elemento, tipo) {
     const cardsTipoNPC = document.querySelectorAll('.tipo-npc');
+    setTimeout((() => { informacoesExtraOff(); }), 1100);
     if (elemento !== undefined) {
         cardsTipoNPC.forEach((item) => { 
             item.classList.add('ponteiro-off');      
