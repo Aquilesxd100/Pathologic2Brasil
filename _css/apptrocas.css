@@ -753,6 +753,16 @@ img.imagem-npc-mobile {
         border: calc(5px + 0.5vw) solid #000000;
         border-radius: calc(5px + 0.5vw);
     }
+    .titulo-grande {
+        border: 6px solid #000000;
+        border-radius: calc(5px + 0.3vw);
+        padding: calc(5px + 0.5vw) 0;
+        margin-bottom: calc(25px + 1vw);
+    }
+    .titulo-grande h1 {
+        font-size: calc(30px + 1vw);
+        letter-spacing: 3px;
+    }
 }
 
 
