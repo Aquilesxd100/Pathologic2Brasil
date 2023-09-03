@@ -633,7 +633,7 @@ nav img:hover {
 	div#submenu {
 		display: none;
 		position: absolute;
-		z-index: +1;
+		z-index: +2;
 		top: 19.5vw;
 	}
 	img#submenubarra1, img#submenubarra2, img#submenubarra3, img#submenubarra4 {
