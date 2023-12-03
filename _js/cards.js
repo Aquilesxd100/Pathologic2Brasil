@@ -13,7 +13,6 @@ if (articleTodos) {
     `;
     })
 }
-//teste
 // Resultado Pesquisa //
 if (articlePesquisa) {
     if(!window.location.search) {
