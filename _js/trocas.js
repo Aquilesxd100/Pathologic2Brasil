@@ -336,7 +336,9 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
                     displayItensInteresse.innerHTML += `
                         <div class="item-interesse">
                             <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('${pessoa.interesse.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this, '${nomePessoa}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.interesse.valor[indice]}', this, '${nomePessoa}')" onmouseout="informacoesExtraOff()" />
-                            <h4 id='${itemNomeFiltrado}'></h4>
+                            <div id='${itemNomeFiltrado}'>
+                                <h4></h4>
+                            </div>
                             <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '-${pessoa.interesse.valor[indice]}')"/>
                         </div>
                     `;
@@ -347,7 +349,9 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
                     displayItensPodeTer.innerHTML += `
                         <div class="item-interesse">
                             <img src='./_imagens/app_trocas/itens/${itemNomeFiltrado}.jpg' onclick="contador('-${pessoa.podeter.valor[indice]}', '${itemNomeFiltrado}'); informacoesExtraOff(); informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this, '${nomePessoa}')" onmouseover="informacoesExtra('${itemNome}', '${pessoa.podeter.valor[indice]}', this, '${nomePessoa}')" onmouseout="informacoesExtraOff()" />
-                            <h4 id='${itemNomeFiltrado}'></h4>
+                            <div id='${itemNomeFiltrado}'>
+                                <h4></h4>
+                            </div>
                             <img class="botao-diminuir" id='botao-diminuir-${itemNomeFiltrado}' src='./_imagens/app_trocas/botao-fechar-item.png' onclick="acumuladorQnt('${itemNomeFiltrado}', '${pessoa.podeter.valor[indice]}')"/>
                         </div>
                     `;
@@ -393,7 +397,7 @@ function resetContador() {
         elemento.style.display="none";
     }
     acumuladorItens = acumuladorItens.map((item) => {
-        const elementoH1 = document.getElementById(item.id);
+        const elementoH1 = document.querySelector(`div#${item.id} h4`);
         elementoH1.innerText = "";
         return item = {
             id: item.id,
@@ -406,7 +410,7 @@ function resetContador() {
 // --------------------------- Acumulador --------------------------- //
 function acumuladorQnt(idItem, dimAcumul) {
     const botaoDiminuirID = "botao-diminuir-" + idItem || undefined;
-    const elementoH1 = document.getElementById(idItem);
+    const elementoH1 = document.querySelector(`div#${idItem} h4`);
     const diminuirContador = document.getElementById(botaoDiminuirID);
     const posicaoIndex = acumuladorItens.findIndex((item) => item.id === idItem);
     let contadorTemp = contadorValor + Number(dimAcumul) || 0;

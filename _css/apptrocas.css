@@ -326,19 +326,22 @@ body .cards-container img.subtipo-npc:hover {
     top: -23px;
     padding: 5px 4px 5px 0;
 }
-.display-itens-interesse div, .display-itens-pode-ter div {
+.display-itens-interesse div.item-interesse, .display-itens-pode-ter div.item-interesse {
     position: relative;
     width: calc(30% - 6px);
     max-width: 12.7vh;
     margin: 1.5%;
     border: 2px solid #292929;
 }
-.display-itens-interesse div h4, .display-itens-pode-ter div h4 {
+.display-itens-interesse div div, .display-itens-pode-ter div div {
     position: absolute;
-    bottom: clamp(-40px, -29%, -19px);
-    right: 4.5%;
+    bottom: 0px;
+    right: 0px;
     pointer-events: none;
     user-select: none;
+}
+.display-itens-interesse div div h4, .display-itens-pode-ter div div h4 {
+    margin: 0 3px 2px 0;
 }
 .interesse img, .pode-ter img {
     width: 100%;
@@ -672,7 +675,7 @@ img.imagem-npc-mobile {
         padding: 0;
         order: 5;
     }
-    .display-itens-interesse div, .display-itens-pode-ter div {
+    .display-itens-interesse div.item-interesse, .display-itens-pode-ter div.item-interesse {
         position: relative;
         width: calc(30% - 6px);
         max-width: none;
@@ -681,7 +684,7 @@ img.imagem-npc-mobile {
     }
     .display-itens-interesse div h4, .display-itens-pode-ter div h4 {
         bottom: -27px;
-        font-size: 22px;
+        font-size: clamp(22px, 4vh, 7vw);
         right: 6%;
     }
     .display-itens-interesse div:hover, .display-itens-pode-ter div:hover {
