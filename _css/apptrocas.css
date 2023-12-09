@@ -335,13 +335,16 @@ body .cards-container img.subtipo-npc:hover {
 }
 .display-itens-interesse div div, .display-itens-pode-ter div div {
     position: absolute;
+    display: flex;
+    justify-content: end;
+    width: 90%;
     bottom: 0px;
     right: 0px;
     pointer-events: none;
     user-select: none;
 }
 .display-itens-interesse div div h4, .display-itens-pode-ter div div h4 {
-    margin: 0 3px 2px 0;
+    margin: 0 8% 2px 0;
 }
 .interesse img, .pode-ter img {
     width: 100%;
