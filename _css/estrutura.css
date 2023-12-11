@@ -662,7 +662,7 @@ nav img:hover {
 		-ms-filter: brightness(125%);
 		-moz-filter: brightness(125%);
 		filter: brightness(125%);
-}
+	}
 	div#submenu li {
 		position: absolute;
 		color: #DDDDDD;
@@ -681,9 +681,56 @@ nav img:hover {
 		-ms-transform: translateY(1.2vw);
 		-o-transform: translateY(1.2vw);
 		transform: translateY(1.2vw);
-}
+	}
 	li#tudo {
 		font-size: 1.8vw !important;	
+	}
+/* Modal Privacidade */
+	div.modal-privacidade {
+		display: none;
+		position: fixed;
+		bottom: 0;
+		width: calc(100% - 8px);
+		padding: 3px 0;
+		max-width: 100%;
+		z-index: 1000;
+		background-image: linear-gradient(to bottom, rgba(239, 239, 239, 0.93), rgba(168, 168, 168, 0.93));
+		border: 4px solid #000000;
+		border-radius: 2px;
+		-webkit-transform: translateY(250px);
+		-moz-transform: translateY(250px);
+		-ms-transform: translateY(250px);
+		-o-transform: translateY(250px);
+		transform: translateY(250px);
+		-webkit-transition: transform 0.8s;
+		-moz-transition: transform 0.8s;
+		-ms-transition: transform 0.8s;
+		-o-transition: transform 0.8s;
+		transition: transform 0.8s;
+	}
+	div.modal-privacidade button {
+		float: right;
+		margin: 5px 5px 5px 8px;
+		height: 35px;
+		width: 35px;
+		background-image: url("../_imagens/botao_fechar.png");
+		background-size: 100% 100%;
+	}
+	div.modal-privacidade button:hover {
+		cursor: pointer;
+		-moz-filter: brightness(145%);
+		-ms-filter: brightness(145%);
+		-o-filter: brightness(145%);
+		-webkit-filter: brightness(145%);
+		filter: brightness(145%);
+	}
+	div.modal-privacidade p {
+		font-family: frizquadrata;
+		font-weight: bold;
+		letter-spacing: 1px;
+		font-size: 17px;
+		text-align: center;
+		margin: 20px 32px 10px 32px;
 	}	
 	/* Corpo da Pagina - Mobile */
 	@media screen and (max-width: 800px) {

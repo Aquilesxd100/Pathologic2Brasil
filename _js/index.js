@@ -1,5 +1,7 @@
  var resolucaoL = window.innerWidth;
  var resolucaoA = window.innerHeight;
+ const linguagemUsuario = navigator.language || navigator.userLanguage || ""; 
+
  /* Abertura de Link */
     function abrirLink(link) {
     window.location.href=link;
@@ -44,6 +46,42 @@
             input.value = "";
         }
     });
+/* Modal de Privacidade */
+    const modalPrivacidade = document.querySelector(".modal-privacidade");
+
+    if (!localStorage.getItem("alertaPrivacidade")) {
+        abrirModalPrivacidade();
+    }
+
+    function abrirModalPrivacidade() {
+        if (!linguagemUsuario.includes("pt")) {
+            const modalPrivacidadeP = document.querySelector(".modal-privacidade p");
+            modalPrivacidadeP.innerText = `This website uses cookies and similar technologies to provide services, 
+            functionalities and to understand your interaction with it.
+            By using this website you agree with the use of this information to better improve your experience.`;
+        }
+        modalPrivacidade.style.display="inherit";
+        setTimeout(
+            () => {
+                modalPrivacidade.style.transform="translateY(0px)";
+                adaptadorPrefixos("modal-privacidade", "translateY(0px)");  
+            },
+            150
+        );
+    }
+
+    function fecharModalPrivacidade() {
+        localStorage.setItem("alertaPrivacidade", "emitido");
+        const qntPxAhMoverModal = resolucaoL > 900 ? "150px" : "250px";
+        modalPrivacidade.style.transform=`translateY(${qntPxAhMoverModal})`;
+        adaptadorPrefixos(modalPrivacidade, `translateY(${qntPxAhMoverModal})`);
+        setTimeout(
+            () => {
+                modalPrivacidade.style.display="none";  
+            },
+            950
+        );
+    }
 /* Barra de Pesquisa */
     const input = document.getElementById("input");
     const input2 = document.getElementById("input-mobile");

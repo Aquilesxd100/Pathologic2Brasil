@@ -2,35 +2,22 @@
 <html lang="pt-br">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<meta name="keywords" content="noindex">
+<meta name="robots" content="Pathologic, Guia, Tutorial">
+<meta name="keywords" content="Comida, Fome, Filipe Ramos">
+<meta name="description" content="Site com guias e tutoriais sobre o jogo Pathologic 2.">
 <head>
-	<title>Resultados</title>
-	<link rel="icon" type="image/x-icon" href="_recursos/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="_css/padrao.css"/>
-	<link rel="stylesheet" type="text/css" href="_css/estrutura.css"/>
-	<link rel="preload" href="./_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="./_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<style>
-		body #funcao-pesquisa-barra {
-			right: 3.8vw;
-			-ms-clip-path: inset(0vw 0vw 0vw 0vw);
-			-moz-clip-path: inset(0vw 0vw 0vw 0vw);
-			-o-clip-path: inset(0vw 0vw 0vw 0vw);
-			-webkit-clip-path: inset(0vw 0vw 0vw 0vw);
-			clip-path: inset(0vw 0vw 0vw 0vw);
-		}
-		body #input {
-			display: block;
-			opacity: 1;
-		}
-	</style>
+	<title>Pathologic 2 Brasil</title>
+	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../_css/home.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
+	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
 </head>
 <body id="body">
 	<header>
 		<picture id="banner">
-			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
-			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+			<source media="(max-width: 800px)" srcset="../_imagens/banner_mobile.jpg">
+			<img src="../_imagens/banner.jpg" alt="banner pathologic 2 brasil">
 		</picture>
 		<div id="funcao-pesquisa">
 			<form method="get" action="pesquisa.html">
@@ -143,37 +130,72 @@
 		<div id="corpo">
 			<div id="fundobranco">
 				<div id="conteudo">
-					<picture class="banner">
-						<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
-						<img src="_imagens/bem_vindo.jpg">
-					</picture>
-					<h1 class="titulo">Resultados</h1>
-					<section>
-						<article class="guias-cards resultado-pesquisa">
-						</article>
-					</section>					
+					<div id="introducaotitulo">
+						<picture id="banner-bem-vindo-mobile">
+							<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
+							<img src="_imagens/bem_vindo.jpg" id="bannerbemvindo">
+						</picture>
+						<h1>Bem Vindo(a) ao<br class="modo-mobile"> Pathologic 2 Brasil !</h1>
+					</div>
+					<div id="introducao">
+					    <h2>Aqui você irá encontrar tudo que precisa para ser um <span id="menku">honrado menkhu,</span><br> um <span id="cirurgiao">mestre cirurgião</span> ou um <br class="modo-mobile"><span id="ator">renomado ator!</span></h2>
+				    </div>
+					<div id="introducao2">
+						<p>É só clicar na categoria que lhe interessa <span class="foco">aqui em cima,</span> <br class="modo-mobile">selecionar um dos nossos ultimos guias <span class="foco">abaixo,</span><br class="modo-desktop"> ou caso procure algo em especifico, pesquise no <span class="foco">canto de cima a direita.</span></p> 	
+					</div>
+					<div id="ultimosguiastitulo">
+						<picture>
+							<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
+							<img src="_imagens/ultimos_guias.jpg" id="bannerultimosguias">
+						</picture>
+							<h1>Ultimos Guias</h1>
+					</div>
+					<div id="ultimosguias">
+						<img src="_imagens/botao_ultimosguias_esquerda.png" id="botao-esquerda" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-esquerda'); botaoUltimosGuias('botao-esquerda')">
+						<img src="_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-direita'); botaoUltimosGuias('botao-direita')">
+						<div id="subshowcase">
+							<div id="showcase">
+								<img src="_imagens/ultimos_guias_dinheiro.png" onclick="abrirLink('dinheiro.html')">
+								<img src="_imagens/ultimos_guias_comida.png" onclick="abrirLink('comida.html')">			
+								<img src="_imagens/ultimos_guias_mapa_util.png" onclick="abrirLink('mapa.html')">
+								<img src="_imagens/ultimos_guias_receitas.png" onclick="abrirLink('receitas.html')">
+								<img src="_imagens/ultimos_guias_combate.png" onclick="abrirLink('combate.html')">
+							</div>
+						</div>
+					</div>
+					<div id="acessorapidotitulo">
+						<picture id="banner-acesso-rapido-mobile">
+							<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
+							<img src="_imagens/acesso_rapido.jpg" id="banneracessorapido">
+						</picture>
+						<h1>Acesso Rapido</h1>
+					</div>
+					<div id="acessorapido">
+						<div id="acessorapidoinfo">
+							<div id="acessorapidodisplay">
+								<h2 id="displayinfo"><span class="modo-desktop">Passe o mouse por cima de uma das opções para saber mais!</span><span class="modo-mobile">Toque em cima de uma das opções<br> para saber mais!</span></h2>
+						    </div>
+						</div>
+						<div id="acessorapidoopcoes">
+							<img src="_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'dinheiro.html')">
+							<img src="_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'podinzins.html')">
+							<img src="_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'mapa.html')">
+							<img src="_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'comida.html')">
+							<img src="_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'receitas.html')">
+							<img src="_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combate.html')">
+						</div>
+						<img src="_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); acessoRapidoMobile('link')">
+					</div>
 					<footer>
 						<ul>
 							<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
 							<li id="contato">Contato: pathologic2brasil@gmail.com</li>
 						</ul>
-					</footer>
+					</footer>	
 				</div>
 			</div>
-	    </div>
-		<div class="modal-privacidade" id="modal-privacidade">
-			<button 
-				id="botao-modal-fechar"
-				onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
-			>
-			</button>
-			<p>
-				Utilizamos cookies e tecnologias semelhantes para permitir serviços 
-				e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
-				Ao utilizar este site, você concorda com o uso dessas informações.
-			</p>
-		</div>		
+	    </div>	
 	<script src="_js/index.js"></script>
-	<script src="_js/cards.js"></script>
+	<script src="_js/home.js"></script>
 </body>
 </html>
