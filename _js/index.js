@@ -1,6 +1,6 @@
  var resolucaoL = window.innerWidth;
  var resolucaoA = window.innerHeight;
- const linguagemUsuario = navigator.language || navigator.userLanguage || ""; 
+ const linguagemNavegador = navigator.language || navigator.userLanguage || ""; 
 
  /* Abertura de Link */
     function abrirLink(link) {
@@ -54,7 +54,7 @@
     }
 
     function abrirModalPrivacidade() {
-        if (!linguagemUsuario.includes("pt")) {
+        if (!linguagemNavegador.includes("pt")) {
             const modalPrivacidadeP = document.querySelector(".modal-privacidade p");
             modalPrivacidadeP.innerText = `This website uses cookies and similar technologies to provide services, 
             functionalities and to understand your interaction with it.
@@ -81,6 +81,31 @@
             },
             950
         );
+    }
+/* Mudanca de Linguagem */
+    const linguagemWebsite = window.location.href.includes("/en")
+        ? "ingles"
+        : "portugues";
+        
+    const botaoLinguagemSelecionada = document.querySelector(`.linguagem-${linguagemWebsite}`);
+    botaoLinguagemSelecionada.classList.add("botao-linguagem-selecionada");
+
+    function mudarLinguagem(tipoLinguagem) {
+        if (linguagemWebsite === tipoLinguagem) return;
+
+        const urlSiteAtual = window.location.href;
+        let urlAhRedirecionar = null;
+        switch (tipoLinguagem) {
+            case "portugues":
+                //urlAhRedirecionar = urlSiteAtual.replace(".br/en/", ".br/");
+                urlAhRedirecionar = urlSiteAtual.replace("Pathologic2Brasil/en/", "Pathologic2Brasil/");
+            break;
+            case "ingles":
+                //urlAhRedirecionar = urlSiteAtual.replace(".br/", ".br/en/");
+                urlAhRedirecionar = urlSiteAtual.replace("Pathologic2Brasil/", "Pathologic2Brasil/en/");
+            break;
+        }
+        abrirLink(urlAhRedirecionar);
     }
 /* Barra de Pesquisa */
     const input = document.getElementById("input");

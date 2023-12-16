@@ -731,7 +731,45 @@ nav img:hover {
 		font-size: 17px;
 		text-align: center;
 		margin: 20px 32px 10px 32px;
+	}
+/* Botoes Linguagem */
+	div.botoes-linguagem {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: flex;
+	}
+	div.botoes-linguagem button {
+		width: 40px;
+		height: 32px;
+		border: 3px solid #000000;
+		cursor: url("../_recursos/cursor_link.cur"), auto;
+
+		-moz-filter: grayscale(5%) brightness(0.45);
+		-ms-filter: grayscale(5%) brightness(0.45);
+		-o-filter: grayscale(5%) brightness(0.45);
+		-webkit-filter: grayscale(5%) brightness(0.45);
+		filter: grayscale(5%) brightness(0.45);
+	}
+	div.botoes-linguagem button.linguagem-portugues {
+		border-right: 2px solid #000000;
+		background-image: url("../_imagens/_icones/br_icon.jpg");
+		background-size: 100% 100%;
+	}
+	div.botoes-linguagem button.linguagem-ingles {
+		border-left: 2px solid #000000;
+		background-image: url("../_imagens/_icones/en_icon.jpg");
+		background-size: 100% 100%;
 	}	
+	
+	body button.botao-linguagem-selecionada {
+		-moz-filter: none;
+		-ms-filter: none;
+		-o-filter: none;
+		-webkit-filter: none;
+		filter: none;
+	}
+
 	/* Corpo da Pagina - Mobile */
 	@media screen and (max-width: 800px) {
 		body, picture#banner, picture#banner img, div#corpo {
