@@ -1,10 +1,15 @@
+const guias = document.querySelectorAll("#showcase img");
+// --> Para adicionar um novo guia basta simplesmente o 
+//     colocar no arquivo HTML seguindo o padrão 
+//     já estabelecido nos outros elementos
+
 /* Ultimos Guias - Botoes */
 var resolucaoL2 = window.innerWidth;
 var resolucaoA = window.innerHeight;
 function botaoUltimosGuias(botao) {
     if (resolucaoL2 > 800) {
         if (botao === "botao-direita") {
-            if (posicaoShowcase < 2) { /* <--- Novo Guia? Adicione AQUI */
+            if (posicaoShowcase < (guias.length - 3)) { /* <--- Modificador Novo Guia */
                 posicaoShowcase = posicaoShowcase + 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
                 showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
@@ -30,7 +35,7 @@ function botaoUltimosGuias(botao) {
     }
     else if (resolucaoL2 <= 800) {
         if (botao === "botao-direita") {
-            if (posicaoShowcase < 4) { /* <--- Novo Guia? Adicione AQUI */
+            if (posicaoShowcase < guias.length - 1) { /* <--- Modificador Novo Guia */
                 posicaoShowcase = posicaoShowcase + 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
                 showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
@@ -57,7 +62,6 @@ function botaoUltimosGuias(botao) {
 }
 /* Ultimos Guias - Showcase */
 const showcaseElemento = document.getElementById("showcase");
-const guias = document.querySelectorAll("#showcase img");
 var posicaoShowcase = 0;
 function showCase() {
     let checkResolucao = window.innerWidth;
