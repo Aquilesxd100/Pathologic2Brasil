@@ -782,15 +782,13 @@ nav img:hover {
 			height: 7vw;
 			width: 10vw;
 			margin-top: 3.9%;
-			border: solid #000000 calc(2px + 0.32vh);
+			border: solid #000000 calc(3px + 0.4vw);
 			border-radius: 5px;
-			background-image: url("../_imagens/botao-linguagem-ingles-mobile.png");
-			background-size: 100% 100%;
 		}
 		div.botoes-linguagem-mobile button {
 			height: 100%;
 			width: 100%;
-			background-image: url("../_imagens/botao-linguagem-ingles-mobile.png");
+			background-image: url("../_imagens/botao-linguagem-ingles-mobile.jpg");
 			background-size: 100% 100%;
 			cursor: url("../_recursos/cursor_link.cur"), auto;
 		}

@@ -49,6 +49,6 @@
 /* Botoes Linguagem (Mobile) */
     @media screen and (max-width: 800px) {
 		div.botoes-linguagem-mobile button {
-			background-image: url("../../_imagens/botao-linguagem-portugues-mobile.png");
+			background-image: url("../../_imagens/botao-linguagem-portugues-mobile.jpg");
 		}
 	}
