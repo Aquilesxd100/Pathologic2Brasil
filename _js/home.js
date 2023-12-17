@@ -6,6 +6,8 @@ const guias = document.querySelectorAll("#showcase img");
 /* Ultimos Guias - Botoes */
 var resolucaoL2 = window.innerWidth;
 var resolucaoA = window.innerHeight;
+const siteTaEmPortugues = linguagemWebsite === "portugues";
+
 function botaoUltimosGuias(botao) {
     if (resolucaoL2 > 800) {
         if (botao === "botao-direita") {
@@ -95,34 +97,78 @@ var loopShowCase = setInterval(showCase, 4000);
 /* Acesso Rapido */
 function acessoRapidoHover(tipo, elemento) {
     if (tipo === "on") {
+        let conteudoGuiaAcessoRapido;
         document.getElementById("displayinfo").style.color="#00DD00";
         document.getElementById("displayinfo").style.top="8%"
         if (elemento === "dinheiro") {
-            document.getElementById("displayinfo").innerHTML = "Fique rico e cause inveja<br class='modo-mobile'> até mesmo nos Kain!";
+            conteudoGuiaAcessoRapido = siteTaEmPortugues
+                ?
+                    "Fique rico e cause inveja<br class='modo-mobile'> até mesmo nos Kain!"
+                :
+                    "Get rich and make even the Kains jealous!"
+
+            if (
+                resolucaoL2 <= 800 
+                && !siteTaEmPortugues
+            ) {
+                document.getElementById("displayinfo").style.top="28%";
+            }
+
+            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
         }
         if (elemento === "podinzin") {
-            document.getElementById("displayinfo").innerHTML = "Consiga todos os pozinzins<br class='modo-mobile'> escondidos e salve vidas!";
+            conteudoGuiaAcessoRapido = siteTaEmPortugues
+            ?
+                "Consiga todos os pozinzins<br class='modo-mobile'> escondidos e salve vidas!"
+            :
+                "Get all the hidden Shmowders<br class='modo-mobile'> and save lives!"
+
+            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
         }
         if (elemento === "mapa") {
+            conteudoGuiaAcessoRapido = siteTaEmPortugues
+            ?
+                "Descubra todos os segredos da Estepe!"
+            :
+                "Find out all the secrets from the Steppe!"
+
             if (resolucaoL2 <= 800) {
                 document.getElementById("displayinfo").style.top="28%";
             }
-            document.getElementById("displayinfo").innerHTML = "Descubra todos os segredos da Estepe!";
+            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
         }
         if (elemento === "comida") {
+            conteudoGuiaAcessoRapido = siteTaEmPortugues
+            ?
+                "Nunca mais passe fome!"
+            :
+                "Never be hungry again!"
+
             if (resolucaoL2 <= 800) {
                 document.getElementById("displayinfo").style.top="28%";
             }
-            document.getElementById("displayinfo").innerHTML = "Nunca mais passe fome!";
+            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
         }
         if (elemento === "pocoes") {
-            document.getElementById("displayinfo").innerHTML = "Aprenda TUDO sobre a criação<br class='modo-mobile'> de Infusões e 'Poções'!";
+            conteudoGuiaAcessoRapido = siteTaEmPortugues
+            ?
+                "Aprenda TUDO sobre a criação<br class='modo-mobile'> de Infusões e 'Poções'!"
+            :
+                `Learn EVERYTHING about the<br class='modo-mobile'> brewing of tincture and "potions"!`
+
+            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
         }
         if (elemento === "combate") {
+            conteudoGuiaAcessoRapido = siteTaEmPortugues
+            ?
+                "Deixe de ser a caça e vire o caçador!"
+            :
+                "Stop being the prey and become the hunter!"
+
             if (resolucaoL2 <= 800) {
                 document.getElementById("displayinfo").style.top="28%";
             }
-            document.getElementById("displayinfo").innerHTML = "Deixe de ser a caça e vire o caçador!";
+            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
         }
     }
     else {
@@ -155,9 +201,13 @@ function acessoRapidoMobile(elemento, link) {
                 window.open(acessoRapidoReset[1], '_self');
             }
             if (acessoRapidoReset[1] === "") {
+                const avisoSelecaoOpcao = siteTaEmPortugues
+                    ? "Escolha uma das opções primeiro."
+                    : "Choose an option first."
+
                 document.getElementById("displayinfo").style.top="28%";
                 document.getElementById("displayinfo").style.color="#FF0000"; 
-                document.getElementById("displayinfo").innerHTML = "Escolha uma das opções primeiro!";
+                document.getElementById("displayinfo").innerHTML = avisoSelecaoOpcao;
             }
         }
     }

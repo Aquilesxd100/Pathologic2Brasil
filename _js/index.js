@@ -117,7 +117,12 @@
             evento.preventDefault();
         }
     })
-    input.placeholder = input.value === "" ? "Pesquisar..." : "";
+
+    const placeHolderPesquisa = linguagemWebsite === "portugues"
+        ? "Pesquisar..."
+        : "Search..."
+
+    input.placeholder = input.value === "" ? placeHolderPesquisa : "";
     function aberturaPesquisaDesktop() {
         if (aberturaPesquisa === 0) {
             document.getElementById("funcao-pesquisa-barra").style.right="3.8vw";
@@ -131,7 +136,7 @@
         }
         else if (aberturaPesquisa === 1) {
             document.getElementById("input").value="";
-            document.getElementById("input").setAttribute("placeholder", "Pesquisar...");
+            document.getElementById("input").setAttribute("placeholder", placeHolderPesquisa);
             document.getElementById("funcao-pesquisa-barra").style.right="-11.38vw";
             document.getElementById("funcao-pesquisa-barra").style.clipPath="inset(0vw 15.65vw 0vw 0vw)";
             adaptadorPrefixos("funcao-pesquisa-barra", "", "", "inset(0vw 15.65vw 0vw 0vw)");
@@ -152,7 +157,7 @@
     inputs.forEach(input => {
         input.addEventListener("blur", () => {
             if (input.value === "") {
-                input.setAttribute("placeholder", "Pesquisar...");
+                input.setAttribute("placeholder", placeHolderPesquisa);
             }
         })
     });
