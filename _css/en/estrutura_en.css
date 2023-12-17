@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* Retoques Pequenos na versao em ingles */
+
+/* Opções da Barra de Navegação */
+    nav#menu li#videos {
+        margin-left: 17.7vw;
+    }
+    nav#menu li#mais {
+        margin-left: 13vw;
+    }
+
+/* Sub Menus */
+	div#submenu li {
+		font-size: 1.85vw;
+	}
+    li#tudo {
+		font-size: 2vw !important;	
+	}
