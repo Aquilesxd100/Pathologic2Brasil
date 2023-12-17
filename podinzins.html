@@ -44,6 +44,10 @@
 			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
 			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
 		</picture>
+		<div class="botoes-linguagem">
+			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
+			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
+		</div>
 		<div id="funcao-pesquisa">
 			<form method="get" action="pesquisa.html">
 				<div id="funcao-pesquisa-barra">
@@ -63,6 +67,9 @@
 				<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
 				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
 			</form>
+			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
+				<button class="linguagem-portugues-mobile" onclick="mudarLinguagem(`ingles`)">
+			</div>
 		</div>
 		<div id="menu-lateral" class="menu-lateral-classe">
 			<div class="fundo-lateral"></div>
