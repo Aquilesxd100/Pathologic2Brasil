@@ -16,3 +16,39 @@
     li#tudo {
 		font-size: 2vw !important;	
 	}
+
+/* Menu Lateral (Mobile) */
+    .menu-lateral-classe li#mais2 {
+        left: 10.5vw;
+    }
+    #indicador-direita {
+        left: 38vw;
+    }
+    #indicador-esquerda {
+        left: 3.9vw;
+    }
+    div#sub-menu-lateral li {
+        font-size: 6vw;
+    }
+    #combate-mobile {
+        left: 11.7vw;
+    }
+    #comida-mobile {
+        left: 16.5vw;
+    }
+    #mapautil-mobile {
+        top: 2.2vw;
+        left: 17.5vw;
+    }
+    #tudo-mobile {
+        top: 12vw;
+        left: 19.5vw;
+        font-size: 6.5vw !important;
+    }
+
+/* Botoes Linguagem (Mobile) */
+    @media screen and (max-width: 800px) {
+		div.botoes-linguagem-mobile button {
+			background-image: url("../../_imagens/botao-linguagem-portugues-mobile.png");
+		}
+	}

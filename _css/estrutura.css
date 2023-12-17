@@ -769,6 +769,32 @@ nav img:hover {
 		-webkit-filter: none;
 		filter: none;
 	}
+	div.botoes-linguagem-mobile {
+		display: none;
+	}
+/* Botoes Linguagem (Mobile) */
+	@media screen and (max-width: 800px) {
+		div.botoes-linguagem-mobile {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 22%;
+			height: 7vw;
+			width: 10vw;
+			margin-top: 3.9%;
+			border: solid #000000 calc(2px + 0.32vh);
+			border-radius: 5px;
+			background-image: url("../_imagens/botao-linguagem-ingles-mobile.png");
+			background-size: 100% 100%;
+		}
+		div.botoes-linguagem-mobile button {
+			height: 100%;
+			width: 100%;
+			background-image: url("../_imagens/botao-linguagem-ingles-mobile.png");
+			background-size: 100% 100%;
+			cursor: url("../_recursos/cursor_link.cur"), auto;
+		}
+	}
 
 	/* Corpo da Pagina - Mobile */
 	@media screen and (max-width: 800px) {
