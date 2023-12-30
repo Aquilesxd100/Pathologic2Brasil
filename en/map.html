@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="Pathologic, Guia, Tutorial">
+<meta name="keywords" content="Map, find, treasures">
+<meta name="description" content="Find out all the secrets from the Steppe with this useful map!">
+<head>
+	<title>Map</title>
+	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../_css/mapa.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
+	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
+</head>
+<body id="body">
+	<div id="mapa-zoom">
+		<img src="../_imagens/mapa_completo_zoom.jpg" id="mapa-mobile">
+	</div>	
+	<img src="../_imagens/botao_tela_cheia_fechar.png" id="mapa-botao-fechar" onclick="mapaZoom()">
+	<img src="../_imagens/botao_tela_cheia_fechar.png" id="mapa-botao-fechar2" onclick="mapaZoom()">
+	<header>
+		<picture id="banner">
+			<source media="(max-width: 800px)" srcset="../_imagens/banner_mobile.jpg">
+			<img src="../_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+		</picture>
+		<div class="botoes-linguagem">
+			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
+			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
+		</div>
+		<div id="funcao-pesquisa">
+			<form method="get" action="search.html">
+				<div id="funcao-pesquisa-barra">
+					<img src="../_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+					<img src="../_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+					<input type="text" name="resultados" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Search...">
+				</div>
+				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
+			</form>	
+		</div>
+		<div id="funcao-pesquisa-mobile-mais-menu">
+			<form method="get" action="search.html">
+				<div id="divbotaopesquisamobile">
+					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="../_imagens/botao_pesquisa.png">
+				</div>
+				<img src="../_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
+				<img src="../_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
+				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Search...">
+			</form>
+			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
+				<button onclick="mudarLinguagem(`portugues`)">
+			</div>
+		</div>
+		<div id="menu-lateral" class="menu-lateral-classe">
+			<div class="fundo-lateral"></div>
+			<img src="../_imagens/menu_lateral_divisao.png" id="lateral-divisao">
+			<img src="../_imagens/menu_lateral_borda.png" id="lateral-borda">
+			<div id="sub-menu-lateral-cover">				
+			</div>
+			<div id="sub-menu-lateral">
+				<ul>
+					<li id="combate-mobile">Combat</li> 
+					<li id="comida-mobile">Food</li> 					
+					<li id="mapautil-mobile">Map</li> 
+					<li id="tudo-mobile">All</li> 
+				</ul>
+				<a href="combat.html" target="_self">
+					<img src="../_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combat.html')">
+				</a>
+				<a href="food.html" target="_self">
+					<img src="../_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('food.html')">
+				</a>
+				<a href="map.html" target="_self">
+					<img src="../_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('map.html')">
+				</a>
+				<a href="all.html" target="_self">
+					<img src="../_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('all.html')">
+				</a>
+			</div>
+			<img src="../_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="../_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
+			</a>
+			<a href="trading.html" target="_self">
+				<img src="../_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trading.html')">
+			</a>
+			<a href="index.html" target="_self">
+				<img src="../_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
+			</a>
+			<img src="../_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
+			<img src="../_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
+			<h1 id="titulo-menu-lateral">Menu</h1>
+			<ul>
+				<li id="home2">Home</li> 
+				<li id="trocas2">Trading</li> 					
+				<li id="videos2">Videos</li> 
+				<li id="mais2">+Guides</li> 
+			</ul>
+			<img src="../_imagens/indicador_esquerda.png" id="indicador-esquerda">
+			<img src="../_imagens/indicador_direita.png" id="indicador-direita">
+		</div>
+		<nav id="menu">
+			<a href="index.html" target="_self">
+				<img src="../_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
+			</a>
+			<a href="trading.html" target="_self">
+				<img src="../_imagens/barra_2.png" id="barra2" onclick="abrirLink('trading.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
+			</a>
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="../_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			</a>
+			<img src="../_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
+			<img src="../_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
+			<ul>
+				<li id="home">Home</li> 
+				<li id="trocas">Trading</li> 					
+				<li id="videos">Videos</li> 
+				<li id="mais">+Tutorials/Guides</li> 
+			</ul>
+		</nav>
+		<div id="submenu">
+			<a href="all.html" target="_self">
+				<img src="../_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('all.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
+			</a>
+			<a href="map.html" target="_self">
+				<img src="../_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('map.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			</a>
+			<a href="food.html" target="_self">
+				<img src="../_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('food.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
+			</a>
+			<a href="combat.html" target="_self">
+				<img src="../_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combat.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
+			</a>
+			<ul>
+				<li id="combate">Combat</li> 
+				<li id="comida">Food</li> 					
+				<li id="mapautil">Map</li> 
+				<li id="tudo">All</li> 
+			</ul>
+		</div>
+	</header>
+		<div id="corpo">
+			<div id="fundobranco">
+				<div id="conteudo">
+					<picture class="banner-principal">
+						<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
+						<img src="../_imagens/bem_vindo.jpg">
+					</picture>
+					<h1 class="introducao">Map</h1>
+					<div class="principal">
+						<div class="texto">
+							<p>Welcome to our useful map!<br> Here you can find out about the localization of the Dead Item Store each night, hidden item caches across the map, areas with plenty of herbs, children gathering spots, and much more!</p>
+						</div>
+						<img src="../_imagens/mapa_completo.jpg" class="mapa-imagem" onclick="mapaZoom('abrir')">
+						<h5 class="info-mobile">- Click on the map to activate fullscreen mode.</h5>
+						<div class="mapa-infos">
+							<div id="mercador" class="info-item" onclick="botaoTipo2Discreto('mercador'); secaoInfos('mercador-noturno', 'Mercador Noturno')">
+								<div>
+									<img src="../_imagens/_icones/noite_mercador.png">
+								</div>
+								<img src="../_imagens/placa_marcacao.jpg" class="marcacao-placa">
+								<p>Dead Item<br> Store</p>
+							</div>
+							<div id="baus-secretos" class="info-item" onclick="botaoTipo2Discreto('baus-secretos'); secaoInfos('depositos-secretos', 'Depósitos Secretos')">
+								<div>
+									<img src="../_imagens/_icones/stash_secreto.png">
+								</div>
+								<img src="../_imagens/placa_marcacao.jpg" class="marcacao-placa">
+								<p>Hidden<br> Caches</p>
+							</div>
+							<div id="baus-criancas" class="info-item" onclick="botaoTipo2Discreto('baus-criancas'); secaoInfos('baus-escondidos', 'Baús Escondidos')">
+								<div>
+									<img src="../_imagens/_icones/marcador_bau_criancas.png">
+								</div>
+								<img src="../_imagens/placa_marcacao.jpg" class="marcacao-placa">
+								<p>Children<br> Caches</p>
+							</div>
+							<div id="ervas" class="info-item" onclick="botaoTipo2Discreto('ervas'); secaoInfos('raizes-sangrentas', 'Raízes Sangrentas')">
+								<div>
+									<img src="../_imagens/_icones/ervas.png">
+								</div>
+								<img src="../_imagens/placa_marcacao.jpg" class="marcacao-placa">
+								<p>Bloody<br> Roots</p>
+							</div>
+							<div id="zonas-ervas" class="info-item" onclick="botaoTipo2Discreto('zonas-ervas'); secaoInfos('zonas-com-ervas', 'Zonas com Ervas')">
+								<div>
+									<img src="../_imagens/_icones/ervas_zona.png">
+								</div>
+								<img src="../_imagens/placa_marcacao.jpg" class="marcacao-placa">
+								<p>Herb<br> Zones</p>
+							</div>
+							<div id="zonas-criancas" class="info-item" onclick="botaoTipo2Discreto('zonas-criancas'); secaoInfos('zonas-com-criancas', 'Zonas com Crianças')">
+								<div>
+									<img src="../_imagens/_icones/criancas_zona.png">
+								</div>
+								<img src="../_imagens/placa_marcacao.jpg" class="marcacao-placa">
+								<p class=zonas-criancas>Children<br> Zones</p>
+							</div>
+						</div>
+					</div>
+					<div id="marcador-titulo-div">
+						<h1 id="marcador-titulo"><img src="../_imagens/_icones/flecha_texto_verde.png">Click on one of the above options to learn more!</h1>
+					</div>
+					<div class="info-marcador" id="info-marcador">
+						<div class="raizes-sangrentas" id="raizes-sangrentas">
+							<picture>
+								<source media="(max-width: 800px)" srcset="../_imagens/_guias/ervas_sangrentas_mobile.jpg"> 
+								<img src="../_imagens/_guias/ervas_sangrentas.jpg">
+							</picture>
+							<p class="introducao-video">Those leaf markers indicate where to find "Bloody Roots" to feed and obtain herbs!</p>
+							<p class="introducao-video2">- In case of doubt about how to feed them see the section below.</p>
+							<div class="raizes-sangrentas-video">
+								<div class="raizes-sangrentas-dicas">
+									<p><span class="sublinhado">1.</span> Approach one of the few locations and stand still near the weird sounds the earth makes.</p> 
+									<p><span class="sublinhado">2.</span> Wait for the roots to rise and feed them with blood (infected or normal).</p>
+									<p><span class="sublinhado">3.</span> Right after the feeding two or three random herbs will spawn around the location.</p> 
+								</div>
+								<iframe class="video" src="https://www.youtube.com/embed/WauYgsea9d4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="dica-padrao">
+								<p><span>TIP #1:</span> Each Blood Root can be fed once per day, becoming hungry again at 12:00 AM the next night.</p>
+							</div>
+							<div class="dica-padrao">
+								<p><span>TIP #2:</span> I recommend feeding the roots only with infected blood because it is easier to obtain, and the other type can be sold.</p>
+							</div>
+						</div>
+						<div class="mercador-noturno" id="mercador-noturno">
+							<picture>
+								<source media="(max-width: 800px)" srcset="../_imagens/_guias/mercador_noturno_mobile.jpg">
+								<img src="../_imagens/_guias/mercador_noturno.jpg">
+							</picture>
+							<p class="introducao-padrao">The markers with a moon icon indicate the location of the Dead Item Shop on that specific night (midnight of the corresponding 'day').</p>
+							<div class="dica-padrao">
+								<p><span>TIP:</span> The Dead Item Shop will appear in a different place on the map every night, starting at 00:00 AM and remaining available until 07:30 AM.</p>
+							</div> 
+						</div>
+						<div class="baus-escondidos" id="baus-escondidos">
+							<picture>
+								<source media="(max-width: 800px)" srcset="../_imagens/_guias/baus_criancas_mobile.jpg">
+								<img src="../_imagens/_guias/baus_criancas.jpg">
+							</picture>
+							<p class="introducao-padrao">The red X icons show the locations of the hidden children's chests, which contain various items.</p>
+							<p class="atencao-padrao"><span class="amarelo">BEWARE:</span> The children say that every time you get an item from those chests, you must replace it with another one of equivalent value. In practice, it doesn't seem to have any penalty to ignore this rule, so do as you must.</p>
+							<div class="dica-padrao">
+								<p><span>TIP #1:</span> Every day those chests are restocked with new items at 07:30 AM.</p>
+							</div> 
+							<div class="dica-padrao">
+								<p><span>TIP #2:</span> The chests are usually hidden in the scenario so pay attention!</p>
+							</div> 
+						</div>
+						<div class="zonas-com-ervas" id="zonas-com-ervas">
+							<picture>
+								<source media="(max-width: 800px)" srcset="../_imagens/_guias/zonas_ervas_mobile.jpg">
+								<img src="../_imagens/_guias/zonas_ervas.jpg">
+							</picture>
+							<p class="introducao-padrao">Those green zones indicate where you can find a decent amount of herbs on the ground.</p>
+							<p class="atencao-padrao"><span class="amarelo">BEWARE:</span> The herbs will start to spawn in those areas after day two, before that none will appear at all.</p>
+							<div class="dica-padrao">
+								<p><span>TIP:</span> The herbs will be scattered around the areas and will respawn daily at 07:30 AM.</p>
+							</div> 
+						</div>
+						<div class="zonas-com-criancas" id="zonas-com-criancas">
+							<picture>
+								<source media="(max-width: 800px)" srcset="../_imagens/_guias/zonas_criancas_mobile.jpg">
+								<img src="../_imagens/_guias/zonas_criancas.jpg">
+							</picture>
+							<p class="introducao-padrao">Those blue areas indicate where you can find a decent number of children, who can be quite useful for trading.</p>
+							<p class="atencao-padrao"><span class="amarelo">BEWARE:</span> Nenhuma criança poderá ser encontrada nesses locais durante a madrugada (00:00 <span class="fonte-bugada">~</span> 07:30), se o distrito estiver infectado/destruído, ou se você estiver no dia 9 ou maior.</p>
+						</div>
+						<div class="depositos-secretos" id="depositos-secretos">
+							<picture>
+								<source media="(max-width: 800px)" srcset="../_imagens/_guias/armazenamentos_secretos_mobile.jpg">
+								<img src="../_imagens/_guias/armazenamentos_secretos.jpg">
+							</picture>
+							<p class="introducao-padrao">Esses ícones de baús indicam locais do mapa que existem armários/baús/etc que podem ser abertos e contêm itens aleatórios.</p>
+							<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Só aparecera itens nesses armários a partir do dia 2, antes disso eles estarão todos vazios.</p>
+							<div class="dica-padrao">
+								<p><span>DICA:</span> Todas as noites as 00:00 esses armários são reabastecidos com itens novos, então lembre-se de os visitar diariamente caso tenha tempo.</p>
+							</div> 
+							<div class="ultima-secao">
+								<p class="info-secao-inferior">- Abaixo separei fotos de todos os armários com suas localizacoes.</p>
+							</div>
+							<div class="localizacoes-depositos">
+								<picture class="depositos-localizacoes">
+									<source media="(max-width: 800px)" srcset="../_imagens/_guias/mapa/cache_1_mobile.jpg">
+									<img src="../_imagens/_guias/mapa/cache_1.jpg">
+								</picture>
+								<picture class="depositos-localizacoes">
+									<source media="(max-width: 800px)" srcset="../_imagens/_guias/mapa/cache_2_mobile.jpg">
+									<img src="../_imagens/_guias/mapa/cache_2.jpg">
+								</picture>
+								<picture class="depositos-localizacoes">
+									<source media="(max-width: 800px)" srcset="../_imagens/_guias/mapa/cache_3_mobile.jpg">
+									<img src="../_imagens/_guias/mapa/cache_3.jpg">
+								</picture>
+								<picture class="depositos-localizacoes">
+									<source media="(max-width: 800px)" srcset="../_imagens/_guias/mapa/cache_4_mobile.jpg">
+								<img src="../_imagens/_guias/mapa/cache_4.jpg">
+								</picture>
+								<picture class="depositos-localizacoes">
+									<source media="(max-width: 800px)" srcset="../_imagens/_guias/mapa/cache_5_mobile.jpg">
+								<img src="../_imagens/_guias/mapa/cache_5.jpg">
+								</picture>
+								<picture class="depositos-localizacoes">
+									<source media="(max-width: 800px)" srcset="../_imagens/_guias/mapa/cache_6_mobile.jpg">
+									<img src="../_imagens/_guias/mapa/cache_6.jpg">
+								</picture>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<ul>
+							<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
+							<li id="contato">Contato: pathologic2brasil@gmail.com</li>
+						</ul>
+					</footer>	
+				</div>
+			</div>
+	    </div>
+		<div class="modal-privacidade" id="modal-privacidade">
+			<button 
+				id="botao-modal-fechar"
+				onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
+			>
+			</button>
+			<p>
+				Utilizamos cookies e tecnologias semelhantes para permitir serviços 
+				e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
+				Ao utilizar este site, você concorda com o uso dessas informações.
+			</p>
+		</div>		
+	<script src="../_js/index.js"></script>
+	<script src="../_js/mapa.js"></script>
+</body>
+</html>
