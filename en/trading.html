@@ -3,16 +3,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="Pathologic, Guide, Tutorial">
-<meta name="keywords" content="Hungry, Food, Pathologic">
-<meta name="description" content="Website with Guides and Tutorials about Pathologic 2.">
+<meta name="keywords" content="Trade, Items, Trading">
+<meta name="description" content="Application to Simulate Trades with the Townsfolk!">
 <head>
-	<title>Pathologic 2 Brasil</title>
+	<title>Trading</title>
 	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="../_css/home.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/padrao.css"/>
 	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
 	<link rel="stylesheet" type="text/css" href="../_css/en/estrutura_en.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/apptrocas.css">
 	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
 	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<style>
+	</style>
 </head>
 <body id="body">
 	<header>
@@ -138,69 +141,118 @@
 	<div id="corpo">
 		<div id="fundobranco">
 			<div id="conteudo">
-				<div id="introducaotitulo">
-					<picture id="banner-bem-vindo-mobile">
-						<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
-						<img src="../_imagens/bem_vindo.jpg" id="bannerbemvindo">
-					</picture>
-					<h1>Welcome to<br class="modo-mobile"> Pathologic 2 Brasil !</h1>
-				</div>
-				<div id="introducao">
-					<h2>Here you can find everything you need to become an <span id="menku">honored Menkhu,</span><br> a <span id="cirurgiao">master cirurgian</span> or an <br class="modo-mobile"><span id="ator">renomed actor!</span></h2>
-				</div>
-				<div id="introducao2">
-					<p>Just click on a category that interests you <span class="foco">in the above menu,</span> <br class="modo-mobile">select one of our latest guides <span class="foco">below,</span><br class="modo-desktop"> or, in case you are looking for something specific, use the search bar <span class="foco">in the right corner.</span></p> 	
-				</div>
-				<div id="ultimosguiastitulo">
-					<picture>
-						<source media="(max-width: 800px)" srcset="../_imagens/ultimos_guias_mobile.jpg">
-						<img src="../_imagens/ultimos_guias.jpg" id="bannerultimosguias">
-					</picture>
-						<h1>Latest Guides</h1>
-				</div>
-				<div id="ultimosguias">
-					<img src="../_imagens/botao_ultimosguias_esquerda.png" id="botao-esquerda" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-esquerda'); botaoUltimosGuias('botao-esquerda')">
-					<img src="../_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-direita'); botaoUltimosGuias('botao-direita')">
-					<div id="subshowcase">
-						<div id="showcase">
-							<img src="../_imagens/en/ultimos_guias_dinheiro_en.png" onclick="abrirLink('money.html')">
-							<img src="../_imagens/en/ultimos_guias_comida_en.png" onclick="abrirLink('food.html')">			
-							<img src="../_imagens/en/ultimos_guias_mapa_util_en.png" onclick="abrirLink('map.html')">
-							<img src="../_imagens/en/ultimos_guias_receitas_en.png" onclick="abrirLink('recipes.html')">
-							<img src="../_imagens/en/ultimos_guias_combate_en.png" onclick="abrirLink('combat.html')">
-							<img src="../_imagens/en/ultimos_guias_podinzins_en.png" onclick="abrirLink('shmowders.html')">
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
+					<img src="_imagens/bem_vindo.jpg">
+				</picture>
+				<h1 class="titulo">Trocas</h1>
+				<section>
+					<article>
+						<div class="app-trocas">
+							<audio class="player" src="_audio/"></audio>
+							<div class="fundo-efeito"></div>
+							<div class="pre-carregamento">
+								<audio preload="auto">
+									<source src="_audio/colocando_item1.mp3" type="audio/mp3">
+									<source src="_audio/colocando_item2.mp3" type="audio/mp3">
+									<source src="_audio/colocando_item3.mp3" type="audio/mp3">
+									<source src="_audio/colocando_item4.mp3" type="audio/mp3">
+									<source src="_audio/colocando_item5.mp3" type="audio/mp3">
+									<source src="_audio/lixeira.mp3" type="audio/mp3">
+									<source src="_audio/tirando_item1.mp3" type="audio/mp3">
+									<source src="_audio/tirando_item2.mp3" type="audio/mp3">
+									<source src="_audio/tirando_item3.mp3" type="audio/mp3">
+								</audio>
+								<div class="loading">
+									<img src="_imagens/app_trocas/carregamento.png" class="carregamento">
+								</div>
+								<div class="pre-mobile"></div>
+								<div class="pre-desktop"></div>
+							</div>
+							<div class="info-item">
+								<div>
+									<table>
+										<tr class="nome-item">
+											<th class="coluna-tipo">							<h3>Nome:</h3>
+											</th>
+											<th>
+												<h3 class="titulo-item"></h3>
+											</th>
+										</tr>
+										<tr>
+											<th class="coluna-tipo">							<h3>Valor:</h3>
+											</th>
+											<th>
+												<h3 class="valor-item"></h3>
+											</th>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="titulo-grande">
+								<h1>Com quem deseja trocar?</h1>
+							</div>
+							<div class="cards-container">
+								<div class="tipo-npc" onclick="menuSecundario(this, 'Criancas')">
+									<img src="./_imagens/app_trocas/cards/criancas.jpg" class="modo-desktop">
+									<h3>Criancas</h3>
+								</div>
+								<div class="tipo-npc" onclick="menuSecundario(this, 'Adultos')">
+									<img src="./_imagens/app_trocas/cards/adultos.jpg" class="modo-desktop">
+									<h3>Adultos</h3>
+								</div>
+								<div class="tipo-npc" onclick="menuSecundario(this, 'Infectados')">
+									<img src="./_imagens/app_trocas/cards/infectados.jpg" class="modo-desktop">
+									<h3>Infectados</h3>
+								</div>
+							</div>
+							<div class="tela-3">
+								<img src="" class="imagem-npc-mobile">
+								<div class="modo-mobile botoes-mobile">
+									<button class="botao-voltar-mobile" onclick="telaAnterior(); botaoTipo2Lento(this)"></button>
+									<button class="botao-reset-mobile" onclick="resetContador(); botaoTipo2Lento(this); somEfeito('lixeira')"></button>
+								</div>
+								<div class="pode-ter">
+									<div class="titulo-medio"><h2>Pode ter:</h2></div>
+									<div class="display-itens-pode-ter"></div>
+								</div>
+								<div class="interesse">
+									<div class="titulo-medio"><h2>Interesse:</h2></div>
+									<div class="display-itens-interesse"></div>
+								</div>
+								<button id="botao-voltar" class="botao-voltar" onclick="telaAnterior(); botaoTipo2Lento(this)"></button>
+								<button id="botao-reset" class="botao-reset" onclick="resetContador(); botaoTipo2Lento(this); somEfeito('lixeira')"></button>
+								<div class="contador">
+									<h2>0</h2>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div id="acessorapidotitulo">
-					<picture id="banner-acesso-rapido-mobile">
-						<source media="(max-width: 800px)" srcset="../_imagens/tutoriais_rapidos_mobile.jpg">
-						<img src="../_imagens/acesso_rapido.jpg" id="banneracessorapido">
-					</picture>
-					<h1>Quick Access</h1>
-				</div>
-				<div id="acessorapido">
-					<div id="acessorapidoinfo">
-						<div id="acessorapidodisplay">
-							<h2 id="displayinfo"><span class="modo-desktop">Hover over an option to learn more!</span><span class="modo-mobile">Click on one of the options<br> to learn more!</span></h2>
+					</article>
+					<article>
+						<div class="sub-titulo2">
+							<h2>Observações</h2>
 						</div>
-					</div>
-					<div id="acessorapidoopcoes">
-						<img src="../_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'money.html')">
-						<img src="../_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'shmowders.html')">
-						<img src="../_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'map.html')">
-						<img src="../_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'food.html')">
-						<img src="../_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'recipes.html')">
-						<img src="../_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combat.html')">
-					</div>
-					<img src="../_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); acessoRapidoMobile('link')">
-				</div>
+						<div class="secao-com-2-imgs">
+							<img src="_imagens/app_trocas/variacao_mulher_desktop_1.jpg" class="modo-desktop">
+							<div class="secao-diferencas">
+								<p><img src="_imagens/_icones/flecha_texto_branca.png">A aparência dessas pessoas pode variar um pouco, seja na cor do cabelo ou alguns detalhes da roupa, porém devido a forte semelhança entre pessoas de um mesmo tipo costuma ser fácil identificá-las.</p>
+								<p><img src="_imagens/_icones/flecha_texto_branca.png">Itens com dois valores diferentes indicam o preço mínimo e máximo que a pessoa paga, esse valor varia conforme a durabilidade do item ou ingredientes utilizados em sua criação.</p>
+								<p><img src="_imagens/_icones/flecha_texto_branca.png">O nome de alguns itens pode estar um pouco diferente no aplicativo, seja para facilitar o entendimento ou por uma simples questão de design.</p>
+								<div class="mobile-diferencas-img">
+									<img src="_imagens/app_trocas/variacao_mulher_mobile_1.jpg">
+									<img src="_imagens/app_trocas/variacao_mulher_mobile_2.jpg">
+								</div>
+							</div>
+							<img src="_imagens/app_trocas/variacao_mulher_desktop_2.jpg" class="modo-desktop">
+						</div>
+					</article>
+				</section>
 				<footer>
 					<ul>
 						<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
 						<li id="contato">Contact: pathologic2brasil@gmail.com</li>
 					</ul>
-				</footer>	
+				</footer>
 			</div>
 		</div>
 	</div>
@@ -215,8 +267,8 @@
 			e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
 			Ao utilizar este site, você concorda com o uso dessas informações.
 		</p>
-	</div>	
-	<script src="../_js/index.js"></script>
-	<script src="../_js/home.js"></script>
+	</div>		
+	<script src="_js/index.js"></script>
+	<script src="_js/trocas.js"></script>
 </body>
 </html>

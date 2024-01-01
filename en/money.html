@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="Pathologic, Guide, Tutorial">
+<meta name="keywords" content="Money, Food, Farm">
+<meta name="description" content="Get Rich with the Black Market!">
+<head>
+	<title>Money</title>
+	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../_css/padrao.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/en/estrutura_en.css"/>
+	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<style>
+		article.introducao2 p {
+			margin: 1% 2% 1% 2%;
+		}
+		@media screen and (max-width: 800px) {
+			article.introducao2 p {
+				margin: 1.5% 2% 1.5% 2%;
+			}
+		}
+	</style>
+</head>
+<body id="body">
+	<header>
+		<picture id="banner">
+			<source media="(max-width: 800px)" srcset="../_imagens/banner_mobile.jpg">
+			<img src="../_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+		</picture>
+		<div class="botoes-linguagem">
+			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
+			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
+		</div>
+		<div id="funcao-pesquisa">
+			<form method="get" action="results.html">
+				<div id="funcao-pesquisa-barra">
+					<img src="../_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+					<img src="../_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+					<input type="text" name="resultados" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Search...">
+				</div>
+				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
+			</form>	
+		</div>
+		<div id="funcao-pesquisa-mobile-mais-menu">
+			<form method="get" action="results.html">
+				<div id="divbotaopesquisamobile">
+					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="../_imagens/botao_pesquisa.png">
+				</div>
+				<img src="../_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
+				<img src="../_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
+				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Search...">
+			</form>
+			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
+				<button onclick="mudarLinguagem(`portugues`)">
+			</div>
+		</div>
+		<div id="menu-lateral" class="menu-lateral-classe">
+			<div class="fundo-lateral"></div>
+			<img src="../_imagens/menu_lateral_divisao.png" id="lateral-divisao">
+			<img src="../_imagens/menu_lateral_borda.png" id="lateral-borda">
+			<div id="sub-menu-lateral-cover">				
+			</div>
+			<div id="sub-menu-lateral">
+				<ul>
+					<li id="combate-mobile">Combat</li> 
+					<li id="comida-mobile">Food</li> 					
+					<li id="mapautil-mobile">Map</li> 
+					<li id="tudo-mobile">All</li> 
+				</ul>
+				<a href="combat.html" target="_self">
+					<img src="../_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combat.html')">
+				</a>
+				<a href="food.html" target="_self">
+					<img src="../_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('food.html')">
+				</a>
+				<a href="map.html" target="_self">
+					<img src="../_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('map.html')">
+				</a>
+				<a href="all.html" target="_self">
+					<img src="../_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('all.html')">
+				</a>
+			</div>
+			<img src="../_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="../_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
+			</a>
+			<a href="trading.html" target="_self">
+				<img src="../_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trading.html')">
+			</a>
+			<a href="index.html" target="_self">
+				<img src="../_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
+			</a>
+			<img src="../_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
+			<img src="../_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
+			<h1 id="titulo-menu-lateral">Menu</h1>
+			<ul>
+				<li id="home2">Home</li> 
+				<li id="trocas2">Trading</li> 					
+				<li id="videos2">Videos</li> 
+				<li id="mais2">+Guides</li> 
+			</ul>
+			<img src="../_imagens/indicador_esquerda.png" id="indicador-esquerda">
+			<img src="../_imagens/indicador_direita.png" id="indicador-direita">
+		</div>
+		<nav id="menu">
+			<a href="index.html" target="_self">
+				<img src="../_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
+			</a>
+			<a href="trading.html" target="_self">
+				<img src="../_imagens/barra_2.png" id="barra2" onclick="abrirLink('trading.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
+			</a>
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="../_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			</a>
+			<img src="../_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
+			<img src="../_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
+			<ul>
+				<li id="home">Home</li> 
+				<li id="trocas">Trading</li> 					
+				<li id="videos">Videos</li> 
+				<li id="mais">+Tutorials/Guides</li> 
+			</ul>
+		</nav>
+		<div id="submenu">
+			<a href="all.html" target="_self">
+				<img src="../_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('all.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
+			</a>
+			<a href="map.html" target="_self">
+				<img src="../_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('map.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			</a>
+			<a href="food.html" target="_self">
+				<img src="../_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('food.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
+			</a>
+			<a href="combat.html" target="_self">
+				<img src="../_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combat.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
+			</a>
+			<ul>
+				<li id="combate">Combat</li> 
+				<li id="comida">Food</li> 					
+				<li id="mapautil">Map</li> 
+				<li id="tudo">All</li> 
+			</ul>
+		</div>
+	</header>
+	<div id="corpo">
+		<div id="fundobranco">
+			<div id="conteudo">
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
+					<img src="../_imagens/bem_vindo.jpg">
+				</picture>
+				<h1 class="titulo">Money</h1>
+				<section class="introducao">
+					<article>
+						<p>Welcome to our guide about money! Here I will show you step by step how to get rich selling organs at the black market. In short, we will attract bandits to deserted places, kill them, collect their organs and sell, simple like that!</p>
+						<picture class="introducao-img">
+							<source media="(max-width: 800px)" srcset="../_imagens/_guias/dinheiro/mesa_mobile.jpg">
+							<img src="../_imagens/_guias/dinheiro/mesa.jpg">
+						</picture>
+						<div class="atencao-padrao">
+							<p><span>BEWARE:</span> This strategy is dangerous and requires some knowledge of the game's combat system. Therefore, I recommend that you take a look at our combat guide <a class="link" href="combat.html" target="_blank">HERE</a>.</p>
+						</div>
+						<div class="sub-titulo2">
+							<h2>Required Items</h2>
+						</div>
+						<div class="itens-necessarios-grande">
+							<div>
+								<p>This strategy will require the following items:</p>								
+							</div>
+							<table class="modo-desktop">
+								<tr>
+									<th class="numero">1x</th>
+									<th><img src="../_imagens/_icones/revolver.jpg"></th>
+									<th class="menor">Fire Weapon</th>
+								</tr>
+								<tr>
+									<th class="numero">2+</th>
+									<th><img src="../_imagens/_icones/municao.jpg"></th>
+									<th>Ammo</th>
+								</tr>
+							</table>
+							<table class="modo-desktop">
+								<tr>
+									<th class="numero">1+</th>
+									<th><img src="../_imagens/_icones/bisturi.jpg"></th>
+									<th class="menor">Surgical Tool</th>
+								</tr>
+								<tr>
+									<th class="numero">3+</th>
+									<th><img src="../_imagens/_icones/garrafa_vazia.jpg"></th>
+									<th class="menor">Empty Bottle</th>
+								</tr>
+							</table>
+							<table class="modo-mobile">
+								<tr>
+									<th class="numero">1x</th>
+									<th><img src="../_imagens/_icones/revolver.jpg"></th>
+									<th class="menor">Fire Weapon</th>
+								</tr>
+								<tr>
+									<th class="numero">2+</th>
+									<th><img src="../_imagens/_icones/municao.jpg"></th>
+									<th>Ammo</th>
+								</tr>
+								<tr>
+									<th class="numero">1+</th>
+									<th><img src="../_imagens/_icones/bisturi.jpg"></th>
+									<th class="menor">Surgical Tool</th>
+								</tr>
+								<tr>
+									<th class="numero">3+</th>
+									<th><img src="../_imagens/_icones/garrafa_vazia.jpg"></th>
+									<th class="menor">Empty Bottle</th>
+								</tr>
+							</table>
+							<p class="observacao">*The durability of the weapon and surgical tool(s) must be at maximum or near it.</p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="../_imagens/ultimos_guias_mobile.jpg">
+					<img src="../_imagens/ultimos_guias.jpg">
+				</picture>
+				<h1 class="titulo">Introduction</h1>
+				<section>
+					<article class="introducao2">
+						<p>Before we begin the step-by-step, it's important to clarify some things...</p>
+					</article>
+					<article>
+						<div class="sub-titulo">
+							<h2>Enemies</h2>
+						</div>
+						<p>In this method, our initial objective is to find an isolated bandit (mainly unarmed). There are two types of bandits in the game, see below who they are and where to find them:</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="../_imagens/_guias/dinheiro/inimigos_mobile.jpg">
+							<img src="../_imagens/_guias/dinheiro/inimigos.jpg">
+						</picture>
+						<div class="sub-titulo2">
+							<h3>White Face</h3>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="../_imagens/_guias/dinheiro/bandido_palido.jpg">
+							<p class="principal">This type of bandit is usually easier to face. They prefer to walk alone, and compared to the other type, seem to have a lower chance of carrying a weapon. They can be found during the night (12:00 AM <span class="simbolo">~</span> 07:30 AM) in healthy districts, in other words, districts that are not infected or destroyed.
+							</p>
+						</div>
+						<div class="sub-titulo2">
+							<h3>Marauder</h3>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="../_imagens/_guias/dinheiro/bandido_assasino.jpg">
+							<p class="principal">This type of bandit is easier to find but harder to face. They usually roam in groups, creating a real challenge to isolate one from the others. If you get spotted by one pay attention to your surroundings, others can spot you right away, even through walls! This variant can be found during the day or night in destroyed districts.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Quanto maior for o número do dia que você estiver, maior será a chance dos bandidos estarem armados!</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Nem sempre será possível atrair sua presa para fora da cidade, se for um lugar longe da "zona verde" guardas provavelmente irão atrapalhar seus planos pelo caminho, nesse caso pode ser melhor sacrificar sua reputação no local mesmo.</p>
+						</div>
+					</article>
+					<article>
+						<div class="sub-titulo">
+							<h2>Terreno</h2>
+						</div>
+						<p>Tendo falado um pouco sobre o que iremos caçar, agora precisamos aprender um pouco sobre o terreno, é de extrema importância que ao escolher seu alvo você atraia e o mate fora da cidade ou algum lugar não-populado, do contrario sua reputacao será arruinada. Para facilitar marquei no mapa abaixo em cor verde zonas onde qualquer crime (seja a bandido ou inocente) não afetará sua reputação!</p>
+						<img src="../_imagens/_guias/dinheiro/mapa_zonas_seguras_caca.jpg" class="mapa-imagem">
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA:</span> Roubar sangue de corpos não afeta sua reputação, não importa onde você estiver, por isso certifique-se de coletar o sangue de todas as pessoas mortas que encontrar.</p>
+						</div>						
+					</article>
+					<article>
+						<div class="sub-titulo">
+							<h2>Venda de Orgaos</h2>
+						</div>
+						<p>Quanto a venda de órgãos é bem simples, tudo que você precisa fazer é levar-los a essa casa marcada no mapa abaixo, dentro dela prossiga para a parte de trás do balcão onde encontrará um estranho mercador. Esse homem só tem interesse em órgãos saudáveis e como todo comerciante possui um determinado valor em dinheiro consigo, o que não o permite comprar mais órgãos que possa pagar.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="../_imagens/_guias/dinheiro/venda_orgaos_mobile.jpg">
+							<img src="../_imagens/_guias/dinheiro/venda_orgaos.jpg">
+						</picture>
+						<hr>
+						<picture class="mini-mapa">
+							<source media="(max-width: 800px)" srcset="../_imagens/_guias/dinheiro/mapa_venda-orgaos_mobile.jpg">
+							<img src="../_imagens/_guias/dinheiro/mapa_venda-orgaos.jpg">
+						</picture>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Todas as noites as 00:00 esse mercador receberá mais dinheiro junto com novos itens medicinais para troca.</p>
+						</div>	
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Caso o mercador não tenha dinheiro para comprar todos os seus órgãos, recomendo guardar o que sobrou para vender em outra noite, apesar de ser tentador os itens que ele tem para troca não costumam superar o valor do dinheiro.</p>
+						</div>	
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="../_imagens/tutoriais_rapidos_mobile.jpg">
+					<img src="../_imagens/tutoriais_rapidos.jpg">
+				</picture>
+				<h1 class="titulo">Passo a Passo</h1>
+				<section>
+					<article class="introducao2">
+						<p>Depois de toda essa introdução, agora veremos como funciona no passo a passo acompanhado de dicas e vídeos.</p>
+					</article>
+					<article class="passo-com-iframe">
+						<div class="sub-titulo">
+							<h2><span>1</span> - Prepare-se!</h2>
+						</div>
+						<div class="dicas-video">
+							<div class="dicas">
+								<p><img src="../_imagens/_icones/flecha_texto.png">Escolha um bom local de caça e tenha bastante espaço no inventário.</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Esteja com a vida alta e a sede baixa.</p>
+								<p class="medio"><img src="../_imagens/_icones/flecha_texto.png">Só gaste munição/durabilidade da arma com esse método se tiver de sobra, caso contrario não vale a pena!</p>
+							</div>
+							<iframe class="video" src="https://www.youtube.com/embed/RtKbMJUZ32w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div class="sub-titulo">
+							<h2><span>2</span> - Discretamente entre na cidade e encontre um alvo solitário.</h2>
+						</div>
+						<div class="dicas-video">
+							<div class="dicas">
+								<p><img src="../_imagens/_icones/flecha_texto.png">Ao escolher o alvo, leve em consideração se é possível o atrair para fora da cidade sem ser visto pelos outros.</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Caso seja visto por mais de um bandido, fuja da cidade até pelo menos um deles o perder de vista.</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Utilize-se do modo furtivo sempre que necessário (segure C no computador).</p>
+							</div>
+							<iframe class="video" src="https://www.youtube.com/embed/v9hOtiJbAUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div class="sub-titulo">
+							<h2><span>3</span> - Chame a atenção do seu alvo e o atraia para fora da cidade.</h2>
+						</div>
+						<div class="dicas-video">
+							<div class="dicas">
+								<p class="grande"><img src="../_imagens/_icones/flecha_texto.png">Caso seu alvo tenha uma faca, fuja até ele o perder de vista e encontre outro que esteja desarmado, ou se tiver munição da arma sobrando siga para o próximo passo.</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Cuidado, inimigos próximos podem lhe detectar mesmo estando do outro lado de muros ou casas!</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Sempre que você sair de uma área e entrar em outra aparecerá um aviso no lado direto da tela.</p>
+							</div>
+							<iframe class="video" src="https://www.youtube.com/embed/yoDtkFVxl-E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div class="sub-titulo">
+							<h2><span>4</span> - Mate sua presa evitando receber qualquer dano.</h2>
+						</div>
+						<div class="dicas-video">
+							<div class="dicas">
+								<p class="gigante"><img src="../_imagens/_icones/flecha_texto.png">Quando o bandido estiver perto da morte ele poderá tentar fugir, para evitar que ele fuja quando for efetuar o 4º ataque potente tenha energia suficiente para dar um 5º logo em seguida, finalizando-o antes que ele corra!</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Caso a presa esteja utilizando uma faca, finalize-a com 1 tiro na cabeça.</p>
+							</div>
+							<iframe class="video" src="https://www.youtube.com/embed/77deuiNcdEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div class="sub-titulo">
+							<h2><span>5</span> - Colete o sangue e todos os órgãos da sua presa.</h2>
+						</div>
+						<div class="dicas-video">
+							<div class="dicas">
+								<p><img src="../_imagens/_icones/flecha_texto.png">Quanto melhor for o bisturi utilizado, maior a chance de o órgão ser retirado com sucesso.</p>
+								<p class="medio"><img src="../_imagens/_icones/flecha_texto.png">Caso pretenda reparar o bisturi para utilizar mais vezes não o deixe quebrar completamente ou chegar perto disso.</p>
+								<p><img src="../_imagens/_icones/flecha_texto.png">Quanto mais raro o órgão mais dano ele causará ao bisturi.</p>
+							</div>
+							<iframe class="video" src="https://www.youtube.com/embed/fRFExQekq8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div class="sub-titulo">
+							<h2><span>6</span> - Venda os órgãos para o mercador.</h2>
+						</div>
+						<div class="dicas-video">
+							<div class="dicas">
+								<p class="grande"><img src="../_imagens/_icones/flecha_texto.png">Quanto mais raro o órgão maior será o seu valor, seguindo a ordem de mais comuns para mais raros são eles, sangue, rim, figado, coração e cérebro.</p>
+								<p class="grande"><img src="../_imagens/_icones/flecha_texto.png">Para tirar um bom proveito desse sistema, cace e visite o mercador regularmente, garantindo que todo o dinheiro que ele tem no dia passe para você!</p>
+							</div>
+							<iframe class="video" src="https://www.youtube.com/embed/42jYBnFaoj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="../_imagens/banner_adicional_mobile.jpg">
+					<img src="../_imagens/banner_adicional.jpg">
+				</picture>
+				<h1 class="titulo">Conclusao</h1>
+				<section>
+					<article>
+						<p>Antes de finalizar é importante mencionar que a cada dia que passa no jogo menos esse método vale a pena, isso porque conforme você se aproxima do final do jogo, mais inimigos estarão armados e menor será a importância do dinheiro, portanto não recomendo tentar executá-lo depois do dia 6.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="../_imagens/_guias/conclusao_mobile.jpg">
+							<img src="../_imagens/_guias/conclusao.jpg">
+						</picture>
+					</article>
+				</section>
+				<footer>
+					<ul>
+						<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
+						<li id="contato">Contact: pathologic2brasil@gmail.com</li>
+					</ul>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<div class="modal-privacidade" id="modal-privacidade">
+		<button 
+			id="botao-modal-fechar"
+			onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
+		>
+		</button>
+		<p>
+			Utilizamos cookies e tecnologias semelhantes para permitir serviços 
+			e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
+			Ao utilizar este site, você concorda com o uso dessas informações.
+		</p>
+	</div>		
+	<script src="../_js/index.js"></script>
+</body>
+</html>

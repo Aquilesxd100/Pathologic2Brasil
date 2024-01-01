@@ -1,0 +1,3108 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="Pathologic, Guide, Tutorial">
+<meta name="keywords" content="Food, Starvation, Hunger">
+<meta name="description" content="Everything you Need to Know to Never Starve Again!">
+<head>
+	<title>Food</title>
+	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../_css/comida.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/en/estrutura_en.css"/>
+	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
+</head>
+<body id="body">
+	<header>
+		<picture id="banner">
+			<source media="(max-width: 800px)" srcset="../_imagens/banner_mobile.jpg">
+			<img src="../_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+		</picture>
+		<div class="botoes-linguagem">
+			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
+			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
+		</div>
+		<div id="funcao-pesquisa">
+			<form method="get" action="results.html">
+				<div id="funcao-pesquisa-barra">
+					<img src="../_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
+					<img src="../_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
+					<input type="text" name="resultados" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Search...">
+				</div>
+				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
+			</form>	
+		</div>
+		<div id="funcao-pesquisa-mobile-mais-menu">
+			<form method="get" action="results.html">
+				<div id="divbotaopesquisamobile">
+					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="../_imagens/botao_pesquisa.png">
+				</div>
+				<img src="../_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
+				<img src="../_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
+				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Search...">
+			</form>
+			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
+				<button onclick="mudarLinguagem(`portugues`)">
+			</div>
+		</div>
+		<div id="menu-lateral" class="menu-lateral-classe">
+			<div class="fundo-lateral"></div>
+			<img src="../_imagens/menu_lateral_divisao.png" id="lateral-divisao">
+			<img src="../_imagens/menu_lateral_borda.png" id="lateral-borda">
+			<div id="sub-menu-lateral-cover">				
+			</div>
+			<div id="sub-menu-lateral">
+				<ul>
+					<li id="combate-mobile">Combat</li> 
+					<li id="comida-mobile">Food</li> 					
+					<li id="mapautil-mobile">Map</li> 
+					<li id="tudo-mobile">All</li> 
+				</ul>
+				<a href="combat.html" target="_self">
+					<img src="../_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combat.html')">
+				</a>
+				<a href="food.html" target="_self">
+					<img src="../_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('food.html')">
+				</a>
+				<a href="map.html" target="_self">
+					<img src="../_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('map.html')">
+				</a>
+				<a href="all.html" target="_self">
+					<img src="../_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('all.html')">
+				</a>
+			</div>
+			<img src="../_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="../_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
+			</a>
+			<a href="trading.html" target="_self">
+				<img src="../_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trading.html')">
+			</a>
+			<a href="index.html" target="_self">
+				<img src="../_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
+			</a>
+			<img src="../_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
+			<img src="../_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
+			<h1 id="titulo-menu-lateral">Menu</h1>
+			<ul>
+				<li id="home2">Home</li> 
+				<li id="trocas2">Trading</li> 					
+				<li id="videos2">Videos</li> 
+				<li id="mais2">+Guides</li> 
+			</ul>
+			<img src="../_imagens/indicador_esquerda.png" id="indicador-esquerda">
+			<img src="../_imagens/indicador_direita.png" id="indicador-direita">
+		</div>
+		<nav id="menu">
+			<a href="index.html" target="_self">
+				<img src="../_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
+			</a>
+			<a href="trading.html" target="_self">
+				<img src="../_imagens/barra_2.png" id="barra2" onclick="abrirLink('trading.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
+			</a>
+			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
+				<img src="../_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
+			</a>
+			<img src="../_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
+			<img src="../_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
+			<ul>
+				<li id="home">Home</li> 
+				<li id="trocas">Trading</li> 					
+				<li id="videos">Videos</li> 
+				<li id="mais">+Tutorials/Guides</li> 
+			</ul>
+		</nav>
+		<div id="submenu">
+			<a href="all.html" target="_self">
+				<img src="../_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('all.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
+			</a>
+			<a href="map.html" target="_self">
+				<img src="../_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('map.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
+			</a>
+			<a href="food.html" target="_self">
+				<img src="../_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('food.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
+			</a>
+			<a href="combat.html" target="_self">
+				<img src="../_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combat.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
+			</a>
+			<ul>
+				<li id="combate">Combat</li> 
+				<li id="comida">Food</li> 					
+				<li id="mapautil">Map</li> 
+				<li id="tudo">All</li> 
+			</ul>
+		</div>
+	</header>
+	<div id="corpo">
+		<div id="fundobranco">
+			<div id="conteudo">
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
+					<img src="_imagens/bem_vindo.jpg">
+				</picture>
+				<h1 class="titulo">Comida</h1>
+				<section class="introducao">
+					<p>Bem-vindo ao nosso guia focado na fome, aqui reuni diversas formas de se conseguir comida a fim de que não só você tenha o suficiente para se manter vivo, mas que possa também estocá-la.<br>Algumas formas podem ser obvias, porem as dicas que as acompanham são valiosas.</p>
+					<picture class="introducao-img">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/comida_introducao_mobile.jpg">
+						<img src="_imagens/_guias/comida/comida_introducao.jpg">
+					</picture>
+					<div class="dica-padrao">
+						<p><span class="sublinhado">DICA:</span> Jamais se alimente usando qualquer tipo de Nozes, Passas, Castanhas ou Avelãs, esses itens apesar de serem comestíveis não diminuem em quase nada sua fome e sempre podem ser utilizados para trocar por outras comidas muito melhores.</p>
+					</div>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
+					<img src="_imagens/ultimos_guias.jpg">
+				</picture>
+				<h1 class="titulo">Trocas</h1>
+				<section class="trocas">
+					<article class="trocas-introducao">
+						<p>A forma mais simples é trocando, seja com crianças, adultos, guardas ou personagens especiais.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/trocas_mobile.jpg">
+							<img src="_imagens/_guias/comida/trocas.jpg">
+						</picture>	
+						<div class="atencao-padrao">
+							<p><span>ATENÇÃO:</span> As pessoas citadas aqui nem sempre terão seu visual exatamente igual nas fotos, é comum elas terem cores de cabelo diferentes ou até pequenos detalhes na roupa que variam.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Para informações adicionais sobre trocas consulte nosso aplicativo de trocas clicando <span class="link" onclick="abrirLinkFora('trocas.html')">AQUI.</span></p>
+						</div>	
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Para fazer um uso eficiente das trocas, faça sempre um pré-planejamento mental antes do dia começar, levando em conta por quais ruas, parquinhos ou lugares em geral você consegue passar a caminho do local que precisa ir, lembre-se, tempo é valioso aqui.</p>
+						</div>					
+					</article>
+					<article class="criancas">
+						<div class="sub-titulo">
+							<h2>Criancas</h2>
+						</div>
+						<p>Todas as crianças encontradas pela cidade tem uma chance de ter alguma comida para trocar, como elas costumam querer muitos itens vou destacar aqui somente os que cada uma considera mais valiosos (ou que mais valem a pena trocar) com seus respectivos valores.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/criancas_parque_mobile.jpg">
+							<img src="_imagens/_guias/comida/criancas_parque.jpg">
+						</picture>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> As crianças a seguir estão em ordem das que mais valem a pena fazer trocas (por comida) para as piores.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Caso tenha dúvidas sobre onde encontrar essas crianças de uma olhada no nosso Mapa Útil clicando <span class="link" onclick="abrirLinkFora('mapa.html')">AQUI.</span></p>
+						</div>
+						<div class="troca-resumida">
+							<table class="tabela-primaria">
+								<tr class="tabela-titulo">
+									<th><h2>Personagem</h2></th>
+									<th class="modo-desktop"><h2>Tem interesse em:</h2></th>
+									<th><h2>Pode ter:</h2></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/popular.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/anzois.jpg">
+												</th>
+												<th>
+													<h2>Anzóis</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe_defumado.jpg">
+												</th>
+												<th>
+													<h3>Peixe<br>Defumado</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>7</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe_defumado.jpg" class="invisivel">
+												</th>
+												<th>
+													<h3></h3>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-titulo modo-mobile">
+									<th colspan="2"><h2>Tem interesse em:</h2></th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/anzois.jpg">
+												</th>
+												<th>
+													<h2>Anzóis</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/chiquinha.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/botao.jpg">
+												</th>
+												<th>
+													<h2>Botão</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/dedal.jpg">
+												</th>
+												<th>
+													<h2>Dedal</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/agulha.jpg">
+												</th>
+												<th>
+													<h2>Agulha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe_defumado.jpg">
+												</th>
+												<th>
+													<h3>Peixe<br>Defumado</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>7</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe_defumado.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/botao.jpg">
+												</th>
+												<th>
+													<h2>Botão</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/dedal.jpg">
+												</th>
+												<th>
+													<h2>Dedal</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/agulha.jpg">
+												</th>
+												<th>
+													<h2>Agulha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/junior.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/nozes_amarelas.jpg">
+												</th>
+												<th>
+													<h3>Nozes<br>Amarelas</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/mola.jpg">
+												</th>
+												<th>
+													<h2>Mola</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/passas.jpg">
+												</th>
+												<th>
+													<h2>Passas</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/dedal.jpg">
+												</th>
+												<th>
+													<h2>Dedal</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg">
+												</th>
+												<th>
+													<h2>Ovo</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/maca.jpg">
+												</th>
+												<th>
+													<h2>Maça</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/nozes_amarelas.jpg">
+												</th>
+												<th>
+													<h3>Nozes<br>Amarelas</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/mola.jpg">
+												</th>
+												<th>
+													<h2>Mola</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/passas.jpg">
+												</th>
+												<th>
+													<h2>Passas</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/dedal.jpg">
+												</th>
+												<th>
+													<h2>Dedal</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/suspensorios.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/avelas.jpg">
+												</th>
+												<th>
+													<h2>Avelãs</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sucata_metalica.jpg">
+												</th>
+												<th>
+													<h3>Sucata<br>Metálica</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/botao.jpg">
+												</th>
+												<th>
+													<h2>Botão</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/passas.jpg">
+												</th>
+												<th>
+													<h2>Passas</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg">
+												</th>
+												<th>
+													<h2>Ovo</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/avelas.jpg">
+												</th>
+												<th>
+													<h2>Avelãs</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sucata_metalica.jpg">
+												</th>
+												<th>
+													<h3>Sucata<br>Metálica</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/botao.jpg">
+												</th>
+												<th>
+													<h2>Botão</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/passas.jpg">
+												</th>
+												<th>
+													<h2>Passas</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/garota_podinzin.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tres_nozes.jpg">
+												</th>
+												<th>
+													<h3>Três<br>Nozes</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/castanhas.jpg">
+												</th>
+												<th>
+													<h2>Castanhas</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/botao.jpg">
+												</th>
+												<th>
+													<h2>Botão</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg">
+												</th>
+												<th>
+													<h2>Ovo</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tres_nozes.jpg">
+												</th>
+												<th>
+													<h3>Três<br>Nozes</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/castanhas.jpg">
+												</th>
+												<th>
+													<h2>Castanhas</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/botao.jpg">
+												</th>
+												<th>
+													<h2>Botão</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/crianca_estepe.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/besouro.jpg">
+												</th>
+												<th>
+													<h2>Besouro</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bolas_de_gude.jpg">
+												</th>
+												<th>
+													<h3>Bolas<br>de Gude</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao_de_queijo.jpg">
+												</th>
+												<th>
+													<h2>Qurut</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao_de_queijo.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/besouro.jpg">
+												</th>
+												<th>
+													<h2>Besouro</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bolas_de_gude.jpg">
+												</th>
+												<th>
+													<h3>Bolas<br>de Gude</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+							</table>
+						</div>	
+					</article>
+					<article class="adultos">
+						<div class="sub-titulo">
+							<h2>Adultos</h2>
+						</div>
+						<p>Quase todos os adultos tem comida para trocar, porem a chance deles as terem vária de cada um, abaixo estará em ordem dos que mais tem chance para os piores.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/adultos_mobile.jpg">
+							<img src="_imagens/_guias/comida/adultos.jpg">
+						</picture>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Adultos infectados também podem ter comida para trocar, porem devido ao risco não costuma valer tanto a pena.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Apesar de os adultos não serem tão úteis para se conseguir comida quanto as crianças, dentre eles existe uma exceção, os guardas, por serem uma importante fonte de comida separei um espaço só para eles no final dessa seção.</p>
+						</div>
+						<div class="troca-resumida">
+							<table class="tabela-primaria">
+								<tr class="tabela-titulo">
+									<th><h2>Personagem</h2></th>
+									<th class="modo-desktop"><h2>Tem interesse em:</h2></th>
+									<th><h2>Pode ter:</h2></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/mulher_estilosa.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sabonete.jpg">
+												</th>
+												<th>
+													<h2>Sabonete</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrote.jpg">
+												</th>
+												<th>
+													<h2>Garrote</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/carne_defumada.jpg">
+												</th>
+												<th>
+													<h3>Carne<br>Defumada</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>8</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/carne_defumada.jpg" class="invisivel">
+												</th>
+												<th>
+													<h3></h3>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-titulo modo-mobile">
+									<th colspan="2"><h2>Tem interesse em:</h2></th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sabonete.jpg">
+												</th>
+												<th>
+													<h2>Sabonete</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrote.jpg">
+												</th>
+												<th>
+													<h2>Garrote</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/noiva.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fio.jpg">
+												</th>
+												<th>
+													<h2>Fio</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pemnican.jpg">
+												</th>
+												<th>
+													<h2>Pemnican</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao_de_queijo.jpg">
+												</th>
+												<th>
+													<h2>Qurut</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fio.jpg">
+												</th>
+												<th>
+													<h2>Fio</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/homem_padrao.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pedra_amolar.jpg">
+												</th>
+												<th>
+													<h3>Pedra<br>de Amolar</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/formao.jpg">
+												</th>
+												<th>
+													<h2>Formão</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/torrada.jpg">
+												</th>
+												<th>
+													<h2>Torrada</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/torrada.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pedra_amolar.jpg">
+												</th>
+												<th>
+													<h3>Pedra<br>de Amolar</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/formao.jpg">
+												</th>
+												<th>
+													<h2>Formão</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/mulher_estepe.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sabonete.jpg">
+												</th>
+												<th>
+													<h2>Sabonete</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pemnican.jpg">
+												</th>
+												<th>
+													<h2>Pemnican</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao_de_queijo.jpg">
+												</th>
+												<th>
+													<h2>Qurut</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sabonete.jpg">
+												</th>
+												<th>
+													<h2>Sabonete</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/homem_estepe.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pinca.jpg">
+												</th>
+												<th>
+													<h2>Pinça</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sucata_metalica.jpg">
+												</th>
+												<th>
+													<h3>Sucata<br>Metálica</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/mola.jpg">
+												</th>
+												<th>
+													<h2>Mola</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pemnican.jpg">
+												</th>
+												<th>
+													<h2>Pemnican</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>6</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pemnican.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pinca.jpg">
+												</th>
+												<th>
+													<h2>Pinça</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sucata_metalica.jpg">
+												</th>
+												<th>
+													<h3>Sucata<br>Metálica</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/mola.jpg">
+												</th>
+												<th>
+													<h2>Mola</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/mulher_humilde.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sabonete.jpg">
+												</th>
+												<th>
+													<h2>Sabonete</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrote.jpg">
+												</th>
+												<th>
+													<h2>Garrote</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg">
+												</th>
+												<th>
+													<h2>Ovo</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ovo.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sabonete.jpg">
+												</th>
+												<th>
+													<h2>Sabonete</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrote.jpg">
+												</th>
+												<th>
+													<h2>Garrote</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/mulher_classe.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/unha.jpg">
+												</th>
+												<th>
+													<h2>Unha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrote.jpg">
+												</th>
+												<th>
+													<h2>Garrote</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/maca.jpg">
+												</th>
+												<th>
+													<h2>Maça</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/maca.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/unha.jpg">
+												</th>
+												<th>
+													<h2>Unha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrote.jpg">
+												</th>
+												<th>
+													<h2>Garrote</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem.jpg">
+												</th>
+												<th>
+													<h2>Bandagem</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-separador">
+									<th colspan="3"></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/homem_estiloso.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/unha.jpg">
+												</th>
+												<th>
+													<h2>Unha</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/relogio.jpg">
+												</th>
+												<th>
+													<h3>Relógio<br>de Bolso</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>8</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/palito_fosforo.jpg">
+												</th>
+												<th>
+													<h2>Palito</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao_de_queijo.jpg">
+												</th>
+												<th>
+													<h2>Qurut</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao_de_queijo.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/besouro.jpg">
+												</th>
+												<th>
+													<h2>Besouro</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bolas_de_gude.jpg">
+												</th>
+												<th>
+													<h3>Bolas<br>de Gude</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>						
+							</table>
+						</div>	
+					</article>
+					<article class="guardas">
+						<div class="sub-titulo">
+							<h2>Guardas</h2>
+						</div>
+						<p>Todo Guarda tem chance de ter uma Torrada para trocar, porem eles não aceitam muitos itens em troca dela, somente Gazuas e outras armas. O que os torna uma valiosa fonte de comida é o fato deles estarem em TODA PARTE, tanto patrulhando as ruas quanto protegendo a entrada de áreas infectadas, e claro, as gazuas serem um item bem mais facil de conseguir que os demais.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/guardas_mobile.jpg">
+							<img src="_imagens/_guias/comida/guardas.jpg">
+						</picture>
+						<div class="troca-resumida">
+							<table class="tabela-primaria">
+								<tr class="tabela-titulo">
+									<th><h2>Personagem</h2></th>
+									<th class="modo-desktop"><h2>Tem interesse em:</h2></th>
+									<th><h2>Pode ter:</h2></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/guarda.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/gazua.jpg">
+												</th>
+												<th>
+													<h2>Gazua</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3 class="duplo">1-12</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/faca.jpg">
+												</th>
+												<th>
+													<h2>Faca</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3 class="duplo">1-24</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/revolver.jpg">
+												</th>
+												<th>
+													<h2>Revólver</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3 class="duplo">1-35</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/rifle.jpg">
+												</th>
+												<th>
+													<h2>Rifle</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3 class="duplo">1-55</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/torrada.jpg">
+												</th>
+												<th>
+													<h2>Torrada</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe_defumado.jpg" class="invisivel">
+												</th>
+												<th>
+													<h3></h3>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-titulo modo-mobile">
+									<th colspan="2"><h2>Tem interesse em:</h2></th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/gazua.jpg">
+												</th>
+												<th>
+													<h2>Gazua</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3 class="duplo">1-12</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/faca.jpg">
+												</th>
+												<th>
+													<h2>Faca</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3 class="duplo">1-24</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/revolver.jpg">
+												</th>
+												<th>
+													<h2>Revólver</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3 class="duplo">1-35</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/rifle.jpg">
+												</th>
+												<th>
+													<h2>Rifle</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3 class="duplo">1-55</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>									
+							</table>
+						</div>
+						<div class="dica-padrao borda-baixo">
+							<p><span class="sublinhado">DICA:</span> O valor de troca das Gazuas e Armas varia de acordo com a durabilidade delas, é normal sobrar alguns "pontos" trocando com Guardas, porem tente sempre ter o mínimo possível de "prejuízo" não se esquecendo que sua prioridade é as torradas e não os outros itens que eles costumam ter.</p>
+						</div>
+						<div class="gazuas">
+							<img src="_imagens/_guias/gazua.jpg" class="modo-desktop">
+							<p><img src="_imagens/_icones/flecha_texto_queimada.png">Estarei listando abaixo diversas maneiras de conseguir as gazuas, que acreditem ou não, da mesma maneira que podem tirar sua vida, também podem salva-la!</p>
+							<img src="_imagens/_guias/gazua.jpg" class="modo-desktop">
+						</div>
+						<div class="sub-titulo">
+							<h3>Comprando com o Abutre</h3>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/abutre.jpg">
+							<p>O Abutre, líder dos foras da lei localizado nos armazéns vende Gazuas por um preço extremamente baixo (em moedas), apesar dele vender poucas vale muito a pena o visitar pelo menos uma vez ao dia, porem não se esqueça que ele só terá itens novos a partir das 00:00 de cada noite.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA:</span> Caso o Abutre não esteja em seu covil negocie com o homem que estiver em seu lugar.</p>
+						</div>
+						<div class="sub-titulo">
+							<h3>Trocando com os Alma e Meia</h3>
+						</div>
+						<div class="texto-com-imagem borda-baixo almas">
+							<img src="_imagens/_guias/comida/almas_e_meia_garoto.jpg">
+							<p>O esconderijo desse grupo localizado nos Armazéns tem em seu interior um menino que faz trocas e sempre tem pelo menos uma Gazua para negociar, todas as noites as 00:00 esse garoto tem novos itens para troca por isso certifique-se de o visitar ao menos uma vez ao dia.</p>								
+						</div>
+						<div class="troca-resumida">
+							<table class="tabela-primaria">
+								<tr class="tabela-titulo">
+									<th><h2>Personagem</h2></th>
+									<th class="modo-desktop"><h2>Tem interesse em:</h2></th>
+									<th><h2>Tem:</h2></th>
+								</tr>
+								<tr>
+									<th class="retrato">
+										<img src="_imagens/_icones/retratos/popular.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sucata_metalica.jpg">
+												</th>
+												<th>
+													<h3>Sucata<br>Metálica</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/mola.jpg">
+												</th>
+												<th>
+													<h2>Mola</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/anzois.jpg">
+												</th>
+												<th>
+													<h2>Anzois</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/gazua.jpg">
+												</th>
+												<th>
+													<h2>Gazua</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe_defumado.jpg" class="invisivel">
+												</th>
+												<th>
+													<h3></h3>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-titulo modo-mobile">
+									<th colspan="2"><h2>Tem interesse em:</h2></th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sucata_metalica.jpg">
+												</th>
+												<th>
+													<h3>Sucata<br>Metálica</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/mola.jpg">
+												</th>
+												<th>
+													<h2>Mola</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/anzois.jpg">
+												</th>
+												<th>
+													<h2>Anzois</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>									
+							</table>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA:</span> Certifique-se de guardar alguns itens que o garoto tem interesse para garantir que todos os dias você consiga trocar por suas Gazuas.</p>
+						</div>
+						<div class="sub-titulo">
+							<h3>Matando Bandidos</h3>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/bandidos.jpg">
+							<p class="principal">Essa forma diferente das outras apresenta certos riscos, pois envolve luta, antes de mais nada recomendo ver nosso guia de Combate clicando <span class="link" onclick="abrirLinkFora('combate.html')">AQUI</span> onde falo detalhadamente tudo sobre o assunto. Praticamente todos os bandidos do jogo ao morrerem/se renderem terão uma Gazua disponível para ser pega, inclusive os desarmados.</p>
+							<div class="atencao-padrao borda-cima">
+								<p><span>ATENÇÃO: </span>Caso você receba ajuda de algum guarda para matar um bandido fique esperto, assim que o bandido morrer o guarda se abaixará sobre seu corpo e tentará pegar os itens antes de você, seja rápido!</p>	
+							</div>							
+						</div>
+						<div class="secao-com-2-imgs borda-cima">
+							<div class="mobile-diferencas-img modo-mobile">
+								<img src="_imagens/_guias/comida/bandido_cara_branca.jpg">
+								<img src="_imagens/_guias/comida/bandido_area_destruida.jpg">
+							</div>
+							<img src="_imagens/_guias/comida/bandido_cara_branca.jpg" class="modo-desktop">
+							<p><img src="_imagens/_icones/flecha_texto_branca.png">Existem dois tipos de bandidos no jogo, os com um tipo de pintura branca no rosto que aparecem em áreas da cidade que não estejam infectadas nem destruídas durante a noite (00:00 até 07:30), e existem outro tipo que aparece em áreas destruídas durante todo o dia e noite.</p>
+							<img src="_imagens/_guias/comida/bandido_area_destruida.jpg" class="modo-desktop">
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Caçar os bandidos de rosto branco costuma ser bem mais fácil que os outros encontrados em áreas destruídas, isso por que as áreas destruídas costumam ser repletas de inimigos andando próximos um do outro, por isso cuidado!</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Evite lutar com bandidos armados com facas, priorize os que estão desarmados já que ambos lhe garantirão uma Gazua no final.</p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
+					<img src="_imagens/tutoriais_rapidos.jpg">
+				</picture>
+				<h1 class="titulo-maior uma-linha">Almas-e-Meia</h1>
+				<section class="almas-e-meia">
+					<article>
+						<p>Dentro do esconderijo desse grupo localizado nos Armazéns existe uma menina com chiquinhas que faz trocas, todo dia (com exceção do dia 1) ela tem alguma comida para trocar, abaixo você pode ver quais itens ela aceita.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/almas_e_meia_menina_mobile.jpg">
+							<img src="_imagens/_guias/comida/almas_e_meia_menina.jpg">
+						</picture>
+						<div class="troca-resumida">
+							<table class="tabela-primaria">
+								<tr class="tabela-titulo">
+									<th><h2>Personagem</h2></th>
+									<th class="modo-desktop"><h2>Tem interesse em:</h2></th>
+									<th><h2>Pode ter:</h2></th>
+								</tr>
+								<tr>
+									<th class="retrato tabela-estendida">
+										<img src="_imagens/_icones/retratos/chiquinha_ruiva.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bolas_de_gude.jpg">
+												</th>
+												<th>
+													<h3>Bolas<br>de Gude</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h3>Tesoura</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/talisma.jpg">
+												</th>
+												<th>
+													<h2>Talismã</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/dedal.jpg">
+												</th>
+												<th>
+													<h2>Dedal</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/nome_rascunho.jpg">
+												</th>
+												<th>
+													<h3>Nome<br>Rascunho</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/giz.jpg">
+												</th>
+												<th>
+													<h2>Giz</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao.jpg">
+												</th>
+												<th>
+													<h2>Pão</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>20</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/comida_enlatada.jpg">
+												</th>
+												<th>
+													<h3>Comida<br>Enlatada</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>15</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/leite.jpg">
+												</th>
+												<th>
+													<h2>Leite</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>12</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima modo-desktop">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/leite.jpg" class="invisivel">
+												</th>
+												<th>
+													<h2></h2>
+												</th>
+												<th class="item-valor"> 
+													<h3></h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-titulo modo-mobile">
+									<th colspan="2"><h2>Tem interesse em:</h2></th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/fuso_de_fiar.jpg">
+												</th>
+												<th>
+													<h3>Fuso<br>de Fiar</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>5</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bolas_de_gude.jpg">
+												</th>
+												<th>
+													<h3>Bolas<br>de Gude</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h3>Tesoura</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/talisma.jpg">
+												</th>
+												<th>
+													<h2>Talismã</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/dedal.jpg">
+												</th>
+												<th>
+													<h2>Dedal</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/nome_rascunho.jpg">
+												</th>
+												<th>
+													<h3>Nome<br>Rascunho</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/giz.jpg">
+												</th>
+												<th>
+													<h2>Giz</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>									
+							</table>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA:</span> Certifique-se de sempre ter alguns desses itens guardados de modo a garantir uma troca com ela por dia, toda noite as 00:00 ela terá itens novos.</p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/banner_adicional_mobile.jpg">
+					<img src="_imagens/banner_adicional.jpg">
+				</picture>
+				<h1 class="titulo-maior">Mercador<br class="modo-mobile-especial"> da Noite</h1>
+				<section class="mercador-da-noite">
+					<article>
+						<p>O mercador noturno como o próprio nome já diz só aparece a noite (das 00:00 até as 07:30), já sua localização muda conforme o dia que você estiver, esse mercador sempre tem algum tipo de comida em seu estoque e aceita diversos itens na troca, estarei listando abaixo a maioria deles.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/mercador_noturno_mobile.jpg">
+							<img src="_imagens/_guias/mercador_noturno.jpg">
+						</picture>
+						<div class="troca-resumida">
+							<table class="tabela-primaria">
+								<tr class="tabela-titulo">
+									<th><h2>Personagem</h2></th>
+									<th class="modo-desktop"><h2>Tem interesse em:</h2></th>
+									<th><h2>Pode ter:</h2></th>
+								</tr>
+								<tr>
+									<th class="retrato tabela-estendida">
+										<img src="_imagens/_icones/retratos/bebado.jpg">
+									</th>
+									<th class="interesse modo-desktop">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem_com_sangue.jpg">
+												</th>
+												<th>
+													<h3>Bandagem<br>c/ Sangue</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ampola_quebrada.jpg">
+												</th>
+												<th>
+													<h3>Ampola<br>Quebrada</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/comida_podre.jpg">
+												</th>
+												<th>
+													<h3>Comida<br>Podre</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrafa.jpg">
+												</th>
+												<th>
+													<h2>Garrafa</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/orgaos_saudaveis.jpg">
+												</th>
+												<th>
+													<h3>Orgão<br>Saudável</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3 class="duplo">3-8</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/alfinete.jpg">
+												</th>
+												<th>
+													<h2>Alfinete</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>												
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor  tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/agulha.jpg">
+												</th>
+												<th>
+													<h2>Agulha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor  tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/gazua.jpg">
+												</th>
+												<th>
+													<h2>Gazua</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3 class="duplo">1-5</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+									<th class="pode-ter">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/leite.jpg">
+												</th>
+												<th>
+													<h2>Leite</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>18</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/comida_enlatada.jpg">
+												</th>
+												<th>
+													<h3>Comida<br>Enlatada</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>17</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/peixe.jpg">
+												</th>
+												<th>
+													<h2>Peixe</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>16</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima modo-desktop">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/racao_militar.jpg">
+												</th>
+												<th>
+													<h3>Ração<br>Militar</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>15</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima modo-desktop">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/pao.jpg">
+												</th>
+												<th>
+													<h2>Pão</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>19</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima modo-desktop">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/carne.jpg">
+												</th>
+												<th>
+													<h2>Carne</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>20</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>
+								<tr class="tabela-titulo modo-mobile">
+									<th colspan="2"><h2>Tem interesse em:</h2></th>
+								</tr>
+								<tr class="modo-mobile">
+									<th colspan="2" class="interesse">
+										<table class="tabela-secundaria">
+											<tr class="tabela-divisoria-linhas">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/bandagem_com_sangue.jpg">
+												</th>
+												<th>
+													<h3>Bandagem<br>c/ Sangue</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>6</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/ampola_quebrada.jpg">
+												</th>
+												<th>
+													<h3>Ampola<br>Quebrada</h3>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>
+											</tr>
+											<tr>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/comida_podre.jpg">
+												</th>
+												<th>
+													<h3>Comida<br>Podre</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>4</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/garrafa.jpg">
+												</th>
+												<th>
+													<h2>Garrafa</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>1</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/sino.jpg">
+												</th>
+												<th>
+													<h2>Sino</h2>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3>5</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/vela.jpg">
+												</th>
+												<th>
+													<h2>Vela</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>4</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/orgaos_saudaveis.jpg">
+												</th>
+												<th>
+													<h3>Orgão<br>Saudável</h3>
+												</th>
+												<th class="item-valor tabela-divisoria-colunas"> 
+													<h3 class="duplo">3-8</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/alfinete.jpg">
+												</th>
+												<th>
+													<h2>Alfinete</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>3</h3>
+												</th>												
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/tesoura.jpg">
+												</th>
+												<th>
+													<h2>Tesoura</h2>
+												</th>
+												<th class="item-valor  tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/agulha.jpg">
+												</th>
+												<th>
+													<h2>Agulha</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3>2</h3>
+												</th>
+											</tr>
+											<tr class="tabela-divisoria-linhas-cima">
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/navalha.jpg">
+												</th>
+												<th>
+													<h2>Navalha</h2>
+												</th>
+												<th class="item-valor  tabela-divisoria-colunas"> 
+													<h3>3</h3>
+												</th>
+												<th class="item-img">
+													<img src="_imagens/_icones/itens_catalogados/gazua.jpg">
+												</th>
+												<th>
+													<h2>Gazua</h2>
+												</th>
+												<th class="item-valor"> 
+													<h3 class="duplo">1-5</h3>
+												</th>
+											</tr>
+										</table>
+									</th>
+								</tr>									
+							</table>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA:</span> Caso queira saber onde encontrar o mercador noturno em cada uma das noites, dê uma olhada no nosso mapa útil clicando <span class="link" onclick="abrirLinkFora('mapa.html')">AQUI.</span></p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/banner_adicional2_mobile.jpg">
+					<img src="_imagens/banner_adicional2.jpg">
+				</picture>
+				<h1 class="titulo-maior">Fundo<br class="modo-mobile-especial"> Emergencial</h1>
+				<section class="fundo">
+					<article>
+						<p>O fundo emergencial é uma das mais importantes fontes de comida do jogo, para recebe-lo você precisa ter concluido sua tarefa diaria disponivel no teatro (a partir do dia 4), tendo concluido essa tarefa o fundo sera liberado no conselho da cidade a meia noite do proximo dia.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/fundo_emergencial_mobile.jpg">
+							<img src="_imagens/_guias/comida/fundo_emergencial.jpg">
+						</picture>
+						<p class="secundario">Fique atento também a barra de progresso do fundo, pois quanto maior ela estiver mais recompensas você receberá!</p>
+						<div class="atencao-padrao borda-cima">
+							<p><span>ATENÇÃO:</span> A disponibilidade do fundo junto com sua barrinha de progressão pode ser vista a qualquer momento abrindo o inventário e a observando na parte de cima da tela.</p>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/fundo_glossario.jpg">
+							<div>
+								<p class="principal"><span class="sublinhado">Disponibilidade:</span> Caso esse simbolo esteja na cor cinza você ainda não concluiu sua tarefa diaria e não receberá NADA do fundo, caso esteja na cor branca ele já está garantido.</p>
+								<p class="principal"><span class="sublinhado">Barra de Progresso:</span> Quanto mais longe a barrinha marrom chegar mais itens você receberá do fundo, confira abaixo como aumentá-la.</p>
+							</div>
+						</div>
+						<div class="sub-titulo2">
+							<h2>Como aumentar a barra do Fundo?</h2>
+						</div>
+						<div class="barra-fundo">
+							<ul class="lista-simples">
+								<li><img src="_imagens/_icones/flecha_texto_branca.png">Diagnosticando e tratando corretamente pessoas doentes (as deitadas no chão) dentro do teatro ou em áreas infectadas.</li>
+								<li><img src="_imagens/_icones/flecha_texto_branca.png">Curando pessoas doentes nessas mesmas áreas.</li>
+								<li><img src="_imagens/_icones/flecha_texto_branca.png">Resgatando bebês e os entregando ao conselho da cidade.</li>
+							</ul>
+							<img src="_imagens/_guias/comida/fundo_doentes.jpg" class="pessoa-doente">
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Aumentar a imunidade ou tratar/curar personagens importantes do jogo não afeta a barra do fundo!</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Quanto melhor for o antibiótico usado nos pacientes doentes, mais a barra de fundo aumentará.</span></p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #3:</span> Caso tenha dúvidas sobre a criação de Infusões, Antibióticos ou Analgésicos visite nosso guia sobre criação de "Poções" clicando <span class="link" onclick="abrirLinkFora('receitas.html')">AQUI.</span></p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/banner_adicional3_mobile.jpg">
+					<img src="_imagens/banner_adicional3.jpg">
+				</picture>
+				<h1 class="titulo-maior uma-linha">Comprando</h1>
+				<section class="comprando">
+					<article>
+						<p>Como você deve bem saber também é possível comprar comida em Mercearias, porem a partir do dia 7 esses lugares não aceitaram mais dinheiro e é nesse momento que não podemos esquecer que existem outros dois lugares onde também se vende comida e eles SEMPRE aceitarão dinheiro.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/lojas_comida_mobile.jpg">
+							<img src="_imagens/_guias/comida/lojas_comida.jpg">
+						</picture>
+						<div class="sub-titulo2">
+							<h2>Mas quais são esses locais?</h2>
+						</div>
+						<ul class="lista-simples">
+							<li><img src="_imagens/_icones/flecha_texto_branca.png">O bar chamado de "O Coração Partido" que em si não tem tanta comida porem não deixa de ser uma opção.</li>
+							<li><img src="_imagens/_icones/flecha_texto_branca.png">Um tipo de mercearia ilegal chamada de "Loja Suspeita", tendo passado o dia 7 ela se torna uma parada obrigatória ao menos 1 vez no seu dia.</li>
+						</ul>
+						<picture class="mini-mapa">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/locais/loja_suspeita_e_coracao_partido_mobile.jpg">
+							<img src="_imagens/_guias/locais/loja_suspeita_e_coracao_partido.jpg">
+						</picture>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> O preço dos alimentos varia bastante conforme os dias passam, porem existe uma regra, quanto mais espaços a comida ocupar em seu inventario maior sera seu custo beneficio, ou seja, você pagará menos por um alimento que irá alimentar mais, porem como o tempo no jogo é curto nem sempre é possível (ou vale a pena) ir de loja em loja escolher.</span></p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Se você estiver nos dias finais do jogo pode conseguir Bilhetes para trocar por comida comprando do Abutre em seu esconderijo nos Armazéns, eles são extremamente caros então só os compre se tiver bastante dinheiro sobrando ou for uma emergência.</span></p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/banner_adicional4_mobile.jpg">
+					<img src="_imagens/banner_adicional4.jpg">
+				</picture>
+				<h1 class="titulo-maior">Eventos<br class="modo-mobile-especial"> Especiais</h1>
+				<section class="eventos-especiais">
+					<article>
+						<p>Certos eventos no jogo lhe recompensam com comida, porem grande parte deles tem um dia certo para acontecer ou requerem que você os complete de uma determinada forma para receber suas recompensas.</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/ritual_boi2_mobile.jpg">
+							<img src="_imagens/_guias/comida/ritual_boi2.jpg">
+						</picture>
+						<p class="info-secao-inferior">- Abaixo listei diversos eventos que lhe recompensarão com comida, o dia em que acontecem e detalhes gerais sobre como os completar.</p>
+					</article>
+					<article>
+						<div class="sub-titulo-info">
+								<h2 class="info">Dia <br class="modo-mobile">1</h2>
+								<h2 class="titulo">Criancas <br class="modo-mobile">Gentis</h2>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/almas_e_meia.jpg">
+							<p class="principal">Esse evento acontece no dia 1, tudo que você precisa fazer após iniciar o jogo é ir no Ninho do Abutre e falar com ele, terminando a conversa siga para a Fortaleza dos Alma e Meia e fale com uma garota ruiva sentada em cima de uma caixa, durante essa conversa ela irá lhe oferecer uma torrada e leite, aceite tudo.</p>
+						</div>
+						<picture class="mini-mapa">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/locais/mapa_abutre_almas_e_meia_mobile.jpg">
+							<img src="_imagens/_guias/locais/mapa_abutre_almas_e_meia.jpg">
+						</picture>
+					</article>
+					<article class="atuacao-fome">
+						<div class="sub-titulo-info">
+								<h2 class="info">Dia <br class="modo-mobile">1</h2>
+								<h2 class="titulo">Atuacao <br class="modo-mobile">sobre Fome</h2>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/atuacao_fome.jpg">
+							<p class="principal">Esse evento acontece no dia 1, após dar início ao jogo e andar pelas ruas da cidade fique atento aos personagens vestidos de preto com uma máscara branca, eles estarão espalhados pela cidade parados ao lado de algumas ruas, sempre que encontrar algum converse com ele, um deles irá falar sobre uma suposta atuação chamada "Morte por Fome", responda-o perguntando se ele tem alguma torrada seca que o mesmo irá lhe dar uma no final da conversa.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Esse mesmo personagem irá comentar algo sobre roubar a casa de outras pessoas, ao respondê-lo diga que respeita a propriedade alheia, mas depois, demonstre estar interessado no ato de roubar e lhe peça uma Gazua que assim ele lhe dará uma junto com a Torrada!</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> Desses personagens em preto existe outro que também pode lhe ajudar com a fome, ele irá falar sobre dinheiro e independente do que você responder o mesmo lhe dará um valor em dinheiro no final (que pode ser usado para comprar mais comida!).</p>
+						</div>
+					</article>
+					<article class="lara-bondosa">
+						<div class="sub-titulo-info">
+							<h2 class="info">Dia <br class="modo-mobile">1-4</h2>
+							<h2 class="titulo">Lara a <br class="modo-mobile">Bondosa</h2>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/lara.jpg">
+							<p class="principal">Esse "evento" funciona de uma forma um pouco diferente, ele é separado em duas partes ambas acontecendo na casa de Lara Ravel, a primeira esta disponível do dia 1 até as 07:30 do dia 4, ao visitar a casa de Lara vá para sua sala de estar (no primeiro andar), lá você encontrara um grande armário que terá em seu interior 1x Torrada e 1x Peixe. Já a segunda parte acontece no dia 4 das 07:30 da manhã até as 00:00 da noite, nesse dia você deve conversar com Lara no Teatro (hospital improvisado) e depois seguir para sua casa onde você encontrará dentro do mesmo armário 1x Pão Grande, 1x Leite e 1x Passas!</p>
+						</div>
+						<div class="atencao-padrao borda-cima borda-baixo">
+							<p><span>ATENÇÃO:</span> Não é necessário que você ajude Lara com os barris de água para conseguir qualquer um desses alimentos.</p>
+						</div>
+						<picture class="mini-mapa">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/locais/mapa_hospital_e_casa_lara_mobile.jpg">
+							<img src="_imagens/_guias/locais/mapa_hospital_e_casa_lara.jpg">
+						</picture>
+					</article>
+					<article>
+						<div class="sub-titulo-info">
+							<h2 class="info">Dia <br class="modo-mobile">5-6</h2>
+							<h2 class="titulo">Sacrificio</h2>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/ritual_boi.jpg">
+							<p class="principal">Esse evento acontece no dia 5, para inicia-lo você deve conversar com um Odong que aparecerá no Posterior (mapa com a localização abaixo) das 07:30 do dia 5 até as 07:30 do dia 6. Ao conversar com ele escolha opções de diálogo indicando que quer ajuda-lo no ritual sendo o carniceiro, após essa conversa para finalizar o evento visite outra localização perto do cemitério a partir das 17:00 e antes das 07:30 (do dia 6), lá é só você conversar com ele uma última vez e interagir com o boi para executar o ritual e receber duas Carnes Frescas!</p>
+						</div>
+						<picture class="mini-mapa">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/locais/mapa_sacrificio_mobile.jpg">
+							<img src="_imagens/_guias/locais/mapa_sacrificio.jpg">
+						</picture>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #1:</span> Para economizar tempo só converse com o Odong pela primeira vez as 17:00 da tarde ou depois, dessa forma no final da conversa ele irá lhe convidar para ir com eles direto ao local do ritual, aceite e você será teletransportado podendo já terminar o evento.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA #2:</span> No momento que o Odong lhe oferecer uma lâmina para cortar o Boi aceite-a, dessa forma você ganhará o segundo melhor bisturi do jogo.</p>
+						</div>
+					</article>
+				</section>
+				<picture class="banner">
+					<source media="(max-width: 800px)" srcset="_imagens/banner_adicional5_mobile.jpg">
+					<img src="_imagens/banner_adicional5.jpg">
+				</picture>
+				<h1 class="titulo-maior uma-linha">Conclusao</h1>
+				<section class="conclusao">
+					<article>
+						<p>Seguindo todas essas dicas tenho certeza que sua vida em Pathologic será MUITO mais fácil, porem, não posso finalizar sem mencionar algumas coisas...</p>
+						<picture class="imagem">
+							<source media="(max-width: 800px)" srcset="_imagens/_guias/comida/conclusao_mobile.jpg">
+							<img src="_imagens/_guias/comida/conclusao.jpg">
+						</picture>
+					</article>
+					<article>
+						<div class="texto-com-imagem borda-cima borda-baixo">
+							<img src="_imagens/_guias/comida/mesa_cirurgica.jpg">
+							<p class="principal"><img src="_imagens/_icones/flecha_texto_branca.png">Como dinheiro está ligado diretamente a comida, talvez seja interessante você conferir nosso guia de como conseguir muito dele através do mercado negro de órgãos clicando <span class="link" onclick="abrirLinkFora('dinheiro.html')">AQUI.</span></p>
+						</div>
+						<div class="texto-com-imagem">
+							<img src="_imagens/_guias/comida/espaço_armazenamento.jpg">
+							<p class="principal"><img src="_imagens/_icones/flecha_texto_branca.png">Os primeiros dias em Pathologic acredite se quiser são os mais fáceis, procure fazer uso deles para estocar comida em baús/armários dentro da casa de Rubin ou no seu covil, acredite, você vai precisar.</p>
+						</div>
+						<div class="dica-padrao">
+							<p><span class="sublinhado">DICA:</span> Caso tenha dúvidas sobre onde guardar seus itens com segurança des do dia 1 veja nosso guia sobre isso clicando <span class="link">AQUI.</span> (Guia Pendente)</p>
+						</div>
+					</article>
+				</section>
+				<footer>
+					<ul>
+						<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
+						<li id="contato">Contact: pathologic2brasil@gmail.com</li>
+					</ul>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<div class="modal-privacidade" id="modal-privacidade">
+		<button 
+			id="botao-modal-fechar"
+			onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
+		>
+		</button>
+		<p>
+			Utilizamos cookies e tecnologias semelhantes para permitir serviços 
+			e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
+			Ao utilizar este site, você concorda com o uso dessas informações.
+		</p>
+	</div>		
+	<script src="_js/index.js"></script>
+</body>
+</html>
