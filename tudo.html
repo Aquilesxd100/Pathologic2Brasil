@@ -26,23 +26,23 @@
 			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
 		</div>
 		<div id="funcao-pesquisa">
-			<form method="get" action="pesquisa.html">
+			<form method="get" action="resultados.html">
 				<div id="funcao-pesquisa-barra">
 					<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
 					<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
-					<input type="text" name="resultados" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
+					<input type="text" name="pesquisa" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
 				</div>
 				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
 			</form>	
 		</div>
 		<div id="funcao-pesquisa-mobile-mais-menu">
-			<form method="get" action="pesquisa.html">
+			<form method="get" action="resultados.html">
 				<div id="divbotaopesquisamobile">
 					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="_imagens/botao_pesquisa.png">
 				</div>
 				<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
 				<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-				<input type="text" name="resultados" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
+				<input type="text" name="pesquisa" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
 			</form>
 			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
 				<button class="linguagem-portugues-mobile" onclick="mudarLinguagem(`ingles`)">

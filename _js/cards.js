@@ -54,7 +54,7 @@ if (articlePesquisa) {
     ];
     // -------------------------------------------------------------------- //
     const resulParams = new URLSearchParams(window.location.search);
-    const resultadoPesquisa = (resulParams.get(`resultados`)).toLowerCase();
+    const resultadoPesquisa = (resulParams.get(`pesquisa`)).toLowerCase();
     const inputPesquisa = document.querySelector(`#input`);
     const inputPesquisaMobile = document.querySelector(`#input-mobile`);
     inputPesquisa.value = resultadoPesquisa;
