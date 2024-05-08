@@ -15,6 +15,7 @@ const guiasRegistrados = [
 const paginasRegistradas = guiasRegistrados.concat([
   { nomePtBr: "tudo", nomeEn: "all" },
   { nomePtBr: "trocas", nomeEn: "trading" }, 
+  { nomePtBr: "resultado", nomeEn: "results" }
 ])
 
  /* Abertura de Link */
