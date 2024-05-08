@@ -1,6 +1,21 @@
- var resolucaoL = window.innerWidth;
- var resolucaoA = window.innerHeight;
- const linguagemNavegador = navigator.language || navigator.userLanguage || ""; 
+var resolucaoL = window.innerWidth;
+var resolucaoA = window.innerHeight;
+const linguagemNavegador = navigator.language || navigator.userLanguage || ""; 
+const paginaEstaEmPortugues = linguagemNavegador.includes("pt");
+
+const guiasRegistrados = [
+  { nomePtBr: "combate", nomeEn: "combat" }, 
+  { nomePtBr: "mapa", nomeEn: "map" }, 
+  { nomePtBr: "comida", nomeEn: "food" }, 
+  { nomePtBr: "podinzins", nomeEn: "shmowders" }, 
+  { nomePtBr: "receitas", nomeEn: "recipes" }, 
+  { nomePtBr: "dinheiro", nomeEn: "money" }
+];
+
+const paginasRegistradas = guiasRegistrados.concat([
+  { nomePtBr: "tudo", nomeEn: "all" },
+  { nomePtBr: "trocas", nomeEn: "trading" }, 
+])
 
  /* Abertura de Link */
     function abrirLink(link) {
@@ -54,7 +69,7 @@
     }
 
     function abrirModalPrivacidade() {
-        if (!linguagemNavegador.includes("pt")) {
+        if (!paginaEstaEmPortugues) {
             const modalPrivacidadeP = document.querySelector(".modal-privacidade p");
             modalPrivacidadeP.innerText = `This website uses cookies and similar technologies to provide services, 
             functionalities and to understand your interaction with it.
@@ -94,17 +109,41 @@
         if (linguagemWebsite === tipoLinguagem) return;
 
         const urlSiteAtual = window.location.href;
+        // Trata a URL de direcionamento do usuário baseado
+        // se esta em modo de desenvolvimento local ou não
+        const ehModoDesenvolvimento = !urlSiteAtual.includes("www");
+
         let urlAhRedirecionar = null;
+        // Trata a URL para direcionamento para versão em inglês ou português da página
+
+        // Trata a estrutura da URL
         switch (tipoLinguagem) {
             case "portugues":
-                //urlAhRedirecionar = urlSiteAtual.replace(".br/en/", ".br/");
-                urlAhRedirecionar = urlSiteAtual.replace("Pathologic2Brasil/en/", "Pathologic2Brasil/");
+                urlAhRedirecionar = ehModoDesenvolvimento
+                  ? urlSiteAtual.replace("Pathologic2Brasil/en/", "Pathologic2Brasil/")
+                  : urlAhRedirecionar = urlSiteAtual.replace(".br/en/", ".br/")
+
+                // Trata o nome da pagina na URL se encontra-la na lista
+                const paginaEn = paginasRegistradas.find((guia) =>
+                  urlSiteAtual.includes(guia.nomeEn)
+                )
+                if (paginaEn)
+                  urlAhRedirecionar = urlAhRedirecionar.replace(paginaEn.nomeEn, paginaEn.nomePtBr)
             break;
             case "ingles":
-                //urlAhRedirecionar = urlSiteAtual.replace(".br/", ".br/en/");
-                urlAhRedirecionar = urlSiteAtual.replace("Pathologic2Brasil/", "Pathologic2Brasil/en/");
+                urlAhRedirecionar = ehModoDesenvolvimento
+                  ? urlAhRedirecionar = urlSiteAtual.replace("Pathologic2Brasil/", "Pathologic2Brasil/en/")
+                  : urlAhRedirecionar = urlSiteAtual.replace(".br/", ".br/en/")
+
+                // Trata o nome da pagina na URL se encontra-la na lista
+                const paginaPtBr = paginasRegistradas.find((guia) =>
+                  urlSiteAtual.includes(guia.nomePtBr)
+                )
+                if (paginaPtBr)
+                  urlAhRedirecionar = urlAhRedirecionar.replace(paginaPtBr.nomePtBr, paginaPtBr.nomeEn)  
             break;
         }
+
         abrirLink(urlAhRedirecionar);
     }
 /* Barra de Pesquisa */

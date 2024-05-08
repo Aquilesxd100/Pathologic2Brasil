@@ -1,16 +1,22 @@
 const articleTodos = document.querySelector(".guias-todos");
 const articlePesquisa = document.querySelector(".resultado-pesquisa");
-// ---------------------------- ADD GUIA ---------------------------------------- //
-const guias = ["combate", "mapa", "comida", "podinzins", "receitas", "dinheiro"];
+
+// 'guiasRegistrados' é um array de objetos que contém o nome do guia em português e inglês
+// declarado no index.js
+
 // ------------------------------------------------------------------------------ //
 // Página Todos os Guias //
 if (articleTodos) {
-    guias.forEach((guia) => {
+    guiasRegistrados.forEach((guia) => {
+        const nomeGuia = paginaEstaEmPortugues
+          ? guia.nomePtBr
+          : guia.nomeEn
+
         articleTodos.innerHTML += `
-        <a href='${guia}.html' target='_self'>
-            <img src="_imagens/_guias/cards/${guia}.png" class="card"/>
-        </a>
-    `;
+          <a href='${nomeGuia}.html' target='_self'>
+              <img src="_imagens/_guias/cards/${nomeGuia}.png" class="card"/>
+          </a>
+        `;
     })
 }
 // Resultado Pesquisa //
