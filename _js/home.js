@@ -1,7 +1,4 @@
-const guias = document.querySelectorAll("#showcase img");
-// --> Para adicionar um novo guia basta simplesmente o 
-//     colocar no arquivo HTML seguindo o padrão 
-//     já estabelecido nos outros elementos
+const cardsGuias = document.querySelectorAll("#showcase img");
 
 /* Ultimos Guias - Botoes */
 var resolucaoL2 = window.innerWidth;
@@ -11,7 +8,7 @@ const siteTaEmPortugues = linguagemWebsite === "portugues";
 function botaoUltimosGuias(botao) {
     if (resolucaoL2 > 800) {
         if (botao === "botao-direita") {
-            if (posicaoShowcase < (guias.length - 3)) { /* <--- Modificador Novo Guia */
+            if (posicaoShowcase < (cardsGuias.length - 3)) { /* <--- Modificador Novo Guia */
                 posicaoShowcase = posicaoShowcase + 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
                 showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
@@ -37,7 +34,7 @@ function botaoUltimosGuias(botao) {
     }
     else if (resolucaoL2 <= 800) {
         if (botao === "botao-direita") {
-            if (posicaoShowcase < guias.length - 1) { /* <--- Modificador Novo Guia */
+            if (posicaoShowcase < cardsGuias.length - 1) { /* <--- Modificador Novo Guia */
                 posicaoShowcase = posicaoShowcase + 1;
                 showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
                 showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
@@ -73,7 +70,7 @@ function showCase() {
     }
     posicaoShowcase++;
     if (resolucaoL2 > 800) {
-        if (posicaoShowcase > guias.length - 3) {
+        if (posicaoShowcase > cardsGuias.length - 3) {
             posicaoShowcase = 0;        
         }
         showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
@@ -83,7 +80,7 @@ function showCase() {
         showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
     }
     else if (resolucaoL2 <= 800) {
-        if (posicaoShowcase > guias.length - 1) {
+        if (posicaoShowcase > cardsGuias.length - 1) {
             posicaoShowcase = 0;        
         }
         showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
