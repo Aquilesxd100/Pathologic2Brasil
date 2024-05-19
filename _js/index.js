@@ -15,7 +15,7 @@ const guiasRegistrados = [
 const paginasRegistradas = guiasRegistrados.concat([
   { nomePtBr: "tudo", nomeEn: "all" },
   { nomePtBr: "trocas", nomeEn: "trading" }, 
-  { nomePtBr: "resultado", nomeEn: "results" }
+  { nomePtBr: "resultados", nomeEn: "results" }
 ])
 
  /* Abertura de Link */
@@ -122,7 +122,7 @@ const paginasRegistradas = guiasRegistrados.concat([
             case "portugues":
                 urlAhRedirecionar = ehModoDesenvolvimento
                   ? urlSiteAtual.replace("Pathologic2Brasil/en/", "Pathologic2Brasil/")
-                  : urlAhRedirecionar = urlSiteAtual.replace(".br/en/", ".br/")
+                  : urlSiteAtual.replace(".br/en/", ".br/")
 
                 // Trata o nome da pagina na URL se encontra-la na lista
                 const paginaEn = paginasRegistradas.find((guia) =>
@@ -133,8 +133,8 @@ const paginasRegistradas = guiasRegistrados.concat([
             break;
             case "ingles":
                 urlAhRedirecionar = ehModoDesenvolvimento
-                  ? urlAhRedirecionar = urlSiteAtual.replace("Pathologic2Brasil/", "Pathologic2Brasil/en/")
-                  : urlAhRedirecionar = urlSiteAtual.replace(".br/", ".br/en/")
+                  ? urlSiteAtual.replace("Pathologic2Brasil/", "Pathologic2Brasil/en/")
+                  : urlSiteAtual.replace(".br/", ".br/en/")
 
                 // Trata o nome da pagina na URL se encontra-la na lista
                 const paginaPtBr = paginasRegistradas.find((guia) =>
