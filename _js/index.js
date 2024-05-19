@@ -1,7 +1,9 @@
 var resolucaoL = window.innerWidth;
 var resolucaoA = window.innerHeight;
-const linguagemNavegador = navigator.language || navigator.userLanguage || ""; 
-const paginaEstaEmPortugues = linguagemNavegador.includes("pt");
+const linguagemNavegador = navigator.language || navigator.userLanguage || "";
+const linguagemUsuarioEhPortugues = linguagemNavegador.includes("pt");
+
+const paginaEstaEmPortugues = !(window.location.toString().includes("/en/"));
 
 const guiasRegistrados = [
   { nomePtBr: "combate", nomeEn: "combat" }, 
@@ -70,7 +72,7 @@ const paginasRegistradas = guiasRegistrados.concat([
     }
 
     function abrirModalPrivacidade() {
-        if (!paginaEstaEmPortugues) {
+        if (!linguagemUsuarioEhPortugues) {
             const modalPrivacidadeP = document.querySelector(".modal-privacidade p");
             modalPrivacidadeP.innerText = `This website uses cookies and similar technologies to provide services, 
             functionalities and to understand your interaction with it.
