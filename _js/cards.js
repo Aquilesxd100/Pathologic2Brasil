@@ -8,15 +8,19 @@ const articlePesquisa = document.querySelector(".resultado-pesquisa");
 // Página Todos os Guias //
 if (articleTodos) {
     guiasRegistrados.forEach((guia) => {
-        const nomeGuia = paginaEstaEmPortugues
-          ? guia.nomePtBr
-          : guia.nomeEn
+      const nomeGuia = paginaEstaEmPortugues
+        ? guia.nomePtBr
+        : guia.nomeEn;
+
+      const caminhoImgGuia = paginaEstaEmPortugues
+        ? `_imagens/_guias/cards/${nomeGuia}.png`
+        : `../_imagens/_guias/cardsEn/${nomeGuia}.png`;
 
         articleTodos.innerHTML += `
-          <a href='${nomeGuia}.html' target='_self'>
-              <img src="_imagens/_guias/cards/${nomeGuia}.png" class="card"/>
-          </a>
-        `;
+            <a href='${nomeGuia}.html' target='_self'>
+                <img src="${caminhoImgGuia}" class="card"/>
+            </a>
+        `
     })
 }
 // Resultado Pesquisa //
