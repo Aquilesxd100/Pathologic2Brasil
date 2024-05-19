@@ -106,10 +106,15 @@ const paginasRegistradas = guiasRegistrados.concat([
     const botaoLinguagemSelecionada = document.querySelector(`.linguagem-${linguagemWebsite}`);
     botaoLinguagemSelecionada.classList.add("botao-linguagem-selecionada");
 
+    // Recebe como parâmetro a linguagem que o usuário quer a página 
     function mudarLinguagem(tipoLinguagem) {
         if (linguagemWebsite === tipoLinguagem) return;
 
-        const urlSiteAtual = window.location.href;
+        // Limpa todas as queries da URL a fim de prevenir problemas nos tratamentos
+        const urlSiteAtualObj = new URL(window.location.href);
+        urlSiteAtualObj.search = "";
+
+        const urlSiteAtual = urlSiteAtualObj.toString();
         // Trata a URL de direcionamento do usuário baseado
         // se esta em modo de desenvolvimento local ou não
         const ehModoDesenvolvimento = !urlSiteAtual.includes("www");
@@ -124,25 +129,44 @@ const paginasRegistradas = guiasRegistrados.concat([
                   ? urlSiteAtual.replace("Pathologic2Brasil/en/", "Pathologic2Brasil/")
                   : urlSiteAtual.replace(".br/en/", ".br/")
 
-                // Trata o nome da pagina na URL se encontra-la na lista
+                // Trata o nome da página na URL se encontra-la na lista
                 const paginaEn = paginasRegistradas.find((guia) =>
                   urlSiteAtual.includes(guia.nomeEn)
                 )
-                if (paginaEn)
-                  urlAhRedirecionar = urlAhRedirecionar.replace(paginaEn.nomeEn, paginaEn.nomePtBr)
+                if (paginaEn) {
+                  urlAhRedirecionar = urlAhRedirecionar.replace(
+                    paginaEn.nomeEn, paginaEn.nomePtBr
+                  ); 
+                }
             break;
             case "ingles":
                 urlAhRedirecionar = ehModoDesenvolvimento
                   ? urlSiteAtual.replace("Pathologic2Brasil/", "Pathologic2Brasil/en/")
                   : urlSiteAtual.replace(".br/", ".br/en/")
 
-                // Trata o nome da pagina na URL se encontra-la na lista
+                // Trata o nome da página na URL se encontra-la na lista
                 const paginaPtBr = paginasRegistradas.find((guia) =>
                   urlSiteAtual.includes(guia.nomePtBr)
                 )
-                if (paginaPtBr)
-                  urlAhRedirecionar = urlAhRedirecionar.replace(paginaPtBr.nomePtBr, paginaPtBr.nomeEn)  
+                if (paginaPtBr) {
+                  urlAhRedirecionar = urlAhRedirecionar.replace(
+                    paginaPtBr.nomePtBr, paginaPtBr.nomeEn
+                  ); 
+                }
             break;
+        }
+
+        // Se for a página de resultados seta a query de pesquisa para vazio
+        // a fim de evitar um redirecionamento ao index
+        const ehPaginaResultado = /resultados|results/.test(urlAhRedirecionar);
+        if (ehPaginaResultado) {
+          const urlAhRedirecionarObj = new URL(urlAhRedirecionar);
+          urlAhRedirecionarObj.search = 
+            "?" 
+            + (tipoLinguagem === "ingles" ? "search" : "pesquisa") 
+            + "="
+
+          urlAhRedirecionar = urlAhRedirecionarObj.toString();
         }
 
         abrirLink(urlAhRedirecionar);
