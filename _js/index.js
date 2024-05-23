@@ -162,11 +162,16 @@ const paginasRegistradas = guiasRegistrados.concat([
         // a fim de evitar um redirecionamento ao index
         const ehPaginaResultado = /resultados|results/.test(urlAhRedirecionar);
         if (ehPaginaResultado) {
+          const inputPesquisa = resolucaoL > 800
+            ? document.getElementById("input")
+            : document.getElementById("input-mobile")
+
           const urlAhRedirecionarObj = new URL(urlAhRedirecionar);
           urlAhRedirecionarObj.search = 
             "?" 
             + (tipoLinguagem === "ingles" ? "search" : "pesquisa") 
             + "="
+            + (inputPesquisa?.value ?? "");
 
           urlAhRedirecionar = urlAhRedirecionarObj.toString();
         }
