@@ -72,12 +72,6 @@ const paginasRegistradas = guiasRegistrados.concat([
     }
 
     function abrirModalPrivacidade() {
-        if (!linguagemUsuarioEhPortugues) {
-            const modalPrivacidadeP = document.querySelector(".modal-privacidade p");
-            modalPrivacidadeP.innerText = `This website uses cookies and similar technologies to provide services, 
-            functionalities and to understand your interaction with it.
-            By using this website you agree with the use of this information to better improve your experience.`;
-        }
         modalPrivacidade.style.display="inherit";
         setTimeout(
             () => {
