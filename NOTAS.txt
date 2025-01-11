@@ -1,0 +1,6 @@
+[ ] Traduzir para ingles guias restantes + aplicativo
+[ ] Revisar todas as páginas em ingles
+[ ] Resolver bugs de responsividade em celulares do banner de subs-titulo de alguns guias
+
+[ ] Melhorias de responsividade e visuais no aplicativo de trocas
+[ ] Refazer parte de responsividade de telas maiores do site para não expandir baseado na tela ou manter qualidade nas imagens mesmo em telas grandes?
