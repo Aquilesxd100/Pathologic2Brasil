@@ -6,7 +6,7 @@
 <meta name="keywords" content="Trade, Items, Trading">
 <meta name="description" content="Application to Simulate Trades with the Townsfolk!">
 <head>
-	<title>Trading</title>
+	<title>Trading App</title>
 	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../_css/padrao.css"/>
 	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
@@ -142,10 +142,10 @@
 		<div id="fundobranco">
 			<div id="conteudo">
 				<picture class="banner">
-					<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
-					<img src="_imagens/bem_vindo.jpg">
+					<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
+					<img src="../_imagens/bem_vindo.jpg">
 				</picture>
-				<h1 class="titulo">Trocas</h1>
+				<h1 class="titulo">Trading</h1>
 				<section>
 					<article>
 						<div class="app-trocas">
@@ -153,18 +153,18 @@
 							<div class="fundo-efeito"></div>
 							<div class="pre-carregamento">
 								<audio preload="auto">
-									<source src="_audio/colocando_item1.mp3" type="audio/mp3">
-									<source src="_audio/colocando_item2.mp3" type="audio/mp3">
-									<source src="_audio/colocando_item3.mp3" type="audio/mp3">
-									<source src="_audio/colocando_item4.mp3" type="audio/mp3">
-									<source src="_audio/colocando_item5.mp3" type="audio/mp3">
-									<source src="_audio/lixeira.mp3" type="audio/mp3">
-									<source src="_audio/tirando_item1.mp3" type="audio/mp3">
-									<source src="_audio/tirando_item2.mp3" type="audio/mp3">
-									<source src="_audio/tirando_item3.mp3" type="audio/mp3">
+									<source src="../_audio/colocando_item1.mp3" type="audio/mp3">
+									<source src="../_audio/colocando_item2.mp3" type="audio/mp3">
+									<source src="../_audio/colocando_item3.mp3" type="audio/mp3">
+									<source src="../_audio/colocando_item4.mp3" type="audio/mp3">
+									<source src="../_audio/colocando_item5.mp3" type="audio/mp3">
+									<source src="../_audio/lixeira.mp3" type="audio/mp3">
+									<source src="../_audio/tirando_item1.mp3" type="audio/mp3">
+									<source src="../_audio/tirando_item2.mp3" type="audio/mp3">
+									<source src="../_audio/tirando_item3.mp3" type="audio/mp3">
 								</audio>
 								<div class="loading">
-									<img src="_imagens/app_trocas/carregamento.png" class="carregamento">
+									<img src="../_imagens/app_trocas/carregamento.png" class="carregamento">
 								</div>
 								<div class="pre-mobile"></div>
 								<div class="pre-desktop"></div>
@@ -173,14 +173,16 @@
 								<div>
 									<table>
 										<tr class="nome-item">
-											<th class="coluna-tipo">							<h3>Nome:</h3>
+											<th class="coluna-tipo">							
+												<h3>Name:</h3>
 											</th>
 											<th>
 												<h3 class="titulo-item"></h3>
 											</th>
 										</tr>
 										<tr>
-											<th class="coluna-tipo">							<h3>Valor:</h3>
+											<th class="coluna-tipo">							
+												<h3>Value:</h3>
 											</th>
 											<th>
 												<h3 class="valor-item"></h3>
@@ -190,20 +192,20 @@
 								</div>
 							</div>
 							<div class="titulo-grande">
-								<h1>Com quem deseja trocar?</h1>
+								<h1>Who do you want to trade with?</h1>
 							</div>
 							<div class="cards-container">
-								<div class="tipo-npc" onclick="menuSecundario(this, 'Criancas')">
-									<img src="./_imagens/app_trocas/cards/criancas.jpg" class="modo-desktop">
-									<h3>Criancas</h3>
+								<div class="tipo-npc" onclick="menuSecundario(this, 'Criancas', 'Children')">
+									<img src="../_imagens/app_trocas/cards/criancas.jpg" class="modo-desktop">
+									<h3>Children</h3>
 								</div>
-								<div class="tipo-npc" onclick="menuSecundario(this, 'Adultos')">
-									<img src="./_imagens/app_trocas/cards/adultos.jpg" class="modo-desktop">
-									<h3>Adultos</h3>
+								<div class="tipo-npc" onclick="menuSecundario(this, 'Adultos', 'Adults')">
+									<img src="../_imagens/app_trocas/cards/adultos.jpg" class="modo-desktop">
+									<h3>Adults</h3>
 								</div>
-								<div class="tipo-npc" onclick="menuSecundario(this, 'Infectados')">
-									<img src="./_imagens/app_trocas/cards/infectados.jpg" class="modo-desktop">
-									<h3>Infectados</h3>
+								<div class="tipo-npc" onclick="menuSecundario(this, 'Infectados', 'Infected')">
+									<img src="../_imagens/app_trocas/cards/infectados.jpg" class="modo-desktop">
+									<h3>Infected</h3>
 								</div>
 							</div>
 							<div class="tela-3">
@@ -213,11 +215,11 @@
 									<button class="botao-reset-mobile" onclick="resetContador(); botaoTipo2Lento(this); somEfeito('lixeira')"></button>
 								</div>
 								<div class="pode-ter">
-									<div class="titulo-medio"><h2>Pode ter:</h2></div>
+									<div class="titulo-medio"><h2>May have:</h2></div>
 									<div class="display-itens-pode-ter"></div>
 								</div>
 								<div class="interesse">
-									<div class="titulo-medio"><h2>Interesse:</h2></div>
+									<div class="titulo-medio"><h2>Wants:</h2></div>
 									<div class="display-itens-interesse"></div>
 								</div>
 								<button id="botao-voltar" class="botao-voltar" onclick="telaAnterior(); botaoTipo2Lento(this)"></button>
@@ -230,20 +232,19 @@
 					</article>
 					<article>
 						<div class="sub-titulo2">
-							<h2>Observações</h2>
+							<h2>Details</h2>
 						</div>
 						<div class="secao-com-2-imgs">
-							<img src="_imagens/app_trocas/variacao_mulher_desktop_1.jpg" class="modo-desktop">
+							<img src="../_imagens/app_trocas/variacao_mulher_desktop_1.jpg" class="modo-desktop">
 							<div class="secao-diferencas">
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">A aparência dessas pessoas pode variar um pouco, seja na cor do cabelo ou alguns detalhes da roupa, porém devido a forte semelhança entre pessoas de um mesmo tipo costuma ser fácil identificá-las.</p>
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">Itens com dois valores diferentes indicam o preço mínimo e máximo que a pessoa paga, esse valor varia conforme a durabilidade do item ou ingredientes utilizados em sua criação.</p>
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">O nome de alguns itens pode estar um pouco diferente no aplicativo, seja para facilitar o entendimento ou por uma simples questão de design.</p>
+								<p><img src="../_imagens/_icones/flecha_texto_branca.png">There may be small differences in their appearance, such as hair color and some outfit details, but the resemblance will still be strong.</p>
+								<p><img src="../_imagens/_icones/flecha_texto_branca.png">Items with two values attached to them indicate a minimum and maximum price that varies according to the durability of the item or ingredients used in its creation.</p>
 								<div class="mobile-diferencas-img">
-									<img src="_imagens/app_trocas/variacao_mulher_mobile_1.jpg">
-									<img src="_imagens/app_trocas/variacao_mulher_mobile_2.jpg">
+									<img src="../_imagens/app_trocas/variacao_mulher_mobile_1.jpg">
+									<img src="../_imagens/app_trocas/variacao_mulher_mobile_2.jpg">
 								</div>
 							</div>
-							<img src="_imagens/app_trocas/variacao_mulher_desktop_2.jpg" class="modo-desktop">
+							<img src="../_imagens/app_trocas/variacao_mulher_desktop_2.jpg" class="modo-desktop">
 						</div>
 					</article>
 				</section>
