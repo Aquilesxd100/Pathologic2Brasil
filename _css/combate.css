@@ -1803,7 +1803,6 @@ div .titulo-temido-chute {
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: center;
 	margin: 1% 2% 1% 2%;
-	max-width: 1200px;
 	text-indent: 0;
 }
 div#temido-chute-inferior p {
