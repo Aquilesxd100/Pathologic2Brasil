@@ -157,6 +157,9 @@ div.receitas-criacao p {
 	margin: 0.5% 1% 1% 1%;
 	color: #BFEDEF;
 }
+.texto-com-img {
+	min-height: 180px;
+}
 div.info-ingredientes {
 	width: 100%;
 	border-top: solid #000000 7px;
@@ -239,6 +242,9 @@ div.info-ingredientes div h2.ingrediente-centralizado {
 		text-indent: 70px; 
 		max-width: 85vw;
 	}
+	.texto-com-img {
+		min-height: none;
+	}		
 	div.receitas-criacao h2 {
 		font-size: 24px;
 		margin: 1% 5% 1% 5%;
