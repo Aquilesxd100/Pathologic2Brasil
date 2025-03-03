@@ -1565,7 +1565,6 @@ div .titulo-energia-infinita {
 	color: #FFFFFF;
 	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
 	text-align: justify;
-	max-width: 1200px;
 }
 #energia-infinita-video p#central {
 	text-align: center;
