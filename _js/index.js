@@ -113,7 +113,7 @@ const paginasRegistradas = guiasRegistrados.concat([
         const urlSiteAtual = urlSiteAtualObj.toString();
         // Trata a URL de direcionamento do usuário baseado
         // se esta em modo de desenvolvimento local ou não
-        const ehModoDesenvolvimento = !urlSiteAtual.includes("www");
+        const ehModoDesenvolvimento = !urlSiteAtual.includes(".com.br");
 
         let urlAhRedirecionar = null;
         // Trata a URL para direcionamento para versão em inglês ou português da página
