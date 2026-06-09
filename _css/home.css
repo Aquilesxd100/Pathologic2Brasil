@@ -202,7 +202,6 @@
 		filter: brightness(90%);
 	}
 	div#showcase img:hover {
-		cursor: url('../_recursos/cursor_link.cur'), auto;
 		-webkit-filter: brightness(120%);
 		-o-filter: brightness(120%);
 		-ms-filter: brightness(120%);
@@ -463,7 +462,6 @@
 	/* Desktop */
 	@media screen and (min-width: 800.1px) {
 		div#acessorapidoopcoes img:hover {
-			cursor: url('../_recursos/cursor_link.cur'), auto;
 			-moz-transform: scale(108%);
 			-ms-transform: scale(108%);
 			-o-transform: scale(108%);

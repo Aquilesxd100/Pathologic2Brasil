@@ -3,7 +3,7 @@
 .mobile {
 	display: none;
 }
-span#link {
+span.has-hyperlink {
 	color: #00D900;
 	border-bottom: solid #00D900 2px;
 }
@@ -399,9 +399,6 @@ div.alambiques picture.alambique-menor img {
 }
 div.alambiques picture.alambique-maior img {
 	margin: 0 0 2% 5vw;
-}
-p span#link:hover {
-	cursor: url('../_recursos/cursor_link.cur'), auto;
 }
 /* Introdução Receitas (Mobile) */
 @media screen and (max-width: 800px) {

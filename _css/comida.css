@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /* Padrões */
-.link {
-	color: #00FF00;
-	cursor: url('../_recursos/cursor_link.cur'), auto;
-	text-decoration: underline;
-}
 .borda-baixo {
 	border-bottom: 7px solid #000000;
 }
@@ -377,12 +372,6 @@ div.troca-resumida table tr.tabela-separador {
 }
 /* Padrões (Mobile)*/
 @media screen and (max-width: 800px) {
-	.link {
-		color: #00FF00;
-		cursor: url('../_recursos/cursor_link.cur'), auto;
-		text-decoration: none;
-		border-bottom: 2px solid #00FF00;
-	}
 	body div.atencao-padrao p {
 		font-size: 18px;
 		margin: 5px 20px 11px 20px;

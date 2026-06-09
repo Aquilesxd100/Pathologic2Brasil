@@ -3,7 +3,7 @@ const cardsGuias = document.querySelectorAll("#showcase img");
 /* Ultimos Guias - Botoes */
 var resolucaoL2 = window.innerWidth;
 var resolucaoA = window.innerHeight;
-const siteTaEmPortugues = linguagemWebsite === "portugues";
+const siteTaEmPortugues = getCurrentPageLanguageCode() === LanguageEnum.PortugueseBR;
 
 function botaoUltimosGuias(botao) {
     if (resolucaoL2 > 800) {

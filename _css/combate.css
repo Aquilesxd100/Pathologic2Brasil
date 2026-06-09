@@ -29,11 +29,6 @@ h1 {
 	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
 	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
 }
-.link {
-	color: #00FF00;
-	cursor: url('../_recursos/cursor_link.cur'), auto;
-	text-decoration: underline;
-}
 hr {
 	width: 100%;
 	margin: 0;

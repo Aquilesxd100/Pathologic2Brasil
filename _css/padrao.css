@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /* ------------------------------------> Atributos <----------------------------------- */
-.link {
-	color: #00FF00;
-	cursor: url('../_recursos/cursor_link.cur'), auto;
-	text-decoration: underline;
-}
 .borda-baixo {
 	border-bottom: 7px solid #000000;
 }
@@ -27,9 +22,6 @@ p span.sublinhado {
 .simbolo {
 	font-family: arial;
 	font-weight: bold;
-}
-a {
-	cursor: url('../_recursos/cursor_link.cur'), auto;
 }
 hr {
 	border-top: 3.2px solid #000000;
@@ -642,12 +634,6 @@ div.troca-resumida table tr.tabela-separador {
 /* ---------------------------------------------------------------------------------------- */
 /* ----------------------------------> Atributos (Mobile) <-------------------------------- */
 @media screen and (max-width: 800px) {
-	.link {
-		color: #00FF00;
-		cursor: url('../_recursos/cursor_link.cur'), auto;
-		text-decoration: none;
-		border-bottom: 2px solid #00FF00;
-	}
 	.modo-desktop {
 		display: none;
 	}
