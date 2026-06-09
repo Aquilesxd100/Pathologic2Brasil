@@ -7,433 +7,289 @@
 <meta name="description" content="Aprenda tudo sobre o sistema de combate do jogo.">
 <head>
 	<title>Combate</title>
-	<link rel="icon" type="image/x-icon" href="_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="_css/combate.css"/>
-	<link rel="stylesheet" type="text/css" href="_css/estrutura.css"/>
-	<link rel="preload" href="./_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="./_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
 </head>
 <body id="body">	
-	<header>
-		<picture id="banner">
-			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
-			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+	<p2b-template>
+		<picture id="banner-combate">
+			<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
+			<img src="_imagens/bem_vindo.jpg">
 		</picture>
-		<div class="botoes-linguagem">
-			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
-			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
+		<h1>Combate</h1>
+		<div id="combate-introducao">
+			<p id="p-introducao">Bem-vindo ao nosso guia de combate!<br> Aqui explicarei detalhadamente sobre como lutar com os inimigos de forma corpo-a-corpo, a distância ou furtivamente, e, para finalizar, aprenderemos sobre algumas mecânicas acompanhadas de dicas bastante uteis!</p>
+			<picture id="combate-img">
+				<source media="(max-width: 800px)" srcset="_imagens/_guias/combate_mobile.jpg">
+				<img src="_imagens/_guias/combate.jpg">
+			</picture>
+			<div id="odongs-div">
+				<img src="_imagens/_icones/odong.jpg" id="odongs-img">
+				<p id="odongs">- Se você esta tendo problemas com <span class=sublinhado>Odongs</span>, recomendo ver nosso guia específico sobre eles <span class="link">aqui</span>. (guia pendente)</p>
+			</div>
+			<p id="aviso-introducao"><span class=amarelo>ATENÇÃO:</span> Jamais lute usando os punhos ou até mesmo facas contra inimigos que também tenham facas, apesar de ser sim, possível, o risco é muito alto e qualquer erro pode resultar em graves consequências. Eu sempre lido com inimigos armados utilizando ataques corpo-a-corpo potentes de forma furtiva, ou caso furtividade não seja uma opção, tiros na cabeça com armas de fogo são sempre uma alternativa.</p>
 		</div>
-		<div id="funcao-pesquisa">
-			<form method="get" action="resultados.html">
-				<div id="funcao-pesquisa-barra">
-					<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
-					<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
-					<input type="text" name="pesquisa" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
+		<picture id="banner-corpo-a-corpo">
+			<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
+			<img src="_imagens/ultimos_guias.jpg">
+		</picture>
+		<h2 id="corpo-a-corpo-titulo">Corpo-a-Corpo</h2>
+		<div id="corpo-a-corpo">
+			<div id="corpo-a-corpo-introducao">
+				<div id="corpo-a-corpo-introducao2">
+					<img src="_imagens/_guias/corpo_a_corpo.jpg" id="corpo-a-corpo-img">
+					<p>Um dos seus maiores aliados no combate corpo a corpo é o ataque potente, apesar dele utilizar muita energia o dano que ele causa combinado com o atordoamento temporário ao inimigo, o torna extremamente útil para causar dano, sem receber de volta. Apesar de parecer simples, esse estilo de combate requer uma boa noção de timing já que o ataque potente demora um tempo para ser executado.</p>
+					<div id="corpo-a-corpo-inferior">
+						<h3>- Abaixo listei em 5 passos uma ótima estratégia de luta que faz uso desse ataque e eu mesmo utilizo em jogo!</h3>
+					</div>
 				</div>
-				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-			</form>	
-		</div>
-		<div id="funcao-pesquisa-mobile-mais-menu">
-			<form method="get" action="resultados.html">
-				<div id="divbotaopesquisamobile">
-					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="_imagens/botao_pesquisa.png">
+				<div id="passo-1">
+					<div class="titulo-dica">
+						<h2><span>1</span> - Mantenha uma certa distância do inimigo!</h2>
+					</div>
+					<div id="passo-1-video">
+						<div id="passo-1-dicas">
+							<p><img src="_imagens/_icones/flecha_texto.png">Somente o suficiente para os ataques do mesmo não o alcançarem.</p>
+							<p><img src="_imagens/_icones/flecha_texto.png">Se mova para trás sempre que necessário evitando virar de costas.</p>
+							<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se que você tem espaço para se afastar e uma rota de fuga.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/7YCQQoXqLQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</div>
-				<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
-				<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-				<input type="text" name="pesquisa" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
-			</form>
-			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
-				<button class="linguagem-portugues-mobile" onclick="mudarLinguagem(`ingles`)">
+				<div id="passo-2">
+					<div class="titulo-dica2">
+						<h2><span>2</span> - Conforme o inimigo se aproxima comece a carregar o ataque potente, ande em sua direção perto do final da animação para garantir que ele esteja dentro do alcance.</h2>
+					</div>
+					<div id="passo-2-video">
+						<div id="passo-2-dicas">
+							<p><img src="_imagens/_icones/flecha_texto.png">Sempre espere o inimigo se aproximar primeiro.</p>
+							<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se que você tem energia suficiente para o ataque.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/ofzjFesclFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div id="passo-3">
+					<div class="titulo-dica3">
+						<h2><span>3</span> - Após acertar o golpe se afaste do inimigo até sair do alcance de seus ataques, e então segure o bloqueio mirando um pouco acima do adversário a fim de ainda poder vê-lo embaixo dos seus braços enquanto recupera energia.</h2> 
+					</div>
+					<div id="passo-3-video">
+						<div id="passo-3-dicas">
+							<p><img src="_imagens/_icones/flecha_texto.png">Se mova para trás enquanto bloqueia para ganhar tempo e energia.</p>
+							<p><img src="_imagens/_icones/flecha_texto.png">Fique atento aos movimentos do inimigo!</p>
+							<p><img src="_imagens/_icones/flecha_texto.png">Caso o inimigo desvie do ataque, se afaste e repita todo o processo.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/GwZFi6tVIBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div id="passo-4">
+					<div class="titulo-dica4">
+						<h2><span>4</span> - Quando o inimigo sair do atordoamento e vir em sua direção repita todo o processo des do passo 1 até ele morrer.</h2>
+					</div>
+					<div id="passo-4-video">
+						<div id="passo-4-dicas">
+							<p id="pouco-maior"><img src="_imagens/_icones/flecha_texto.png">Os inimigos saem rápido do atordoamento, mas às vezes demoram um tempo até voltarem a persegui-lo.</p>
+							<p ><img src="_imagens/_icones/flecha_texto.png">Aproveite o tempo que conseguir para bloquear e recuperar sua energia sem se arriscar tanto.</p>
+							<p id="p-maior"><img src="_imagens/_icones/flecha_texto.png">Alguns inimigos tentaram lhe acertar um soco logo apos atingidos, por isso é sempre importante os acertar e recuar enquanto bloqueia assim que possível.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/qSlVkbD142I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div id="corpo-a-corpo-multiplos-inimigos">
+				<p><span>Mais de um Inimigo?</span> Apesar de ser difícil é sim possível enfrentar mais de um inimigo, particularmente eu não recomendaria tentar enfrentar mais de dois ao mesmo tempo, pois a situação pode sair de controle bem rápido. Ao enfrentar dois inimigos tenha em mente que a única forma de vencer sem receber dano é se eles estiverem lhe perseguindo em fila, dessa forma você pode carregar e executar o ataque potente em um de cada vez, sempre recuando para recuperar a energia e manter o ritmo.</p>
+				<iframe id="corpo-a-corpo-multiplos-inimigos-video" src="https://www.youtube.com/embed/__aktBh7lZ8" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div id="menu-lateral" class="menu-lateral-classe">
-			<div class="fundo-lateral"></div>
-			<img src="_imagens/menu_lateral_divisao.png" id="lateral-divisao">
-			<img src="_imagens/menu_lateral_borda.png" id="lateral-borda">
-			<div id="sub-menu-lateral-cover">				
+		<picture id="banner-armas-de-fogo">
+			<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
+			<img src="_imagens/tutoriais_rapidos.jpg">
+		</picture>
+		<h2 id="armas-de-fogo-titulo">Armas de Fogo</h2>
+		<div id="armas-de-fogo">
+			<div id="armas-de-fogo-introducao">
+				<img id="armas-de-fogo-img" src="_imagens/_guias/armas_de_fogo.jpg">
+				<p>Ao falar de combate a distância a primeira coisa a se destacar é que NÃO existe como bloquear! Segurar a tecla de bloqueio utilizando uma arma de fogo faz com que você mire com a arma aumentando a precisão. Dito isso fica claro que ao usarmos esse tipo de arma a estratégia é ficar distante do inimigo e SEMPRE manter a arma carregada.<br> Outro detalhe importante é que tiros na cabeça causam MUITO mais dano que no corpo, então preste atenção na precisão!</p>
+				<div id="armas-de-fogo-aviso">
+					<p><span class="amarelo">ATENÇÃO:</span> Mantenha sempre a arma CARREGADA e com a barra de manutenção cheia ou na terceira barrinha, um travamento inesperado ou falta de munição pode e vai ser fatal!</p>	
+				</div>	
 			</div>
-			<div id="sub-menu-lateral">
-				<ul>
-					<li id="combate-mobile">Combate</li> 
-					<li id="comida-mobile">Comida</li> 					
-					<li id="mapautil-mobile">Mapa Util</li> 
-					<li id="tudo-mobile">Mostrar Tudo</li> 
-				</ul>
-				<a href="combate.html" target="_self">
-					<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
-				</a>
-				<a href="comida.html" target="_self">
-					<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('comida.html')">
-				</a>
-				<a href="mapa.html" target="_self">
-					<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('mapa.html')">
-				</a>
-				<a href="tudo.html" target="_self">
-					<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('tudo.html')">
-				</a>
+			<div id="armas-de-fogo-inferior">
+				<h3>- Para não perder o costume explicarei o combate em passos logo abaixo.</h3>
 			</div>
-			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
-			</a>
-			<a href="trocas.html" target="_self">
-				<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trocas.html')">
-			</a>
-			<a href="index.html" target="_self">
-				<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
-			</a>
-			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
-			<img src="_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
-			<h1 id="titulo-menu-lateral">Menu</h1>
-			<ul>
-				<li id="home2">Home</li> 
-				<li id="trocas2">Trocas</li> 					
-				<li id="videos2">Videos</li> 
-				<li id="mais2">+Guias</li> 
-			</ul>
-			<img src="_imagens/indicador_esquerda.png" id="indicador-esquerda">
-			<img src="_imagens/indicador_direita.png" id="indicador-direita">
+			<div id="passo-2-1">
+				<div class="titulo-dica-2-1">
+					<h2><span>1</span> - Esteja Preparado!</h2>
+				</div>
+				<div id="passo-2-1-video">
+					<div id="passo-2-1-dicas">
+						<p><img src="_imagens/_icones/flecha_texto.png">Mantenha a arma totalmente carregada antes do conflito.</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Mantenha a manutenção da arma pelo menos na metade da terceira barrinha.</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Tenha espaço para recuar e uma rota de fuga.</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/mXcvh13leSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="passo-2-2">
+				<div class="titulo-dica-2-2">
+					<h2><span>2</span> - Espere o inimigo se aproximar enquanto segura a tecla de bloqueio para mirar em sua cabeça.</h2>
+				</div>
+				<div id="passo-2-2-video">
+					<div id="passo-2-2-dicas">
+						<p><img src="_imagens/_icones/flecha_texto.png">Não deixe o inimigo chegar perto o suficiente para lhe atacar.</p>
+						<p id="pouco-maior2"><img src="_imagens/_icones/flecha_texto.png">A precisão das armas a uma longa distância não costuma ser muito boa, mesmo mirando enquanto parado, não se engane!</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/cP0jijlprmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="passo-2-3">
+				<div class="titulo-dica-2-3">
+					<h2><span>3</span> - Com o inimigo relativamente perto atire em sua cabeça.</h2>
+				</div>
+				<div id="passo-2-3-video">
+					<div id="passo-2-3-dicas">
+						<p><img src="_imagens/_icones/flecha_texto.png">Humanos morrem com um só tiro na cabeça, odongs precisam de dois.</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Quanto mais perto maior sera a precisão da arma.</p>
+						<p id="pouco-maior3"><img src="_imagens/_icones/flecha_texto.png">Se precisar fugir veja a parte de mecânicas no final da página, lá explico e dou dicas importantes sobre!</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/s6cRWCWEXns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="armas-de-fogo-multiplos-inimigos">
+				<p><span>Mais de um Inimigo?</span> Usando uma arma de fogo é relativamente fácil lidar com vários inimigos (caso ela esteja em bom estado e com munição), o importante é manter a calma, esperar eles se aproximarem, mirar bem na cabeça do que esta mais próximo e atirar, o revólver é a melhor das armas nessa situação, pois consegue atirar até 6 vezes sem ter que carregar, 6 balas 6 mortos!</p>
+				<iframe id="armas-de-fogo-multiplos-inimigos-video" src="https://www.youtube.com/embed/Ufz55fpgLDg" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</div>
-		<nav id="menu">
-			<a href="index.html" target="_self">
-				<img src="_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
-			</a>
-			<a href="trocas.html" target="_self">
-				<img src="_imagens/barra_2.png" id="barra2" onclick="abrirLink('trocas.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
-			</a>
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
-			</a>
-			<img src="_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
-			<img src="_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
-			<ul>
-				<li id="home">Home</li> 
-				<li id="trocas">Trocas</li> 					
-				<li id="videos">Videos</li> 
-				<li id="mais">+Tutoriais/Guias</li> 
-			</ul>
-		</nav>
-		<div id="submenu">
-			<a href="tudo.html" target="_self">
-				<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('tudo.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			</a>
-			<a href="mapa.html" target="_self">
-				<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('mapa.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
-			</a>
-			<a href="comida.html" target="_self">
-				<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('comida.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
-			</a>
-			<a href="combate.html" target="_self">
-				<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
-			</a>
-			<ul>
-				<li id="combate">Combate</li> 
-				<li id="comida">Comida</li> 					
-				<li id="mapautil">Mapa Util</li> 
-				<li id="tudo">Mostrar Tudo</li> 
-			</ul>
-		</div>
-	</header>
-		<div id="corpo">
-			<div id="fundobranco">
-				<div id="conteudo">
-					<picture id="banner-combate">
-						<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
-						<img src="_imagens/bem_vindo.jpg">
-					</picture>
-					<h1>Combate</h1>
-					<div id="combate-introducao">
-						<p id="p-introducao">Bem-vindo ao nosso guia de combate!<br> Aqui explicarei detalhadamente sobre como lutar com os inimigos de forma corpo-a-corpo, a distância ou furtivamente, e, para finalizar, aprenderemos sobre algumas mecânicas acompanhadas de dicas bastante uteis!</p>
-						<picture id="combate-img">
-							<source media="(max-width: 800px)" srcset="_imagens/_guias/combate_mobile.jpg">
-							<img src="_imagens/_guias/combate.jpg">
-						</picture>
-						<div id="odongs-div">
-							<img src="_imagens/_icones/odong.jpg" id="odongs-img">
-							<p id="odongs">- Se você esta tendo problemas com <span class=sublinhado>Odongs</span>, recomendo ver nosso guia específico sobre eles <span class="link">aqui</span>. (guia pendente)</p>
-						</div>
-						<p id="aviso-introducao"><span class=amarelo>ATENÇÃO:</span> Jamais lute usando os punhos ou até mesmo facas contra inimigos que também tenham facas, apesar de ser sim, possível, o risco é muito alto e qualquer erro pode resultar em graves consequências. Eu sempre lido com inimigos armados utilizando ataques corpo-a-corpo potentes de forma furtiva, ou caso furtividade não seja uma opção, tiros na cabeça com armas de fogo são sempre uma alternativa.</p>
+		<picture id="banner-furtividade">
+			<source media="(max-width: 800px)" srcset="_imagens/banner_adicional_mobile.jpg">
+			<img src="_imagens/banner_adicional.jpg">
+		</picture>
+		<h2 id="furtividade-titulo">Furtividade</h2>
+		<div id="furtividade">
+			<div id="furtividade-introducao">
+				<img id="furtividade-img" src="_imagens/_guias/furtividade.jpg">
+				<p>Falando de furtividade a estratégia é simples de se pôr em prática, porem um tanto quanto instável nos resultados (pelo menos ao enfrentar inimigos humanos). É possível matar os inimigos furtivamente sem receber dano se aproximando do alvo em modo furtivo e o enchendo de ataques potentes antes que ele possa reagir.</p>
+				<div id="furtividade-aviso">
+					<p><span class="amarelo">ATENÇÃO:</span> Existe um bug em que os inimigos saem do atordoamento causado pelos ataques potentes e correm interrompendo o combo, ser rápido nos ataques potentes e utilizar uma faca diminui as chances disso acontecer, mas não as eliminam!</p>	
+				</div>	
+			</div>
+			<div id="furtividade-inferior">
+				<h3>- Explicado em passos logo abaixo.</h3>
+			</div>
+			<div id="passo-3-1">
+				<div class="titulo-dica-3-1">
+					<h2><span>1</span> - Se aproxime de forma furtiva das costas de um inimigo desatento.</h2>
+				</div>
+				<div id="passo-3-1-video">
+					<div id="passo-3-1-dicas">
+						<p class="pouco-maior-x"><img src="_imagens/_icones/flecha_texto.png">Segure a tecla do modo furtivo (C no computador) e NÃO SOLTE até o inimigo morrer.</p>
+						<p class="pouco-maior-x"><img src="_imagens/_icones/flecha_texto.png">A música de combate não toca enquanto você estiver em modo furtivo, cuidado!</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Use a escuridão a seu favor caso seja uma opção.</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Não esqueça que os inimigos podem se virar!</p>
 					</div>
-					<picture id="banner-corpo-a-corpo">
-						<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
-						<img src="_imagens/ultimos_guias.jpg">
-					</picture>
-					<h2 id="corpo-a-corpo-titulo">Corpo-a-Corpo</h2>
-					<div id="corpo-a-corpo">
-						<div id="corpo-a-corpo-introducao">
-							<div id="corpo-a-corpo-introducao2">
-								<img src="_imagens/_guias/corpo_a_corpo.jpg" id="corpo-a-corpo-img">
-								<p>Um dos seus maiores aliados no combate corpo a corpo é o ataque potente, apesar dele utilizar muita energia o dano que ele causa combinado com o atordoamento temporário ao inimigo, o torna extremamente útil para causar dano, sem receber de volta. Apesar de parecer simples, esse estilo de combate requer uma boa noção de timing já que o ataque potente demora um tempo para ser executado.</p>
-								<div id="corpo-a-corpo-inferior">
-									<h3>- Abaixo listei em 5 passos uma ótima estratégia de luta que faz uso desse ataque e eu mesmo utilizo em jogo!</h3>
-								</div>
-							</div>
-							<div id="passo-1">
-								<div class="titulo-dica">
-									<h2><span>1</span> - Mantenha uma certa distância do inimigo!</h2>
-								</div>
-								<div id="passo-1-video">
-									<div id="passo-1-dicas">
-										<p><img src="_imagens/_icones/flecha_texto.png">Somente o suficiente para os ataques do mesmo não o alcançarem.</p>
-										<p><img src="_imagens/_icones/flecha_texto.png">Se mova para trás sempre que necessário evitando virar de costas.</p>
-										<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se que você tem espaço para se afastar e uma rota de fuga.</p>
-									</div>
-									<iframe class="video" src="https://www.youtube.com/embed/7YCQQoXqLQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-							<div id="passo-2">
-								<div class="titulo-dica2">
-									<h2><span>2</span> - Conforme o inimigo se aproxima comece a carregar o ataque potente, ande em sua direção perto do final da animação para garantir que ele esteja dentro do alcance.</h2>
-								</div>
-								<div id="passo-2-video">
-									<div id="passo-2-dicas">
-										<p><img src="_imagens/_icones/flecha_texto.png">Sempre espere o inimigo se aproximar primeiro.</p>
-										<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se que você tem energia suficiente para o ataque.</p>
-									</div>
-									<iframe class="video" src="https://www.youtube.com/embed/ofzjFesclFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-							<div id="passo-3">
-								<div class="titulo-dica3">
-									<h2><span>3</span> - Após acertar o golpe se afaste do inimigo até sair do alcance de seus ataques, e então segure o bloqueio mirando um pouco acima do adversário a fim de ainda poder vê-lo embaixo dos seus braços enquanto recupera energia.</h2> 
-								</div>
-								<div id="passo-3-video">
-									<div id="passo-3-dicas">
-										<p><img src="_imagens/_icones/flecha_texto.png">Se mova para trás enquanto bloqueia para ganhar tempo e energia.</p>
-										<p><img src="_imagens/_icones/flecha_texto.png">Fique atento aos movimentos do inimigo!</p>
-										<p><img src="_imagens/_icones/flecha_texto.png">Caso o inimigo desvie do ataque, se afaste e repita todo o processo.</p>
-									</div>
-									<iframe class="video" src="https://www.youtube.com/embed/GwZFi6tVIBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-							<div id="passo-4">
-								<div class="titulo-dica4">
-									<h2><span>4</span> - Quando o inimigo sair do atordoamento e vir em sua direção repita todo o processo des do passo 1 até ele morrer.</h2>
-								</div>
-								<div id="passo-4-video">
-									<div id="passo-4-dicas">
-										<p id="pouco-maior"><img src="_imagens/_icones/flecha_texto.png">Os inimigos saem rápido do atordoamento, mas às vezes demoram um tempo até voltarem a persegui-lo.</p>
-										<p ><img src="_imagens/_icones/flecha_texto.png">Aproveite o tempo que conseguir para bloquear e recuperar sua energia sem se arriscar tanto.</p>
-										<p id="p-maior"><img src="_imagens/_icones/flecha_texto.png">Alguns inimigos tentaram lhe acertar um soco logo apos atingidos, por isso é sempre importante os acertar e recuar enquanto bloqueia assim que possível.</p>
-									</div>
-									<iframe class="video" src="https://www.youtube.com/embed/qSlVkbD142I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-						</div>
-						<div id="corpo-a-corpo-multiplos-inimigos">
-							<p><span>Mais de um Inimigo?</span> Apesar de ser difícil é sim possível enfrentar mais de um inimigo, particularmente eu não recomendaria tentar enfrentar mais de dois ao mesmo tempo, pois a situação pode sair de controle bem rápido. Ao enfrentar dois inimigos tenha em mente que a única forma de vencer sem receber dano é se eles estiverem lhe perseguindo em fila, dessa forma você pode carregar e executar o ataque potente em um de cada vez, sempre recuando para recuperar a energia e manter o ritmo.</p>
-							<iframe id="corpo-a-corpo-multiplos-inimigos-video" src="https://www.youtube.com/embed/__aktBh7lZ8" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
+					<iframe class="video" src="https://www.youtube.com/embed/NvC9sraqt_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="passo-3-2">
+				<div class="titulo-dica-3-2">
+					<h2><span>2</span> - Se mantendo em modo furtivo dê vários ataques potentes no alvo o mais rápido que conseguir.</h2>
+				</div>
+				<div id="passo-3-2-video">
+					<div id="passo-3-2-dicas">
+						<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se de estar com a barra de energia completamente cheia e se manter bem próximo ao alvo para não errar os ataques!</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Após cada golpe potente, faca um intervalo super rápido, já que o jogo não permite os executar diretamente.</p>
+						<p><img src="_imagens/_icones/flecha_texto.png">Caso esteja jogando em uma dificuldade maior que a padrão use uma faca!</p>
 					</div>
-					<picture id="banner-armas-de-fogo">
-						<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
-						<img src="_imagens/tutoriais_rapidos.jpg">
-					</picture>
-					<h2 id="armas-de-fogo-titulo">Armas de Fogo</h2>
-					<div id="armas-de-fogo">
-						<div id="armas-de-fogo-introducao">
-							<img id="armas-de-fogo-img" src="_imagens/_guias/armas_de_fogo.jpg">
-							<p>Ao falar de combate a distância a primeira coisa a se destacar é que NÃO existe como bloquear! Segurar a tecla de bloqueio utilizando uma arma de fogo faz com que você mire com a arma aumentando a precisão. Dito isso fica claro que ao usarmos esse tipo de arma a estratégia é ficar distante do inimigo e SEMPRE manter a arma carregada.<br> Outro detalhe importante é que tiros na cabeça causam MUITO mais dano que no corpo, então preste atenção na precisão!</p>
-							<div id="armas-de-fogo-aviso">
-								<p><span class="amarelo">ATENÇÃO:</span> Mantenha sempre a arma CARREGADA e com a barra de manutenção cheia ou na terceira barrinha, um travamento inesperado ou falta de munição pode e vai ser fatal!</p>	
-							</div>	
-						</div>
-						<div id="armas-de-fogo-inferior">
-							<h3>- Para não perder o costume explicarei o combate em passos logo abaixo.</h3>
-						</div>
-						<div id="passo-2-1">
-							<div class="titulo-dica-2-1">
-								<h2><span>1</span> - Esteja Preparado!</h2>
-							</div>
-							<div id="passo-2-1-video">
-								<div id="passo-2-1-dicas">
-									<p><img src="_imagens/_icones/flecha_texto.png">Mantenha a arma totalmente carregada antes do conflito.</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Mantenha a manutenção da arma pelo menos na metade da terceira barrinha.</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Tenha espaço para recuar e uma rota de fuga.</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/mXcvh13leSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="passo-2-2">
-							<div class="titulo-dica-2-2">
-								<h2><span>2</span> - Espere o inimigo se aproximar enquanto segura a tecla de bloqueio para mirar em sua cabeça.</h2>
-							</div>
-							<div id="passo-2-2-video">
-								<div id="passo-2-2-dicas">
-									<p><img src="_imagens/_icones/flecha_texto.png">Não deixe o inimigo chegar perto o suficiente para lhe atacar.</p>
-									<p id="pouco-maior2"><img src="_imagens/_icones/flecha_texto.png">A precisão das armas a uma longa distância não costuma ser muito boa, mesmo mirando enquanto parado, não se engane!</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/cP0jijlprmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="passo-2-3">
-							<div class="titulo-dica-2-3">
-								<h2><span>3</span> - Com o inimigo relativamente perto atire em sua cabeça.</h2>
-							</div>
-							<div id="passo-2-3-video">
-								<div id="passo-2-3-dicas">
-									<p><img src="_imagens/_icones/flecha_texto.png">Humanos morrem com um só tiro na cabeça, odongs precisam de dois.</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Quanto mais perto maior sera a precisão da arma.</p>
-									<p id="pouco-maior3"><img src="_imagens/_icones/flecha_texto.png">Se precisar fugir veja a parte de mecânicas no final da página, lá explico e dou dicas importantes sobre!</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/s6cRWCWEXns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="armas-de-fogo-multiplos-inimigos">
-							<p><span>Mais de um Inimigo?</span> Usando uma arma de fogo é relativamente fácil lidar com vários inimigos (caso ela esteja em bom estado e com munição), o importante é manter a calma, esperar eles se aproximarem, mirar bem na cabeça do que esta mais próximo e atirar, o revólver é a melhor das armas nessa situação, pois consegue atirar até 6 vezes sem ter que carregar, 6 balas 6 mortos!</p>
-							<iframe id="armas-de-fogo-multiplos-inimigos-video" src="https://www.youtube.com/embed/Ufz55fpgLDg" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
+					<iframe class="video" src="https://www.youtube.com/embed/Xm0qsrTMt2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div id="furtividade-multiplos-inimigos">
+					<p><span>Mais de um Inimigo?</span> Infelizmente não há como enfrentar mais de um adversário por vez usando furtividade, pois você é detectado por todos os inimigos próximos assim que dá o primeiro ataque.</p>
+				</div>
+			</div>
+		</div>	
+		<picture id="banner-mecanicas">
+			<source media="(max-width: 800px)" srcset="_imagens/banner_adicional2_mobile.jpg">
+			<img src="_imagens/banner_adicional2.jpg">
+		</picture>
+		<h2 id="mecanicas-titulo">Mecanicas</h2>
+		<div id="mecanicas">
+			<div id="mecanicas-introducao">
+				<p>Nessa seção vamos falar um pouquinho sobre vários sistemas que temos no jogo e como jogar de acordo com eles!</p>
+				<picture id="mecanicas-img">
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/mecanicas_mobile.jpg">
+					<img src="_imagens/_guias/mecanicas.jpg">
+				</picture>
+			</div>
+			<div id="energia-infinita">
+				<div class="titulo-energia-infinita">
+					<h2>Energia Infinita</h2>
+				</div>
+				<div id="energia-infinita-video">
+					<div id="energia-infinita-introducao">
+						<p id="central">Como já foi mencionado antes, bloquear usando os punhos ou segurando alguma arma corpo-a-corpo recupera sua energia, o que não foi dito é que para a energia ser recuperada você precisa <span class="sublinhado">estar em combate</span>!</p>
 					</div>
-					<picture id="banner-furtividade">
-						<source media="(max-width: 800px)" srcset="_imagens/banner_adicional_mobile.jpg">
-						<img src="_imagens/banner_adicional.jpg">
-					</picture>
-					<h2 id="furtividade-titulo">Furtividade</h2>
-					<div id="furtividade">
-						<div id="furtividade-introducao">
-							<img id="furtividade-img" src="_imagens/_guias/furtividade.jpg">
-							<p>Falando de furtividade a estratégia é simples de se pôr em prática, porem um tanto quanto instável nos resultados (pelo menos ao enfrentar inimigos humanos). É possível matar os inimigos furtivamente sem receber dano se aproximando do alvo em modo furtivo e o enchendo de ataques potentes antes que ele possa reagir.</p>
-							<div id="furtividade-aviso">
-								<p><span class="amarelo">ATENÇÃO:</span> Existe um bug em que os inimigos saem do atordoamento causado pelos ataques potentes e correm interrompendo o combo, ser rápido nos ataques potentes e utilizar uma faca diminui as chances disso acontecer, mas não as eliminam!</p>	
-							</div>	
-						</div>
-						<div id="furtividade-inferior">
-							<h3>- Explicado em passos logo abaixo.</h3>
-						</div>
-						<div id="passo-3-1">
-							<div class="titulo-dica-3-1">
-								<h2><span>1</span> - Se aproxime de forma furtiva das costas de um inimigo desatento.</h2>
-							</div>
-							<div id="passo-3-1-video">
-								<div id="passo-3-1-dicas">
-									<p class="pouco-maior-x"><img src="_imagens/_icones/flecha_texto.png">Segure a tecla do modo furtivo (C no computador) e NÃO SOLTE até o inimigo morrer.</p>
-									<p class="pouco-maior-x"><img src="_imagens/_icones/flecha_texto.png">A música de combate não toca enquanto você estiver em modo furtivo, cuidado!</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Use a escuridão a seu favor caso seja uma opção.</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Não esqueça que os inimigos podem se virar!</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/NvC9sraqt_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="passo-3-2">
-							<div class="titulo-dica-3-2">
-								<h2><span>2</span> - Se mantendo em modo furtivo dê vários ataques potentes no alvo o mais rápido que conseguir.</h2>
-							</div>
-							<div id="passo-3-2-video">
-								<div id="passo-3-2-dicas">
-									<p><img src="_imagens/_icones/flecha_texto.png">Certifique-se de estar com a barra de energia completamente cheia e se manter bem próximo ao alvo para não errar os ataques!</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Após cada golpe potente, faca um intervalo super rápido, já que o jogo não permite os executar diretamente.</p>
-									<p><img src="_imagens/_icones/flecha_texto.png">Caso esteja jogando em uma dificuldade maior que a padrão use uma faca!</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/Xm0qsrTMt2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-							<div id="furtividade-multiplos-inimigos">
-								<p><span>Mais de um Inimigo?</span> Infelizmente não há como enfrentar mais de um adversário por vez usando furtividade, pois você é detectado por todos os inimigos próximos assim que dá o primeiro ataque.</p>
-							</div>
-						</div>
+					<div id="energia-infinita-dicas">
+						<p id="energia-infinita-dica"><span>DICA:</span> A melhor forma de saber se você esta em combate é prestar a atenção nos sons do jogo, se a música de combate estiver tocando alguém esta lhe perseguindo, e você pode então, recuperar sua energia.</p>
+						<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AnTaeymFmKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div id="energia-infinita-aviso">
+						<p><span class="amarelo">ATENÇÃO:</span> Os bandidos costumam priorizar guardas, se eles estão lhe perseguindo e verem um guarda desocupado pelo caminho vão parar de persegui-lo para ir atrás do guarda, o que fará você ficar fora de combate novamente, isso é relativamente comum então fique atento.</p>	
 					</div>	
-					<picture id="banner-mecanicas">
-						<source media="(max-width: 800px)" srcset="_imagens/banner_adicional2_mobile.jpg">
-						<img src="_imagens/banner_adicional2.jpg">
-					</picture>
-					<h2 id="mecanicas-titulo">Mecanicas</h2>
-					<div id="mecanicas">
-						<div id="mecanicas-introducao">
-							<p>Nessa seção vamos falar um pouquinho sobre vários sistemas que temos no jogo e como jogar de acordo com eles!</p>
-							<picture id="mecanicas-img">
-								<source media="(max-width: 800px)" srcset="_imagens/_guias/mecanicas_mobile.jpg">
-								<img src="_imagens/_guias/mecanicas.jpg">
-							</picture>
-						</div>
-						<div id="energia-infinita">
-							<div class="titulo-energia-infinita">
-								<h2>Energia Infinita</h2>
-							</div>
-							<div id="energia-infinita-video">
-								<div id="energia-infinita-introducao">
-									<p id="central">Como já foi mencionado antes, bloquear usando os punhos ou segurando alguma arma corpo-a-corpo recupera sua energia, o que não foi dito é que para a energia ser recuperada você precisa <span class="sublinhado">estar em combate</span>!</p>
-								</div>
-								<div id="energia-infinita-dicas">
-									<p id="energia-infinita-dica"><span>DICA:</span> A melhor forma de saber se você esta em combate é prestar a atenção nos sons do jogo, se a música de combate estiver tocando alguém esta lhe perseguindo, e você pode então, recuperar sua energia.</p>
-									<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AnTaeymFmKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-								<div id="energia-infinita-aviso">
-									<p><span class="amarelo">ATENÇÃO:</span> Os bandidos costumam priorizar guardas, se eles estão lhe perseguindo e verem um guarda desocupado pelo caminho vão parar de persegui-lo para ir atrás do guarda, o que fará você ficar fora de combate novamente, isso é relativamente comum então fique atento.</p>	
-								</div>	
-							</div>
-						</div>
-						<div id="get-back-here">
-							<div class="titulo-get-back-here">
-								<h2>Get Back Here!</h2>
-							</div>
-							<div id="get-back-here-video">
-								<div id="get-back-here-dicas">
-									<p>Uma mecânica muito importante quando falamos de combate é que quando você vira de costas para um inimigo, se ele estiver muito perto de você, seu personagem será afetado por um tipo de efeito debilitador (como se você estivesse sendo empurrado ou puxado) que moverá sua câmera forçadamente para trás.</p>
-								</div>
-								<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AepjePYNMjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div id="get-back-here-inferior">
-									<p><span class="dica">DICA:</span> Esse efeito debilitador só pode acontecer uma vez a cada 15 segundos para cada inimigo, porem aí existe um detalhe importante, cada inimigo tem um tempo de recarga SEPARADO para essa habilidade, por isso que você é "puxado" varias vezes seguidas quando vira de costas para vários inimigos.</p>	
-								</div>	
-							</div>
-						</div>
-						<div id="como-fugir">
-							<div class="titulo-como-fugir">
-								<h2>Como Fugir!?</h2>
-							</div>
-							<div id="como-fugir-video">
-								<div id="como-fugir-introducao">
-									<p>Tendo conhecimento dessa mecânica acima podemos falar um pouco sobre como fugir dos inimigos. Simplesmente virar as costas para os adversários e correr costuma resultar em você sendo "puxado" e recebendo alguns socos até conseguir se virar novamente e fugir.</p>
-								</div>
-								<div id="como-fugir-dicas">
-									<p><span>DICA #1:</span> Algo que pode ajudar com sua fuga é você dar um ataque corpo-a-corpo potente no inimigo para atordoa-lo, se distanciar um pouquinho andando para trás, abaixar suas mãos e aí sim, se virar e correr! Fazendo isso você ficara fora do alcance do "puxão" e terá uma breve oportunidade de fuga.</p>
-									<iframe class="video-mecanicas" src="https://www.youtube.com/embed/9uNEdvtVhD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								
-								</div>
-								<div id="como-fugir-inferior-0">
-									<p><span class="amarelo">ATENÇÃO:</span> Caso exista mais de um inimigo próximo a você, a melhor opção ainda assim é simplesmente se virar e correr levando um pouco de dano, mas saindo com vida!</p>
-								</div>
-								<div id="como-fugir-inferior">
-									<p><span>DICA #2:</span> Não esqueça também do truque da energia infinita utilizando o bloqueio, conforme corre e se distancia dos inimigos fique de olho na sua barra de energia, sempre que necessário (e seguro) dê pequenas pausas para bloquear e recuperar ela, assim você mantêm o ritmo e eles nunca chegarão a você!</p>	
-								</div>	
-								<div id="como-fugir-inferior2">
-									<p><span>DICA #3:</span> Outra dica EXTREMAMENTE IMPORTANTE é nunca correr com as mãos para cima, seja segurando uma arma, faca, ou os próprios punhos, enquanto suas mãos estiverem levantadas a sua velocidade de movimento sera MUITO reduzida, então sempre que for correr "guarde" suas mãos e aí sim, corra!</p>	
-								</div>
-							</div>
-						</div>
-						<div id="temido-chute">
-							<div class="titulo-temido-chute">
-								<h2>O Temido Chute!</h2>
-							</div>
-							<div id="temido-chute-video">
-								<div id="temido-chute-dicas">
-									<p>Ao lutar com adversários no corpo-a-corpo sua maior preocupação depois de inimigos armados deve ser com os chutes que os desarmados podem te dar. Esse ataque especial não pode ser bloqueado e, caso lhe acerte, além de tirar uma grande parte da sua vida irá te deixar desorientado durante 5 segundos. Enquanto desorientado você não pode atacar, bloquear e nem trocar de arma, basicamente você só pode se movimentar e observar os inimigos te darem uma surra.</p>
-								</div>
-								<iframe class="video-mecanicas" src="https://www.youtube.com/embed/17DA43SgBB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<div id="temido-chute-inferior">
-									<p><span>DICA:</span> Apesar de não parecer você ainda consegue correr enquanto desorientado, então sempre que for atingido vire de costas para o inimigo resistindo aos "puxões/empurrões" e segure a tecla de corrida enquanto se movimenta para longe do adversário, mantenha-se fugindo até o efeito desorientador passar e aí sim, considere voltar para a briga ou fugir realmente.</p>	
-								</div>	
-							</div>
-						</div>
-					</div>
-					<footer>
-						<ul>
-							<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
-							<li id="contato">Contato: pathologic2brasil@gmail.com</li>
-						</ul>
-					</footer>	
 				</div>
 			</div>
-	    </div>
-		<div class="modal-privacidade" id="modal-privacidade">
-			<button 
-				id="botao-modal-fechar"
-				onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
-			>
-			</button>
-			<p>
-				Utilizamos cookies e tecnologias semelhantes para permitir serviços 
-				e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
-				Ao utilizar este site, você concorda com o uso dessas informações.
-			</p>
-		</div>		
-	<script src="_js/index.js"></script>
+			<div id="get-back-here">
+				<div class="titulo-get-back-here">
+					<h2>Get Back Here!</h2>
+				</div>
+				<div id="get-back-here-video">
+					<div id="get-back-here-dicas">
+						<p>Uma mecânica muito importante quando falamos de combate é que quando você vira de costas para um inimigo, se ele estiver muito perto de você, seu personagem será afetado por um tipo de efeito debilitador (como se você estivesse sendo empurrado ou puxado) que moverá sua câmera forçadamente para trás.</p>
+					</div>
+					<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AepjePYNMjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div id="get-back-here-inferior">
+						<p><span class="dica">DICA:</span> Esse efeito debilitador só pode acontecer uma vez a cada 15 segundos para cada inimigo, porem aí existe um detalhe importante, cada inimigo tem um tempo de recarga SEPARADO para essa habilidade, por isso que você é "puxado" varias vezes seguidas quando vira de costas para vários inimigos.</p>	
+					</div>	
+				</div>
+			</div>
+			<div id="como-fugir">
+				<div class="titulo-como-fugir">
+					<h2>Como Fugir!?</h2>
+				</div>
+				<div id="como-fugir-video">
+					<div id="como-fugir-introducao">
+						<p>Tendo conhecimento dessa mecânica acima podemos falar um pouco sobre como fugir dos inimigos. Simplesmente virar as costas para os adversários e correr costuma resultar em você sendo "puxado" e recebendo alguns socos até conseguir se virar novamente e fugir.</p>
+					</div>
+					<div id="como-fugir-dicas">
+						<p><span>DICA #1:</span> Algo que pode ajudar com sua fuga é você dar um ataque corpo-a-corpo potente no inimigo para atordoa-lo, se distanciar um pouquinho andando para trás, abaixar suas mãos e aí sim, se virar e correr! Fazendo isso você ficara fora do alcance do "puxão" e terá uma breve oportunidade de fuga.</p>
+						<iframe class="video-mecanicas" src="https://www.youtube.com/embed/9uNEdvtVhD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								
+					</div>
+					<div id="como-fugir-inferior-0">
+						<p><span class="amarelo">ATENÇÃO:</span> Caso exista mais de um inimigo próximo a você, a melhor opção ainda assim é simplesmente se virar e correr levando um pouco de dano, mas saindo com vida!</p>
+					</div>
+					<div id="como-fugir-inferior">
+						<p><span>DICA #2:</span> Não esqueça também do truque da energia infinita utilizando o bloqueio, conforme corre e se distancia dos inimigos fique de olho na sua barra de energia, sempre que necessário (e seguro) dê pequenas pausas para bloquear e recuperar ela, assim você mantêm o ritmo e eles nunca chegarão a você!</p>	
+					</div>	
+					<div id="como-fugir-inferior2">
+						<p><span>DICA #3:</span> Outra dica EXTREMAMENTE IMPORTANTE é nunca correr com as mãos para cima, seja segurando uma arma, faca, ou os próprios punhos, enquanto suas mãos estiverem levantadas a sua velocidade de movimento sera MUITO reduzida, então sempre que for correr "guarde" suas mãos e aí sim, corra!</p>	
+					</div>
+				</div>
+			</div>
+			<div id="temido-chute">
+				<div class="titulo-temido-chute">
+					<h2>O Temido Chute!</h2>
+				</div>
+				<div id="temido-chute-video">
+					<div id="temido-chute-dicas">
+						<p>Ao lutar com adversários no corpo-a-corpo sua maior preocupação depois de inimigos armados deve ser com os chutes que os desarmados podem te dar. Esse ataque especial não pode ser bloqueado e, caso lhe acerte, além de tirar uma grande parte da sua vida irá te deixar desorientado durante 5 segundos. Enquanto desorientado você não pode atacar, bloquear e nem trocar de arma, basicamente você só pode se movimentar e observar os inimigos te darem uma surra.</p>
+					</div>
+					<iframe class="video-mecanicas" src="https://www.youtube.com/embed/17DA43SgBB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div id="temido-chute-inferior">
+						<p><span>DICA:</span> Apesar de não parecer você ainda consegue correr enquanto desorientado, então sempre que for atingido vire de costas para o inimigo resistindo aos "puxões/empurrões" e segure a tecla de corrida enquanto se movimenta para longe do adversário, mantenha-se fugindo até o efeito desorientador passar e aí sim, considere voltar para a briga ou fugir realmente.</p>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</p2b-template>
+	<script src="_js/globalVariables.js"></script>
+	<script src="_js/utils.js"></script>
+	<script src="./P2B-Template/P2B-Template.js"></script>					
 </body>
 </html>

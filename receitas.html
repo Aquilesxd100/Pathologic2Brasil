@@ -7,639 +7,495 @@
 <meta name="description" content="Aprenda a criar importantes remédios ou misteriosas Poções!">
 <head>
 	<title>Receitas</title>
-	<link rel="icon" type="image/x-icon" href="_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="_css/receitas.css"/>
-	<link rel="stylesheet" type="text/css" href="_css/estrutura.css"/>
-	<link rel="preload" href="./_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="./_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
 </head>
 <body id="body">
-	<header>
-		<picture id="banner">
-			<source media="(max-width: 800px)" srcset="_imagens/banner_mobile.jpg">
-			<img src="_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+	<p2b-template>
+		<picture class="banner-principal">
+			<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
+			<img src="_imagens/bem_vindo.jpg">
 		</picture>
-		<div class="botoes-linguagem">
-			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
-			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
-		</div>
-		<div id="funcao-pesquisa">
-			<form method="get" action="resultados.html">
-				<div id="funcao-pesquisa-barra">
-					<img src="_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
-					<img src="_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
-					<input type="text" name="pesquisa" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Pesquisar...">
-				</div>
-				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-			</form>	
-		</div>
-		<div id="funcao-pesquisa-mobile-mais-menu">
-			<form method="get" action="resultados.html">
-				<div id="divbotaopesquisamobile">
-					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="_imagens/botao_pesquisa.png">
-				</div>
-				<img src="_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
-				<img src="_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-				<input type="text" name="pesquisa" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Pesquisar...">
-			</form>
-			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
-				<button class="linguagem-portugues-mobile" onclick="mudarLinguagem(`ingles`)">
+		<h1 class="introducao-titulo">Receitas</h1>
+		<div class="secao-principal">
+			<p class="introducao">Bem-vindo ao nosso guia de receitas!<br> Aqui falaremos sobre os vários tipos de "poções" que temos no jogo e como cria-las. Começando das mais simples, as infusões, depois antibióticos caseiros, e os misteriosos analgésicos!</p>
+			<picture class="introducao-img">
+				<source media="(max-width: 800px)" srcset="_imagens/_guias/receitas_mobile.jpg">
+				<img src="_imagens/_guias/receitas.jpg">
+			</picture>	
+			<div class="dica-padrao">
+				<p><span class="dica">DICA:</span> Caso tenha dúvidas de onde conseguir ervas para produzir as poções, de uma olhada no nosso "mapa útil" clicando <span class="has-hyperlink" onclick="abrirLinkFora('mapa.html')">aqui.</span></p>
+			</div>
+			<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Para produzir Infusões você irá precisar do "<span class="sublinhado">Alambique Menor</span>", essa maquina pode ser consertada utilizando 1x Mola e 1x Sucata Metálica dentro do seu covil, a partir do dia 2.<br> Já os Antibióticos e Analgésicos são feitos no "<span class="sublinhado">Alambique Maior</span>" que fica ao lado do menor, ele também pode ser consertado a partir do dia 2 utilizando 1x Sucata Metálica e 1x Caixa de Ferramentas, porem no dia 4, Palitinho irá lhe ajudar a conseguir esses itens.</p>
+			<div class="alambiques">
+				<picture class="alambique-menor">
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/alambique_menor_mobile.jpg">
+					<img src="_imagens/_guias/alambique_menor.jpg">
+				</picture>
+				<picture class="alambique-maior">
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/alambique_maior_mobile.jpg">
+					<img src="_imagens/_guias/alambique_maior.jpg">
+				</picture>
 			</div>
 		</div>
-		<div id="menu-lateral" class="menu-lateral-classe">
-			<div class="fundo-lateral"></div>
-			<img src="_imagens/menu_lateral_divisao.png" id="lateral-divisao">
-			<img src="_imagens/menu_lateral_borda.png" id="lateral-borda">
-			<div id="sub-menu-lateral-cover">				
-			</div>
-			<div id="sub-menu-lateral">
-				<ul>
-					<li id="combate-mobile">Combate</li> 
-					<li id="comida-mobile">Comida</li> 					
-					<li id="mapautil-mobile">Mapa Util</li> 
-					<li id="tudo-mobile">Mostrar Tudo</li> 
-				</ul>
-				<a href="combate.html" target="_self">
-					<img src="_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combate.html')">
-				</a>
-				<a href="comida.html" target="_self">
-					<img src="_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('comida.html')">
-				</a>
-				<a href="mapa.html" target="_self">
-					<img src="_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('mapa.html')">
-				</a>
-				<a href="tudo.html" target="_self">
-					<img src="_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('tudo.html')">
-				</a>
-			</div>
-			<img src="_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
-			</a>
-			<a href="trocas.html" target="_self">
-				<img src="_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trocas.html')">
-			</a>
-			<a href="index.html" target="_self">
-				<img src="_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
-			</a>
-			<img src="_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
-			<img src="_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
-			<h1 id="titulo-menu-lateral">Menu</h1>
-			<ul>
-				<li id="home2">Home</li> 
-				<li id="trocas2">Trocas</li> 					
-				<li id="videos2">Videos</li> 
-				<li id="mais2">+Guias</li> 
-			</ul>
-			<img src="_imagens/indicador_esquerda.png" id="indicador-esquerda">
-			<img src="_imagens/indicador_direita.png" id="indicador-direita">
-		</div>
-		<nav id="menu">
-			<a href="index.html" target="_self">
-				<img src="_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
-			</a>
-			<a href="trocas.html" target="_self">
-				<img src="_imagens/barra_2.png" id="barra2" onclick="abrirLink('trocas.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
-			</a>
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
-			</a>
-			<img src="_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
-			<img src="_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
-			<ul>
-				<li id="home">Home</li> 
-				<li id="trocas">Trocas</li> 					
-				<li id="videos">Videos</li> 
-				<li id="mais">+Tutoriais/Guias</li> 
-			</ul>
-		</nav>
-		<div id="submenu">
-			<a href="tudo.html" target="_self">
-				<img src="_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('tudo.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			</a>
-			<a href="mapa.html" target="_self">
-				<img src="_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('mapa.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
-			</a>
-			<a href="comida.html" target="_self">
-				<img src="_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('comida.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
-			</a>
-			<a href="combate.html" target="_self">
-				<img src="_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combate.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
-			</a>
-			<ul>
-				<li id="combate">Combate</li> 
-				<li id="comida">Comida</li> 					
-				<li id="mapautil">Mapa Util</li> 
-				<li id="tudo">Mostrar Tudo</li> 
-			</ul>
-		</div>
-	</header>
-		<div id="corpo">
-			<div id="fundobranco">
-				<div id="conteudo">
-					<picture class="banner-principal">
-						<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
-						<img src="_imagens/bem_vindo.jpg">
-					</picture>
-					<h1 class="introducao-titulo">Receitas</h1>
-					<div class="secao-principal">
-						<p class="introducao">Bem-vindo ao nosso guia de receitas!<br> Aqui falaremos sobre os vários tipos de "poções" que temos no jogo e como cria-las. Começando das mais simples, as infusões, depois antibióticos caseiros, e os misteriosos analgésicos!</p>
-						<picture class="introducao-img">
-							<source media="(max-width: 800px)" srcset="_imagens/_guias/receitas_mobile.jpg">
-							<img src="_imagens/_guias/receitas.jpg">
-						</picture>	
-						<div class="dica-padrao">
-							<p><span class="dica">DICA:</span> Caso tenha dúvidas de onde conseguir ervas para produzir as poções, de uma olhada no nosso "mapa útil" clicando <span id="link" onclick="abrirLinkFora('mapa.html')">aqui.</span></p>
-						</div>
-						<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Para produzir Infusões você irá precisar do "<span class="sublinhado">Alambique Menor</span>", essa maquina pode ser consertada utilizando 1x Mola e 1x Sucata Metálica dentro do seu covil, a partir do dia 2.<br> Já os Antibióticos e Analgésicos são feitos no "<span class="sublinhado">Alambique Maior</span>" que fica ao lado do menor, ele também pode ser consertado a partir do dia 2 utilizando 1x Sucata Metálica e 1x Caixa de Ferramentas, porem no dia 4, Palitinho irá lhe ajudar a conseguir esses itens.</p>
-						<div class="alambiques">
-							<picture class="alambique-menor">
-								<source media="(max-width: 800px)" srcset="_imagens/_guias/alambique_menor_mobile.jpg">
-								<img src="_imagens/_guias/alambique_menor.jpg">
-							</picture>
-							<picture class="alambique-maior">
-								<source media="(max-width: 800px)" srcset="_imagens/_guias/alambique_maior_mobile.jpg">
-								<img src="_imagens/_guias/alambique_maior.jpg">
-							</picture>
-						</div>
-					</div>
-					<picture class="banner-infusoes">
-						<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
-						<img src="_imagens/ultimos_guias.jpg">
-					</picture>
-					<h1 class="infusoes-titulo">Infusoes</h1>
-					<div class="infusoes">
-						<div class="infusoes-introducao">
-							<img src="_imagens/_guias/infusoes.jpg">
-							<p>Infusões são utilizadas principalmente para diagnosticar pacientes, ao usá-la em uma pessoa doente ela poderá revelar sintomas da doença de acordo com a cor da infusão utilizada. As amarelas podem revelar sintomas nos nervos, laranjas revelam sintomas no sangue e brancas revelam sintomas nos ossos. Outros usos delas são para aumentar a sua imunidade ou de pessoas que estão em áreas de risco (diminui a chance delas se infectarem).</p>							
-							<p class="introducao-auxiliar">- Existem dois tipos de infusões, as <span class="sublinhado">normais</span> e as <span class="sublinhado">mais potentes</span>, visualmente as potentes tem bolhas dentro do frasco e um "(+)" do lado de seu nome.</p>
-							<div class="sub-titulo">
-								<p class="info-secao-inferior">Ok, mas qual a real diferença entre as duas?</p>
-							</div>
-						</div>
-						<div class="infusoes-diferencas">
-							<img src="_imagens/_guias/infusao_normal.jpg" class="desktop-img">
-							<div class="infusoes-diferencas-p">
-								<div class="mobile-diferencas-img">
-									<img src="_imagens/_guias/infusao_normal.jpg">
-									<img src="_imagens/_guias/infusao_potente.jpg">
-								</div>
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">Infusões potentes podem revelar mais de um sintoma ao diagnosticar um paciente, porém aumentam ainda mais sua dor.</p>
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">Infusões potentes aumentam mais a imunidade ao serem utilizadas em você ou em uma pessoa com risco de infecção.</p>
-							</div>
-							<img src="_imagens/_guias/infusao_potente.jpg" class="desktop-img">
-						</div>
-						<div class="dica-padrao">
-							<p><span class="dica">DICA:</span> Infusões potentes são o MELHOR item do jogo para aumentar a imunidade de pessoas que estão em áreas de risco diminuindo drasticamente a chance delas se infectarem no próximo dia!</p>
-						</div>
-						<div class="sub-titulo">
-							<h2>Criando Infusoes Normais</h2>
-						</div>
-						<div class="sub-titulo-2">
-							<h3>Ingredientes</h3>
-						</div>
-						<div class="receitas-criacao">
-							<h2>Para criar infusões normais você irá precisar:</h2>
-							<table>
-								<tr>
-									<th class="numero">2x</th>
-									<th id="ervas-comuns"><img src="_imagens/_icones/twyre.jpg"></th>
-									<th>Ervas Comuns Diferentes</th>
-								</tr>
-								<tr>
-									<th class="numero">1x</th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th>Garrafa de Água Pura</th>
-								</tr>
-							</table>
-							<div class="sub-titulo">
-								<h3>Combinações</h3>
-							</div>
-							<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
-							<table class="tabela-combinacao">
-								<tr>
-									<th><img src="_imagens/_icones/bloodtwyre.jpg"></th>
-									<th><img src="_imagens/_icones/twyre.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/yas.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/twyre.jpg"></th>
-									<th><img src="_imagens/_icones/blacktwyre.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/zurkh.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/blacktwyre.jpg"></th>
-									<th><img src="_imagens/_icones/bloodtwyre.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/medrel.jpg"></th>
-								</tr>
-							</table>
-							<p>*Trocar a ordem das ervas não altera o resultado.</p>
-							<div class="info-ingredientes">
-								<div>
-									<img src="_imagens/_icones/garrafa_agua.jpg">
-									<h2>Garrafa de Água</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/blacktwyre.jpg">
-									<h2>Twyre Negra</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/bloodtwyre.jpg">
-									<h2>Twyre Sangrenta</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/twyre.jpg">
-									<h2>Twyre Marrom</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/medrel.jpg">
-									<h2>Infusão "Medrel"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/yas.jpg">
-									<h2>Infusão "Yas"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/zurkh.jpg">
-									<h2>Infusão "Zurkh"</h2>
-								</div>
-							</div>					
-						</div>
-						<div class="sub-titulo ">
-							<h2>Criando Infusoes Potentes</h2>
-						</div>
-						<div class="criacao-introducao">
-							<p>A criação de infusões potentes (com o +) é relativamente simples, o que realmente interfere no resultado é qual erva rara você ira utilizar (cada uma representa uma cor/tipo de infusão), caso pretenda usar duas, o melhor é decorar os resultados nas combinações.</p>
-						</div>
-						<div class="sub-titulo">
-							<h3>Ingredientes</h3>
-						</div>
-						<div class="receitas-criacao">
-							<h2>Para criar infusões potentes você irá precisar:</h2>
-							<table>
-								<tr>
-									<th class="numero">1x</th>
-									<th id="ervas-raras"><img src="_imagens/_icones/swevery.jpg"></th>
-									<th>Erva Rara</th>
-								</tr>
-								<tr>
-									<th class="numero">1x</th>
-									<th id="ervas-todas"><img src="_imagens/_icones/twyre.jpg"></th>
-									<th>Erva Comum ou Rara</th>
-								</tr>
-								<tr>
-									<th class="numero">1x</th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th>Garrafa de Água Pura</th>
-								</tr>
-							</table>
-							<div class="sub-titulo">
-								<h3>Combinações</h3>
-							</div>
-							<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
-							<table class="tabela-combinacao">
-								<tr>
-									<th><img src="_imagens/_icones/whitewhip.jpg"></th>
-									<th class="ervas-comuns1"><img src="_imagens/_icones/twyre.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/yas_mais.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/whitewhip.jpg"></th>
-									<th ><img src="_imagens/_icones/swevery.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/yas_mais.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/swevery.jpg"></th>
-									<th class="ervas-comuns1"><img src="_imagens/_icones/twyre.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/medrel_mais.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/swevery.jpg"></th>
-									<th><img src="_imagens/_icones/ashenswish.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/medrel_mais.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/ashenswish.jpg"></th>
-									<th class="ervas-comuns1"><img src="_imagens/_icones/twyre.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/zurkh_mais.jpg"></th>
-								</tr>
-								<tr>
-									<th><img src="_imagens/_icones/ashenswish.jpg"></th>
-									<th><img src="_imagens/_icones/whitewhip.jpg"></th>
-									<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
-									<th class="sinal">=</th>
-									<th><img src="_imagens/_icones/zurkh_mais.jpg"></th>
-								</tr>
-							</table>
-							<p>*Não é possível usar duas ervas raras iguais.</p>
-							<div class="info-ingredientes info-ingredientes-spc">
-								<div>
-									<img src="_imagens/_icones/whitewhip.jpg">
-									<h2>Chicote Branco</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/swevery.jpg">
-									<h2 class="ingrediente-centralizado">Swevery</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/ashenswish.jpg">
-									<h2>Sibilo Cinzento</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/yas_mais.jpg">
-									<h2>Infusão "Yas" (+)</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/medrel_mais.jpg">
-									<h2>Infusão "Medrel" (+)</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/zurkh_mais.jpg">
-									<h2>Infusão "Zurkh" (+)</h2>
-								</div>
-							</div>
-							<div class="dica-padrao">
-								<p><span class="dica">DICA:</span> Recomendo utilizar somente 1x Erva Rara nesse tipo de composição, pois justamente como nos referimos aqui, elas são raras xD.</p>
-							</div>				
-						</div>
-					</div>
-					<picture class="banner-antibioticos">
-						<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
-						<img src="_imagens/tutoriais_rapidos.jpg">
-					</picture>
-					<h1 class="antibioticos-titulo">Antibioticos</h1>
-					<div class="antibioticos">
-						<div class="antibioticos-introducao">
-							<img src="_imagens/_guias/antibioticos.jpg">
-							<p class="texto-com-img">Antibióticos caseiros são utilizados principalmente para tratar pessoas infectadas, ao utilizar o antibiótico correto (com a cor exata do problema da pessoa) a infecção dela ira diminuir aumentando as chances da mesma sobreviver ao amanhecer do dia seguinte. Caso você esteja infectado e utilize um antibiótico caseiro, seu valor de infecção ira diminuir em troca de uma parte da sua vida atual.</p>
-							<div class="dica-padrao">
-								<p><span class="dica">DICA:</span> Antibióticos caseiros não curam a praga e nunca irão matá-lo não importa o quão baixa esteja sua vida.</p>
-							</div>							
-						</div>
-						<div class="sub-titulo uma-linha">
-							<h2>Criando Antibioticos</h2>
-						</div>
-						<div class="criacao-introducao">
-							<p>A criação de antibióticos é feita combinando infusões com órgãos infectados ou sangue infectado, assim como analgésicos eles demoram algumas horas para ficarem prontos, quanto mais potente o antibiótico mais demorado será.</p>
-						</div>
-						<div class="sub-titulo borda-top">
-							<p class="info-secao-inferior">A potência dos antibióticos afeta:</p>
-						</div>
-						<div class="antibioticos-infos">
-							<img src="_imagens/_guias/antibiotico2.jpg" class="desktop-img">							
-							<div class="antibioticos-infos-p">								
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">O quanto sua barra do fundo emergencial enche caso utilizado corretamente em um paciente comum.</p>
-								<p><img src="_imagens/_icones/flecha_texto_branca.png">A chance de sobrevivência de uma pessoa importante que esteja infectada.</p>
-								<div class="antibioticos-mobile-img">
-									<img src="_imagens/_guias/antibiotico2.jpg">
-									<img src="_imagens/_guias/antibiotico.jpg">
-								</div>
-							</div>
-							<img src="_imagens/_guias/antibiotico.jpg" class="desktop-img">
-						</div>
-						<div class="dica-padrao">
-							<p><span class="dica">DICA #1:</span> A cor/tipo do antibiótico criado sempre será a mesma da infusão utilizada em sua criação.</p>
-						</div>
-						<div class="dica-padrao s-bordas">
-							<p><span class="dica">DICA #2:</span> Já a potência do antibiótico é afetada pelo tipo de órgão usado, quanto mais raro o órgão infectado,<span class="sublinhado"> melhor será o efeito do antibiótico.</span> Cérebros infectados são os melhores materiais, seguidos por corações, depois figados, rins, e como pior recurso temos o sangue infectado.</p>
-						</div>
-						<div class="sub-titulo-2">
-							<h3>Ingredientes</h3>
-						</div>
-						<div class="receitas-criacao">
-							<h2>Para criar antibióticos você irá precisar:</h2>
-							<table>
-								<tr>
-									<th class="numero">1x</th>
-									<th id="infusoes-normais"><img src="_imagens/_icones/yas.jpg"></th>
-									<th>Infusão Normal ou Potente</th>
-								</tr>
-								<tr>
-									<th class="numero">1x</th>
-									<th id="orgao-sangue-infectado"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
-									<th>Órgão ou Sangue Infectado</th>
-								</tr>
-							</table>
-							<div class="sub-titulo-2">
-								<h3>Combinações</h3>
-							</div>
-							<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
-							<table class="tabela-combinacao">
-								<tr>
-									<th class="infusoes-variacoes"><img src="_imagens/_icones/yas.jpg"></th>
-									<th class="orgao-sangue-infectado-combinacao"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
-									<th class="sinal">=</th>
-									<th class="antibioticos-variacoes"><img src="_imagens/_icones/antibiotico_yas.jpg"></th>
-								</tr>
-								<tr>
-									<th class="infusoes-variacoes"><img src="_imagens/_icones/medrel.jpg"></th>
-									<th class="orgao-sangue-infectado-combinacao"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
-									<th class="sinal">=</th>
-									<th class="antibioticos-variacoes"><img src="_imagens/_icones/antibiotico_medrel.jpg"></th>
-								</tr>
-								<tr>
-									<th class="infusoes-variacoes"><img src="_imagens/_icones/zurkh.jpg"></th>
-									<th class="orgao-sangue-infectado-combinacao"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
-									<th class="sinal">=</th>
-									<th class="antibioticos-variacoes"><img src="_imagens/_icones/antibiotico_zurkh.jpg"></th>
-								</tr>
-								</tr>
-							</table>
-							<div class="info-ingredientes">
-								<div>
-									<img src="_imagens/_icones/antibiotico_yas.jpg">
-									<h2>Antibiótico "Yas"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/antibiotico_medrel.jpg">
-									<h2>Antibiótico "Medrel"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/antibiotico_zurkh.jpg">
-									<h2>Antibiótico "Zurkh"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/sangue_infectado.jpg">
-									<h2>Sangue Infectado</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/rim_infectado.jpg">
-									<h2>Rim Infectado</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/figado_infectado.jpg">
-									<h2>Fígado Infectado</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/coracao_infectado.jpg">
-									<h2>Coração Infectado</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/cerebro_infectado.jpg">
-									<h2>Cérebro Infectado</h2>
-								</div>
-							</div>
-							<div class="dica-padrao">
-								<p><span class="dica">DICA #1:</span> A única vantagem em utilizar infusões potentes ao invés de normais é que o antibiótico será produzido mais rápido, o resultado em si, é sempre o mesmo.</p>
-							</div>	
-							<div class="dica-padrao s-bordas">
-								<p><span class="dica">DICA #2:</span> Após criar um antibiótico você pode checar em sua descrição de qual órgão ele foi feito.</p>
-							</div>				
-						</div>
-					</div>
-					<picture class="banner-analgesicos">
-						<source media="(max-width: 800px)" srcset="_imagens/banner_adicional_mobile.jpg">
-						<img src="_imagens/banner_adicional.jpg">
-					</picture>
-					<h1 class="analgesicos-titulo">Analgesicos</h1>
-					<div class="analgesicos">
-						<div class="analgesicos-introducao">
-							<img src="_imagens/_guias/analgesicos.jpg">
-							<p class="texto-com-img">Analgésicos caseiros tem como principal função diminuir a dor de pessoas infectadas, porem o que muitos não sabem é que dependendo dos ingredientes utilizados em sua criação seus efeitos podem variar bastante caso usados em você mesmo. Dentre os efeitos possíveis temos diminuição de fome, diminuição da exaustão, aumento de imunidade, diminuição de sede e aumento da recuperação de exaustão ao dormir.</p>
-							<div class="dica-padrao">
-								<p><span class="dica">DICA #1:</span> Todos os analgésicos caseiros quando usados por você aumentam sua recuperação de vida ao dormir nas próximas 2 horas, esse efeito acumula.</p>
-							</div>
-							<div class="dica-padrao s-bordas">
-								<p><span class="dica">DICA #2:</span> Quanto mais raro o órgão utilizado na criação do analgésico mais dor ele irá diminuir dos pacientes.</p>
-							</div>							
-						</div>
-						<div class="sub-titulo uma-linha">
-							<h2>Criando Analgesicos</h2>
-						</div>
-						<div class="criacao-introducao">
-							<p>A criação de analgésicos é feita combinando infusões com órgãos saudáveis ou sangue normal, assim como antibióticos eles demoram algumas horas para ficarem prontos.</p>
-						</div>
-						<div class="dica-padrao">
-							<p><span class="dica">DICA #1:</span> Os efeitos dos analgésicos variam de acordo com o órgão/sangue utilizado, analgésicos criados com cérebros diminuem sua exaustão, com corações diminuem sua fome, com figados aumentam sua recuperação de exaustão ao dormir (durante 2 horas), com rins aumentam sua imunidade e com sangue diminuem sua sede.</p>
-						</div>
-						<div class="dica-padrao s-bordas">
-							<p><span class="dica">DICA #2:</span> Já a potência/força do analgésico varia de acordo com a cor/tipo da infusão utilizada, veja as combinações abaixo para mais informações.</p>
-						</div>
-						<div class="sub-titulo-2">
-							<h3>Ingredientes</h3>
-						</div>
-						<div class="receitas-criacao">
-							<h2>Para criar analgésicos você irá precisar:</h2>
-							<table>
-								<tr>
-									<th class="numero">1x</th>
-									<th id="infusoes-normais2"><img src="_imagens/_icones/yas.jpg"></th>
-									<th>Infusão Normal ou Potente</th>
-								</tr>
-								<tr>
-									<th class="numero">1x</th>
-									<th id="orgao-sangue-saudavel"><img src="_imagens/_icones/sangue.jpg"></th>
-									<th>Órgão ou Sangue Saudável</th>
-								</tr>
-							</table>
-							<div class="sub-titulo-2">
-								<h3>Combinações</h3>
-							</div>
-							<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
-							<img id="botao-tabela-pause" src="_imagens/botao_pause.png" onclick="analgesicosRotacaoBotao('OFF'); botaoTipo2Discreto('botao-tabela-play');">
-							<img id="botao-tabela-play" src="_imagens/botao_play.png" onclick="analgesicosRotacaoBotao('ON'); botaoTipo2Discreto('botao-tabela-pause')">
-							<table class="tabela-combinacao">
-								<tr>
-									<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/zurkh.jpg"></th>
-									<th class="orgao-sangue-combinacao"><img src="_imagens/_icones/sangue.jpg"></th>
-									<th class="sinal">=</th>
-									<th class="analgesicos-analgesico-cor"><img src="_imagens/_icones/analgesico_zurkh.jpg"></th>
-									<th class="analgesicos-efeito"><h2>-20% de Sede</h2></th>
-								</tr>
-								<tr>
-									<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/yas.jpg"></th>
-									<th class="orgao-sangue-combinacao"><img src="_imagens/_icones/sangue.jpg"></th>
-									<th class="sinal">=</th>
-									<th class="analgesicos-analgesico-cor"><img src="_imagens/_icones/analgesico_yas.jpg"></th>
-									<th class="analgesicos-efeito"><h2>-15% de Sede</h2></th>
-								</tr>
-								<tr>
-									<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/medrel.jpg"></th>
-									<th class="orgao-sangue-combinacao"><img src="_imagens/_icones/sangue.jpg"></th>
-									<th class="sinal">=</th>
-									<th class="analgesicos-analgesico-cor"><img src="_imagens/_icones/analgesico_medrel.jpg"></th>
-									<th class="analgesicos-efeito"><h2>-10% de Sede</h2></th>
-								</tr>
-								</tr>
-							</table>
-							<p>*Use o botão acima para dar pause/play na transição.</p>
-							<div class="info-ingredientes">
-								<div>
-									<img src="_imagens/_icones/analgesico_yas.jpg">
-									<h2>Analgésico "Yas"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/analgesico_medrel.jpg">
-									<h2>Analgésico "Medrel"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/analgesico_zurkh.jpg">
-									<h2>Analgésico "Zurkh"</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/sangue.jpg">
-									<h2 class="ingrediente-centralizado">Sangue</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/rim.jpg">
-									<h2 class="ingrediente-centralizado">Rim</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/figado.jpg">
-									<h2 class="ingrediente-centralizado">Fígado</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/coracao.jpg">
-									<h2 class="ingrediente-centralizado">Coração</h2>
-								</div>
-								<div>
-									<img src="_imagens/_icones/cerebro.jpg">
-									<h2 class="ingrediente-centralizado">Cérebro</h2>
-								</div>
-							</div>
-							<div class="dica-padrao s-bordas">
-								<p><span class="dica">DICA:</span> Assim como nos antibióticos a única vantagem de utilizar infusões potentes ao invés de normais é que o analgésico será criado mais rápido.</p>
-							</div>				
-						</div>
-					</div>
-					<footer>
-						<ul>
-							<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
-							<li id="contato">Contato: pathologic2brasil@gmail.com</li>
-						</ul>
-					</footer>
+		<picture class="banner-infusoes">
+			<source media="(max-width: 800px)" srcset="_imagens/ultimos_guias_mobile.jpg">
+			<img src="_imagens/ultimos_guias.jpg">
+		</picture>
+		<h1 class="infusoes-titulo">Infusoes</h1>
+		<div class="infusoes">
+			<div class="infusoes-introducao">
+				<img src="_imagens/_guias/infusoes.jpg">
+				<p>Infusões são utilizadas principalmente para diagnosticar pacientes, ao usá-la em uma pessoa doente ela poderá revelar sintomas da doença de acordo com a cor da infusão utilizada. As amarelas podem revelar sintomas nos nervos, laranjas revelam sintomas no sangue e brancas revelam sintomas nos ossos. Outros usos delas são para aumentar a sua imunidade ou de pessoas que estão em áreas de risco (diminui a chance delas se infectarem).</p>							
+				<p class="introducao-auxiliar">- Existem dois tipos de infusões, as <span class="sublinhado">normais</span> e as <span class="sublinhado">mais potentes</span>, visualmente as potentes tem bolhas dentro do frasco e um "(+)" do lado de seu nome.</p>
+				<div class="sub-titulo">
+					<p class="info-secao-inferior">Ok, mas qual a real diferença entre as duas?</p>
 				</div>
 			</div>
-	    </div>
-		<div class="modal-privacidade" id="modal-privacidade">
-			<button 
-				id="botao-modal-fechar"
-				onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
-			>
-			</button>
-			<p>
-				Utilizamos cookies e tecnologias semelhantes para permitir serviços 
-				e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço. 
-				Ao utilizar este site, você concorda com o uso dessas informações.
-			</p>
-		</div>		
-	<script src="_js/index.js"></script>
+			<div class="infusoes-diferencas">
+				<img src="_imagens/_guias/infusao_normal.jpg" class="desktop-img">
+				<div class="infusoes-diferencas-p">
+					<div class="mobile-diferencas-img">
+						<img src="_imagens/_guias/infusao_normal.jpg">
+						<img src="_imagens/_guias/infusao_potente.jpg">
+					</div>
+					<p><img src="_imagens/_icones/flecha_texto_branca.png">Infusões potentes podem revelar mais de um sintoma ao diagnosticar um paciente, porém aumentam ainda mais sua dor.</p>
+					<p><img src="_imagens/_icones/flecha_texto_branca.png">Infusões potentes aumentam mais a imunidade ao serem utilizadas em você ou em uma pessoa com risco de infecção.</p>
+				</div>
+				<img src="_imagens/_guias/infusao_potente.jpg" class="desktop-img">
+			</div>
+			<div class="dica-padrao">
+				<p><span class="dica">DICA:</span> Infusões potentes são o MELHOR item do jogo para aumentar a imunidade de pessoas que estão em áreas de risco diminuindo drasticamente a chance delas se infectarem no próximo dia!</p>
+			</div>
+			<div class="sub-titulo">
+				<h2>Criando Infusoes Normais</h2>
+			</div>
+			<div class="sub-titulo-2">
+				<h3>Ingredientes</h3>
+			</div>
+			<div class="receitas-criacao">
+				<h2>Para criar infusões normais você irá precisar:</h2>
+				<table>
+					<tr>
+						<th class="numero">2x</th>
+						<th id="ervas-comuns"><img src="_imagens/_icones/twyre.jpg"></th>
+						<th>Ervas Comuns Diferentes</th>
+					</tr>
+					<tr>
+						<th class="numero">1x</th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th>Garrafa de Água Pura</th>
+					</tr>
+				</table>
+				<div class="sub-titulo">
+					<h3>Combinações</h3>
+				</div>
+				<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
+				<table class="tabela-combinacao">
+					<tr>
+						<th><img src="_imagens/_icones/bloodtwyre.jpg"></th>
+						<th><img src="_imagens/_icones/twyre.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/yas.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/twyre.jpg"></th>
+						<th><img src="_imagens/_icones/blacktwyre.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/zurkh.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/blacktwyre.jpg"></th>
+						<th><img src="_imagens/_icones/bloodtwyre.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/medrel.jpg"></th>
+					</tr>
+				</table>
+				<p>*Trocar a ordem das ervas não altera o resultado.</p>
+				<div class="info-ingredientes">
+					<div>
+						<img src="_imagens/_icones/garrafa_agua.jpg">
+						<h2>Garrafa de Água</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/blacktwyre.jpg">
+						<h2>Twyre Negra</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/bloodtwyre.jpg">
+						<h2>Twyre Sangrenta</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/twyre.jpg">
+						<h2>Twyre Marrom</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/medrel.jpg">
+						<h2>Infusão "Medrel"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/yas.jpg">
+						<h2>Infusão "Yas"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/zurkh.jpg">
+						<h2>Infusão "Zurkh"</h2>
+					</div>
+				</div>					
+			</div>
+			<div class="sub-titulo ">
+				<h2>Criando Infusoes Potentes</h2>
+			</div>
+			<div class="criacao-introducao">
+				<p>A criação de infusões potentes (com o +) é relativamente simples, o que realmente interfere no resultado é qual erva rara você ira utilizar (cada uma representa uma cor/tipo de infusão), caso pretenda usar duas, o melhor é decorar os resultados nas combinações.</p>
+			</div>
+			<div class="sub-titulo">
+				<h3>Ingredientes</h3>
+			</div>
+			<div class="receitas-criacao">
+				<h2>Para criar infusões potentes você irá precisar:</h2>
+				<table>
+					<tr>
+						<th class="numero">1x</th>
+						<th id="ervas-raras"><img src="_imagens/_icones/swevery.jpg"></th>
+						<th>Erva Rara</th>
+					</tr>
+					<tr>
+						<th class="numero">1x</th>
+						<th id="ervas-todas"><img src="_imagens/_icones/twyre.jpg"></th>
+						<th>Erva Comum ou Rara</th>
+					</tr>
+					<tr>
+						<th class="numero">1x</th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th>Garrafa de Água Pura</th>
+					</tr>
+				</table>
+				<div class="sub-titulo">
+					<h3>Combinações</h3>
+				</div>
+				<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
+				<table class="tabela-combinacao">
+					<tr>
+						<th><img src="_imagens/_icones/whitewhip.jpg"></th>
+						<th class="ervas-comuns1"><img src="_imagens/_icones/twyre.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/yas_mais.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/whitewhip.jpg"></th>
+						<th ><img src="_imagens/_icones/swevery.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/yas_mais.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/swevery.jpg"></th>
+						<th class="ervas-comuns1"><img src="_imagens/_icones/twyre.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/medrel_mais.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/swevery.jpg"></th>
+						<th><img src="_imagens/_icones/ashenswish.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/medrel_mais.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/ashenswish.jpg"></th>
+						<th class="ervas-comuns1"><img src="_imagens/_icones/twyre.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/zurkh_mais.jpg"></th>
+					</tr>
+					<tr>
+						<th><img src="_imagens/_icones/ashenswish.jpg"></th>
+						<th><img src="_imagens/_icones/whitewhip.jpg"></th>
+						<th><img src="_imagens/_icones/garrafa_agua.jpg"></th>
+						<th class="sinal">=</th>
+						<th><img src="_imagens/_icones/zurkh_mais.jpg"></th>
+					</tr>
+				</table>
+				<p>*Não é possível usar duas ervas raras iguais.</p>
+				<div class="info-ingredientes info-ingredientes-spc">
+					<div>
+						<img src="_imagens/_icones/whitewhip.jpg">
+						<h2>Chicote Branco</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/swevery.jpg">
+						<h2 class="ingrediente-centralizado">Swevery</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/ashenswish.jpg">
+						<h2>Sibilo Cinzento</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/yas_mais.jpg">
+						<h2>Infusão "Yas" (+)</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/medrel_mais.jpg">
+						<h2>Infusão "Medrel" (+)</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/zurkh_mais.jpg">
+						<h2>Infusão "Zurkh" (+)</h2>
+					</div>
+				</div>
+				<div class="dica-padrao">
+					<p><span class="dica">DICA:</span> Recomendo utilizar somente 1x Erva Rara nesse tipo de composição, pois justamente como nos referimos aqui, elas são raras xD.</p>
+				</div>				
+			</div>
+		</div>
+		<picture class="banner-antibioticos">
+			<source media="(max-width: 800px)" srcset="_imagens/tutoriais_rapidos_mobile.jpg">
+			<img src="_imagens/tutoriais_rapidos.jpg">
+		</picture>
+		<h1 class="antibioticos-titulo">Antibioticos</h1>
+		<div class="antibioticos">
+			<div class="antibioticos-introducao">
+				<img src="_imagens/_guias/antibioticos.jpg">
+				<p class="texto-com-img">Antibióticos caseiros são utilizados principalmente para tratar pessoas infectadas, ao utilizar o antibiótico correto (com a cor exata do problema da pessoa) a infecção dela ira diminuir aumentando as chances da mesma sobreviver ao amanhecer do dia seguinte. Caso você esteja infectado e utilize um antibiótico caseiro, seu valor de infecção ira diminuir em troca de uma parte da sua vida atual.</p>
+				<div class="dica-padrao">
+					<p><span class="dica">DICA:</span> Antibióticos caseiros não curam a praga e nunca irão matá-lo não importa o quão baixa esteja sua vida.</p>
+				</div>							
+			</div>
+			<div class="sub-titulo uma-linha">
+				<h2>Criando Antibioticos</h2>
+			</div>
+			<div class="criacao-introducao">
+				<p>A criação de antibióticos é feita combinando infusões com órgãos infectados ou sangue infectado, assim como analgésicos eles demoram algumas horas para ficarem prontos, quanto mais potente o antibiótico mais demorado será.</p>
+			</div>
+			<div class="sub-titulo borda-top">
+				<p class="info-secao-inferior">A potência dos antibióticos afeta:</p>
+			</div>
+			<div class="antibioticos-infos">
+				<img src="_imagens/_guias/antibiotico2.jpg" class="desktop-img">							
+				<div class="antibioticos-infos-p">								
+					<p><img src="_imagens/_icones/flecha_texto_branca.png">O quanto sua barra do fundo emergencial enche caso utilizado corretamente em um paciente comum.</p>
+					<p><img src="_imagens/_icones/flecha_texto_branca.png">A chance de sobrevivência de uma pessoa importante que esteja infectada.</p>
+					<div class="antibioticos-mobile-img">
+						<img src="_imagens/_guias/antibiotico2.jpg">
+						<img src="_imagens/_guias/antibiotico.jpg">
+					</div>
+				</div>
+				<img src="_imagens/_guias/antibiotico.jpg" class="desktop-img">
+			</div>
+			<div class="dica-padrao">
+				<p><span class="dica">DICA #1:</span> A cor/tipo do antibiótico criado sempre será a mesma da infusão utilizada em sua criação.</p>
+			</div>
+			<div class="dica-padrao s-bordas">
+				<p><span class="dica">DICA #2:</span> Já a potência do antibiótico é afetada pelo tipo de órgão usado, quanto mais raro o órgão infectado,<span class="sublinhado"> melhor será o efeito do antibiótico.</span> Cérebros infectados são os melhores materiais, seguidos por corações, depois figados, rins, e como pior recurso temos o sangue infectado.</p>
+			</div>
+			<div class="sub-titulo-2">
+				<h3>Ingredientes</h3>
+			</div>
+			<div class="receitas-criacao">
+				<h2>Para criar antibióticos você irá precisar:</h2>
+				<table>
+					<tr>
+						<th class="numero">1x</th>
+						<th id="infusoes-normais"><img src="_imagens/_icones/yas.jpg"></th>
+						<th>Infusão Normal ou Potente</th>
+					</tr>
+					<tr>
+						<th class="numero">1x</th>
+						<th id="orgao-sangue-infectado"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
+						<th>Órgão ou Sangue Infectado</th>
+					</tr>
+				</table>
+				<div class="sub-titulo-2">
+					<h3>Combinações</h3>
+				</div>
+				<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
+				<table class="tabela-combinacao">
+					<tr>
+						<th class="infusoes-variacoes"><img src="_imagens/_icones/yas.jpg"></th>
+						<th class="orgao-sangue-infectado-combinacao"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
+						<th class="sinal">=</th>
+						<th class="antibioticos-variacoes"><img src="_imagens/_icones/antibiotico_yas.jpg"></th>
+					</tr>
+					<tr>
+						<th class="infusoes-variacoes"><img src="_imagens/_icones/medrel.jpg"></th>
+						<th class="orgao-sangue-infectado-combinacao"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
+						<th class="sinal">=</th>
+						<th class="antibioticos-variacoes"><img src="_imagens/_icones/antibiotico_medrel.jpg"></th>
+					</tr>
+					<tr>
+						<th class="infusoes-variacoes"><img src="_imagens/_icones/zurkh.jpg"></th>
+						<th class="orgao-sangue-infectado-combinacao"><img src="_imagens/_icones/sangue_infectado.jpg"></th>
+						<th class="sinal">=</th>
+						<th class="antibioticos-variacoes"><img src="_imagens/_icones/antibiotico_zurkh.jpg"></th>
+					</tr>
+					</tr>
+				</table>
+				<div class="info-ingredientes">
+					<div>
+						<img src="_imagens/_icones/antibiotico_yas.jpg">
+						<h2>Antibiótico "Yas"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/antibiotico_medrel.jpg">
+						<h2>Antibiótico "Medrel"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/antibiotico_zurkh.jpg">
+						<h2>Antibiótico "Zurkh"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/sangue_infectado.jpg">
+						<h2>Sangue Infectado</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/rim_infectado.jpg">
+						<h2>Rim Infectado</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/figado_infectado.jpg">
+						<h2>Fígado Infectado</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/coracao_infectado.jpg">
+						<h2>Coração Infectado</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/cerebro_infectado.jpg">
+						<h2>Cérebro Infectado</h2>
+					</div>
+				</div>
+				<div class="dica-padrao">
+					<p><span class="dica">DICA #1:</span> A única vantagem em utilizar infusões potentes ao invés de normais é que o antibiótico será produzido mais rápido, o resultado em si, é sempre o mesmo.</p>
+				</div>	
+				<div class="dica-padrao s-bordas">
+					<p><span class="dica">DICA #2:</span> Após criar um antibiótico você pode checar em sua descrição de qual órgão ele foi feito.</p>
+				</div>				
+			</div>
+		</div>
+		<picture class="banner-analgesicos">
+			<source media="(max-width: 800px)" srcset="_imagens/banner_adicional_mobile.jpg">
+			<img src="_imagens/banner_adicional.jpg">
+		</picture>
+		<h1 class="analgesicos-titulo">Analgesicos</h1>
+		<div class="analgesicos">
+			<div class="analgesicos-introducao">
+				<img src="_imagens/_guias/analgesicos.jpg">
+				<p class="texto-com-img">Analgésicos caseiros tem como principal função diminuir a dor de pessoas infectadas, porem o que muitos não sabem é que dependendo dos ingredientes utilizados em sua criação seus efeitos podem variar bastante caso usados em você mesmo. Dentre os efeitos possíveis temos diminuição de fome, diminuição da exaustão, aumento de imunidade, diminuição de sede e aumento da recuperação de exaustão ao dormir.</p>
+				<div class="dica-padrao">
+					<p><span class="dica">DICA #1:</span> Todos os analgésicos caseiros quando usados por você aumentam sua recuperação de vida ao dormir nas próximas 2 horas, esse efeito acumula.</p>
+				</div>
+				<div class="dica-padrao s-bordas">
+					<p><span class="dica">DICA #2:</span> Quanto mais raro o órgão utilizado na criação do analgésico mais dor ele irá diminuir dos pacientes.</p>
+				</div>							
+			</div>
+			<div class="sub-titulo uma-linha">
+				<h2>Criando Analgesicos</h2>
+			</div>
+			<div class="criacao-introducao">
+				<p>A criação de analgésicos é feita combinando infusões com órgãos saudáveis ou sangue normal, assim como antibióticos eles demoram algumas horas para ficarem prontos.</p>
+			</div>
+			<div class="dica-padrao">
+				<p><span class="dica">DICA #1:</span> Os efeitos dos analgésicos variam de acordo com o órgão/sangue utilizado, analgésicos criados com cérebros diminuem sua exaustão, com corações diminuem sua fome, com figados aumentam sua recuperação de exaustão ao dormir (durante 2 horas), com rins aumentam sua imunidade e com sangue diminuem sua sede.</p>
+			</div>
+			<div class="dica-padrao s-bordas">
+				<p><span class="dica">DICA #2:</span> Já a potência/força do analgésico varia de acordo com a cor/tipo da infusão utilizada, veja as combinações abaixo para mais informações.</p>
+			</div>
+			<div class="sub-titulo-2">
+				<h3>Ingredientes</h3>
+			</div>
+			<div class="receitas-criacao">
+				<h2>Para criar analgésicos você irá precisar:</h2>
+				<table>
+					<tr>
+						<th class="numero">1x</th>
+						<th id="infusoes-normais2"><img src="_imagens/_icones/yas.jpg"></th>
+						<th>Infusão Normal ou Potente</th>
+					</tr>
+					<tr>
+						<th class="numero">1x</th>
+						<th id="orgao-sangue-saudavel"><img src="_imagens/_icones/sangue.jpg"></th>
+						<th>Órgão ou Sangue Saudável</th>
+					</tr>
+				</table>
+				<div class="sub-titulo-2">
+					<h3>Combinações</h3>
+				</div>
+				<h2>Com esses ingredientes é possível realizar as seguintes combinações:</h2>
+				<img id="botao-tabela-pause" src="_imagens/botao_pause.png" onclick="analgesicosRotacaoBotao('OFF'); botaoTipo2Discreto('botao-tabela-play');">
+				<img id="botao-tabela-play" src="_imagens/botao_play.png" onclick="analgesicosRotacaoBotao('ON'); botaoTipo2Discreto('botao-tabela-pause')">
+				<table class="tabela-combinacao">
+					<tr>
+						<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/zurkh.jpg"></th>
+						<th class="orgao-sangue-combinacao"><img src="_imagens/_icones/sangue.jpg"></th>
+						<th class="sinal">=</th>
+						<th class="analgesicos-analgesico-cor"><img src="_imagens/_icones/analgesico_zurkh.jpg"></th>
+						<th class="analgesicos-efeito"><h2>-20% de Sede</h2></th>
+					</tr>
+					<tr>
+						<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/yas.jpg"></th>
+						<th class="orgao-sangue-combinacao"><img src="_imagens/_icones/sangue.jpg"></th>
+						<th class="sinal">=</th>
+						<th class="analgesicos-analgesico-cor"><img src="_imagens/_icones/analgesico_yas.jpg"></th>
+						<th class="analgesicos-efeito"><h2>-15% de Sede</h2></th>
+					</tr>
+					<tr>
+						<th class="analgesicos-infusao-cor"><img src="_imagens/_icones/medrel.jpg"></th>
+						<th class="orgao-sangue-combinacao"><img src="_imagens/_icones/sangue.jpg"></th>
+						<th class="sinal">=</th>
+						<th class="analgesicos-analgesico-cor"><img src="_imagens/_icones/analgesico_medrel.jpg"></th>
+						<th class="analgesicos-efeito"><h2>-10% de Sede</h2></th>
+					</tr>
+					</tr>
+				</table>
+				<p>*Use o botão acima para dar pause/play na transição.</p>
+				<div class="info-ingredientes">
+					<div>
+						<img src="_imagens/_icones/analgesico_yas.jpg">
+						<h2>Analgésico "Yas"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/analgesico_medrel.jpg">
+						<h2>Analgésico "Medrel"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/analgesico_zurkh.jpg">
+						<h2>Analgésico "Zurkh"</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/sangue.jpg">
+						<h2 class="ingrediente-centralizado">Sangue</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/rim.jpg">
+						<h2 class="ingrediente-centralizado">Rim</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/figado.jpg">
+						<h2 class="ingrediente-centralizado">Fígado</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/coracao.jpg">
+						<h2 class="ingrediente-centralizado">Coração</h2>
+					</div>
+					<div>
+						<img src="_imagens/_icones/cerebro.jpg">
+						<h2 class="ingrediente-centralizado">Cérebro</h2>
+					</div>
+				</div>
+				<div class="dica-padrao s-bordas">
+					<p><span class="dica">DICA:</span> Assim como nos antibióticos a única vantagem de utilizar infusões potentes ao invés de normais é que o analgésico será criado mais rápido.</p>
+				</div>				
+			</div>
+		</div>
+	</p2b-template>
+	<script src="_js/globalVariables.js"></script>
+	<script src="_js/utils.js"></script>
+	<script src="./P2B-Template/P2B-Template.js"></script>	
 	<script src="_js/receitas.js"></script>
 </body>
 </html>

@@ -6,14 +6,9 @@
 <meta name="keywords" content="noindex">
 <head>
 	<title>Results</title>
-	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../_css/padrao.css"/>
-	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
-	<link rel="stylesheet" type="text/css" href="../_css/en/estrutura_en.css"/>
-	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
 	<style>
-		body #funcao-pesquisa-barra {
+		html body #funcao-pesquisa-barra {
 			right: 3.8vw;
 			-ms-clip-path: inset(0vw 0vw 0vw 0vw);
 			-moz-clip-path: inset(0vw 0vw 0vw 0vw);
@@ -21,166 +16,26 @@
 			-webkit-clip-path: inset(0vw 0vw 0vw 0vw);
 			clip-path: inset(0vw 0vw 0vw 0vw);
 		}
-		body #input {
+		html body #input {
 			display: block;
 			opacity: 1;
 		}
 	</style>
 </head>
 <body id="body">
-	<header>
-		<picture id="banner">
-			<source media="(max-width: 800px)" srcset="../_imagens/banner_mobile.jpg">
-			<img src="../_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+	<p2b-template>	
+		<picture class="banner">
+			<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
+			<img src="../_imagens/bem_vindo.jpg">
 		</picture>
-		<div class="botoes-linguagem">
-			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
-			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
-		</div>
-		<div id="funcao-pesquisa">
-			<form method="get" action="results.html">
-				<div id="funcao-pesquisa-barra">
-					<img src="../_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
-					<img src="../_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
-					<input type="text" name="search" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Search...">
-				</div>
-				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-			</form>	
-		</div>
-		<div id="funcao-pesquisa-mobile-mais-menu">
-			<form method="get" action="results.html">
-				<div id="divbotaopesquisamobile">
-					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="../_imagens/botao_pesquisa.png">
-				</div>
-				<img src="../_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
-				<img src="../_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-				<input type="text" name="search" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Search...">
-			</form>
-			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
-				<button onclick="mudarLinguagem(`portugues`)">
-			</div>
-		</div>
-		<div id="menu-lateral" class="menu-lateral-classe">
-			<div class="fundo-lateral"></div>
-			<img src="../_imagens/menu_lateral_divisao.png" id="lateral-divisao">
-			<img src="../_imagens/menu_lateral_borda.png" id="lateral-borda">
-			<div id="sub-menu-lateral-cover">				
-			</div>
-			<div id="sub-menu-lateral">
-				<ul>
-					<li id="combate-mobile">Combat</li> 
-					<li id="comida-mobile">Food</li> 					
-					<li id="mapautil-mobile">Map</li> 
-					<li id="tudo-mobile">All</li> 
-				</ul>
-				<a href="combat.html" target="_self">
-					<img src="../_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combat.html')">
-				</a>
-				<a href="food.html" target="_self">
-					<img src="../_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('food.html')">
-				</a>
-				<a href="map.html" target="_self">
-					<img src="../_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('map.html')">
-				</a>
-				<a href="all.html" target="_self">
-					<img src="../_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('all.html')">
-				</a>
-			</div>
-			<img src="../_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="../_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
-			</a>
-			<a href="trading.html" target="_self">
-				<img src="../_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trading.html')">
-			</a>
-			<a href="index.html" target="_self">
-				<img src="../_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
-			</a>
-			<img src="../_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
-			<img src="../_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
-			<h1 id="titulo-menu-lateral">Menu</h1>
-			<ul>
-				<li id="home2">Home</li> 
-				<li id="trocas2">Trading</li> 					
-				<li id="videos2">Videos</li> 
-				<li id="mais2">+Guides</li> 
-			</ul>
-			<img src="../_imagens/indicador_esquerda.png" id="indicador-esquerda">
-			<img src="../_imagens/indicador_direita.png" id="indicador-direita">
-		</div>
-		<nav id="menu">
-			<a href="index.html" target="_self">
-				<img src="../_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
-			</a>
-			<a href="trading.html" target="_self">
-				<img src="../_imagens/barra_2.png" id="barra2" onclick="abrirLink('trading.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
-			</a>
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="../_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
-			</a>
-			<img src="../_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
-			<img src="../_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
-			<ul>
-				<li id="home">Home</li> 
-				<li id="trocas">Trading</li> 					
-				<li id="videos">Videos</li> 
-				<li id="mais">+Tutorials/Guides</li> 
-			</ul>
-		</nav>
-		<div id="submenu">
-			<a href="all.html" target="_self">
-				<img src="../_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('all.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			</a>
-			<a href="map.html" target="_self">
-				<img src="../_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('map.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
-			</a>
-			<a href="food.html" target="_self">
-				<img src="../_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('food.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
-			</a>
-			<a href="combat.html" target="_self">
-				<img src="../_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combat.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
-			</a>
-			<ul>
-				<li id="combate">Combat</li> 
-				<li id="comida">Food</li> 					
-				<li id="mapautil">Map</li> 
-				<li id="tudo">All</li> 
-			</ul>
-		</div>
-	</header>
-	<div id="corpo">
-		<div id="fundobranco">
-			<div id="conteudo">
-				<picture class="banner">
-					<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
-					<img src="../_imagens/bem_vindo.jpg">
-				</picture>
-				<h1 class="titulo">Results</h1>
-				<section>
-					<article class="guias-cards resultado-pesquisa">
-					</article>
-				</section>					
-				<footer>
-					<ul>
-						<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
-						<li id="contato">Contact: pathologic2brasil@gmail.com</li>
-					</ul>
-				</footer>
-			</div>
-		</div>
-	</div>
-	<div class="modal-privacidade" id="modal-privacidade">
-		<button 
-			id="botao-modal-fechar"
-			onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
-		>
-		</button>
-		<p>
-			We use cookies and similar technologies to enable services and features on our website.
-			By using this website, you agree to the use of such information.
-		</p>
-	</div>		
-	<script src="../_js/index.js"></script>
-	<script src="../_js/cards.js"></script>
+		<h1 class="titulo">Results</h1>
+		<section>
+			<article class="guias-cards resultado-pesquisa">
+			</article>
+		</section>							
+	</p2b-template>
+	<script src="../_js/globalVariables.js"></script>
+	<script src="../_js/utils.js"></script>
+	<script src="../P2B-Template/P2B-Template.js"></script>	
 </body>
 </html>

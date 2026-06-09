@@ -7,12 +7,7 @@
 <meta name="description" content="Learn Everything About the Combat System of the Game.">
 <head>
 	<title>Combat</title>
-	<link rel="icon" type="image/x-icon" href="../_recursos/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../_css/combate.css"/>
-	<link rel="stylesheet" type="text/css" href="../_css/estrutura.css"/>
-	<link rel="stylesheet" type="text/css" href="../_css/en/estrutura_en.css"/>
-	<link rel="preload" href="../_fonts/batukapur-vmedy.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="../_fonts/friz-quadrata-tt.woff" as="font" type="font/woff" crossorigin="anonymous">
 	<style>
 		#corpo-a-corpo-introducao2 {
 			padding-bottom: 8px
@@ -20,425 +15,286 @@
 	</style>
 </head>
 <body id="body">	
-	<header>
-		<picture id="banner">
-			<source media="(max-width: 800px)" srcset="../_imagens/banner_mobile.jpg">
-			<img src="../_imagens/banner.jpg" alt="banner pathologic 2 brasil">
+	<p2b-template>
+		<picture id="banner-combate">
+			<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
+			<img src="../_imagens/bem_vindo.jpg">
 		</picture>
-		<div class="botoes-linguagem">
-			<button class="linguagem-portugues" onclick="mudarLinguagem(`portugues`)">
-			<button class="linguagem-ingles" onclick="mudarLinguagem(`ingles`)">
+		<h1>Combat</h1>
+		<div id="combate-introducao">
+			<p id="p-introducao">Welcome to our guide on combat!<br> Here I will explain how to fight enemies at close/long distances and stealthily too. In the end we check out some important mechanics and useful tips too!</p>
+			<picture id="combate-img">
+				<source media="(max-width: 800px)" srcset="../_imagens/_guias/combate_mobile.jpg">
+				<img src="../_imagens/_guias/combate.jpg">
+			</picture>
+			<div id="odongs-div">
+				<img src="../_imagens/_icones/odong.jpg" id="odongs-img">
+				<p id="odongs">- If you are having issues with <span class=sublinhado>Odongs</span>, check out our guide about them <span class="link">here</span>. (pending guide)</p>
+			</div>
+			<p id="aviso-introducao"><span class=amarelo>BEWARE:</span> Never fight using your fists or even knives directly against enemies with blades. Despite the fact it is possible, the risk is too high to be worth it. One error is enough to everything go south.  In my experience, if I have to fight an alerted and armed enemy, one precise shot in the head is the only option beside running away.</p>
 		</div>
-		<div id="funcao-pesquisa">
-			<form method="get" action="results.html">
-				<div id="funcao-pesquisa-barra">
-					<img src="../_imagens/barra_pesquisa_meio.png"  id="barrapesquisa" alt="barra de pesquisa">
-					<img src="../_imagens/botao_hide_pesquisa.png" id="botaohidepesquisa" onclick="aberturaPesquisaDesktop()">
-					<input type="text" name="search" autocomplete="off" id="input" maxlength="45" value="" onclick="inputPesquisa('click')" placeholder="Search...">
+		<picture id="banner-corpo-a-corpo">
+			<source media="(max-width: 800px)" srcset="../_imagens/ultimos_guias_mobile.jpg">
+			<img src="../_imagens/ultimos_guias.jpg">
+		</picture>
+		<h2 id="corpo-a-corpo-titulo">Melee Combat</h2>
+		<div id="corpo-a-corpo">
+			<div id="corpo-a-corpo-introducao">
+				<div id="corpo-a-corpo-introducao2">
+					<img src="../_imagens/_guias/corpo_a_corpo.jpg" id="corpo-a-corpo-img">
+					<p>One of your greatest allies in close combat is the "Charged Attack". Despite the fact that it uses a lot of energy, the damage and stun it can cause make it an amazing tool to kill enemies without receiving any damage! It is a simple technique but requires practice and good timing!</p>
+					<div id="corpo-a-corpo-inferior">
+						<h3>- Below you can check out 5 steps on how to fight with Power Attacks</h3>
+					</div>
 				</div>
-				<button id="botaopesquisa" alt="botao de pesquisa" onclick="botaoPesquisa()">
-			</form>	
-		</div>
-		<div id="funcao-pesquisa-mobile-mais-menu">
-			<form method="get" action="results.html">
-				<div id="divbotaopesquisamobile">
-					<button id="botaopesquisamobile" onclick="botaoPesquisaMobile()" src="../_imagens/botao_pesquisa.png">
+				<div id="passo-1">
+					<div class="titulo-dica">
+						<h2><span>1</span> - Keep your distance!</h2>
+					</div>
+					<div id="passo-1-video">
+						<div id="passo-1-dicas">
+							<p><img src="../_imagens/_icones/flecha_texto.png">Just enough to be out of your enemy's attack range.</p>
+							<p><img src="../_imagens/_icones/flecha_texto.png">Keep yourself moving away from the target without turning your back to it.</p>
+							<p><img src="../_imagens/_icones/flecha_texto.png">Make sure you have enough space to back up and an escape route, just in case.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/7YCQQoXqLQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</div>
-				<img src="../_imagens/barra_pesquisa_meio.png" id="barrapesquisamobile">
-				<img src="../_imagens/botao_menu_mobile.png" id="botao-menu-mobile" onclick="botaoMenuMobile(); botaoTipo2MenosBrilho('botao-menu-mobile')">
-				<input type="text" name="search" autocomplete="off" id="input-mobile" maxlength="45" value="" onclick="inputPesquisa('clickmobile')" placeholder="Search...">
-			</form>
-			<div id="botao-linguagem-mobile" class="botoes-linguagem-mobile" onclick="botaoTipo2MenosBrilho('botao-linguagem-mobile')">
-				<button onclick="mudarLinguagem(`portugues`)">
+				<div id="passo-2">
+					<div class="titulo-dica2">
+						<h2><span>2</span> - As the enemy approaches,  start charging your attack. Near the end of the animation, take a step forward to ensure you reach your target.</h2>
+					</div>
+					<div id="passo-2-video">
+						<div id="passo-2-dicas">
+							<p><img src="../_imagens/_icones/flecha_texto.png">Always let the ENEMY close the distance.</p>
+							<p><img src="../_imagens/_icones/flecha_texto.png">Make sure you have enough energy for the charged attack.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/ofzjFesclFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div id="passo-3">
+					<div class="titulo-dica3">
+						<h2><span>3</span> - After landing the strike, move out of the enemy's attack range, then, hold block above your adversary to keep them in view while you recharge your energy.</h2> 
+					</div>
+					<div id="passo-3-video">
+						<div id="passo-3-dicas">
+							<p><img src="../_imagens/_icones/flecha_texto.png">Move backwards while blocking to recharge energy and buy time.</p>
+							<p><img src="../_imagens/_icones/flecha_texto.png">Be aware of every movement your enemy makes.</p>
+							<p><img src="../_imagens/_icones/flecha_texto.png">If the enemy dodges any attack, move away and repeat the process.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/GwZFi6tVIBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div id="passo-4">
+					<div class="titulo-dica4">
+						<h2><span>4</span> - After the enemy recovers from the stun and continues to chase you, repeat the whole process until they fall.</h2>
+					</div>
+					<div id="passo-4-video">
+						<div id="passo-4-dicas">
+							<p id="pouco-maior"><img src="../_imagens/_icones/flecha_texto.png">The enemies recover quickly from the stun, but sometimes they take a moment to start chasing you again.</p>
+							<p ><img src="../_imagens/_icones/flecha_texto.png">Take advantage from the time you have to hold block and safely recharge your energy.</p>
+							<p id="p-maior"><img src="../_imagens/_icones/flecha_texto.png">Some enemies, right after being hit, will respond with a quick punch. That's why it's important to hold block and start moving backwards as soon as possible.</p>
+						</div>
+						<iframe class="video" src="https://www.youtube.com/embed/qSlVkbD142I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div id="corpo-a-corpo-multiplos-inimigos">
+				<p><span>More than one enemy?</span> Engaging more than one enemy can be challenging, but it's possible. However, I don't recommend to fight more than 2 at a time, as things can quickly get out of control. When dealing with multiple enemies, keep in mind that the only way to win without receiving damage is to get them to chase you in a line. That way you can charge your attack and hit them one at a time, always moving backwards to recharge energy and keep the rhythm.</p>
+				<iframe id="corpo-a-corpo-multiplos-inimigos-video" src="https://www.youtube.com/embed/__aktBh7lZ8" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div id="menu-lateral" class="menu-lateral-classe">
-			<div class="fundo-lateral"></div>
-			<img src="../_imagens/menu_lateral_divisao.png" id="lateral-divisao">
-			<img src="../_imagens/menu_lateral_borda.png" id="lateral-borda">
-			<div id="sub-menu-lateral-cover">				
-			</div>
-			<div id="sub-menu-lateral">
-				<ul>
-					<li id="combate-mobile">Combat</li> 
-					<li id="comida-mobile">Food</li> 					
-					<li id="mapautil-mobile">Map</li> 
-					<li id="tudo-mobile">All</li> 
-				</ul>
-				<a href="combat.html" target="_self">
-					<img src="../_imagens/sub_barra_1.png" id="sub-menu-mobile1" onclick="botaoTipo1ComBrilho('sub-menu-mobile1', 'combate-mobile'); abrirLink('combat.html')">
-				</a>
-				<a href="food.html" target="_self">
-					<img src="../_imagens/sub_barra_2.png" id="sub-menu-mobile2" onclick="botaoTipo1ComBrilho('sub-menu-mobile2', 'comida-mobile'); abrirLink('food.html')">
-				</a>
-				<a href="map.html" target="_self">
-					<img src="../_imagens/sub_barra_3.png" id="sub-menu-mobile3" onclick="botaoTipo1ComBrilho('sub-menu-mobile3', 'mapautil-mobile'); abrirLink('map.html')">
-				</a>
-				<a href="all.html" target="_self">
-					<img src="../_imagens/sub_barra_4.png" id="sub-menu-mobile4" onclick="botaoTipo1ComBrilho('sub-menu-mobile4', 'tudo-mobile'); abrirLink('all.html')">
-				</a>
-			</div>
-			<img src="../_imagens/menu_lateral_botao4.png" id="lateral4" onclick="botaoTipo1('lateral4', 'mais2', 'indicador-esquerda', 'indicador-direita'); rotacao90('indicador-direita', 'indicador-esquerda')">
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="../_imagens/menu_lateral_botao3.png" id="lateral3" onclick="botaoTipo1ComBrilho('lateral3', 'videos2'); abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g')">
-			</a>
-			<a href="trading.html" target="_self">
-				<img src="../_imagens/menu_lateral_botao2.png" id="lateral2" onclick="botaoTipo1ComBrilho('lateral2', 'trocas2'); abrirLink('trading.html')">
-			</a>
-			<a href="index.html" target="_self">
-				<img src="../_imagens/menu_lateral_botao1.png" id="lateral1" onclick="botaoTipo1ComBrilho('lateral1', 'home2'); abrirLink('index.html')">
-			</a>
-			<img src="../_imagens/botao_menu_lateral_fechar.png" id="botao-lateral-fechar" onclick="fecharMenuLateral()">
-			<img src="../_imagens/menu_lateral_titulo_fundo.jpg" id="menu-lateral-fundo-titulo">
-			<h1 id="titulo-menu-lateral">Menu</h1>
-			<ul>
-				<li id="home2">Home</li> 
-				<li id="trocas2">Trading</li> 					
-				<li id="videos2">Videos</li> 
-				<li id="mais2">+Guides</li> 
-			</ul>
-			<img src="../_imagens/indicador_esquerda.png" id="indicador-esquerda">
-			<img src="../_imagens/indicador_direita.png" id="indicador-direita">
-		</div>
-		<nav id="menu">
-			<a href="index.html" target="_self">
-				<img src="../_imagens/barra_1.png" id="barra1" onclick="abrirLink('index.html'); botaoTipo1Lento('barra1', 'home')" onmousemove="menuHoverIn('home')" onmouseout="menuHoverOut('home')"/>
-			</a>
-			<a href="trading.html" target="_self">
-				<img src="../_imagens/barra_2.png" id="barra2" onclick="abrirLink('trading.html'); botaoTipo1Lento('barra2', 'trocas')" onmousemove="menuHoverIn('trocas')" onmouseout="menuHoverOut('trocas')"/>
-			</a>
-			<a href="https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g" target="_blank">
-				<img src="../_imagens/barra_3.png" id="barra3" onclick="abrirLinkFora('https://www.youtube.com/channel/UCk1Ax5j6moXGrPf13pV1e4g'); botaoTipo1Lento('barra3', 'videos')" onmousemove="menuHoverIn('videos')" onmouseout="menuHoverOut('videos')"/>
-			</a>
-			<img src="../_imagens/barra_4.png" id="barra4" onmousemove="menuHoverIn('mais')" onmouseout="menuHoverOut('mais')"/>
-			<img src="../_imagens/barra_espinhos.png" id="espinhos" alt="espinhos">
-			<ul>
-				<li id="home">Home</li> 
-				<li id="trocas">Trading</li> 					
-				<li id="videos">Videos</li> 
-				<li id="mais">+Tutorials/Guides</li> 
-			</ul>
-		</nav>
-		<div id="submenu">
-			<a href="all.html" target="_self">
-				<img src="../_imagens/sub_barra_4.png" id="submenubarra4" onclick="abrirLink('all.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('tudo')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('tudo')">
-			</a>
-			<a href="map.html" target="_self">
-				<img src="../_imagens/sub_barra_3.png" id="submenubarra3" onclick="abrirLink('map.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('mapautil')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('mapautil')">
-			</a>
-			<a href="food.html" target="_self">
-				<img src="../_imagens/sub_barra_2.png" id="submenubarra2" onclick="abrirLink('food.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('comida')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('comida')">
-			</a>
-			<a href="combat.html" target="_self">
-				<img src="../_imagens/sub_barra_1.png" id="submenubarra1" onclick="abrirLink('combat.html')" onmousemove="menuSubMenu('on'); hoverSubMenu('combate')" onmouseout="menuSubMenu('off'); hoverSubMenuOff('combate')">
-			</a>
-			<ul>
-				<li id="combate">Combat</li> 
-				<li id="comida">Food</li> 					
-				<li id="mapautil">Map</li> 
-				<li id="tudo">All</li> 
-			</ul>
-		</div>
-	</header>
-	<div id="corpo">
-		<div id="fundobranco">
-			<div id="conteudo">
-				<picture id="banner-combate">
-					<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
-					<img src="../_imagens/bem_vindo.jpg">
-				</picture>
-				<h1>Combat</h1>
-				<div id="combate-introducao">
-					<p id="p-introducao">Welcome to our guide on combat!<br> Here I will explain how to fight enemies at close/long distances and stealthily too. In the end we check out some important mechanics and useful tips too!</p>
-					<picture id="combate-img">
-						<source media="(max-width: 800px)" srcset="../_imagens/_guias/combate_mobile.jpg">
-						<img src="../_imagens/_guias/combate.jpg">
-					</picture>
-					<div id="odongs-div">
-						<img src="../_imagens/_icones/odong.jpg" id="odongs-img">
-						<p id="odongs">- If you are having issues with <span class=sublinhado>Odongs</span>, check out our guide about them <span class="link">here</span>. (pending guide)</p>
-					</div>
-					<p id="aviso-introducao"><span class=amarelo>BEWARE:</span> Never fight using your fists or even knives directly against enemies with blades. Despite the fact it is possible, the risk is too high to be worth it. One error is enough to everything go south.  In my experience, if I have to fight an alerted and armed enemy, one precise shot in the head is the only option beside running away.</p>
-				</div>
-				<picture id="banner-corpo-a-corpo">
-					<source media="(max-width: 800px)" srcset="../_imagens/ultimos_guias_mobile.jpg">
-					<img src="../_imagens/ultimos_guias.jpg">
-				</picture>
-				<h2 id="corpo-a-corpo-titulo">Melee Combat</h2>
-				<div id="corpo-a-corpo">
-					<div id="corpo-a-corpo-introducao">
-						<div id="corpo-a-corpo-introducao2">
-							<img src="../_imagens/_guias/corpo_a_corpo.jpg" id="corpo-a-corpo-img">
-							<p>One of your greatest allies in close combat is the "Charged Attack". Despite the fact that it uses a lot of energy, the damage and stun it can cause make it an amazing tool to kill enemies without receiving any damage! It is a simple technique but requires practice and good timing!</p>
-							<div id="corpo-a-corpo-inferior">
-								<h3>- Below you can check out 5 steps on how to fight with Power Attacks</h3>
-							</div>
-						</div>
-						<div id="passo-1">
-							<div class="titulo-dica">
-								<h2><span>1</span> - Keep your distance!</h2>
-							</div>
-							<div id="passo-1-video">
-								<div id="passo-1-dicas">
-									<p><img src="../_imagens/_icones/flecha_texto.png">Just enough to be out of your enemy's attack range.</p>
-									<p><img src="../_imagens/_icones/flecha_texto.png">Keep yourself moving away from the target without turning your back to it.</p>
-									<p><img src="../_imagens/_icones/flecha_texto.png">Make sure you have enough space to back up and an escape route, just in case.</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/7YCQQoXqLQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="passo-2">
-							<div class="titulo-dica2">
-								<h2><span>2</span> - As the enemy approaches,  start charging your attack. Near the end of the animation, take a step forward to ensure you reach your target.</h2>
-							</div>
-							<div id="passo-2-video">
-								<div id="passo-2-dicas">
-									<p><img src="../_imagens/_icones/flecha_texto.png">Always let the ENEMY close the distance.</p>
-									<p><img src="../_imagens/_icones/flecha_texto.png">Make sure you have enough energy for the charged attack.</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/ofzjFesclFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="passo-3">
-							<div class="titulo-dica3">
-								<h2><span>3</span> - After landing the strike, move out of the enemy's attack range, then, hold block above your adversary to keep them in view while you recharge your energy.</h2> 
-							</div>
-							<div id="passo-3-video">
-								<div id="passo-3-dicas">
-									<p><img src="../_imagens/_icones/flecha_texto.png">Move backwards while blocking to recharge energy and buy time.</p>
-									<p><img src="../_imagens/_icones/flecha_texto.png">Be aware of every movement your enemy makes.</p>
-									<p><img src="../_imagens/_icones/flecha_texto.png">If the enemy dodges any attack, move away and repeat the process.</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/GwZFi6tVIBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div id="passo-4">
-							<div class="titulo-dica4">
-								<h2><span>4</span> - After the enemy recovers from the stun and continues to chase you, repeat the whole process until they fall.</h2>
-							</div>
-							<div id="passo-4-video">
-								<div id="passo-4-dicas">
-									<p id="pouco-maior"><img src="../_imagens/_icones/flecha_texto.png">The enemies recover quickly from the stun, but sometimes they take a moment to start chasing you again.</p>
-									<p ><img src="../_imagens/_icones/flecha_texto.png">Take advantage from the time you have to hold block and safely recharge your energy.</p>
-									<p id="p-maior"><img src="../_imagens/_icones/flecha_texto.png">Some enemies, right after being hit, will respond with a quick punch. That's why it's important to hold block and start moving backwards as soon as possible.</p>
-								</div>
-								<iframe class="video" src="https://www.youtube.com/embed/qSlVkbD142I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
-					</div>
-					<div id="corpo-a-corpo-multiplos-inimigos">
-						<p><span>More than one enemy?</span> Engaging more than one enemy can be challenging, but it's possible. However, I don't recommend to fight more than 2 at a time, as things can quickly get out of control. When dealing with multiple enemies, keep in mind that the only way to win without receiving damage is to get them to chase you in a line. That way you can charge your attack and hit them one at a time, always moving backwards to recharge energy and keep the rhythm.</p>
-						<iframe id="corpo-a-corpo-multiplos-inimigos-video" src="https://www.youtube.com/embed/__aktBh7lZ8" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-				</div>
-				<picture id="banner-armas-de-fogo">
-					<source media="(max-width: 800px)" srcset="../_imagens/tutoriais_rapidos_mobile.jpg">
-					<img src="../_imagens/tutoriais_rapidos.jpg">
-				</picture>
-				<h2 id="armas-de-fogo-titulo">Ranged Combat</h2>
-				<div id="armas-de-fogo">
-					<div id="armas-de-fogo-introducao">
-						<img id="armas-de-fogo-img" src="../_imagens/_guias/armas_de_fogo.jpg">
-						<p>When fighting enemies with ranged weapons the first thing worth mentioning is that you CANNOT block attacks! Holding the block key while holstering a gun makes you aim, increasing the precision. That being said, it becomes clear that when using this type of weapon the strategy is to keep your distance and ALWAYS have the thing loaded.<br>Another important detail is that headshots deal significantly more damage than body shots, sooo make sure to aim first!</p>
-						<div id="armas-de-fogo-aviso">
-							<p><span class="amarelo">BEWARE:</span> Always keep your weapon LOADED and with the durability meter at full or on the third bar. A single jam or dry fire is more than enough to be fatal!</p>	
-						</div>	
-					</div>
-					<div id="armas-de-fogo-inferior">
-						<h3>- Following the pattern I will explain this type of combat step by step below.</h3>
-					</div>
-					<div id="passo-2-1">
-						<div class="titulo-dica-2-1">
-							<h2><span>1</span> - Be Ready!</h2>
-						</div>
-						<div id="passo-2-1-video">
-							<div id="passo-2-1-dicas">
-								<p><img src="../_imagens/_icones/flecha_texto.png">Keep your weapon fully loaded before the conflict.</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">Keep your weapon durability at least halfway of the third bar.</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">Make sure you have space to retreat and a clear escape route.</p>
-							</div>
-							<iframe class="video" src="https://www.youtube.com/embed/mXcvh13leSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div id="passo-2-2">
-						<div class="titulo-dica-2-2">
-							<h2><span>2</span> - Give the enemy his time to approach while you hold block aiming above their head.</h2>
-						</div>
-						<div id="passo-2-2-video">
-							<div id="passo-2-2-dicas">
-								<p><img src="../_imagens/_icones/flecha_texto.png">Don't let the enemy get enough range to attack you.</p>
-								<p id="pouco-maior2"><img src="../_imagens/_icones/flecha_texto.png">The precision of weapons at long distances isn't great, even when standing still and aiming, don't be fooled!</p>
-							</div>
-							<iframe class="video" src="https://www.youtube.com/embed/cP0jijlprmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div id="passo-2-3">
-						<div class="titulo-dica-2-3">
-							<h2><span>3</span> - With the enemy relatively close shoot him on the head.</h2>
-						</div>
-						<div id="passo-2-3-video">
-							<div id="passo-2-3-dicas">
-								<p><img src="../_imagens/_icones/flecha_texto.png">Humans take 1 headshot, odongs on the other hand, take 2.</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">The closer the enemy is, the higher your weapon's precision will be.</p>
-								<p id="pouco-maior3"><img src="../_imagens/_icones/flecha_texto.png">In case you need to run away, check the "Mechanics" section, there I explain more about it and provide extra tips!</p>
-							</div>
-							<iframe class="video" src="https://www.youtube.com/embed/s6cRWCWEXns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div id="armas-de-fogo-multiplos-inimigos">
-						<p><span>More than one enemy?</span> With a gun is a lot easier to face multiple enemies (if you have ammo and good durability). It's important to stay calm and wait for them to get closer, aim carefully on the head of the closest and shoot. The best gun for this is the revolver since it can hold 6 shots before loading. Six bullets, six kills!</p>
-						<iframe id="armas-de-fogo-multiplos-inimigos-video" src="https://www.youtube.com/embed/Ufz55fpgLDg" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-				</div>
-				<picture id="banner-furtividade">
-					<source media="(max-width: 800px)" srcset="../_imagens/banner_adicional_mobile.jpg">
-					<img src="../_imagens/banner_adicional.jpg">
-				</picture>
-				<h2 id="furtividade-titulo">Stealth Combat</h2>
-				<div id="furtividade">
-					<div id="furtividade-introducao">
-						<img id="furtividade-img" src="../_imagens/_guias/furtividade.jpg">
-						<p>About stealth combat, the strategy is simple to execute, but somewhat inconsistent in its results (at least when fighting humans). It's possible to kill enemies in stealth mode without receiving damage. In short, approach them from behind while on stealth mode and start beating the crap out of them with power attacks  before they can react.</p>
-						<div id="furtividade-aviso">
-							<p><span class="amarelo">BEWARE:</span> There is a bug where the enemies can break out of the stun caused by the power attacks and start running, interrupting the combo. Being fast and using a knife reduce the chance of that happening, but it doesn't prevent entirely!</p>	
-						</div>	
-					</div>
-					<div id="furtividade-inferior">
-						<h3>- Explained step by step below.</h3>
-					</div>
-					<div id="passo-3-1">
-						<div class="titulo-dica-3-1">
-							<h2><span>1</span> - Approach an unaware enemy from behind while in stealth mode.</h2>
-						</div>
-						<div id="passo-3-1-video">
-							<div id="passo-3-1-dicas">
-								<p class="pouco-maior-x"><img src="../_imagens/_icones/flecha_texto.png">Hold the stealth mode button (C on the computer) and do NOT LET GO until the enemy is dead.</p>
-								<p class="pouco-maior-x"><img src="../_imagens/_icones/flecha_texto.png">The combat music doesn't play while in stealth mode, beware!</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">Use the darkness in your favour.</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">Don't forget wandering enemies can turn around!</p>
-							</div>
-							<iframe class="video" src="https://www.youtube.com/embed/NvC9sraqt_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div id="passo-3-2">
-						<div class="titulo-dica-3-2">
-							<h2><span>2</span> - While in stealth mode unleash dozens of power attacks as fast as you can.</h2>
-						</div>
-						<div id="passo-3-2-video">
-							<div id="passo-3-2-dicas">
-								<p><img src="../_imagens/_icones/flecha_texto.png">Make sure to be at full energy and stay really close to the target ensuring you did not miss.</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">After each attack, make a brief pause since the game doesn't properly register consecutive hits.</p>
-								<p><img src="../_imagens/_icones/flecha_texto.png">In case you're playing on a higher difficulty use a knife!</p>
-							</div>
-							<iframe class="video" src="https://www.youtube.com/embed/Xm0qsrTMt2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div id="furtividade-multiplos-inimigos">
-							<p><span>More than one enemy?</span> Unfortunately it isn't possible to face multiple enemies at once using this method. Once you perform the first power attack all neaby enemies will be alerted.</p>
-						</div>
-					</div>
+		<picture id="banner-armas-de-fogo">
+			<source media="(max-width: 800px)" srcset="../_imagens/tutoriais_rapidos_mobile.jpg">
+			<img src="../_imagens/tutoriais_rapidos.jpg">
+		</picture>
+		<h2 id="armas-de-fogo-titulo">Ranged Combat</h2>
+		<div id="armas-de-fogo">
+			<div id="armas-de-fogo-introducao">
+				<img id="armas-de-fogo-img" src="../_imagens/_guias/armas_de_fogo.jpg">
+				<p>When fighting enemies with ranged weapons the first thing worth mentioning is that you CANNOT block attacks! Holding the block key while holstering a gun makes you aim, increasing the precision. That being said, it becomes clear that when using this type of weapon the strategy is to keep your distance and ALWAYS have the thing loaded.<br>Another important detail is that headshots deal significantly more damage than body shots, sooo make sure to aim first!</p>
+				<div id="armas-de-fogo-aviso">
+					<p><span class="amarelo">BEWARE:</span> Always keep your weapon LOADED and with the durability meter at full or on the third bar. A single jam or dry fire is more than enough to be fatal!</p>	
 				</div>	
-				<picture id="banner-mecanicas">
-					<source media="(max-width: 800px)" srcset="../_imagens/banner_adicional2_mobile.jpg">
-					<img src="../_imagens/banner_adicional2.jpg">
-				</picture>
-				<h2 id="mecanicas-titulo">Mechanics</h2>
-				<div id="mecanicas">
-					<div id="mecanicas-introducao">
-						<p>In this section we'll explore more about different systems we have in the game and how to make the most of them.</p>
-						<picture id="mecanicas-img">
-							<source media="(max-width: 800px)" srcset="../_imagens/_guias/mecanicas_mobile.jpg">
-							<img src="../_imagens/_guias/mecanicas.jpg">
-						</picture>
-					</div>
-					<div id="energia-infinita">
-						<div class="titulo-energia-infinita">
-							<h2>Infinite Energy</h2>
-						</div>
-						<div id="energia-infinita-video">
-							<div id="energia-infinita-introducao">
-								<p id="central">As mentioned earlier, holding block while using your bare hands or melee weapons recharge your energy. One important detail is that you need to be <span class="sublinhado">in combat</span> for it to work!</p>
-							</div>
-							<div id="energia-infinita-dicas">
-								<p id="energia-infinita-dica"><span>TIP:</span> The best way to know if you are in combat is by paying attention to the background music. If the combat music is playing, you can indeed recharge your energy.</p>
-								<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AnTaeymFmKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-							<div id="energia-infinita-aviso">
-								<p><span class="amarelo">BEWARE:</span> Bandits usually take priority on the guards. If they are chasing you and encounter an unoccupied guard on the way they will stop following you to attack him, leaving you out of combat. This is a common thing so be mindful of it.</p>	
-							</div>	
-						</div>
-					</div>
-					<div id="get-back-here">
-						<div class="titulo-get-back-here">
-							<h2>Get Back Here!</h2>
-						</div>
-						<div id="get-back-here-video">
-							<div id="get-back-here-dicas">
-								<p>A very important mechanic in combat occurs when you turn your back on an enemy. If the enemy is close enough, you'll be affected by a disabling effect (such as being pulled back), which forces your camera to refocus on the enemy.</p>
-							</div>
-							<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AepjePYNMjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							<div id="get-back-here-inferior">
-								<p><span class="dica">TIP:</span> This disabling effect can only happen once every 15 seconds for each enemy. The cooldown is separated for each enemy, which is why you can be pulled multiple times at once if you turn your back to several enemies.</p>	
-							</div>	
-						</div>
-					</div>
-					<div id="como-fugir">
-						<div class="titulo-como-fugir">
-							<h2>How to run away!?</h2>
-						</div>
-						<div id="como-fugir-video">
-							<div id="como-fugir-introducao">
-								<p>Understanding this mechanic above we can talk about how to run away properly. Just turning your back to the enemy to run can result in being pulled back and taking a few hits before you manage to turn around again and finally run.</p>
-							</div>
-							<div id="como-fugir-dicas">
-								<p><span>TIP #1:</span> A strong ally to escape is your bare hands melee power attack. It can briefly stun the enemy, giving you enough time to take a few steps back, ensuring you're out of their pull range, to then, finally, make a run for it.</p>
-								<iframe class="video-mecanicas" src="https://www.youtube.com/embed/9uNEdvtVhD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								
-							</div>
-							<div id="como-fugir-inferior-0">
-								<p><span class="amarelo">BEWARE:</span> If you are surrounded by multiple enemies, your best option still is to turn your back to them, get pulled and turn again as fast is possible, to run for your life, or, with what remains of it.</p>
-							</div>
-							<div id="como-fugir-inferior">
-								<p><span>TIP #2:</span> Don't forget about the endless energy trick using the block system. As you run from the enemies and create distance, keep an eye on your energy bar. When you're at a safe distance, take short breaks to block and recharge energy. This way they'll never catch up to you!</p>	
-							</div>	
-							<div id="como-fugir-inferior2">
-								<p><span>TIP #3:</span> Another EXTREMELY USEFUL tip is to only run with your hands holstered. Running with weapons drawn or your bare hands raised will applies a significant penalty to your speed. So, always lower your hands before running!</p>	
-							</div>
-						</div>
-					</div>
-					<div id="temido-chute">
-						<div class="titulo-temido-chute">
-							<h2>The Fearful Kick</h2>
-						</div>
-						<div id="temido-chute-video">
-							<div id="temido-chute-dicas">
-								<p>When fighting enemies in melee combat your main concern (besides knives) should be the strong kicks the unarmed ones can perform. This special attack cannot be blocked, and, if it lands, you'll be disoriented for 5 seconds. While disoriented you cannot attack, switch weapons, and even block. Basically you can only watch yourself getting beated.</p>
-							</div>
-							<iframe class="video-mecanicas" src="https://www.youtube.com/embed/17DA43SgBB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							<div id="temido-chute-inferior">
-								<p><span>TIP:</span> Don't be fooled by the animation, you can still run while disoriented. So, everytime that kick lands, turn your back to the enemy, resist the pull, and then start running until you snap out of it. Then, decide whether to re-engage in the fight or flee entirely.</p>	
-							</div>	
-						</div>
-					</div>
+			</div>
+			<div id="armas-de-fogo-inferior">
+				<h3>- Following the pattern I will explain this type of combat step by step below.</h3>
+			</div>
+			<div id="passo-2-1">
+				<div class="titulo-dica-2-1">
+					<h2><span>1</span> - Be Ready!</h2>
 				</div>
-				<footer>
-					<ul>
-						<li id="copyright">&copy;2022 Pathologic 2 Brasil</li>
-						<li id="contato">Contact: pathologic2brasil@gmail.com</li>
-					</ul>
-				</footer>	
+				<div id="passo-2-1-video">
+					<div id="passo-2-1-dicas">
+						<p><img src="../_imagens/_icones/flecha_texto.png">Keep your weapon fully loaded before the conflict.</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">Keep your weapon durability at least halfway of the third bar.</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">Make sure you have space to retreat and a clear escape route.</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/mXcvh13leSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="passo-2-2">
+				<div class="titulo-dica-2-2">
+					<h2><span>2</span> - Give the enemy his time to approach while you hold block aiming above their head.</h2>
+				</div>
+				<div id="passo-2-2-video">
+					<div id="passo-2-2-dicas">
+						<p><img src="../_imagens/_icones/flecha_texto.png">Don't let the enemy get enough range to attack you.</p>
+						<p id="pouco-maior2"><img src="../_imagens/_icones/flecha_texto.png">The precision of weapons at long distances isn't great, even when standing still and aiming, don't be fooled!</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/cP0jijlprmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="passo-2-3">
+				<div class="titulo-dica-2-3">
+					<h2><span>3</span> - With the enemy relatively close shoot him on the head.</h2>
+				</div>
+				<div id="passo-2-3-video">
+					<div id="passo-2-3-dicas">
+						<p><img src="../_imagens/_icones/flecha_texto.png">Humans take 1 headshot, odongs on the other hand, take 2.</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">The closer the enemy is, the higher your weapon's precision will be.</p>
+						<p id="pouco-maior3"><img src="../_imagens/_icones/flecha_texto.png">In case you need to run away, check the "Mechanics" section, there I explain more about it and provide extra tips!</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/s6cRWCWEXns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="armas-de-fogo-multiplos-inimigos">
+				<p><span>More than one enemy?</span> With a gun is a lot easier to face multiple enemies (if you have ammo and good durability). It's important to stay calm and wait for them to get closer, aim carefully on the head of the closest and shoot. The best gun for this is the revolver since it can hold 6 shots before loading. Six bullets, six kills!</p>
+				<iframe id="armas-de-fogo-multiplos-inimigos-video" src="https://www.youtube.com/embed/Ufz55fpgLDg" title="[Combate] - Corpo a Corpo - Múltiplos Inimigos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
-	</div>
-	<div class="modal-privacidade" id="modal-privacidade">
-		<button 
-			id="botao-modal-fechar"
-			onclick="botaoTipo2('botao-modal-fechar'); fecharModalPrivacidade()"
-		>
-		</button>
-		<p>
-			We use cookies and similar technologies to enable services and features on our website.
-			By using this website, you agree to the use of such information.
-		</p>
-	</div>		
-	<script src="../_js/index.js"></script>
+		<picture id="banner-furtividade">
+			<source media="(max-width: 800px)" srcset="../_imagens/banner_adicional_mobile.jpg">
+			<img src="../_imagens/banner_adicional.jpg">
+		</picture>
+		<h2 id="furtividade-titulo">Stealth Combat</h2>
+		<div id="furtividade">
+			<div id="furtividade-introducao">
+				<img id="furtividade-img" src="../_imagens/_guias/furtividade.jpg">
+				<p>About stealth combat, the strategy is simple to execute, but somewhat inconsistent in its results (at least when fighting humans). It's possible to kill enemies in stealth mode without receiving damage. In short, approach them from behind while on stealth mode and start beating the crap out of them with power attacks  before they can react.</p>
+				<div id="furtividade-aviso">
+					<p><span class="amarelo">BEWARE:</span> There is a bug where the enemies can break out of the stun caused by the power attacks and start running, interrupting the combo. Being fast and using a knife reduce the chance of that happening, but it doesn't prevent entirely!</p>	
+				</div>	
+			</div>
+			<div id="furtividade-inferior">
+				<h3>- Explained step by step below.</h3>
+			</div>
+			<div id="passo-3-1">
+				<div class="titulo-dica-3-1">
+					<h2><span>1</span> - Approach an unaware enemy from behind while in stealth mode.</h2>
+				</div>
+				<div id="passo-3-1-video">
+					<div id="passo-3-1-dicas">
+						<p class="pouco-maior-x"><img src="../_imagens/_icones/flecha_texto.png">Hold the stealth mode button (C on the computer) and do NOT LET GO until the enemy is dead.</p>
+						<p class="pouco-maior-x"><img src="../_imagens/_icones/flecha_texto.png">The combat music doesn't play while in stealth mode, beware!</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">Use the darkness in your favour.</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">Don't forget wandering enemies can turn around!</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/NvC9sraqt_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div id="passo-3-2">
+				<div class="titulo-dica-3-2">
+					<h2><span>2</span> - While in stealth mode unleash dozens of power attacks as fast as you can.</h2>
+				</div>
+				<div id="passo-3-2-video">
+					<div id="passo-3-2-dicas">
+						<p><img src="../_imagens/_icones/flecha_texto.png">Make sure to be at full energy and stay really close to the target ensuring you did not miss.</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">After each attack, make a brief pause since the game doesn't properly register consecutive hits.</p>
+						<p><img src="../_imagens/_icones/flecha_texto.png">In case you're playing on a higher difficulty use a knife!</p>
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/Xm0qsrTMt2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div id="furtividade-multiplos-inimigos">
+					<p><span>More than one enemy?</span> Unfortunately it isn't possible to face multiple enemies at once using this method. Once you perform the first power attack all neaby enemies will be alerted.</p>
+				</div>
+			</div>
+		</div>	
+		<picture id="banner-mecanicas">
+			<source media="(max-width: 800px)" srcset="../_imagens/banner_adicional2_mobile.jpg">
+			<img src="../_imagens/banner_adicional2.jpg">
+		</picture>
+		<h2 id="mecanicas-titulo">Mechanics</h2>
+		<div id="mecanicas">
+			<div id="mecanicas-introducao">
+				<p>In this section we'll explore more about different systems we have in the game and how to make the most of them.</p>
+				<picture id="mecanicas-img">
+					<source media="(max-width: 800px)" srcset="../_imagens/_guias/mecanicas_mobile.jpg">
+					<img src="../_imagens/_guias/mecanicas.jpg">
+				</picture>
+			</div>
+			<div id="energia-infinita">
+				<div class="titulo-energia-infinita">
+					<h2>Infinite Energy</h2>
+				</div>
+				<div id="energia-infinita-video">
+					<div id="energia-infinita-introducao">
+						<p id="central">As mentioned earlier, holding block while using your bare hands or melee weapons recharge your energy. One important detail is that you need to be <span class="sublinhado">in combat</span> for it to work!</p>
+					</div>
+					<div id="energia-infinita-dicas">
+						<p id="energia-infinita-dica"><span>TIP:</span> The best way to know if you are in combat is by paying attention to the background music. If the combat music is playing, you can indeed recharge your energy.</p>
+						<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AnTaeymFmKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div id="energia-infinita-aviso">
+						<p><span class="amarelo">BEWARE:</span> Bandits usually take priority on the guards. If they are chasing you and encounter an unoccupied guard on the way they will stop following you to attack him, leaving you out of combat. This is a common thing so be mindful of it.</p>	
+					</div>	
+				</div>
+			</div>
+			<div id="get-back-here">
+				<div class="titulo-get-back-here">
+					<h2>Get Back Here!</h2>
+				</div>
+				<div id="get-back-here-video">
+					<div id="get-back-here-dicas">
+						<p>A very important mechanic in combat occurs when you turn your back on an enemy. If the enemy is close enough, you'll be affected by a disabling effect (such as being pulled back), which forces your camera to refocus on the enemy.</p>
+					</div>
+					<iframe class="video-mecanicas" src="https://www.youtube.com/embed/AepjePYNMjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div id="get-back-here-inferior">
+						<p><span class="dica">TIP:</span> This disabling effect can only happen once every 15 seconds for each enemy. The cooldown is separated for each enemy, which is why you can be pulled multiple times at once if you turn your back to several enemies.</p>	
+					</div>	
+				</div>
+			</div>
+			<div id="como-fugir">
+				<div class="titulo-como-fugir">
+					<h2>How to run away!?</h2>
+				</div>
+				<div id="como-fugir-video">
+					<div id="como-fugir-introducao">
+						<p>Understanding this mechanic above we can talk about how to run away properly. Just turning your back to the enemy to run can result in being pulled back and taking a few hits before you manage to turn around again and finally run.</p>
+					</div>
+					<div id="como-fugir-dicas">
+						<p><span>TIP #1:</span> A strong ally to escape is your bare hands melee power attack. It can briefly stun the enemy, giving you enough time to take a few steps back, ensuring you're out of their pull range, to then, finally, make a run for it.</p>
+						<iframe class="video-mecanicas" src="https://www.youtube.com/embed/9uNEdvtVhD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								
+					</div>
+					<div id="como-fugir-inferior-0">
+						<p><span class="amarelo">BEWARE:</span> If you are surrounded by multiple enemies, your best option still is to turn your back to them, get pulled and turn again as fast is possible, to run for your life, or, with what remains of it.</p>
+					</div>
+					<div id="como-fugir-inferior">
+						<p><span>TIP #2:</span> Don't forget about the endless energy trick using the block system. As you run from the enemies and create distance, keep an eye on your energy bar. When you're at a safe distance, take short breaks to block and recharge energy. This way they'll never catch up to you!</p>	
+					</div>	
+					<div id="como-fugir-inferior2">
+						<p><span>TIP #3:</span> Another EXTREMELY USEFUL tip is to only run with your hands holstered. Running with weapons drawn or your bare hands raised will applies a significant penalty to your speed. So, always lower your hands before running!</p>	
+					</div>
+				</div>
+			</div>
+			<div id="temido-chute">
+				<div class="titulo-temido-chute">
+					<h2>The Fearful Kick</h2>
+				</div>
+				<div id="temido-chute-video">
+					<div id="temido-chute-dicas">
+						<p>When fighting enemies in melee combat your main concern (besides knives) should be the strong kicks the unarmed ones can perform. This special attack cannot be blocked, and, if it lands, you'll be disoriented for 5 seconds. While disoriented you cannot attack, switch weapons, and even block. Basically you can only watch yourself getting beated.</p>
+					</div>
+					<iframe class="video-mecanicas" src="https://www.youtube.com/embed/17DA43SgBB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div id="temido-chute-inferior">
+						<p><span>TIP:</span> Don't be fooled by the animation, you can still run while disoriented. So, everytime that kick lands, turn your back to the enemy, resist the pull, and then start running until you snap out of it. Then, decide whether to re-engage in the fight or flee entirely.</p>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</p2b-template>
+	<script src="../_js/globalVariables.js"></script>
+	<script src="../_js/utils.js"></script>
+	<script src="../P2B-Template/P2B-Template.js"></script>
 </body>
 </html>
