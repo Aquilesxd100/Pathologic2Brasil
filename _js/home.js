@@ -176,8 +176,10 @@ function acessoRapidoHover(tipo, elemento) {
     }
 }
 var acessoRapidoReset = ["", ""];
-function acessoRapidoMobile(elemento, link) {
+function acessoRapidoMobile(elemento, link, evento) {
     if (resolucaoL2 <= 800) {
+        evento.preventDefault();
+
         if (elemento !== "link") {
             if (elemento === acessoRapidoReset[0]) {
                 return;

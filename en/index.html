@@ -36,12 +36,24 @@
 			<img src="../_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-direita'); botaoUltimosGuias('botao-direita')">
 			<div id="subshowcase">
 				<div id="showcase">
-					<img src="../_imagens/_guias/cardsEn/money.png" onclick="abrirLink('money.html')">
-					<img src="../_imagens/_guias/cardsEn/food.png" onclick="abrirLink('food.html')">			
-					<img src="../_imagens/_guias/cardsEn/map.png" onclick="abrirLink('map.html')">
-					<img src="../_imagens/_guias/cardsEn/recipes.png" onclick="abrirLink('recipes.html')">
-					<img src="../_imagens/_guias/cardsEn/combat.png" onclick="abrirLink('combat.html')">
-					<img src="../_imagens/_guias/cardsEn/shmowders.png" onclick="abrirLink('shmowders.html')">
+					<a href="./money.html">
+						<img src="../_imagens/_guias/cardsEn/money.png">
+					</a>
+					<a href="./food.html">
+						<img src="../_imagens/_guias/cardsEn/food.png">
+					</a>
+					<a href="./map.html">
+						<img src="../_imagens/_guias/cardsEn/map.png">
+					</a>
+					<a href="./recipes.html">
+						<img src="../_imagens/_guias/cardsEn/recipes.png">
+					</a>
+					<a href="./combat.html">
+						<img src="../_imagens/_guias/cardsEn/combat.png">
+					</a>
+					<a href="./shmowders.html">
+						<img src="../_imagens/_guias/cardsEn/shmowders.png">
+					</a>
 				</div>
 			</div>
 		</div>
@@ -59,14 +71,26 @@
 				</div>
 			</div>
 			<div id="acessorapidoopcoes">
-				<img src="../_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'money.html')">
-				<img src="../_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'shmowders.html')">
-				<img src="../_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'map.html')">
-				<img src="../_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'food.html')">
-				<img src="../_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'recipes.html')">
-				<img src="../_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combat.html')">
+				<a href="./money.html">
+					<img src="../_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'money.html', event)">
+				</a>
+				<a href="./shmowders.html">
+					<img src="../_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'shmowders.html', event)">
+				</a>
+				<a href="./map.html">
+					<img src="../_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'map.html', event)">
+				</a>
+				<a href="./food.html">
+					<img src="../_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'food.html', event)">
+				</a>
+				<a href="./recipes.html">
+					<img src="../_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'recipes.html', event)">
+				</a>
+				<a href="./combat.html">
+					<img src="../_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combat.html', event)">
+				</a>
 			</div>
-			<img src="../_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); acessoRapidoMobile('link')">
+			<img src="../_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); acessoRapidoMobile('link', null, event)">
 		</div>
 	</p2b-template>
 	<script src="../_js/globalVariables.js"></script>
