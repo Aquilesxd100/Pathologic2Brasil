@@ -1,34 +1,13 @@
 @charset "UTF-8";
 
-/* --------------------------------> TEMPORARIO  <-------------------------------- */
-/* Elementos que direcionam para links externos devem ter um <a> ao redor para seguir padrão semantico */
-/* Isso deve ser refatorado futuramente */
-@media screen and (min-width: 800.1px) {
-	.has-hyperlink-desktop:hover {
-		cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
-	}
-}
-
-.has-hyperlink:hover {
-	cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
-}
-
-/* REVISAR TODA A ESTRUTURA DE ESTILOS DENTO DO TEMPLATE, ESTILOS COMPARTILHADOS DO CONTEUDO DA PÁGINA DEVEM ESTAR EM PÁGINA DE ESTILO SEPARADA */
-
-.link {
+a * {
 	color: #00FF00;
 	cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
 	text-decoration: underline;
 }
 
-a {
-	cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
-}
-
 @media screen and (max-width: 800px) {
-	.link {
-		color: #00FF00;
-		cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
+	a span * {
 		text-decoration: none;
 		border-bottom: 2px solid #00FF00;
 	}
@@ -160,9 +139,6 @@ footer li#copyright {
 	src: url("{BASE-PATH}/fonts/batukapur-vmedy.woff");
 }
 /* Recursos */
-a {
-    cursor: url("{BASE-PATH}/resources/cursor_link.cur"), auto;
-}
 /* HTML */
 html {
 	overflow-x: hidden;
@@ -605,9 +581,6 @@ nav img:hover {
 	-webkit-filter: brightness(125%);
 	filter: brightness(125%);
 }
-	nav#menu img#barra1:hover, nav#menu img#barra2:hover, nav#menu img#barra3:hover {
-		cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
-	}
 	nav#menu img#barra1 {
 		width: 22%;
 }		
@@ -691,7 +664,6 @@ nav img:hover {
 		top: 11.5vw;
 	}
 	img#submenubarra1:hover, img#submenubarra2:hover, img#submenubarra3:hover, img#submenubarra4:hover {
-		cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
 		-webkit-filter: brightness(125%);
 		-o-filter: brightness(125%);
 		-ms-filter: brightness(125%);
@@ -778,7 +750,6 @@ nav img:hover {
 		width: 40px;
 		height: 32px;
 		border: 3px solid #000000;
-		cursor: url("{BASE-PATH}/resources/cursor_link.cur"), auto;
 
 		-moz-filter: grayscale(5%) brightness(0.45);
 		-ms-filter: grayscale(5%) brightness(0.45);
@@ -825,7 +796,6 @@ nav img:hover {
 			width: 100%;
 			background-image: url("{BASE-PATH}/images/botao-linguagem-ingles-mobile.jpg");
 			background-size: 100% 100%;
-			cursor: url("{BASE-PATH}/resources/cursor_link.cur"), auto;
 		}
 	}
 
