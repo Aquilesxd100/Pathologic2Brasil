@@ -1,16 +1,5 @@
 var resolucaoL = window.innerWidth;
-
-(function () {
-    // Adds a Favicon to the header of the document
-    const headElement = document.querySelector('head');
-
-    const linkFaviconElement = document.createElement('link');
-    linkFaviconElement.rel = 'icon'
-    linkFaviconElement.type = 'image/x-icon';
-    linkFaviconElement.href = window.location.origin + '/P2B-Template/resources/favicon.ico';
-
-    headElement.appendChild(linkFaviconElement);
-})()
+const paginaEstaEmPortugues = !window.location.href.includes("/en");
 
 /* Mudança Resolução */
 window.addEventListener('resize', () => {
@@ -111,7 +100,7 @@ function fecharModalPrivacidade() {
         const urlToRedirect = 
             (baseUrl + languageCodeUrlSegment + pageUrlSegment + queriesUrlSegment);
 
-        abrirLink(urlToRedirect);
+        window.location.href = urlToRedirect;
     }
 /* Barra de Pesquisa */
     const input = document.getElementById("input");
