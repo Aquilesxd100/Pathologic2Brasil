@@ -19,11 +19,14 @@ const divPreCarregamento = document.querySelector("div.pre-carregamento");
 const divPreLoadDesktop = document.querySelector('div.pre-desktop');
 const divPreLoadMobile = document.querySelector('div.pre-mobile');
 const imgNPCMobile = document.querySelector('img.imagem-npc-mobile');
+var resolucaoL2 = window.innerWidth;
+const paginaEstaEmPortugues2 = !window.location.href.includes("/en");
+
 let contadorValor = 0;
 let acumuladorItens = [];
 let showInfoID = "";
 let telaAtual = "tela1";
-let mobile = (resolucaoL > 800) ? false : true;
+let mobile = (resolucaoL2 > 800) ? false : true;
 // --------------------------- Função de Auxilio ------------------------------- //
 let telaAnterior = () => {};
 let delayAnimacao = () => {};
@@ -31,14 +34,14 @@ let delayAnimacaoAuxiliar = () => {};
 let delayAnimacaoAuxiliar2 = () => {};
 window.addEventListener("resize", () => {
     const checkMudanca = mobile;
-    mobile = (resolucaoL > 800) ? false : true;
+    mobile = (resolucaoL2 > 800) ? false : true;
     (mobile !== checkMudanca) && adaptatividadeAPP();
     balaoInfosAdicionais.style.opacity="0";
     preCarregamentoAPP();
 });
 const getCaminhoTratado = (caminho) => {
     return (
-        (paginaEstaEmPortugues ? "" : "../")
+        (paginaEstaEmPortugues2 ? "" : "../")
         + caminho
     );
 }
@@ -393,21 +396,21 @@ function telaPrincipal() {
         cardsDiv.innerHTML = `
             <div class="tipo-npc" onclick="menuSecundario(this, 'Criancas', 'Children')">
                 <img src='${getCaminhoTratado("./_imagens/app_trocas/cards/criancas.jpg")}'>
-                <h3>${paginaEstaEmPortugues ? "Criancas" : "Children"}</h3>
+                <h3>${paginaEstaEmPortugues2 ? "Criancas" : "Children"}</h3>
             </div>
             <div class="tipo-npc" onclick="menuSecundario(this, 'Adultos', 'Adults')">
                 <img src='${getCaminhoTratado("./_imagens/app_trocas/cards/adultos.jpg")}'>
-                <h3>${paginaEstaEmPortugues ? "Adultos" : "Adults"}</h3>
+                <h3>${paginaEstaEmPortugues2 ? "Adultos" : "Adults"}</h3>
             </div>
             <div class="tipo-npc" onclick="menuSecundario(this, 'Infectados', 'Infected')">
                 <img src='${getCaminhoTratado("./_imagens/app_trocas/cards/infectados.jpg")}'>
-                <h3>${paginaEstaEmPortugues ? "Infectados" : "Infected"}</h3>
+                <h3>${paginaEstaEmPortugues2 ? "Infectados" : "Infected"}</h3>
             </div>
         `;
         tituloPadrao.innerHTML = 
             `<h1>
                 ${
-                    paginaEstaEmPortugues 
+                    paginaEstaEmPortugues2 
                     ? "Com quem deseja trocar?" 
                     : "Who do you want to trade with?"
                 }
@@ -458,7 +461,7 @@ function menuSecundario(elemento, tipo, tituloTipoEn) {
         mudancaTela("tela-2");
         cardsDiv.classList.add('flex-central');
         cardsDiv.classList.add('flex-around');
-        tituloPadrao.innerHTML = `<h1>${paginaEstaEmPortugues ? tipo : tipoEn}</h1><button class="botao-voltar" onclick="telaPrincipal(); botaoTipo2Lento(this)"></button>`;
+        tituloPadrao.innerHTML = `<h1>${paginaEstaEmPortugues2 ? tipo : tipoEn}</h1><button class="botao-voltar" onclick="telaPrincipal(); botaoTipo2Lento(this)"></button>`;
         tipo = tipo.toLowerCase();
         switch (tipo) {
             case 'criancas' :
@@ -552,7 +555,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
         pessoa.interesse.forEach((item) => {
             const nomeImg = getNomeItemSemAcentosEspacos(item.nomePtBr);
             const nomeItem =
-                paginaEstaEmPortugues
+                paginaEstaEmPortugues2
                 ? item.nomePtBr
                 : item.nomeEn;
 
@@ -586,7 +589,7 @@ function mostrarPessoa(elemento, nomeNPC, tipoNPC) {
         pessoa.podeTer.forEach((item) => {
             const nomeImg = getNomeItemSemAcentosEspacos(item.nomePtBr);
             const nomeItem =
-                paginaEstaEmPortugues
+                paginaEstaEmPortugues2
                 ? item.nomePtBr
                 : item.nomeEn;
 
@@ -768,7 +771,7 @@ function somEfeito(tipo) {
 function preCarregamentoAPP() {
     const elementosPreLoadMobile = divPreLoadMobile.querySelectorAll('img');
     const elementosPreLoadDesktop = divPreLoadDesktop.querySelectorAll('img');
-    if (!elementosPreLoadDesktop.length && resolucaoL > 800) {
+    if (!elementosPreLoadDesktop.length && resolucaoL2 > 800) {
         listaInfectados.forEach((infectado) => divPreLoadDesktop.innerHTML += `
             <img src='${getCaminhoTratado(`./_imagens/app_trocas/infectados/${infectado}.jpg`)}' />
             <img src='${getCaminhoTratado(`./_imagens/app_trocas/infectados/fundos/${infectado}_fundo.jpg`)}' />
@@ -785,7 +788,7 @@ function preCarregamentoAPP() {
             <img src='${getCaminhoTratado(`./_imagens/app_trocas/itens/${item}.jpg`)}' />
         `);
     }
-    else if (!elementosPreLoadMobile.length && resolucaoL <= 800) {
+    else if (!elementosPreLoadMobile.length && resolucaoL2 <= 800) {
         listaInfectados.forEach((infectado) => divPreLoadMobile.innerHTML += `
             <img src='${getCaminhoTratado(`./_imagens/app_trocas/infectados/${infectado}.jpg`)}' />
         `);
@@ -854,7 +857,7 @@ function adaptadorPrefixos2(elemento, transition, transformacao, filtro) {
   }
 // ------------------------ Informações Extra Desktop ------------------------ //
 function informacoesExtra(nomeItem, vlrMinItem, vlrMaxItem, elemento) {
-    if (resolucaoL < 801) {
+    if (resolucaoL2 < 801) {
         return;
     }
     nomeItem = (nomeItem.search("mais") !== -1) ? nomeItem.substring(0, nomeItem.search("mais")) + "(+)" : nomeItem;

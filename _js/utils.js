@@ -16,33 +16,6 @@ function getCurrentPageLanguageCode() {
     }
 };
 
-const XmlHttpRequest = {
-    GET: 
-        function (url, responseSuccessCallback) {
-            var htmlRequest = new XMLHttpRequest();
-
-            htmlRequest.open("GET", url);
-
-            htmlRequest.onreadystatechange = function() { 
-                if (this.readyState !== 4 || this.status !== 200)  {
-                    return;
-                } // Only proceed after the response is loaded
-
-                responseSuccessCallback(this.responseText);
-            };
-
-            htmlRequest.send();
-        }
-}
-
- /* Abertura de Link */
-function abrirLink(link) {
-    window.location.href=link;
-}
-function abrirLinkFora(link) {
-    window.open(link, '_blank').focus();
-}
-
  /* Adaptador Prefixos CSS */
  function adaptadorPrefixos(elemento, transformacao, filtro, clipinset) {
     if (transformacao !== "") {

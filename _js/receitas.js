@@ -9,7 +9,9 @@ const analgesicosCoresInfusoes = document.getElementsByClassName("analgesicos-in
 const analgesicosCoresAnalgesicos = document.getElementsByClassName("analgesicos-analgesico-cor");
 const analgesicosEfeitos = document.getElementsByClassName("analgesicos-efeito");
 
-const caminhoBaseIcone = (!paginaEstaEmPortugues ? "../" : "") + "_imagens/_icones/";
+const paginaEstaEmPortugues2 = !window.location.href.includes("/en");
+
+const caminhoBaseIcone = (!paginaEstaEmPortugues2 ? "../" : "") + "_imagens/_icones/";
 
 function rotacaoItens() {
     let ervasComuns = ["blacktwyre", "bloodtwyre", "twyre"];
@@ -85,17 +87,17 @@ function rotacaoItens2() {
     let corAnalgesicoCombinacaoPior = ["zurkh", "yas", "medrel", "yas", "medrel"];
 
     let efeitoAnalgesicoCombinacaoMelhor = 
-        paginaEstaEmPortugues
+        paginaEstaEmPortugues2
             ? ["+10% Imunidade", "<span>+45% Regeneração de Exaustão <span class='sem-quebra'>(ao dormir)</span></span>", "-15% Fome", "-15% Exaustão", "-20% de Sede"]
             : ["+10% Immunity", "<span>+45% Exhaustion regeneration <span class='sem-quebra'>(while sleeping)</span></span>", "-15% Hunger", "-15% Exhaustion", "-20% Thirst"];
 
     let efeitoAnalgesicoCombinacaoMedio = 
-        paginaEstaEmPortugues
+        paginaEstaEmPortugues2
             ? ["+7.5% Imunidade", "<span>+30% Regeneração de Exaustão <span class='sem-quebra'>(ao dormir)</span></span>", "-10% Fome", "-10% Exaustão", "-15% de Sede"]
             : ["+7.5% Immunity", "<span>+30% Exhaustion regeneration <span class='sem-quebra'>(while sleeping)</span></span>", "-10% Hunger", "-10% Exhaustion", "-15% Thirst"];
 
     let efeitoAnalgesicoCombinacaoPior = 
-        paginaEstaEmPortugues
+        paginaEstaEmPortugues2
             ? ["+5% Imunidade", "<span>+15% Regeneração de Exaustão <span class='sem-quebra'>(ao dormir)</span></span>", "-5% Fome", "-5% Exaustão", "-10% de Sede"]
             :  ["+5% Immunity", "<span>+15% Exhaustion regeneration <span class='sem-quebra'>(while sleeping)</span></span>", "-5% Hunger", "-5% Exhaustion", "-10% Thirst"];
 

@@ -1,8 +1,3 @@
-// variaveis globais é algo terrivel, tentar diminuir isso ao maximo!!!
-var resolucaoL = window.innerWidth;
-var resolucaoA = window.innerHeight;
-const paginaEstaEmPortugues = !window.location.href.includes("/en");
-
 const LanguageEnum = {
     PortugueseBR: "PTBR",
     English: "EN"

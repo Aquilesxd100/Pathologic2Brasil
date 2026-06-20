@@ -1,4 +1,61 @@
 (function () {
+	/**
+	 * Checks whether a script with the specified file name is present on the current page.
+	 * @param {string} scriptName - The script file name to search for (e.g. "app.js").
+	 * @returns {boolean} Returns `true` if a matching script is found; otherwise, `false`.
+	 */	
+	function isScriptPresent(scriptName) {
+		const scriptsOnCurrentPage = document.querySelectorAll('script');
+
+		for (const script of scriptsOnCurrentPage) {
+			if (script.src.split('/').pop() === scriptName) {
+				return true
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Utility wrapper for XMLHttpRequest operations.
+	 */	
+	const XmlHttpRequest = {
+		/**
+		 * Sends an asynchronous HTTP GET request.
+		 *
+		 * @param {string} url - The URL to send the request to.
+		 * @param {Function} responseSuccessCallback - Callback executed when the request completes successfully, returning the response text.
+		 *
+		 * @example
+		 * XmlHttpRequest.GET("/api/users", function (response) {
+		 *     console.log(response);
+		 * });
+		 */		
+		GET: 
+			function (url, responseSuccessCallback) {
+				var htmlRequest = new XMLHttpRequest();
+
+				htmlRequest.open("GET", url);
+
+				htmlRequest.onreadystatechange = function() { 
+					if (this.readyState !== 4 || this.status !== 200)  {
+						return;
+					} // Only proceed after the response is loaded
+
+					responseSuccessCallback(this.responseText);
+				};
+
+				htmlRequest.send();
+			}
+	}
+
+	// Validate whether the required scripts for this component are present
+	if (!isScriptPresent('globalVariables.js') || !isScriptPresent('utils.js')) {
+		throw Error(
+			"The P2B-Template requires the following scripts to be present in the DOM: 'globalVariables.js' and 'utils.js'. Please, include them before the 'P2B-Template.js' script."
+		);
+	}
+
     const basePath = window.location.origin + '/P2B-Template';
 
 	const resourcesToLoad = {
@@ -110,5 +167,5 @@
 		}
 
 		return path;
-	}    
+	} 
 })();
