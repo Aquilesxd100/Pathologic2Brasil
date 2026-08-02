@@ -11,6 +11,7 @@ This is my informative website about Pathologic 2.
 ------------------- Reminders -------------------
 Old browsers doesn't support some newer features, some of them even prevent the script from loading at all.
 Some that I found are:
+JS
 - let variables
 - `` string templates
 - class
@@ -18,7 +19,14 @@ Some that I found are:
 - replaceAll
 - async/await
 - fetch
+- [""] as object property name
+- conversion falsy value to bool with "!!"
+- null/undefined treatment "a?.a"
+- find array method
 
+CSS
+- display: flex
+- filter
 
 
 
