@@ -7,10 +7,10 @@
 	function isScriptPresent(scriptName) {
 		const scriptsOnCurrentPage = document.querySelectorAll('script');
 
-		for (const script of scriptsOnCurrentPage) {
-			if (script.src.split('/').pop() === scriptName) {
+		for (var idx = 0; idx < scriptsOnCurrentPage.length; idx++) {
+			if (scriptsOnCurrentPage[idx].src.split('/').pop() === scriptName) {
 				return true
-			}
+			}			
 		}
 
 		return false;
@@ -33,7 +33,7 @@
 		 */		
 		GET: 
 			function (url, responseSuccessCallback) {
-				var htmlRequest = new XMLHttpRequest();
+				const htmlRequest = new XMLHttpRequest();
 
 				htmlRequest.open("GET", url);
 
@@ -105,12 +105,12 @@
 			currentPageElements.push(currentPagePlaceholderElement.children[idx])
 		}		
 
-		const templateContentDivElement = templateElement.querySelector("#conteudo");
+		const templateMainElement = templateElement.querySelector("main");
 		const templateFooterElement = templateElement.querySelector("footer");
 
 		// Copy the Current Page content to the New Template
 		for (var idx = 0; idx < currentPageElements.length; idx++) {
-			templateContentDivElement.insertBefore(currentPageElements[idx], templateFooterElement)
+			templateMainElement.insertBefore(currentPageElements[idx], templateFooterElement)
 		}
 
 		// Replace the Placeholder Template with the real one
@@ -132,7 +132,7 @@
 
 		// HTML Content
 		templateElement.innerHTML = htmlContent;
-		
+
 		// Styles
 		const styles = document.createElement("style");
 		styles.innerHTML = stylesContent;
