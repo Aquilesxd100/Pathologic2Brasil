@@ -55,7 +55,8 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
         registeredPagesList.filter(
             function (page) {
                 return (
-                    page.type === currentPage?.type
+                    currentPage != null
+                    && page.type === currentPage.type
                     && page.languageCode === codeLanguageToSwitchTo
                 );
             }
@@ -68,7 +69,7 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
         ? 
             isHomePage 
             ? currentUrl.length - 1
-            : currentUrl.indexOf('/' + currentPage?.name) 
+            : currentUrl.indexOf('/' + currentPage.name) 
         : currentUrl.indexOf('/' + currentPageLanguageCode.toLowerCase());
 
     // Creation of Url to Redirect
@@ -83,7 +84,7 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
     const pageUrlSegment = 
         isHomePage
         ? ''
-        : '/' + pageToSwitchTo?.name + '.html';
+        : '/' + pageToSwitchTo.name + '.html';
 
     const queriesUrlSegment = 
         currentPageQueries !== ''
@@ -103,7 +104,7 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
 
 (function () {
     const header = document.querySelector('header');
-    const topBarMobile = document.getElementById("top-bar-mobile");
+    const topBarMobile = document.getElementById('top-bar-mobile');
     
     function updateTopBarMobilePosition() {
         const topBarPosition = 
@@ -118,7 +119,7 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
 
     var isMobileScreen = getIsMobileScreen();
     if (isMobileScreen) {
-        window.addEventListener("scroll", updateTopBarMobilePosition, { passive: true });
+        window.addEventListener('scroll', updateTopBarMobilePosition, { passive: true });
 
         updateTopBarMobilePosition();
     }
@@ -127,14 +128,14 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
         isMobileScreen = getIsMobileScreen();
 
         isMobileScreen
-        ? window.addEventListener("scroll", updateTopBarMobilePosition, { passive: true })
-        : window.removeEventListener("scroll", updateTopBarMobilePosition);
+        ? window.addEventListener('scroll', updateTopBarMobilePosition, { passive: true })
+        : window.removeEventListener('scroll', updateTopBarMobilePosition);
 
         if (isMobileScreen) {
-            window.addEventListener("scroll", updateTopBarMobilePosition, { passive: true }); // It doesn't accumulate listeners
+            window.addEventListener('scroll', updateTopBarMobilePosition, { passive: true }); // It doesn't accumulate listeners
             updateTopBarMobilePosition();
         } else {
-            window.removeEventListener("scroll", updateTopBarMobilePosition, { passive: true });
+            window.removeEventListener('scroll', updateTopBarMobilePosition, { passive: true });
         }
     })
 })();
@@ -198,7 +199,7 @@ function showHideDesktopSearchBar() {
         ? currentPageSearchParams.get('pesquisa')
         : currentPageSearchParams.get('search')
 
-    if (searchQueryValue?.length) {
+    if (searchQueryValue !== null) {
         const searchBarWrapper = document.getElementById('search-bar-wrapper-desktop'); 
 
         // Open the search bar without triggering the transition
@@ -252,7 +253,7 @@ function search(event) {
 // |--------------------------| Privacy Notice Modal |---------------------------|
 
 (function () {
-    if (!localStorage.getItem("userReceivedPrivacyNotice")) {
+    if (!localStorage.getItem('userReceivedPrivacyNotice')) {
         const privacyNoticeModalDiv = document.getElementById('privacy-notice-modal');
 
         privacyNoticeModalDiv.classList.remove('hide');
