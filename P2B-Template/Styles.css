@@ -30,12 +30,7 @@ html {
 	min-height: 100vh;
 }
 
-body {
-	background-image: url('{BASE-PATH}/images/fundo.jpg');
-	background-attachment: fixed;
-}
-
-div, button, body {
+div, button {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -355,12 +350,23 @@ a > button {
    | 📑 Page Content [DESKTOP] | ========================================================================== 
    ========================================================================================================  */
 
+/* |----------------------------------| 📄 Body 📄 |----------------------------------|💻|  */
+
+   body {
+		background-position-y: 340rem;
+		background-attachment: fixed;
+		background-size: 2000rem 1000rem;	
+		background-repeat: no-repeat;		
+		background-image: url('{BASE-PATH}/images/fundo.jpg');
+		background-color: #000000;
+	}
+
 /* |----------------------------------| 🎯 Main 🎯 |----------------------------------|💻|  */
 
 	main {
 		position: relative;
 		width: calc(100% - 36rem);
-		margin: 10rem 18rem 15rem 18rem;
+		margin: 10rem 18rem 30rem 18rem;
 		background-color: rgba(255, 255, 255, 0.75);
 		padding: 15rem 20rem;
 	}
@@ -857,46 +863,73 @@ a > button {
    | 📑 Page Content [MOBILE] | =========================================================================== 
    ========================================================================================================  */
 
+/* |----------------------------------| 📄 Body 📄 |----------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+   body {
+		background-size: 2000rem 1900rem;		
+		background-image: url('{BASE-PATH}/images/fundo_mobile.jpg');
+	}   
+}
+
 /* |-------------------------| 💬 Privacy Notice Modal 💬 |---------------------------|📱|  */	
 
 @media screen and (max-width: 800px) {
 	div#privacy-notice-modal {		
-		bottom: -380rem;
+		bottom: -620rem;
 		padding: 25rem;
-		border: solid 12rem #000000;
+		border: solid 18rem #000000;
 	}	
 
 	#privacy-notice-modal p {
-		font-size: 50rem;
-		margin: 40rem;
+		font-size: 70rem;
+		margin: 65rem;
 	}	
 
 	#privacy-notice-modal button {
-		width: 80rem;
-		height: 80rem;
-		border-radius: 13rem;
-		border: solid 4rem #000000;
-		box-shadow: inset 0 1rem 1rem rgba(255,255,255,0.45), inset 0 -2rem 4rem rgba(0,0,0,0.8), 0 2rem 5rem rgba(0,0,0,0.45);			
+		width: 120rem;
+		height: 120rem;
+		border-radius: 26rem;
+		border: solid 6rem #000000;
+		box-shadow: inset 0 1.5rem 1.5rem rgba(255, 255, 255, 0.45), inset 0 -3rem 5rem rgba(0, 0, 0, 0.8), 0 3rem 7.5rem rgba(0, 0, 0, 0.45);			
 	}
 
 	#privacy-notice-modal button::before {
 		inset: 5rem;
-		border-radius: 6rem;
-		box-shadow: inset 0 1rem 1rem rgba(255,255,255,0.18), inset 0 -3rem 6rem rgba(0,0,0,0.85);
+		border-radius: 12rem;
+		box-shadow: inset 0 1.5rem 1.5rem rgba(255, 255, 255, 0.18), inset 0 -4.5rem 8rem rgba(0, 0, 0, 0.85);
 	}
 
 	#privacy-notice-modal button::after {
-		left: 8rem;
-		right: 8rem;
-		top: 6rem;
+		left: 12rem;
+		right: 12rem;
+		top: 9rem;
 		height: 45%;
 		border-radius: 12rem 12rem 40rem 40rem;
-		background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0.08) 60%, rgba(255,255,255,0));
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0));
 	}
 	
 	#privacy-notice-modal button svg {
-		width: 74rem;
-		filter: drop-shadow(0 0 2rem #000000);
-		-webkit-filter: drop-shadow(0 0 2rem #000000);
+		width: 111rem;
+		filter: drop-shadow(0 0 3.5rem #000000);
+		-webkit-filter: drop-shadow(0 0 3.5rem #000000);
 	}   
+}
+
+/* |---------------------------------| 🦶 Footer 🦶 |---------------------------------|📱|  */	
+
+@media screen and (max-width: 800px) {
+	footer {
+		display: block;
+		font-size: 80rem;
+		text-align: center;
+		padding: 30rem 0 20rem 0;
+		margin-top: 0;
+	}
+
+	footer p, footer address {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}	
 }
