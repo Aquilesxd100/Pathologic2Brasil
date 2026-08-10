@@ -477,11 +477,11 @@ a > button {
    ========================================================================================================  */
 
 @media screen and (max-width: 800px) {
-	header {
+	header#main-header {
 		margin-bottom: -10rem;
 	}
 
-	header.top-bar-mobile-fixed {
+	#main-header.top-bar-mobile-fixed {
 		/* Total height of the top-bar-mobile */
 		padding-bottom: calc(340rem - 15rem);
 	}
