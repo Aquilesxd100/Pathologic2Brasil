@@ -16,7 +16,7 @@ function animateElementClick(element, animationClassName) {
     const animationDurationPropertyValue = getComputedStyle(element).animationDuration;
 
     var animationDurationMs = 
-        animationDurationPropertyValue.includes('ms')
+        animationDurationPropertyValue.indexOf('ms') != -1
         ? Number(animationDurationPropertyValue.replace('ms', ''))
         : Number(animationDurationPropertyValue.replace('s', '')) * 1000;
 
@@ -103,18 +103,18 @@ function changePageLanguageTo(codeLanguageToSwitchTo) {
 // |------------------------------| Top Bar Mobile |-----------------------------|	
 
 (function () {
-    const header = document.querySelector('header');
+    const mainHeader = document.getElementById('main-header');
     const topBarMobile = document.getElementById('top-bar-mobile');
     
     function updateTopBarMobilePosition() {
         const topBarPosition = 
-            header.offsetHeight - getComputedStyle(topBarMobile).marginTop.replace('px', '') - topBarMobile.offsetHeight;
+            mainHeader.offsetHeight - getComputedStyle(topBarMobile).marginTop.replace('px', '') - topBarMobile.offsetHeight;
         
         const hasUserScrolledPastTopBar = window.pageYOffset >= topBarPosition;   
 
         hasUserScrolledPastTopBar
-        ? header.classList.add('top-bar-mobile-fixed')
-        : header.classList.remove('top-bar-mobile-fixed');
+        ? mainHeader.classList.add('top-bar-mobile-fixed')
+        : mainHeader.classList.remove('top-bar-mobile-fixed');
     }
 
     var isMobileScreen = getIsMobileScreen();
@@ -188,18 +188,18 @@ function showHideDesktopSearchBar() {
 
 (function () {
     const currentPageLanguageCode = getCurrentPageLanguageCode();
-    const currentPageSearchParams = new URL(document.location.toString()).searchParams;
 
     const searchInputDesktop = document.querySelector('#search-input-desktop');
     const searchInputMobile = document.querySelector('#search-input-mobile');   
     
     // Fill the search inputs values with the search param
     const searchQueryValue = 
-        currentPageLanguageCode == LanguageEnum.PortugueseBR
-        ? currentPageSearchParams.get('pesquisa')
-        : currentPageSearchParams.get('search')
+        window.location.search.replace(
+            (currentPageLanguageCode == LanguageEnum.PortugueseBR ? '?pesquisa=' : '?search='), 
+            ''
+        );
 
-    if (searchQueryValue !== null) {
+    if (searchQueryValue.length) {
         const searchBarWrapper = document.getElementById('search-bar-wrapper-desktop'); 
 
         // Open the search bar without triggering the transition
@@ -213,19 +213,29 @@ function showHideDesktopSearchBar() {
         // Set the search input values
         searchInputDesktop.value = searchQueryValue;
         searchInputMobile.value = searchQueryValue;        
-    }
+    }  
 
-    // Keep both input values lowercase and ensure they have the same value
-    document.querySelectorAll('#search-input-desktop, #search-input-mobile').forEach(
-        function (input) {
-            input.addEventListener('input', function (event) {                
-                const updatedInputValue = event.currentTarget.value.toLowerCase();
+    // Ensure both inputs have the same value
+    
+    searchInputDesktop.addEventListener('input', function (event) {
+        searchInputMobile.value = event.target.value;
+    });
 
-                searchInputDesktop.value = updatedInputValue;
-                searchInputMobile.value = updatedInputValue;
-            });
-        }
-    );    
+    searchInputMobile.addEventListener('input', function (event) {
+        searchInputDesktop.value = event.target.value;
+    });
+
+    const searchForms = document.querySelectorAll(
+        'form#search-wrapper-desktop, form#search-wrapper-mobile'
+    );
+
+    for (var i = 0; i < searchForms.length; i++) {
+        // Save both input values as lowercase
+        searchForms[i].addEventListener('submit', function (event) {
+            searchInputDesktop.value = searchInputDesktop.value.toLowerCase();
+            searchInputMobile.value = searchInputMobile.value.toLowerCase();
+        });
+    }      
 })();
 
 function search(event) {
