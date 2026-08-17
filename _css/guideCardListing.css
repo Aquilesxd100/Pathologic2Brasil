@@ -1,0 +1,38 @@
+article#guides-cards-wrapper {
+    font-size: 35rem;
+    font-family: frizquadrata;
+    color: #FFFFFF;	
+    text-shadow: 2.5rem 0 0 rgb(0, 0, 0), -2.5rem 0 0 rgb(0, 0, 0), 0 2.5rem 0 rgb(0, 0, 0), 0 -2.5rem 0 rgb(0, 0, 0), 1.2rem 1.2rem rgb(0, 0, 0), -1.2rem -1.2rem 0 rgb(0, 0, 0), 1.2rem -1.2rem 0 rgb(0, 0, 0), -1.2rem 1.2rem 0 rgb(0, 0, 0);
+}
+
+#guides-cards-wrapper p {         
+    padding: 15vh 0;
+}
+
+#guides-cards-wrapper img {
+    width: 500rem;
+    margin: 10rem;
+}
+
+#guides-cards-wrapper img:hover {
+    filter: brightness(130%);
+	-webkit-filter: brightness(130%);
+}
+
+@media screen and (max-width: 800px) {
+    article#guides-cards-wrapper {        
+        font-size: calc(20px + 35rem);	
+        text-shadow: 2.5rem 0 0 rgb(0, 0, 0), -2.5rem 0 0 rgb(0, 0, 0), 0 2.5rem 0 rgb(0, 0, 0), 0 -2.5rem 0 rgb(0, 0, 0), 1.2rem 1.2rem rgb(0, 0, 0), -1.2rem -1.2rem 0 rgb(0, 0, 0), 1.2rem -1.2rem 0 rgb(0, 0, 0), -1.2rem 1.2rem 0 rgb(0, 0, 0);
+    }
+
+    #guides-cards-wrapper p { 
+        margin: 0 10px;
+        padding: 10vh 0;
+    }
+
+    #guides-cards-wrapper img {
+        width: 94%;
+        max-width: 400px;
+        margin: 7px 0; 
+    }
+}
