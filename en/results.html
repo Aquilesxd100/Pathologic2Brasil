@@ -7,36 +7,22 @@
 <head>
 	<title>Results</title>
 	<link href='../favicon/favicon.ico' rel='icon' type='image/x-icon'></link>		
-	<link rel="stylesheet" type="text/css" href="../_css/padrao.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/guideCardListing.css"/>
 	<script src="../_js/globalVariables.js"></script>
-	<script src="../_js/utils.js"></script>	
-	<style>
-		html body #funcao-pesquisa-barra {
-			right: 3.8vw;
-			-ms-clip-path: inset(0vw 0vw 0vw 0vw);
-			-moz-clip-path: inset(0vw 0vw 0vw 0vw);
-			-o-clip-path: inset(0vw 0vw 0vw 0vw);
-			-webkit-clip-path: inset(0vw 0vw 0vw 0vw);
-			clip-path: inset(0vw 0vw 0vw 0vw);
-		}
-		html body #input {
-			display: block;
-			opacity: 1;
-		}
-	</style>
+	<script src="../_js/utils.js"></script>
 </head>
 <body id="body">
 	<p2b-template>	
-		<picture class="banner">
-			<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
-			<img src="../_imagens/bem_vindo.jpg">
-		</picture>
-		<h1 class="titulo">Results</h1>
 		<section>
-			<article class="guias-cards resultado-pesquisa">
+			<header>
+				<h1>Results</h1>
+			</header>
+			<article id='guides-cards-wrapper'>
 			</article>
-		</section>							
+		</section>					
 	</p2b-template>
 	<script src="../P2B-Template/P2B-Template.js"></script>	
+	<script src="../_js/guideCardListing.js"></script>
 </body>
 </html>
