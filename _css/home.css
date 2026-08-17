@@ -205,10 +205,10 @@
 		width: 100%;
 	}
 	div#showcase img:hover {
-		-webkit-filter: brightness(120%);
-		-o-filter: brightness(120%);
-		-ms-filter: brightness(120%);
-		-moz-filter: brightness(120%);
+		-webkit-filter: brightness(130%);
+		-o-filter: brightness(130%);
+		-ms-filter: brightness(130%);
+		-moz-filter: brightness(130%);
 		filter: brightness(120%);
 	}
 /* Ultimos Guias - Botões Anterior/Proximo */
@@ -279,11 +279,11 @@
 			margin-right: 5%;
 		}
 		div#ultimosguias img:hover {
-			-moz-filter: brightness(120%);
-			-ms-filter: brightness(120%);
-			-o-filter: brightness(120%);
-			-webkit-filter: brightness(120%);
-			filter: brightness(120%);
+			-moz-filter: brightness(130%);
+			-ms-filter: brightness(130%);
+			-o-filter: brightness(130%);
+			-webkit-filter: brightness(130%);
+			filter: brightness(130%);
 		}
 		/* Ultimos Guias - Botões Anterior/Proximo (Mobile) */
 		div#ultimosguias img.botoes-ultimos-guias {
