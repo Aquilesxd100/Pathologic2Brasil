@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/* ========================================================================================================
+   🌍 Default Properties of the Website 🌍  ==============================================================
+   ========================================================================================================  */
+                                        
+/* |----------------------------------| ✒️ Fonts ✒️ |----------------------------------|  */
+
+@font-face {
+	font-family: frizquadrata;
+	src: url('../fonts/friz-quadrata-tt.woff') format('truetype');
+}
+
+@font-face {
+	font-family: batukapur;
+	src: url('../fonts/batukapur-vmedy.woff');
+}
+
+/* |-------------------------| 🧊 Elements Default Values 🧊 |-------------------------|  */
+
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 0.05vw;
+	cursor: url('../cursors/cursor.cur'), auto;
+	min-height: 100vh;
+}
+
+div, button {
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	cursor: url('../cursors/cursor.cur'), auto;
+}
+
+@media screen and (max-width: 800px) {
+	a span * {
+		text-decoration: none;
+		border-bottom: 2px solid #00FF00;
+	}
+}
+
+/* |-----------------------------| 🛠️ Utility Classes 🛠️ |-----------------------------|  */	
+
+.hide {
+	display: none !important;
+}	
+
+.disable-transition, .disable-transition * {
+	transition: inherit !important;
+}	
+
+a:hover {
+    cursor: url('../cursors/cursor_link.cur'), auto;
+}
+
+@media screen and (min-width: 801px) {
+	.hide-on-desktop {
+		display: none !important;
+	}
+}	
+
+@media screen and (max-width: 800px) {
+	.hide-on-mobile {
+		display: none !important;
+	}
+}
+
+/* ========================================================================================================
+   | 📚 Page Content [DESKTOP] | ========================================================================== 
+   ========================================================================================================  */
+
+    section {
+        text-align: center;
+        border: 10rem solid #000000;       
+        box-shadow: 4rem 4rem 3.5rem rgba(0, 0, 0, 0.7);
+        background-image: url(../_imagens/fundo_infinito.jpg);
+        background-repeat: repeat;
+    }
+
+    section header {
+        position: relative;
+        padding: 25rem 0;
+        background-size: 100% 100%;
+    }
+
+    section:first-of-type header {
+        background-image: url('../_imagens/section-header-1-desktop.jpg');
+    }
+
+    section header::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url('../_imagens/section-header-frame-desktop.png');
+        background-size: 100% 100%;
+    }
+
+    section header h1 {
+        text-align: center;
+        font-family: batukapur;
+        font-weight: lighter;
+        font-size: 55rem;
+        color: #00D900;
+        text-shadow: 3.5rem 0 0 rgb(0, 0, 0), -3.5rem 0 0 rgb(0, 0, 0), 0 3.5rem 0 rgb(0, 0, 0), 0 -3.5rem 0 rgb(0, 0, 0), 1.7rem 1.7rem rgb(0, 0, 0), -1.7rem -1.7rem 0 rgb(0, 0, 0), 1.7rem -1.7rem 0 rgb(0, 0, 0), -1.7rem 1.7rem 0 rgb(0, 0, 0);
+        letter-spacing: 1rem;    
+    }
+
+    article {
+        padding: 30rem;
+    }
+
+/* ========================================================================================================
+   | 📚 Page Content [Mobile] | =========================================================================== 
+   ========================================================================================================  */
+
+@media screen and (max-width: 800px) {
+    section {
+        border: 9px solid #000000;        
+        box-shadow: 8rem 8rem 6rem rgba(0, 0, 0, 0.6);
+    }
+
+    section header {
+        padding: 25px 0;
+    }
+
+    section:first-of-type header {
+        background-image: url('../_imagens/section-header-1-mobile.jpg');
+    }
+
+    section header::after {
+        background-image: url('../_imagens/section-header-frame-mobile.png');
+    } 
+        
+    section header h1 {
+        font-size: calc(23px + 46rem);
+        text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+        letter-spacing: 1px;
+    }
+}

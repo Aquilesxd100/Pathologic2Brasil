@@ -1,80 +1,6 @@
 @charset "UTF-8";
 
 /* ========================================================================================================
-   🌍 Default Properties of the Website 🌍  ==============================================================
-   ========================================================================================================  */
-                                        
-/* |----------------------------------| ✒️ Fonts ✒️ |----------------------------------|  */
-
-@font-face {
-	font-family: frizquadrata;
-	src: url("{BASE-PATH}/fonts/friz-quadrata-tt.woff") format('truetype');
-}
-@font-face {
-	font-family: batukapur;
-	src: url("{BASE-PATH}/fonts/batukapur-vmedy.woff");
-}
-
-/* |-------------------------| 🧊 Elements Default Values 🧊 |-------------------------|  */
-
-/* CSS Reset */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-	font-size: 0.05vw;
-	cursor: url('{BASE-PATH}/resources/cursor.cur'), auto;
-	min-height: 100vh;
-}
-
-div, button {
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
-
-button {
-	border: none;
-	background-color: transparent;
-	cursor: url('{BASE-PATH}/resources/cursor.cur'), auto;
-}
-
-@media screen and (max-width: 800px) {
-	a span * {
-		text-decoration: none;
-		border-bottom: 2px solid #00FF00;
-	}
-}
-
-a > button {
-	cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
-}
-
-/* |-----------------------------| 🛠️ Utility Classes 🛠️ |-----------------------------|  */	
-
-.hide {
-	display: none !important;
-}	
-
-.disable-transition, .disable-transition * {
-	transition: inherit !important;
-}	
-
-@media screen and (min-width: 801px) {
-	.hide-on-desktop {
-		display: none !important;
-	}
-}	
-
-@media screen and (max-width: 800px) {
-	.hide-on-mobile {
-		display: none !important;
-	}
-}
-
-/* ========================================================================================================
    | ☁️ Header [DESKTOP] | ================================================================================ 
    ========================================================================================================  */
 
@@ -184,12 +110,14 @@ a > button {
 		background: none;
 		font-family: frizquadrata;
 		font-weight: bold;
+		text-transform: lowercase;
 		transition: opacity 0.35s linear 0.25s;
 		opacity: 1;		
 	}	
 
 	#search-input-desktop::placeholder {
 		color: #999999;
+		text-transform: none;
 	}
 
 	.search-bar-closed #search-input-desktop, 
@@ -216,7 +144,6 @@ a > button {
 	button#search-desktop:hover {
 		filter: brightness(75%);
 		-webkit-filter: brightness(75%);
-		cursor: url('{BASE-PATH}/resources/cursor_link.cur'), auto;
 	}	
 
 	.search-bar-closed + button#search-desktop:hover {
@@ -409,7 +336,7 @@ a > button {
 	}
 
 	#privacy-notice-modal button::before {
-		content: "";
+		content: '';
 		position: absolute;
 		inset: 2.5rem;
 		border-radius: 3.5rem;
@@ -601,10 +528,12 @@ a > button {
 		background: none;
 		font-family: frizquadrata;
 		font-weight: bold;	
+		text-transform: lowercase;
 	}	
 
 	#search-input-mobile::placeholder {
 		color: #999999;
+		text-transform: none;
 	}
 
 	button#search-mobile {

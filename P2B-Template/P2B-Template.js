@@ -1,7 +1,7 @@
 (function () {
 	/**
 	 * Checks whether a script with the specified file name is present on the current page.
-	 * @param {string} scriptName - The script file name to search for (e.g. "app.js").
+	 * @param {string} scriptName - The script file name to search for (ex: "app.js").
 	 * @returns {boolean} Returns `true` if a matching script is found; otherwise, `false`.
 	 */	
 	function isScriptPresent(scriptName) {
@@ -15,6 +15,28 @@
 
 		return false;
 	}
+
+	/**
+	 * Checks whether a style page with the specified file name is present on the current page.
+	 * @param {string} stylePageName - The style page file name to search for (ex: "main.css").
+	 * @returns {boolean} Returns `true` if a matching style page is found; otherwise, `false`.
+	 */	
+	function isStylePagePresent(stylePageName) {
+		const linksOnCurrentPage = document.querySelectorAll('link');
+
+		for (var idx = 0; idx < linksOnCurrentPage.length; idx++) {
+			const linkSrcFileName = linksOnCurrentPage[idx].href.split('/').pop();
+
+			if (
+				linksOnCurrentPage[idx].type === 'text/css'
+				&& linkSrcFileName === stylePageName
+			) {
+				return true
+			}			
+		}
+
+		return false;
+	}	
 
 	/**
 	 * Utility wrapper for XMLHttpRequest operations.
@@ -49,10 +71,10 @@
 			}
 	}
 
-	// Validate whether the required scripts for this component are present
-	if (!isScriptPresent('globalVariables.js') || !isScriptPresent('utils.js')) {
+	// Validate whether the global required scripts and style page for this component are present
+	if (!isScriptPresent('globalVariables.js') || !isScriptPresent('utils.js') || !isStylePagePresent('main.css')) {
 		throw Error(
-			"The P2B-Template requires the following scripts to be present in the DOM: 'globalVariables.js' and 'utils.js'. Please, include them before the 'P2B-Template.js' script."
+			"The P2B-Template requires the following scripts and style page to be present in the DOM: 'globalVariables.js', 'utils.js' and 'main.css'. Please, make sure the scripts are included before the 'P2B-Template.js' script."
 		);
 	}
 
@@ -127,7 +149,6 @@
 		const templateElement = document.createElement("p2b-template");
 
 		// Fills the template resource path placeholders of images, fonts, etc...
-		htmlContent = htmlContent.replace(/{BASE-PATH}/g, basePath);
 		stylesContent = stylesContent.replace(/{BASE-PATH}/g, basePath);
 
 		// HTML Content
