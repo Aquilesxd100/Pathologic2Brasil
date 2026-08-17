@@ -17,6 +17,7 @@ JS
 - class
 - arrow functions
 - replaceAll
+- contains
 - async/await
 - fetch
 - [""] as object property name
