@@ -295,15 +295,15 @@
 		background-color: #000000;
 	}
 
-/* |----------------------------------| 🎯 Main 🎯 |----------------------------------|💻|  */
+/* |--------------------------| 🎯 Page Content Wrapper 🎯 |--------------------------|💻|  */
 
-	main {
+	div.page-content-wrapper {
 		position: relative;
 		width: calc(100% - 36rem);
 		margin: 10rem 18rem 30rem 18rem;
 		background-color: rgba(255, 255, 255, 0.75);
 		padding: 15rem 20rem;
-	}
+	}	
 
 /* |-------------------------| 💬 Privacy Notice Modal 💬 |---------------------------|💻|  */	
 
