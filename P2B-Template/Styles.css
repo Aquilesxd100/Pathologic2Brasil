@@ -19,9 +19,11 @@
 	}
 
 	#language-switcher-desktop button {
-		width: 42rem;
-		height: 32rem;
-		border: 4rem solid #000000;	
+		width: 50rem;
+		height: 38rem;
+		min-width: 35px;
+		min-height: 25px;
+		border: calc(2.1rem + 2px) solid #000000;
 	}
 
 	#language-switcher-desktop a:nth-of-type(1) button {
@@ -39,6 +41,11 @@
 	#language-switcher-desktop button:not(.selected) {
 		filter: grayscale(5%) brightness(0.45);
 		-webkit-filter: grayscale(5%) brightness(0.45);
+	}		
+
+	#language-switcher-desktop button:not(.selected):hover {
+		filter: brightness(1);
+		-webkit-filter: brightness(1);
 	}		
 
 /* |-------------------------------| 🔎 Search Bar 🔍 |-------------------------------|💻|  */
