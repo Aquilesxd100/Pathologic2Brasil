@@ -128,11 +128,10 @@
 		}		
 
 		const templateMainElement = templateElement.querySelector("main");
-		const templateFooterElement = templateElement.querySelector("footer");
 
 		// Copy the Current Page content to the New Template
 		for (var idx = 0; idx < currentPageElements.length; idx++) {
-			templateMainElement.insertBefore(currentPageElements[idx], templateFooterElement)
+			templateMainElement.appendChild(currentPageElements[idx]);
 		}
 
 		// Replace the Placeholder Template with the real one

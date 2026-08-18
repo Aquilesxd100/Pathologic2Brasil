@@ -19,9 +19,11 @@
 	}
 
 	#language-switcher-desktop button {
-		width: 42rem;
-		height: 32rem;
-		border: 4rem solid #000000;	
+		width: 65rem;
+		height: 45rem;
+		min-width: 35px;
+		min-height: 25px;
+		border: calc(2.8rem + 2px) solid #000000;
 	}
 
 	#language-switcher-desktop a:nth-of-type(1) button {
@@ -39,6 +41,11 @@
 	#language-switcher-desktop button:not(.selected) {
 		filter: grayscale(5%) brightness(0.45);
 		-webkit-filter: grayscale(5%) brightness(0.45);
+	}		
+
+	#language-switcher-desktop button:not(.selected):hover {
+		filter: brightness(1);
+		-webkit-filter: brightness(1);
 	}		
 
 /* |-------------------------------| 🔎 Search Bar 🔍 |-------------------------------|💻|  */
@@ -65,6 +72,8 @@
 		position: relative;
 		width: 47rem;
 		height: 68rem;
+		min-width: 28px;
+		min-height: 40px;
 		border: solid 6rem #000000;
 		border-radius: 50rem 0 0 50rem;
 		background-color: rgb(221, 221, 221);
@@ -73,6 +82,7 @@
 	button#showhide-search svg {
 		position: absolute;
 		width: 62rem;
+		min-width: 36px;
 		top: -1.3rem;
 		left: -10rem;
 	}
@@ -87,6 +97,7 @@
 		vertical-align: top;
 		width: calc(340rem - 47rem);
 		height: 66rem;
+		min-height: 39px;
 		margin-top: 1rem;
 		margin-right: 0;		
 		border-top: solid 6rem #000000;
@@ -104,7 +115,7 @@
 		height: 100%;
 		width: 100%;
 		padding: 0 18rem;
-		font-size: 36rem;
+		font-size: calc(32rem + 4px);
 		outline: none;
 		border: none;
 		background: none;
@@ -129,14 +140,17 @@
 		position: relative;
 		width: 80rem;
 		height: 68rem;
+		min-width: 44px;
+		min-height: 40px;		
 		border: solid 6rem #000000;
-		border-radius: 0 35rem 35rem 0;
+		border-radius: 0 calc(35rem + 5px) calc(35rem + 5px) 0;
 		background-color: rgb(221, 221, 221);
 	}
 
 	button#search-desktop svg {
 		position: absolute;
-		width: 52rem;		
+		width: 52rem;	
+		min-width: 31px;	
 		top: 3rem;
 		left: 3.5rem;		
 	}
@@ -248,7 +262,7 @@
 		display: block;
 	}
 
-	div#more-dropdown-menu-desktop button {
+	#more-dropdown-menu-desktop button {
 		position: relative;		
 		width: 94%;
 		margin-top: -4rem;
@@ -261,15 +275,20 @@
 	}		
 
 	button#combat-desktop {
+		z-index: 1;
 		background-image: url('{BASE-PATH}/images/sub_barra_1.png');
 	}
 	button#food-desktop {
+		z-index: 2;
 		background-image: url('{BASE-PATH}/images/sub_barra_2.png');
 	}	
 	button#map-desktop {
+		z-index: 3;
 		background-image: url('{BASE-PATH}/images/sub_barra_3.png');
 	}		
 	button#show-everything-desktop {
+		z-index: 2;
+		margin-top: -8rem;
 		background-image: url('{BASE-PATH}/images/sub_barra_4.png');
 	}		
 
@@ -288,23 +307,23 @@
 		background-color: #000000;
 	}
 
-/* |----------------------------------| 🎯 Main 🎯 |----------------------------------|💻|  */
+/* |--------------------------| 🎯 Page Content Wrapper 🎯 |--------------------------|💻|  */
 
-	main {
+	div.page-content-wrapper {
 		position: relative;
 		width: calc(100% - 36rem);
-		margin: 10rem 18rem 30rem 18rem;
+		margin: 10rem 18rem 15rem 18rem;
 		background-color: rgba(255, 255, 255, 0.75);
 		padding: 15rem 20rem;
-	}
+	}	
 
 /* |-------------------------| 💬 Privacy Notice Modal 💬 |---------------------------|💻|  */	
 
 	div#privacy-notice-modal {	
 		position: fixed;		
-		bottom: -120rem;
+		bottom: calc(-120rem + -100px);
 		z-index: 10;
-		border: solid 6rem #000000;
+		border: solid calc(5rem + 2px) #000000;
 		padding: 10rem;
 		background-image: linear-gradient(to bottom, rgba(239, 239, 239, 0.97), rgba(168, 168, 168, 0.97));
 		transition: bottom 0.8s;
@@ -316,7 +335,7 @@
 
 	#privacy-notice-modal p {
 		font-family: frizquadrata;
-		font-size: 26rem;
+		font-size: calc(22rem + 10px);
 		letter-spacing: 1rem;		
 		font-weight: bolder;		
 		text-align: center;
@@ -326,11 +345,13 @@
 	#privacy-notice-modal button {
 		position: relative;		
 		float: right;
-		width: 36rem;
-		height: 36rem;
+		width: 40rem;
+		height: 40rem;
+		min-height: 33px;
+		min-width: 33px;
 		margin: 0 0 15rem 15rem;
-		border: solid 2rem #000000;
-		border-radius: 9rem;
+		border: solid calc(1.8rem + 1px) #000000;
+		border-radius: calc(2.5rem + 6px);
 		background: linear-gradient(to bottom, #8a8a8a 0%, #444 20%, #111 55%, #555 100%);		
 		box-shadow: inset 0 0.5rem 0.5rem rgba(255, 255, 255, 0.45), inset 0 -1rem 2rem rgba(0, 0, 0, 0.8), 0 1rem 2.5rem rgba(0, 0, 0, 0.45);
 	}
@@ -338,8 +359,8 @@
 	#privacy-notice-modal button::before {
 		content: '';
 		position: absolute;
-		inset: 2.5rem;
-		border-radius: 3.5rem;
+		inset: calc(1.5rem + 1px);
+		border-radius: calc(2.5rem + 3px);
 		background: linear-gradient(to bottom, #2f2f2f 0%, #1b1b1b 35%, #090909 100%);
 		box-shadow: inset 0 0.5rem 0.5rem rgba(255, 255, 255, 0.18), inset 0 -1.5rem 3rem rgba(0, 0, 0, 0.85);
 	}
@@ -356,7 +377,8 @@
 	}
 	
 	#privacy-notice-modal button svg {
-		width: 33rem;
+		width: 34rem;
+		min-width: 30px;
 		z-index: 2;
 		filter: drop-shadow(0 0 1rem #000000);
 		-webkit-filter: drop-shadow(0 0 1rem #000000);
@@ -801,31 +823,39 @@
 	}   
 }
 
+/* |--------------------------| 🎯 Page Content Wrapper 🎯 |--------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+	div.page-content-wrapper {
+		margin-bottom: 30rem;
+	}	
+}
+
 /* |-------------------------| 💬 Privacy Notice Modal 💬 |---------------------------|📱|  */	
 
 @media screen and (max-width: 800px) {
 	div#privacy-notice-modal {		
-		bottom: -620rem;
-		padding: 25rem;
-		border: solid 18rem #000000;
+		bottom: -215px;
+		padding: 10px;
+		border: solid 5px #000000;
 	}	
 
 	#privacy-notice-modal p {
-		font-size: 70rem;
-		margin: 65rem;
+		font-size: calc(25rem + 12px);
+		margin: 5px;
 	}	
 
 	#privacy-notice-modal button {
 		width: 120rem;
 		height: 120rem;
-		border-radius: 26rem;
+		border-radius: calc(26rem + 2px);
 		border: solid 6rem #000000;
 		box-shadow: inset 0 1.5rem 1.5rem rgba(255, 255, 255, 0.45), inset 0 -3rem 5rem rgba(0, 0, 0, 0.8), 0 3rem 7.5rem rgba(0, 0, 0, 0.45);			
 	}
 
 	#privacy-notice-modal button::before {
 		inset: 5rem;
-		border-radius: 12rem;
+		border-radius: calc(12rem + 2px);
 		box-shadow: inset 0 1.5rem 1.5rem rgba(255, 255, 255, 0.18), inset 0 -4.5rem 8rem rgba(0, 0, 0, 0.85);
 	}
 
