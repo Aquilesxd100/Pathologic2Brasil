@@ -19,11 +19,11 @@
 	}
 
 	#language-switcher-desktop button {
-		width: 50rem;
-		height: 38rem;
+		width: 65rem;
+		height: 45rem;
 		min-width: 35px;
 		min-height: 25px;
-		border: calc(2.1rem + 2px) solid #000000;
+		border: calc(2.8rem + 2px) solid #000000;
 	}
 
 	#language-switcher-desktop a:nth-of-type(1) button {
