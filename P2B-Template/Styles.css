@@ -72,6 +72,8 @@
 		position: relative;
 		width: 47rem;
 		height: 68rem;
+		min-width: 28px;
+		min-height: 40px;
 		border: solid 6rem #000000;
 		border-radius: 50rem 0 0 50rem;
 		background-color: rgb(221, 221, 221);
@@ -80,6 +82,7 @@
 	button#showhide-search svg {
 		position: absolute;
 		width: 62rem;
+		min-width: 36px;
 		top: -1.3rem;
 		left: -10rem;
 	}
@@ -94,6 +97,7 @@
 		vertical-align: top;
 		width: calc(340rem - 47rem);
 		height: 66rem;
+		min-height: 39px;
 		margin-top: 1rem;
 		margin-right: 0;		
 		border-top: solid 6rem #000000;
@@ -111,7 +115,7 @@
 		height: 100%;
 		width: 100%;
 		padding: 0 18rem;
-		font-size: 36rem;
+		font-size: calc(32rem + 4px);
 		outline: none;
 		border: none;
 		background: none;
@@ -136,14 +140,17 @@
 		position: relative;
 		width: 80rem;
 		height: 68rem;
+		min-width: 44px;
+		min-height: 40px;		
 		border: solid 6rem #000000;
-		border-radius: 0 35rem 35rem 0;
+		border-radius: 0 calc(35rem + 5px) calc(35rem + 5px) 0;
 		background-color: rgb(221, 221, 221);
 	}
 
 	button#search-desktop svg {
 		position: absolute;
-		width: 52rem;		
+		width: 52rem;	
+		min-width: 31px;	
 		top: 3rem;
 		left: 3.5rem;		
 	}
