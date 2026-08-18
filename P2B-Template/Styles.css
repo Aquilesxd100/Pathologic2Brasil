@@ -300,7 +300,7 @@
 	div.page-content-wrapper {
 		position: relative;
 		width: calc(100% - 36rem);
-		margin: 10rem 18rem 30rem 18rem;
+		margin: 10rem 18rem 15rem 18rem;
 		background-color: rgba(255, 255, 255, 0.75);
 		padding: 15rem 20rem;
 	}	
@@ -806,6 +806,14 @@
 		background-size: 2000rem 1900rem;		
 		background-image: url('{BASE-PATH}/images/fundo_mobile.jpg');
 	}   
+}
+
+/* |--------------------------| 🎯 Page Content Wrapper 🎯 |--------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+	div.page-content-wrapper {
+		margin-bottom: 30rem;
+	}	
 }
 
 /* |-------------------------| 💬 Privacy Notice Modal 💬 |---------------------------|📱|  */	
