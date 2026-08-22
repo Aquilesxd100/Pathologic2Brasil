@@ -12,11 +12,13 @@ article#guides-cards-wrapper {
 #guides-cards-wrapper img {
     width: 500rem;
     margin: 10rem;
+    filter: brightness(85%);
+    -webkit-filter: brightness(85%);        
 }
 
 #guides-cards-wrapper img:hover {
-    filter: brightness(130%);
-	-webkit-filter: brightness(130%);
+    filter: brightness(115%);
+	-webkit-filter: brightness(115%);
 }
 
 @media screen and (max-width: 800px) {
