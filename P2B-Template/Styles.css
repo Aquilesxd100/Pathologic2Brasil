@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 /* ========================================================================================================
    | ☁️ Header [DESKTOP] | ================================================================================ 
@@ -31,11 +31,11 @@
 	}
 
 	button.language-portuguese-flag {
-		background-image: url("{BASE-PATH}/images/br_icon.jpg");
+		background-image: url('{BASE-PATH}/images/br_icon.jpg');
 	}
 
 	button.language-english-flag {
-		background-image: url("{BASE-PATH}/images/en_icon.jpg");
+		background-image: url('{BASE-PATH}/images/en_icon.jpg');
 	}	
 
 	#language-switcher-desktop button:not(.selected) {
@@ -336,6 +336,7 @@
 	#privacy-notice-modal p {
 		font-family: frizquadrata;
 		font-size: calc(22rem + 10px);
+		color: #000000;
 		letter-spacing: 1rem;		
 		font-weight: bolder;		
 		text-align: center;
@@ -366,12 +367,12 @@
 	}
 
 	#privacy-notice-modal button::after {
-		content: "";
+		content: '';
 		position: absolute;
-		left: 4rem;
-		right: 4rem;
+		left: 1.5rem;
+		right: 1.5rem;
 		top: 3.5rem;
-		height: 45%;
+		height: 40%;
 		border-radius: 6rem 6rem 20rem 20rem;
 		background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0.08) 60%, rgba(255,255,255,0));
 	}
@@ -396,7 +397,7 @@
 
 /* |---------------------------------| 🦶 Footer 🦶 |---------------------------------|💻|  */	
 
-	footer {
+	footer#main-footer {
 		display: table;
 		width: 100%;
 		font-family: frizquadrata;
@@ -406,17 +407,17 @@
 		margin-top: 20rem;
 	}
 
-	footer p, footer address {
+	#main-footer p, #main-footer address {
 		display: table-cell;
 		width: 50%;
 	}
 
-	footer address {
+	#main-footer address {
 		text-align: right;
 		font-style: normal;
 	}
 
-	footer address a {
+	#main-footer address a {
 		text-decoration: none;
 		color: inherit;
 	}	
@@ -460,7 +461,7 @@
 	header.top-bar-mobile-fixed #top-bar-mobile {
 		position: fixed;		
 		top: 0;
-		z-index: 1;
+		z-index: 2;
 	}	
 
 	button#open-menu-mobile {
@@ -596,7 +597,7 @@
 		width: 0;
 		height: 100vh;
 		top: 0;
-		z-index: 1;
+		z-index: 2;
 		pointer-events: none;
 		overflow: hidden;
 		transition: width 0.5s ease-out;
@@ -878,7 +879,7 @@
 /* |---------------------------------| 🦶 Footer 🦶 |---------------------------------|📱|  */	
 
 @media screen and (max-width: 800px) {
-	footer {
+	footer#main-footer {
 		display: block;
 		font-size: 80rem;
 		text-align: center;
@@ -886,7 +887,7 @@
 		margin-top: 0;
 	}
 
-	footer p, footer address {
+	#main-footer p, #main-footer address {
 		display: block;
 		text-align: center;
 		width: 100%;
