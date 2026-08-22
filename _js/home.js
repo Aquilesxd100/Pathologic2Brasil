@@ -1,216 +1,253 @@
-const cardsGuias = document.querySelectorAll("#showcase img");
+// |---------------------------| Latest Guides Carousel |--------------------------|	
 
-/* Ultimos Guias - Botoes */
-var resolucaoL2 = window.innerWidth;
-var resolucaoA = window.innerHeight;
-const siteTaEmPortugues = getCurrentPageLanguageCode() === LanguageEnum.PortugueseBR;
+const numberOfCarouselCards = document.querySelectorAll('div#cards-wrapper img').length;
+var carouselDisplayPosition = 0;
+var carouselTimeoutId = setTimeout(advanceCardGuidesCarouselAutomatically, 4000);
 
-function botaoUltimosGuias(botao) {
-    if (resolucaoL2 > 800) {
-        if (botao === "botao-direita") {
-            if (posicaoShowcase < (cardsGuias.length - 3)) { /* <--- Modificador Novo Guia */
-                posicaoShowcase = posicaoShowcase + 1;
-                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.OTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                clearInterval(loopShowCase);
-                loopShowCase = setInterval(showCase, 4000);
-            } 
-        }
-        else if (botao === "botao-esquerda") {
-            if (posicaoShowcase !== 0) {
-                posicaoShowcase = posicaoShowcase - 1;
-                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.OTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-                clearInterval(loopShowCase);
-                loopShowCase = setInterval(showCase, 4000);
-            } 
-        }
+function showNextGuide(nextGuideButton) {
+    animateElementClick(nextGuideButton, 'latest-guides-button-click-animation');
+
+    const isMobileScreen = getIsMobileScreen();
+
+    const isAlreadyShowingTheLastGuide = 
+        carouselDisplayPosition >= (
+            (numberOfCarouselCards - 1) // The Display Position starts at zero
+            - (isMobileScreen ? 0 : 2)  // Mobile Screens show one guide at a time
+        );                              // Desktop Screens show three guides at a time
+
+    if (isAlreadyShowingTheLastGuide) {
+        return;
     }
-    else if (resolucaoL2 <= 800) {
-        if (botao === "botao-direita") {
-            if (posicaoShowcase < cardsGuias.length - 1) { /* <--- Modificador Novo Guia */
-                posicaoShowcase = posicaoShowcase + 1;
-                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.OTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                clearInterval(loopShowCase);
-                loopShowCase = setInterval(showCase, 4000);
-            } 
-        }
-        else if (botao === "botao-esquerda") {
-            if (posicaoShowcase !== 0) {
-                posicaoShowcase = posicaoShowcase - 1;
-                showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.OTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-                clearInterval(loopShowCase);
-                loopShowCase = setInterval(showCase, 4000);
-            } 
-        }
+
+    // Resets the Carousel's automatic advance timing
+    clearTimeout(carouselTimeoutId);
+    carouselTimeoutId = setTimeout(advanceCardGuidesCarouselAutomatically, 4000);
+
+    carouselDisplayPosition += 1;
+    updateCarouselByPosition(carouselDisplayPosition);
+};
+
+function showPreviousGuide(previousGuideButton) {
+    animateElementClick(previousGuideButton, 'latest-guides-button-click-animation');
+
+    const isAlreadyShowingTheFirstGuide = carouselDisplayPosition == 0;
+
+    if (isAlreadyShowingTheFirstGuide) {
+        return;
     }
+
+    // Resets the Carousel's automatic advance timing
+    clearTimeout(carouselTimeoutId);
+    carouselTimeoutId = setTimeout(advanceCardGuidesCarouselAutomatically, 4000);    
+
+    carouselDisplayPosition -= 1;
+    updateCarouselByPosition(carouselDisplayPosition);     
+};
+
+function advanceCardGuidesCarouselAutomatically() {
+    const isMobileScreen = getIsMobileScreen();
+
+    const isAlreadyShowingTheLastGuide = 
+        carouselDisplayPosition >= (
+            (numberOfCarouselCards - 1) // 
+            - (isMobileScreen ? 0 : 2) //
+        );  
+        
+    carouselDisplayPosition = 
+        isAlreadyShowingTheLastGuide
+        ? 0
+        : (carouselDisplayPosition + 1);
+
+    updateCarouselByPosition(carouselDisplayPosition);    
+
+    carouselTimeoutId = setTimeout(advanceCardGuidesCarouselAutomatically, 4000);
+};
+
+function updateCarouselByPosition(carouselDisplayPosition) {
+    const isMobileScreen = getIsMobileScreen();
+    const cardsWrapper = document.getElementById('cards-wrapper');
+
+    if (isMobileScreen) {
+        cardsWrapper.style.right = 
+            'calc(' +
+                (90 * carouselDisplayPosition) + '%' +    // Width of each card 
+                ' + ' +
+                ((5 + 5) * carouselDisplayPosition) + '%' + // Margin Left and Right of each card
+            ')'; 
+
+        return;
+    }
+    
+    cardsWrapper.style.right = 
+        'calc(' +
+            (33 * carouselDisplayPosition) + '%' +    // Width of each card
+            ' - ' +                                   // exacly like it's
+            (12 * carouselDisplayPosition) + 'rem' +  // on the CSS file
+            ' + ' +
+            ((0.5 + 0.5) * carouselDisplayPosition) + '%' + // Margin Left and Right of each card
+        ')'; 
+};
+
+// |-----------------------------| Quick Access Panel |----------------------------|	
+
+var selectedQuickAccessOptionIdMobile = null;
+
+(function () {
+    const isPageInPortuguese = getCurrentPageLanguageCode() == LanguageEnum.PortugueseBR;
+
+    const quickAccessDescriptionDisplayParagraphElement = document.querySelector('div#description-display p');  
+
+    quickAccessDescriptionDisplayParagraphElement.innerHTML = getQuickAccessDescriptionPlaceholder();  
+
+    const quickAccessOptionsAnchorsElements = document.querySelectorAll('div#options-display a');
+
+    for (var idx = 0; idx < quickAccessOptionsAnchorsElements.length; idx++) {
+        // Desktop Hover (Also triggered by touch on mobile)
+        quickAccessOptionsAnchorsElements[idx].addEventListener('mousemove', function(event) {
+
+            quickAccessDescriptionDisplayParagraphElement.classList.add('showing-option-description');
+
+            quickAccessDescriptionDisplayParagraphElement.innerHTML = getQuickAccessDescriptionByOptionId(event.currentTarget.id);
+        });
+
+        // Desktop Mouse Out
+        quickAccessOptionsAnchorsElements[idx].addEventListener('mouseout', function() {
+
+            quickAccessDescriptionDisplayParagraphElement.classList.remove('showing-option-description');
+
+            quickAccessDescriptionDisplayParagraphElement.innerHTML = '';          
+        });
+
+        // Mobile Click
+        quickAccessOptionsAnchorsElements[idx].addEventListener('click', function(event) {
+            const isMobileScreen = getIsMobileScreen();
+
+            if (isMobileScreen) {
+                event.preventDefault(); // Prevent the <a> from directly redirecting the page on mobile screens
+
+                quickAccessDescriptionDisplayParagraphElement.classList.remove('error-option-description');
+                quickAccessDescriptionDisplayParagraphElement.classList.add('showing-option-description');
+
+                selectedQuickAccessOptionIdMobile = event.currentTarget.id;
+                quickAccessDescriptionDisplayParagraphElement.innerHTML = getQuickAccessDescriptionByOptionId(event.currentTarget.id);
+            }
+        });         
+    }
+
+    function getQuickAccessDescriptionByOptionId(quickAccessOptionId) {
+        var description = '';
+
+        switch (quickAccessOptionId) {
+            case 'money-option':
+                description =
+                    isPageInPortuguese
+                    ? 'Fique rico e cause inveja até mesmo nos Kain!'
+                    : 'Get rich and make even the Kains jealous!';
+            break;
+            case 'shmowder-option':
+                description =
+                    isPageInPortuguese
+                    ? 'Consiga todos os pozinzins escondidos e salve vidas!'
+                    : 'Get all the hidden Shmowders and save lives!';
+            break;
+            case 'map-option':
+                description =
+                    isPageInPortuguese
+                    ? 'Descubra todos os segredos da Estepe!'
+                    : 'Find out all the secrets from the Steppe!';
+            break;  
+            case 'food-option':
+                description =
+                    isPageInPortuguese
+                    ? 'Nunca mais passe fome!'
+                    : 'Never be hungry again!';
+            break;   
+            case 'recipes-option':
+                description =
+                    isPageInPortuguese
+                    ? 'Aprenda TUDO sobre a criação de Infusões e "Poções"!'
+                    : 'Learn EVERYTHING about the brewing of tincture and "potions"!';
+            break;     
+            case 'combat-option':
+                description =
+                    isPageInPortuguese
+                    ? 'Deixe de ser a caça e vire o caçador!'
+                    : 'Stop being the prey and become the hunter!';
+            break;                                             
+        }
+
+        return description;
+    }     
+})();
+
+function getQuickAccessDescriptionPlaceholder() {
+    const isPageInPortuguese = getCurrentPageLanguageCode() == LanguageEnum.PortugueseBR;
+    const isMobileScreen = getIsMobileScreen();
+    
+    if (isPageInPortuguese) {
+        return (
+            isMobileScreen
+                ? "Toque em cima de uma das opções para saber mais!"
+                : "Passe o mouse por cima de uma das opções para saber mais!"
+        );
+    }
+
+    return (
+        isMobileScreen
+            ? "Click on one of the options to learn more!"
+            : "Hover over an option to learn more!"
+    ); 
 }
-/* Ultimos Guias - Showcase */
-const showcaseElemento = document.getElementById("showcase");
-var posicaoShowcase = 0;
-function showCase() {
-    let checkResolucao = window.innerWidth;
-    if (resolucaoL2 !== checkResolucao) {
-        posicaoShowcase = 0;   
-        resolucaoL2 = window.innerWidth;
+
+function openSelectedOptionLinkMobile(openSelectedOptionButton) {
+    animateElementClick(openSelectedOptionButton, 'quick-access-mobile-button-click-animation');
+
+    const isPageInPortuguese = getCurrentPageLanguageCode() == LanguageEnum.PortugueseBR;
+
+    const quickAccessDescriptionDisplayElement = document.querySelector('div#description-display p');  
+
+    if (selectedQuickAccessOptionIdMobile == null) {
+        quickAccessDescriptionDisplayElement.classList.add('error-option-description');
+
+        quickAccessDescriptionDisplayElement.innerHTML = 
+            isPageInPortuguese
+            ? 'Escolha uma das opções primeiro.'
+            : 'Choose an option first.';
+
+        return;
     }
-    posicaoShowcase++;
-    if (resolucaoL2 > 800) {
-        if (posicaoShowcase > cardsGuias.length - 3) {
-            posicaoShowcase = 0;        
+
+    var selectedGuideLink = '';
+
+    const quickAccessOptionsAnchorElements = document.querySelectorAll('div#options-display a');
+
+    for (var idx = 0; idx < quickAccessOptionsAnchorElements.length; idx++) { 
+        const optionAnchorElement = quickAccessOptionsAnchorElements[idx];
+
+        if (optionAnchorElement.id === selectedQuickAccessOptionIdMobile) {
+            selectedGuideLink = optionAnchorElement.href;
+            break;
         }
-        showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
-        showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
-        showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)'; 
-        showcaseElemento.style.OTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-        showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 33.5) + '%)';
-    }
-    else if (resolucaoL2 <= 800) {
-        if (posicaoShowcase > cardsGuias.length - 1) {
-            posicaoShowcase = 0;        
-        }
-        showcaseElemento.style.transform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
-        showcaseElemento.style.msTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)'; 
-        showcaseElemento.style.MozTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-        showcaseElemento.style.OTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';
-        showcaseElemento.style.webkitTransform = 'translateX(' + (-posicaoShowcase * 100) + '%)';   
-    }
+    }       
+
+    window.open(selectedGuideLink, '_self');
 }
-var loopShowCase = setInterval(showCase, 4000);
-/* Acesso Rapido */
-function acessoRapidoHover(tipo, elemento) {
-    if (tipo === "on") {
-        let conteudoGuiaAcessoRapido;
-        document.getElementById("displayinfo").style.color="#00DD00";
-        document.getElementById("displayinfo").style.top="8%"
-        if (elemento === "dinheiro") {
-            conteudoGuiaAcessoRapido = siteTaEmPortugues
-                ?
-                    "Fique rico e cause inveja<br class='modo-mobile'> até mesmo nos Kain!"
-                :
-                    "Get rich and make even the Kains jealous!"
 
-            if (
-                resolucaoL2 <= 800 
-                && !siteTaEmPortugues
-            ) {
-                document.getElementById("displayinfo").style.top="28%";
-            }
+// |------------------------------| Resize Listener |------------------------------|	
 
-            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
-        }
-        if (elemento === "podinzin") {
-            conteudoGuiaAcessoRapido = siteTaEmPortugues
-            ?
-                "Consiga todos os pozinzins<br class='modo-mobile'> escondidos e salve vidas!"
-            :
-                "Get all the hidden Shmowders<br class='modo-mobile'> and save lives!"
+window.addEventListener('resize', function () {
+    // Resets the Carousel's automatic advance timer
+    clearTimeout(carouselTimeoutId);
+    carouselTimeoutId = setTimeout(advanceCardGuidesCarouselAutomatically, 4000);
+    
+    carouselDisplayPosition = 0;
+    updateCarouselByPosition(carouselDisplayPosition);    
+    
+    selectedQuickAccessOptionIdMobile = null;
 
-            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
-        }
-        if (elemento === "mapa") {
-            conteudoGuiaAcessoRapido = siteTaEmPortugues
-            ?
-                "Descubra todos os segredos da Estepe!"
-            :
-                "Find out all the secrets from the Steppe!"
-
-            if (resolucaoL2 <= 800) {
-                document.getElementById("displayinfo").style.top="28%";
-            }
-            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
-        }
-        if (elemento === "comida") {
-            conteudoGuiaAcessoRapido = siteTaEmPortugues
-            ?
-                "Nunca mais passe fome!"
-            :
-                "Never be hungry again!"
-
-            if (resolucaoL2 <= 800) {
-                document.getElementById("displayinfo").style.top="28%";
-            }
-            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
-        }
-        if (elemento === "pocoes") {
-            conteudoGuiaAcessoRapido = siteTaEmPortugues
-            ?
-                "Aprenda TUDO sobre a criação<br class='modo-mobile'> de Infusões e 'Poções'!"
-            :
-                `Learn EVERYTHING about the<br class='modo-mobile'> brewing of tincture and "potions"!`
-
-            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
-        }
-        if (elemento === "combate") {
-            conteudoGuiaAcessoRapido = siteTaEmPortugues
-            ?
-                "Deixe de ser a caça e vire o caçador!"
-            :
-                "Stop being the prey and become the hunter!"
-
-            if (resolucaoL2 <= 800) {
-                document.getElementById("displayinfo").style.top="28%";
-            }
-            document.getElementById("displayinfo").innerHTML = conteudoGuiaAcessoRapido;
-        }
-    }
-    else {
-        if (resolucaoL2 >= 800) {
-        document.getElementById("displayinfo").innerHTML = "";
-        document.getElementById("displayinfo").style.color="#FFFFFF";
-        }
-    }
-}
-var acessoRapidoReset = ["", ""];
-function acessoRapidoMobile(elemento, link, evento) {
-    if (resolucaoL2 <= 800) {
-        evento.preventDefault();
-
-        if (elemento !== "link") {
-            if (elemento === acessoRapidoReset[0]) {
-                return;
-            }
-            document.getElementById(elemento).style.transform="scale(108%)";
-            document.getElementById(elemento).style.filter="brightness(120%)";
-            adaptadorPrefixos(elemento, "scale(108%)", "brightness(120%)", "");
-            if (acessoRapidoReset[0] !== "") {
-                document.getElementById(acessoRapidoReset[0]).style.transform="scale(100%)";
-                document.getElementById(acessoRapidoReset[0]).style.filter="brightness(70%)";
-                adaptadorPrefixos(acessoRapidoReset[0], "scale(100%)", "brightness(70%)", "");
-            }
-            acessoRapidoReset[0] = elemento;
-            acessoRapidoReset[1] = link;
-        }   
-        else {
-            if (acessoRapidoReset[1] !== "") {
-                window.open(acessoRapidoReset[1], '_self');
-            }
-            if (acessoRapidoReset[1] === "") {
-                const avisoSelecaoOpcao = siteTaEmPortugues
-                    ? "Escolha uma das opções primeiro."
-                    : "Choose an option first."
-
-                document.getElementById("displayinfo").style.top="28%";
-                document.getElementById("displayinfo").style.color="#FF0000"; 
-                document.getElementById("displayinfo").innerHTML = avisoSelecaoOpcao;
-            }
-        }
-    }
-    else {
-         window.open(link, '_self');
-    }
-}
+    const quickAccessDescriptionDisplayElement = document.querySelector('div#description-display p');   
+    
+    quickAccessDescriptionDisplayElement.classList.remove('error-option-description');
+    quickAccessDescriptionDisplayElement.classList.remove('showing-option-description');
+    quickAccessDescriptionDisplayElement.innerHTML = getQuickAccessDescriptionPlaceholder();
+});

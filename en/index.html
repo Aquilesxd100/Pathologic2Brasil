@@ -7,94 +7,109 @@
 <meta name="description" content="Website with Guides and Tutorials about Pathologic 2.">
 <head>
 	<title>Pathologic 2 Brasil</title>
-	<link href='../favicon/favicon.ico' rel='icon' type='image/x-icon'></link>	
+	<link href='../favicon/favicon.ico' rel='icon' type='image/x-icon'></link>
+	<link rel="stylesheet" type="text/css" href="../_css/main.css"/>	
 	<link rel="stylesheet" type="text/css" href="../_css/home.css"/>
 	<script src="../_js/globalVariables.js"></script>
-	<script src="../_js/utils.js"></script>
+	<script src="../_js/utils.js"></script>	
 </head>
 <body id="body">
-	<p2b-template>		
-		<div id="introducaotitulo">
-			<picture id="banner-bem-vindo-mobile">
-				<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
-				<img src="../_imagens/bem_vindo.jpg" id="bannerbemvindo">
-			</picture>
-			<h1>Welcome to<br class="modo-mobile"> Pathologic 2 Brasil !</h1>
-		</div>
-		<div id="introducao">
-			<h2>Here you can find everything you need to become an <span id="menku">honored Menkhu,</span><br> a <span id="cirurgiao">master surgeon</span> or a <br class="modo-mobile"><span id="ator">renomed actor!</span></h2>
-		</div>
-		<div id="introducao2">
-			<p>Just click on a category that interests you <span class="foco">in the above menu,</span> <br class="modo-mobile">select one of our latest guides <span class="foco">below,</span><br class="modo-desktop"> or, in case you are looking for something specific, use the search bar <span class="foco">in the right corner.</span></p> 	
-		</div>
-		<div id="ultimosguiastitulo">
-			<picture>
-				<source media="(max-width: 800px)" srcset="../_imagens/ultimos_guias_mobile.jpg">
-				<img src="../_imagens/ultimos_guias.jpg" id="bannerultimosguias">
-			</picture>
-			<h1>Latest Guides</h1>
-		</div>
-		<div id="ultimosguias">
-			<img src="../_imagens/botao_ultimosguias_esquerda.png" id="botao-esquerda" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-esquerda'); botaoUltimosGuias('botao-esquerda')">
-			<img src="../_imagens/botao_ultimosguias_direita.png" id="botao-direita" class="botoes-ultimos-guias" onclick="botaoTipo2('botao-direita'); botaoUltimosGuias('botao-direita')">
-			<div id="subshowcase">
-				<div id="showcase">
-					<a href="./money.html">
-						<img src="../_imagens/_guias/cardsEn/money.png">
+	<p2b-template>
+		<section id='welcome-section'>
+			<header>
+				<h1 class='small-title'>Welcome to Pathologic 2 Brasil !</h1>
+			</header>
+			<article class='border-bottom'>
+				<p>
+					Here you can find everything you need to become an <span class='blood-red-color'>honored menkhu,</span><br> a <span class='ice-blue-color'>master surgeon</span> or a <span class='purple-color'>renomed actor!</span>
+				</p>				
+			</article>
+			<footer>
+				<p>
+					Just click on a category that interests you <b><span class='underlined'>in the menu above</span></b>, select one of our latest guides <b><span class='underlined'>below</span></b>,
+					or, in case you are looking for something specific, use the search bar <b><span class='underlined'>in the right corner</b></span>.				
+				</p>
+			</footer>
+		</section>	
+
+		<section id='latest-guides-section'>
+			<header>
+				<h1>Latest Guides</h1>
+			</header>
+			<article>
+				<button onclick='showPreviousGuide(this)'>
+					<svg viewBox='6 7 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+						<path d='M17 12H7M7 12L11 8M7 12L11 16' stroke='#E5E5E5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+					</ svg>
+				</button>	
+				<div id='cards-display'>
+					<div id='cards-wrapper'>					
+						<a href="./money.html">
+							<img src="../_imagens/_guias/cardsEn/money.png">
+						</a>
+						<a href="./food.html">
+							<img src="../_imagens/_guias/cardsEn/food.png">
+						</a>
+						<a href="./map.html">
+							<img src="../_imagens/_guias/cardsEn/map.png">
+						</a>
+						<a href="./recipes.html">
+							<img src="../_imagens/_guias/cardsEn/recipes.png">
+						</a>
+						<a href="./combat.html">
+							<img src="../_imagens/_guias/cardsEn/combat.png">
+						</a>
+						<a href="./shmowders.html">
+							<img src="../_imagens/_guias/cardsEn/shmowders.png">
+						</a>
+					</div>				
+				</div>				
+				<button onclick='showNextGuide(this)'>
+					<svg viewBox='6 7 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+						<path d='M7 12H17M17 12L13 8M17 12L13 16' stroke='#E5E5E5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+					</ svg>					
+				</button>				
+			</article>
+		</section>	
+
+		<section id='quick-access-section'>
+			<header>
+				<h1>Quick Access</h1>
+			</header>
+			<article>	
+				<div id='description-display' class='border-bottom'>
+					<div>
+						<p></p>
+					</div>
+				</div>
+				<!-- Has mouseover, mouseout and click Events in the JavaScript File -->
+				<div id='options-display'>
+					<a href="./money.html" id="money-option">
+						<img src="../_imagens/acessorapido_dinheiro.jpg">
 					</a>
-					<a href="./food.html">
-						<img src="../_imagens/_guias/cardsEn/food.png">
+					<a href="./shmowders.html" id="shmowder-option">
+						<img src="../_imagens/acessorapido_podinzin.jpg">
 					</a>
-					<a href="./map.html">
-						<img src="../_imagens/_guias/cardsEn/map.png">
+					<a href="./map.html" id="map-option">
+						<img src="../_imagens/acessorapido_mapa.jpg">
 					</a>
-					<a href="./recipes.html">
-						<img src="../_imagens/_guias/cardsEn/recipes.png">
+					<a href="./food.html" id="food-option">
+						<img src="../_imagens/acessorapido_carne.jpg">
 					</a>
-					<a href="./combat.html">
-						<img src="../_imagens/_guias/cardsEn/combat.png">
+					<a href="./recipes.html" id="recipes-option">
+						<img src="../_imagens/acessorapido_pocoes.jpg">
 					</a>
-					<a href="./shmowders.html">
-						<img src="../_imagens/_guias/cardsEn/shmowders.png">
+					<a href="./combat.html" id="combat-option">
+						<img src="../_imagens/acessorapido_combate.jpg">
 					</a>
 				</div>
-			</div>
-		</div>
-		<div id="acessorapidotitulo">
-			<picture id="banner-acesso-rapido-mobile">
-				<source media="(max-width: 800px)" srcset="../_imagens/tutoriais_rapidos_mobile.jpg">
-				<img src="../_imagens/acesso_rapido.jpg" id="banneracessorapido">
-			</picture>
-			<h1>Quick Access</h1>
-		</div>
-		<div id="acessorapido">
-			<div id="acessorapidoinfo">
-				<div id="acessorapidodisplay">
-					<h2 id="displayinfo"><span class="modo-desktop">Hover over an option to learn more!</span><span class="modo-mobile">Click on one of the options<br> to learn more!</span></h2>
-				</div>
-			</div>
-			<div id="acessorapidoopcoes">
-				<a href="./money.html">
-					<img src="../_imagens/acessorapido_dinheiro.jpg" id="icone-dinheiro"  onmousemove="acessoRapidoHover('on', 'dinheiro')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-dinheiro', 'money.html', event)">
-				</a>
-				<a href="./shmowders.html">
-					<img src="../_imagens/acessorapido_podinzin.jpg" id="icone-podinzin"  onmousemove="acessoRapidoHover('on', 'podinzin')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-podinzin', 'shmowders.html', event)">
-				</a>
-				<a href="./map.html">
-					<img src="../_imagens/acessorapido_mapa.jpg" id="icone-mapa"  onmousemove="acessoRapidoHover('on', 'mapa')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-mapa', 'map.html', event)">
-				</a>
-				<a href="./food.html">
-					<img src="../_imagens/acessorapido_carne.jpg" id="icone-comida"  onmousemove="acessoRapidoHover('on', 'comida')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-comida', 'food.html', event)">
-				</a>
-				<a href="./recipes.html">
-					<img src="../_imagens/acessorapido_pocoes.jpg" id="icone-pocoes"  onmousemove="acessoRapidoHover('on', 'pocoes')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-pocoes', 'recipes.html', event)">
-				</a>
-				<a href="./combat.html">
-					<img src="../_imagens/acessorapido_combate.jpg" id="icone-combate" onmousemove="acessoRapidoHover('on', 'combate')" onmouseout="acessoRapidoHover('off')" onclick="acessoRapidoMobile('icone-combate', 'combat.html', event)">
-				</a>
-			</div>
-			<img src="../_imagens/botao_acesso_rapido.png" class="modo-mobile" id="acesso-rapido-flecha" onclick="botaoTipo2ComBrilho('acesso-rapido-flecha'); acessoRapidoMobile('link', null, event)">
-		</div>
+				<button class='hide-on-desktop' onclick='openSelectedOptionLinkMobile(this)'>
+					<svg xmlns='http://www.w3.org/2000/svg' viewBox='51.33 29.17 312.67 50.66'>
+						<path d='M319 60.03C229.78 59.93 140.56 59.83 51.33 59.72C51.33 56.24 51.33 52.76 51.33 49.28C140.56 49.17 229.78 49.07 319 48.97C319.33 48.81 319.67 48.66 320 48.5C315.78 42.06 311.56 35.61 307.33 29.17C326.22 37.61 345.11 46.06 364 54.5C345.11 62.94 326.22 71.39 307.33 79.83C311.56 73.39 315.78 66.94 320 60.5C319.67 60.34 319.33 60.19 319 60.03Z' fill='#ffffff' fill-rule='evenodd' stroke='#ffffff' stroke-width='0.25' stroke-linejoin='round'/>
+					</svg>
+				</button>
+			</article>
+		</section>			
 	</p2b-template>
 	<script src="../P2B-Template/P2B-Template.js"></script>
 	<script src="../_js/home.js"></script>
