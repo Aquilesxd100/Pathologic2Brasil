@@ -1,32 +1,10 @@
 // |-----------------------------| Utility Functions |-----------------------------|	
 
-function getIsMobileScreen() {
-   return window.innerWidth <= 800;
-}
-
 // Force the browser to apply the element's current styles.
 // This prevents bugs when working with 'transitions' and 'display: none'.
 function forceElementStylesUpdate(element) {
     element.offsetHeight;
 }
-
-function animateElementClick(element, animationClassName) {
-    element.classList.add(animationClassName);
-
-    const animationDurationPropertyValue = getComputedStyle(element).animationDuration;
-
-    var animationDurationMs = 
-        animationDurationPropertyValue.indexOf('ms') != -1
-        ? Number(animationDurationPropertyValue.replace('ms', ''))
-        : Number(animationDurationPropertyValue.replace('s', '')) * 1000;
-
-    setTimeout(
-        function () {
-            element.classList.remove(animationClassName);
-        }, 
-        animationDurationMs
-    );
-};
 
 // |------------------------------| Language Change |------------------------------|	
 
