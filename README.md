@@ -6,6 +6,9 @@ This is my informative website about Pathologic 2.
 PAREI AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 Parei refatorando a página PT-BR de mapa.html
 estava arrecem decidindo qual será a estrutura HTML semántica para depois arrumar o resto
+
+Trello filled with cards for the refactor effort
+https://trello.com/b/TsS7yYIh/p2b-2026-refactor
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------- TODO LIST -------------------
