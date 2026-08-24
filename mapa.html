@@ -8,6 +8,7 @@
 <head>
 	<title>Mapa Útil</title>
 	<link href='./favicon/favicon.ico' rel='icon' type='image/x-icon'></link>	
+	<link rel='stylesheet' type='text/css' href='_css/main.css'/>
 	<link rel="stylesheet" type="text/css" href="_css/mapa.css"/>
 	<script src="_js/globalVariables.js"></script>
 	<script src="_js/utils.js"></script>	
@@ -19,7 +20,197 @@
 	<img src="_imagens/botao_tela_cheia_fechar.png" id="mapa-botao-fechar" onclick="mapaZoom()">
 	<img src="_imagens/botao_tela_cheia_fechar.png" id="mapa-botao-fechar2" onclick="mapaZoom()">
 	<p2b-template>
-		<picture class="banner-principal">
+		<section>
+			<header>
+				<h1>Mapa Util</h1>
+			</header>
+			<article>
+				<div class='border-bottom'>
+					<p>
+						Bem-vindo ao nosso Mapa Útil!<br> Nele você descobrirá a localização do mercador noturno em cada uma das noites, onde encontrar depósitos de itens escondidos pelo mapa, locais cheios de ervas, pontos de encontro das crianças e muito mais!
+					</p>
+				</div>
+				<div>
+					<figure>
+						<img src="_imagens/mapa_completo.jpg" class="mapa-imagem" onclick="mapaZoom('abrir')">						
+						<p>- Toque no mapa para coloca-lo em tela cheia.</p>
+					</figure>
+
+					<button onclick="botaoTipo2Discreto('mercador'); secaoInfos('mercador-noturno', 'Mercador Noturno')">
+
+					</button>
+
+					<div class="mapa-infos">
+
+
+						<div id="mercador" class="info-item" onclick="botaoTipo2Discreto('mercador'); secaoInfos('mercador-noturno', 'Mercador Noturno')">
+							<div>
+								<img src="_imagens/_icones/noite_mercador.png">
+							</div>
+							<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
+							<p>Mercador<br> Noturno</p>
+						</div>
+						<div id="baus-secretos" class="info-item" onclick="botaoTipo2Discreto('baus-secretos'); secaoInfos('depositos-secretos', 'Depósitos Secretos')">
+							<div>
+								<img src="_imagens/_icones/stash_secreto.png">
+							</div>
+							<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
+							<p>Depósitos<br> Secretos</p>
+						</div>
+						<div id="baus-criancas" class="info-item" onclick="botaoTipo2Discreto('baus-criancas'); secaoInfos('baus-escondidos', 'Baús Escondidos')">
+							<div>
+								<img src="_imagens/_icones/marcador_bau_criancas.png">
+							</div>
+							<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
+							<p>Baús<br> Escondidos</p>
+						</div>
+						<div id="ervas" class="info-item" onclick="botaoTipo2Discreto('ervas'); secaoInfos('raizes-sangrentas', 'Raízes Sangrentas')">
+							<div>
+								<img src="_imagens/_icones/ervas.png">
+							</div>
+							<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
+							<p>Raízes<br> Sangrentas</p>
+						</div>
+						<div id="zonas-ervas" class="info-item" onclick="botaoTipo2Discreto('zonas-ervas'); secaoInfos('zonas-com-ervas', 'Zonas com Ervas')">
+							<div>
+								<img src="_imagens/_icones/ervas_zona.png">
+							</div>
+							<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
+							<p>Zonas<br> Com Ervas</p>
+						</div>
+						<div id="zonas-criancas" class="info-item" onclick="botaoTipo2Discreto('zonas-criancas'); secaoInfos('zonas-com-criancas', 'Zonas com Crianças')">
+							<div>
+								<img src="_imagens/_icones/criancas_zona.png">
+							</div>
+							<img src="_imagens/placa_marcacao.jpg" class="marcacao-placa">
+							<p class=zonas-criancas>Zonas<br> Com Crianças</p>
+						</div>
+					</div>					
+				</div>
+			</article>
+		</section>
+
+		<section>
+			<header>
+				<h2>Clique em uma das opções acima para mais informações sobre!</h2>
+			</header>
+
+			<article>
+				<picture>
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/ervas_sangrentas_mobile.jpg"> 
+					<img src="_imagens/_guias/ervas_sangrentas.jpg">
+				</picture>
+				<p class="introducao-video">Esses marcadores de folhinha indicam onde você pode encontrar "raízes sangrentas" para alimentar e obter ervas!</p>
+				<p class="introducao-video2">- Caso tenha duvidas sobre como alimenta-las veja a seção abaixo.</p>
+				<div class="raizes-sangrentas-video">
+					<div class="raizes-sangrentas-dicas">
+						<p><span class="sublinhado">1.</span> Ao se aproximar de um dos locais fique parado próximo aos sons estranhos que a terra faz.</p> 
+						<p><span class="sublinhado">2.</span> Espere as raízes se erguerem e então as alimente com sangue engarrafado (infectado ou normal).</p>
+						<p><span class="sublinhado">3.</span> Pouco tempo após alimentar as raízes 2 ou 3 ervas aleatórias irão aparecer próximas ao lugar.</p> 
+					</div>
+					<iframe class="video" src="https://www.youtube.com/embed/WauYgsea9d4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="dica-padrao">
+					<p><span>DICA #1:</span> Cada Raiz Sangrenta pode ser alimentada no máximo 1 vez por dia, ficando faminta novamente as 00:00 da noite seguinte.</p>
+				</div>
+				<div class="dica-padrao">
+					<p><span>DICA #2:</span> Recomendo alimentar as raízes somente com sangue infectado pois ele é mais fácil de se conseguir que o normal.</p>
+				</div>
+			</article>
+
+			<article>
+				<picture>
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/mercador_noturno_mobile.jpg">
+					<img src="_imagens/_guias/mercador_noturno.jpg">
+				</picture>
+				<p class="introducao-padrao">Esses marcadores de lua indicam onde o mercador da noite estará, já o número em cima de cada lua é referente ao dia (madrugada do dia) que ele aparecera nesse local.</p>
+				<div class="dica-padrao">
+					<p><span>DICA:</span> Lembrando que toda noite o mercador estará em um lugar diferente e só aparecera no mapa a partir das 00:00, permanecendo parado no mesmo local até desaparecer as 07:30.</p>
+				</div> 
+			</article>
+
+			<article>
+				<picture>
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/baus_criancas_mobile.jpg">
+					<img src="_imagens/_guias/baus_criancas.jpg">
+				</picture>
+				<p class="introducao-padrao">Esses ícones de X em vermelho mostram a localização dos baús dos alma e meia, que ao serem abertos revelam itens diversos em seu interior.</p>
+				<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Segundo as crianças do grupo sempre que você tirar um item desses baús você deve colocar outro de mesmo valor no lugar, na prática não parece existir nenhuma penalidade por só tirar itens, então, faça como preferir.</p>
+				<div class="dica-padrao">
+					<p><span>DICA #1:</span> Todos os dias esses baús são reabastecidos com novos itens as 07:30 da manhã.</p>
+				</div> 
+				<div class="dica-padrao">
+					<p><span>DICA #2:</span> Os baús geralmente estão meio escondidos no cenário então ao chegar no local, fique atento!</p>
+				</div>
+			</article>
+
+			<article>
+				<picture>
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/zonas_ervas_mobile.jpg">
+					<img src="_imagens/_guias/zonas_ervas.jpg">
+				</picture>
+				<p class="introducao-padrao">Essas áreas com uma coloração verde são zonas onde você pode encontrar diversas ervas pelo chão.</p>
+				<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Só aparecera ervas dentro dessas áreas a partir do dia 2, antes disso nenhuma costuma aparecer.</p>
+				<div class="dica-padrao">
+					<p><span>DICA:</span> Elas estarão espalhadas por todo o perímetro e irão reaparecer diariamente as 07:30 da manhã.</p>
+				</div> 
+			</article>
+
+			<article>
+				<picture>
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/zonas_criancas_mobile.jpg">
+					<img src="_imagens/_guias/zonas_criancas.jpg">
+				</picture>
+				<p class="introducao-padrao">Essas áreas em uma cor azul são locais onde um grande número de crianças podem ser encontradas, sendo elas muito úteis para fazer trocas.</p>
+				<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Nenhuma criança poderá ser encontrada nesses locais durante a madrugada (00:00 <span class="fonte-bugada">~</span> 07:30), se o distrito estiver infectado/destruído, ou se você estiver no dia 9 ou maior.</p>				
+			</article>
+
+			<article>
+				<picture>
+					<source media="(max-width: 800px)" srcset="_imagens/_guias/armazenamentos_secretos_mobile.jpg">
+					<img src="_imagens/_guias/armazenamentos_secretos.jpg">
+				</picture>
+				<p class="introducao-padrao">Esses ícones de baús indicam locais do mapa que existem armários/baús/etc que podem ser abertos e contêm itens aleatórios.</p>
+				<p class="atencao-padrao"><span class="amarelo">ATENÇÃO:</span> Só aparecera itens nesses armários a partir do dia 2, antes disso eles estarão todos vazios.</p>
+				<div class="dica-padrao">
+					<p><span>DICA:</span> Todas as noites as 00:00 esses armários são reabastecidos com itens novos, então lembre-se de os visitar diariamente caso tenha tempo.</p>
+				</div> 
+				<div class="ultima-secao">
+					<p class="info-secao-inferior">- Abaixo separei fotos de todos os armários com suas localizacoes.</p>
+				</div>
+				<div class="localizacoes-depositos">
+					<picture class="depositos-localizacoes">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/mapa/cache_1_mobile.jpg">
+						<img src="_imagens/_guias/mapa/cache_1.jpg">
+					</picture>
+					<picture class="depositos-localizacoes">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/mapa/cache_2_mobile.jpg">
+						<img src="_imagens/_guias/mapa/cache_2.jpg">
+					</picture>
+					<picture class="depositos-localizacoes">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/mapa/cache_3_mobile.jpg">
+						<img src="_imagens/_guias/mapa/cache_3.jpg">
+					</picture>
+					<picture class="depositos-localizacoes">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/mapa/cache_4_mobile.jpg">
+					<img src="_imagens/_guias/mapa/cache_4.jpg">
+					</picture>
+					<picture class="depositos-localizacoes">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/mapa/cache_5_mobile.jpg">
+					<img src="_imagens/_guias/mapa/cache_5.jpg">
+					</picture>
+					<picture class="depositos-localizacoes">
+						<source media="(max-width: 800px)" srcset="_imagens/_guias/mapa/cache_6_mobile.jpg">
+						<img src="_imagens/_guias/mapa/cache_6.jpg">
+					</picture>
+				</div>
+			</article>
+		</section>
+
+
+
+		<!-- CONTEUDO ORIGINAL -->
+		<!-- <picture class="banner-principal">
 			<source media="(max-width: 800px)" srcset="_imagens/bem_vindo_mobile.jpg">
 			<img src="_imagens/bem_vindo.jpg">
 		</picture>
@@ -184,7 +375,7 @@
 					</picture>
 				</div>
 			</div>
-		</div>
+		</div>		  -->
 	</p2b-template>	
 	<script src="./P2B-Template/P2B-Template.js"></script>	
 	<script src="_js/mapa.js"></script>
