@@ -3,19 +3,14 @@ Esse é o meu site informativo sobre o jogo Pathologic 2.
 This is my informative website about Pathologic 2.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-PAREI AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+I was refactoring by hand the main page, should check the responsiveness on all devices
+
 Parei refatorando a página PT-BR de mapa.html
 estava arrecem decidindo qual será a estrutura HTML semántica para depois arrumar o resto
 
 Trello filled with cards for the refactor effort
 https://trello.com/b/TsS7yYIh/p2b-2026-refactor
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------- TODO LIST -------------------
-#1 Finish the Template Component and replace and replace all occurrences across all pages
-#2 Refactor all style and JS code
-#3 Make the template work on the TV
-
 
 ------------------- Reminders -------------------
 Old browsers doesn't support some newer features, some of them even prevent the script from loading at all.
@@ -37,6 +32,7 @@ JS
 CSS
 - display: flex
 - filter
+- :has() pseudo
 
 
 
