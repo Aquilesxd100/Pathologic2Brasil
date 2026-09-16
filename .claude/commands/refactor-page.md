@@ -168,9 +168,32 @@ rather than dropping it quietly and meeting it again later as a bug.
   `content: counter(name) '.'; counter-increment: name` on `li::before`.
 - **`flex-direction: column-reverse`** → impossible without flex. Keep DOM order and flag
   the ordering change in your report; offer to swap the elements in the HTML.
-- **Show + fade a hidden block** → you cannot transition out of `display: none`. Use two
-  classes: one that sets `display: block`, one that sets `opacity: 1`, and let the JS add
-  the second on a short `setTimeout` after the first.
+- **Show + fade a hidden block** → you cannot transition out of `display: none`, because
+  both class changes land in the same style recalculation and the browser never sees a
+  starting state. Use two classes — one that sets `display: block`, one that sets
+  `opacity: 1` — and between them call `forceElementStylesUpdate(element)` from
+  `_js/utils.js`, which flushes the pending styles so the transition has something to run
+  from:
+
+  ```js
+  article.classList.add('selected-marker-summary');   // display: block
+
+  forceElementStylesUpdate(article);
+
+  article.classList.add('showing-marker-summary');    // opacity: 1 — transition runs
+  ```
+
+  Never reach for a `setTimeout` here, and do not fall back to a `@keyframes` animation
+  just because the transition "does not fire" — that is this bug, and this is its fix.
+  `P2B-Template/Script.js` uses the same helper the other way round, pairing it with
+  `.disable-transition` to change state *without* animating.
+
+### Transitions and animations
+
+Use a `transition` for anything that moves between two states — fades, reveals, slides,
+hovers, a panel opening. Reserve `@keyframes` / `animation` for **button click feedback**,
+which is a one-shot effect with no resting state to hold. If you find yourself writing
+keyframes for something that is not a click, it is almost certainly a transition.
 
 ### Click animations
 
@@ -222,6 +245,25 @@ Keep inline comments to a minimum — only where the code would otherwise read a
 - **Page state lives in DOM classes, not in JS variables.** Which item is open, selected or
   active is already recorded by the classes you toggle — read it back with
   `querySelector('… .the-class')` instead of mirroring it in a variable.
+- **Never act on an element without naming it first.** Every element reached through a
+  query — `getElementById`, `querySelector`, `querySelectorAll`, or an index into a
+  collection — gets its own `const` before you read or change anything on it. Never chain
+  off the query itself:
+
+  ```js
+  // Wrong
+  document.getElementById('map-fullscreen-wrapper-mobile')
+      .classList.remove('showing-fullscreen-map');
+
+  // Right
+  const mapFullscreenWrapper = document.getElementById('map-fullscreen-wrapper-mobile');
+
+  mapFullscreenWrapper.classList.remove('showing-fullscreen-map');
+  ```
+
+  The only exceptions are `document` and `document.documentElement`, which are already
+  named and may be used inline — `document.documentElement.classList.add('scroll-lock')`
+  is fine as it stands.
 - **Avoid globals.** Wrap page scope in `(function () { … })()`. Functions invoked from
   inline `onclick` handlers, and enums those handlers reference, genuinely cannot be
   scoped — leave those global, as `_js/home.js` does.
@@ -236,6 +278,8 @@ Keep inline comments to a minimum — only where the code would otherwise read a
 - `getCurrentPageLanguageCode()`
 - `getIsMobileScreen()` — `window.innerWidth <= 800`
 - `animateElementClick(element, animationClassName)`
+- `forceElementStylesUpdate(element)` — flushes pending styles so a transition can start
+  from an element that was `display: none`; see the show + fade technique above
 
 `globalVariables.js` provides `LanguageEnum`, `PageTypeEnum`, `registeredGuidesList`,
 `registeredPagesList`. Note these are top-level `const`s: they are **not** on `window`,
