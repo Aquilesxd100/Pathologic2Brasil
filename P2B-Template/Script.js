@@ -1,11 +1,3 @@
-// |-----------------------------| Utility Functions |-----------------------------|	
-
-// Force the browser to apply the element's current styles.
-// This prevents bugs when working with 'transitions' and 'display: none'.
-function forceElementStylesUpdate(element) {
-    element.offsetHeight;
-}
-
 // |------------------------------| Language Change |------------------------------|	
 
 function changePageLanguageTo(codeLanguageToSwitchTo) {
