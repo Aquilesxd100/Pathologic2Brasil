@@ -24,7 +24,7 @@
         height: 132rem;
         margin: 0 8rem 15rem 8rem;
         padding: 19rem 25rem 19rem 123rem;
-        background-image: url('../_imagens/placa_retangular.png');
+        background-image: url('../../../_imagens/placa_retangular.png');
         color: #FFFFB0;
         font-family: frizquadrata;
         font-size: 36rem;
@@ -49,7 +49,7 @@
         left: 95rem;
         width: 17rem;
         height: 95.4rem;
-        background-image: url('../_imagens/placa_marcacao.jpg');
+        background-image: url('img/placa-marcacao.jpg');
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }

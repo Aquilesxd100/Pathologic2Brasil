@@ -82,7 +82,7 @@
     const basePath = 
 		window.location.origin 
 		+ (isOnGitHub ? '/Pathologic2Brasil' : '')
-		+ '/P2B-Template';
+		+ '/assets/shared/P2B-Template';
 
 	const resourcesToLoad = {
 		htmlContent: null,

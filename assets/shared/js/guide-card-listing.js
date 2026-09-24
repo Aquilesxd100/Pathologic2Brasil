@@ -25,8 +25,8 @@
 
             const guideImgPath = 
                 isPageInPortuguese
-                ? '_imagens/_guias/cards/' + guideName + '.png'
-                : '../_imagens/_guias/cardsEn/' + guideName + '.png';
+                ? 'assets/shared/img/guide-cards/' + guideName + '.png'
+                : '../assets/shared/img/guide-cards/en/' + guideName + '.png';
 
             allGuidesContainer.innerHTML += 
                 "<a href='" + guideName + ".html' target='_self'>" +
@@ -86,8 +86,8 @@
 
             const guideImgPath = 
                 isPageInPortuguese
-                ? '_imagens/_guias/cards/' + guideName + '.png'
-                : '../_imagens/_guias/cardsEn/' + guideName + '.png';
+                ? 'assets/shared/img/guide-cards/' + guideName + '.png'
+                : '../assets/shared/img/guide-cards/en/' + guideName + '.png';
 
 
             searchResultContainer.innerHTML +=

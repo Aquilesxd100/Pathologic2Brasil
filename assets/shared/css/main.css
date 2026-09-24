@@ -28,7 +28,7 @@
 html {
 	font-size: 0.05vw;
     color: #FFFFFF;    
-	cursor: url('../cursors/cursor.cur'), auto;
+	cursor: url('../img/cursors/cursor.cur'), auto;
 	min-height: 100vh;
 }
 
@@ -40,7 +40,7 @@ div, button {
 button {
 	border: none;
 	background-color: transparent;
-	cursor: url('../cursors/cursor.cur'), auto;
+	cursor: url('../img/cursors/cursor.cur'), auto;
 }
 
 h1 {
@@ -73,7 +73,7 @@ picture {
 }
 
 a:hover {
-    cursor: url('../cursors/cursor_link.cur'), auto;
+    cursor: url('../img/cursors/cursor-link.cur'), auto;
 }
 
 .padded-container {
@@ -139,7 +139,7 @@ a:hover {
         text-align: center;
         border: 12rem solid #000000;       
         box-shadow: 4rem 4rem 3.5rem rgba(0, 0, 0, 0.7);
-        background-image: url(../_imagens/fundo_infinito.jpg);
+        background-image: url('../../../_imagens/fundo_infinito.jpg');
         background-repeat: repeat;
         margin-top: 30rem;
     }
@@ -166,40 +166,40 @@ a:hover {
         height: 100%;
         top: 0;
         left: 0;
-        background-image: url('../_imagens/section-header-frame-desktop.png');
+        background-image: url('../img/section-header-frame-desktop.png');
         background-size: 100% 100%;
     }    
 
     section:nth-of-type(1) header {
-        background-image: url('../_imagens/section-header-1-desktop.jpg');
+        background-image: url('../img/section-header-1-desktop.jpg');
     }
 
     section:nth-of-type(2) header {
-        background-image: url('../_imagens/section-header-2-desktop.jpg');
+        background-image: url('../img/section-header-2-desktop.jpg');
     }    
 
     section:nth-of-type(3) header {
-        background-image: url('../_imagens/section-header-3-desktop.jpg');
+        background-image: url('../img/section-header-3-desktop.jpg');
     }    
     
     section:nth-of-type(4) header {
-        background-image: url('../_imagens/section-header-4-desktop.jpg');
+        background-image: url('../img/section-header-4-desktop.jpg');
     }     
 
     section:nth-of-type(5) header {
-        background-image: url('../_imagens/section-header-5-desktop.jpg');
+        background-image: url('../img/section-header-5-desktop.jpg');
     }      
 
     section:nth-of-type(6) header {
-        background-image: url('../_imagens/section-header-6-desktop.jpg');
+        background-image: url('../img/section-header-6-desktop.jpg');
     }
     
     section:nth-of-type(7) header {
-        background-image: url('../_imagens/section-header-7-desktop.jpg');
+        background-image: url('../img/section-header-7-desktop.jpg');
     }    
 
     section:nth-of-type(8) header {
-        background-image: url('../_imagens/section-header-8-desktop.jpg');
+        background-image: url('../img/section-header-8-desktop.jpg');
     }     
 
     section header h1 {
@@ -302,39 +302,39 @@ a:hover {
     }
 
     section header::after {
-        background-image: url('../_imagens/section-header-frame-mobile.png');
+        background-image: url('../img/section-header-frame-mobile.png');
     }     
 
     section:nth-of-type(1) header {
-        background-image: url('../_imagens/section-header-1-mobile.jpg');
+        background-image: url('../img/section-header-1-mobile.jpg');
     }
 
     section:nth-of-type(2) header {
-        background-image: url('../_imagens/section-header-2-mobile.jpg');
+        background-image: url('../img/section-header-2-mobile.jpg');
     }    
 
     section:nth-of-type(3) header {
-        background-image: url('../_imagens/section-header-3-mobile.jpg');
+        background-image: url('../img/section-header-3-mobile.jpg');
     }     
 
     section:nth-of-type(4) header {
-        background-image: url('../_imagens/section-header-4-mobile.jpg');
+        background-image: url('../img/section-header-4-mobile.jpg');
     }      
     
     section:nth-of-type(5) header {
-        background-image: url('../_imagens/section-header-5-mobile.jpg');
+        background-image: url('../img/section-header-5-mobile.jpg');
     }       
 
     section:nth-of-type(6) header {
-        background-image: url('../_imagens/section-header-6-mobile.jpg');
+        background-image: url('../img/section-header-6-mobile.jpg');
     }   
     
     section:nth-of-type(7) header {
-        background-image: url('../_imagens/section-header-7-mobile.jpg');
+        background-image: url('../img/section-header-7-mobile.jpg');
     }   
     
     section:nth-of-type(8) header {
-        background-image: url('../_imagens/section-header-8-mobile.jpg');
+        background-image: url('../img/section-header-8-mobile.jpg');
     }     
         
     section header h1 {

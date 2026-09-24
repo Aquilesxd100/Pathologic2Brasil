@@ -59,6 +59,10 @@ page; this file holds the conventions that apply to all work in the repo.
    hundreds of phantom lines.
 8. **Mobile support goes down to 320px.** 320px is a supported target, not an edge case.
    Nothing may overflow or break there; check 320 as well as 360/375/414/800.
+9. **Always use relative paths in the HTML.** Every local `src`, `href` and `srcset` in a
+   PT-BR page (repo root) starts with `./` — `./assets/shared/css/main.css` — and every one
+   in an EN page (`en/`) starts with `../`. Never root-relative `/assets/...`: the site is
+   served under `/Pathologic2Brasil/` on GitHub Pages, where those paths 404.
 
 ---
 

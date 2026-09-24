@@ -7,11 +7,11 @@
 <meta name='description' content='Find out All the Secrets from the Steppe with this Useful Map!'>
 <head>
 	<title>Map</title>
-	<link href='../favicon/favicon.ico' rel='icon' type='image/x-icon'></link>
-	<link rel='stylesheet' type='text/css' href='../_css/main.css'/>
-	<link rel='stylesheet' type='text/css' href='../_css/mapa.css'/>
-	<script src='../_js/globalVariables.js'></script>
-	<script src='../_js/utils.js'></script>
+	<link href='../assets/shared/favicon.ico' rel='icon' type='image/x-icon'></link>
+	<link rel='stylesheet' type='text/css' href='../assets/shared/css/main.css'/>
+	<link rel='stylesheet' type='text/css' href='../assets/pages/map/map.css'/>
+	<script src='../assets/shared/js/globalVariables.js'></script>
+	<script src='../assets/shared/js/utils.js'></script>
 </head>
 <body id='body'>
 	<p2b-template>
@@ -27,38 +27,38 @@
 				</div>
 				<div id='map-wrapper' class='padded-container'>
 					<figure>
-						<img src='../_imagens/mapa_completo.png' class='mapa-imagem' onclick='openFullscreenMapModal()'>
+						<img src='../assets/pages/map/img/mapa-completo.png' class='mapa-imagem' onclick='openFullscreenMapModal()'>
 						<figcaption>- Click on the map to activate fullscreen mode.</figcaption>
 					</figure>
 
 					<div id='markers-summary-options-wrapper'>
 						<button onclick='showMarkerSummary(MapMarkerEnum.NightMerchant, this)'>
-							<img src='../_imagens/_icones/noite_mercador.png'>
+							<img src='../assets/pages/map/img/icons/noite-mercador.png'>
 							Dead Items<br> Store
 						</button>
 
 						<button onclick='showMarkerSummary(MapMarkerEnum.SecretStash, this)'>
-							<img src='../_imagens/_icones/stash_secreto.png'>
+							<img src='../assets/pages/map/img/icons/stash-secreto.png'>
 							Hidden<br> Caches
 						</button>
 
 						<button onclick='showMarkerSummary(MapMarkerEnum.ChildrenStash, this)'>
-							<img src='../_imagens/_icones/marcador_bau_criancas.png'>
+							<img src='../assets/pages/map/img/icons/marcador-bau-criancas.png'>
 							Children<br> Caches
 						</button>
 
 						<button onclick='showMarkerSummary(MapMarkerEnum.BloodyRoots, this)'>
-							<img src='../_imagens/_icones/ervas.png'>
+							<img src='../assets/pages/map/img/icons/ervas.png'>
 							Bloody<br> Roots
 						</button>
 
 						<button onclick='showMarkerSummary(MapMarkerEnum.HerbsZone, this)'>
-							<img src='../_imagens/_icones/ervas_zona.png'>
+							<img src='../assets/pages/map/img/icons/ervas-zona.png'>
 							Herb<br> Zones
 						</button>
 
 						<button onclick='showMarkerSummary(MapMarkerEnum.ChildrenZone, this)'>
-							<img src='../_imagens/_icones/criancas_zona.png'>
+							<img src='../assets/pages/map/img/icons/criancas-zona.png'>
 							Children<br> Zones
 						</button>
 					</div>
@@ -99,8 +99,8 @@
 			<article id='secret-stash-article'>
 				<div class='padded-container'>
 					<picture>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/armazenamentos_secretos_mobile.jpg'>
-						<img src='../_imagens/_guias/armazenamentos_secretos.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/armazenamentos-secretos-mobile.jpg'>
+						<img src='../assets/pages/map/img/armazenamentos-secretos.jpg'>
 					</picture>
 					<p>
 						The treasure icons indicate locations where hidden caches or storage units can be found, which can be opened to obtain random items.
@@ -121,28 +121,28 @@
 						<b>- Below, you can see pictures of the caches and their respective locations.</b>
 					</p>					
 					<picture class='depositos-localizacoes'>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/mapa/cache_1_mobile.jpg'>
-						<img src='../_imagens/_guias/mapa/cache_1.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/cache-1-mobile.jpg'>
+						<img src='../assets/pages/map/img/cache-1.jpg'>
 					</picture>
 					<picture class='depositos-localizacoes'>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/mapa/cache_2_mobile.jpg'>
-						<img src='../_imagens/_guias/mapa/cache_2.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/cache-2-mobile.jpg'>
+						<img src='../assets/pages/map/img/cache-2.jpg'>
 					</picture>
 					<picture class='depositos-localizacoes'>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/mapa/cache_3_mobile.jpg'>
-						<img src='../_imagens/_guias/mapa/cache_3.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/cache-3-mobile.jpg'>
+						<img src='../assets/pages/map/img/cache-3.jpg'>
 					</picture>
 					<picture class='depositos-localizacoes'>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/mapa/cache_4_mobile.jpg'>
-					<img src='../_imagens/_guias/mapa/cache_4.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/cache-4-mobile.jpg'>
+					<img src='../assets/pages/map/img/cache-4.jpg'>
 					</picture>
 					<picture class='depositos-localizacoes'>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/mapa/cache_5_mobile.jpg'>
-					<img src='../_imagens/_guias/mapa/cache_5.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/cache-5-mobile.jpg'>
+					<img src='../assets/pages/map/img/cache-5.jpg'>
 					</picture>
 					<picture class='depositos-localizacoes'>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/mapa/cache_6_mobile.jpg'>
-						<img src='../_imagens/_guias/mapa/cache_6.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/cache-6-mobile.jpg'>
+						<img src='../assets/pages/map/img/cache-6.jpg'>
 					</picture>
 				</div>
 			</article>
@@ -150,8 +150,8 @@
 			<article id='children-stash-article'>
 				<div class='padded-container'>
 					<picture>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/baus_criancas_mobile.jpg'>
-						<img src='../_imagens/_guias/baus_criancas.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/baus-criancas-mobile.jpg'>
+						<img src='../assets/pages/map/img/baus-criancas.jpg'>
 					</picture>
 					<p>The red X icons show the locations of the hidden children's chests, which contain various items.</p>
 				</div>
@@ -175,8 +175,8 @@
 			<article id='blood-roots-article'>
 				<div class='padded-container'>
 					<picture>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/ervas_sangrentas_mobile.jpg'>
-						<img src='../_imagens/_guias/ervas_sangrentas.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/ervas-sangrentas-mobile.jpg'>
+						<img src='../assets/pages/map/img/ervas-sangrentas.jpg'>
 					</picture>
 					<p class='margin-bottom'>Those leaf markers indicate where to find "Bloody Roots" to feed and obtain herbs!</p>
 					<p class='cyan-color'>
@@ -190,7 +190,7 @@
 						<li>Right after the feeding, two or three random herbs will spawn around the location.</li>
 					</ol>
 					<div class='video-wrapper'>
-						<video src='../videos/feeding-blood-roots.mp4' title='Feeding the bloody roots' preload='metadata' controls></video>
+						<video src='../assets/pages/map/videos/feeding-blood-roots.mp4' title='Feeding the bloody roots' preload='metadata' controls></video>
 					</div>
 				</div>
 				<div class='tip-div'>
@@ -208,8 +208,8 @@
 			<article id='herb-zones-article'>
 				<div class='padded-container'>
 					<picture>
-						<source media='(max-width: 800px)' srcset='../_imagens/_guias/zonas_ervas_mobile.jpg'>
-						<img src='../_imagens/_guias/zonas_ervas.jpg'>
+						<source media='(max-width: 800px)' srcset='../assets/pages/map/img/zonas-ervas-mobile.jpg'>
+						<img src='../assets/pages/map/img/zonas-ervas.jpg'>
 					</picture>
 					<p>
 						Those green zones indicate where you can find a decent amount of herbs on the ground.
@@ -229,8 +229,8 @@
 
 			<article id='children-zones-article' class='padded-container'>
 				<picture>
-					<source media='(max-width: 800px)' srcset='../_imagens/_guias/zonas_criancas_mobile.jpg'>
-					<img src='../_imagens/_guias/zonas_criancas.jpg'>
+					<source media='(max-width: 800px)' srcset='../assets/pages/map/img/zonas-criancas-mobile.jpg'>
+					<img src='../assets/pages/map/img/zonas-criancas.jpg'>
 				</picture>
 				<p class='margin-bottom'>
 					Those blue areas indicate where you can find a decent number of children, who can be quite useful for trading.
@@ -245,8 +245,8 @@
 
 		<div id='map-fullscreen-wrapper-mobile' class='hide-on-desktop'>
 			<picture>
-				<source media='(orientation: landscape)' srcset='../_imagens/mapa_completo_zoom_landscape.png'>
-				<img src='../_imagens/mapa_completo_zoom_portrait.png'>
+				<source media='(orientation: landscape)' srcset='../assets/pages/map/img/mapa-completo-zoom-landscape.png'>
+				<img src='../assets/pages/map/img/mapa-completo-zoom-portrait.png'>
 			</picture>
 			<button onclick='closeFullscreenMapModal()'>
 				<svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -260,7 +260,7 @@
 			</button>
 		</div>
 	</p2b-template>
-	<script src='../P2B-Template/P2B-Template.js'></script>
-	<script src='../_js/mapa.js'></script>
+	<script src='../assets/shared/P2B-Template/P2B-Template.js'></script>
+	<script src='../assets/pages/map/map.js'></script>
 </body>
 </html>
