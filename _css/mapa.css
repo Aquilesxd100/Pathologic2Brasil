@@ -1,579 +1,399 @@
-@charset "UTF-8";
-/* Conteudo da Pagina */
-/* Zoom Mapa (Mobile) */
-#mapa-zoom {
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.8);
-	z-index: +4;
-	height: 100vh;
-	width: 100%;
-	opacity: 0;
-	transition: opacity 0.4s;
-	pointer-events: none;
-}
-.travamento-scroll {
-	overflow: hidden;
-}
-#mapa-zoom img#mapa-mobile {
-	max-width: 100%;
-	height: 100%;
-}
-img#mapa-botao-fechar {
-	position: fixed;
-	z-index: +4;
-	height: 11vh;
-	width: 10vh;
-	-ms-transition: top 0.25s ease-out;
-	-moz-transition: top 0.25s ease-out;
-	-o-transition: top 0.25s ease-out;
-	-webkit-transition: top 0.25s ease-out;
-	transition: top 0.25s ease-out;
-	top: -11.5vh;
-	right: 45%;
-}
-img#mapa-botao-fechar2 {
-	display: none;
-}
-@media only screen and (orientation:landscape) {
-	img#mapa-botao-fechar2, #mapa-zoom img#mapa-mobile {
-		-webkit-transform: rotate(90deg) scaleX(0.765);
-		-o-transform: rotate(90deg) scaleX(0.765);
-		-moz-transform: rotate(90deg) scaleX(0.765);
-		-ms-transform: rotate(90deg) scaleX(0.765);
-		transform: rotate(90deg) scaleX(0.765);
-	}
-	#mapa-zoom img#mapa-mobile {
-		height: 100vw;
-		width: 130vh;
-		max-width: none;
-		max-height: none;	
-	}
-	img#mapa-botao-fechar2 {
-		position: fixed;
-		display: block;
-		z-index: +4;
-		height: 10vw;
-		width: 11vw;
-		top: 0;
-		right: -24vh;
-		margin-top: 35vh;
-		-ms-transition: right 0.25s ease-out;
-		-o-transition: right 0.25s ease-out;
-		-moz-transition: right 0.25s ease-out;
-		-webkit-transition: right 0.25s ease-out;
-		transition: right 0.25s ease-out;
-	}
-	img#mapa-botao-fechar {
-		display: none;
-	}
-}
-/* Introducao + Mapa */
-.banner-principal img {
-	width: 98%;
-	height: 100px;
-	margin: 1% 1% 0% 1%;
-	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
-}
-h1.introducao {
-	position: relative;
-	margin-top: -80px;
-	text-align: center;
-	font-family: batukapur;
-	font-weight: normal;
-	font-size: 48px;
-	color: #00D900;
-	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
-	letter-spacing: 1px;
-}
-div.principal {
-	background-image: url("../_imagens/fundo_infinito.jpg");
-	background-repeat: repeat;
-	margin: -15px 1% 0% 1%;
-	border: 8px solid #000000;
-	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-div.principal div.texto {
-	min-width: 100%;
-	border-bottom: solid #000000 7px;
-}
-div.principal div.texto p {
-	font-size: 28px;
-	text-align: center;
-	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
-	font-weight: bold;
-	margin: 1.5% 2% 1.5% 2%;
-}
-div.principal img.mapa-imagem {
-	border: solid #000000 6px;
-	width: 85vw;
-	max-width: 1085px;
-	margin: 2% 0 2% 0;
-	box-shadow: 3px 3px 2.5px rgba(0, 0, 0, 0.7);
-}
-div.principal h5.info-mobile {
-	display: none;
-}
-div.mapa-infos {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-div.mapa-infos div.info-item {
-	display: flex;
-	padding: 15px 5px 20px 5px;
-	background-image: url("../_imagens/placa_retangular.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	color: #FFFFB0;
-	font-size: 35px;
-	text-shadow: 2.4px 0 0 rgb(0, 0, 0), -2.4px 0 0 rgb(0, 0, 0), 0 2.4px 0 rgb(0, 0, 0), 0 -2.4px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
-	margin: 0 8px 15px 8px;
-	-ms-filter: brightness(85%);
-	-moz-filter: brightness(85%);
-	-o-filter: brightness(85%);
-	-webkit-filter: brightness(85%);
-	filter: brightness(85%);
-	height: 90px;
-}
-div.mapa-infos div.info-item:hover {
-	-o-filter: brightness(110%);
-	-webkit-filter: brightness(110%);
-	-moz-filter: brightness(110%);
-	-ms-filter: brightness(110%);
-	filter: brightness(110%);
-	-webkit-transform: scale(1.03);
-	-moz-transform: scale(1.03);
-	-ms-transform: scale(1.03);
-	-o-transform: scale(1.03);
-	transform: scale(1.03);
-}
-div.mapa-infos div.info-item img.marcacao-placa {
-	width: 16px;
-	height: 89px;
-	margin: 3px 11px 2.7px 0;
-	pointer-events: none;
-}
-div.info-item div {
-	display: flex;
-	align-items: center;
-}
-div.mapa-infos div img {
-	width: 70px;
-	height: 70px;
-	margin: 0px 11px 0px 11px;
-	pointer-events: none;
-	-o-user-select: none;
-	-ms-user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-div.mapa-infos div p {
-	margin: 2px 25px 2px 0px;
-	pointer-events: none;
-	-o-user-select: none;
-	-ms-user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none; 
-}
-div.mapa-infos div p.zonas-criancas {
-	margin: 2px 20px 2px 0px;
-}
-/* Fix Posicionamento Infos */
-@media screen and (max-width: 1187px) and (min-width: 1104px) {
-	div.mapa-infos div.info-item {
-		margin: 0 25px 15px 25px;
-	}
-}
-/* Introducao + Mapa (Mobile) */
+/* ========================================================================================================
+   | 📑 Page Content [DESKTOP] | ==========================================================================
+   ========================================================================================================  */
+
+/* |-----------------------------| 🗺️ Useful Map 🗺️ |---------------------------------|💻|  */
+    div#map-wrapper figure img {
+        width: 1130rem;
+        max-width: 100%;
+    }
+
+    #map-wrapper figcaption {
+        display: none;
+    }
+
+    div#markers-summary-options-wrapper {
+        max-width: 1220rem;
+        margin: 0 auto;
+        padding: 20rem 0 5rem 0;
+    }
+
+    #markers-summary-options-wrapper button {
+        position: relative;
+        width: 385rem;
+        height: 132rem;
+        margin: 0 8rem 15rem 8rem;
+        padding: 19rem 25rem 19rem 123rem;
+        background-image: url('../_imagens/placa_retangular.png');
+        color: #FFFFB0;
+        font-family: frizquadrata;
+        font-size: 36rem;
+        line-height: 47rem;
+        text-align: left;
+        text-shadow: 2.4rem 0 0 rgb(0, 0, 0), -2.4rem 0 0 rgb(0, 0, 0), 0 2.4rem 0 rgb(0, 0, 0), 0 -2.4rem 0 rgb(0, 0, 0), 1.2rem 1.2rem rgb(0, 0, 0), -1.2rem -1.2rem 0 rgb(0, 0, 0), 1.2rem -1.2rem 0 rgb(0, 0, 0), -1.2rem 1.2rem 0 rgb(0, 0, 0);
+        filter: brightness(85%) drop-shadow(6rem 6rem 2.5rem rgba(0, 0, 0, 0.7));
+        -webkit-filter: brightness(85%) drop-shadow(6rem 6rem 2.5rem rgba(0, 0, 0, 0.7));
+    }
+
+    #markers-summary-options-wrapper button:hover {
+        filter: brightness(110%);
+        -webkit-filter: brightness(110%);
+        transform: scale(1.03);
+        -webkit-transform: scale(1.03);
+    }
+
+    #markers-summary-options-wrapper button::before {
+        content: '';
+        position: absolute;
+        top: 17.8rem;
+        left: 95rem;
+        width: 17rem;
+        height: 95.4rem;
+        background-image: url('../_imagens/placa_marcacao.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    #markers-summary-options-wrapper button img {
+        position: absolute;
+        top: 29rem;
+        left: 11rem;
+        width: 73rem;
+        height: 73rem;
+    }
+
+    .marker-option-click-animation {
+        animation: marker-option-click-animation 0.20s none;
+    }
+
+    @keyframes marker-option-click-animation {
+        0% { transform:scale(1); }
+        50% { transform:scale(0.95); }
+        100% { transform:scale(1); }
+    }
+
+/* |--------------------------| 📌 Selected Marker 📌 |-------------------------------|💻|  */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    section#selected-marker-summary-section header {
+        padding-right: 80rem;
+        padding-left: 80rem;
+        padding-top: 15rem;
+    }
+
+    section#selected-marker-summary-section header h2 {
+        display: inline;
+        font-family: frizquadrata;
+        font-weight: bold;
+        font-size: calc(8px + 28rem);
+        color: #00D900;
+        text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
+    }
+
+    #selected-marker-summary-section header svg {
+        display: inline-block;
+        width: 34rem;
+        height: 52rem;
+        margin-right: 5rem;
+        vertical-align: -12rem;
+    }
+
+    #selected-marker-summary-section header.marker-selected svg {
+        display: none;
+    }    
+
+    #selected-marker-summary-section header.marker-selected h2 {
+        font-size: 42rem;
+        letter-spacing: 1rem;
+    }
+
+    section#selected-marker-summary-section article {
+        display: none;
+        opacity: 0;
+        transition: opacity 1s ease-out;
+    }
+
+    #selected-marker-summary-section article.selected-marker-summary {
+        display: block;
+        opacity: 1;        
+    }
+
+    #selected-marker-summary-section article picture img {
+        width: 1130rem;
+        max-width: 100%;
+    }
+
+    #selected-marker-summary-section .font-bug-fix {
+        color: #FFFFFF;
+        font-family: Arial;
+    }
+
+    .cyan-color {
+        color: #BFEDEF;
+    }
+
+/* |----------------------------| 🌱 Bloody Roots 🌱 |--------------------------------|💻|  */
+
+    div#feeding-roots-wrapper {
+        white-space: nowrap;
+    }
+
+    #feeding-roots-wrapper ol {
+        display: inline-block;
+        width: 36%;
+        vertical-align: middle;
+        counter-reset: feeding-step;
+        list-style: none;
+        white-space: normal;
+    }
+
+    #feeding-roots-wrapper li {
+        margin: 5% 7%;
+        text-align: left;
+    }
+
+    #feeding-roots-wrapper li::before {
+        content: counter(feeding-step) '.';
+        counter-increment: feeding-step;
+        margin-right: 12rem;
+        font-weight: bold;
+        border-bottom: 2rem solid #FFFFFF;
+    }
+
+    #feeding-roots-wrapper div.video-wrapper {
+        display: inline-block;
+        width: 55%;
+        vertical-align: middle;
+    }
+
+/* |--------------------------| 🗝️ Secret Stashes 🗝️ |--------------------------------|💻|  */
+    div#secret-stashes-locations-wrapper picture {
+        display: inline;  
+    }
+
+    div#secret-stashes-locations-wrapper picture img {      
+        width: 40%;
+        margin: 10rem;
+    }
+
+/* ========================================================================================================
+   | 📑 Page Content [MOBILE] | ===========================================================================
+   ========================================================================================================  */
+
+/* |-----------------------------| 🗺️ Useful Map 🗺️ |---------------------------------|📱|  */
+
 @media screen and (max-width: 800px) {
-	.banner-principal img {
-		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
-	}
-	div.principal {
-		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
-	}
-	div.principal div.texto p {
-		font-size: 20px;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-	}
-	div.principal img.mapa-imagem {
-		width: 85vw;
-		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-		margin: 2% 0 1% 0;
-	}
-	div.principal h5.info-mobile {
-		display: block;
-		font-size: 16px;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-		color: #BFEDEF;
-		text-align: center;
-		margin: 0 7px 10px 7px;
-	}
-	div.mapa-infos div.info-item {
-		padding: 2.7vw 0 3.5vw 0;
-		font-size: 4.5vw;
-		text-shadow: 0.3vw 0 0 rgb(0, 0, 0), -0.3vw 0 0 rgb(0, 0, 0), 0 0.3vw 0 rgb(0, 0, 0), 0 -0.3vw 0 rgb(0, 0, 0), 0.15vw 0.15vw rgb(0, 0, 0), -0.15vw -0.15vw 0 rgb(0, 0, 0), 0.15vw -0.15vw 0 rgb(0, 0, 0), -0.15vw 0.15vw 0 rgb(0, 0, 0);
-		margin: 0 1vw 1vw 1vw;
-		height: 11vw;
-		width: 43vw;
-	}
-	div.mapa-infos div.info-item img.marcacao-placa {
-		width: 1.8vw;
-		height: 12.4vw;
-		margin: -0.41vw 2vw 0vw 0;
-	}
-	div.info-item div {
-		flex-direction: column;
-		justify-content: center;
-	}
-	div.mapa-infos div img {
-		width: 8vw;
-		height: 8vw;
-		margin: 0px 0.4vw 0 1vw;
-	}
-	div.mapa-infos div p {
-		margin: 0;
-	}
-	div.mapa-infos div p.zonas-criancas {
-		margin: 0.6vw 0 0 0;
-		font-size: 4.1vw;
-	}
+    div#map-wrapper figure img {
+        width: 1700rem;
+    }
+
+    #map-wrapper figcaption {
+        display: block;
+    }
+
+    div#markers-summary-options-wrapper {
+        max-width: none;
+        padding: 0 0 5px 0;
+    }
+
+    #markers-summary-options-wrapper button {
+        width: 47.6%;
+        height: 324rem;
+        margin: 0 1% 40rem 1%;
+        padding: 47rem 0 47rem 250rem;
+        font-size: calc(3px + 82rem);
+        line-height: 115rem;
+        text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.95px 0.95px rgb(0, 0, 0), -0.95px -0.95px 0 rgb(0, 0, 0), 0.95px -0.95px 0 rgb(0, 0, 0), -0.95px 0.95px 0 rgb(0, 0, 0);
+        filter: brightness(85%) drop-shadow(3.5px 3.5px 2px rgba(0, 0, 0, 0.7));
+        -webkit-filter: brightness(85%) drop-shadow(3.5px 3.5px 2px rgba(0, 0, 0, 0.7));
+    }
+
+    /* Targets the 'Zonas Com Crianças' option, the only label too long for the shared font size */
+    html[lang='pt-br'] #markers-summary-options-wrapper #children-zone-button {
+        font-size: calc(2.5px + 69rem);
+    }
+
+    #markers-summary-options-wrapper button::before {
+        top: 43.7rem;
+        left: 196rem;
+        width: 36rem;
+        height: 234rem;
+    }
+
+    #markers-summary-options-wrapper button img {
+        top: 82rem;
+        left: 26rem;
+        width: 160rem;
+        height: 160rem;
+    }
 }
-/* Informações Marcador - Base */
-#marcador-titulo-div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 98%;
-	margin: -8px 1% 0% 1%;
-	padding: 20px 0 35px 0;
-	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
-	background-image: url("../_imagens/bem_vindo.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
-h1#marcador-titulo {
-	position: relative;
-	margin: 0 4vw 0 4vw;
-	text-align: center;
-	font-family: frizquadrata;
-	font-weight: bold;
-	font-size: 35px;
-	color: #00D900;
-	text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
-}
-h1#marcador-titulo img {
-	position: relative;
-	top: 12px;
-	width: 33px;
-	height: 50px;
-	margin: 0 5px 0 0;
-	padding: 0;
-}
-div.info-marcador {
-	margin: -5px 1% 0 1%;
-	border: solid #000000 8px;
-	box-shadow: 3.5px 3.5px 3px rgba(0, 0, 0, 0.7);
-	background-image: url("../_imagens/fundo_infinito.jpg");
-	background-repeat: repeat;
-	text-shadow: 2.5px 0 0 rgb(0, 0, 0), -2.5px 0 0 rgb(0, 0, 0), 0 2.5px 0 rgb(0, 0, 0), 0 -2.5px 0 rgb(0, 0, 0), 1.2px 1.2px rgb(0, 0, 0), -1.2px -1.2px 0 rgb(0, 0, 0), 1.2px -1.2px 0 rgb(0, 0, 0), -1.2px 1.2px 0 rgb(0, 0, 0);
-	max-height: 0px;
-	-moz-transition: max-height 5s ease-out;
-	-ms-transition: max-height 5s ease-out;
-	-o-transition: max-height 5s ease-out;
-	-webkit-transition: max-height 5s ease-out;
-	transition: max-height 5s ease-out;
-}
-div.info-marcador span {
-	font-weight: bold;
-	color: #96E2E5;
-	border-bottom: solid #96E2E5 2px;
-}
-p span.sublinhado {
-	font-weight: bold;
-	color: #FFFFFF;
-	border-bottom: solid #FFFFFF 2px;
-}
-p span.fonte-bugada {
-	font-weight: normal;
-	color: #FFFFFF;
-	border-bottom: none;
-	font-family: Arial;
-}
-p span.amarelo {
-	font-weight: normal;
-	color: #FFFF00;
-	border-bottom: none;
-}
-div.info-marcador picture img {
-	border: solid #000000 6px;
-	width: 70vw;
-	max-width: 1085px;
-	margin: 2% 0 1.2% 0;
-	box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.7);
-}
-p.introducao-padrao {
-	font-size: 30px;
-	text-align: center;
-	text-indent: 30px;
-	margin: 0 2% 2% 2%;
-}
-p.atencao-padrao {
-	margin: 10px 20px 19px 20px;
-	max-width: 1200px;
-	min-width: 200px;
-	text-align: justify;
-	font-size: 24px;
-	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
-}
-div.dica-padrao {
-	width: 100%;
-	border-top: 7px solid #000000;
-}
-div.dica-padrao p {
-	margin: 1% 2% 1% 2%;
-	color: #BFEDEF;
-	max-width: 1300px;
-	min-width: 200px;
-	font-weight: normal;
-	text-align: justify;
-	font-size: 24px;
-	text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
-}
-div.info-marcador p.info-secao-inferior {
-	font-size: 28px;
-	font-weight: bold;
-	margin: 1% 5% 1% 5%;
-	letter-spacing: 0.05vw;
-	color: #BFEDEF;
-	text-align: center;
-}
-/* Informações Marcador - Base (Mobile) */
+
+/* |--------------------------| 📌 Selected Marker 📌 |-------------------------------|📱|  */
+
 @media screen and (max-width: 800px) {
-	div.info-marcador {
-		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
-	}
-	#marcador-titulo-div {
-		background-image: url("../_imagens/bem_vindo_mobile.jpg");
-		padding: 6px 0 23px 0;
-		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
-	}
-	h1#marcador-titulo img {
-		width: 25.6px;
-		height: 38.25px;
-	}
-	h1#marcador-titulo {
-		margin: 0 6vw 0 6vw;
-		font-size: 25px;
-		text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.15px 1.15px rgb(0, 0, 0), -1.15px -1.15px 0 rgb(0, 0, 0), 1.15px -1.15px 0 rgb(0, 0, 0), -1.15px 1.15px 0 rgb(0, 0, 0);
-	}
-	div.info-marcador picture img {
-		width: 85vw;
-	}
-	p.introducao-padrao {
-		font-size: 23px;
-		text-indent: 30px;
-		margin: 0 2% 3% 2%;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-	}
-	p.atencao-padrao {
-		font-size: 18px;
-		margin: 5px 20px 11px 20px;
-		text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
-	}
-	div.dica-padrao p {
-		margin: 1% 5% 1% 5%;
-		text-align: justify;
-		font-size: 18px;
-		text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
-	}
-	div.info-marcador p.info-secao-inferior {
-		font-size: 23px;
-		margin: 2% 5% 2% 5%;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-	}
+    section#selected-marker-summary-section header {
+        padding: calc(15px + 20rem) calc(5px + 120rem);
+    }
+
+    section#selected-marker-summary-section header h2 {
+        font-size: calc(14px + 45rem);
+        text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.15px 1.15px rgb(0, 0, 0), -1.15px -1.15px 0 rgb(0, 0, 0), 1.15px -1.15px 0 rgb(0, 0, 0), -1.15px 1.15px 0 rgb(0, 0, 0);
+    }
+
+    #selected-marker-summary-section header svg {
+        width: 26px;
+        height: 39px;
+        vertical-align: -9px;
+    }
+
+    #selected-marker-summary-section header.marker-selected h2 {
+        font-size: calc(19px + 49rem);
+    }
+
+    #selected-marker-summary-section article picture img {
+        width: 1700rem;
+    }
 }
-/* Informações Raizes Sangrentas*/
-div.info-marcador div.raizes-sangrentas {
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	-moz-transition: opacity 1s ease-out;
-	-ms-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	-webkit-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
-}
-div.info-marcador div.raizes-sangrentas p.introducao-video {
-	font-size: 30px;
-	text-align: center;
-	text-indent: 30px;
-	margin: 0 2% 3% 2%;
-}
-div.info-marcador div.raizes-sangrentas p.introducao-video2 {
-	font-size: 28px;
-	font-weight: bold;
-	margin: 0% 5% 1% 5%;
-	letter-spacing: 0.05vw;
-	color: #BFEDEF;
-	text-align: center;
-}
-div.raizes-sangrentas div.raizes-sangrentas-video {
-	width: 100%;
-	border-top: solid #000000 7px;
-	display: flex;
-	align-items: center;
-}
-.video {
-	border: 6px solid #000000;
-	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-	min-width: 52vw; 
-	min-height: 29vw;
-	margin: 2% 2% 2% 2%;
-}
-div.raizes-sangrentas-dicas p {
-	margin: 5% 7% 5% 7%;
-	text-align: left;
-	font-size: 2vw;
-	text-shadow: 0.2vw 0 0 rgb(0, 0, 0), -0.2vw 0 0 rgb(0, 0, 0), 0 0.13vw 0 rgb(0, 0, 0), 0 -0.13vw 0 rgb(0, 0, 0), 0.12vw 0.1vw rgb(0, 0, 0), -0.12vw -0.1vw 0 rgb(0, 0, 0), 0.12vw -0.1vw 0 rgb(0, 0, 0), -0.12vw 0.1vw 0 rgb(0, 0, 0);
-}
-/* Informações Raizes Sangrentas (Mobile) */
+
+/* |----------------------------| 🌱 Bloody Roots 🌱 |--------------------------------|📱|  */
+
 @media screen and (max-width: 800px) {
-	div.info-marcador div.raizes-sangrentas p.introducao-video {
-		font-size: 23px;
-		text-indent: 30px;
-		margin: 0 2% 3% 2%;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-	}
-	div.info-marcador div.raizes-sangrentas p.introducao-video2 {
-		font-size: 23px;
-		margin: 0% 5% 2% 5%;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-	}
-	div.raizes-sangrentas div.raizes-sangrentas-video {
-		flex-direction: column-reverse;
-	}
-	.video {
-		min-width: 0px; 
-		width: 85vw;
-		height: 47.5vw;
-		min-height: 0px;
-		margin: 2% 0 2% 0;
-		box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-	}
-	div.raizes-sangrentas-dicas p {
-		margin: 2% 7% 3% 7%;
-		text-align: justify;
-		font-size: 18px;
-		text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
-	}
+    div#feeding-roots-wrapper {
+        white-space: normal;
+    }
+
+    #feeding-roots-wrapper ol {
+        display: block;
+        width: 100%;
+    }
+
+    #feeding-roots-wrapper li {
+        margin: 2% 7% 3% 7%;
+        text-align: justify;
+    }
+
+    #feeding-roots-wrapper li::before {
+        margin-right: 10px;
+        border-bottom-width: 1px;
+    }
+
+    /* minus the wrapper margins */
+    #feeding-roots-wrapper div.video-wrapper {
+        width: calc(100% - 30px); 
+    }
 }
-/* Informações Mercador Noturno */
-div.info-marcador div.mercador-noturno {
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	-moz-transition: opacity 1s ease-out;
-	-ms-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	-webkit-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
-}
-/* Informações Baús Crianças */
-div.info-marcador div.baus-escondidos {
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	-webkit-transition: opacity 1s ease-out;
-	-moz-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	-ms-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
-}
-/* Informações Zonas com Ervas */
-div.info-marcador div.zonas-com-ervas {
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	-webkit-transition: opacity 1s ease-out;
-	-moz-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	-ms-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
-}
-div.info-marcador div.zonas-com-ervas p.atencao-padrao {
-	font-size: 26px;
-}
-/* Informações Zonas com Ervas (Mobile) */
+
+/* |--------------------------| 🗝️ Secret Stashes 🗝️ |--------------------------------|📱|  */
+
 @media screen and (max-width: 800px) {
-	div.info-marcador div.zonas-com-ervas p.atencao-padrao {
-		font-size: 20px;
-	}
+    div#secret-stashes-locations-wrapper picture {
+        display: block;  
+    }
+
+    div#secret-stashes-locations-wrapper picture img {
+        width: 1600rem;
+        max-width: 500px;
+        margin: 2% 0;
+    }
 }
-/* Informações Zonas com Crianças */
-div.info-marcador div.zonas-com-criancas {
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	-webkit-transition: opacity 1s ease-out;
-	-moz-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	-ms-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
-}
-/* Informações Depósitos Secretos */
-div.info-marcador div.depositos-secretos {
-	display: none;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	-webkit-transition: opacity 1s ease-out;
-	-moz-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	-ms-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
-}
-div.info-marcador div.depositos-secretos div.dica-padrao {
-	border-bottom: 7px solid #000000;
-}
-div.info-marcador div.depositos-secretos div.ultima-secao {
-	width: 100%;
-	border-bottom: 7px solid #000000;
-}
-div.info-marcador div.depositos-secretos div.localizacoes-depositos {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-div.info-marcador div.depositos-secretos picture.depositos-localizacoes img {
-	border: solid 6px #000000;
-	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-	width: 40vw;
-	margin: 10px;
-}
-/* Informações Depósitos Secretos (Mobile) */
+
+/* |---------------------------| 🔍 Fullscreen Map 🔍 |-------------------------------|📱|  */
+
 @media screen and (max-width: 800px) {
-	div.info-marcador div.depositos-secretos div.localizacoes-depositos {
-		flex-direction: column;
-	}
-	div.info-marcador div.depositos-secretos picture.depositos-localizacoes img {
-		width: 80vw;
-		max-width: 500px;
-		margin: 2% 0 2% 0;
-	}
+    .scroll-lock {
+        overflow: hidden;
+    }
+
+    div#map-fullscreen-wrapper-mobile {
+        position: fixed;
+        display: table;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        width: 100%;
+        height: 100dvh;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s;
+        background-color: #000000;
+    }
+
+    #map-fullscreen-wrapper-mobile.showing-fullscreen-map {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #map-fullscreen-wrapper-mobile picture {
+        display: table-cell;    
+        vertical-align: middle;   
+        text-align: center;       
+    }
+
+    #map-fullscreen-wrapper-mobile button {
+        position: fixed;
+        padding: 0;
+        width: calc(64px + 40rem);
+        height: calc(70px + 44rem);        
+        border: solid 4px #FF0000;   
+        box-shadow: 0 0 15rem rgba(0, 0, 0, 0.8), 0 0 30rem rgba(0, 0, 0, 0.8), 0 0 60rem rgba(0, 0, 0, 0.8);
+        background-color: #000000;
+    }    
+
+    #map-fullscreen-wrapper-mobile img {
+        max-height: 100dvh;
+        max-width: 100%;     
+    }
+
+    #map-fullscreen-wrapper-mobile button svg {
+        width: 100%;
+        height: 100%;
+        stroke: #FF0000;
+    }
+}
+
+@media screen and (max-width: 800px) and (orientation: portrait) {
+    #map-fullscreen-wrapper-mobile button {
+        top: calc(-70px + -44rem);
+        right: calc(50% - (32px - 20rem));
+        border-radius: 0 0 30px 30px;
+        transition: top 0.25s ease-out;
+    }
+
+    #map-fullscreen-wrapper-mobile.showing-fullscreen-map button {
+        top: -4px;
+    }
+}
+
+/* |--------------------| 🔍 Fullscreen Map - Landscape 🔍 |--------------------------|📱|  */
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+    #map-fullscreen-wrapper-mobile button {
+        width: calc(52px + 40rem);
+        height: calc(58px + 44rem);          
+        top: calc(50dvh - (29px + 22rem));
+        right: calc(-64px + -40rem);
+        border-radius: 32px 0 0 32px;     
+        transition: right 0.25s ease-out;
+    }   
+
+    #map-fullscreen-wrapper-mobile.showing-fullscreen-map button {
+        right: -4px;
+    }
+
+    /* Landscape Browser Bug Fix */
+
+    #map-fullscreen-wrapper-mobile.landscape-height-bug-fix {
+        max-height: var(--landscape-map-bug-fix-height);
+    }
+
+    #map-fullscreen-wrapper-mobile.landscape-height-bug-fix img {
+        max-height: var(--landscape-map-bug-fix-height);    
+    }    
+
+    #map-fullscreen-wrapper-mobile.landscape-height-bug-fix button {
+        top: calc(var(--landscape-map-bug-fix-height) * 0.5 - (29px + 22rem));
+    }
 }
