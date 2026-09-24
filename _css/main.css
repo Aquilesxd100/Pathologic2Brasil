@@ -47,8 +47,12 @@ h1 {
     font-family: batukapur;
 }
 
-p {
+p, li {
     font-family: frizquadrata;
+}
+
+picture {
+    display: block;
 }
 
 @media screen and (max-width: 800px) {
@@ -72,8 +76,20 @@ a:hover {
     cursor: url('../cursors/cursor_link.cur'), auto;
 }
 
+.padded-container {
+    padding: 20rem;
+}
+
 .underlined {
     border-bottom: 4rem solid #FFFFFF;
+}
+
+.margin-bottom {
+    margin-bottom: 20rem;
+}
+
+.border-top {
+    border-top: 12rem solid #000000; 
 }
 
 .border-bottom {
@@ -81,10 +97,22 @@ a:hover {
 }
 
 @media screen and (max-width: 800px) {
+    .padded-container {
+        padding: calc(8px + 5rem);
+    }
+
 	.underlined {
 		border-bottom: inherit;
         text-decoration: underline;
 	}
+
+    .margin-bottom {
+        margin-bottom: calc(8px + 5rem);
+    }    
+
+    .border-top {
+        border-top: 8px solid #000000; 
+    }    
 
     .border-bottom {
         border-bottom: 8px solid #000000; 
@@ -114,6 +142,11 @@ a:hover {
         background-image: url(../_imagens/fundo_infinito.jpg);
         background-repeat: repeat;
         margin-top: 30rem;
+    }
+
+    section p, section ol li {
+        font-size: calc(8px + 24rem);
+        text-shadow: 3.5rem 0 0 rgb(0, 0, 0), -3.5rem 0 0 rgb(0, 0, 0), 0 3.5rem 0 rgb(0, 0, 0), 0 -3.5rem 0 rgb(0, 0, 0), 1.8rem 1.8rem rgb(0, 0, 0), -1.8rem -1.8rem 0 rgb(0, 0, 0), 1.8rem -1.8rem 0 rgb(0, 0, 0), -1.8rem 1.8rem 0 rgb(0, 0, 0);
     }
 
     section:first-of-type {
@@ -180,8 +213,75 @@ a:hover {
 
     article {
         position: relative;
-        padding: 20rem;
+    }  
+
+    article figure:not(:last-child), article picture:not(:last-child) {
+        margin-bottom: 20rem;
     }
+
+    article figure img, article picture img, .video-wrapper {
+        border: 10rem solid #000000; 
+        box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);        
+    }
+
+    article figure caption {
+        /* Pending Adjustments for the Food Page and maybe more */
+    }
+
+    div.tip-div {
+        padding: 18rem 42rem;  
+        border-top: 12rem solid #000000;
+        border-bottom: 12rem solid #000000;
+    }  
+
+    /* Prevent double borders when there are multiple tip-div elements next to each other */
+    div.tip-div + div.tip-div {
+        border-top: none;
+    }        
+
+    /* Prevent double borders with the container when it's the last element */
+    article > div.tip-div:last-child {
+        border-bottom: none;
+    }   
+    
+    .tip-div p {
+        color: #BFEDEF;
+        font-size: calc(8px + 22rem);
+        text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
+        text-align: left;
+    }    
+
+    .tip-div p b {
+        color: #96E2E5;
+        border-bottom: 2rem solid #96E2E5;
+    } 
+    
+    div.beware-div {
+        padding: 10rem 0;
+    }
+    
+    div.beware-div p {
+        max-width: 70%;
+        margin: 6rem auto;
+        font-size: calc(8px + 22rem);
+        text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
+        text-align: justify;
+    }
+
+    .beware-div p span {
+        color: #FFFF00;
+    }    
+
+    div.video-wrapper {
+        width: 100%;
+        margin: 20rem;
+        background-color: #000000;
+    }    
+
+    div.video-wrapper video {
+        width: 100%;
+    }    
+
 /* ========================================================================================================
    | 📚 Page Content [Mobile] | =========================================================================== 
    ========================================================================================================  */
@@ -191,6 +291,11 @@ a:hover {
         border: 8px solid #000000;        
         box-shadow: 8rem 8rem 6rem rgba(0, 0, 0, 0.6);
     }
+
+    section p, section ol li {
+        font-size: calc(14px + 36rem);
+        text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
+    }    
 
     section header {
         padding: calc(10px + 20rem) 30px;
@@ -236,9 +341,49 @@ a:hover {
         font-size: calc(23px + 46rem);
         text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
         letter-spacing: 1px;
+    }      
+
+    article figure {
+        margin-bottom: calc(12px + 20rem);
+    }    
+
+    article figure figcaption {
+        margin: 5px 7px 10px 7px;
+        color: #BFEDEF;
+        font-family: frizquadrata;
+        font-size: calc(11px + 29rem);
+        text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);        
+    }    
+    
+    article figure img, article picture img, .video-wrapper {
+        border: 6px solid #000000; 
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);        
+    }    
+
+    div.tip-div {
+        padding: calc(10px + 8rem) calc(6px + 70rem);        
+        border-top-width: 8px;
+        border-bottom-width: 8px;
     }
 
-    article {
-        padding: calc(8px + 5rem);
+    .tip-div p {
+        font-size: calc(13px + 32rem);
+        text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
+        text-align: justify;
+    }        
+    
+    div.beware-div {
+        padding: calc(10px + 8rem) calc(6px + 70rem);
+    }
+    
+    div.beware-div p {
+        font-size: calc(13px + 32rem);
+        text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
+        max-width: none;
+        margin: 0;        
     }    
+
+    div.video-wrapper {
+        margin: 15px;
+    }      
 }

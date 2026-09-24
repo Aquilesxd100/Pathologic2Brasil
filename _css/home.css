@@ -116,11 +116,6 @@
     }
  
 /* |-----------------------------| ⚡ Quick Access ⚡ |-------------------------------|💻|  */    
-
-    section#quick-access-section article {
-        padding: 0;
-    }
-
     div#description-display {
         padding: 20rem 0;
         text-align: center;
