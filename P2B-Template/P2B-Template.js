@@ -78,7 +78,11 @@
 		);
 	}
 
-    const basePath = window.location.origin + '/P2B-Template';
+	const isOnGitHub = window.location.origin.indexOf('github') != -1;
+    const basePath = 
+		window.location.origin 
+		+ (isOnGitHub ? '/Pathologic2Brasil' : '')
+		+ '/P2B-Template';
 
 	const resourcesToLoad = {
 		htmlContent: null,
