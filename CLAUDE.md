@@ -133,8 +133,16 @@ dropping it quietly and meeting it again later as a bug.
   shrink-to-fit width, so the button comes out too narrow and the label overflows the plaque.
 - **`::before` / `::after` on an `<img>`** → does not render; `<img>` is a replaced element.
   Put the pseudo-element on the **parent** and position it absolutely.
-- **Decorative `<img>`s the new HTML dropped** (border strips, arrow bullets) → recreate as
+- **Decorative `<img>`s the new HTML dropped** (border strips) → recreate as
   `::before` / `::after` with `background-image` + `background-size: 100% 100%`.
+- **YouTube `<iframe>` embeds** → replaced by a local video inside a wrapper:
+  `<div class='video-wrapper'><video src='videos/<name>.mp4' title='…' preload='metadata' controls></video></div>`.
+  `main.css` already styles `div.video-wrapper` and its `<video>`; page CSS adds layout only.
+  No `<iframe>` in page content (the throwaway mobile-test harness is the one exception).
+- **`flecha_texto*.png` arrow bullets** → the inline arrow `<svg>` from `mapa.html` (header of
+  `#selected-marker-summary-section`). Its first `<path>` `fill` is the arrow colour and must
+  match the old PNG it replaces (`flecha_texto_verde` → `#00D900`; sample the rest from the
+  image); the second path is the black outline.
 - **`<ol>` / `<ul>` markers** → not styleable on the TV. Use `list-style: none` +
   `counter-reset` on the list and `content: counter(name) '.'; counter-increment: name` on
   `li::before`.

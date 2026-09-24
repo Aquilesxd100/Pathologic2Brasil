@@ -161,8 +161,26 @@ rather than dropping it quietly and meeting it again later as a bug.
   overflows the plaque background.
 - **`::before` / `::after` on an `<img>`** → does not render; `<img>` is a replaced
   element. Put the pseudo-element on the **parent** and position it absolutely.
-- **Decorative `<img>` elements the new HTML dropped** (border strips, arrow bullets) →
+- **Decorative `<img>` elements the new HTML dropped** (border strips) →
   recreate them as `::before` / `::after` with `background-image` + `background-size: 100% 100%`.
+- **YouTube `<iframe>` embeds** → gone. The new HTML replaces each one with a local video:
+  `<div class='video-wrapper'><video src='videos/<name>.mp4' title='…' preload='metadata' controls></video></div>`.
+  `main.css` already gives `div.video-wrapper` its width, margin, border and shadow and
+  makes the `<video>` fill it, so drop every old `iframe` / `.video` rule (fixed sizes,
+  aspect-ratio padding hacks) and only add page-specific layout on
+  `#<container> div.video-wrapper` — see `#feeding-roots-wrapper` in `_css/mapa.css`. If
+  the new HTML still contains an `<iframe>`, or the `.mp4` it points to is missing from
+  `videos/`, do not restyle the iframe — flag it in your final report.
+- **`flecha_texto*.png` arrow bullets** (the `<img>` placed before a line of text) → replaced
+  in the HTML by the inline arrow `<svg>` from `mapa.html` (the header of
+  `#selected-marker-summary-section`). Its first `<path>`'s `fill` is the arrow colour and
+  the second is the black outline. The fill should match the old PNG it replaces
+  (`flecha_texto_verde` → `#00D900`; sample the others — `flecha_texto`,
+  `flecha_texto_branca`, `flecha_texto_queimada` — from the image rather than guessing);
+  if it does not, or an arrow `<img>` is still in the HTML, flag it in your final report.
+  Style the `<svg>` like `#selected-marker-summary-section header svg` in
+  `_css/mapa.css`: `display: inline-block`, explicit `width`/`height` converted from the
+  old `<img>` size, and `vertical-align` instead of the old `position: relative; top`.
 - **`<ol>` / `<ul>` markers** → not styleable on the TV. Use
   `list-style: none` + `counter-reset` on the list and
   `content: counter(name) '.'; counter-increment: name` on `li::before`.
@@ -323,18 +341,23 @@ grep -n -A1 'filter:' _css/<page>.css
 # line endings
 file $1 _css/<page>.css _js/<page>.js en/<enpage>.html
 
-# every referenced image actually exists
+# every referenced image and video actually exists
 grep -oE "url\('[^']+'\)|src='[^']+'" _css/<page>.css $1
+
+# no leftover YouTube embeds or arrow-bullet images — must return nothing
+grep -nE '<iframe|flecha_texto' $1 en/<enpage>.html _css/<page>.css
 ```
 
 Then check it in a browser. `P2B-Template.js` XHRs its markup from
 `window.location.origin + '/P2B-Template'`, so the page **must be served from the repo
 root** — a `file://` open will not render the shell. Start a small static server on a spare
 port, load the page, and confirm: template shell loads, each interactive control responds,
-the click animation fires, dynamic titles/text switch language correctly.
+the click animation fires, dynamic titles/text switch language correctly, every video
+loads and plays, and every arrow `<svg>` sits on its text line in the right colour.
 
 For mobile, window resizing through the browser tools is unreliable here. Instead, drop a
-throwaway HTML file at the repo root containing an `<iframe>` of the page — media queries
+throwaway HTML file at the repo root containing an `<iframe>` of the page (a test harness
+only — unrelated to the ban on `<iframe>` content above) — media queries
 respond to the iframe viewport — and inspect inside it, sweeping the iframe's width across
 the supported range (320, 360, 375, 414, 800) rather than checking a single size. **Delete the
 throwaway file and stop the server when you are done**, and confirm `git status --short`
@@ -352,3 +375,5 @@ Tell the user, concisely:
   you were not allowed to put it there
 - any Portuguese classes still sitting in the HTML that your new CSS deliberately does not
   target
+- any leftover `<iframe>`, missing `videos/*.mp4`, or arrow `<svg>` whose fill does not
+  match the old `flecha_texto*.png`
