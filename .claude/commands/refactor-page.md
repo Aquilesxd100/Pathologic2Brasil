@@ -43,9 +43,11 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
   section ordering, banner comment style, and naming. If a reference page disagrees with
   this commit, the commit wins.
 - Already-refactored pages as secondary references (per `CLAUDE.md`): `index.html`
-  (`_css/home.css`, `_js/home.js`), `tudo.html` / `resultados.html`
-  (`_css/guideCardListing.css`, `_js/guideCardListing.js`), and `mapa.html`
-  (`_css/mapa.css`, `_js/mapa.js`).
+  (`assets/pages/index/index.css`, `assets/pages/index/index.js`), `tudo.html` /
+  `resultados.html` (`assets/shared/css/guide-card-listing.css`,
+  `assets/shared/js/guide-card-listing.js`), and `mapa.html` (`assets/pages/map/map.css`,
+  `assets/pages/map/map.js`). Their content uses `<article>`s containing `<section>`s — see
+  "Page structure" in `CLAUDE.md`.
 - Shared code you must reuse, never edit: `_css/main.css`, `_js/utils.js`,
   `_js/globalVariables.js`.
 - `P2B-Template/P2B-Template.js` and `P2B-Template/Styles.css` — the shared shell.
@@ -132,7 +134,7 @@ with the viewport. Convert:
 ### Selector convention
 
 The first time an element is styled inside the desktop block or inside the mobile block,
-prefix the selector with its element type — `div#foodCard`, `section#map-main-section`,
+prefix the selector with its element type — `div#foodCard`, `article#map-main-article`,
 `div.tip-div`. Immediately following rules for that same element may omit the type
 (`#foodCard p`, `.tip-div p b`). The desktop and mobile blocks each get their own "first time".
 
@@ -173,12 +175,12 @@ rather than dropping it quietly and meeting it again later as a bug.
   `videos/`, do not restyle the iframe — flag it in your final report.
 - **`flecha_texto*.png` arrow bullets** (the `<img>` placed before a line of text) → replaced
   in the HTML by the inline arrow `<svg>` from `mapa.html` (the header of
-  `#selected-marker-summary-section`). Its first `<path>`'s `fill` is the arrow colour and
+  `#selected-marker-summary-article`). Its first `<path>`'s `fill` is the arrow colour and
   the second is the black outline. The fill should match the old PNG it replaces
   (`flecha_texto_verde` → `#00D900`; sample the others — `flecha_texto`,
   `flecha_texto_branca`, `flecha_texto_queimada` — from the image rather than guessing);
   if it does not, or an arrow `<img>` is still in the HTML, flag it in your final report.
-  Style the `<svg>` like `#selected-marker-summary-section header svg` in
+  Style the `<svg>` like `#selected-marker-summary-article header svg` in
   `_css/mapa.css`: `display: inline-block`, explicit `width`/`height` converted from the
   old `<img>` size, and `vertical-align` instead of the old `position: relative; top`.
 - **`<ol>` / `<ul>` markers** → not styleable on the TV. Use
@@ -194,11 +196,11 @@ rather than dropping it quietly and meeting it again later as a bug.
   from:
 
   ```js
-  article.classList.add('selected-marker-summary');   // display: block
+  section.classList.add('selected-marker-summary');   // display: block
 
-  forceElementStylesUpdate(article);
+  forceElementStylesUpdate(section);
 
-  article.classList.add('showing-marker-summary');    // opacity: 1 — transition runs
+  section.classList.add('showing-marker-summary');    // opacity: 1 — transition runs
   ```
 
   Never reach for a `setTimeout` here, and do not fall back to a `@keyframes` animation

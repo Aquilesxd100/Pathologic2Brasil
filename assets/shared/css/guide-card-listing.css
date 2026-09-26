@@ -1,4 +1,4 @@
-article#guides-cards-wrapper {
+section#guides-cards-wrapper {
     font-size: 35rem;
     font-family: frizquadrata;
     color: #FFFFFF;	
@@ -22,7 +22,7 @@ article#guides-cards-wrapper {
 }
 
 @media screen and (max-width: 800px) {
-    article#guides-cards-wrapper {        
+    section#guides-cards-wrapper {        
         font-size: calc(20px + 35rem);	
         text-shadow: 2.5rem 0 0 rgb(0, 0, 0), -2.5rem 0 0 rgb(0, 0, 0), 0 2.5rem 0 rgb(0, 0, 0), 0 -2.5rem 0 rgb(0, 0, 0), 1.2rem 1.2rem rgb(0, 0, 0), -1.2rem -1.2rem 0 rgb(0, 0, 0), 1.2rem -1.2rem 0 rgb(0, 0, 0), -1.2rem 1.2rem 0 rgb(0, 0, 0);
     }

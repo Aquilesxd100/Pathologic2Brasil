@@ -8,7 +8,7 @@
         font-size: 45rem;
     }
 
-    #welcome-section article p {
+    #welcome-article section p {
         font-size: 40rem;
         font-weight: bold;
         text-shadow: 4rem 0 0 rgb(0, 0, 0), -4rem 0 0 rgb(0, 0, 0), 0 4rem 0 rgb(0, 0, 0), 0 -4rem 0 rgb(0, 0, 0), 2rem 2rem rgb(0, 0, 0), -2rem -2rem 0 rgb(0, 0, 0), 2rem -2rem 0 rgb(0, 0, 0), -2rem 2rem 0 rgb(0, 0, 0);
@@ -26,11 +26,11 @@
         color: #A400A4;
     }    
 
-    #welcome-section footer {
+    #welcome-article footer {
         padding: 10rem 0;
     }
 
-    #welcome-section footer p {
+    #welcome-article footer p {
         width: 85%;
         margin: 0 auto;
         font-size: 32rem;
@@ -39,11 +39,11 @@
       
 /* |----------------------------| 🕐 Latest Guides 🕐 |-------------------------------|💻|  */    
 
-    section#latest-guides-section article {
+    article#latest-guides-article section {
         padding: 20rem 0 10rem 0;
     }
 
-    #latest-guides-section button {
+    #latest-guides-article button {
         position: absolute;
         top: 125rem;
         padding: 10rem 12rem 6rem 12rem;
@@ -55,29 +55,29 @@
         background-color: #0A8C07;
     }
 
-    #latest-guides-section button:hover {
+    #latest-guides-article button:hover {
         -webkit-filter: brightness(110%);
         filter: brightness(110%);
     }
 
-    #latest-guides-section button svg {
+    #latest-guides-article button svg {
         width: 85rem;
         height: 85rem;
     }
 
-    #latest-guides-section button:nth-of-type(1) {
+    #latest-guides-article button:nth-of-type(1) {
         left: -40rem;
     }
 
-    #latest-guides-section button:nth-of-type(1) svg {
+    #latest-guides-article button:nth-of-type(1) svg {
         filter: drop-shadow(5rem 0 5rem rgba(0, 0, 0, 0.7));
     }
 
-    #latest-guides-section button:nth-of-type(2) {
+    #latest-guides-article button:nth-of-type(2) {
         right: -40rem;
     }
 
-    #latest-guides-section button:nth-of-type(2) svg {
+    #latest-guides-article button:nth-of-type(2) svg {
         filter: drop-shadow(-5rem 0 5rem rgba(0, 0, 0, 0.7));
     }
 
@@ -172,23 +172,23 @@
         font-size: calc(16px + 38rem);
     }
 
-    #welcome-section article p {
+    #welcome-article section p {
         font-size: calc(11px + 30rem);
         text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);        
     } 
 
-    #welcome-section footer {
+    #welcome-article footer {
         padding: calc(5px + 4rem);   
     }
 
-    #welcome-section footer p {
+    #welcome-article footer p {
         width: 100%;
         margin: 0;
         font-size: calc(10px + 25rem);  
         text-shadow: 1.5px 0 0 rgb(0, 0, 0), -1.5px 0 0 rgb(0, 0, 0), 0 1.5px 0 rgb(0, 0, 0), 0 -1.5px 0 rgb(0, 0, 0), 0.7px 0.7px rgb(0, 0, 0), -0.7px -0.7px 0 rgb(0, 0, 0), 0.7px -0.7px 0 rgb(0, 0, 0), -0.7px 0.7px 0 rgb(0, 0, 0);                    
     }     
 
-    #welcome-section footer p b {
+    #welcome-article footer p b {
         font-weight: inherit;
     }
 }
@@ -196,33 +196,33 @@
 /* |----------------------------| 🕐 Latest Guides 🕐 |-------------------------------|📱|  */   
 
 @media screen and (max-width: 800px) {
-    section#latest-guides-section article {
+    article#latest-guides-article section {
         padding: 60rem 0 25rem 0;
     }
 
-    #latest-guides-section button {
+    #latest-guides-article button {
         top: 30%;
         padding: 8px 9px 6px 9px;
     }
 
-    #latest-guides-section button svg {
+    #latest-guides-article button svg {
         width: calc(10px + 220rem);
         height: calc(10px + 220rem);
     }
 
-    #latest-guides-section button:nth-of-type(1) {
+    #latest-guides-article button:nth-of-type(1) {
         left: -30rem;
     }
 
-    #latest-guides-section button:nth-of-type(1) svg {
+    #latest-guides-article button:nth-of-type(1) svg {
         filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.7));
     }
 
-    #latest-guides-section button:nth-of-type(2) {
+    #latest-guides-article button:nth-of-type(2) {
         right: -30rem;
     }
 
-    #latest-guides-section button:nth-of-type(2) svg {
+    #latest-guides-article button:nth-of-type(2) svg {
         filter: drop-shadow(-3px 0 3px rgba(0, 0, 0, 0.7));
     }     
 
@@ -261,7 +261,7 @@
         box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
     }
 
-    section#quick-access-section button {
+    article#quick-access-article button {
         margin: 5px auto 15px auto;
         padding: 30rem 80rem;
         border: calc(4px + 2rem) solid #383838; 
@@ -270,7 +270,7 @@
         background: linear-gradient(#000000 0%, #000000 5%, #383838 50%, #000000 95%, #000000 100%);        
     }
 
-    #quick-access-section button svg {
+    #quick-access-article button svg {
         width: 750rem;
         filter: drop-shadow(0 0 15rem rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30rem rgba(0, 0, 0, 0.8)) drop-shadow(0 0 60rem rgba(0, 0, 0, 0.8)); 
     }

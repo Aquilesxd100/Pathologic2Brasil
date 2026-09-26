@@ -12,12 +12,17 @@ as a reference for how new or refactored code should look.
 
 **Pages that reflect the current, correct structure and style:**
 
-- `index.html` / `en/index.html` — `_css/home.css`, `_js/home.js`
-- `resultados.html` / `en/results.html` and `tudo.html` / `en/all.html` — `_css/guideCardListing.css`, `_js/guideCardListing.js`
-- `mapa.html` / `en/map.html` — `_css/mapa.css`, `_js/mapa.js` *(most recent; being finished on the current branch)*
+- `index.html` / `en/index.html` — `assets/pages/index/index.css`, `assets/pages/index/index.js`
+- `resultados.html` / `en/results.html` and `tudo.html` / `en/all.html` — `assets/shared/css/guide-card-listing.css`, `assets/shared/js/guide-card-listing.js`
+- `mapa.html` / `en/map.html` — `assets/pages/map/map.css`, `assets/pages/map/map.js` *(most recent)*
 
-All of them use the shared `_css/main.css`, `_js/globalVariables.js`, `_js/utils.js` and the
-template component in `P2B-Template/`.
+All of them use the shared `assets/shared/css/main.css`, `assets/shared/js/globalVariables.js`,
+`assets/shared/js/utils.js` and the template component in `assets/shared/P2B-Template/`.
+
+**Page structure:** each content block is an `<article>` (with its `<header>`, and an optional
+`<footer>`) that holds one or more `<section>`s — never the other way round. `main.css` styles
+`article` as the bordered card with the numbered header background and `section` as the inner
+content area. Ids follow the element: `#quick-access-article`, `#night-merchant-section`.
 
 Commit `32185b6` (`git show 32185b6`, the index refactor) is the **primary** template for
 file organization, section ordering, banner comment style and naming. If a reference page
@@ -110,7 +115,7 @@ the viewport.
 
 The first time an element is styled inside the desktop block, and again the first time
 inside the mobile block, prefix the selector with its element type — `div#foodCard`,
-`section#map-main-section`, `div.tip-div`. Immediately following rules for that same element
+`article#map-main-article`, `div.tip-div`. Immediately following rules for that same element
 may omit the type (`#foodCard p`, `.tip-div p b`).
 
 One CSS file serves both the PT and the EN version of a page, and Portuguese strings usually
@@ -144,7 +149,7 @@ dropping it quietly and meeting it again later as a bug.
   `main.css` already styles `div.video-wrapper` and its `<video>`; page CSS adds layout only.
   No `<iframe>` in page content (the throwaway mobile-test harness is the one exception).
 - **`flecha_texto*.png` arrow bullets** → the inline arrow `<svg>` from `mapa.html` (header of
-  `#selected-marker-summary-section`). Its first `<path>` `fill` is the arrow colour and must
+  `#selected-marker-summary-article`). Its first `<path>` `fill` is the arrow colour and must
   match the old PNG it replaces (`flecha_texto_verde` → `#00D900`; sample the rest from the
   image); the second path is the black outline.
 - **`<ol>` / `<ul>` markers** → not styleable on the TV. Use `list-style: none` +
@@ -158,11 +163,11 @@ dropping it quietly and meeting it again later as a bug.
   `forceElementStylesUpdate(element)` between them:
 
   ```js
-  article.classList.add('selected-marker-summary');   // display: block
+  section.classList.add('selected-marker-summary');   // display: block
 
-  forceElementStylesUpdate(article);
+  forceElementStylesUpdate(section);
 
-  article.classList.add('showing-marker-summary');    // opacity: 1 — transition runs
+  section.classList.add('showing-marker-summary');    // opacity: 1 — transition runs
   ```
 
   Never reach for a `setTimeout` here, and do not fall back to `@keyframes` because the

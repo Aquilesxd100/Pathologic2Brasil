@@ -12,26 +12,26 @@ const MapMarkerEnum = {
 function showMarkerSummary(mapMarker, showMarkerSummaryButton) {
     animateElementClick(showMarkerSummaryButton, 'marker-option-click-animation');
 
-    const markerSummaryArticleToShow = document.getElementById(getMarkerSummaryArticleId(mapMarker));
-    const shownMarkerSummaryArticle = document.querySelector('article.selected-marker-summary');    
+    const markerSummarySectionToShow = document.getElementById(getMarkerSummarySectionId(mapMarker));
+    const shownMarkerSummarySection = document.querySelector('section.selected-marker-summary');    
 
-    const isSummaryAlreadyBeingShown = shownMarkerSummaryArticle === markerSummaryArticleToShow;
+    const isSummaryAlreadyBeingShown = shownMarkerSummarySection === markerSummarySectionToShow;
 
     if (isSummaryAlreadyBeingShown) {
         return;
     }    
 
-    if (shownMarkerSummaryArticle !== null) {
-        shownMarkerSummaryArticle.classList.remove('selected-marker-summary');
+    if (shownMarkerSummarySection !== null) {
+        shownMarkerSummarySection.classList.remove('selected-marker-summary');
     }
 
-    addClassToElementWithTransition(markerSummaryArticleToShow, 'selected-marker-summary')
+    addClassToElementWithTransition(markerSummarySectionToShow, 'selected-marker-summary')
 
-    const markerSummarySectionHeader = document.querySelector('section#selected-marker-summary-section header');
-    markerSummarySectionHeader.classList.add('marker-selected');
+    const markerSummaryArticleHeader = document.querySelector('article#selected-marker-summary-article header');
+    markerSummaryArticleHeader.classList.add('marker-selected');
 
-    const markerSummarySectionTitleElement = document.querySelector('#selected-marker-summary-section header h2');
-    markerSummarySectionTitleElement.innerHTML = getMarkerTitle(mapMarker);
+    const markerSummaryArticleTitleElement = document.querySelector('#selected-marker-summary-article header h2');
+    markerSummaryArticleTitleElement.innerHTML = getMarkerTitle(mapMarker);
 
     scrollToMarkerSummary();
 };
@@ -47,9 +47,9 @@ function addClassToElementWithTransition(element, className) {
 }
 
 function scrollToMarkerSummary() {
-    const markerSummarySectionHeader = document.querySelector('section#selected-marker-summary-section header');
+    const markerSummaryArticleHeader = document.querySelector('article#selected-marker-summary-article header');
 
-    var scrollTargetPosition = markerSummarySectionHeader.getBoundingClientRect().top + window.pageYOffset;
+    var scrollTargetPosition = markerSummaryArticleHeader.getBoundingClientRect().top + window.pageYOffset;
 
     const isMobileScreen = getIsMobileScreen();
 
@@ -62,20 +62,20 @@ function scrollToMarkerSummary() {
     window.scrollTo(0, scrollTargetPosition);
 };
 
-function getMarkerSummaryArticleId(mapMarker) {
+function getMarkerSummarySectionId(mapMarker) {
     switch (mapMarker) {
         case MapMarkerEnum.NightMerchant:
-            return 'night-merchant-article';
+            return 'night-merchant-section';
         case MapMarkerEnum.SecretStash:
-            return 'secret-stash-article';
+            return 'secret-stash-section';
         case MapMarkerEnum.ChildrenStash:
-            return 'children-stash-article';
+            return 'children-stash-section';
         case MapMarkerEnum.BloodyRoots:
-            return 'blood-roots-article';
+            return 'blood-roots-section';
         case MapMarkerEnum.HerbsZone:
-            return 'herb-zones-article';
+            return 'herb-zones-section';
         case MapMarkerEnum.ChildrenZone:
-            return 'children-zones-article';
+            return 'children-zones-section';
     }
 };
 

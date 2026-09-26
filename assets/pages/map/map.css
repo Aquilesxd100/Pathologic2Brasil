@@ -78,13 +78,13 @@
         scroll-behavior: smooth;
     }
 
-    section#selected-marker-summary-section header {
+    article#selected-marker-summary-article header {
         padding-right: 80rem;
         padding-left: 80rem;
         padding-top: 15rem;
     }
 
-    section#selected-marker-summary-section header h2 {
+    article#selected-marker-summary-article header h2 {
         display: inline;
         font-family: frizquadrata;
         font-weight: bold;
@@ -93,7 +93,7 @@
         text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
     }
 
-    #selected-marker-summary-section header svg {
+    #selected-marker-summary-article header svg {
         display: inline-block;
         width: 34rem;
         height: 52rem;
@@ -101,32 +101,32 @@
         vertical-align: -12rem;
     }
 
-    #selected-marker-summary-section header.marker-selected svg {
+    #selected-marker-summary-article header.marker-selected svg {
         display: none;
     }    
 
-    #selected-marker-summary-section header.marker-selected h2 {
+    #selected-marker-summary-article header.marker-selected h2 {
         font-size: 42rem;
         letter-spacing: 1rem;
     }
 
-    section#selected-marker-summary-section article {
+    article#selected-marker-summary-article section {
         display: none;
         opacity: 0;
         transition: opacity 1s ease-out;
     }
 
-    #selected-marker-summary-section article.selected-marker-summary {
+    #selected-marker-summary-article section.selected-marker-summary {
         display: block;
         opacity: 1;        
     }
 
-    #selected-marker-summary-section article picture img {
+    #selected-marker-summary-article section picture img {
         width: 1130rem;
         max-width: 100%;
     }
 
-    #selected-marker-summary-section .font-bug-fix {
+    #selected-marker-summary-article .font-bug-fix {
         color: #FFFFFF;
         font-family: Arial;
     }
@@ -234,26 +234,26 @@
 /* |--------------------------| 📌 Selected Marker 📌 |-------------------------------|📱|  */
 
 @media screen and (max-width: 800px) {
-    section#selected-marker-summary-section header {
+    article#selected-marker-summary-article header {
         padding: calc(15px + 20rem) calc(5px + 120rem);
     }
 
-    section#selected-marker-summary-section header h2 {
+    article#selected-marker-summary-article header h2 {
         font-size: calc(14px + 45rem);
         text-shadow: 2.3px 0 0 rgb(0, 0, 0), -2.3px 0 0 rgb(0, 0, 0), 0 2.3px 0 rgb(0, 0, 0), 0 -2.3px 0 rgb(0, 0, 0), 1.15px 1.15px rgb(0, 0, 0), -1.15px -1.15px 0 rgb(0, 0, 0), 1.15px -1.15px 0 rgb(0, 0, 0), -1.15px 1.15px 0 rgb(0, 0, 0);
     }
 
-    #selected-marker-summary-section header svg {
+    #selected-marker-summary-article header svg {
         width: 26px;
         height: 39px;
         vertical-align: -9px;
     }
 
-    #selected-marker-summary-section header.marker-selected h2 {
+    #selected-marker-summary-article header.marker-selected h2 {
         font-size: calc(19px + 49rem);
     }
 
-    #selected-marker-summary-section article picture img {
+    #selected-marker-summary-article section picture img {
         width: 1700rem;
     }
 }
