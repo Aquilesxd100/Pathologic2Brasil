@@ -141,557 +141,615 @@ a:hover {
    | 📚 Page Content [DESKTOP] | ========================================================================== 
    ========================================================================================================  */
 
-    article {
-        text-align: center;
-        border: 12rem solid #000000;       
-        box-shadow: 4rem 4rem 3.5rem rgba(0, 0, 0, 0.7);
-        background-image: url('../../../_imagens/fundo_infinito.jpg');
-        background-repeat: repeat;
-        margin-top: 30rem;
-    }
+    /* |-----------------------------| 📰 Article 📰 |---------------------------|💻|  */	
 
-    article p, article ol li {
-        font-size: calc(8px + 24rem);
-        text-shadow: 2.3rem 0 0 rgb(0, 0, 0), -2.3rem 0 0 rgb(0, 0, 0), 0 2.3rem 0 rgb(0, 0, 0), 0 -2.3rem 0 rgb(0, 0, 0), 1.6rem 1.6rem 0 rgb(0, 0, 0), -1.6rem -1.6rem 0 rgb(0, 0, 0), 1.6rem -1.6rem 0 rgb(0, 0, 0), -1.6rem 1.6rem 0 rgb(0, 0, 0), 0 0 1.1rem rgb(0, 0, 0);
-    }
+        article {
+            text-align: center;
+            border: 12rem solid #000000;       
+            box-shadow: 4rem 4rem 3.5rem rgba(0, 0, 0, 0.7);
+            background-image: url('../../../_imagens/fundo_infinito.jpg');
+            background-repeat: repeat;
+            margin-top: 30rem;
+        }
 
-    article:first-of-type {
-        margin-top: 0;
-    }    
+        article p, article ol li {
+            font-size: calc(8px + 24rem);
+            text-shadow: 2.3rem 0 0 rgb(0, 0, 0), -2.3rem 0 0 rgb(0, 0, 0), 0 2.3rem 0 rgb(0, 0, 0), 0 -2.3rem 0 rgb(0, 0, 0), 1.6rem 1.6rem 0 rgb(0, 0, 0), -1.6rem -1.6rem 0 rgb(0, 0, 0), 1.6rem -1.6rem 0 rgb(0, 0, 0), -1.6rem 1.6rem 0 rgb(0, 0, 0), 0 0 1.1rem rgb(0, 0, 0);
+        }
 
-    article header {
-        position: relative;
-        padding: 25rem 0;
-        background-size: 100% 100%;
-    }
+        article:first-of-type {
+            margin-top: 0;
+        }    
 
-    article > header::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-image: url('../img/section-header-frame-desktop.png');
-        background-size: 100% 100%;
-    }    
+        article header {
+            position: relative;
+            padding: 25rem 0;
+            background-size: 100% 100%;
+        }
 
-    article:nth-of-type(1) header {
-        background-image: url('../img/section-header-1-desktop.jpg');
-    }
+        article > header::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('../img/section-header-frame-desktop.png');
+            background-size: 100% 100%;
+        }    
 
-    article:nth-of-type(2) header {
-        background-image: url('../img/section-header-2-desktop.jpg');
-    }    
+        article:nth-of-type(1) header {
+            background-image: url('../img/section-header-1-desktop.jpg');
+        }
 
-    article:nth-of-type(3) header {
-        background-image: url('../img/section-header-3-desktop.jpg');
-    }    
-    
-    article:nth-of-type(4) header {
-        background-image: url('../img/section-header-4-desktop.jpg');
-    }     
+        article:nth-of-type(2) header {
+            background-image: url('../img/section-header-2-desktop.jpg');
+        }    
 
-    article:nth-of-type(5) header {
-        background-image: url('../img/section-header-5-desktop.jpg');
-    }      
-
-    article:nth-of-type(6) header {
-        background-image: url('../img/section-header-6-desktop.jpg');
-    }
-    
-    article:nth-of-type(7) header {
-        background-image: url('../img/section-header-7-desktop.jpg');
-    }    
-
-    article:nth-of-type(8) header {
-        background-image: url('../img/section-header-8-desktop.jpg');
-    }     
-
-    article header h1 {
-        text-align: center;
-        font-weight: lighter;
-        font-size: 55rem;
-        color: #00D900;
-        text-shadow: 5rem 0 0 rgb(0, 0, 0), -5rem 0 0 rgb(0, 0, 0), 0 5rem 0 rgb(0, 0, 0), 0 -5rem 0 rgb(0, 0, 0), 3rem 3rem rgb(0, 0, 0), -3rem -3rem 0 rgb(0, 0, 0), 3rem -3rem 0 rgb(0, 0, 0), -3rem 3rem 0 rgb(0, 0, 0);    
-        letter-spacing: 1rem;    
-    }
-
-    section {
-        position: relative;
-    }  
-
-    section figure:not(:first-child), section picture:not(:first-child) {
-        margin-top: 20rem;
-    }     
-
-    section figure:not(:last-child), section picture:not(:last-child) {
-        margin-bottom: 20rem;
-    }
-
-    section figure img, section picture img, .video-wrapper {
-        border: 10rem solid #000000; 
-        box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);        
-    }
-
-    section figure caption {
-        /* Pending Adjustments for the Food Page and maybe more */
-    }
-
-    div.tip-div {
-        padding: 18rem 42rem;  
-        border-top: 12rem solid #000000;
-        border-bottom: 12rem solid #000000;
-    }  
-
-    /* Prevent double borders when there are multiple tip-div elements next to each other */
-    div.tip-div + div.tip-div {
-        border-top: none;
-    }        
-
-    /* Prevent double borders with the container when it's the last element */
-    section > div.tip-div:last-child {
-        border-bottom: none;
-    }   
-    
-    .tip-div p {
-        color: #BFEDEF;
-        font-size: calc(8px + 22rem);
-        text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
-        text-align: left;
-    }    
-
-    .tip-div p b {
-        color: #96E2E5;
-        border-bottom: 2rem solid #96E2E5;
-    } 
-    
-    div.beware-div {
-        padding: 10rem 0;
-    }
-    
-    div.beware-div p {
-        max-width: 70%;
-        margin: 6rem auto;
-        font-size: calc(8px + 22rem);
-        text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
-        text-align: justify;
-    }
-
-    .beware-div p span {
-        color: #FFFF00;
-    }    
-
-    div.video-wrapper {
-        width: 100%;
-        margin: 20rem;
-        background-color: #000000;
-    }    
-
-    div.video-wrapper video {
-        width: 100%;
-    }    
-
-    div.subtitle-div {
-        padding: 6rem 40rem 8rem 40rem;
-        border-top: 12rem solid #000000;
-        border-bottom: 12rem solid #000000;
-        background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
-        background-repeat: repeat;
-        background-size: cover;
-    }
-
-    .subtitle-div h2 {
-        font-size: calc(6px + 40rem);
-        letter-spacing: 2rem; 
-        text-shadow: 4.3rem 0 0 rgb(0, 0, 0), -3.1rem 0 0 rgb(0, 0, 0), 0 3.1rem 0 rgb(0, 0, 0), 0 -3.1rem 0 rgb(0, 0, 0), 1.6rem 1.6rem rgb(0, 0, 0), -1.6rem -1.6rem 0 rgb(0, 0, 0), 1.6rem -1.6rem 0 rgb(0, 0, 0), -1.6rem 1.6rem 0 rgb(0, 0, 0);               
-        font-family: frizquadrata;
-        font-weight: normal;
-        color: #44BD2F;
-    }   
-    
-    p.observation {
-        font-size: calc(6px + 22rem);
-        color: #BFEDEF;
-        margin-top: 10rem;
-    }
-
-    /* Observations right after the table are related and shouldn't be far apart, so they negate the table's margin */
-    table.items-table + .observation {
-        margin-top: calc(10rem - 20rem);
-    }        
-
-    ol.step-list {
-        list-style: none;
-    }
-
-    .step-list > li {
-        counter-increment: step;
-    }    
-
-    ol.step-list li header {
-        padding: 12rem 40rem;
-        border-top: 12rem solid #000000;
-        border-bottom: 12rem solid #000000;
-        background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
-        background-size: cover;
-    }    
-
-    .step-list li header::before {
-        content: counter(step);
-        padding: 2rem 16rem;
-        background-image: url('../../../_imagens/_icones/fundo_numeros.png');
-        background-size: 100% 100%;
-        color: #FCC200;
-        font-family: impact;
-        letter-spacing: 2rem;
-    } 
-    
-    .step-list li header h2, .step-list li header::before  {
-        display: inline;
-        color: #FCC200;
-        font-size: calc(8px + 34rem);
-        text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);        
-        font-weight: normal;
-        letter-spacing: 2rem;        
-    }    
-
-    .step-list li header h2::before {
-        content: ' - ';
-    }
-
-    .step-list li ul {
-        display: inline-block;
-        width: 45%;
-        list-style: none;
-        vertical-align: middle;
-    }  
-    
-    .step-list ul li {
-        margin: 42rem 42rem 42rem 0;
-        padding: 18rem 24rem 24rem 24rem;
-        background-image: url('../../../_imagens/step-list-note-lower-part.png'), url('../../../_imagens/step-list-note-upper-part.png'), url('../../../_imagens/step-list-note-middle-part.png');
-        background-position: 0 100%, 0 0, 0 0;
-        background-size: 100% auto, 100% auto, 100% auto;
-        background-size: round(down, 100%, 1px) auto, round(down, 100%, 1px) auto, round(down, 100%, 1px) auto;
-        background-repeat: no-repeat, no-repeat, repeat-y;
-        background-origin: border-box, border-box, padding-box;
-        background-clip: border-box, border-box, padding-box;
-        border-bottom: 12rem solid transparent;
-        border-top: 12rem solid transparent;        
-        color: #FFFF99;
-        text-align: left;
-        text-indent: 42rem;
-        filter: drop-shadow(8rem 8rem 10rem #000000);
-        -webkit-filter: drop-shadow(8rem 8rem 10rem #000000);
-    }
-
-    .step-list ul li::before {
-        content: '';
-        display: inline-block;
-        width: calc(10px + 17rem);
-        height: calc(15px + 24rem);
-        background-image: url('../img/step-arrow.svg');
-        vertical-align: calc(-4px - 5rem);
-    }
-
-    .step-list li div.video-wrapper {
-        display: inline-block;
-        width: 49%;
-        margin: 40rem 0;
-        vertical-align: middle;
-    }  
-
-    table.items-table {
-        margin: 20rem auto;
-        border-collapse: collapse;
-        background-image: url('../../../_imagens/fundo_tabela.jpg');
-        background-repeat: repeat;
-        box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
-    }
-
-    table.items-table:first-child {
-        margin-top: 0;
-    }    
-
-    table.items-table:last-child {
-        margin-bottom: 0;
-    }
-
-    .items-table td {
-        border: 8rem solid #000000;
-        padding: 12rem 23rem;
-        font-size: calc(8px + 28rem);
-        text-shadow: 2.4rem 0 0 rgb(0, 0, 0), -2.4rem 0 0 rgb(0, 0, 0), 0 2.4rem 0 rgb(0, 0, 0), 0 -2.4rem 0 rgb(0, 0, 0), 1.2rem 1.2rem rgb(0, 0, 0), -1.2rem -1.2rem 0 rgb(0, 0, 0), 1.2rem -1.2rem 0 rgb(0, 0, 0), -1.2rem 1.2rem 0 rgb(0, 0, 0);
-    }
-
-    .items-table td.quantity-cell {
-        font-size: calc(7.5px + 41rem);
-    }
-
-    .items-table td.equal-cell {
-        font-family: Arial;
-        font-size: calc(8px + 68rem);
-    }
-
-    .items-table td img {
-        display: block;
-        width: 95rem;
-        border: 6rem solid #000000;
-    }
-
-    /* Prevent the floated image from overflowing */
-    div.text-with-image-wrapper {
-        min-height: 260rem;
-    }
-
-    .text-with-image-wrapper img {
-        width: 365rem;
-        border: 8rem solid #000000;
-        box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
-    } 
-
-    @media screen and (min-width: 801px) {
-        .text-with-image-wrapper img:first-of-type {
-            float: left;
-            margin-right: 25rem;
-        }  
+        article:nth-of-type(3) header {
+            background-image: url('../img/section-header-3-desktop.jpg');
+        }    
         
-        .text-with-image-wrapper img:nth-of-type(2) {
-            float: right;
-            margin-left: 25rem;
+        article:nth-of-type(4) header {
+            background-image: url('../img/section-header-4-desktop.jpg');
         }     
-    }    
 
-    .text-with-image-wrapper p {
-        text-align: justify;
-        text-indent: 73rem;
-    }
+        article:nth-of-type(5) header {
+            background-image: url('../img/section-header-5-desktop.jpg');
+        }      
+
+        article:nth-of-type(6) header {
+            background-image: url('../img/section-header-6-desktop.jpg');
+        }
+        
+        article:nth-of-type(7) header {
+            background-image: url('../img/section-header-7-desktop.jpg');
+        }    
+
+        article:nth-of-type(8) header {
+            background-image: url('../img/section-header-8-desktop.jpg');
+        }     
+
+        article header h1 {
+            text-align: center;
+            font-weight: lighter;
+            font-size: 55rem;
+            color: #00D900;
+            text-shadow: 5rem 0 0 rgb(0, 0, 0), -5rem 0 0 rgb(0, 0, 0), 0 5rem 0 rgb(0, 0, 0), 0 -5rem 0 rgb(0, 0, 0), 3rem 3rem rgb(0, 0, 0), -3rem -3rem 0 rgb(0, 0, 0), 3rem -3rem 0 rgb(0, 0, 0), -3rem 3rem 0 rgb(0, 0, 0);    
+            letter-spacing: 1rem;    
+        }
+
+    /* |-----------------------------| 🧱 Section 🧱 |---------------------------|💻|  */
+
+        section {
+            position: relative;
+        }  
+
+        section figure:not(:first-child), section picture:not(:first-child) {
+            margin-top: 20rem;
+        }     
+
+        section figure:not(:last-child), section picture:not(:last-child) {
+            margin-bottom: 20rem;
+        }
+
+        section figure img, section picture img, .video-wrapper {
+            border: 10rem solid #000000; 
+            box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);        
+        }
+
+        section figure caption {
+            /* Pending Adjustments for the Food Page and maybe more */
+        }
+
+    /* |------------------------------| 💡 Tip Div 💡 |---------------------------|💻|  */
+
+        div.tip-div {
+            padding: 18rem 42rem;  
+            border-top: 12rem solid #000000;
+            border-bottom: 12rem solid #000000;
+        }  
+
+        /* Prevent double borders when there are multiple tip-div elements next to each other */
+        div.tip-div + div.tip-div {
+            border-top: none;
+        }        
+
+        /* Prevent double borders with the container when it's the last element */
+        section > div.tip-div:last-child {
+            border-bottom: none;
+        }   
+    
+        .tip-div p {
+            color: #BFEDEF;
+            font-size: calc(8px + 22rem);
+            text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
+            text-align: left;
+        }    
+
+        .tip-div p b {
+            color: #96E2E5;
+            border-bottom: 2rem solid #96E2E5;
+        } 
+
+    /* |--------------------------| ⚠️ Beware Div ⚠️ |---------------------------|💻|  */
+
+        div.beware-div {
+            padding: 10rem 0;
+        }
+    
+        div.beware-div p {
+            max-width: 70%;
+            margin: 6rem auto;
+            font-size: calc(8px + 22rem);
+            text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.5rem 1.5rem rgb(0, 0, 0), -1.5rem -1.5rem 0 rgb(0, 0, 0), 1.5rem -1.5rem 0 rgb(0, 0, 0), -1.5rem 1.5rem 0 rgb(0, 0, 0);
+            text-align: justify;
+        }
+
+        .beware-div p span {
+            color: #FFFF00;
+        }    
+
+    /* |-------------------------| 🎬 Video Wrapper 🎬 |-------------------------|💻|  */
+
+        div.video-wrapper {
+            width: 100%;
+            margin: 20rem;
+            background-color: #000000;
+        }    
+
+        div.video-wrapper video {
+            width: 100%;
+        }    
+
+    /* |--------------------------| 🏷️ Subtitle Div 🏷️ |-------------------------|💻|  */
+
+        div.subtitle-div {
+            padding: 6rem 40rem 8rem 40rem;
+            border-top: 12rem solid #000000;
+            border-bottom: 12rem solid #000000;
+            background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        .subtitle-div h2 {
+            font-size: calc(6px + 40rem);
+            letter-spacing: 2rem; 
+            text-shadow: 4.3rem 0 0 rgb(0, 0, 0), -3.1rem 0 0 rgb(0, 0, 0), 0 3.1rem 0 rgb(0, 0, 0), 0 -3.1rem 0 rgb(0, 0, 0), 1.6rem 1.6rem rgb(0, 0, 0), -1.6rem -1.6rem 0 rgb(0, 0, 0), 1.6rem -1.6rem 0 rgb(0, 0, 0), -1.6rem 1.6rem 0 rgb(0, 0, 0);               
+            font-family: frizquadrata;
+            font-weight: normal;
+            color: #44BD2F;
+        }   
+
+    /* |---------------------------| 🔎 Observation 🔎 |-------------------------|💻|  */
+
+        p.observation {
+            font-size: calc(6px + 22rem);
+            color: #BFEDEF;
+            margin-top: 10rem;
+        }
+
+        /* Observations right after the table are related and shouldn't be far apart, so they negate the table's margin */
+        table.items-table + .observation {
+            margin-top: calc(10rem - 20rem);
+        }        
+
+    /* |----------------------------| 🪜 Step List 🪜 |--------------------------|💻|  */
+
+        ol.step-list {
+            list-style: none;
+        }
+
+        .step-list > li {
+            counter-increment: step;
+        }    
+
+        ol.step-list li header {
+            padding: 12rem 40rem;
+            border-top: 12rem solid #000000;
+            border-bottom: 12rem solid #000000;
+            background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
+            background-size: cover;
+        }    
+
+        .step-list li header::before {
+            content: counter(step);
+            padding: 2rem 16rem;
+            background-image: url('../../../_imagens/_icones/fundo_numeros.png');
+            background-size: 100% 100%;
+            color: #FCC200;
+            font-family: impact;
+            letter-spacing: 2rem;
+        } 
+    
+        .step-list li header h2, .step-list li header::before  {
+            display: inline;
+            color: #FCC200;
+            font-size: calc(8px + 34rem);
+            text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);        
+            font-weight: normal;
+            letter-spacing: 2rem;        
+        }    
+
+        .step-list li header h2::before {
+            content: ' - ';
+        }
+
+        .step-list li ul {
+            display: inline-block;
+            width: 45%;
+            list-style: none;
+            vertical-align: middle;
+        }  
+    
+        .step-list ul li {
+            margin: 42rem 42rem 42rem 0;
+            padding: 18rem 24rem 24rem 24rem;
+            background-image: url('../../../_imagens/step-list-note-lower-part.png'), url('../../../_imagens/step-list-note-upper-part.png'), url('../../../_imagens/step-list-note-middle-part.png');
+            background-position: 0 100%, 0 0, 0 0;
+            background-size: 100% auto, 100% auto, 100% auto;
+            background-size: round(down, 100%, 1px) auto, round(down, 100%, 1px) auto, round(down, 100%, 1px) auto;
+            background-repeat: no-repeat, no-repeat, repeat-y;
+            background-origin: border-box, border-box, padding-box;
+            background-clip: border-box, border-box, padding-box;
+            border-bottom: 12rem solid transparent;
+            border-top: 12rem solid transparent;        
+            color: #FFFF99;
+            text-align: left;
+            text-indent: 42rem;
+            filter: drop-shadow(8rem 8rem 10rem #000000);
+            -webkit-filter: drop-shadow(8rem 8rem 10rem #000000);
+        }
+
+        .step-list ul li::before {
+            content: '';
+            display: inline-block;
+            width: calc(10px + 17rem);
+            height: calc(15px + 24rem);
+            background-image: url('../img/step-arrow.svg');
+            vertical-align: calc(-4px - 5rem);
+        }
+
+        .step-list li div.video-wrapper {
+            display: inline-block;
+            width: 49%;
+            margin: 40rem 0;
+            vertical-align: middle;
+        }  
+
+    /* |---------------------------| 📦 Items Table 📦 |-------------------------|💻|  */
+
+        table.items-table {
+            margin: 20rem auto;
+            border-collapse: collapse;
+            background-image: url('../../../_imagens/fundo_tabela.jpg');
+            background-repeat: repeat;
+            box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
+        }
+
+        table.items-table:first-child {
+            margin-top: 0;
+        }    
+
+        table.items-table:last-child {
+            margin-bottom: 0;
+        }
+
+        .items-table td {
+            border: 8rem solid #000000;
+            padding: 12rem 23rem;
+            font-size: calc(8px + 28rem);
+            text-shadow: 2.4rem 0 0 rgb(0, 0, 0), -2.4rem 0 0 rgb(0, 0, 0), 0 2.4rem 0 rgb(0, 0, 0), 0 -2.4rem 0 rgb(0, 0, 0), 1.2rem 1.2rem rgb(0, 0, 0), -1.2rem -1.2rem 0 rgb(0, 0, 0), 1.2rem -1.2rem 0 rgb(0, 0, 0), -1.2rem 1.2rem 0 rgb(0, 0, 0);
+        }
+
+        .items-table td.quantity-cell {
+            font-size: calc(7.5px + 41rem);
+        }
+
+        .items-table td.equal-cell {
+            font-family: Arial;
+            font-size: calc(8px + 68rem);
+        }
+
+        .items-table td img {
+            display: block;
+            width: 95rem;
+            border: 6rem solid #000000;
+        }
+
+    /* |---------------------| 📃 Text With Image Wrapper 📃 |-------------------|💻|  */
+
+        /* Prevent the floated image from overflowing */
+        div.text-with-image-wrapper {
+            min-height: 260rem;
+        }
+
+        .text-with-image-wrapper img {
+            width: 365rem;
+            border: 8rem solid #000000;
+            box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
+        } 
+
+        @media screen and (min-width: 801px) {
+            .text-with-image-wrapper img:first-of-type {
+                float: left;
+                margin-right: 25rem;
+            }  
+        
+            .text-with-image-wrapper img:nth-of-type(2) {
+                float: right;
+                margin-left: 25rem;
+            }     
+        }    
+
+        .text-with-image-wrapper p {
+            text-align: justify;
+            text-indent: 73rem;
+        }
 
 /* ========================================================================================================
-   | 📚 Page Content [Mobile] | =========================================================================== 
+   | 📚 Page Content [MOBILE] | =========================================================================== 
    ========================================================================================================  */
 
-@media screen and (max-width: 800px) {
-    article {
-        border: 8px solid #000000;        
-        box-shadow: 8rem 8rem 6rem rgba(0, 0, 0, 0.6);
-    }
+    /* |-----------------------------| 📰 Article 📰 |---------------------------|📱|  */
 
-    article p, article ol li {
-        font-size: calc(14px + 36rem);
-        text-shadow: 1.6px 0 0 rgb(0, 0, 0), -1.6px 0 0 rgb(0, 0, 0), 0 1.6px 0 rgb(0, 0, 0), 0 -1.6px 0 rgb(0, 0, 0), 1.1px 1.1px 0 rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0);
-    }    
+    @media screen and (max-width: 800px) {
+        article {
+            border: 8px solid #000000;        
+            box-shadow: 8rem 8rem 6rem rgba(0, 0, 0, 0.6);
+        }
 
-    article header {
-        padding: calc(10px + 20rem) 30px;
-    }
+        article p, article ol li {
+            font-size: calc(14px + 36rem);
+            text-shadow: 1.6px 0 0 rgb(0, 0, 0), -1.6px 0 0 rgb(0, 0, 0), 0 1.6px 0 rgb(0, 0, 0), 0 -1.6px 0 rgb(0, 0, 0), 1.1px 1.1px 0 rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0);
+        }    
 
-    article > header::after {
-        background-image: url('../img/section-header-frame-mobile.png');
-    }     
+        article header {
+            padding: calc(10px + 20rem) 30px;
+        }
 
-    article:nth-of-type(1) header {
-        background-image: url('../img/section-header-1-mobile.jpg');
-    }
+        article > header::after {
+            background-image: url('../img/section-header-frame-mobile.png');
+        }     
 
-    article:nth-of-type(2) header {
-        background-image: url('../img/section-header-2-mobile.jpg');
-    }    
+        article:nth-of-type(1) header {
+            background-image: url('../img/section-header-1-mobile.jpg');
+        }
 
-    article:nth-of-type(3) header {
-        background-image: url('../img/section-header-3-mobile.jpg');
-    }     
+        article:nth-of-type(2) header {
+            background-image: url('../img/section-header-2-mobile.jpg');
+        }    
 
-    article:nth-of-type(4) header {
-        background-image: url('../img/section-header-4-mobile.jpg');
-    }      
+        article:nth-of-type(3) header {
+            background-image: url('../img/section-header-3-mobile.jpg');
+        }     
+
+        article:nth-of-type(4) header {
+            background-image: url('../img/section-header-4-mobile.jpg');
+        }      
     
-    article:nth-of-type(5) header {
-        background-image: url('../img/section-header-5-mobile.jpg');
-    }       
+        article:nth-of-type(5) header {
+            background-image: url('../img/section-header-5-mobile.jpg');
+        }       
 
-    article:nth-of-type(6) header {
-        background-image: url('../img/section-header-6-mobile.jpg');
-    }   
+        article:nth-of-type(6) header {
+            background-image: url('../img/section-header-6-mobile.jpg');
+        }   
     
-    article:nth-of-type(7) header {
-        background-image: url('../img/section-header-7-mobile.jpg');
-    }   
+        article:nth-of-type(7) header {
+            background-image: url('../img/section-header-7-mobile.jpg');
+        }   
     
-    article:nth-of-type(8) header {
-        background-image: url('../img/section-header-8-mobile.jpg');
-    }     
+        article:nth-of-type(8) header {
+            background-image: url('../img/section-header-8-mobile.jpg');
+        }     
         
-    article header h1 {
-        font-size: calc(23px + 46rem);
-        text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
-        letter-spacing: 1px;
-    }       
+        article header h1 {
+            font-size: calc(23px + 46rem);
+            text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+            letter-spacing: 1px;
+        }       
+    }
+
+    /* |-----------------------------| 🧱 Section 🧱 |---------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        section figure:not(:first-child), section picture:not(:first-child) {
+            margin-top: calc(12px + 20rem);
+        }      
+
+        section figure:not(:last-child), section picture:not(:last-child) {
+            margin-bottom: calc(12px + 20rem);
+        }     
+
+        section figure figcaption {
+            margin: 5px 7px 10px 7px;
+            color: #BFEDEF;
+            font-family: frizquadrata;
+            font-size: calc(11px + 29rem);
+            text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);        
+        }    
     
-    section figure:not(:first-child), section picture:not(:first-child) {
-        margin-top: calc(12px + 20rem);
-    }      
+        section figure img, section picture img, .video-wrapper {
+            border: 6px solid #000000; 
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);        
+        }    
+    }
 
-    section figure:not(:last-child), section picture:not(:last-child) {
-        margin-bottom: calc(12px + 20rem);
-    }     
+    /* |------------------------------| 💡 Tip Div 💡 |---------------------------|📱|  */
 
-    section figure figcaption {
-        margin: 5px 7px 10px 7px;
-        color: #BFEDEF;
-        font-family: frizquadrata;
-        font-size: calc(11px + 29rem);
-        text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);        
-    }    
+    @media screen and (max-width: 800px) {
+        div.tip-div {
+            padding: calc(10px + 8rem) calc(6px + 70rem);        
+            border-top-width: 8px;
+            border-bottom-width: 8px;
+        }
+
+        .tip-div p {
+            font-size: calc(13px + 32rem);
+            text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
+            text-align: justify;
+        }        
+    }
+
+    /* |--------------------------| ⚠️ Beware Div ⚠️ |---------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        div.beware-div {
+            padding: calc(10px + 8rem) calc(6px + 70rem);
+        }
     
-    section figure img, section picture img, .video-wrapper {
-        border: 6px solid #000000; 
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);        
-    }    
-
-    div.tip-div {
-        padding: calc(10px + 8rem) calc(6px + 70rem);        
-        border-top-width: 8px;
-        border-bottom-width: 8px;
+        div.beware-div p {
+            font-size: calc(13px + 32rem);
+            text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
+            max-width: none;
+            margin: 0;        
+        }    
     }
 
-    .tip-div p {
-        font-size: calc(13px + 32rem);
-        text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
-        text-align: justify;
-    }        
+    /* |-------------------------| 🎬 Video Wrapper 🎬 |-------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        div.video-wrapper {
+            /* Minus the wrapper margins */
+            width: calc(100% - 30px) !important;     
+            margin: 15px !important;
+        }      
+    }
+
+    /* |--------------------------| 🏷️ Subtitle Div 🏷️ |-------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        div.subtitle-div {
+            padding: 8px;
+            border-top-width: 8px;
+            border-bottom-width: 8px;
+        }
+
+        .subtitle-div h2 {
+            font-size: calc(20px + 50rem);
+            letter-spacing: 1px;        
+            text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);        
+        }    
+    }
+
+    /* |---------------------------| 🔎 Observation 🔎 |-------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        p.observation {
+            font-size: calc(12px + 33rem);
+            margin-top: calc(8px + 5rem);
+        }
+
+        table.items-table + .observation {
+            margin-top: calc((8px + 5rem) - (12px + 20rem));
+        }    
+    }
+
+    /* |----------------------------| 🪜 Step List 🪜 |--------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        ol.step-list li header {
+            padding: 8px;
+            border-top-width: 8px;
+            border-bottom-width: 8px;
+        }    
+
+        .step-list li header::before {
+            padding: 2px 13px;
+        }    
+
+        .step-list li header h2, .step-list li header::before  {
+            font-size: calc(22px + 46rem);
+            letter-spacing: 1px;
+            text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
+        }    
+
+        .step-list li ul {
+            width: 100%;
+        }    
+
+        .step-list ul li {
+            margin: calc(15px + 12rem) 15px;
+            padding: 43rem 60rem 50rem 60rem;
+            background-size: 100% calc(12px + 69rem), 100% calc(12px + 74rem), 100% auto;
+            background-size: round(down, 100%, 1px) calc(12px + 69rem), round(down, 100%, 1px) calc(12px + 74rem), round(down, 100%, 1px) auto;
+            border-top-width: calc(2px + 30rem);
+            border-bottom-width: calc(2px + 36rem);
+            text-align: justify;
+            text-indent: 0;
+            filter: drop-shadow(4px 4px 5px #000000);
+            -webkit-filter: drop-shadow(4px 4px 5px #000000);
+        }
     
-    div.beware-div {
-        padding: calc(10px + 8rem) calc(6px + 70rem);
-    }
-    
-    div.beware-div p {
-        font-size: calc(13px + 32rem);
-        text-shadow: 1.8px 0 0 rgb(0, 0, 0), -1.8px 0 0 rgb(0, 0, 0), 0 1.8px 0 rgb(0, 0, 0), 0 -1.8px 0 rgb(0, 0, 0), 0.8px 0.8px rgb(0, 0, 0), -0.8px -0.8px 0 rgb(0, 0, 0), 0.8px -0.8px 0 rgb(0, 0, 0), -0.8px 0.8px 0 rgb(0, 0, 0);
-        max-width: none;
-        margin: 0;        
-    }    
+        .step-list ul li:last-child {
+            margin-bottom: 0;
+        }
 
-    div.video-wrapper {
-        /* Minus the wrapper margins */
-        width: calc(100% - 30px) !important;     
-        margin: 15px !important;
-    }      
-
-    div.subtitle-div {
-        padding: 8px;
-        border-top-width: 8px;
-        border-bottom-width: 8px;
+        .step-list ul li::before {
+            width: calc(12px + 36rem);
+            height: calc(18px + 54rem);
+            vertical-align: calc(-5px - 12rem);
+        }
     }
 
-    .subtitle-div h2 {
-        font-size: calc(20px + 50rem);
-        letter-spacing: 1px;        
-        text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);        
-    }    
+    /* |---------------------------| 📦 Items Table 📦 |-------------------------|📱|  */
 
-    p.observation {
-        font-size: calc(12px + 33rem);
-        margin-top: calc(8px + 5rem);
+    @media screen and (max-width: 800px) {
+        table.items-table {
+            table-layout: fixed;
+            width: 100%;
+            max-width: 500px;
+            margin: calc(12px + 20rem) auto;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        table.items-table:first-child {
+            margin-top: 0;
+        }    
+
+        table.items-table:last-child {
+            margin-bottom: 0;
+        }
+
+        .items-table td {
+            border-width: 6px;
+            padding: calc(2.8px + 7.2rem) 14rem;
+            font-size: calc(16px + 34.2rem);
+            text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 1.3px 1.3px 0 rgb(0, 0, 0), -1.3px -1.3px 0 rgb(0, 0, 0), 1.3px -1.3px 0 rgb(0, 0, 0), -1.3px 1.3px 0 rgb(0, 0, 0), 0 0 1.2px rgb(0, 0, 0);
+        }
+
+        .items-table td.quantity-cell {
+            width: 26%;
+            font-size: calc(21px + 54rem);
+        }
+
+        .items-table td.equal-cell {
+            font-size: calc(30.1px + 77.4rem);
+            width: calc(12px + 150rem);
+        }
+
+        .items-table td img {
+            width: 100%;
+            max-width: 100px;
+            margin: 0 auto;
+            border-width: 4px;
+        }
     }
 
-    table.items-table + .observation {
-        margin-top: calc((8px + 5rem) - (12px + 20rem));
-    }    
+    /* |---------------------| 📃 Text With Image Wrapper 📃 |-------------------|📱|  */
 
-    ol.step-list li header {
-        padding: 8px;
-        border-top-width: 8px;
-        border-bottom-width: 8px;
-    }    
+    @media screen and (max-width: 800px) {
+        .text-with-image-wrapper img {
+            width: 1460rem;
+            min-width: 265px;
+            margin: 0 auto calc(8px + 5rem) auto;
+            border-width: 6px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+        }
 
-    .step-list li header::before {
-        padding: 2px 13px;
-    }    
-
-    .step-list li header h2, .step-list li header::before  {
-        font-size: calc(22px + 46rem);
-        letter-spacing: 1px;
-        text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
-    }    
-
-    .step-list li ul {
-        width: 100%;
-    }    
-
-    .step-list ul li {
-        margin: calc(15px + 12rem) 15px;
-        padding: 43rem 60rem 50rem 60rem;
-        background-size: 100% calc(12px + 69rem), 100% calc(12px + 74rem), 100% auto;
-        background-size: round(down, 100%, 1px) calc(12px + 69rem), round(down, 100%, 1px) calc(12px + 74rem), round(down, 100%, 1px) auto;
-        border-top-width: calc(2px + 30rem);
-        border-bottom-width: calc(2px + 36rem);
-        text-align: justify;
-        text-indent: 0;
-        filter: drop-shadow(4px 4px 5px #000000);
-        -webkit-filter: drop-shadow(4px 4px 5px #000000);
+        .text-with-image-wrapper p {
+            text-indent: 50px;
+        }
     }
-    
-    .step-list ul li:last-child {
-        margin-bottom: 0;
-    }
-
-    .step-list ul li::before {
-        width: calc(12px + 36rem);
-        height: calc(18px + 54rem);
-        vertical-align: calc(-5px - 12rem);
-    }
-
-    table.items-table {
-        table-layout: fixed;
-        width: 100%;
-        max-width: 500px;
-        margin: calc(12px + 20rem) auto;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-    }
-
-    table.items-table:first-child {
-        margin-top: 0;
-    }    
-
-    table.items-table:last-child {
-        margin-bottom: 0;
-    }
-
-    .items-table td {
-        border-width: 6px;
-        padding: calc(2.8px + 7.2rem) 14rem;
-        font-size: calc(16px + 34.2rem);
-        text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 1.3px 1.3px 0 rgb(0, 0, 0), -1.3px -1.3px 0 rgb(0, 0, 0), 1.3px -1.3px 0 rgb(0, 0, 0), -1.3px 1.3px 0 rgb(0, 0, 0), 0 0 1.2px rgb(0, 0, 0);
-    }
-
-    .items-table td.quantity-cell {
-        width: 26%;
-        font-size: calc(21px + 54rem);
-    }
-
-    .items-table td.equal-cell {
-        font-size: calc(30.1px + 77.4rem);
-        width: calc(12px + 150rem);
-    }
-
-    .items-table td img {
-        width: 100%;
-        max-width: 100px;
-        margin: 0 auto;
-        border-width: 4px;
-    }
-
-    .text-with-image-wrapper img {
-        width: 1460rem;
-        min-width: 265px;
-        margin: 0 auto calc(8px + 5rem) auto;
-        border-width: 6px;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-    }
-
-    .text-with-image-wrapper p {
-        text-indent: 50px;
-    }
-}
