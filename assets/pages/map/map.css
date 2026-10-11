@@ -128,7 +128,6 @@
 
     #selected-marker-summary-article .font-bug-fix {
         color: #FFFFFF;
-        font-family: Arial;
     }
 
     .cyan-color {
@@ -278,11 +277,6 @@
     #feeding-roots-wrapper li::before {
         margin-right: 10px;
         border-bottom-width: 1px;
-    }
-
-    /* minus the wrapper margins */
-    #feeding-roots-wrapper div.video-wrapper {
-        width: calc(100% - 30px); 
     }
 }
 
