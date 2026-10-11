@@ -1,0 +1,76 @@
+/* ========================================================================================================
+   | 📑 Page Content [DESKTOP] | ==========================================================================
+   ========================================================================================================  */
+
+/* |--------------------------------| 👋 Welcome 👋 |----------------------------------|💻|  */
+
+    article section picture img {
+        width: 1130rem;
+    }
+
+    article#welcome-article picture img {
+        width: 1300rem;
+    }
+
+    @media screen and (min-width: 801px) {
+        table.items-table {
+            display: inline-block;
+        }    
+        
+        .items-table:first-of-type {
+            margin-right: 20rem;
+        }        
+    }
+
+
+/* |----------------------------| 🔪 Organ Sale 🔪 |-----------------------------------|💻|  */
+
+    div#organ-merchant-location-wrapper picture img {
+        width: 792rem;
+    }
+
+/* ========================================================================================================
+   | 📑 Page Content [MOBILE] | ===========================================================================
+   ========================================================================================================  */
+
+/* |--------------------------------| 👋 Welcome 👋 |----------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    article section picture img {
+        width: 1640rem;
+    }
+
+    article#welcome-article picture img {
+        width: 1600rem;
+    }
+
+    /* Merge the two tables together */
+    table.items-table:first-of-type {
+        margin-bottom: 0;
+    }
+
+    table.items-table:last-of-type {
+        margin-top: 0;
+    }    
+
+    table.items-table:first-of-type tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+/* |------------------------------| 🗺️ Terrain 🗺️ |------------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    section#terrain-section picture img {
+        width: 1700rem;
+    }
+}
+
+/* |----------------------------| 🔪 Organ Sale 🔪 |-----------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div#organ-merchant-location-wrapper picture img {
+        width: 1300rem;
+        min-width: 260px;
+    }
+}
