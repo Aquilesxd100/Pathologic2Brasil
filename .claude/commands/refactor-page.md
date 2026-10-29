@@ -175,6 +175,7 @@ class names and markup exactly.
 | numbered steps (step title `h2 > span` number plaque + `div.dicas` plaques + video) | `ol.step-list > li` with `header > h2` (title only — the number is a CSS counter), `ul > li` plaques and `div.video-wrapper` *(shared)* |
 | `div.dicas > p > img(flecha_texto)` (text plaques outside a step) | `ul > li` plaques as in `ol.step-list`; the plaque background stretches with the text, so no size class is needed |
 | item / combination `<table>` | `table.items-table` *(shared)*: `<td>` only, `td.quantity-cell` for the counter, `td.equal-cell` for `=`, no class on icon and name cells, `alt` = item name on every icon |
+| NPC trade table (`div.troca-resumida > table.tabela-primaria` with nested `table.tabela-secundaria`s, portrait + "tem interesse em" + "pode ter") | `table.npc-trade-table` *(shared)*: one table per NPC, `thead` with three `th scope='col'` (`colspan='6'` / `colspan='3'`), the portrait in a `th scope='rowgroup' rowspan='N'` opening the first body row, **nine `<td>`s per row** (empty slots as `<td></td>`, never omitted), `td.item-value-range` on range values (`1-35`), no other cell classes |
 | `div.texto-com-imagem` (image floated beside text) | `div.text-with-image-wrapper` *(shared)* |
 | `span.simbolo` | `span.font-bug-fix` *(shared utility)* |
 | `picture.imagem`, `img.mapa-imagem`, `picture.mini-mapa`, `picture.introducao-img` | a plain `<picture>` *(shared)* (wrap a bare `<img>` in one), or a `<figure>` with a `<figcaption>` when the image has a caption; `main.css` adds the border, shadow and spacing, and the page CSS only sizes the image from the wrapper id |
@@ -188,6 +189,10 @@ class names and markup exactly.
 Never duplicate a table for desktop and mobile — write it once, split into several
 `table.items-table` elements if the desktop layout shows them side by side, and let the
 CSS stack them on mobile (side-by-side layout and any mobile merge go in the page CSS).
+The same goes for the NPC tables: the old `modo-desktop` / `modo-mobile` rows inside them
+are dropped, because `table.npc-trade-table` reflows the one copy into a grid on mobile.
+Mobile shows at most three "pode ter" items per NPC; if an old table offers more, list it
+in the checkpoint report.
 
 ### Hooks for the old narrow rules
 

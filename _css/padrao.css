@@ -340,7 +340,7 @@ div.itens-necessarios table, div.itens-necessarios-grande table {
 	border-collapse: collapse;
 	margin: 1% 1% 1% 1%;
 	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-	background-image: url("../_imagens/fundo_tabela.jpg");
+	background-image: url("../assets/shared/img/fundo_tabela.jpg");
 	background-repeat: repeat;
 }
 body div.itens-necessarios-grande table {
@@ -509,7 +509,7 @@ div.troca-resumida table.tabela-primaria {
 	min-width: 70vw;
 }
 table.tabela-primaria tr.tabela-titulo {
-	background-image: url("../_imagens/fundo_tabela.jpg");
+	background-image: url("../assets/shared/img/fundo_tabela.jpg");
 	background-repeat: repeat;
 }
 table.tabela-primaria tr.tabela-titulo h2 {
@@ -536,7 +536,7 @@ div.troca-resumida table th.retrato {
 	padding: 0;
 }
 div.troca-resumida table th.tabela-estendida {
-	background-image: url("../_imagens/fundo_tabela.jpg");
+	background-image: url("../assets/shared/img/fundo_tabela.jpg");
 	background-repeat: repeat;
 }
 div.troca-resumida table th.tabela-estendida img {
@@ -554,12 +554,12 @@ div.troca-resumida table th.interesse {
 	width: 34vw;
 	max-width: 46vw;
 	padding: 0;
-	background-image: url("../_imagens/fundo_tabela_quer.jpg");
+	background-image: url("../assets/shared/img/fundo_tabela_quer.jpg");
 	background-repeat: repeat;
 }
 div.troca-resumida table th.pode-ter {
 	padding: 0;
-	background-image: url("../_imagens/fundo_tabela_pode_ter.jpg");
+	background-image: url("../assets/shared/img/fundo_tabela_pode_ter.jpg");
 	background-repeat: repeat;
 }
 table.tabela-secundaria {

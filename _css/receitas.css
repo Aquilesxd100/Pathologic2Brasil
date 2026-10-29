@@ -108,7 +108,7 @@ div.receitas-criacao table {
 	border-collapse: collapse;
 	margin: 0.5% 1% 1% 1%;
 	box-shadow: 2.2px 2.2px 1px rgba(0, 0, 0, 0.9);
-	background-image: url("../_imagens/fundo_tabela.jpg");
+	background-image: url("../assets/shared/img/fundo_tabela.jpg");
 	background-repeat: repeat;
 }
 div.receitas-criacao table.tabela-combinacao {

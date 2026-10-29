@@ -86,6 +86,15 @@ page; this file holds the conventions that apply to all work in the repo.
     	</g>
     </ svg>
     ```
+10. **An `<img>` inside another element goes on its own line**, indented one tab deeper than
+    its parent, with the parent's opening and closing tags on their own lines — table cells
+    included. Never `<td><img …></td>` on a single line:
+
+    ```html
+    <td>
+    	<img src='./_imagens/_icones/itens_catalogados/sino.jpg' alt='Sino'>
+    </td>
+    ```
 
 ---
 
@@ -351,6 +360,78 @@ beyond page-specific layout.
   		<td class='equal-cell'>=</td>
   		<td><img src='./_imagens/_icones/yas.jpg' alt='Infusão "Yas"'></td>
   	</tr>
+  </table>
+  ```
+
+- **NPC trade table — `table.npc-trade-table`.** Replaces the old nested
+  `div.troca-resumida > table.tabela-primaria > … table.tabela-secundaria` NPC tables
+  (`podinzins.html`, `comida.html`, `trocas.html`). One table per NPC. Rules:
+  - `thead` holds one row of three `th scope='col'`: the character title, the "interest in"
+    title with `colspan='6'` and the "may have" title with `colspan='3'`.
+  - One `tbody`. Its first row opens with `th scope='rowgroup' rowspan='N'` (N = number of
+    body rows) holding the NPC portrait `<img>`, with `alt` set to the NPC's name.
+  - Every body row has exactly **nine `<td>`s**: two "interest in" items, then one "may
+    have" item, each as image + name + value. The CSS finds the cells by position
+    (`nth-of-type(3n+…)`, `nth-last-child(-n+3)`), so a missing item is still written as
+    three empty `<td></td>`s — never left out, never given a `colspan`.
+  - No cell classes, except `td.item-value-range` on a value that is a range (`3-8`,
+    `1-35`); it drops the padding and, on mobile, uses a smaller font so the range fits.
+  - Item icons are `<img>`s with `alt` set to the item's name, on their own line (hard
+    rule 10).
+  - On desktop every cell has a fixed width, so all the NPC tables on a page share the same
+    column widths; the portrait is as tall as two item rows. On mobile the table becomes a
+    grid: the portrait sits on the left with up to three "may have" items beside it (from
+    the fourth row on they are hidden, and empty ones are hidden from the third row on),
+    and the "interest in" title and items follow below, two items per row.
+  - Vertical spacing between consecutive tables is in `main.css` (zeroed on the first and
+    last child).
+
+  ```html
+  <table class='npc-trade-table'>
+  	<thead>
+  		<tr>
+  			<th scope='col'>Personagem</th>
+  			<th scope='col' colspan='6'>Tem interesse em:</th>
+  			<th scope='col' colspan='3'>Pode ter:</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<th scope='rowgroup' rowspan='2'>
+  				<img src='./_imagens/_icones/retratos/guarda.jpg' alt='Guarda'>
+  			</th>
+  			<td>
+  				<img src='./_imagens/_icones/itens_catalogados/gazua.jpg' alt='Gazua'>
+  			</td>
+  			<td>Gazua</td>
+  			<td class='item-value-range'>1-12</td>
+  			<td>
+  				<img src='./_imagens/_icones/itens_catalogados/faca.jpg' alt='Faca'>
+  			</td>
+  			<td>Faca</td>
+  			<td class='item-value-range'>1-24</td>
+  			<td>
+  				<img src='./_imagens/_icones/itens_catalogados/torrada.jpg' alt='Torrada'>
+  			</td>
+  			<td>Torrada</td>
+  			<td>5</td>
+  		</tr>
+  		<tr>
+  			<td>
+  				<img src='./_imagens/_icones/itens_catalogados/revolver.jpg' alt='Revólver'>
+  			</td>
+  			<td>Revólver</td>
+  			<td class='item-value-range'>1-35</td>
+  			<td>
+  				<img src='./_imagens/_icones/itens_catalogados/rifle.jpg' alt='Rifle'>
+  			</td>
+  			<td>Rifle</td>
+  			<td class='item-value-range'>1-55</td>
+  			<td></td>
+  			<td></td>
+  			<td></td>
+  		</tr>
+  	</tbody>
   </table>
   ```
 

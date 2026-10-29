@@ -49,7 +49,31 @@ button {
 }
 
 h1 {
+    font-size: 55rem;
+    text-shadow: 5rem 0 0 rgb(0, 0, 0), -5rem 0 0 rgb(0, 0, 0), 0 5rem 0 rgb(0, 0, 0), 0 -5rem 0 rgb(0, 0, 0), 3rem 3rem rgb(0, 0, 0), -3rem -3rem 0 rgb(0, 0, 0), 3rem -3rem 0 rgb(0, 0, 0), -3rem 3rem 0 rgb(0, 0, 0);    
     font-family: batukapur;
+    font-weight: lighter;         
+}
+
+h2 {
+    font-size: calc(8px + 34rem);
+    text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);
+    font-weight: normal;
+    letter-spacing: 2rem;  
+}
+
+@media screen and (max-width: 800px) { 
+    h1 {
+        font-size: calc(23px + 46rem);
+        text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: calc(20px + 50rem);   
+        text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);        
+        letter-spacing: 1px;      
+    }    
 }
 
 p, li, td {
@@ -152,7 +176,7 @@ a:hover {
             margin-top: 30rem;
         }
 
-        article p, article ol li {
+        article p, article ol li, article table td {
             font-size: calc(8px + 24rem);
             text-shadow: 2.3rem 0 0 rgb(0, 0, 0), -2.3rem 0 0 rgb(0, 0, 0), 0 2.3rem 0 rgb(0, 0, 0), 0 -2.3rem 0 rgb(0, 0, 0), 1.6rem 1.6rem 0 rgb(0, 0, 0), -1.6rem -1.6rem 0 rgb(0, 0, 0), 1.6rem -1.6rem 0 rgb(0, 0, 0), -1.6rem 1.6rem 0 rgb(0, 0, 0), 0 0 1.1rem rgb(0, 0, 0);
         }
@@ -211,13 +235,10 @@ a:hover {
         }     
 
         article header h1 {
-            text-align: center;
-            font-weight: lighter;
-            font-size: 55rem;
+            text-align: center;      
             color: #00D900;
-            text-shadow: 5rem 0 0 rgb(0, 0, 0), -5rem 0 0 rgb(0, 0, 0), 0 5rem 0 rgb(0, 0, 0), 0 -5rem 0 rgb(0, 0, 0), 3rem 3rem rgb(0, 0, 0), -3rem -3rem 0 rgb(0, 0, 0), 3rem -3rem 0 rgb(0, 0, 0), -3rem 3rem 0 rgb(0, 0, 0);    
             letter-spacing: 1rem;    
-        }
+        }        
 
     /* |-----------------------------| 🧱 Section 🧱 |---------------------------|💻|  */
 
@@ -313,12 +334,8 @@ a:hover {
             background-size: cover;
         }
 
-        .subtitle-div h2 {
-            font-size: calc(6px + 40rem);
-            letter-spacing: 2rem; 
-            text-shadow: 4.3rem 0 0 rgb(0, 0, 0), -3.1rem 0 0 rgb(0, 0, 0), 0 3.1rem 0 rgb(0, 0, 0), 0 -3.1rem 0 rgb(0, 0, 0), 1.6rem 1.6rem rgb(0, 0, 0), -1.6rem -1.6rem 0 rgb(0, 0, 0), 1.6rem -1.6rem 0 rgb(0, 0, 0), -1.6rem 1.6rem 0 rgb(0, 0, 0);               
+        .subtitle-div h2 {         
             font-family: frizquadrata;
-            font-weight: normal;
             color: #44BD2F;
         }   
 
@@ -365,12 +382,14 @@ a:hover {
     
         .step-list li header h2, .step-list li header::before  {
             display: inline;
-            color: #FCC200;
-            font-size: calc(8px + 34rem);
-            text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);        
-            font-weight: normal;
-            letter-spacing: 2rem;        
+            color: #FCC200;       
         }    
+
+        .step-list li header::before  {
+            font-size: calc(8px + 34rem);
+            text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);            
+            letter-spacing: 2rem;  
+        }
 
         .step-list li header h2::before {
             content: ' - ';
@@ -423,7 +442,7 @@ a:hover {
         table.items-table {
             margin: 20rem auto;
             border-collapse: collapse;
-            background-image: url('../../../_imagens/fundo_tabela.jpg');
+            background-image: url('../img/fundo_tabela.jpg');
             background-repeat: repeat;
             box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
         }
@@ -456,6 +475,97 @@ a:hover {
             display: block;
             width: 95rem;
             border: 6rem solid #000000;
+        }
+
+    /* |-------------------------| 🤝 NPC Trade Table 🤝 |-----------------------|💻|  */
+
+        table.npc-trade-table {
+            margin: 20rem auto;
+            border: 8rem solid #000000;
+            border-collapse: collapse;
+            /* Interest in Item's Background */
+            background-image: url('../img/fundo_tabela_quer.jpg');
+        }
+
+        /* May Have Item Cells Background */
+        .npc-trade-table tr td:nth-last-child(-n+3) {
+            background-image: url('../img/fundo_tabela_pode_ter.jpg');
+        }
+
+        table.npc-trade-table:first-child {
+            margin-top: 0;
+        }
+
+        table.npc-trade-table:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Header and Character Picture Cells */
+        .npc-trade-table th {
+            padding: 10.4rem;
+            border: 6rem solid #000000;
+            background-image: url('../img/fundo_tabela.jpg');
+            font-family: frizquadrata;
+            font-size: calc(5px + 36rem);
+            text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 1.68rem 1.68rem 0 rgb(0, 0, 0), -1.68rem -1.68rem 0 rgb(0, 0, 0), 1.68rem -1.68rem 0 rgb(0, 0, 0), -1.68rem 1.68rem 0 rgb(0, 0, 0);
+        }
+
+        /* Body Cells */
+        .npc-trade-table td {
+            padding: 0 10rem;
+            text-align: center;
+        }
+
+        /* Header Cell Borders */
+        .npc-trade-table thead th {
+            border: 8rem solid #000000;
+        }
+
+        /* Internal Cell Borders */
+        .npc-trade-table td {
+            border: 6rem solid #000000;
+        }
+
+        /* Character Picture Cell */
+        .npc-trade-table tbody:first-of-type th:first-of-type {
+            width: calc(22px + 250rem);
+            padding: 0;
+        }
+
+        .npc-trade-table tbody:first-of-type th:first-of-type img {
+            display: block;
+            /* Occupy the height of two item images plus the border between them */
+            height: calc(((8px + 90rem) * 2) + 6rem);
+            width: auto;
+            margin: 0 auto;
+            box-shadow: 0 8rem 0 #000000, 0 -8rem 0 #000000;
+        }
+
+        /* Item's Image Cell (Interest in and May Have) */
+        .npc-trade-table td:nth-of-type(3n+1) {
+            width: calc(8px + 90rem);
+            padding: 0;
+        }
+
+        .npc-trade-table td img {
+            display: block;
+            width: calc(8px + 90rem);
+            height: calc(8px + 90rem);
+        }
+
+        /* Item's Name Cell (Interest in and May Have) */
+        .npc-trade-table td:nth-of-type(3n+2) {
+            width: calc(42px + 150rem);
+        }
+
+        /* Item's Value Cell (Interest in and May Have) */
+        .npc-trade-table td:nth-of-type(3n) {
+            width: calc(20px + 62rem);
+            white-space: nowrap;
+        }
+
+        .npc-trade-table td.item-value-range {
+            padding: 0;
         }
 
     /* |---------------------| 📃 Text With Image Wrapper 📃 |-------------------|💻|  */
@@ -543,13 +653,7 @@ a:hover {
     
         article:nth-of-type(8) header {
             background-image: url('../img/section-header-8-mobile.jpg');
-        }     
-        
-        article header h1 {
-            font-size: calc(23px + 46rem);
-            text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 rgb(0, 0, 0), 0 3px 0 rgb(0, 0, 0), 0 -3px 0 rgb(0, 0, 0), 1.5px 1.5px rgb(0, 0, 0), -1.5px -1.5px 0 rgb(0, 0, 0), 1.5px -1.5px 0 rgb(0, 0, 0), -1.5px 1.5px 0 rgb(0, 0, 0);
-            letter-spacing: 1px;
-        }       
+        }         
     }
 
     /* |-----------------------------| 🧱 Section 🧱 |---------------------------|📱|  */
@@ -625,13 +729,7 @@ a:hover {
             padding: 8px;
             border-top-width: 8px;
             border-bottom-width: 8px;
-        }
-
-        .subtitle-div h2 {
-            font-size: calc(20px + 50rem);
-            letter-spacing: 1px;        
-            text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);        
-        }    
+        }  
     }
 
     /* |---------------------------| 🔎 Observation 🔎 |-------------------------|📱|  */
@@ -660,10 +758,8 @@ a:hover {
             padding: 2px 13px;
         }    
 
-        .step-list li header h2, .step-list li header::before  {
-            font-size: calc(22px + 46rem);
+        .step-list li header::before  {
             letter-spacing: 1px;
-            text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);
         }    
 
         .step-list li ul {
@@ -735,6 +831,174 @@ a:hover {
             max-width: 100px;
             margin: 0 auto;
             border-width: 4px;
+        }
+    }
+
+    /* |-------------------------| 🤝 NPC Trade Table 🤝 |-----------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        table.npc-trade-table {
+            display: grid;
+            grid-template-columns: repeat(20, 5%);
+            width: 100%;
+            max-width: 550px;
+            margin: calc(12px + 20rem) auto;
+            border-width: 6px;
+        }
+
+        /* Reset Borders */
+        .npc-trade-table td, .npc-trade-table thead th {
+            border: none;
+        }
+
+        /* Put all the tds and ths on the same level to create the Mobile Grid */
+        .npc-trade-table thead,
+        .npc-trade-table tbody,
+        .npc-trade-table tr {
+            display: contents;
+        }
+
+        /* Vertically center the text in the cells */
+        .npc-trade-table tbody:first-of-type th:first-of-type, .npc-trade-table thead th, .npc-trade-table td:nth-of-type(3n+2), .npc-trade-table td:nth-of-type(3n+3) {
+            display: grid;
+            align-items: center;
+        }
+
+        /* Header Cells */
+        .npc-trade-table thead th {
+            font-size: calc(5px + 68rem);
+            text-shadow: 2.1px 0 0 rgb(0, 0, 0), -2.1px 0 0 rgb(0, 0, 0), 0 2.1px 0 rgb(0, 0, 0), 0 -2.1px 0 rgb(0, 0, 0), 1.4px 1.4px 0 rgb(0, 0, 0), -1.4px -1.4px 0 rgb(0, 0, 0), 1.4px -1.4px 0 rgb(0, 0, 0), -1.4px 1.4px 0 rgb(0, 0, 0), 0 0 1.3px rgb(0, 0, 0);
+            padding: 5px 0;
+        }
+
+        /* Body Cells */
+        .npc-trade-table tbody td {
+            font-size: calc(3px + 60rem);
+            text-shadow: 1.6px 0 0 rgb(0, 0, 0), -1.6px 0 0 rgb(0, 0, 0), 0 1.6px 0 rgb(0, 0, 0), 0 -1.6px 0 rgb(0, 0, 0), 1.1px 1.1px 0 rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0);
+        }
+
+        /* --- Grid Styles by Display Order --- */
+
+        /* Character Title Column Header */
+        .npc-trade-table thead th:nth-of-type(1) {
+            order: 1;
+            grid-column: span 8;
+            border-right: #000000 solid 6px;
+            border-bottom: #000000 solid 6px;
+        }
+
+        /* May Have Title Column Header */
+        .npc-trade-table thead th:nth-of-type(3) {
+            order: 2;
+            grid-column: span 12;
+            border-bottom: #000000 solid 6px;
+        }
+
+        /* Character Picture Cell */
+        .npc-trade-table tbody:first-of-type th:first-of-type {
+            order: 3;
+            position: relative;
+            width: auto;
+            grid-column: span 8;
+            /* Show up to three item cells on mobile screens; the rest are hidden */
+            grid-row: span 9;
+            border-right: #000000 solid 6px;
+        }
+
+        .npc-trade-table tbody:first-of-type th:first-of-type img {
+            position: absolute;
+            height: auto;
+            width: 100%;
+            border: none;
+            box-shadow: 0 6px 0 #000000, 0 -6px 0 #000000;
+        }
+
+        /* Item Cells */
+        .npc-trade-table td img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Item Range Value Text is smaller to avoid overflow (Ex: 1-35) */
+        .npc-trade-table tbody td.item-value-range {
+            font-size: 50rem;
+        }
+
+        /* May Have Item Cells (Img, Name and Value) */
+        .npc-trade-table tr td:nth-last-child(-n+3) {
+            order: 4;
+        }
+
+        /* May Have Item - Img */
+        .npc-trade-table tr td:nth-last-child(3) {
+            grid-column: span 3;
+        }
+
+        /* May Have Item - Name */
+        .npc-trade-table tr td:nth-last-child(2) {
+            grid-column: span 7;
+        }
+
+        /* May Have Item - Value */
+        .npc-trade-table tr td:nth-last-child(1) {
+            grid-column: span 2;
+        }
+
+        /* Hides May Have Empty Cells */
+        .npc-trade-table tr td:nth-last-child(-n+3):empty, .npc-trade-table tr:nth-of-type(n+4) td:nth-last-child(-n+3) {
+            display: none;
+        }
+
+        /* Always shows at least Two May Have Cells even when Empty */
+        .npc-trade-table tbody tr:nth-of-type(-n+2) td:nth-last-child(-n+3):empty {
+            display: table-cell;
+        }
+
+        /* Fix to force empty cells to still fill their space */
+        .npc-trade-table tbody tr:nth-of-type(-n+2) td:nth-last-child(3):empty {
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Interest in Column Header */
+        .npc-trade-table thead th:nth-of-type(2) {
+            order: 5;
+            grid-column: span 20;
+            border-top: #000000 solid 6px;
+            border-bottom: #000000 solid 6px;
+        }
+
+        /* Interest in Item Cells (Img, Name and Value) */
+        .npc-trade-table td {
+            order: 6;
+        }
+
+        /* Interest in Item - Img */
+        .npc-trade-table td:nth-of-type(3n+1) {
+            grid-column: span 3;
+            width: auto;
+            border-right: #000000 solid 4px;
+        }
+
+        /* Interest in Item - Name */
+        .npc-trade-table td:nth-of-type(3n+2) {
+            width: auto;
+            grid-column: span 5;
+        }
+
+        /* Interest in Item - Value */
+        .npc-trade-table td:nth-of-type(3n+3) {
+            width: auto;
+            grid-column: span 2;
+            border-left: #000000 solid 4px;
+        }
+
+        /* Item Cells Missing Borders */
+        .npc-trade-table tbody td:nth-of-type(3) {
+            border-right: #000000 solid 4px;
+        }
+
+        .npc-trade-table tr:not(:first-child) td {
+            border-top: #000000 solid 4px;
         }
     }
 
