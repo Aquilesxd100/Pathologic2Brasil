@@ -185,7 +185,7 @@ a:hover {
             margin-top: 0;
         }    
 
-        article header {
+        article > header {
             position: relative;
             padding: 25rem 0;
             background-size: 100% 100%;
@@ -202,35 +202,35 @@ a:hover {
             background-size: 100% 100%;
         }    
 
-        article:nth-of-type(1) header {
+        article:nth-of-type(1) > header {
             background-image: url('../img/section-header-1-desktop.jpg');
         }
 
-        article:nth-of-type(2) header {
+        article:nth-of-type(2) > header {
             background-image: url('../img/section-header-2-desktop.jpg');
         }    
 
-        article:nth-of-type(3) header {
+        article:nth-of-type(3) > header {
             background-image: url('../img/section-header-3-desktop.jpg');
         }    
         
-        article:nth-of-type(4) header {
+        article:nth-of-type(4) > header {
             background-image: url('../img/section-header-4-desktop.jpg');
         }     
 
-        article:nth-of-type(5) header {
+        article:nth-of-type(5) > header {
             background-image: url('../img/section-header-5-desktop.jpg');
         }      
 
-        article:nth-of-type(6) header {
+        article:nth-of-type(6) > header {
             background-image: url('../img/section-header-6-desktop.jpg');
         }
         
-        article:nth-of-type(7) header {
+        article:nth-of-type(7) > header {
             background-image: url('../img/section-header-7-desktop.jpg');
         }    
 
-        article:nth-of-type(8) header {
+        article:nth-of-type(8) > header {
             background-image: url('../img/section-header-8-desktop.jpg');
         }     
 
@@ -261,6 +261,41 @@ a:hover {
 
         section figure caption {
             /* Pending Adjustments for the Food Page and maybe more */
+        }
+
+    /* |-------------------------| 🔖 Section Header 🔖 |-------------------------|💻|  */
+
+        section > header {
+            display: table;
+            width: 100%;
+            border-top: 12rem solid #000000;
+            border-bottom: 12rem solid #000000;
+            background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
+        }
+
+        section > header > div, section > header > h2 {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        section > header > div {
+            width: 1px;
+            padding: 8rem 30rem;
+            border-right: 12rem solid #000000;
+        }
+
+        section > header > h2 {
+            padding: 8rem 40rem;
+        }
+
+        section > header h2 {
+            font-family: batukapur;
+            color: #44BD2F;
+        }
+
+        section > header > div h2 {
+            white-space: nowrap;
+            letter-spacing: 4rem;
         }
 
     /* |------------------------------| 💡 Tip Div 💡 |---------------------------|💻|  */
@@ -615,7 +650,7 @@ a:hover {
             text-shadow: 1.6px 0 0 rgb(0, 0, 0), -1.6px 0 0 rgb(0, 0, 0), 0 1.6px 0 rgb(0, 0, 0), 0 -1.6px 0 rgb(0, 0, 0), 1.1px 1.1px 0 rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0);
         }    
 
-        article header {
+        article > header {
             padding: calc(10px + 20rem) 30px;
         }
 
@@ -623,35 +658,35 @@ a:hover {
             background-image: url('../img/section-header-frame-mobile.png');
         }     
 
-        article:nth-of-type(1) header {
+        article:nth-of-type(1) > header {
             background-image: url('../img/section-header-1-mobile.jpg');
         }
 
-        article:nth-of-type(2) header {
+        article:nth-of-type(2) > header {
             background-image: url('../img/section-header-2-mobile.jpg');
         }    
 
-        article:nth-of-type(3) header {
+        article:nth-of-type(3) > header {
             background-image: url('../img/section-header-3-mobile.jpg');
         }     
 
-        article:nth-of-type(4) header {
+        article:nth-of-type(4) > header {
             background-image: url('../img/section-header-4-mobile.jpg');
         }      
     
-        article:nth-of-type(5) header {
+        article:nth-of-type(5) > header {
             background-image: url('../img/section-header-5-mobile.jpg');
         }       
 
-        article:nth-of-type(6) header {
+        article:nth-of-type(6) > header {
             background-image: url('../img/section-header-6-mobile.jpg');
         }   
     
-        article:nth-of-type(7) header {
+        article:nth-of-type(7) > header {
             background-image: url('../img/section-header-7-mobile.jpg');
         }   
     
-        article:nth-of-type(8) header {
+        article:nth-of-type(8) > header {
             background-image: url('../img/section-header-8-mobile.jpg');
         }         
     }
@@ -679,6 +714,31 @@ a:hover {
             border: 6px solid #000000; 
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);        
         }    
+    }
+
+    /* |-------------------------| 🔖 Section Header 🔖 |-------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        section > header {
+            border-top-width: 8px;
+            border-bottom-width: 8px;
+        }
+
+        section > header > div {
+            width: auto;
+            padding: 8px 13px;
+            border-right-width: 8px;
+        }
+
+        section > header > h2 {
+            padding: 8px;
+        }
+
+        section > header > div h2 {
+            white-space: normal;
+            letter-spacing: 1px;
+            text-wrap: balance;
+        }
     }
 
     /* |------------------------------| 💡 Tip Div 💡 |---------------------------|📱|  */

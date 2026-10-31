@@ -93,6 +93,10 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
    root-relative `/assets/...` (hard rule 8 in `CLAUDE.md`).
 10. **Inline `<svg>` closes with `</ svg>`**, with a space, one child per line and an
     explicit closing tag on every child (hard rule 9 in `CLAUDE.md`).
+11. **No accented characters in `batukapur` text.** The font has no accented glyphs, so
+    the article `h1`s, the section header `h2`s (day box included) and any other text set
+    in `batukapur` use the unaccented letter: `Atuacao sobre Fome`, not `Atuação sobre Fome`
+    (hard rule 11 in `CLAUDE.md`). `alt`, `title` and text in other fonts keep their accents.
 
 ## 4. Order of work
 
@@ -143,6 +147,28 @@ Copy the head of `mapa.html`, with single quotes throughout:
 - One `<section>` per topic inside the article. A subtitle (`div.subtitle-div`) opens a
   topic, so it usually starts a new section. A short intro paragraph on its own is
   `<section class='padded-container'>`.
+- **A section with its own title opens with a section header** — `<header>` as the
+  section's first child, holding the title `h2` and, optionally, a day box before it
+  (`div > h2`, e.g. `Dia 1`). No classes: `main.css` styles every `section > header`.
+  The title is green `batukapur` on the dark bar, so it takes no accents (hard rule 11).
+  On desktop and mobile the day box and title are table cells: the black divider between
+  them always reaches the top and bottom borders and both texts are vertically centred.
+
+  ```html
+  <section>
+  	<header>
+  		<div>
+  			<h2>Dia 1</h2>
+  		</div>
+  		<h2>Atuacao sobre Fome</h2>
+  	</header>
+  	…
+  </section>
+  ```
+
+  Without a day box the header holds just the `h2`. Use the section header for a title
+  that names the whole section, and `div.subtitle-div` for a heading inside a section's
+  content.
 - **A step-by-step guide is one `ol.step-list` inside a single section**, one `li` per step
   (see the shared components in `CLAUDE.md`). Never one article or section per step.
   Any other run of parts that share one structure is a `div` per part with a shared class
@@ -158,7 +184,8 @@ Copy the head of `mapa.html`, with single quotes throughout:
   `<section>`. `<body id='body'>` is the one exception, as part of the shell. Section 10
   checks this again once the CSS and JS exist.
 - **Visible text stays exactly as it is.** Do not fix accents, typos or wording, do not
-  retranslate, and keep double quotes inside visible text.
+  retranslate, and keep double quotes inside visible text. The one exception is text set in
+  `batukapur` (article `h1`, section header `h2`s), which drops its accents (hard rule 11).
 
 ### Old markup → new components
 
@@ -172,6 +199,8 @@ class names and markup exactly.
 | `div.atencao-padrao > p > span` | `div.beware-div > p > span` *(shared)* |
 | `p.observacao` | `p.observation` *(shared)* |
 | `div.sub-titulo` / `div.sub-titulo2` `> h2` | `div.subtitle-div > h2` *(shared)* — `h3` for a heading nested under another subtitle |
+| a section title bar in green `batukapur` (`div.titulo-energia-infinita`, `div.titulo-get-back-here`, `div.titulo-como-fugir`, `div.titulo-temido-chute` in `combate.html`) | `section > header > h2` *(shared)* as the section's first child, no class; accents removed (hard rule 11) |
+| `div.sub-titulo-info > h2.info + h2.titulo` (a `Dia 1` box beside the title) | `section > header` with the day box `div > h2` before the title `h2` *(shared)*; drop the `<br class='modo-mobile'>`s — the box wraps on its own on mobile |
 | numbered steps (step title `h2 > span` number plaque + `div.dicas` plaques + video) | `ol.step-list > li` with `header > h2` (title only — the number is a CSS counter), `ul > li` plaques and `div.video-wrapper` *(shared)* |
 | `div.dicas > p > img(flecha_texto)` (text plaques outside a step) | `ul > li` plaques as in `ol.step-list`; the plaque background stretches with the text, so no size class is needed |
 | item / combination `<table>` | `table.items-table` *(shared)*: `<td>` only, `td.quantity-cell` for the counter, `td.equal-cell` for `=`, no class on icon and name cells, `alt` = item name on every icon |
@@ -231,6 +260,9 @@ grep -nE '<iframe|flecha_texto|modo-(mobile|desktop)|_css/|_js/index\.js|<style'
 
 # line endings
 file $1
+
+# no accents in batukapur text — must return nothing for h1s; check every section header h2 by eye
+grep -nE "<h1>[^<]*[ÀÁÂÃÇÉÊÍÓÔÕÚàáâãçéêíóôõú]" $1
 
 # every local src / srcset / href resolves (the page CSS and the videos may be missing
 # at this point — list them in the checkpoint)

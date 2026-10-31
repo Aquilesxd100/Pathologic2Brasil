@@ -95,6 +95,12 @@ page; this file holds the conventions that apply to all work in the repo.
     	<img src='./_imagens/_icones/itens_catalogados/sino.jpg' alt='Sino'>
     </td>
     ```
+11. **No accented characters in `batukapur` text.** The `batukapur` font has no accented
+    glyphs, so any text rendered in it — the article `h1`, the section header `h2`s, or any
+    other component that sets `font-family: batukapur` — is written with the unaccented
+    letter instead: `Atuacao sobre Fome`, not `Atuação sobre Fome`; `Mecanicas`, not
+    `Mecânicas`. This applies to the visible text only; `alt`, `title` and text in other
+    fonts keep their accents.
 
 ---
 
