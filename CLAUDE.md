@@ -355,16 +355,24 @@ beyond page-specific layout.
   <table class='items-table'>
   	<tr>
   		<td class='quantity-cell'>1x</td>
-  		<td><img src='./_imagens/_icones/revolver.jpg' alt='Arma de Fogo'></td>
+  		<td>
+  			<img src='./_imagens/_icones/revolver.jpg' alt='Arma de Fogo'>
+  		</td>
   		<td>Arma de Fogo</td>
   	</tr>
   </table>
   <table class='items-table'>
   	<tr>
-  		<td><img src='./_imagens/_icones/twyre.jpg' alt='Twyre Marrom'></td>
-  		<td><img src='./_imagens/_icones/garrafa_agua.jpg' alt='Garrafa de Água'></td>
+  		<td>
+  			<img src='./_imagens/_icones/twyre.jpg' alt='Twyre Marrom'>
+  		</td>
+  		<td>
+  			<img src='./_imagens/_icones/garrafa_agua.jpg' alt='Garrafa de Água'>
+  		</td>
   		<td class='equal-cell'>=</td>
-  		<td><img src='./_imagens/_icones/yas.jpg' alt='Infusão "Yas"'></td>
+  		<td>
+  			<img src='./_imagens/_icones/yas.jpg' alt='Infusão "Yas"'>
+  		</td>
   	</tr>
   </table>
   ```
