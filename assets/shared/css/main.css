@@ -126,6 +126,10 @@ a:hover {
     font-family: Arial;
 }
 
+.cyan-color {
+    color: #BFEDEF;
+}
+
 @media screen and (max-width: 800px) {
     .padded-container {
         padding: calc(8px + 25rem);
