@@ -47,8 +47,10 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
   (`assets/pages/index/index.css`, `assets/pages/index/index.js`), `tudo.html` /
   `resultados.html` (`assets/shared/css/guide-card-listing.css`,
   `assets/shared/js/guide-card-listing.js`), `mapa.html` (`assets/pages/map/map.css`,
-  `assets/pages/map/map.js`), and `dinheiro.html` (`assets/pages/money/money.css`, the
-  reference for the shared content components). Their content uses `<article>`s containing `<section>`s — see
+  `assets/pages/map/map.js`), `dinheiro.html` (`assets/pages/money/money.css`, the
+  reference for the shared content components) and `podinzins.html`
+  (`assets/pages/shmowders/shmowders.css`, the reference for `table.npc-trade-table` and
+  section headers with a day box). Their content uses `<article>`s containing `<section>`s — see
   "Page structure" in `CLAUDE.md`.
 - Shared code you must reuse (edit only on request, hard rule 4): `assets/shared/css/main.css`, `assets/shared/js/utils.js`,
   `assets/shared/js/globalVariables.js`.
@@ -75,7 +77,8 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
    own initiative belongs in one of them, leave it in the page file and **name it in your
    final report**.
 5. **Never edit the reference pages** (`index.html`, `tudo.html`, `resultados.html`,
-   `mapa.html`, `dinheiro.html` and their EN versions) or their CSS/JS. Read only.
+   `mapa.html`, `dinheiro.html`, `podinzins.html` and their EN versions) or their CSS/JS.
+   Read only.
 6. **The HTML can still change after step 1.** Step 1 (section 5) defines the PT markup,
    but later steps may adjust it whenever the work needs it: a hook for an old narrow
    rule, a wrapper the CSS needs, an element order that can only be fixed in the markup.
@@ -118,7 +121,8 @@ up, and the EN page mirrors it. So the PT page is rewritten first, and **only th
 - Old version: `git show master:$1`. Current version: `$1`. The current file may already be
   half-migrated (site shell removed, `<p2b-template>` added) while its content is still the
   old markup. Read both in full before writing anything.
-- Read `mapa.html`, `index.html` and `dinheiro.html` as the structural reference, and
+- Read `mapa.html`, `index.html`, `dinheiro.html` and `podinzins.html` as the structural
+  reference, and
   `main.css` for the components that already exist.
 - Read the old CSS rules behind every class the page uses (for pages on the shared old
   stylesheet, that is `_css/padrao.css`) so you know what each block looked like and which

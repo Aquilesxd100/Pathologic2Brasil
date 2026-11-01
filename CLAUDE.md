@@ -15,8 +15,11 @@ as a reference for how new or refactored code should look.
 - `index.html` / `en/index.html` — `assets/pages/index/index.css`, `assets/pages/index/index.js`
 - `resultados.html` / `en/results.html` and `tudo.html` / `en/all.html` — `assets/shared/css/guide-card-listing.css`, `assets/shared/js/guide-card-listing.js`
 - `mapa.html` / `en/map.html` — `assets/pages/map/map.css`, `assets/pages/map/map.js`
-- `dinheiro.html` / `en/money.html` — `assets/pages/money/money.css`, no page JS *(most recent;
-  the reference for the shared content components below)*
+- `dinheiro.html` / `en/money.html` — `assets/pages/money/money.css`, no page JS *(the
+  reference for the shared content components below)*
+- `podinzins.html` / `en/shmowders.html` — `assets/pages/shmowders/shmowders.css`, no page JS
+  *(most recent; the reference for `table.npc-trade-table` and for section headers with a
+  day box)*
 
 All of them use the shared `assets/shared/css/main.css`, `assets/shared/js/globalVariables.js`,
 `assets/shared/js/utils.js` and the template component in `assets/shared/P2B-Template/`.
@@ -31,7 +34,7 @@ file organization, section ordering, banner comment style and naming. If a refer
 disagrees with that commit, the commit wins.
 
 Do **not** copy patterns from the not-yet-refactored pages (`comida.html`, `receitas.html`,
-`combate.html`, `podinzins.html`, `trocas.html`, etc.) or their CSS/JS —
+`combate.html`, `trocas.html`, etc.) or their CSS/JS —
 they are the old style and are pending migration.
 
 `.claude/commands/refactor-page.md` holds the full step-by-step procedure for migrating a
@@ -379,7 +382,8 @@ beyond page-specific layout.
 
 - **NPC trade table — `table.npc-trade-table`.** Replaces the old nested
   `div.troca-resumida > table.tabela-primaria > … table.tabela-secundaria` NPC tables
-  (`podinzins.html`, `comida.html`, `trocas.html`). One table per NPC. Rules:
+  (`comida.html`, `trocas.html`; already migrated in `podinzins.html`). One table per NPC.
+  Rules:
   - `thead` holds one row of three `th scope='col'`: the character title, the "interest in"
     title with `colspan='6'` and the "may have" title with `colspan='3'`.
   - One `tbody`. Its first row opens with `th scope='rowgroup' rowspan='N'` (N = number of
