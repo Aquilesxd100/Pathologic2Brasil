@@ -144,8 +144,9 @@ Copy the head of `mapa.html`, with single quotes throughout:
   `<article>` with `<header><h1>Title</h1></header>` first, then its
   content in one or more `<section>`s (see "Page structure" in `CLAUDE.md`). The banner
   images are dropped: `main.css` draws article headers by `nth-of-type`.
-- One `<section>` per topic inside the article. A subtitle (`div.subtitle-div`) opens a
-  topic, so it usually starts a new section. A short intro paragraph on its own is
+- One `<section>` per topic inside the article. A section header or a subtitle
+  (`div.subtitle-div`) opens a topic, so it usually starts a new section — see "Section
+  header or subtitle?" below for which one to use. A short intro paragraph on its own is
   `<section class='padded-container'>`.
 - **A section with its own title opens with a section header** — `<header>` as the
   section's first child, holding the title `h2` and, optionally, a day box before it
@@ -166,9 +167,20 @@ Copy the head of `mapa.html`, with single quotes throughout:
   </section>
   ```
 
-  Without a day box the header holds just the `h2`. Use the section header for a title
-  that names the whole section, and `div.subtitle-div` for a heading inside a section's
-  content.
+  Without a day box the header holds just the `h2`.
+- **Section header or subtitle? Decide by the old title's font, not its class name.** Look
+  up the old title's rule in the old CSS (including any page-specific override) and see
+  which `font-family` actually renders:
+  - green **`batukapur`** (old `div.sub-titulo`, the `combate.html` title bars) →
+    **section header** `section > header > h2`, accents removed (hard rule 11);
+  - green **`frizquadrata`** (old `div.sub-titulo2`) → **subtitle** `div.subtitle-div > h2`,
+    accents kept.
+
+  The two look alike — both are a green title on the dark textured bar — so the font is
+  the only reliable tell. The section header always opens its section; a subtitle can also
+  sit further down, as a heading inside a section's content. A `batukapur` title that is
+  not at the start of a topic still becomes a section header: start a new section there.
+  If you can't tell which font renders, ask in the checkpoint.
 - **A step-by-step guide is one `ol.step-list` inside a single section**, one `li` per step
   (see the shared components in `CLAUDE.md`). Never one article or section per step.
   Any other run of parts that share one structure is a `div` per part with a shared class
@@ -198,8 +210,10 @@ class names and markup exactly.
 | `div.dica-padrao > p > span.sublinhado` | `div.tip-div > p > b` *(shared)* |
 | `div.atencao-padrao > p > span` | `div.beware-div > p > span` *(shared)* |
 | `p.observacao` | `p.observation` *(shared)* |
-| `div.sub-titulo` / `div.sub-titulo2` `> h2` | `div.subtitle-div > h2` *(shared)* — `h3` for a heading nested under another subtitle |
-| a section title bar in green `batukapur` (`div.titulo-energia-infinita`, `div.titulo-get-back-here`, `div.titulo-como-fugir`, `div.titulo-temido-chute` in `combate.html`) | `section > header > h2` *(shared)* as the section's first child, no class; accents removed (hard rule 11) |
+| `div.sub-titulo > h2` / `h3` — green **`batukapur`** in `_css/padrao.css` | `section > header > h2` *(shared)* as the section's first child, no class; accents removed (hard rule 11). **Not** `div.subtitle-div` |
+| `div.sub-titulo2 > h2` / `h3` — green **`frizquadrata`** (no font of its own in `padrao.css`) | `div.subtitle-div > h2` *(shared)* — `h3` for a heading nested under another subtitle |
+| `div.sub-titulo` inside `article.passo-com-iframe` — yellow `frizquadrata` step title with a number plaque | an `ol.step-list` step (see the numbered steps row below) |
+| any other section title bar in green `batukapur` (`div.titulo-energia-infinita`, `div.titulo-get-back-here`, `div.titulo-como-fugir`, `div.titulo-temido-chute` in `combate.html`) | `section > header > h2` *(shared)* as the section's first child, no class; accents removed (hard rule 11) |
 | `div.sub-titulo-info > h2.info + h2.titulo` (a `Dia 1` box beside the title) | `section > header` with the day box `div > h2` before the title `h2` *(shared)*; drop the `<br class='modo-mobile'>`s — the box wraps on its own on mobile |
 | numbered steps (step title `h2 > span` number plaque + `div.dicas` plaques + video) | `ol.step-list > li` with `header > h2` (title only — the number is a CSS counter), `ul > li` plaques and `div.video-wrapper` *(shared)* |
 | `div.dicas > p > img(flecha_texto)` (text plaques outside a step) | `ul > li` plaques as in `ol.step-list`; the plaque background stretches with the text, so no size class is needed |
@@ -209,7 +223,7 @@ class names and markup exactly.
 | `span.simbolo` | `span.font-bug-fix` *(shared utility)* |
 | `picture.imagem`, `img.mapa-imagem`, `picture.mini-mapa`, `picture.introducao-img` | a plain `<picture>` *(shared)* (wrap a bare `<img>` in one), or a `<figure>` with a `<figcaption>` when the image has a caption; `main.css` adds the border, shadow and spacing, and the page CSS only sizes the image from the wrapper id |
 | `modo-desktop` / `modo-mobile` | `hide-on-mobile` / `hide-on-desktop` — or, better, remove the duplicated markup and let the CSS reflow one copy |
-| colour spans (`#menku`, `span.amarelo`…) | a colour utility class (`.cyan-color`…) |
+| colour spans (`#menku`, `span.amarelo`…) | a colour utility class — `.cyan-color` *(shared utility, `#BFEDEF`, colour only)*; any size or spacing goes in a page class next to it |
 | numbered `<p><span>1.</span>…` lines | `<ol><li>` |
 | YouTube `<iframe>` | `<div class='video-wrapper'><video src='./assets/pages/<page>/videos/<english-kebab-name>.mp4' title='…' preload='metadata' controls></video></div>`, with the title in the page's language |
 | `flecha_texto*.png` arrow `<img>` | inside `ol.step-list` plaques: nothing — `main.css` draws the arrow on `li::before`; anywhere else: the inline arrow `<svg>` from `mapa.html` (see the arrow bullet technique in section 7) |
@@ -504,7 +518,7 @@ pattern in commit `32185b6`:
 
 Check before writing anything new: `.hide`, `.hide-on-desktop`, `.hide-on-mobile`,
 `.padded-container`, `.border-top`, `.border-bottom`, `.margin-bottom`, `.underlined`,
-`.font-bug-fix`, `.disable-transition`, the shared `section` / `article` / `header` / `h1` / `h2` base styles,
+`.font-bug-fix`, `.cyan-color`, `.disable-transition`, the shared `section` / `article` / `header` / `h1` / `h2` base styles,
 and the shared content components listed in `CLAUDE.md`.
 
 **Links** are styled globally by the `a {}` rule in `main.css` (green `#00FF00`). Write a
