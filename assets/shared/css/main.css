@@ -179,7 +179,7 @@ a:hover {
             text-align: center;
             border: 12rem solid #000000;       
             box-shadow: 4rem 4rem 3.5rem rgba(0, 0, 0, 0.7);
-            background-image: url('../../../_imagens/fundo_infinito.jpg');
+            background-image: url('../img/fundo-infinito.jpg');
             background-repeat: repeat;
             margin-top: 30rem;
         }
@@ -278,7 +278,7 @@ a:hover {
             width: 100%;
             border-top: 12rem solid #000000;
             border-bottom: 12rem solid #000000;
-            background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
+            background-image: url('../img/fundo-infinito-escuro.jpg');
         }
 
         section > header > div, section > header > h2 {
@@ -372,7 +372,7 @@ a:hover {
             padding: 6rem 40rem 8rem 40rem;
             border-top: 12rem solid #000000;
             border-bottom: 12rem solid #000000;
-            background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
+            background-image: url('../img/fundo-infinito-escuro.jpg');
             background-repeat: repeat;
             background-size: cover;
         }
@@ -409,14 +409,14 @@ a:hover {
             padding: 12rem 40rem;
             border-top: 12rem solid #000000;
             border-bottom: 12rem solid #000000;
-            background-image: url('../../../_imagens/fundo_infinito_escuro.jpg');
+            background-image: url('../img/fundo-infinito-escuro.jpg');
             background-size: cover;
         }    
 
         .step-list li header::before {
             content: counter(step);
             padding: 2rem 16rem;
-            background-image: url('../../../_imagens/_icones/fundo_numeros.png');
+            background-image: url('../img/fundo-numeros.png');
             background-size: 100% 100%;
             color: #FCC200;
             font-family: impact;
@@ -448,7 +448,7 @@ a:hover {
         .step-list ul li {
             margin: 42rem 42rem 42rem 0;
             padding: 18rem 24rem 24rem 24rem;
-            background-image: url('../../../_imagens/step-list-note-lower-part.png'), url('../../../_imagens/step-list-note-upper-part.png'), url('../../../_imagens/step-list-note-middle-part.png');
+            background-image: url('../img/step-list-note-lower-part.png'), url('../img/step-list-note-upper-part.png'), url('../img/step-list-note-middle-part.png');
             background-position: 0 100%, 0 0, 0 0;
             background-size: 100% auto, 100% auto, 100% auto;
             background-size: round(down, 100%, 1px) auto, round(down, 100%, 1px) auto, round(down, 100%, 1px) auto;

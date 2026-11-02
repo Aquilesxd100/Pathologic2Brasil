@@ -55,7 +55,7 @@ div.sub-titulo p.info-secao-inferior {
 div.sub-titulo {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -73,7 +73,7 @@ div.sub-titulo h2 {
 }
 div.sub-titulo-2 {
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -351,7 +351,7 @@ h1.introducao-titulo {
 	letter-spacing: 1px;
 }
 div.secao-principal {
-	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-image: url("../assets/shared/img/fundo-infinito.jpg");
 	background-repeat: repeat;
 	margin: -15px 1% 0% 1%;
 	border: 8px solid #000000;
@@ -440,7 +440,7 @@ h1.infusoes-titulo {
 	letter-spacing: 1px;
 }
 div.infusoes {
-	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-image: url("../assets/shared/img/fundo-infinito.jpg");
 	background-repeat: repeat;
 	margin: -15px 1% 0% 1%;
 	border: 8px solid #000000;
@@ -612,7 +612,7 @@ h1.antibioticos-titulo {
 	letter-spacing: 1px;
 }
 div.antibioticos {
-	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-image: url("../assets/shared/img/fundo-infinito.jpg");
 	background-repeat: repeat;
 	margin: -15px 1% 0% 1%;
 	border: 8px solid #000000;
@@ -816,7 +816,7 @@ h1.analgesicos-titulo {
 	letter-spacing: 1px;
 }
 div.analgesicos {
-	background-image: url("../_imagens/fundo_infinito.jpg");
+	background-image: url("../assets/shared/img/fundo-infinito.jpg");
 	background-repeat: repeat;
 	margin: -1.5vw 1% 0% 1%;
 	border: 8px solid #000000;

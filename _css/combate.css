@@ -22,7 +22,7 @@ h1 {
 	top: -130px;
 	border: 8px solid #000000;
 	margin: 0 1% 0% 1%;
-	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito.jpg);
 	background-repeat: repeat;
 	font-weight: bolder;
 	color: #FFFFFF;
@@ -115,7 +115,7 @@ p#aviso-introducao {
 	#combate-introducao {
 	text-shadow: 1.9px 0 0 rgb(0, 0, 0), -1.9px 0 0 rgb(0, 0, 0), 0 1.9px 0 rgb(0, 0, 0), 0 -1.9px 0 rgb(0, 0, 0), 0.9px 0.9px rgb(0, 0, 0), -0.9px -0.9px 0 rgb(0, 0, 0), 0.9px -0.9px 0 rgb(0, 0, 0), -0.9px 0.9px 0 rgb(0, 0, 0);
 	box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
-	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito.jpg);
 	}
 	#combate-img img {
 		border: 6px solid #000000;
@@ -166,7 +166,7 @@ h2#corpo-a-corpo-titulo {
 	top: -250px;
 	border: 8px solid #000000;
 	margin: 0 1% 0% 1%;
-	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito.jpg);
 	background-repeat: repeat;
 	font-weight: bolder;
 	color: #FFFFFF;
@@ -208,7 +208,7 @@ div#corpo-a-corpo-introducao h3 {
 div .titulo-dica {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	min-width: 100%;
 	width: 100%;
 }
@@ -226,7 +226,7 @@ div .titulo-dica {
 	font-size: 33px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 15px 2px 15px;
 }
@@ -265,7 +265,7 @@ div .titulo-dica {
 div .titulo-dica2 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -285,7 +285,7 @@ div .titulo-dica2 {
 	font-size: 33px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 13px 2px 13px;
 }
@@ -317,7 +317,7 @@ div .titulo-dica2 {
 div .titulo-dica3 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -337,7 +337,7 @@ div .titulo-dica3 {
 	font-size: 33px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 13px 2px 13px;
 }
@@ -369,7 +369,7 @@ div .titulo-dica3 {
 div .titulo-dica4 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -389,7 +389,7 @@ div .titulo-dica4 {
 	font-size: 33px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 13px 2px 13px;
 }
@@ -467,7 +467,7 @@ div .titulo-dica4 {
 		font-size: 33px;
 	}
 	#corpo-a-corpo {
-		background-image: url("../_imagens/fundo_infinito.jpg");
+		background-image: url("../assets/shared/img/fundo-infinito.jpg");
 		box-shadow: 2px 2px 1.8px rgba(0, 0, 0, 0.7);
 		display: flex;
 		flex-direction: column;
@@ -700,7 +700,7 @@ h2#armas-de-fogo-titulo {
 	top: -365px;
 	border: 8px solid #000000;
 	margin: 0 1% 0% 1%;
-	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito.jpg);
 	background-repeat: repeat;
 	font-weight: bolder;
 	color: #FFFFFF;
@@ -754,7 +754,7 @@ div#armas-de-fogo-aviso p {
 div .titulo-dica-2-1 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -774,7 +774,7 @@ div .titulo-dica-2-1 {
 	font-size: 36px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 15px 2px 15px;
 }
@@ -807,7 +807,7 @@ div .titulo-dica-2-1 {
 div .titulo-dica-2-2 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -827,7 +827,7 @@ div .titulo-dica-2-2 {
 	font-size: 33px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 15px 2px 15px;
 }
@@ -864,7 +864,7 @@ div .titulo-dica-2-2 {
 div .titulo-dica-2-3 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -884,7 +884,7 @@ div .titulo-dica-2-3 {
 	font-size: 35px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 13px 2px 13px;
 }
@@ -1154,7 +1154,7 @@ h2#furtividade-titulo {
 	top: -483px;
 	border: 8px solid #000000;
 	margin: 0 1% 0% 1%;
-	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito.jpg);
 	background-repeat: repeat;
 	font-weight: bolder;
 	color: #FFFFFF;
@@ -1203,7 +1203,7 @@ div#furtividade-introducao div#furtividade-aviso p {
 div .titulo-dica-3-1 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -1223,7 +1223,7 @@ div .titulo-dica-3-1 {
 	font-size: 31px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 15px 2px 15px;
 }
@@ -1256,7 +1256,7 @@ div .titulo-dica-3-1 {
 div .titulo-dica-3-2 {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -1276,7 +1276,7 @@ div .titulo-dica-3-2 {
 	font-size: 31px;
 	font-family: impact;
 	font-weight: normal;
-	background-image: url("../_imagens/_icones/fundo_numeros.png");
+	background-image: url("../assets/shared/img/fundo-numeros.png");
 	background-size: 100% 100%;
 	padding: 2px 15px 2px 15px;
 }
@@ -1493,7 +1493,7 @@ h2#mecanicas-titulo {
 	position: relative;
 	border: 8px solid #000000;
 	margin: -614px 1% 0% 1%;
-	background-image: url(../_imagens/fundo_infinito.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito.jpg);
 	background-repeat: repeat;
 	font-weight: bolder;
 	color: #FFFFFF;
@@ -1527,7 +1527,7 @@ h2#mecanicas-titulo {
 div .titulo-energia-infinita {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -1615,7 +1615,7 @@ div#energia-infinita-aviso p {
 div .titulo-get-back-here {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -1675,7 +1675,7 @@ div#get-back-here-inferior p span.dica {
 div .titulo-como-fugir {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
@@ -1763,7 +1763,7 @@ div#como-fugir-dicas {
 div .titulo-temido-chute {
 	border-top: 7px solid #000000;
 	border-bottom: 7px solid #000000;
-	background-image: url(../_imagens/fundo_infinito_escuro.jpg);
+	background-image: url(../assets/shared/img/fundo-infinito-escuro.jpg);
 	background-repeat: repeat;
 	background-size: cover;
 	min-width: 100%;
