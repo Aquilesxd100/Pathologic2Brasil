@@ -50,9 +50,9 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
   `resultados.html` (`assets/shared/css/guide-card-listing.css`,
   `assets/shared/js/guide-card-listing.js`), `mapa.html` (`assets/pages/map/map.css`,
   `assets/pages/map/map.js`), `dinheiro.html` (`assets/pages/money/money.css`, the
-  reference for the shared content components) and `podinzins.html`
+  reference for the shared content components), `podinzins.html`
   (`assets/pages/shmowders/shmowders.css`, the reference for `table.npc-trade-table` and
-  section headers with a day box). Their content uses `<article>`s containing `<section>`s — see
+  section headers with a day box) and `comida.html` (`assets/pages/food/food.css`). Their content uses `<article>`s containing `<section>`s — see
   "Page structure" in `CLAUDE.md`.
 - Shared code you must reuse (edit only on request, hard rule 4): `assets/shared/css/main.css`, `assets/shared/js/utils.js`,
   `assets/shared/js/globalVariables.js`.
@@ -79,8 +79,10 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
    own initiative belongs in one of them, leave it in the page file and **name it in your
    final report**.
 5. **Never edit the reference pages** (`index.html`, `tudo.html`, `resultados.html`,
-   `mapa.html`, `dinheiro.html`, `podinzins.html` and their EN versions) or their CSS/JS.
-   Read only.
+   `mapa.html`, `dinheiro.html`, `podinzins.html`, `comida.html` and their EN versions) or
+   their CSS/JS.
+   Read only — except the path updates for files moved to `assets/shared/` (item
+   images and any file used by more than one page; section 6).
 6. **The HTML can still change after step 1.** Step 1 (section 5) defines the PT markup,
    its stylesheet and its script, but later steps may adjust it whenever the work needs it: a hook for an old narrow
    rule, a wrapper the CSS needs, an element order that can only be fixed in the markup.
@@ -126,8 +128,8 @@ step: the PT page, `assets/pages/<page>/<page>.css` and, when the page has behav
 - Old version: `git show master:$1`. Current version: `$1`. The current file may already be
   half-migrated (site shell removed, `<p2b-template>` added) while its content is still the
   old markup. Read both in full before writing anything.
-- Read `mapa.html`, `index.html`, `dinheiro.html` and `podinzins.html` as the structural
-  reference, and
+- Read `mapa.html`, `index.html`, `dinheiro.html`, `podinzins.html` and `comida.html` as the
+  structural reference, and
   `main.css` for the components that already exist.
 - Read the old CSS rules behind every class the page uses (for pages on the shared old
   stylesheet, that is `_css/padrao.css`) so you know what each block looked like and which
@@ -384,25 +386,87 @@ Every file that belongs to the page moves into the project structure introduced 
 ```
 assets/
   shared/              used by more than one page — css/, js/, img/, fonts/, P2B-Template/
+    img/items/         every item image on the site, for all pages and the trade app
+    img/required-items/  required-item icons used by more than one page
+    img/portraits/     NPC portraits used by more than one page
+    img/conclusao.jpg  the guides' closing picture (+ conclusao-mobile.jpg), shared by all pages
   pages/<page>/        used only by this page; <page> is the EN filename (money, food, map…)
     <page>.css
     <page>.js
-    img/               the page's images; small item / marker icons go in img/icons/
+    img/               the page's images; NPC portraits go in img/portraits/
+      maps/            labelled game-map images only (see "Map images" below)
+      icons/           real icons only (see "Icons" below)
+      required-items/  icons of the items a task requires (see "Required items" below)
     videos/            the local videos that replace the old YouTube embeds
 ```
 
-- **Only files this page uses exclusively.** Before moving a file, search every `.html`,
-  `.css` and `.js` in the repo for its basename, and check JS that builds image paths
-  dynamically. If another page — refactored or not — or a shared file still references it,
-  leave it where it is and point to it with a relative path instead
-  (`../../../_imagens/placa_retangular.png` from the page CSS). The PT page, the EN page and
-  the page's own CSS/JS count as "this page". Language variants of an image
-  (`*_en.jpg`) move together with it.
+- **Item images go to `assets/shared/img/items/`** — see "Item images" in `CLAUDE.md`.
+  Every item image the page uses (trade table icons, combination icons, trade items) moves
+  there in this step, **even when no other page uses it**: unlike the rule below, an item
+  image is always shared. Required items are the exception (next bullet). Old sources: `_imagens/_icones/`,
+  `_imagens/_icones/itens_catalogados/` and, for the trade app, `_imagens/app_trocas/itens/`.
+  - If the item is already in `items/`, point at that file instead of moving a second
+    copy. If two old copies of the same item differ (size, crop, artwork), ask which one
+    to keep.
+  - Update every reference to the moved image in the same step — every page, refactored or
+    not, PT and EN, CSS and JS. Path-only edits to the reference pages are allowed here
+    (the one exception to hard rule 5).
+  - A script that builds item paths from a folder prefix (`_js/receitas.js`,
+    `_js/trocas.js`) cannot point at two folders: leave the images that script needs where
+    they are, list them in the final report, and move them when that page is refactored.
+
+- **Required items go to the page's `img/required-items/`.** The icons of the items a task
+  requires — the item-list rows of a `table.items-table` (`quantity-cell` + icon + name) —
+  do not go to `items/`. They go in the page's own `img/required-items/`, like the money
+  page's `assets/pages/money/img/required-items/`. When more than one page uses the same
+  required-item image, it goes in `assets/shared/img/required-items/` instead (same
+  search-by-full-path rule as below).
+
+- **The conclusion picture is shared: `assets/shared/img/conclusao.jpg`** (desktop) and
+  `assets/shared/img/conclusao-mobile.jpg`. Every page that closes with the conclusion
+  picture points at these two files. Never move a copy into the page's `img/` folder. If
+  the old page uses its own copy (`_imagens/_guias/conclusao*.jpg`,
+  `_imagens/_guias/<page>/conclusao*.jpg`), compare it with the shared file (`md5sum`). If
+  it is identical, `git rm` the old copy and repoint the page. If it differs, ask.
+
+- **Files used by more than one page go to `assets/shared/`.** Before moving a file, search
+  every `.html`, `.css`, `.js` and `.json` in the repo for its **full old path** (in its
+  `./`, `../` and CSS-relative forms), not just its basename: a file with the same name in
+  another folder is a different file. Also check JS that builds image paths dynamically.
+  The PT page, the EN page and the page's own CSS/JS count as "this page".
+  - Only this page uses it → `assets/pages/<page>/` (`img/`, `img/maps/`, `img/portraits/`, `img/icons/`, `img/required-items/`, `videos/`).
+  - Another page uses it too, refactored or not → move it to the matching folder under
+    `assets/shared/` (`img/`, `fonts/`, …), and update every reference in the same step:
+    every page, PT and EN, CSS and JS. Path-only edits to the reference pages are allowed
+    here (hard rule 5).
+  - If the file is already in `assets/shared/`, point at it instead of moving a second
+    copy. If the old copy is byte-identical (`md5sum`), `git rm` it. If it differs, ask.
+  - Leave the file where it is, point to it with a relative path, and list it in the final
+    report only when moving it would mean editing something you must not touch: a shared
+    file (`main.css`, `utils.js`, `globalVariables.js`, `P2B-Template/`; hard rule 4) or an
+    old script that builds the path from a folder prefix.
+  - Language variants of an image (`*_en.jpg`) move together with it.
 - **`git mv`, never copy + delete**, so history follows the file. `git status --short` must
   list each move as a rename (`R`).
+- **Map images go to `img/maps/` only when they match one format:** a picture of the
+  game map with a text label drawn inside the image, usually together with a red marker
+  around an area (for example `maps/mapa-sacrificio.jpg` on the food page or
+  `maps/parquinho-area.jpg` on the Shmowders page). Language variants (`-en`) and mobile
+  versions (`-mobile`) go with it. Any other map picture stays directly in `img/`, even
+  when its name starts with `mapa-`: full or zoomed town maps (`mapa-completo.png`), maps
+  with only markers or icons and no label (`mapa-criancas.jpg`), and screenshots that
+  combine a map crop with game footage (`cache-1.jpg`). Look at each image before moving
+  it, and ask when unsure.
+- **Icons go to `img/icons/` only when they really are icons:** small symbols with a
+  transparent background, like the map marker icons in the map page's option buttons
+  (`assets/pages/map/img/icons/noite-mercador.png`, `ervas.png`, about 75px). Item images
+  go to `assets/shared/img/items/`, NPC portraits to `img/portraits/`, and screenshots,
+  photos and map pictures stay in `img/` (or `img/maps/`), however small they are or
+  whatever the old folder they came from was called (`_imagens/_icones/`). A page with
+  no real icons has no `icons/` folder.
 - **Kebab-case file names.** Underscores become hyphens and the Portuguese name stays
-  (hard rule 1): `mesa_mobile.jpg` → `mesa-mobile.jpg`,
-  `garrafa_vazia.jpg` → `img/icons/garrafa-vazia.jpg`.
+  (hard rule 1): `mesa_mobile.jpg` → `img/mesa-mobile.jpg`,
+  `garrafa_vazia.jpg` → `assets/shared/img/items/garrafa-vazia.jpg`.
 - **Page CSS / JS.** They live at `assets/pages/<page>/<page>.css` and `<page>.js`. Both
   were already created there in step 1; only the CSS `url()` paths and the image paths the
   script builds change here. If the old
@@ -773,7 +837,11 @@ moved images and videos (as renames), and the deleted files (as `D`).
 Tell the user, concisely:
 
 - the files changed and what each got, plus every file moved and its new path
-- any page file left in its old location because another page still uses it
+- every file moved to `assets/shared/` because other pages use it too, with the other
+  pages whose paths were updated for it, and any file left in its old location (a shared
+  file or an old script still points at it)
+- every item image moved to `assets/shared/img/items/`, the other pages whose paths were
+  updated for it, and any item image left behind because an old script builds its path
 - every file deleted because the refactor left it unused, and any file that was already
   unused before the refactor (not deleted — the user decides)
 - every HTML adjustment made after step 1, and why it was needed, including the ids and

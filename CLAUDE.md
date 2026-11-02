@@ -18,8 +18,8 @@ as a reference for how new or refactored code should look.
 - `dinheiro.html` / `en/money.html` — `assets/pages/money/money.css`, no page JS *(the
   reference for the shared content components below)*
 - `podinzins.html` / `en/shmowders.html` — `assets/pages/shmowders/shmowders.css`, no page JS
-  *(most recent; the reference for `table.npc-trade-table` and for section headers with a
-  day box)*
+  *(the reference for `table.npc-trade-table` and for section headers with a day box)*
+- `comida.html` / `en/food.html` — `assets/pages/food/food.css`, no page JS *(most recent)*
 
 All of them use the shared `assets/shared/css/main.css`, `assets/shared/js/globalVariables.js`,
 `assets/shared/js/utils.js` and the template component in `assets/shared/P2B-Template/`.
@@ -33,8 +33,8 @@ Commit `32185b6` (`git show 32185b6`, the index refactor) is the **primary** tem
 file organization, section ordering, banner comment style and naming. If a reference page
 disagrees with that commit, the commit wins.
 
-Do **not** copy patterns from the not-yet-refactored pages (`comida.html`, `receitas.html`,
-`combate.html`, `trocas.html`, etc.) or their CSS/JS —
+Do **not** copy patterns from the not-yet-refactored pages (`receitas.html`, `combate.html`,
+`trocas.html`, etc.) or their CSS/JS —
 they are the old style and are pending migration.
 
 `.claude/commands/refactor-page.md` holds the full step-by-step procedure for migrating a
@@ -62,7 +62,10 @@ page; this file holds the conventions that apply to all work in the repo.
    only when the user asks — for example to add or adjust a shared component (see "Shared
    content components" below). If something you wrote on your own initiative belongs in
    one of them, leave it in the page file and say so in the final report.
-5. **Never edit the already-refactored reference pages** or their CSS/JS. Read only.
+5. **Never edit the already-refactored reference pages** or their CSS/JS. Read only — except
+   the path updates for files moved to `assets/shared/`: item images (see "Item images")
+   and any file used by more than one page (see `.claude/commands/refactor-page.md`,
+   section 6).
 6. **Line endings.** Repo blobs are LF and `core.autocrlf=true`, so the working copies are
    CRLF and git converts them on commit. After a `sed -i` or a script edit, check with
    `file <path>` that the file still has CRLF endings like the rest of the working copy, with
@@ -95,7 +98,7 @@ page; this file holds the conventions that apply to all work in the repo.
 
     ```html
     <td>
-    	<img src='./_imagens/_icones/itens_catalogados/sino.jpg' alt='Sino'>
+    	<img src='./assets/shared/img/items/sino.jpg' alt='Sino'>
     </td>
     ```
 11. **No accented characters in `batukapur` text.** The `batukapur` font has no accented
@@ -316,7 +319,7 @@ beyond page-specific layout.
 - **Step-by-step list — `ol.step-list`.** One `li` per step, holding a `header > h2` with
   the step title, a `ul` of tip plaques, and an optional `div.video-wrapper`. The step
   number is **not** in the HTML: a CSS counter draws it on `header::before` over the
-  `fundo_numeros.png` plaque, and `h2::before` adds the ` - ` separator. Each inner `li` is
+  `assets/shared/img/fundo-numeros.png` plaque, and `h2::before` adds the ` - ` separator. Each inner `li` is
   a text plaque (`step-list-note-upper-part` / `-middle-part` / `-lower-part.png`) with the arrow icon on
   `li::before`. On desktop the plaques and the video sit side by side; on mobile they
   stack.
@@ -344,6 +347,9 @@ beyond page-specific layout.
     `td.equal-cell` (the `=` of a combination row). Icon and name cells take no class.
   - Item-list row: `quantity-cell` + icon + name. Combination row: icons + `equal-cell` +
     result icon.
+  - The icons of an item-list row (the items a task requires) come from the page's
+    `img/required-items/`; combination icons come from `assets/shared/img/items/` (see
+    "Item images").
   - Never duplicate a table for desktop and mobile. When the desktop layout shows two
     tables side by side, write two `table.items-table`s; the shared CSS centres and
     stacks them, and the page CSS puts them side by side on desktop
@@ -359,7 +365,7 @@ beyond page-specific layout.
   	<tr>
   		<td class='quantity-cell'>1x</td>
   		<td>
-  			<img src='./_imagens/_icones/revolver.jpg' alt='Arma de Fogo'>
+  			<img src='./assets/pages/money/img/required-items/revolver.jpg' alt='Arma de Fogo'>
   		</td>
   		<td>Arma de Fogo</td>
   	</tr>
@@ -367,14 +373,14 @@ beyond page-specific layout.
   <table class='items-table'>
   	<tr>
   		<td>
-  			<img src='./_imagens/_icones/twyre.jpg' alt='Twyre Marrom'>
+  			<img src='./assets/shared/img/items/twyre.jpg' alt='Twyre Marrom'>
   		</td>
   		<td>
-  			<img src='./_imagens/_icones/garrafa_agua.jpg' alt='Garrafa de Água'>
+  			<img src='./assets/shared/img/items/garrafa-agua.jpg' alt='Garrafa de Água'>
   		</td>
   		<td class='equal-cell'>=</td>
   		<td>
-  			<img src='./_imagens/_icones/yas.jpg' alt='Infusão "Yas"'>
+  			<img src='./assets/shared/img/items/yas.jpg' alt='Infusão "Yas"'>
   		</td>
   	</tr>
   </table>
@@ -416,32 +422,32 @@ beyond page-specific layout.
   	<tbody>
   		<tr>
   			<th scope='rowgroup' rowspan='2'>
-  				<img src='./_imagens/_icones/retratos/guarda.jpg' alt='Guarda'>
+  				<img src='./assets/pages/food/img/portraits/guarda.jpg' alt='Guarda'>
   			</th>
   			<td>
-  				<img src='./_imagens/_icones/itens_catalogados/gazua.jpg' alt='Gazua'>
+  				<img src='./assets/shared/img/items/gazua.jpg' alt='Gazua'>
   			</td>
   			<td>Gazua</td>
   			<td class='item-value-range'>1-12</td>
   			<td>
-  				<img src='./_imagens/_icones/itens_catalogados/faca.jpg' alt='Faca'>
+  				<img src='./assets/shared/img/items/faca.jpg' alt='Faca'>
   			</td>
   			<td>Faca</td>
   			<td class='item-value-range'>1-24</td>
   			<td>
-  				<img src='./_imagens/_icones/itens_catalogados/torrada.jpg' alt='Torrada'>
+  				<img src='./assets/shared/img/items/torrada.jpg' alt='Torrada'>
   			</td>
   			<td>Torrada</td>
   			<td>5</td>
   		</tr>
   		<tr>
   			<td>
-  				<img src='./_imagens/_icones/itens_catalogados/revolver.jpg' alt='Revólver'>
+  				<img src='./assets/shared/img/items/revolver.jpg' alt='Revólver'>
   			</td>
   			<td>Revólver</td>
   			<td class='item-value-range'>1-35</td>
   			<td>
-  				<img src='./_imagens/_icones/itens_catalogados/rifle.jpg' alt='Rifle'>
+  				<img src='./assets/shared/img/items/rifle.jpg' alt='Rifle'>
   			</td>
   			<td>Rifle</td>
   			<td class='item-value-range'>1-55</td>
@@ -537,6 +543,44 @@ why a `setTimeout` exists). No narration.
 `registeredPagesList`. These are top-level `const`s: they are **not** on `window`, but inline
 `onclick` handlers still resolve them. An IDE warning about a helper being "not found" across
 files is a false positive — that is how every refactored page works.
+
+---
+
+## Item images
+
+`assets/shared/img/items/` is the single home for **every item image** on the site — the
+icons in `table.npc-trade-table` cells and in `table.items-table` combination rows, and
+the item images of the trade app (`trocas.html` / `en/trading.html`). Pages and the trade
+app all read them from there; no page keeps item images in its own
+`assets/pages/<page>/img/` folder, except for required items (below).
+
+- **Moved as pages get refactored.** There is no bulk migration: when a page is refactored,
+  every item image it uses moves into `items/` (with `git mv`, kebab-case name, Portuguese
+  name kept: `sucata_metalica.jpg` → `sucata-metalica.jpg`), even when other pages also use
+  it. The old sources are `_imagens/_icones/`, `_imagens/_icones/itens_catalogados/` and,
+  for the trade app, `_imagens/app_trocas/itens/`.
+- **One file per item.** If the item is already in `items/`, point at that file instead of
+  moving a second copy. If two old copies of the same item differ (size, crop, artwork),
+  ask which one to keep.
+- **Update every reference** to a moved image in the same step — in every page, refactored
+  or not, PT and EN, and in CSS and JS. That includes path-only edits to the reference
+  pages, which are otherwise read-only. A script that builds item paths from a folder prefix
+  (`_js/receitas.js`, `_js/trocas.js`) cannot point at two folders: leave the images that
+  script needs where they are, list them in the report, and move them when that page is
+  refactored.
+- NPC portraits and map markers are not items. Portraits go in the page's `img/portraits/`,
+  or in `assets/shared/img/portraits/` when more than one page uses the portrait. The
+  page's `img/icons/` holds real icons only, like the map marker icons in `mapa.html`'s
+  option buttons (`assets/pages/map/img/icons/`).
+- **Required items go in the page's `img/required-items/`.** The icons of the items a task
+  requires — the item-list rows of a `table.items-table` (`quantity-cell` + icon + name) —
+  are not moved to `items/`. They go in the page's own `img/required-items/`, like
+  `assets/pages/money/img/required-items/` (`revolver.jpg`, `municao.jpg`, `bisturi.jpg`,
+  `garrafa-vazia.jpg`). When more than one page uses the same required-item image, it goes
+  in `assets/shared/img/required-items/` instead.
+- The conclusion picture that closes the guides is shared too:
+  `assets/shared/img/conclusao.jpg` and `conclusao-mobile.jpg`. Pages point at these files
+  and never keep their own copy.
 
 ---
 
