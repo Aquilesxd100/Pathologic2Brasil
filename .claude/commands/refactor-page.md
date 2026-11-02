@@ -1,13 +1,15 @@
 ---
-description: Refactor a page end to end, HTML structure first, then its files, CSS, JS and EN version, following the project's 2026 refactor conventions
+description: Refactor a page end to end, HTML structure, stylesheet and script first, then its files and EN version, following the project's 2026 refactor conventions
 argument-hint: "@pagename.html"
 ---
 
 # Refactor page: $1
 
 `$1` still uses the **old** structure and style. The refactor starts from its HTML: rewrite
-the PT page's markup into the new structure and get it approved, then move the page's
-files into place and rebuild its CSS and JS around the new markup.
+the PT page's markup into the new structure, create the page's stylesheet and script for
+it, and get them approved; then move the page's files into place, mirror the result on the
+EN page, and finally strip every id and class nothing targets and delete every file the
+refactor left unused.
 
 **Your job:** end with a page that has **identical visuals and identical behavior** to the
 old version, built on the new structure and conventions. Then mirror the result on the EN
@@ -80,7 +82,7 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
    `mapa.html`, `dinheiro.html`, `podinzins.html` and their EN versions) or their CSS/JS.
    Read only.
 6. **The HTML can still change after step 1.** Step 1 (section 5) defines the PT markup,
-   but later steps may adjust it whenever the work needs it: a hook for an old narrow
+   its stylesheet and its script, but later steps may adjust it whenever the work needs it: a hook for an old narrow
    rule, a wrapper the CSS needs, an element order that can only be fixed in the markup.
    Keep each adjustment small, apply the same change to the EN page, and list it in the
    final report. Renaming classes, ids or handlers the user approved in step 1 is the
@@ -103,18 +105,21 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
 
 ## 4. Order of work
 
-1. Refactor the PT page's HTML and define its structure (section 5), then **stop for the
-   user's approval**.
+1. Refactor the PT page's HTML, define its structure, and create the page's stylesheet and
+   — if the page has behaviour — its script (section 5), then **stop for the user's
+   approval**.
 2. Move the page's files to their place in the project structure (section 6).
-3. Refactor the page's CSS file.
-4. Refactor the page's JS file.
-5. Adapt the EN version of the page — its HTML file — to match.
+3. Adapt the EN version of the page — its HTML file — to match (section 9).
+4. Remove every id and class that no stylesheet or script targets, from both pages, then
+   delete every file the refactor left unused (section 10).
 
-## 5. Refactor the PT page's HTML and define its structure (step 1)
+## 5. Refactor the PT page's HTML and create its stylesheet and script (step 1)
 
 Everything else hangs off the HTML: the CSS targets its ids and classes, the JS looks them
-up, and the EN page mirrors it. So the PT page is rewritten first, and **only the PT page**
-— other files stay untouched in this step.
+up, and the EN page mirrors it. So the PT page is rewritten first, and its stylesheet and
+script are written right after, against the new markup. Only these files change in this
+step: the PT page, `assets/pages/<page>/<page>.css` and, when the page has behaviour,
+`assets/pages/<page>/<page>.js`. Everything else stays untouched.
 
 ### Starting point
 
@@ -127,6 +132,9 @@ up, and the EN page mirrors it. So the PT page is rewritten first, and **only th
 - Read the old CSS rules behind every class the page uses (for pages on the shared old
   stylesheet, that is `_css/padrao.css`) so you know what each block looked like and which
   narrow per-element rules exist.
+- Read the old page JS (`git show master:_js/<page>.js`) and every inline handler in the old
+  HTML (`onclick`, `onchange`…), so you know every behaviour the new markup has to support
+  and which ids and classes the script will need.
 
 ### Head and shell
 
@@ -134,11 +142,13 @@ Copy the head of `mapa.html`, with single quotes throughout:
 
 - `<html lang='pt-br'>` and the page's own `<meta>` tags and `<title>`, text unchanged.
 - The favicon, then `./assets/shared/css/main.css`, then the page stylesheet at its final
-  path `./assets/pages/<page>/<page>.css` (it may not exist yet — it is written in step 3).
+  path `./assets/pages/<page>/<page>.css` (it may not exist yet — it is created later in
+  this step, see "Writing the stylesheet").
 - `globalVariables.js` and `utils.js` in the `<head>`.
-- `<body id='body'>`, all page content inside `<p2b-template>`, then
-  `./assets/shared/P2B-Template/P2B-Template.js`, then the page JS **only if the page has
-  behaviour**. A page with no interaction gets no page JS.
+- `<body>` (no id), all page content inside `<p2b-template>`, then
+  `./assets/shared/P2B-Template/P2B-Template.js`, then the page JS at its final path
+  `./assets/pages/<page>/<page>.js` **only if the page has behaviour** (see "Writing the
+  script"). A page with no interaction gets no page JS.
 - Remove every old stylesheet (`_css/*.css`), the old `_js/index.js`, and any inline
   `<style>` block. Note what the inline block did; its rules move into the page CSS.
 
@@ -197,8 +207,7 @@ Copy the head of `mapa.html`, with single quotes throughout:
 - **No unused ids or classes.** Every `id` and `class` in the HTML must be used by
   `main.css`, the page CSS, the page JS or the template. Do not add one for readability or
   "for later": an article or section nothing targets stays a plain `<article>` /
-  `<section>`. `<body id='body'>` is the one exception, as part of the shell. Section 10
-  checks this again once the CSS and JS exist.
+  `<section>`. Step 4 (section 10) checks this again once both pages are final.
 - **Visible text stays exactly as it is.** Do not fix accents, typos or wording, do not
   retranslate, and keep double quotes inside visible text. The one exception is text set in
   `batukapur` (article `h1`, section header `h2`s), which drops its accents (hard rule 11).
@@ -267,6 +276,50 @@ filters, and counts opaque pixels finds the dominant colour. Calibrate it on
 - Image paths keep their current location with a `./` prefix (`./_imagens/...`) in this
   step; step 2 moves the files and updates the paths.
 
+### Writing the stylesheet
+
+Once the HTML is written, create the page CSS at its final path
+`assets/pages/<page>/<page>.css`, following the CSS specification in section 7: the
+two-block banner layout, rem units with no `vw`, `calc()` desktop fonts, at most one
+decimal digit, no banned features, and banner comments only.
+
+- Target only the ids and classes the new HTML defines, plus the shared components from
+  `main.css`. Reproduce the old visuals: go through the old page CSS (and the old shared
+  rules behind every class the page used) block by block, and convert each value that
+  still matters on the new markup. Do not restyle anything `main.css` already handles.
+- Rules in the desktop block apply at every width, so a desktop override (a font size, an
+  indent) must be reset in the mobile block whenever the old mobile value differs.
+- Size every `picture` and wrapper image so it fits at 320px: the image plus its 6px
+  border must fit inside the article border and the `padded-container` padding.
+- Images have not moved yet. Any `url()` to an image still points at its current location
+  through a relative path from the stylesheet (`../../../_imagens/...`); step 2 updates it
+  together with the HTML paths.
+- After writing it, check that the file has CRLF endings and that the banned-CSS check from
+  section 11 returns nothing.
+
+### Writing the script
+
+If the page has behaviour — an old `_js/<page>.js`, inline handlers, or anything the old
+page did on click, scroll or load — create the page JS at its final path
+`assets/pages/<page>/<page>.js`, following the JS specification in section 8. A page with
+no behaviour gets no script; say so in the checkpoint.
+
+- Rebuild every behaviour of the old script against the new markup: same result for the
+  user, new ids and classes, the conventions of section 8 (banner comments, page scope in
+  an IIFE, a named `const` for every queried element, state kept in DOM classes).
+- Inline handlers in the new HTML call functions in English. Keep the old function name
+  only when it is already English; otherwise pick an English name now and list the
+  renames in the checkpoint, since step 1 is where they get approved.
+- Drop the deprecated click-animation system (`botaoTipo2Discreto` and friends) and the
+  old prefix-handling function; use `animateElementClick` from `utils.js` instead.
+- Any click-animation keyframes the script triggers go in the page CSS written above.
+- Bilingual text produced by the script branches on `getCurrentPageLanguageCode()`, so the
+  same file serves the EN page later.
+- Image paths the script builds point at the images' current location for now; step 2
+  updates them together with the HTML paths.
+- After writing it, run the banned-JS check and `node --check` from section 11 and check
+  that the file has CRLF endings.
+
 ### Check before the checkpoint
 
 ```bash
@@ -282,25 +335,41 @@ file $1
 # no accents in batukapur text — must return nothing for h1s; check every section header h2 by eye
 grep -nE "<h1>[^<]*[ÀÁÂÃÇÉÊÍÓÔÕÚàáâãçéêíóôõú]" $1
 
-# every local src / srcset / href resolves (the page CSS and the videos may be missing
-# at this point — list them in the checkpoint)
+# every local src / srcset / href resolves (the videos may be missing at this point —
+# list them in the checkpoint)
 grep -oE "(src|srcset|href)='\./[^']+'" $1
+
+# page CSS: banned features and line endings — the grep must return nothing
+grep -nE 'display:\s*flex|[0-9]vw' assets/pages/<page>/<page>.css
+grep -n -A1 'filter:' assets/pages/<page>/<page>.css
+file assets/pages/<page>/<page>.css
+
+# page JS (only when the page has one): banned constructs, syntax, line endings
+grep -nE '\blet\b|=>|`|\bclass\b|replaceAll|\.contains\(|\basync\b|\bawait\b|\bfetch\(|!!|\?\.|\.find\(' assets/pages/<page>/<page>.js
+node --check assets/pages/<page>/<page>.js
+file assets/pages/<page>/<page>.js
 ```
 
 Also check that every tag is closed and nested correctly: a short Node script that walks
-the tags with a regex and a stack, skipping void elements, is enough.
+the tags with a regex and a stack, skipping void elements, is enough. Check, too, that
+every id the script looks up and every function an inline handler calls exists.
 
 ### Checkpoint — stop here
 
-Do not move on to step 2 on your own. Report the new structure to the user and wait for
-approval:
+Do not move on to step 2 on your own. Report the new structure, the stylesheet and the
+script to the user and wait for approval:
 
 - the sections and articles, with the ids and classes you created
 - how each old component was mapped, and each new component or class name you introduced
-- the hooks added for old narrow rules, and the rules you plan to drop
+- the hooks added for old narrow rules, and the old rules the stylesheet drops
+- what the stylesheet covers, section by section, and every visual deviation from the old
+  page it leaves (for example a vertical centring a float cannot reproduce)
+- what the script does, area by area, every handler renamed to English, and every
+  behaviour of the old page it does not reproduce — or that the page has no behaviour and
+  gets no script
 - open questions where more than one structure made sense (for example `h2` or `h3` for a
   nested subtitle)
-- missing files the new HTML points to (page CSS, videos)
+- missing files the new HTML points to (videos)
 
 The user's answers here can change class names and structure. Later steps can still adjust
 the HTML when the work needs it (hard rule 6).
@@ -334,9 +403,11 @@ assets/
 - **Kebab-case file names.** Underscores become hyphens and the Portuguese name stays
   (hard rule 1): `mesa_mobile.jpg` → `mesa-mobile.jpg`,
   `garrafa_vazia.jpg` → `img/icons/garrafa-vazia.jpg`.
-- **Page CSS / JS.** They live at `assets/pages/<page>/<page>.css` and `<page>.js`. If the old
-  page used a stylesheet that other pages still load (`_css/padrao.css`), do not move it:
-  create the new file with only the rules this page needs and leave the old one alone.
+- **Page CSS / JS.** They live at `assets/pages/<page>/<page>.css` and `<page>.js`. Both
+  were already created there in step 1; only the CSS `url()` paths and the image paths the
+  script builds change here. If the old
+  page used a stylesheet or script that other pages still load (`_css/padrao.css`), do not
+  move or edit it: the new file holds only what this page needs, and the old one stays as it is.
 - **Videos.** The `.mp4` files replacing YouTube embeds go in `videos/` with English
   kebab-case names that match the `<video src>` in the HTML. If the user drops the
   downloads somewhere else in the repo (for example at the root), match each one to its
@@ -546,8 +617,10 @@ Keep inline comments to a minimum — only where the code would otherwise read a
 
 ### Rules
 
-- **Use the function names already referenced in the HTML.** They were chosen
-  deliberately; renaming one requires an HTML edit, so **ask first**.
+- **Handler names are settled in step 1.** The HTML and the script are written together
+  there, and every renamed handler is listed in the checkpoint. Once the user approves
+  them, keep the names the HTML references; renaming one later requires an HTML edit, so
+  **ask first**.
 - **Replace the deprecated click-animation system.** The old pattern
   (`botaoTipo2Discreto('some-id')` → `_js/index.js` → `_css/estrutura.css`, old files only on
   `master`) must not be reproduced. Use `animateElementClick(element, 'animation-class-name')`
@@ -600,7 +673,7 @@ but inline `onclick` handlers still resolve them. An IDE warning about a helper 
 
 ---
 
-## 9. EN page (step 5)
+## 9. EN page (step 3)
 
 The EN page must use **the same ids and classes as the PT page** so that one CSS file and
 one JS file serve both. Rebuild it to mirror the new PT structure exactly, then:
@@ -612,7 +685,51 @@ one JS file serve both. Rebuild it to mirror the new PT structure exactly, then:
 
 Verify afterwards that every `id` your JS looks up exists in both pages.
 
-## 10. Verify before reporting
+## 10. Remove unused ids, classes and files (step 4)
+
+Once the PT page, the EN page, the page CSS and the page JS are all final, go through every
+`id` and every `class` in both HTML files and check that something targets it:
+`assets/shared/css/main.css`, the page CSS, `assets/shared/js/utils.js`,
+`assets/shared/js/globalVariables.js`, the page JS, or the template files in
+`assets/shared/P2B-Template/`. A name counts as targeted when a selector uses it
+(`.name` / `#name`, not just as the prefix of a longer name such as `.name-wrapper`) or a
+script refers to it in a string (`getElementById('name')`, `classList.add('name')`).
+
+```bash
+for name in $(grep -ohE "(id|class)='[^']+'" $1 en/<enpage>.html | sed -E "s/.*='([^']+)'/\1/" | tr ' ' '\n' | sort -u); do
+  grep -rqP "[.#]$name(?![\w-])|['\"]$name['\"]" assets/shared/css assets/shared/js assets/shared/P2B-Template assets/pages/<page> || echo "unused: $name"
+done
+```
+
+Remove every name the check reports from **both** pages: drop the class from the `class`
+list, and drop the whole attribute when nothing is left in it. There are no exceptions —
+`<body>` takes no id either. Re-run the check until it prints nothing, confirm the files
+still have CRLF endings, and list every removed name in the final report.
+
+### Delete the files the refactor left unused
+
+Only once **both** the PT and the EN page are refactored — never earlier, because until the
+EN page is rebuilt the old one still loads the old files — delete every file the refactor
+made unused. Candidates are everything the old pages pulled in: each file referenced by
+`git show master:$1`, by `git show master:en/<enpage>.html`, by the old page CSS/JS from
+section 1, and the old page CSS/JS themselves (`_css/<page>.css`, `_js/<page>.js`), plus
+the `url()` targets inside that old CSS.
+
+- A candidate is unused when no `.html`, `.css`, `.js` or `.json` file in the repo — any
+  page, refactored or not, and any shared file — references it by path or basename, and no
+  script builds its path dynamically (check for its stem in quoted strings and template
+  literals). A match on the stem alone that is clearly something else — a guide id or a
+  search tag in `globalVariables.js` — does not count; check each match by eye.
+- Never delete anything under `assets/shared/`, and never a file another page still uses —
+  the old arrow PNGs, for example, stay as long as any old page loads them.
+- Delete with `git rm`, so `git status --short` lists each one as `D`. Remove any folder
+  the deletions leave empty.
+- Files that were already unused before this refactor (nothing referenced them on
+  `master` either) are not part of this step: list them in the final report and let the
+  user decide.
+- List every deleted file in the final report.
+
+## 11. Verify before reporting
 
 ```bash
 # Banned JS constructs — must return nothing
@@ -633,15 +750,7 @@ grep -oE "url\('[^']+'\)|src='[^']+'" assets/pages/<page>/<page>.css $1
 
 # no leftover YouTube embeds or arrow-bullet images — must return nothing
 grep -nE '<iframe|flecha_texto' $1 en/<enpage>.html assets/pages/<page>/<page>.css
-
-# no unused ids or classes — every name listed must be found in at least one file
-for name in $(grep -ohE "(id|class)='[^']+'" $1 en/<enpage>.html | sed -E "s/.*='([^']+)'/\1/" | tr ' ' '\n' | sort -u); do
-  grep -rqE "[.#]$name\b|'$name'" assets/shared/css assets/shared/js assets/shared/P2B-Template assets/pages/<page> || echo "unused: $name"
-done
 ```
-
-Remove every id or class the last check reports as unused from **both** pages (except
-`body`), so the final HTML carries only names something actually targets.
 
 Then check it in a browser. `P2B-Template.js` XHRs its markup from
 `window.location.origin + '/assets/shared/P2B-Template'` (with the repo name in between on
@@ -656,15 +765,17 @@ only — unrelated to the ban on `<iframe>` content above) — media queries
 respond to the iframe viewport — and inspect inside it, sweeping the iframe's width across
 the supported range (320, 360, 375, 414, 800) rather than checking a single size. **Delete the
 throwaway file and stop the server when you are done**, and confirm `git status --short`
-lists only the intended files: the page CSS/JS, both HTML pages, and the
-moved images and videos (as renames).
+lists only the intended files: the page CSS/JS, both HTML pages, the
+moved images and videos (as renames), and the deleted files (as `D`).
 
-## 11. Final report
+## 12. Final report
 
 Tell the user, concisely:
 
 - the files changed and what each got, plus every file moved and its new path
 - any page file left in its old location because another page still uses it
+- every file deleted because the refactor left it unused, and any file that was already
+  unused before the refactor (not deleted — the user decides)
 - every HTML adjustment made after step 1, and why it was needed, including the ids and
   classes removed because nothing used them
 - **every visual or behavioral deviation** from the old page, with the reason and an offer

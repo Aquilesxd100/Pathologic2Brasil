@@ -487,8 +487,10 @@ why a `setTimeout` exists). No narration.
 
 ### Rules
 
-- **Use the function names already referenced in the HTML.** Renaming one requires an HTML
-  edit, so **ask first**.
+- **Handler names are settled when the page is refactored.** The page's HTML and script are
+  written together in the first step of a refactor, where inline handlers get English names
+  and every rename is approved at the checkpoint. After that, keep the names the HTML
+  references: renaming one requires an HTML edit, so **ask first**.
 - **The deprecated click-animation system is gone.** Do not reproduce the old
   `botaoTipo2Discreto('some-id')` → `_js/index.js` → `_css/estrutura.css` pattern (old files,
   only on `master`). Use `animateElementClick(element, 'animation-class-name')` from
