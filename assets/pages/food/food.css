@@ -1,0 +1,154 @@
+/* ========================================================================================================
+   | 📑 Page Content [DESKTOP] | ==========================================================================
+   ========================================================================================================  */
+
+/* |----------------------------| 📖 Guide Content 📖 |--------------------------------|💻|  */
+
+    article section picture img {
+        width: 1130rem;
+    }
+
+    .arrow-prefix::before, .yellow-arrow-prefix::before {
+        content: '';
+        display: inline-block;
+        width: 34.4rem;
+        height: 50rem;
+        margin-right: 6rem;
+        background-image: url('img/white-arrow.svg');
+        vertical-align: -11.5rem;
+    }
+
+    .yellow-arrow-prefix::before {
+        background-image: url('img/yellow-arrow.svg');
+    }
+
+/* |----------------------------| 📜 Arrow Lists 📜 |----------------------------------|💻|  */
+    .arrow-list li {
+        margin: 28rem 94rem;
+        text-align: justify;        
+    }
+
+/* |----------------------------| 👋 Welcome 👋 |--------------------------------------|💻|  */
+
+    article#welcome-article picture img {
+        width: 1300rem;
+    }
+
+/* |----------------------------| 🔐 Lockpicks 🔐 |------------------------------------|💻|  */
+
+    div#lockpicks-intro-wrapper img {
+        width: 140rem;
+    }
+
+    #lockpicks-intro-wrapper p {
+        color: #FFD24A;
+        text-indent: 0;
+    }
+
+    #bandit-types-wrapper img {
+        width: 230rem;
+    }
+
+/* |----------------------------| 💰 Emergency Fund 💰 |-------------------------------|💻|  */
+
+    div#fund-glossary-wrapper p {
+        text-indent: 0;
+        margin-bottom: 8rem
+    }
+
+    div#fund-bar-wrapper ul.arrow-list {
+        display: inline-block;
+        /* Image Width + Image Left Margin + Container Padding */
+        width: calc(100% - (300rem + 40rem + 20rem));
+        vertical-align: middle;
+    }
+
+    #fund-bar-wrapper picture {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 40rem;
+    }
+
+    #fund-bar-wrapper picture img {
+        width: 300rem;
+    }
+
+/* |----------------------------| 🗺️ Location Maps 🗺️ |-------------------------------|💻|  */
+
+    div.small-map-wrapper picture img {
+        width: 800rem;
+    }
+
+/* ========================================================================================================
+   | 📑 Page Content [MOBILE] | ===========================================================================
+   ========================================================================================================  */
+
+/* |----------------------------| 📖 Guide Content 📖 |--------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    article section picture img {
+        width: 1640rem;
+    }
+
+    .arrow-prefix::before, .yellow-arrow-prefix::before {
+        width: calc(14px + 34rem);
+        height: calc(20px + 50rem);
+        margin-right: 4px;
+        vertical-align: -7.5px;
+    }
+}
+
+/* |----------------------------| 📜 Arrow Lists 📜 |----------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    .arrow-list li {
+        margin-bottom: 12px;     
+    }
+}
+
+/* |----------------------------| 👋 Welcome 👋 |--------------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    article#welcome-article picture img {
+        width: 1600rem;
+    }
+}
+
+/* |----------------------------| 🔐 Lockpicks 🔐 |------------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div#bandit-types-wrapper img {
+        width: 700rem;
+        min-width: 122px;       
+    }
+}
+
+/* |----------------------------| 💰 Emergency Fund 💰 |-------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div#fund-glossary-wrapper p {
+        margin-bottom: 12px;
+    }
+
+    div#fund-bar-wrapper ul.arrow-list {
+        width: auto;
+    }
+
+    #fund-bar-wrapper picture {
+        margin: 0;
+    }
+
+    #fund-bar-wrapper picture img {
+        width: 1000rem;
+        min-width: 230px;
+    }
+}
+
+/* |----------------------------| 🗺️ Location Maps 🗺️ |-------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div.small-map-wrapper picture img {
+        width: 1300rem;
+        min-width: 260px;
+    }
+}
