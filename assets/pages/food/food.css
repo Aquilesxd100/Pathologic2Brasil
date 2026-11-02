@@ -51,9 +51,16 @@
 
 /* |----------------------------| 💰 Emergency Fund 💰 |-------------------------------|💻|  */
 
-    div#fund-glossary-wrapper p {
-        text-indent: 0;
-        margin-bottom: 8rem
+    div#fund-glossary-wrapper img {
+        float: left;
+        width: 365rem;
+        margin-right: 25rem;
+        border-width: 8rem;
+    }
+
+    #fund-glossary-wrapper figcaption p {
+        margin-bottom: 8rem;
+        text-align: justify;
     }
 
     div#fund-bar-wrapper ul.arrow-list {
@@ -126,7 +133,19 @@
 /* |----------------------------| 💰 Emergency Fund 💰 |-------------------------------|📱|  */
 
 @media screen and (max-width: 800px) {
-    div#fund-glossary-wrapper p {
+    div#fund-glossary-wrapper img {
+        float: none;
+        width: 1460rem;
+        min-width: 265px;
+        margin: 0 auto 12px auto;
+        border-width: 6px;
+    }
+
+    #fund-glossary-wrapper figcaption {
+        color: inherit;
+    }
+
+    #fund-glossary-wrapper figcaption p {
         margin-bottom: 12px;
     }
 
