@@ -27,38 +27,38 @@
 				</div>
 				<div id='map-wrapper' class='padded-container'>
 					<figure>
-						<img src='./assets/pages/map/img/mapa-completo.png' class='mapa-imagem' onclick='openFullscreenMapModal()'>						
+						<img src='./assets/pages/map/img/mapa-completo.png' alt='Mapa completo da cidade' class='mapa-imagem' onclick='openFullscreenMapModal()'>						
 						<figcaption>- Toque no mapa para coloca-lo em tela cheia.</figcaption>
 					</figure>
 
 					<div id='markers-summary-options-wrapper'>
 						<button onclick='showMarkerSummary(MapMarkerEnum.NightMerchant, this)'>
-							<img src='./assets/pages/map/img/icons/noite-mercador.png'>
+							<img src='./assets/pages/map/img/icons/noite-mercador.png' alt='Ícone do Mercador Noturno'>
 							Mercador<br> Noturno
 						</button>
 
 						<button onclick='showMarkerSummary(MapMarkerEnum.SecretStash, this)'>
-							<img src='./assets/pages/map/img/icons/stash-secreto.png'>
+							<img src='./assets/pages/map/img/icons/stash-secreto.png' alt='Ícone dos Depósitos Secretos'>
 							Depósitos<br> Secretos
 						</button>	
 						
 						<button onclick='showMarkerSummary(MapMarkerEnum.ChildrenStash, this)'>
-							<img src='./assets/pages/map/img/icons/marcador-bau-criancas.png'>
+							<img src='./assets/pages/map/img/icons/marcador-bau-criancas.png' alt='Ícone dos Baús Escondidos'>
 							Baús<br> Escondidos
 						</button>
 						
 						<button onclick='showMarkerSummary(MapMarkerEnum.BloodyRoots, this)'>
-							<img src='./assets/pages/map/img/icons/ervas.png'>
+							<img src='./assets/pages/map/img/icons/ervas.png' alt='Ícone das Raízes Sangrentas'>
 							Raízes<br> Sangrentas
 						</button>
 						
 						<button onclick='showMarkerSummary(MapMarkerEnum.HerbsZone, this)'>
-							<img src='./assets/pages/map/img/icons/ervas-zona.png'>
+							<img src='./assets/pages/map/img/icons/ervas-zona.png' alt='Ícone das Zonas com Ervas'>
 							Zonas<br> Com Ervas
 						</button>												
 						
 						<button id='children-zone-button' onclick='showMarkerSummary(MapMarkerEnum.ChildrenZone, this)'>
-							<img src='./assets/pages/map/img/icons/criancas-zona.png'>
+							<img src='./assets/pages/map/img/icons/criancas-zona.png' alt='Ícone das Zonas com Crianças'>
 							Zonas<br> Com Crianças
 						</button>								
 					</div>					
@@ -83,7 +83,7 @@
 				<div class='padded-container'>
 					<picture>
 						<source media='(max-width: 800px)' srcset='./assets/shared/img/mercador-noturno-mobile.jpg'>
-						<img src='./assets/shared/img/mercador-noturno.jpg'>
+						<img src='./assets/shared/img/mercador-noturno.jpg' alt='Mercador Noturno'>
 					</picture>
 					<p>
 						Esses marcadores de lua indicam onde o mercador da noite estará, já o número em cima de cada lua é referente ao dia (madrugada do dia) que ele aparecera nesse local.
@@ -100,7 +100,7 @@
 				<div class='padded-container'>
 					<picture>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/armazenamentos-secretos-mobile.jpg'>
-						<img src='./assets/pages/map/img/armazenamentos-secretos.jpg'>
+						<img src='./assets/pages/map/img/armazenamentos-secretos.jpg' alt='Depósito secreto'>
 					</picture>
 					<p>
 						Esses ícones de baús indicam locais do mapa que existem armários/baús/etc que podem ser abertos e contêm itens aleatórios.
@@ -122,27 +122,27 @@
 					</p>						
 					<picture class='depositos-localizacoes'>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/cache-1-mobile.jpg'>
-						<img src='./assets/pages/map/img/cache-1.jpg'>
+						<img src='./assets/pages/map/img/cache-1.jpg' alt='Depósito secreto 1: localização no mapa e armários'>
 					</picture>
 					<picture class='depositos-localizacoes'>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/cache-2-mobile.jpg'>
-						<img src='./assets/pages/map/img/cache-2.jpg'>
+						<img src='./assets/pages/map/img/cache-2.jpg' alt='Depósito secreto 2: localização no mapa e armários'>
 					</picture>
 					<picture class='depositos-localizacoes'>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/cache-3-mobile.jpg'>
-						<img src='./assets/pages/map/img/cache-3.jpg'>
+						<img src='./assets/pages/map/img/cache-3.jpg' alt='Depósito secreto 3: localização no mapa e armários'>
 					</picture>
 					<picture class='depositos-localizacoes'>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/cache-4-mobile.jpg'>
-					<img src='./assets/pages/map/img/cache-4.jpg'>
+					<img src='./assets/pages/map/img/cache-4.jpg' alt='Depósito secreto 4: localização no mapa e armários'>
 					</picture>
 					<picture class='depositos-localizacoes'>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/cache-5-mobile.jpg'>
-					<img src='./assets/pages/map/img/cache-5.jpg'>
+					<img src='./assets/pages/map/img/cache-5.jpg' alt='Depósito secreto 5: localização no mapa e armários'>
 					</picture>
 					<picture class='depositos-localizacoes'>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/cache-6-mobile.jpg'>
-						<img src='./assets/pages/map/img/cache-6.jpg'>
+						<img src='./assets/pages/map/img/cache-6.jpg' alt='Depósito secreto 6: localização no mapa e armários'>
 					</picture>
 				</div>					
 			</section>			
@@ -151,7 +151,7 @@
 				<div class='padded-container'>
 					<picture>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/baus-criancas-mobile.jpg'>
-						<img src='./assets/pages/map/img/baus-criancas.jpg'>
+						<img src='./assets/pages/map/img/baus-criancas.jpg' alt='Mapa com os baús escondidos das crianças'>
 					</picture>
 					<p>Esses ícones de X em vermelho mostram a localização dos baús dos alma e meia, que ao serem abertos revelam itens diversos em seu interior.</p>					
 				</div>
@@ -176,7 +176,7 @@
 				<div class='padded-container'>
 					<picture>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/ervas-sangrentas-mobile.jpg'> 
-						<img src='./assets/pages/map/img/ervas-sangrentas.jpg'>
+						<img src='./assets/pages/map/img/ervas-sangrentas.jpg' alt='Mapa com as raízes sangrentas'>
 					</picture>
 					<p class='margin-bottom'>Esses marcadores de folhinha indicam onde você pode encontrar "raízes sangrentas" para alimentar e obter ervas!</p>
 					<p class='cyan-color'>
@@ -209,7 +209,7 @@
 				<div class='padded-container'>
 					<picture>
 						<source media='(max-width: 800px)' srcset='./assets/pages/map/img/zonas-ervas-mobile.jpg'>
-						<img src='./assets/pages/map/img/zonas-ervas.jpg'>
+						<img src='./assets/pages/map/img/zonas-ervas.jpg' alt='Mapa das zonas com ervas'>
 					</picture>
 					<p>
 						Essas áreas com uma coloração verde são zonas onde você pode encontrar diversas ervas pelo chão.
@@ -230,7 +230,7 @@
 			<section id='children-zones-section' class='padded-container'>
 				<picture>
 					<source media='(max-width: 800px)' srcset='./assets/pages/map/img/zonas-criancas-mobile.jpg'>
-					<img src='./assets/pages/map/img/zonas-criancas.jpg'>
+					<img src='./assets/pages/map/img/zonas-criancas.jpg' alt='Mapa das zonas com crianças'>
 				</picture>
 				<p class='margin-bottom'>
 					Essas áreas em uma cor azul são locais onde um grande número de crianças podem ser encontradas, sendo elas muito úteis para fazer trocas.
@@ -246,7 +246,7 @@
 		<div id='map-fullscreen-wrapper-mobile' class='hide-on-desktop'>
 			<picture>
 				<source media='(orientation: landscape)' srcset='./assets/pages/map/img/mapa-completo-zoom-landscape.png'>
-				<img src='./assets/pages/map/img/mapa-completo-zoom-portrait.png'>				
+				<img src='./assets/pages/map/img/mapa-completo-zoom-portrait.png' alt='Mapa completo da cidade em tela cheia'>				
 			</picture>
 			<button onclick='closeFullscreenMapModal()'>
 				<svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
