@@ -19,7 +19,10 @@ as a reference for how new or refactored code should look.
   reference for the shared content components below)*
 - `podinzins.html` / `en/shmowders.html` — `assets/pages/shmowders/shmowders.css`, no page JS
   *(the reference for `table.npc-trade-table` and for section headers with a day box)*
-- `comida.html` / `en/food.html` — `assets/pages/food/food.css`, no page JS *(most recent)*
+- `comida.html` / `en/food.html` — `assets/pages/food/food.css`, no page JS
+- `combate.html` / `en/combat.html` — `assets/pages/combat/combat.css`, no page JS *(most
+  recent; the reference for `ol.step-list` with videos and for section headers without a day
+  box)*
 
 All of them use the shared `assets/shared/css/main.css`, `assets/shared/js/globalVariables.js`,
 `assets/shared/js/utils.js` and the template component in `assets/shared/P2B-Template/`.
@@ -33,8 +36,8 @@ Commit `32185b6` (`git show 32185b6`, the index refactor) is the **primary** tem
 file organization, section ordering, banner comment style and naming. If a reference page
 disagrees with that commit, the commit wins.
 
-Do **not** copy patterns from the not-yet-refactored pages (`receitas.html`, `combate.html`,
-`trocas.html`, etc.) or their CSS/JS —
+Do **not** copy patterns from the not-yet-refactored pages (`receitas.html`, `trocas.html`,
+etc.) or their CSS/JS —
 they are the old style and are pending migration.
 
 `.claude/commands/refactor-page.md` holds the full step-by-step procedure for migrating a

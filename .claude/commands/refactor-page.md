@@ -52,7 +52,9 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
   `assets/pages/map/map.js`), `dinheiro.html` (`assets/pages/money/money.css`, the
   reference for the shared content components), `podinzins.html`
   (`assets/pages/shmowders/shmowders.css`, the reference for `table.npc-trade-table` and
-  section headers with a day box) and `comida.html` (`assets/pages/food/food.css`). Their content uses `<article>`s containing `<section>`s — see
+  section headers with a day box), `comida.html` (`assets/pages/food/food.css`) and
+  `combate.html` (`assets/pages/combat/combat.css`, the reference for `ol.step-list` with
+  videos). Their content uses `<article>`s containing `<section>`s — see
   "Page structure" in `CLAUDE.md`.
 - Shared code you must reuse (edit only on request, hard rule 4): `assets/shared/css/main.css`, `assets/shared/js/utils.js`,
   `assets/shared/js/globalVariables.js`.
@@ -79,7 +81,7 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
    own initiative belongs in one of them, leave it in the page file and **name it in your
    final report**.
 5. **Never edit the reference pages** (`index.html`, `tudo.html`, `resultados.html`,
-   `mapa.html`, `dinheiro.html`, `podinzins.html`, `comida.html` and their EN versions) or
+   `mapa.html`, `dinheiro.html`, `podinzins.html`, `comida.html`, `combate.html` and their EN versions) or
    their CSS/JS.
    Read only — except the path updates for files moved to `assets/shared/` (item
    images and any file used by more than one page; section 6).
@@ -133,7 +135,8 @@ step: the PT page, `assets/pages/<page>/<page>.css` and, when the page has behav
 - Old version: `git show master:$1`. Current version: `$1`. The current file may already be
   half-migrated (site shell removed, `<p2b-template>` added) while its content is still the
   old markup. Read both in full before writing anything.
-- Read `mapa.html`, `index.html`, `dinheiro.html`, `podinzins.html` and `comida.html` as the
+- Read `mapa.html`, `index.html`, `dinheiro.html`, `podinzins.html`, `comida.html` and
+  `combate.html` as the
   structural reference, and
   `main.css` for the components that already exist.
 - Read the old CSS rules behind every class the page uses (for pages on the shared old
