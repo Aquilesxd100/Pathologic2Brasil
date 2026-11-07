@@ -104,6 +104,11 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
     the article `h1`s, the section header `h2`s (day box included) and any other text set
     in `batukapur` use the unaccented letter: `Atuacao sobre Fome`, not `Atuação sobre Fome`
     (hard rule 11 in `CLAUDE.md`). `alt`, `title` and text in other fonts keep their accents.
+12. **Never nest `padded-container`s.** An element with `padded-container` must not sit
+    anywhere inside another element with `padded-container`: the paddings add up, and the
+    inner text no longer lines up with the text around it. When a wrapper already has the
+    class, its children take none; when a group of blocks needs one shared padding, put the
+    class on the group's wrapper and drop it from each block.
 
 ## 4. Order of work
 
@@ -210,6 +215,11 @@ Copy the head of `mapa.html`, with single quotes throughout:
   `main.css`, the page CSS, the page JS or the template. Do not add one for readability or
   "for later": an article or section nothing targets stays a plain `<article>` /
   `<section>`. Step 4 (section 10) checks this again once both pages are final.
+- **Every `<img>` has an `alt`**, written in the page's language: the item's or NPC's name
+  for icons and portraits, a short description of the picture for every other image
+  (section images, text-with-image pictures, banners kept as content). This includes
+  images the old page left without one. The `<source>` inside a `<picture>` takes none;
+  the `alt` goes on its `<img>`.
 - **Visible text stays exactly as it is.** Do not fix accents, typos or wording, do not
   retranslate, and keep double quotes inside visible text. The one exception is text set in
   `batukapur` (article `h1`, section header `h2`s), which drops its accents (hard rule 11).
@@ -328,6 +338,9 @@ no behaviour gets no script; say so in the checkpoint.
 # single quotes on every attribute — must return nothing
 grep -nE '=\"' $1
 
+# every <img> has an alt — must return nothing
+grep -nE '<img ' $1 | grep -v "alt='"
+
 # no old markup left — must return nothing
 grep -nE '<iframe|flecha_texto|modo-(mobile|desktop)|_css/|_js/index\.js|<style' $1
 
@@ -353,8 +366,10 @@ file assets/pages/<page>/<page>.js
 ```
 
 Also check that every tag is closed and nested correctly: a short Node script that walks
-the tags with a regex and a stack, skipping void elements, is enough. Check, too, that
-every id the script looks up and every function an inline handler calls exists.
+the tags with a regex and a stack, skipping void elements, is enough. Have the same script
+report every element with `padded-container` that has an ancestor with `padded-container`
+(hard rule 12) — it must report nothing. Check, too, that every id the script looks up and
+every function an inline handler calls exists.
 
 ### Checkpoint — stop here
 
@@ -814,7 +829,13 @@ grep -oE "url\('[^']+'\)|src='[^']+'" assets/pages/<page>/<page>.css $1
 
 # no leftover YouTube embeds or arrow-bullet images — must return nothing
 grep -nE '<iframe|flecha_texto' $1 en/<enpage>.html assets/pages/<page>/<page>.css
+
+# every <img> on both pages has an alt — must return nothing
+grep -nE '<img ' $1 en/<enpage>.html | grep -v "alt='"
 ```
+
+Run the tag-walking script from the step 1 check again on both pages: no
+`padded-container` may sit inside another `padded-container` (hard rule 12).
 
 Then check it in a browser. `P2B-Template.js` XHRs its markup from
 `window.location.origin + '/assets/shared/P2B-Template'` (with the repo name in between on
