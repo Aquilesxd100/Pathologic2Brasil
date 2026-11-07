@@ -1,0 +1,149 @@
+/* ========================================================================================================
+   | 📑 Page Content [DESKTOP] | ==========================================================================
+   ========================================================================================================  */
+
+/* |----------------------------| 📖 Guide Content 📖 |--------------------------------|💻|  */
+
+    article section picture img {
+        width: 1100rem;
+    }
+
+    article section .margin-sides {
+       margin-left: 20rem;
+       margin-right: 20rem; 
+    }
+
+/* |-------------------------------| 👹 Odongs 👹 |-----------------------------------|💻|  */
+
+    div#odongs-wrapper {
+        overflow-x: hidden;
+    }
+
+    #odongs-wrapper img {
+        float: left;
+        width: 120rem;
+        margin-right: 20rem;
+        border: 10rem solid #000000;
+        box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
+    }
+
+    #odongs-wrapper p {
+        text-align: left;
+        color: #DDDDDD;
+    }
+
+/* |-------------------------| 📃 Text With Image 📃 |-------------------------------|💻|  */
+
+    div.text-with-image-wrapper img {
+        width: 306rem;
+    }
+
+/* |-------------------------| 🎬 Text With Video 🎬 |-------------------------------|💻|  */
+
+    div.text-with-video-wrapper p {
+        display: inline-block;
+        width: 45%;
+        vertical-align: middle;
+        text-align: justify;
+        text-indent: calc(10px + 42rem);
+    }
+
+    .text-with-video-wrapper div.video-wrapper {
+        display: inline-block;
+        width: 45%;
+        margin: 0;
+        margin-left: calc(10px + 30rem);
+        vertical-align: middle;
+    }
+
+/* |-------------------------| 👥 Multiple Enemies 👥 |------------------------------|💻|  */
+
+    div.multiple-enemies-div p {
+        color: #FFFF99;
+        text-align: justify;
+    }
+
+    .multiple-enemies-div p b {
+        color: #FCC200;
+        border-color: #FCC200;
+    }
+
+/* |----------------| 👥 Multiple Enemies / Text With Video 🎬 |---------------------|💻|  */
+
+    div.multiple-enemies-div, div.text-with-video-wrapper {
+        padding: 20rem;      
+    }
+
+/* ========================================================================================================
+   | 📑 Page Content [MOBILE] | ===========================================================================
+   ========================================================================================================  */
+
+/* |----------------------------| 📖 Guide Content 📖 |--------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    article section picture img {
+        width: 1640rem;
+        max-width: 650px;
+    }
+
+    article section .margin-sides {
+       margin-left: calc(6px + 20rem);
+       margin-right: calc(6px + 20rem); 
+    }
+}
+
+/* |-------------------------------| 👹 Odongs 👹 |-----------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div#odongs-wrapper {
+        padding: calc(8px + 25rem) calc(6px + 14rem);
+    }
+
+    #odongs-wrapper img {
+        display: inline-block;
+        float: none;
+        width: calc(80px + 60rem);
+        margin: 5px 15px 5px 0;
+        border-width: 6px;
+        vertical-align: middle;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    #odongs-wrapper p {
+        display: inline-block;
+        /*                  IMG Margin Right + IMG Width + IMG Borders */
+        width: calc(100% - (15px + (80px + 60rem + (2 * 6px))));
+        min-width: 280px;
+        vertical-align: middle;
+        text-align: justify;
+    }
+}
+
+/* |-------------------------| 📃 Text With Image 📃 |-------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div.text-with-image-wrapper img {
+        width: 1460rem;
+    }
+}
+
+/* |-------------------------| 🎬 Text With Video 🎬 |-------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div.text-with-video-wrapper p {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* |----------------| 👥 Multiple Enemies / Text With Video 🎬 |---------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div.multiple-enemies-div, div.text-with-video-wrapper {
+        padding: 0;      
+    }
+
+    .multiple-enemies-div p, .text-with-video-wrapper p {
+        margin: calc(8px + 25rem);     
+    }
+}
