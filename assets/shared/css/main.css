@@ -471,7 +471,7 @@ a:hover {
 
         .step-list li div.video-wrapper {
             display: inline-block;
-            width: 49%;
+            width: 50%;
             margin: 40rem 0;
             vertical-align: middle;
         }  
@@ -819,12 +819,11 @@ a:hover {
         }    
 
         .step-list li header::before {
+            font-size: calc(20px + 50rem);   
+            text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);            
             padding: 2px 13px;
-        }    
-
-        .step-list li header::before  {
             letter-spacing: 1px;
-        }    
+        }     
 
         .step-list li ul {
             width: 100%;
@@ -851,6 +850,7 @@ a:hover {
             width: calc(12px + 36rem);
             height: calc(18px + 54rem);
             vertical-align: calc(-5px - 12rem);
+            margin-right: calc(1px + 5rem);
         }
     }
 
