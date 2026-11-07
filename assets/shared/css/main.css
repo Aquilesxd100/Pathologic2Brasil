@@ -56,7 +56,7 @@ h1 {
 }
 
 h2 {
-    font-size: calc(8px + 34rem);
+    font-size: calc(8px + 30rem);
     text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);
     font-weight: normal;
     letter-spacing: 2rem;  
@@ -70,7 +70,7 @@ h2 {
     }
 
     h2 {
-        font-size: calc(20px + 50rem);   
+        font-size: calc(19px + 40rem);   
         text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);        
         letter-spacing: 1px;      
     }    
@@ -425,7 +425,8 @@ a:hover {
         }    
 
         .step-list li header::before  {
-            font-size: calc(8px + 34rem);
+            /* Same Font Size as H2 */
+            font-size: calc(8px + 30rem);
             text-shadow: 3rem 0 0 rgb(0, 0, 0), -3rem 0 0 rgb(0, 0, 0), 0 3rem 0 rgb(0, 0, 0), 0 -3rem 0 rgb(0, 0, 0), 2.1rem 2.1rem 0 rgb(0, 0, 0), -2.1rem -2.1rem 0 rgb(0, 0, 0), 2.1rem -2.1rem 0 rgb(0, 0, 0), -2.1rem 2.1rem 0 rgb(0, 0, 0), 0 0 1.5rem rgb(0, 0, 0);            
             letter-spacing: 2rem;  
         }
@@ -467,6 +468,7 @@ a:hover {
             height: calc(15px + 24rem);
             background-image: url('../img/step-arrow.svg');
             vertical-align: calc(-4px - 5rem);
+            margin-right: calc(1px + 5rem);
         }
 
         .step-list li div.video-wrapper {
@@ -819,7 +821,8 @@ a:hover {
         }    
 
         .step-list li header::before {
-            font-size: calc(20px + 50rem);   
+            /* Same Font Size as H2 */
+            font-size: calc(19px + 40rem);  
             text-shadow: 2.2px 0 0 rgb(0, 0, 0), -2.2px 0 0 rgb(0, 0, 0), 0 2.2px 0 rgb(0, 0, 0), 0 -2.2px 0 rgb(0, 0, 0), 1.1px 1.1px rgb(0, 0, 0), -1.1px -1.1px 0 rgb(0, 0, 0), 1.1px -1.1px 0 rgb(0, 0, 0), -1.1px 1.1px 0 rgb(0, 0, 0);            
             padding: 2px 13px;
             letter-spacing: 1px;
@@ -831,7 +834,7 @@ a:hover {
 
         .step-list ul li {
             margin: calc(15px + 12rem) 15px;
-            padding: 43rem 60rem 50rem 60rem;
+            padding: 45rem 60rem 54rem 60rem;
             background-size: 100% calc(12px + 69rem), 100% calc(12px + 74rem), 100% auto;
             background-size: round(down, 100%, 1px) calc(12px + 69rem), round(down, 100%, 1px) calc(12px + 74rem), round(down, 100%, 1px) auto;
             border-top-width: calc(2px + 30rem);
@@ -850,7 +853,6 @@ a:hover {
             width: calc(12px + 36rem);
             height: calc(18px + 54rem);
             vertical-align: calc(-5px - 12rem);
-            margin-right: calc(1px + 5rem);
         }
     }
 
