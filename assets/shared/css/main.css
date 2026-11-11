@@ -639,6 +639,18 @@ a:hover {
             text-indent: 73rem;
         }
 
+    /* |----------------------------| ➡️ Arrow Prefix ➡️ |------------------------|💻|  */
+
+        .arrow-prefix::before {
+            content: '';
+            display: inline-block;
+            width: 34.4rem;
+            height: 50rem;
+            margin-right: 6rem;
+            background-image: url('../img/white-arrow.svg');
+            vertical-align: -11.5rem;
+        }
+
 /* ========================================================================================================
    | 📚 Page Content [MOBILE] | =========================================================================== 
    ========================================================================================================  */
@@ -1085,5 +1097,16 @@ a:hover {
 
         .text-with-image-wrapper p {
             text-indent: calc(20px + 30rem);
+        }
+    }
+
+    /* |----------------------------| ➡️ Arrow Prefix ➡️ |------------------------|📱|  */
+
+    @media screen and (max-width: 800px) {
+        .arrow-prefix::before {
+            width: calc(14px + 34rem);
+            height: calc(20px + 50rem);
+            margin-right: 4px;
+            vertical-align: -7.5px;
         }
     }

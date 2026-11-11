@@ -8,18 +8,14 @@
         width: 1130rem;
     }
 
-    .arrow-prefix::before, .yellow-arrow-prefix::before {
+    .yellow-arrow-prefix::before {
         content: '';
         display: inline-block;
         width: 34.4rem;
         height: 50rem;
         margin-right: 6rem;
-        background-image: url('img/white-arrow.svg');
-        vertical-align: -11.5rem;
-    }
-
-    .yellow-arrow-prefix::before {
         background-image: url('img/yellow-arrow.svg');
+        vertical-align: -11.5rem;
     }
 
 /* |----------------------------| 📜 Arrow Lists 📜 |----------------------------------|💻|  */
@@ -97,7 +93,7 @@
         width: 1640rem;
     }
 
-    .arrow-prefix::before, .yellow-arrow-prefix::before {
+    .yellow-arrow-prefix::before {
         width: calc(14px + 34rem);
         height: calc(20px + 50rem);
         margin-right: 4px;
