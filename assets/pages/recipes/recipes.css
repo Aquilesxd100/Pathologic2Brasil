@@ -1,0 +1,206 @@
+/* ========================================================================================================
+   | 📑 Page Content [DESKTOP] | ==========================================================================
+   ========================================================================================================  */
+
+/* |----------------------------| 📖 Guide Content 📖 |--------------------------------|💻|  */
+
+    /* Prevent duplicated borders on the titles  */
+    section header + div.subtitle-div, div.tip-div + div.subtitle-div {
+        border-top: none;
+    }
+
+    p.cyan-color span.underlined, .tip-div span.underlined {
+        border-bottom-color: #BFEDEF;
+    }
+
+/* |-------------------------------| 👋 Welcome 👋 |----------------------------------|💻|  */
+
+    div#welcome-intro-wrapper picture img {
+        width: 1000rem;
+    }
+
+    #distillery-images-wrapper picture {
+        display: inline-block;
+        margin: 0;
+    }
+
+    #distillery-images-wrapper picture:first-child {
+        margin-right: 100rem;
+    }
+
+    #distillery-images-wrapper picture img {
+        width: 650rem;
+    }
+
+/* |--------------------| 🧪 Remedy Characteristics Wrapper 🧪 |----------------------|💻|  */
+    div.remedy-characteristics-wrapper img {
+        width: 225rem;
+    }
+
+/* |-----------------------------| 🏷️ Item Legend 🏷️ |--------------------------------|💻|  */
+
+    ul.item-label-list li {
+        display: inline-block;
+        margin: 13rem;
+        padding-right: 20rem;
+        border: 8rem solid #000000;
+        background-image: url('img/fundo-info2.jpg');
+        background-size: 100% 100%;
+        box-shadow: 3rem 3rem 2.5rem rgba(0, 0, 0, 0.7);
+    }
+
+    .item-label-list li img {
+        width: calc(15px + 80rem);
+        margin-right: 15rem;
+        border-right: 8rem solid #000000;
+        vertical-align: middle;
+    }
+
+    .item-label-list li p {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+/* |------------------------------| 💊 Painkillers 💊 |--------------------------------|💻|  */
+
+    button#painkiller-play-pause-button {
+        display: block;
+        margin: 10.4rem auto 0 auto;
+    }
+
+    #painkiller-play-pause-button svg {
+        width: calc(30px + 85rem);
+        height: calc(30px + 85rem);
+    }
+
+    svg#painkiller-play-svg {
+        display: none;
+    }        
+    svg#painkiller-pause-svg {
+        display: block;
+    }
+
+    #painkiller-play-pause-button.paused-rotation #painkiller-pause-svg {
+        display: none;
+    }
+    #painkiller-play-pause-button.paused-rotation #painkiller-play-svg {
+        display: block;
+    }    
+
+    #painkiller-play-pause-button:hover svg {
+        filter: brightness(130%);
+        -webkit-filter: brightness(130%);
+    }
+
+    .painkiller-play-pause-button-click-animation {
+        animation: painkiller-play-pause-button-click-animation 0.20s none;
+    }
+
+    @keyframes painkiller-play-pause-button-click-animation {
+        0% { transform:scale(1); }
+        50% { transform:scale(0.95); }
+        100% { transform:scale(1); }
+    }
+
+    /* Keep the Painkiller Description at a fixed size to prevent it from resizing every time */
+    table#painkiller-combinations-table td:nth-child(5) {
+        width: calc(112px + 435rem);
+        height: calc(22px + 100rem);
+    }
+
+/* ========================================================================================================
+   | 📑 Page Content [MOBILE] | ===========================================================================
+   ========================================================================================================  */
+
+/* |----------------------------| 📖 Guide Content 📖 |--------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    .text-with-image-wrapper p.cyan-color {
+        text-align: center;
+        text-indent: 0;
+    }
+
+    /* Decrease the Ingredient Name Font Size to make It Fit */
+    table.ingredients-table td:nth-child(3) {
+        font-size: calc(12px + 30rem);
+    }
+}
+
+/* |-------------------------------| 👋 Welcome 👋 |----------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div#welcome-intro-wrapper picture img, div#distillery-images-wrapper picture img {
+        width: 1600rem;
+    }
+
+    #distillery-images-wrapper picture:first-child {
+        margin-right: 0;
+    }
+
+    #distillery-images-wrapper picture:last-child {
+        margin-top: calc(12px + 20rem);
+    }
+}
+
+/* |--------------------| 🧪 Remedy Characteristics Wrapper 🧪 |----------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    div.remedy-characteristics-wrapper img {
+        width: 500rem;
+        min-width: 125px;
+    }    
+}
+
+/* |-----------------------------| 🏷️ Item Legend 🏷️ |--------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    ul.item-label-list {
+        margin: calc(12px + 20rem) 0;
+    }
+
+    ul.item-label-list li {
+        /* <img> Width + Right Border + <p> Width */
+        width: calc(((20px + 160rem) + 6px) + (10px + 360rem));
+        border-width: 6px;
+        margin: 20rem;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    .item-label-list li p {
+        display: table-cell;
+        width: calc(10px + 360rem);
+        height: calc(15px + 150rem);     
+        font-size: calc(3px + 46rem);
+    }    
+
+    .item-label-list li img {
+        float: left;
+        border-right-width: 6px;
+        width: calc(20px + 160rem);
+    }
+}
+
+/* |------------------------------| 💊 Painkillers 💊 |--------------------------------|📱|  */
+
+@media screen and (max-width: 800px) {
+    button#painkiller-play-pause-button {
+        margin-top: 5px;
+    }
+
+    #painkiller-play-pause-button svg {
+        width: 320rem;
+        height: 320rem;
+        min-height: 85px;
+        min-width: 85px;
+    }
+
+    table#painkiller-combinations-table {
+        max-width: none;
+    }
+
+    table#painkiller-combinations-table td:nth-child(5) {
+        width: 500rem;
+        height: calc(38px + 210rem);
+        font-size: calc(4px + 36rem);
+    }
+}

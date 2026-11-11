@@ -1,504 +1,753 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="Pathologic, Guide, Tutorial">
-<meta name="keywords" content="Recipes, Tinctures, Antibiotics">
-<meta name="description" content="Learn to Make Important Remedies or Mysterious “Potions”!">
+<html lang='en'>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='robots' content='Pathologic, Guide, Tutorial'>
+<meta name='keywords' content='Recipes, Tinctures, Antibiotics'>
+<meta name='description' content='Learn to Make Important Remedies or Mysterious “Potions”!'>
 <head>
 	<title>Recipes</title>
-	<link href='../assets/shared/favicon.ico' rel='icon' type='image/x-icon'></link>	
-	<link rel="stylesheet" type="text/css" href="../_css/receitas.css"/>
-	<script src="../assets/shared/js/globalVariables.js"></script>
-	<script src="../assets/shared/js/utils.js"></script>	
-	<style>
-		.analgesicos .sub-titulo {
-			border-top: none;
-		}
-	</style>
+	<link href='../assets/shared/favicon.ico' rel='icon' type='image/x-icon'></link>
+	<link rel='stylesheet' type='text/css' href='../assets/shared/css/main.css'/>
+	<link rel='stylesheet' type='text/css' href='../assets/pages/recipes/recipes.css'/>
+	<script src='../assets/shared/js/globalVariables.js'></script>
+	<script src='../assets/shared/js/utils.js'></script>
 </head>
-<body id="body">
+<body>
 	<p2b-template>
-		<picture class="banner-principal">
-			<source media="(max-width: 800px)" srcset="../_imagens/bem_vindo_mobile.jpg">
-			<img src="../_imagens/bem_vindo.jpg">
-		</picture>
-		<h1 class="introducao-titulo">Recipes</h1>
-		<div class="secao-principal">
-			<p class="introducao">Welcome to our guide on Recipes!<br> In this guide, we will show you the different types of "potions" available in the game and how to create them. We'll start with the most basic ones, the Tinctures, then Homemade Antibiotics, and lastly, the mysterious Homemade "Painkillers"!</p>
-			<picture class="introducao-img">
-				<source media="(max-width: 800px)" srcset="../_imagens/_guias/receitas_mobile.jpg">
-				<img src="../_imagens/_guias/receitas.jpg">
-			</picture>	
-			<div class="dica-padrao">
-				<p><span class="dica">TIP:</span> If you have any doubts about where to find herbs, check out our "Useful Map" which shows the spawn locations and more, just click <a href="./map.html" target="_blank"><span>HERE.</span></a></p>
-			</div>
-			<p class="atencao-padrao"><span class="amarelo">BEWARE:</span> To create Tinctures firstly you will need to fix the "<span class="sublinhado">Alembic</span>" inside the Haruspex's Lair (unlockable after day 2). This requires 1x Spring and 1x Metal Scrap.<br> For Homemade Antibiotics and Painkillers, you'll need another machine, called "<span class="sublinhado">The Brewery</span>". This one will demand 1x Metal Scrap and 1x Toolkit to repair it. A great way to obtain the Toolkit is by helping your roommate, "Sticky", with his plan on day 4.</p>
-			<div class="alambiques">
-				<picture class="alambique-menor">
-					<source media="(max-width: 800px)" srcset="../_imagens/_guias/alambique_menor_mobile.jpg">
-					<img src="../_imagens/_guias/alambique_menor.jpg">
-				</picture>
-				<picture class="alambique-maior">
-					<source media="(max-width: 800px)" srcset="../_imagens/_guias/alambique_maior_mobile.jpg">
-					<img src="../_imagens/_guias/alambique_maior.jpg">
-				</picture>
-			</div>
-		</div>
-		<picture class="banner-infusoes">
-			<source media="(max-width: 800px)" srcset="../_imagens/ultimos_guias_mobile.jpg">
-			<img src="../_imagens/ultimos_guias.jpg">
-		</picture>
-		<h1 class="infusoes-titulo">Tinctures</h1>
-		<div class="infusoes">
-			<div class="infusoes-introducao">
-				<img src="../_imagens/_guias/infusoes.jpg">
-				<p>Tinctures are mainly used to diagnose patients. Using them will reveal symptoms matching the color of the used Tinctured, if there are any. Yellow may reveal symptoms in "Nerves" layer , orange "Blood", and white "Bones". Another important use of Tinctures is for boosting your own immunity, or the immunity of others who are in infected zones (reducing the chances of infection).</p>							
-				<p class="introducao-auxiliar">- There are two types of Tinctures, the <span class="sublinhado">regular ones</span> and the more <span class="sublinhado">potent versions</span>. Visually, the stronger version will have bubbles inside the flask and a "(+)" next to their name.</p>
-				<div class="sub-titulo">
-					<p class="info-secao-inferior">Ok, but what are the differences between those versions?</p>
+		<article>
+			<header>
+				<h1>Recipes</h1>
+			</header>
+			<section>
+				<div id='welcome-intro-wrapper' class='padded-container'>
+					<p>Welcome to our guide on Recipes!<br> In this guide, we will show you the different types of "potions" available in the game and how to create them. We'll start with the most basic ones, the Tinctures, then Homemade Antibiotics, and lastly, the mysterious Homemade "Painkillers"!</p>
+					<picture>
+						<source media='(max-width: 800px)' srcset='../assets/pages/recipes/img/receitas-mobile.jpg'>
+						<img src='../assets/pages/recipes/img/receitas.jpg' alt='Recipes'>
+					</picture>
 				</div>
-			</div>
-			<div class="infusoes-diferencas">
-				<img src="../_imagens/_guias/infusao_normal.jpg" class="desktop-img">
-				<div class="infusoes-diferencas-p">
-					<div class="mobile-diferencas-img">
-						<img src="../_imagens/_guias/infusao_normal.jpg">
-						<img src="../_imagens/_guias/infusao_potente.jpg">
-					</div>
-					<p><img src="../_imagens/_icones/flecha_texto_branca.png">Potent Tinctures may reveal two symptoms instead of one when diagnosing patients. On the other hand, the increase in the patient's pain will be higher.</p>
-					<p><img src="../_imagens/_icones/flecha_texto_branca.png">Potent Tinctures boost your immunity and others even more!</p>
+				<div class='tip-div'>
+					<p>
+						<b>TIP:</b> If you have any doubts about where to find herbs, check out our "Useful Map" which shows the spawn locations and more, just click <a href='./map.html' target='_blank'>HERE.</a>
+					</p>
 				</div>
-				<img src="../_imagens/_guias/infusao_potente.jpg" class="desktop-img">
-			</div>
-			<div class="dica-padrao">
-				<p><span class="dica">TIP:</span> Potent Tinctures are the BEST item in the game to boost people's immunity. Keep that in mind when trying to prevent infection of people who are located in an infected zone.</p>
-			</div>
-			<div class="sub-titulo">
-				<h2>Making Simple Tinctures</h2>
-			</div>
-			<div class="sub-titulo-2">
-				<h3>Ingredients</h3>
-			</div>
-			<div class="receitas-criacao">
-				<h2>To create basic Tinctures, you will need:</h2>
-				<table>
-					<tr>
-						<th class="numero">2x</th>
-						<th id="ervas-comuns"><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th>Different Common Herbs</th>
-					</tr>
-					<tr>
-						<th class="numero">1x</th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th>Clean Water Bottle</th>
-					</tr>
-				</table>
-				<div class="sub-titulo">
-					<h3>Combinations</h3>
+				<div class='beware-div'>
+					<p>
+						<span>BEWARE:</span> To create Tinctures firstly you will need to fix the "<span class='underlined'>Alembic</span>" inside the Haruspex's Lair (unlockable after day 2). This requires 1x Spring and 1x Metal Scrap.<br> For Homemade Antibiotics and Painkillers, you'll need another machine, called "<span class='underlined'>The Brewery</span>". This one will demand 1x Metal Scrap and 1x Toolkit to repair it. A great way to obtain the Toolkit is by helping your roommate, "Sticky", with his plan on day 4.
+					</p>
 				</div>
-				<h2>With these ingredients is possible to make the following combinations:</h2>
-				<table class="tabela-combinacao">
-					<tr>
-						<th><img src="../_imagens/_icones/bloodtwyre.jpg"></th>
-						<th><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/yas.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th><img src="../_imagens/_icones/blacktwyre.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/zurkh.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/blacktwyre.jpg"></th>
-						<th><img src="../_imagens/_icones/bloodtwyre.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/medrel.jpg"></th>
-					</tr>
-				</table>
-				<p>*The order of the herbs does not alter the result.</p>
-				<div class="info-ingredientes">
-					<div>
-						<img src="../_imagens/_icones/garrafa_agua.jpg">
-						<h2>Clean Water Bottle</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/blacktwyre.jpg">
-						<h2>Black <br />Twyre</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/bloodtwyre.jpg">
-						<h2>Blood Twyre</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/twyre.jpg">
-						<h2>Brown Twyre</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/medrel.jpg">
-						<h2>"Medrel" Tincture</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/yas.jpg">
-						<h2>"Yas" Tincture</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/zurkh.jpg">
-						<h2>"Zurkh" Tincture</h2>
-					</div>
-				</div>					
-			</div>
-			<div class="sub-titulo ">
-				<h2>Making Potent Tinctures</h2>
-			</div>
-			<div class="criacao-introducao">
-				<p>The creation of Potent Tinctures is quite simple, what really affects the result is which rare herb you use (each one represents one color/type of Tincture). In case you want to use two rare herbs (not common) pay attention to the combinations.</p>
-			</div>
-			<div class="sub-titulo">
-				<h3>Ingredients</h3>
-			</div>
-			<div class="receitas-criacao">
-				<h2>To create Potent Tinctures, you will need:</h2>
-				<table>
-					<tr>
-						<th class="numero">1x</th>
-						<th id="ervas-raras"><img src="../_imagens/_icones/swevery.jpg"></th>
-						<th>Rare Herb</th>
-					</tr>
-					<tr>
-						<th class="numero">1x</th>
-						<th id="ervas-todas"><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th>Common/Rare Herb</th>
-					</tr>
-					<tr>
-						<th class="numero">1x</th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th>Clean Water Bottle</th>
-					</tr>
-				</table>
-				<div class="sub-titulo">
-					<h3>Combinations</h3>
+				<div id='distillery-images-wrapper' class='padded-container'>
+					<picture>
+						<source media='(max-width: 800px)' srcset='../assets/pages/recipes/img/alambique-menor-mobile.jpg'>
+						<img src='../assets/pages/recipes/img/alambique-menor.jpg' alt='Alembic'>
+					</picture>
+					<picture>
+						<source media='(max-width: 800px)' srcset='../assets/pages/recipes/img/alambique-maior-mobile.jpg'>
+						<img src='../assets/pages/recipes/img/alambique-maior.jpg' alt='The Brewery'>
+					</picture>
 				</div>
-				<h2>With these ingredients, it is possible to make the following combinations:</h2>
-				<table class="tabela-combinacao">
-					<tr>
-						<th><img src="../_imagens/_icones/whitewhip.jpg"></th>
-						<th class="ervas-comuns1"><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/yas_mais.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/whitewhip.jpg"></th>
-						<th ><img src="../_imagens/_icones/swevery.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/yas_mais.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/swevery.jpg"></th>
-						<th class="ervas-comuns1"><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/medrel_mais.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/swevery.jpg"></th>
-						<th><img src="../_imagens/_icones/ashenswish.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/medrel_mais.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/ashenswish.jpg"></th>
-						<th class="ervas-comuns1"><img src="../_imagens/_icones/twyre.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/zurkh_mais.jpg"></th>
-					</tr>
-					<tr>
-						<th><img src="../_imagens/_icones/ashenswish.jpg"></th>
-						<th><img src="../_imagens/_icones/whitewhip.jpg"></th>
-						<th><img src="../_imagens/_icones/garrafa_agua.jpg"></th>
-						<th class="sinal">=</th>
-						<th><img src="../_imagens/_icones/zurkh_mais.jpg"></th>
-					</tr>
-				</table>
-				<p>*It's not possible to use two of the same herb.</p>
-				<div class="info-ingredientes info-ingredientes-spc">
+			</section>
+		</article>
+
+		<article>
+			<header>
+				<h1>Tinctures</h1>
+			</header>
+			<section>
+				<div class='text-with-image-wrapper padded-container'>
+					<img src='../assets/pages/recipes/img/infusoes.jpg' alt='Tinctures'>
+					<p class='margin-bottom'>Tinctures are mainly used to diagnose patients. Using them will reveal symptoms matching the color of the used Tinctured, if there are any. Yellow may reveal symptoms in "Nerves" layer , orange "Blood", and white "Bones". Another important use of Tinctures is for boosting your own immunity, or the immunity of others who are in infected zones (reducing the chances of infection).</p>
+					<p class='cyan-color'>- There are two types of Tinctures, the <span class='underlined'>regular ones</span> and the more <span class='underlined'>potent versions</span>. Visually, the stronger version will have bubbles inside the flask and a "(+)" next to their name.</p>
+				</div>
+				<div class='subtitle-div'>
+					<h2>Ok, but what are the differences between those versions?</h2>
+				</div>
+				<div class='text-with-image-wrapper remedy-characteristics-wrapper padded-container'>
+					<img src='../assets/pages/recipes/img/infusao-normal.jpg' alt='Simple Tincture'>
+					<img src='../assets/pages/recipes/img/infusao-potente.jpg' alt='Potent Tincture'>
 					<div>
-						<img src="../_imagens/_icones/whitewhip.jpg">
-						<h2>White Whip</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/swevery.jpg">
-						<h2 class="ingrediente-centralizado">Swevery</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/ashenswish.jpg">
-						<h2>Ashen Swish</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/yas_mais.jpg">
-						<h2>"Yas" Tincture (+)</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/medrel_mais.jpg">
-						<h2>"Medrel" Tincture (+)</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/zurkh_mais.jpg">
-						<h2>"Zurkh" Tincture (+)</h2>
+						<p class='arrow-prefix margin-bottom'>Potent Tinctures may reveal two symptoms instead of one when diagnosing patients. On the other hand, the increase in the patient's pain will be higher.</p>
+						<p class='arrow-prefix'>Potent Tinctures boost your immunity and others even more!</p>
 					</div>
 				</div>
-				<div class="dica-padrao">
-					<p><span class="dica">TIP:</span> My recommendation is to use only one rare herb in each combination, since they are rare.</p>
-				</div>				
-			</div>
-		</div>
-		<picture class="banner-antibioticos">
-			<source media="(max-width: 800px)" srcset="../_imagens/tutoriais_rapidos_mobile.jpg">
-			<img src="../_imagens/tutoriais_rapidos.jpg">
-		</picture>
-		<h1 class="antibioticos-titulo">Antibiotics</h1>
-		<div class="antibioticos">
-			<div class="antibioticos-introducao">
-				<img src="../_imagens/_guias/antibioticos.jpg">
-				<p class="texto-com-img">The main use of Homemade Antibiotics is to treat infected patients. When using the correct one (with the same color as the patient's infection) the infection bar of the patient will decrease, giving them a higher chance of survival the next morning. If you are infected and use an antibiotic, your infection bar will decrease, along with your health, which will take a hit based on its current value.</p>
-				<div class="dica-padrao">
-					<p><span class="dica">TIP:</span> Homemade Antibiotics will not cure you, or kill, no matter how low your health is.</p>
-				</div>							
-			</div>
-			<div class="sub-titulo uma-linha">
-				<h2>Making Antibiotics</h2>
-			</div>
-			<div class="criacao-introducao">
-				<p>Antibiotics are made of Tinctures and Infected Organs/Blood. Just like Painkillers they take some hours to be produced, the higher the potency of the Antibiotic, the more time it will take to be created.</p>
-			</div>
-			<div class="sub-titulo borda-top">
-				<p class="info-secao-inferior">The potency of the Antibiotic affects:</p>
-			</div>
-			<div class="antibioticos-infos">
-				<img src="../_imagens/_guias/antibiotico2.jpg" class="desktop-img">							
-				<div class="antibioticos-infos-p">
-					<p><img src="../_imagens/_icones/flecha_texto_branca.png">How much The Fund bar will be filled when an ordinary patient is treated correcly.</p>
-					<p><img src="../_imagens/_icones/flecha_texto_branca.png">The chance of survival for a named character located in an infected zone when treated correctly.</p>
-					<div class="antibioticos-mobile-img">
-						<img src="../_imagens/_guias/antibiotico2.jpg">
-						<img src="../_imagens/_guias/antibiotico.jpg">
+				<div class='tip-div'>
+					<p>
+						<b>TIP:</b> Potent Tinctures are the BEST item in the game to boost people's immunity. Keep that in mind when trying to prevent infection of people who are located in an infected zone.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<header>
+					<h2>Making Simple Tinctures</h2>
+				</header>
+				<div class='subtitle-div'>
+					<h2>Ingredients</h2>
+				</div>
+				<div class='padded-container'>
+					<p>To create basic Tinctures, you will need:</p>
+					<table class='items-table ingredients-table'>
+						<tr>
+							<td class='quantity-cell'>2x</td>
+							<td>
+								<img class='rotating-common-herb-img' src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>Different Common Herbs</td>
+						</tr>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td>Clean Water Bottle</td>
+						</tr>
+					</table>
+				</div>
+				<div class='subtitle-div'>
+					<h2>Combinations</h2>
+				</div>
+				<div class='padded-container border-bottom'>
+					<p>With these ingredients is possible to make the following combinations:</p>
+					<table class='items-table'>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/bloodtwyre.jpg' alt='Blood Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/yas.jpg' alt='"Yas" Tincture'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/blacktwyre.jpg' alt='Black Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/zurkh.jpg' alt='"Zurkh" Tincture'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/blacktwyre.jpg' alt='Black Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/bloodtwyre.jpg' alt='Blood Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/medrel.jpg' alt='"Medrel" Tincture'>
+							</td>
+						</tr>
+					</table>
+					<p class='observation'>*The order of the herbs does not alter the result.</p>
+				</div>
+				<ul class='item-label-list'>
+					<li>
+						<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+						<p>Clean Water Bottle</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/blacktwyre.jpg' alt='Black Twyre'>
+						<p>Black Twyre</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/bloodtwyre.jpg' alt='Blood Twyre'>
+						<p>Blood Twyre</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+						<p>Brown Twyre</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/medrel.jpg' alt='"Medrel" Tincture'>
+						<p>"Medrel" Tincture</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/yas.jpg' alt='"Yas" Tincture'>
+						<p>"Yas" Tincture</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/zurkh.jpg' alt='"Zurkh" Tincture'>
+						<p>"Zurkh" Tincture</p>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<header>
+					<h2>Making Potent Tinctures</h2>
+				</header>
+				<div class='padded-container'>
+					<p>The creation of Potent Tinctures is quite simple, what really affects the result is which rare herb you use (each one represents one color/type of Tincture). In case you want to use two rare herbs (not common) pay attention to the combinations.</p>
+				</div>
+				<div class='subtitle-div'>
+					<h2>Ingredients</h2>
+				</div>
+				<div class='padded-container'>
+					<p>To create Potent Tinctures, you will need:</p>
+					<table class='items-table ingredients-table'>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img class='rotating-rare-herb-img' src='../assets/shared/img/items/swevery.jpg' alt='Swevery'>
+							</td>
+							<td>Rare Herb</td>
+						</tr>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img class='rotating-common-herb-img' src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>Common or Rare Herb</td>
+						</tr>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td>Clean Water Bottle</td>
+						</tr>
+					</table>
+				</div>
+				<div class='subtitle-div'>
+					<h2>Combinations</h2>
+				</div>
+				<div class='padded-container border-bottom'>
+					<p>With these ingredients, it is possible to make the following combinations:</p>
+					<table class='items-table'>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/whitewhip.jpg' alt='White Whip'>
+							</td>
+							<td>
+								<img class='rotating-common-herb-img' src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/yas-mais.jpg' alt='"Yas" Tincture (+)'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/whitewhip.jpg' alt='White Whip'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/swevery.jpg' alt='Swevery'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/yas-mais.jpg' alt='"Yas" Tincture (+)'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/swevery.jpg' alt='Swevery'>
+							</td>
+							<td>
+								<img class='rotating-common-herb-img' src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/medrel-mais.jpg' alt='"Medrel" Tincture (+)'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/swevery.jpg' alt='Swevery'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/ashenswish.jpg' alt='Ashen Swish'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/medrel-mais.jpg' alt='"Medrel" Tincture (+)'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/ashenswish.jpg' alt='Ashen Swish'>
+							</td>
+							<td>
+								<img class='rotating-common-herb-img' src='../assets/shared/img/items/twyre.jpg' alt='Brown Twyre'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/zurkh-mais.jpg' alt='"Zurkh" Tincture (+)'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/ashenswish.jpg' alt='Ashen Swish'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/whitewhip.jpg' alt='White Whip'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/garrafa-agua.jpg' alt='Clean Water Bottle'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/zurkh-mais.jpg' alt='"Zurkh" Tincture (+)'>
+							</td>
+						</tr>
+					</table>
+					<p class='observation'>*It's not possible to use two of the same herb.</p>
+				</div>
+				<ul class='item-label-list'>
+					<li>
+						<img src='../assets/shared/img/items/whitewhip.jpg' alt='White Whip'>
+						<p>White Whip</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/swevery.jpg' alt='Swevery'>
+						<p>Swevery</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/ashenswish.jpg' alt='Ashen Swish'>
+						<p>Ashen Swish</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/yas-mais.jpg' alt='"Yas" Tincture (+)'>
+						<p>"Yas" Tincture (+)</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/medrel-mais.jpg' alt='"Medrel" Tincture (+)'>
+						<p>"Medrel" Tincture (+)</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/zurkh-mais.jpg' alt='"Zurkh" Tincture (+)'>
+						<p>"Zurkh" Tincture (+)</p>
+					</li>
+				</ul>
+				<div class='tip-div'>
+					<p>
+						<b>TIP:</b> My recommendation is to use only one rare herb in each combination, since they are rare.
+					</p>
+				</div>
+			</section>
+		</article>
+
+		<article>
+			<header>
+				<h1>Antibiotics</h1>
+			</header>
+			<section>
+				<div class='text-with-image-wrapper padded-container'>
+					<img src='../assets/pages/recipes/img/antibioticos.jpg' alt='Antibiotics'>
+					<p>The main use of Homemade Antibiotics is to treat infected patients. When using the correct one (with the same color as the patient's infection) the infection bar of the patient will decrease, giving them a higher chance of survival the next morning. If you are infected and use an antibiotic, your infection bar will decrease, along with your health, which will take a hit based on its current value.</p>
+				</div>
+				<div class='tip-div'>
+					<p>
+						<b>TIP:</b> Homemade Antibiotics will not cure you, or kill, no matter how low your health is.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<header>
+					<h2>Making Antibiotics</h2>
+				</header>
+				<div class='padded-container'>
+					<p>Antibiotics are made of Tinctures and Infected Organs/Blood. Just like Painkillers they take some hours to be produced, the higher the potency of the Antibiotic, the more time it will take to be created.</p>
+				</div>
+				<div class='subtitle-div'>
+					<h2>The potency of the Antibiotic affects:</h2>
+				</div>
+				<div class='text-with-image-wrapper remedy-characteristics-wrapper padded-container'>
+					<img src='../assets/pages/recipes/img/antibiotico2.jpg' alt='Antibiotic used on an ordinary patient'>
+					<img src='../assets/pages/recipes/img/antibiotico.jpg' alt='Antibiotic used on a named character'>
+					<div>
+						<p class='arrow-prefix margin-bottom'>How much The Fund bar will be filled when an ordinary patient is treated correcly.</p>
+						<p class='arrow-prefix'>The chance of survival for a named character located in an infected zone when treated correctly.</p>
 					</div>
 				</div>
-				<img src="../_imagens/_guias/antibiotico.jpg" class="desktop-img">
-			</div>
-			<div class="dica-padrao">
-				<p><span class="dica">TIP #1:</span> The color/type of the Antibiotic created will always match the Tincture used in its creation.</p>
-			</div>
-			<div class="dica-padrao s-bordas">
-				<p><span class="dica">TIP #2:</span> The potency of the Antibiotic is affected by the type of organ used. The more difficult the infected organ is to collect,<span class="sublinhado"> the stronger the Antibiotic will be.</span> Infected brains are the best, followed by hearts, livers, kidneys, and lastly, blood.</p>
-			</div>
-			<div class="sub-titulo-2">
-				<h3>Ingredients</h3>
-			</div>
-			<div class="receitas-criacao">
-				<h2>To create Antibiotics, you will need:</h2>
-				<table>
-					<tr>
-						<th class="numero">1x</th>
-						<th id="infusoes-normais"><img src="../_imagens/_icones/yas.jpg"></th>
-						<th>Simple/Potent Tincture</th>
-					</tr>
-					<tr>
-						<th class="numero">1x</th>
-						<th id="orgao-sangue-infectado"><img src="../_imagens/_icones/sangue_infectado.jpg"></th>
-						<th>Infected Organ or Blood</th>
-					</tr>
-				</table>
-				<div class="sub-titulo-2">
-					<h3>Combinations</h3>
+				<div class='tip-div'>
+					<p>
+						<b>TIP #1:</b> The color/type of the Antibiotic created will always match the Tincture used in its creation.
+					</p>
 				</div>
-				<h2>With these ingredients, it's possible to make the following combinations:</h2>
-				<table class="tabela-combinacao">
-					<tr>
-						<th class="infusoes-variacoes"><img src="../_imagens/_icones/yas.jpg"></th>
-						<th class="orgao-sangue-infectado-combinacao"><img src="../_imagens/_icones/sangue_infectado.jpg"></th>
-						<th class="sinal">=</th>
-						<th class="antibioticos-variacoes"><img src="../_imagens/_icones/antibiotico_yas.jpg"></th>
-					</tr>
-					<tr>
-						<th class="infusoes-variacoes"><img src="../_imagens/_icones/medrel.jpg"></th>
-						<th class="orgao-sangue-infectado-combinacao"><img src="../_imagens/_icones/sangue_infectado.jpg"></th>
-						<th class="sinal">=</th>
-						<th class="antibioticos-variacoes"><img src="../_imagens/_icones/antibiotico_medrel.jpg"></th>
-					</tr>
-					<tr>
-						<th class="infusoes-variacoes"><img src="../_imagens/_icones/zurkh.jpg"></th>
-						<th class="orgao-sangue-infectado-combinacao"><img src="../_imagens/_icones/sangue_infectado.jpg"></th>
-						<th class="sinal">=</th>
-						<th class="antibioticos-variacoes"><img src="../_imagens/_icones/antibiotico_zurkh.jpg"></th>
-					</tr>
-					</tr>
-				</table>
-				<div class="info-ingredientes">
-					<div>
-						<img src="../_imagens/_icones/antibiotico_yas.jpg">
-						<h2>"Yas" Antibiotic</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/antibiotico_medrel.jpg">
-						<h2>"Medrel" Antibiotic</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/antibiotico_zurkh.jpg">
-						<h2>"Zurkh" Antibiotic</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/sangue_infectado.jpg">
-						<h2>Infected Blood</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/rim_infectado.jpg">
-						<h2>Infected Kidney</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/figado_infectado.jpg">
-						<h2>Infected Liver</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/coracao_infectado.jpg">
-						<h2>Infected Heart</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/cerebro_infectado.jpg">
-						<h2>Infected Brain</h2>
-					</div>
+				<div class='tip-div'>
+					<p>
+						<b>TIP #2:</b> The potency of the Antibiotic is affected by the type of organ used. The more difficult the infected organ is to collect,<span class='underlined'> the stronger the Antibiotic will be.</span> Infected brains are the best, followed by hearts, livers, kidneys, and lastly, blood.
+					</p>
 				</div>
-				<div class="dica-padrao">
-					<p><span class="dica">TIP #1:</span> The only advantage of using Potent Tinctures here, instead of the simple ones, is that the Antibiotic will be produced faster. The result itself, will be the same.</p>
-				</div>	
-				<div class="dica-padrao s-bordas">
-					<p><span class="dica">TIP #2:</span> After creating an Antibiotic, you can always check its description to know exactly of what it was made from.</p>
-				</div>				
-			</div>
-		</div>
-		<picture class="banner-analgesicos">
-			<source media="(max-width: 800px)" srcset="../_imagens/banner_adicional_mobile.jpg">
-			<img src="../_imagens/banner_adicional.jpg">
-		</picture>
-		<h1 class="analgesicos-titulo">Painkillers</h1>
-		<div class="analgesicos">
-			<div class="analgesicos-introducao">
-				<img src="../_imagens/_guias/analgesicos.jpg">
-				<p class="texto-com-img">The main use of Homemade Painkillers is to alleviate patients pain, or at least, that's what it seems at first. What most people don't know is that this drug can have various other effects depending on what it was made from! Basically, the effects are: decrease in hunger, exhaustion, thirst, increase in immunity, and even a boost in the rate of exhaustion regeneration while sleeping!</p>
-				<div class="dica-padrao">
-					<p><span class="dica">TIP:</span> All Painkillers, when used by you, increase your health recovery while sleeping for the next 2 hours. This effect stacks.</p>
-				</div>							
-			</div>
-			<div class="sub-titulo uma-linha">
-				<h2>Making Painkillers</h2>
-			</div>
-			<div class="criacao-introducao">
-				<p>The creation of Painkillers is made combining Tinctures with healthy organs or blood. Just like Antibiotics, they take a few hours to be produced.</p>
-			</div>
-			<div class="dica-padrao">
-				<p><span class="dica">TIP #1:</span> The potency of the effect is defined by the color/type of the Tincture used. See the possible combinations below.</p>
-			</div>
-			<div class="dica-padrao s-bordas">
-				<p><span class="dica">TIP #2:</span> The effects of the Painkillers vary depending on the organ used. Check out the details below.</p>
-			</div>
-			<div class="sub-titulo-2">
-				<h3>Ingredients</h3>
-			</div>
-			<div class="receitas-criacao">
-				<h2>To make Painkillers, you will need:</h2>
-				<table>
-					<tr>
-						<th class="numero">1x</th>
-						<th id="infusoes-normais2"><img src="../_imagens/_icones/yas.jpg"></th>
-						<th>Simple/Potent Tincture</th>
-					</tr>
-					<tr>
-						<th class="numero">1x</th>
-						<th id="orgao-sangue-saudavel"><img src="../_imagens/_icones/sangue.jpg"></th>
-						<th>Healthy Organ or Blood</th>
-					</tr>
-				</table>
-				<div class="sub-titulo-2">
-					<h3>Combinations</h3>
+				<div class='subtitle-div'>
+					<h2>Ingredients</h2>
 				</div>
-				<h2>With these ingredients, it's possible to make the following combinations:</h2>
-				<img id="botao-tabela-pause" src="../_imagens/botao_pause.png" onclick="analgesicosRotacaoBotao('OFF'); botaoTipo2Discreto('botao-tabela-play');">
-				<img id="botao-tabela-play" src="../_imagens/botao_play.png" onclick="analgesicosRotacaoBotao('ON'); botaoTipo2Discreto('botao-tabela-pause')">
-				<table class="tabela-combinacao">
-					<tr>
-						<th class="analgesicos-infusao-cor"><img src="../_imagens/_icones/zurkh.jpg"></th>
-						<th class="orgao-sangue-combinacao"><img src="../_imagens/_icones/sangue.jpg"></th>
-						<th class="sinal">=</th>
-						<th class="analgesicos-analgesico-cor"><img src="../_imagens/_icones/analgesico_zurkh.jpg"></th>
-						<th class="analgesicos-efeito"><h2>-20% Thirst</h2></th>
-					</tr>
-					<tr>
-						<th class="analgesicos-infusao-cor"><img src="../_imagens/_icones/yas.jpg"></th>
-						<th class="orgao-sangue-combinacao"><img src="../_imagens/_icones/sangue.jpg"></th>
-						<th class="sinal">=</th>
-						<th class="analgesicos-analgesico-cor"><img src="../_imagens/_icones/analgesico_yas.jpg"></th>
-						<th class="analgesicos-efeito"><h2>-15% Thirst</h2></th>
-					</tr>
-					<tr>
-						<th class="analgesicos-infusao-cor"><img src="../_imagens/_icones/medrel.jpg"></th>
-						<th class="orgao-sangue-combinacao"><img src="../_imagens/_icones/sangue.jpg"></th>
-						<th class="sinal">=</th>
-						<th class="analgesicos-analgesico-cor"><img src="../_imagens/_icones/analgesico_medrel.jpg"></th>
-						<th class="analgesicos-efeito"><h2>-10% Thirst</h2></th>
-					</tr>
-					</tr>
-				</table>
-				<p>*Use the button above to pause/play the transition.</p>
-				<div class="info-ingredientes">
-					<div>
-						<img src="../_imagens/_icones/analgesico_yas.jpg">
-						<h2>"Yas" Painkiller</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/analgesico_medrel.jpg">
-						<h2>"Medrel" Painkiller</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/analgesico_zurkh.jpg">
-						<h2>"Zurkh" Painkiller</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/sangue.jpg">
-						<h2 class="ingrediente-centralizado">Blood</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/rim.jpg">
-						<h2 class="ingrediente-centralizado">Kidney</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/figado.jpg">
-						<h2 class="ingrediente-centralizado">Liver</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/coracao.jpg">
-						<h2 class="ingrediente-centralizado">Heart</h2>
-					</div>
-					<div>
-						<img src="../_imagens/_icones/cerebro.jpg">
-						<h2 class="ingrediente-centralizado">Brain</h2>
-					</div>
+				<div class='padded-container'>
+					<p>To create Antibiotics, you will need:</p>
+					<table class='items-table ingredients-table'>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img class='rotating-tincture-img' src='../assets/shared/img/items/yas.jpg' alt='"Yas" Tincture'>
+							</td>
+							<td>Simple or Potent Tincture</td>
+						</tr>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img class='rotating-infected-organ-img' src='../assets/shared/img/items/sangue-infectado.jpg' alt='Infected Blood'>
+							</td>
+							<td>Infected Organ or Blood</td>
+						</tr>
+					</table>
 				</div>
-				<div class="dica-padrao s-bordas">
-					<p><span class="dica">TIP:</span> Just like Antibiotics, the only advantage of using Potent Tinctures, instead of the regular ones, is that the Painkiller will be produced faster. Like mentioned earlier, the strength of the effect is determined by the color of Tincture and not its potency.</p>
-				</div>				
-			</div>
-		</div>
-	</p2b-template>	
-	<script src="../P2B-Template/P2B-Template.js"></script>	
-	<script src="../_js/receitas.js"></script>
+				<div class='subtitle-div'>
+					<h2>Combinations</h2>
+				</div>
+				<div class='padded-container border-bottom'>
+					<p>With these ingredients, it's possible to make the following combinations:</p>
+					<table class='items-table'>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/yas.jpg' alt='"Yas" Tincture'>
+							</td>
+							<td>
+								<img class='rotating-infected-organ-img' src='../assets/shared/img/items/sangue-infectado.jpg' alt='Infected Blood'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/antibiotico-yas.jpg' alt='"Yas" Antibiotic'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/medrel.jpg' alt='"Medrel" Tincture'>
+							</td>
+							<td>
+								<img class='rotating-infected-organ-img' src='../assets/shared/img/items/sangue-infectado.jpg' alt='Infected Blood'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/antibiotico-medrel.jpg' alt='"Medrel" Antibiotic'>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/zurkh.jpg' alt='"Zurkh" Tincture'>
+							</td>
+							<td>
+								<img class='rotating-infected-organ-img' src='../assets/shared/img/items/sangue-infectado.jpg' alt='Infected Blood'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/antibiotico-zurkh.jpg' alt='"Zurkh" Antibiotic'>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<ul class='item-label-list'>
+					<li>
+						<img src='../assets/shared/img/items/antibiotico-yas.jpg' alt='"Yas" Antibiotic'>
+						<p>"Yas" Antibiotic</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/antibiotico-medrel.jpg' alt='"Medrel" Antibiotic'>
+						<p>"Medrel" Antibiotic</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/antibiotico-zurkh.jpg' alt='"Zurkh" Antibiotic'>
+						<p>"Zurkh" Antibiotic</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/sangue-infectado.jpg' alt='Infected Blood'>
+						<p>Infected Blood</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/rim-infectado.jpg' alt='Infected Kidney'>
+						<p>Infected Kidney</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/figado-infectado.jpg' alt='Infected Liver'>
+						<p>Infected Liver</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/coracao-infectado.jpg' alt='Infected Heart'>
+						<p>Infected Heart</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/cerebro-infectado.jpg' alt='Infected Brain'>
+						<p>Infected Brain</p>
+					</li>
+				</ul>
+				<div class='tip-div'>
+					<p>
+						<b>TIP #1:</b> The only advantage of using Potent Tinctures here, instead of the simple ones, is that the Antibiotic will be produced faster. The result itself, will be the same.
+					</p>
+				</div>
+				<div class='tip-div'>
+					<p>
+						<b>TIP #2:</b> After creating an Antibiotic, you can always check its description to know exactly of what it was made from.
+					</p>
+				</div>
+			</section>
+		</article>
+
+		<article>
+			<header>
+				<h1>Painkillers</h1>
+			</header>
+			<section>
+				<div class='text-with-image-wrapper padded-container'>
+					<img src='../assets/pages/recipes/img/analgesicos.jpg' alt='Painkillers'>
+					<p>The main use of Homemade Painkillers is to alleviate patients pain, or at least, that's what it seems at first. What most people don't know is that this drug can have various other effects depending on what it was made from! Basically, the effects are: decrease in hunger, exhaustion, thirst, increase in immunity, and even a boost in the rate of exhaustion regeneration while sleeping!</p>
+				</div>
+				<div class='tip-div'>
+					<p>
+						<b>TIP:</b> All Painkillers, when used by you, increase your health recovery while sleeping for the next 2 hours. This effect stacks.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<header>
+					<h2>Making Painkillers</h2>
+				</header>
+				<div class='padded-container'>
+					<p>The creation of Painkillers is made combining Tinctures with healthy organs or blood. Just like Antibiotics, they take a few hours to be produced.</p>
+				</div>
+				<div class='tip-div'>
+					<p>
+						<b>TIP #1:</b> The potency of the effect is defined by the color/type of the Tincture used. See the possible combinations below.
+					</p>
+				</div>
+				<div class='tip-div'>
+					<p>
+						<b>TIP #2:</b> The effects of the Painkillers vary depending on the organ used. Check out the details below.
+					</p>
+				</div>
+				<div class='subtitle-div'>
+					<h2>Ingredients</h2>
+				</div>
+				<div class='padded-container'>
+					<p>To make Painkillers, you will need:</p>
+					<table class='items-table ingredients-table'>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img class='rotating-tincture-img' src='../assets/shared/img/items/yas.jpg' alt='"Yas" Tincture'>
+							</td>
+							<td>Simple or Potent Tincture</td>
+						</tr>
+						<tr>
+							<td class='quantity-cell'>1x</td>
+							<td>
+								<img class='rotating-healthy-organ-img' src='../assets/shared/img/items/sangue.jpg' alt='Blood'>
+							</td>
+							<td>Healthy Organ or Blood</td>
+						</tr>
+					</table>
+				</div>
+				<div class='subtitle-div'>
+					<h2>Combinations</h2>
+				</div>
+				<div class='padded-container border-bottom'>
+					<p>With these ingredients, it's possible to make the following combinations:</p>
+					<button id='painkiller-play-pause-button' onclick='playPausePainkillerCombinationsRotation(this)'>
+						<svg id='painkiller-pause-svg' viewBox='0 0 103 103' xmlns='http://www.w3.org/2000/svg'>
+							<title>Pause transition</title>
+							<defs>
+								<linearGradient id='pause-button-frame-gradient' x1='0' y1='0' x2='0' y2='1'>
+									<stop offset='0' stop-color='#A3A3A3'></stop>
+									<stop offset='0.45' stop-color='#7C7C7C'></stop>
+									<stop offset='0.8' stop-color='#6B6B6B'></stop>
+									<stop offset='1' stop-color='#303030'></stop>
+								</linearGradient>
+								<linearGradient id='pause-button-face-gradient' x1='0' y1='0' x2='0' y2='1'>
+									<stop offset='0' stop-color='#101010'></stop>
+									<stop offset='0.92' stop-color='#101010'></stop>
+									<stop offset='0.95' stop-color='#2D2D2D'></stop>
+									<stop offset='1' stop-color='#484848'></stop>
+								</linearGradient>
+								<linearGradient id='pause-button-gloss-gradient' gradientUnits='userSpaceOnUse' x1='0' y1='10.5' x2='0' y2='53'>
+									<stop offset='0' stop-color='#777777'></stop>
+									<stop offset='0.05' stop-color='#777777'></stop>
+									<stop offset='0.06' stop-color='#686868'></stop>
+									<stop offset='1' stop-color='#363636'></stop>
+								</linearGradient>
+							</defs>
+							<g fill='#000000'>
+								<rect x='10.5' y='11' width='92.5' height='92' rx='15' fill-opacity='0.12'></rect>
+								<rect x='9.5' y='10' width='92.5' height='92' rx='15' fill-opacity='0.11'></rect>
+								<rect x='8.5' y='9' width='92.5' height='92' rx='15' fill-opacity='0.14'></rect>
+								<rect x='7.5' y='8' width='92.5' height='92' rx='15' fill-opacity='0.18'></rect>
+								<rect x='5.5' y='6' width='92.5' height='92' rx='15' fill-opacity='0.15'></rect>
+							</g>
+							<rect x='3.5' y='4' width='92.5' height='92' rx='15' fill='#4D4D4D'></rect>
+							<rect x='4.5' y='5' width='90.5' height='90' rx='14' fill='url(#pause-button-frame-gradient)'></rect>
+							<rect x='7' y='7.5' width='85.5' height='85.5' rx='12.5' fill='#000000'></rect>
+							<rect x='10' y='10.5' width='80' height='80' rx='10' fill='url(#pause-button-face-gradient)'></rect>
+							<path d='M10 53V20.5Q10 10.5 20 10.5H80Q90 10.5 90 20.5V40Q66 52.5 10 53Z' fill='url(#pause-button-gloss-gradient)'></path>
+							<g fill='none' stroke='#000000' stroke-opacity='0.18' stroke-linejoin='round'>
+								<path d='M34 26.5H43V76.5H34ZM56.5 26.5H65.5V76.5H56.5Z' stroke-width='8'></path>
+								<path d='M34 26.5H43V76.5H34ZM56.5 26.5H65.5V76.5H56.5Z' stroke-width='6'></path>
+								<path d='M34 26.5H43V76.5H34ZM56.5 26.5H65.5V76.5H56.5Z' stroke-width='4'></path>
+								<path d='M34 26.5H43V76.5H34ZM56.5 26.5H65.5V76.5H56.5Z' stroke-width='2'></path>
+							</g>
+							<path d='M34 26.5H43V76.5H34ZM56.5 26.5H65.5V76.5H56.5Z' fill='#DDDDDD'></path>
+						</svg>
+						<svg id='painkiller-play-svg' viewBox='0 0 103 103' xmlns='http://www.w3.org/2000/svg'>
+							<title>Play transition</title>
+							<defs>
+								<linearGradient id='play-button-frame-gradient' x1='0' y1='0' x2='0' y2='1'>
+									<stop offset='0' stop-color='#A3A3A3'></stop>
+									<stop offset='0.45' stop-color='#7C7C7C'></stop>
+									<stop offset='0.8' stop-color='#6B6B6B'></stop>
+									<stop offset='1' stop-color='#303030'></stop>
+								</linearGradient>
+								<linearGradient id='play-button-face-gradient' x1='0' y1='0' x2='0' y2='1'>
+									<stop offset='0' stop-color='#101010'></stop>
+									<stop offset='0.92' stop-color='#101010'></stop>
+									<stop offset='0.95' stop-color='#2D2D2D'></stop>
+									<stop offset='1' stop-color='#484848'></stop>
+								</linearGradient>
+								<linearGradient id='play-button-gloss-gradient' gradientUnits='userSpaceOnUse' x1='0' y1='10.5' x2='0' y2='53'>
+									<stop offset='0' stop-color='#777777'></stop>
+									<stop offset='0.05' stop-color='#777777'></stop>
+									<stop offset='0.06' stop-color='#686868'></stop>
+									<stop offset='1' stop-color='#363636'></stop>
+								</linearGradient>
+							</defs>
+							<g fill='#000000'>
+								<rect x='10.5' y='11' width='92.5' height='92' rx='15' fill-opacity='0.12'></rect>
+								<rect x='9.5' y='10' width='92.5' height='92' rx='15' fill-opacity='0.11'></rect>
+								<rect x='8.5' y='9' width='92.5' height='92' rx='15' fill-opacity='0.14'></rect>
+								<rect x='7.5' y='8' width='92.5' height='92' rx='15' fill-opacity='0.18'></rect>
+								<rect x='5.5' y='6' width='92.5' height='92' rx='15' fill-opacity='0.15'></rect>
+							</g>
+							<rect x='3.5' y='4' width='92.5' height='92' rx='15' fill='#4D4D4D'></rect>
+							<rect x='4.5' y='5' width='90.5' height='90' rx='14' fill='url(#play-button-frame-gradient)'></rect>
+							<rect x='7' y='7.5' width='85.5' height='85.5' rx='12.5' fill='#000000'></rect>
+							<rect x='10' y='10.5' width='80' height='80' rx='10' fill='url(#play-button-face-gradient)'></rect>
+							<path d='M10 53V20.5Q10 10.5 20 10.5H80Q90 10.5 90 20.5V40Q66 52.5 10 53Z' fill='url(#play-button-gloss-gradient)'></path>
+							<g fill='none' stroke='#000000' stroke-opacity='0.18' stroke-linejoin='round'>
+								<path d='M37 24L69.3 51.5L37 79Z' stroke-width='12'></path>
+								<path d='M37 24L69.3 51.5L37 79Z' stroke-width='10'></path>
+								<path d='M37 24L69.3 51.5L37 79Z' stroke-width='8'></path>
+								<path d='M37 24L69.3 51.5L37 79Z' stroke-width='6'></path>
+							</g>
+							<path d='M37 24L69.3 51.5L37 79Z' fill='#DDDDDD' stroke='#DDDDDD' stroke-width='4' stroke-linejoin='round'></path>
+						</svg>
+					</button>
+					<table id='painkiller-combinations-table' class='items-table'>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/zurkh.jpg' alt='"Zurkh" Tincture'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/sangue.jpg' alt='Blood'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/analgesico-zurkh.jpg' alt='"Zurkh" Painkiller'>
+							</td>
+							<td>-20% Thirst</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/yas.jpg' alt='"Yas" Tincture'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/sangue.jpg' alt='Blood'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/analgesico-yas.jpg' alt='"Yas" Painkiller'>
+							</td>
+							<td>-15% Thirst</td>
+						</tr>
+						<tr>
+							<td>
+								<img src='../assets/shared/img/items/medrel.jpg' alt='"Medrel" Tincture'>
+							</td>
+							<td>
+								<img src='../assets/shared/img/items/sangue.jpg' alt='Blood'>
+							</td>
+							<td class='equal-cell'>=</td>
+							<td>
+								<img src='../assets/shared/img/items/analgesico-medrel.jpg' alt='"Medrel" Painkiller'>
+							</td>
+							<td>-10% Thirst</td>
+						</tr>
+					</table>
+					<p class='observation'>*Use the button above to pause/play the transition.</p>
+				</div>
+				<ul class='item-label-list'>
+					<li>
+						<img src='../assets/shared/img/items/analgesico-yas.jpg' alt='"Yas" Painkiller'>
+						<p>"Yas" Painkiller</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/analgesico-medrel.jpg' alt='"Medrel" Painkiller'>
+						<p>"Medrel" Painkiller</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/analgesico-zurkh.jpg' alt='"Zurkh" Painkiller'>
+						<p>"Zurkh" Painkiller</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/sangue.jpg' alt='Blood'>
+						<p>Blood</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/rim.jpg' alt='Kidney'>
+						<p>Kidney</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/figado.jpg' alt='Liver'>
+						<p>Liver</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/coracao.jpg' alt='Heart'>
+						<p>Heart</p>
+					</li>
+					<li>
+						<img src='../assets/shared/img/items/cerebro.jpg' alt='Brain'>
+						<p>Brain</p>
+					</li>
+				</ul>
+				<div class='tip-div'>
+					<p>
+						<b>TIP:</b> Just like Antibiotics, the only advantage of using Potent Tinctures, instead of the regular ones, is that the Painkiller will be produced faster. Like mentioned earlier, the strength of the effect is determined by the color of Tincture and not its potency.
+					</p>
+				</div>
+			</section>
+		</article>
+	</p2b-template>
+	<script src='../assets/shared/P2B-Template/P2B-Template.js'></script>
+	<script src='../assets/pages/recipes/recipes.js'></script>
 </body>
 </html>
