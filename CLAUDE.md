@@ -20,9 +20,10 @@ as a reference for how new or refactored code should look.
 - `podinzins.html` / `en/shmowders.html` — `assets/pages/shmowders/shmowders.css`, no page JS
   *(the reference for `table.npc-trade-table` and for section headers with a day box)*
 - `comida.html` / `en/food.html` — `assets/pages/food/food.css`, no page JS
-- `combate.html` / `en/combat.html` — `assets/pages/combat/combat.css`, no page JS *(most
-  recent; the reference for `ol.step-list` with videos and for section headers without a day
-  box)*
+- `combate.html` / `en/combat.html` — `assets/pages/combat/combat.css`, no page JS *(the
+  reference for `ol.step-list` with videos and for section headers without a day box)*
+- `receitas.html` / `en/recipes.html` — `assets/pages/recipes/recipes.css`,
+  `assets/pages/recipes/recipes.js` *(most recent)*
 
 All of them use the shared `assets/shared/css/main.css`, `assets/shared/js/globalVariables.js`,
 `assets/shared/js/utils.js` and the template component in `assets/shared/P2B-Template/`.
@@ -36,9 +37,8 @@ Commit `32185b6` (`git show 32185b6`, the index refactor) is the **primary** tem
 file organization, section ordering, banner comment style and naming. If a reference page
 disagrees with that commit, the commit wins.
 
-Do **not** copy patterns from the not-yet-refactored pages (`receitas.html`, `trocas.html`,
-etc.) or their CSS/JS —
-they are the old style and are pending migration.
+Do **not** copy patterns from the not-yet-refactored pages (`trocas.html`, etc.) or their
+CSS/JS — they are the old style and are pending migration.
 
 `.claude/commands/refactor-page.md` holds the full step-by-step procedure for migrating a
 page; this file holds the conventions that apply to all work in the repo.
@@ -568,7 +568,7 @@ app all read them from there; no page keeps item images in its own
 - **Update every reference** to a moved image in the same step — in every page, refactored
   or not, PT and EN, and in CSS and JS. That includes path-only edits to the reference
   pages, which are otherwise read-only. A script that builds item paths from a folder prefix
-  (`_js/receitas.js`, `_js/trocas.js`) cannot point at two folders: leave the images that
+  (`_js/trocas.js`) cannot point at two folders: leave the images that
   script needs where they are, list them in the report, and move them when that page is
   refactored.
 - NPC portraits and map markers are not items. Portraits go in the page's `img/portraits/`,

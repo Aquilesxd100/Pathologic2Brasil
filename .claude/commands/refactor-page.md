@@ -52,9 +52,10 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
   `assets/pages/map/map.js`), `dinheiro.html` (`assets/pages/money/money.css`, the
   reference for the shared content components), `podinzins.html`
   (`assets/pages/shmowders/shmowders.css`, the reference for `table.npc-trade-table` and
-  section headers with a day box), `comida.html` (`assets/pages/food/food.css`) and
+  section headers with a day box), `comida.html` (`assets/pages/food/food.css`),
   `combate.html` (`assets/pages/combat/combat.css`, the reference for `ol.step-list` with
-  videos). Their content uses `<article>`s containing `<section>`s — see
+  videos) and `receitas.html` (`assets/pages/recipes/recipes.css`,
+  `assets/pages/recipes/recipes.js`). Their content uses `<article>`s containing `<section>`s — see
   "Page structure" in `CLAUDE.md`.
 - Shared code you must reuse (edit only on request, hard rule 4): `assets/shared/css/main.css`, `assets/shared/js/utils.js`,
   `assets/shared/js/globalVariables.js`.
@@ -81,7 +82,7 @@ deprecated click-animation system — `git show master:_css/estrutura.css` and
    own initiative belongs in one of them, leave it in the page file and **name it in your
    final report**.
 5. **Never edit the reference pages** (`index.html`, `tudo.html`, `resultados.html`,
-   `mapa.html`, `dinheiro.html`, `podinzins.html`, `comida.html`, `combate.html` and their EN versions) or
+   `mapa.html`, `dinheiro.html`, `podinzins.html`, `comida.html`, `combate.html`, `receitas.html` and their EN versions) or
    their CSS/JS.
    Read only — except the path updates for files moved to `assets/shared/` (item
    images and any file used by more than one page; section 6).
@@ -429,8 +430,7 @@ assets/
   - Update every reference to the moved image in the same step — every page, refactored or
     not, PT and EN, CSS and JS. Path-only edits to the reference pages are allowed here
     (the one exception to hard rule 5).
-  - A script that builds item paths from a folder prefix (`_js/receitas.js`,
-    `_js/trocas.js`) cannot point at two folders: leave the images that script needs where
+  - A script that builds item paths from a folder prefix (`_js/trocas.js`) cannot point at two folders: leave the images that script needs where
     they are, list them in the final report, and move them when that page is refactored.
 
 - **Required items go to the page's `img/required-items/`.** The icons of the items a task
