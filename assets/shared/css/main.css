@@ -592,6 +592,7 @@ a:hover {
             display: block;
             width: calc(8px + 90rem);
             height: calc(8px + 90rem);
+            border: 2.5rem solid #292929;
         }
 
         /* Item's Name Cell (Interest in and May Have) */
@@ -995,6 +996,7 @@ a:hover {
         .npc-trade-table td img {
             height: 100%;
             width: 100%;
+            border-width: 6rem;
         }
 
         /* Item Range Value Text is smaller to avoid overflow (Ex: 1-35) */

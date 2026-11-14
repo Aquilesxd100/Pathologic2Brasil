@@ -36,8 +36,8 @@ function playPausePainkillerCombinationsRotation(playPauseButton) {
     function getImgPathByFileName(fileName) {
         const basePath =
             isPageInPortuguese
-            ? './assets/shared/img/items/'
-            : '../assets/shared/img/items/';
+            ? './assets/shared/img/items/display/'
+            : '../assets/shared/img/items/display/';
 
         return basePath + fileName + '.jpg';
     };
